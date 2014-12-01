@@ -1,0 +1,26 @@
+4.1 absolute accuracy (positional accuracy [ISO 19113]): Closeness of coordinate value to the true or accepted valuein a specified reference system (in this profile, the reference system is the World Geodetic System 1984 (WGS84)) 
+4.2 band (image component [ISO 12087-5]: A well defined range of wavelengths, frequencies or energies of optical, electric or acoustic radiation. At the pixel level, a band is represented as one of the vector values of the pixel. At image level, band i of an image is the rectangular array of ith sample values from the pixel vectors. 
+4.3 coordinate [ISO 19111]: One of a sequence of numbers designating the position of a point in N-dimensional space
+4.4 coordinate reference system [ISO 19111]: Coordinate system that is related to an object (of the real world) by a datum. TC211: coordinate system that is related to an object by a datum
+4.5 coverage [ISO 19123]: Feature that acts as a function to return values from its range for any direct position within its spatial,temporal, orspatiotemporal domain. Examples include a digital image, raster map, and digital elevation matrix. Note: In other words, a coverage is a feature that has one or multiple value(s) for each attribute type, where each direct position within the geometric representation of the feature has a single value for each attribute type. 
+4.6 coverage geometry [ISO 19123]: Configuration of the domain of a coverage described in terms of coordinates.
+4.7 data compression: Reducing the amount of storage space required to store a given amount of data, or reducing the length of message required to transfer a given amount of information. (data / image) compression: reduction in the number of bits used to represent source image data” [ISO 10918-1] (JPEG Part 1) 
+4.8 dataset [ISO 19115]: Identifiable collection of data. 
+4.9 domain [ISO 19103]: Well-defined set. Note, Domains are used to define the domain set and range set of operators and functions. 
+4.10 direct position [ISO 19107]: Position described by a single set of coordinates within a coordinate reference system.
+4.11 evaluation <coverage> [ISO 19123]: Determination of the values of a coverage at a direct position within the domain of the coverage. 
+4.12 georectified grid: Rectified grid wherein the external coordinate reference system is related to the real world by a datum. Note, Any cell in the grid can be geolocated, given its grid coordinate, and the grid origin, cell spacing, and orientation. 
+4.13 grid [ISO 19123]: gridded data Network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in a algorithmic way. DN:08-089 17 March 2014 
+4.14 imagery [ISO 19101-2]: Representation of phenomena as images produced electronically and/or optical techniques. 
+4.15 metadata [ISO 19115]: Data about data. 
+4.16 mosaic: For purposes of this profile, a mosaic image is an image composed of two or more separately collected (sensed) images. Additional XML metadata may be used to identify the cut-lines (boundaries and parameters for the images used to compose the mosaic.
+4.17 NULL value: Value having no value or existence. 
+4.18 orthorectified grid: Georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid. 
+4.19 pixel [ISO 19101-2]: Smallest element of a digital image to which attributes are assigned. NOTE 1 This term originated as a contraction of “picture element”. NOTE 2 Related to the concept of a grid cell The intensity of each pixel is variable; in color systems, each pixel has typically three or four dimensions of variability such as red, green and blue, or cyan, magenta, yellow and black. 
+4.20 range <coverage> [ISO 19123]: Set of feature attribute values associated by a function with the elements of the domain of a coverage. 
+4.21 qualification layer: A qualification layer is a coverage consisting of graphics information associated to geospatial data together with associated metadata (these metadata mostly identify the meaning of colour codes used in graphics). 
+4.22 rectified grid [ISO 19123]: Grid for which there is an affine transformation between the grid coordinates and the coordinates of an external coordinate reference system. 
+4.23 referenceable grid [ISO 19123]: Grid associated with a transformation that can be used to convert grid coordinate values to values of coordinates referenced to an external coordinate reference system 
+4.24 relative accuracy / relative positional accuracy [ISO 19113]: Evaluation of the random errors in determining the position of one point or feature with respect to another / closeness of coordinate difference value to the true or accepted value in a specified reference system 
+4.25 tessellation / tiling [ISO 19123]: Partitioning of a space into a set of conterminous subspaces having the same dimension as the space being partitioned 
+4.26 transparency mask: A Transparency Mask defines visible pixels of another image in the same TIFF file (that may be organised as an irregularly shaped region of visible pixels). The 1-bits define the visible pixels; the 0-bits define transparent pixels. (fdefinition based on TIFF specification)
