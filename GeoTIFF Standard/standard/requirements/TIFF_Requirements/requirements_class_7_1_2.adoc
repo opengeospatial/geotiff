@@ -1,0 +1,46 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag {set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.count +
+_The GeoKeyDirectoryTag SHALL include at least 4 keys (short integers) as header information_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.ID +
+_The GeoKeyDirectoryTag SHALL have ID = 34735_ 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyDirectoryVersion +
+_The first unsigned short integer in the GeoKeyDirectoryTag SHALL hold the KeyDirectoryVersion._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntrySetCount +
+_The GeoKeyDirectoryTag SHALL hold NumberOfKeys KeyEntry Sets in addition to the header information_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyRevision +
+_The second unsigned short integer in the GeoKeyDirectoryTag SHALL hold the KeyRevision._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.minorRevision +
+_The third unsigned short integer in the GeoKeyDirectoryTag SHALL hold the MinorRevision._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.numberOfKeys +
+_The fourth unsigned short integer in the GeoKeyDirectoryTag SHALL hold the NumberOfKeys defined in the rest of the GeoKeyDirectoryTag._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.type +
+_The GeoKeyDirectoryTag SHALL have type = SHORT (2-byte unsigned integer)_
+{set:cellbgcolor:#FFFFFF}
+
+|===

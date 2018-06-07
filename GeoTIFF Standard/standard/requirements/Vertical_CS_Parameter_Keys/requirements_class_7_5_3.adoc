@@ -1,0 +1,31 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.ID +
+_The VerticalDatumGeoKey SHALL have ID = 4098_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.private +
+_VerticalDatumGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.reserved +
+_VerticalDatumGeoKey values in the range 16384-32766 SHALL be reserved_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.type +
+_The VerticalDatumGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.VertDatum +
+_VerticalDatumGeoKey values in the range 1-16383 SHALL be Vertical Datum Codes_
+{set:cellbgcolor:#FFFFFF}
+|===

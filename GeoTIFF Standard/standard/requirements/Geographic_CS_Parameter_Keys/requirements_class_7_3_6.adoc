@@ -1,0 +1,41 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.angular +
+_GeogLinearUnitsGeoKey values in the range_ _1024-32766 SHALL be EPSG__Unit of Measure (UOM) Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.ID +
+_The GeogLinearUnitsGeoKey SHALL have ID = 2052_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.linear +
+_GeogLinearUnitsGeoKey values in the range_ _1024-32766 SHALL be EPSG__Unit Of Measure (UOM) Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.obsolete +
+_GeogLinearUnitsGeoKey values in the range 1-2000 SHALL be obsolete GeoTIFF Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.private +
+_GeogLinearUnitsGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.reserved +
+_GeogLinearUnitsGeoKey values in the range 2001-8999 SHALL be reserved_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.type +
+_The GeogLinearUnitsGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+|===

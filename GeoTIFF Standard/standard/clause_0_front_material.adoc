@@ -1,6 +1,8 @@
 [big]*i.     Abstract*
 
-<Insert Abstract Text here>
+This profile specifies the requirements and encoding rules for using the Tagged Image File Format (TIFF) for the exchange of georeferenced
+imagery. It formalizes the existing community standard for the
+Geographic Tagged Image File Format (GeoTIFF) file format.
 
 [big]*ii.    Keywords*
 
@@ -10,9 +12,14 @@ ogcdoc, OGC document,  <tags separated by commas>
 
 [big]*iii.   Preface*
 
-[NOTE]
-====
-Insert Preface Text here. Give OGC specific commentary: describe the technical content, reason for document, history of the document and precursors, and plans for future work. >
+The GeoTIFF format was initially developed during the early 1990’s (N. Ritter & Ruth, 1997) in order to leverage a mature platform independent file format (TIFF) by adding metadata required for describing and using geographic image data. TIFF met the requirements for an underlying format, as it was lossless and extensible. In September 1994, SPOT Image Corp proposed a GeoTIFF structure that was limited to Universal Transverse Mercator (N. Ritter & Ruth, 1997). The proposed GeoTIFF specification has augmented and formalized by Niles and Ruth as Revision 1.0, specification version 1.8.2 in November 1995 (N. Ritter & Ruth,1995). This specification is currently the official GeoTIFF specification (GeoTIFF, n.d).
+
+The GeoTIFF format is used throughout the geospatial and earth science communities to share geographic image data. That usage inevitably leads to identification of new requirements and needs for profiles, extensions, and improvements to the original GeoTIFF Specification. The OGC is well established as a forum for standardization in the GeoTIFF producer and user communities and, as such, it provides an inclusive standardization process for those communities. This document is the first step in the process of integration of the GeoTIFF into that standardization process. Once GeoTIFF is ensconced in the OGC, the standard can be evolved using a formal process.
+
+Suggested additions, changes, and comments on this standard are welcome and encouraged. Such suggestions may be submitted by email message or by submitting an official OGC Change Request using the online CR application:
+
+ https://portal.opengeospatial.org/public_ogc/change_request.php
+
 Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
 
 Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
@@ -21,10 +28,18 @@ Recipients of this document are requested to submit, with their comments, notifi
 
 The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
 
-Organization name(s)
+The HDF Group
 
 [big]*v.     Submitters*
 
 All questions regarding this submission should be directed to the editor or the submitters:
 
-Name  Affiliation
+[cols=",",]
+|============================
+|Name |Affiliation
+|Ted Habermann |The HDF Group
+| |
+| |
+|============================
+
+

@@ -1,0 +1,16 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogAngularUnitsGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogAngularUnitsGeoKey.ID +
+_The GeogAngularUnitsGeoKey SHALL have ID = 2054_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogAngularUnitsGeoKey.type +
+_The GeogAngularUnitsGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+|===

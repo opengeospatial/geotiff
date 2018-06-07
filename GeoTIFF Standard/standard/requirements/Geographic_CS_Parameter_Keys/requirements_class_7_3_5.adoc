@@ -1,0 +1,22 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogPrimeMeridianLongGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogPrimeMeridianLongGeoKey.ID +
+_The GeogPrimeMeridianLongGeoKey SHALL have ID = 2061_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogPrimeMeridianLongGeoKey.type +
+_The GeogPrimeMeridianLongGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogPrimeMeridianLongGeoKey.units +
+_The GeogPrimeMeridianLongGeoKey SHALL have units = GeogAngularUnits_
+{set:cellbgcolor:#FFFFFF}
+|===
+

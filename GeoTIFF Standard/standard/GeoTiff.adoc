@@ -1,5 +1,5 @@
-:Title: OGC (add title text)
-:titletext: OGC (add title text)
+:Title: OGC GeoTIFF Standard
+:titletext: OGC GeoTIFF Standard
 :doctype: book
 :encoding: utf-8
 :lang: en
@@ -19,12 +19,12 @@
 |[big]*Open Geospatial Consortium*
 |Submission Date: <yyyy-mm-dd>
 |Approval Date:   <yyyy-mm-dd>
-|Publication Date:   <yyyy-mm-dd>
+|Publication Date:   <2018-06-07>
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
 |Internal reference number of this OGC(R) document:    YY-nnnrx
-|Version: n.n
-|Category: OGC(R) <Implementation / Abstract Specification / Best Practice>
-|Editor:   <Name(s) of Editor or Editors>
+|Version: 0.2
+|Category: OGC(R) <Implementation>
+|Editor: Ted Habermann 
 |===
 
 [cols = "^", frame = "none"]
@@ -35,7 +35,7 @@
 [cols = "^", frame = "none", grid = "none"]
 |===
 |*Copyright notice*
-|Copyright (C) <year> Open Geospatial Consortium
+|Copyright (C) 2018 Open Geospatial Consortium
 |To obtain additional rights of use, visit http://www.opengeospatial.org/legal/
 |===
 
@@ -50,8 +50,8 @@ Recipients of this document are invited to submit, with their comments, notifica
 
 [width = "50%", grid = "none"]
 |===
-|Document type:   	OGC® <Standard/Abstract Specification/Best Practice>
-|Document subtype:   	if applicable
+|Document type:   	OGC® Standard
+|Document subtype:   	Not Applicable
 |Document stage:   	Draft
 |Document language: 	English
 |===
@@ -93,7 +93,7 @@ include::clause_5_conventions.adoc[]
 
 include::clause_6_informative_text.adoc[]
 
-include::clause_7_normative_text.adoc[]
+include::clause_7_requirements.adoc[]
 
 include::clause_8_media_types.adoc[]
 
