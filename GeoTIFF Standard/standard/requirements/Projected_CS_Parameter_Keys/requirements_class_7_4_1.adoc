@@ -1,0 +1,17 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogAzimuthUnitsGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogAzimuthUnitsGeoKey.ID +
+_The GeogAzimuthUnitsGeoKey SHALL have ID = 2060_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogAzimuthUnitsGeoKey.type +
+_The GeogAzimuthUnitsGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+|===
+

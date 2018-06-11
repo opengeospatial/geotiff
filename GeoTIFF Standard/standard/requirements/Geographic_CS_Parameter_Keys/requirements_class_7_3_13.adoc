@@ -1,0 +1,16 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogInvFlatteningGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogInvFlatteningGeoKey.ID +
+_The GeogInvFlatteningGeoKey SHALL have ID = 2059_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogInvFlatteningGeoKey.type +
+_The GeogInvFlatteningGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+|===

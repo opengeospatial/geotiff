@@ -1,0 +1,21 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitSizeGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitSizeGeoKey.ID +
+_The GeogLinearUnitSizeGeoKey SHALL have ID = 2053_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitSizeGeoKey.type +
+_The GeogLinearUnitSizeGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitSizeGeoKey.units +
+_The units of the GeogLinearUnitSizeGeoKey SHALL be meters_
+{set:cellbgcolor:#FFFFFF}
+|===

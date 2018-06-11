@@ -1,0 +1,31 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.EPSGProjection +
+_ProjectedCSTypeGeoKey values in the range_ _1024-32766 SHALL be EPSG__Projected CRS Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.ID +
+_The ProjectedCSTypeGeoKey SHALL have ID = 3072_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.obsolete +
+_ProjectedCSTypeGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Datum Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.private +
+_ProjectedCSTypeGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.type +
+_The ProjectedCSTypeGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+|===

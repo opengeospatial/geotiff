@@ -1,0 +1,238 @@
+== Terms and Definitions
+This document uses the terms defined in Sub-clause 5.3 of [OGC 06-121r8], which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
+
+For the purposes of this document, the following additional terms and definitions apply.
+
+=== absolute accuracy
+
+Closeness of coordinate value to the true or accepted value in a specified reference system (in this profile, the reference system is the World Geodetic System 1984 (WGS84))
+
+=== ASCII
+
+[American Standard Code for Information Interchange] The predominant character set encoding of present-day computers.
+
+=== band
+
+A well-defined range of wavelengths, frequencies or energies of optical, electric or acoustic radiation. At the pixel level, a band is represented as one of the vector values of the pixel. At image level, band i of an image is the rectangular array of i^th^ sample values from the pixel vectors.
+
+=== cell
+
+A rectangular area in Raster space, in which a single pixel value is filled.
+
+=== code
+
+representation of a label according to a specified scheme
+
+=== coordinate
+
+One of a sequence of numbers designating the position of a point in N-dimensional space
+
+=== coordinate reference system
+
+Coordinate system that is related to an object (of the real world) by a datum.
+
+=== coordinate system
+
+A set of mathematical rules for specifying how coordinates are to be assigned to points
+
+=== coverage
+
+Feature that acts as a function to return values from its range for any direct position within its spatial, temporal, or spatiotemporal domain. Examples include a digital image, raster map, and digital elevation matrix.
+
+=== coverage geometry
+
+Configuration of the domain of a coverage described in terms of coordinates.
+
+=== data compression
+
+Reducing the amount of storage space required to store a given amount of data, or reducing the length of message required to transfer a given amount of reduction in the number of bits used to represent source image data [ISO 10918-1] (JPEG Part 1) information. (data / image) compression
+
+=== dataset
+
+Identifiable collection of data.
+
+=== datum
+
+A parameter or set of parameters that define the position of the origin, the scale, and the orientation of a coordinate system
+
+=== device space
+
+A coordinate space referencing scanner, printers and display devices.
+
+=== direct position
+
+Position described by a single set of coordinates within a coordinate reference system.
+
+=== domain
+
+Well-defined set. Note, Domains are used to define the domain set and range set of operators and functions.
+
+=== double
+
+8-byte IEEE double precision floating point.
+
+=== ellipsoid
+
+A surface formed by the rotation of an ellipse about a main axis
+
+=== EPSG
+
+European Petroleum Survey Group.
+
+=== evaluation
+
+Determination of the values of a coverage at a direct position within the domain of the coverage.
+
+=== flattening
+
+A ratio of the difference between the semi-major (a) and semi-minor axis (b) of an ellipsoid to the semi-major axis; f = (a - b)/a
+
+=== geocoding
+
+A translation of one form of location into another
+
+=== geographic coordinate system
+
+A Geographic CS consists of a well-defined ellipsoidal datum, a Prime Meridian, and an angular unit, allowing the assignment of a Latitude-Longitude (and optionally, geodetic height) vector to a location on earth.
+
+=== geokey
+
+In GeoTIFF, a GeoKey is equivalent in function to a TIFF tag, but uses a different storage mechanism.
+
+=== georectified grid
+
+Rectified Grid: grid for which there is an affine transformation between the grid coordinates and the coordinates of an external coordinate reference system
+
+=== georeferencing
+
+geopositioning an object using a Correspondence Model derived from a set of points for which both ground and image coordinates are known
+
+=== geoTIFF
+
+A standard for storing georeference and geocoding information in a TIFF 6.0 compliant raster file.
+
+=== grid
+
+A network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in an algorithmic way
+
+=== grid
+
+gridded data Network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in a algorithmic way.
+
+=== IEEE
+
+Institute of Electrical and Electronics Engineers, Inc.
+
+=== IFD
+
+In TIFF format, an Image File Directory, containing all the TIFF tags for one image in the file (there may be more than one).
+
+=== imagery
+
+Representation of phenomena as images produced electronically and/or
+optical techniques.
+
+=== meridian
+
+An intersection of an ellipsoid by a plane containing the shortest axis of the ellipsoid
+
+=== metadata
+
+Data about data.
+
+=== model space
+
+A flat geometrical space used to model a portion of the earth.
+
+=== mosaic
+
+For purposes of this profile, a mosaic image is an image composed of two or more separately collected (sensed) images. Additional XML metadata may be used to identify the cut-lines (boundaries and parameters for the images used to compose the mosaic.
+
+=== null value
+
+Value having no value or existence.
+
+=== orthorectified grid
+
+Georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid.
+
+=== parallel
+
+Lines of constant latitude, parallel to the equator.
+
+=== pixel
+
+Smallest element of a digital image to which attributes are assigned.
+
+NOTE 1 This term originated as a contraction of “picture element”.
+
+NOTE 2 Related to the concept of a grid cell The intensity of each pixel is variable; in color systems, each pixel has typically three or four dimensions of variability such as red, green and blue, or cyan, magenta, yellow and black.
+
+=== POSC
+
+Petrotechnical Open Software Corporation.
+
+=== prime meridian
+
+A meridian from which the longitudes of other meridians are quantified
+
+=== projected coordinate system
+
+A coordinate reference system derived from a two-dimensional geodetic coordinate reference system by applying a map projection
+
+=== projection
+
+projected coordinate reference system: coordinate reference system derived from a two-dimensional geodetic coordinate reference system by applying a map projection
+
+=== qualification layer
+
+A qualification layer is a coverage consisting of graphics information associated to geospatial data together with associated metadata (these metadata mostly identify the meaning of colour codes used in graphics).
+
+=== range
+
+Set of feature attribute values associated by a function with the elements of the domain of a coverage.
+
+=== raster space
+
+Raster: usually rectangular pattern of parallel scanning lines forming or corresponding to the display on a cathode ray tube
+
+=== rational
+
+In TIFF format, a RATIONAL value is a fractional value represented by the ratio of two unsigned 4-byte integers.
+
+=== rectified grid
+
+Grid for which there is an affine transformation between the grid coordinates and the coordinates of an external coordinate reference system.
+
+=== referenceable grid
+
+Grid associated with a transformation that can be used to convert grid coordinate values to values of coordinates referenced to an external coordinate reference system
+
+=== relative accuracy / relative positional accuracy
+
+Evaluation of the random errors in determining the position of one point or feature with respect to another / closeness of coordinate difference value to the true or accepted value in a specified reference system
+
+=== SDTS
+
+The USGS Spatial Data Transmission Standard.
+
+=== tag
+
+In TIFF format, a tag is packet of numerical or ASCII values, which have a numerical "Tag" ID indicating their information content.
+
+=== tessellation / tiling
+
+Partitioning of a space into a set of conterminous subspaces having the same dimension as the space being partitioned
+
+=== TIFF
+
+Acronym for Tagged Image File Format; a platform-independent, extensive specification for storing raster data and ancillary information in a single file.
+
+=== transparency mask
+
+A Transparency Mask defines visible pixels of another image in the same TIFF file (that may be organised as an irregularly shaped region of visible pixels). The 1-bits define the visible pixels; the 0-bits define transparent pixels. (fdefinition based on TIFF specification)
+
+=== USGS
+
+US Geological Survey
+

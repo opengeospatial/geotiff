@@ -1,0 +1,16 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogGeodeticDatumGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogGeodeticDatumGeoKey.ID +
+_The GeogCitationGeoKey SHALL have ID = 2050_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogGeodeticDatumGeoKey.type +
+_The GeogCitationGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+|===

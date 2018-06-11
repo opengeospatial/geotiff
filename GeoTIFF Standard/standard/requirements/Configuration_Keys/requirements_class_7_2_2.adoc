@@ -1,0 +1,27 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey.ID +
+_The GTModelTypeGeoKey SHALL have ID = 1025_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey.private +
+_GTRasterTypeGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey.reserved +
+_GTRasterTypeGeoKey values in the range 1-32766 SHALL be reserved_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey.type +
+_The GTModelTypeGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+|===
+

@@ -1,0 +1,21 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogSemiMajorAxisGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogSemiMajorAxisGeoKey.ID +
+_The GeogSemiMajorAxisGeoKey SHALL have ID = 2057_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogSemiMajorAxisGeoKey.type +
+_The GeogSemiMajorAxisGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogSemiMajorAxisGeoKey.units +
+_The units of the GeogSemiMajorAxisGeoKey SHALL be Geocentric CS linear Units_
+{set:cellbgcolor:#FFFFFF}
+|===

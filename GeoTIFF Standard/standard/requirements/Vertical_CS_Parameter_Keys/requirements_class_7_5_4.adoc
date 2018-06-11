@@ -1,0 +1,41 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.angular +
+_VerticalUnitsGeoKey values in the range_ _1024-32766 SHALL be EPSG__Unit of Measure (UOM) Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.ID +
+_The VerticalUnitsGeoKey SHALL have ID = 4099_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.linear +
+_VerticalUnitsGeoKey values in the range_ _1024-32766 SHALL be EPSG Unit of Measure (UOM) Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.obsolete +
+_VerticalUnitsGeoKey values in the range 1-2000 SHALL be obsolete GeoTIFF Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.private +
+_VerticalUnitsGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.reserved +
+_VerticalUnitsGeoKey values in the range 2001-8999 SHALL be reserved_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.type +
+_The VerticalUnitsGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+|===
