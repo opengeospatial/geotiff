@@ -1,5 +1,28 @@
 == Conventions
 
+=== Abbreviations
+
+=== ASCII
+[American Standard Code for Information Interchange] The predominant character set encoding of present-day computers.
+
+=== EPSG
+ European Petroleum Survey Group.
+ 
+=== IEEE
+Institute of Electrical and Electronics Engineers, Inc.
+
+=== IFD
+In TIFF format, an Image File Directory, containing all the TIFF tags for one image in the file (there may be more than one).
+
+=== POSC
+Petrotechnical Open Software Corporation.
+
+=== TIFF
+Acronym for Tagged Image File Format; a platform-independent, extensive specification for storing raster data and ancillary information in a single file.
+
+=== USGS
+United States Geological Survey
+
 === Identifiers
 The normative provisions in this specification are denoted by the URI
 
