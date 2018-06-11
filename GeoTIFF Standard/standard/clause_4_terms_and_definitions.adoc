@@ -3,236 +3,291 @@ This document uses the terms defined in Sub-clause 5.3 of [OGC 06-121r8], which 
 
 For the purposes of this document, the following additional terms and definitions apply.
 
-=== absolute accuracy
-
-Closeness of coordinate value to the true or accepted value in a specified reference system (in this profile, the reference system is the World Geodetic System 1984 (WGS84))
-
-=== ASCII
-
-[American Standard Code for Information Interchange] The predominant character set encoding of present-day computers.
-
 === band
 
-A well-defined range of wavelengths, frequencies or energies of optical, electric or acoustic radiation. At the pixel level, a band is represented as one of the vector values of the pixel. At image level, band i of an image is the rectangular array of i^th^ sample values from the pixel vectors.
+well-defined range of wavelengths, frequencies or energies of optical, electric or acoustic radiation
+
+Note 1 to entry: At the pixel level, a band is represented as one of the vector values of the pixel. At image level, band i of an image is the rectangular array of i^th^ sample values from the pixel vectors.
+
+ [Source: 19101-2:2008, 4.1]
 
 === cell
 
-A rectangular area in Raster space, in which a single pixel value is filled.
+rectangular area in raster space, in which a single pixel value is filled
 
 === code
 
 representation of a label according to a specified scheme
 
+ [Source: ISO 19118:2011, 4.3]
+
 === coordinate
 
-One of a sequence of numbers designating the position of a point in N-dimensional space
+one of a sequence of numbers designating the position of a point
+
+Note 1 to entry: In a spatial coordinate reference system, the coordinate numbers are qualified by units.
+
+ [Source: ISO 19111 Rev 2017-12-17 in progress]
 
 === coordinate reference system
 
-Coordinate system that is related to an object (of the real world) by a datum.
+coordinate system that is related to an object (of the real world) by a datum
+
+Note 1 to entry:	 Geodetic and vertical datums are referred to as reference frames.
+
+Note 2 to entry:	For geodetic and vertical reference frames, the object will be the Earth.
+
+Note 3 to entry:	In planetary applications geodetic reference frames may be applied to other celestial bod-ies.
+
+ [Source: ISO 19111 Rev 2017-12-17 in progress]
 
 === coordinate system
 
-A set of mathematical rules for specifying how coordinates are to be assigned to points
+set of mathematical rules for specifying how coordinates are to be assigned to points
+
+ [Source: ISO 19111 Rev 2017-12-17 in progress]
+
+=== correspondence model
+functional relationship between ground and image coordinates based on the correlation be-tween a set of ground control points and their corresponding image coordinates		
+
+ [Source: ISO/TS 19130:2010, 4.3]
 
 === coverage
 
-Feature that acts as a function to return values from its range for any direct position within its spatial, temporal, or spatiotemporal domain. Examples include a digital image, raster map, and digital elevation matrix.
+feature that acts as a function to return values from its range for any direct position within its spatial, temporal, or spatiotemporal domain
 
-=== coverage geometry
+Example: Examples include a digital image, raster map, and digital elevation matrix.
 
-Configuration of the domain of a coverage described in terms of coordinates.
+Note 1 to entry: In other words, a coverage is a feature that has multiple values for each attribute type, where each direct position within the geometric representation of the feature has a single value for each attribute type.
 
-=== data compression
-
-Reducing the amount of storage space required to store a given amount of data, or reducing the length of message required to transfer a given amount of reduction in the number of bits used to represent source image data [ISO 10918-1] (JPEG Part 1) information. (data / image) compression
-
-=== dataset
-
-Identifiable collection of data.
+ [Source: ISO 19123:2005, 4.1.7]
 
 === datum
+__reference frame__
 
-A parameter or set of parameters that define the position of the origin, the scale, and the orientation of a coordinate system
+parameter or set of parameters that define the position of the origin, the scale, and the orientation of a coordinate system
 
+ [Source ISO 19111 Rev 2017-12-17 in progress]
+ 
 === device space
 
-A coordinate space referencing scanner, printers and display devices.
+coordinate space referencing scanner, printers and display devices
 
 === direct position
 
-Position described by a single set of coordinates within a coordinate reference system.
+position described by a single set of coordinates within a coordinate reference system
 
 === domain
 
-Well-defined set. Note, Domains are used to define the domain set and range set of operators and functions.
+well-defined set. 
+
+Note 1 to entry: Domains are used to define the domain set and range set of operators and functions.
+
+Note 2 to entry: 	Well-defined means that the definition is both necessary and sufficient, as everything that satisfies the definition is in the set and everything that does not satisfy the definition is necessarily outside the set.
+
+ [Souce: 19109:2015, 4.8]
 
 === double
 
-8-byte IEEE double precision floating point.
+8-byte IEEE double precision floating point
 
 === ellipsoid
 
-A surface formed by the rotation of an ellipse about a main axis
+__reference ellipsoid__
 
-=== EPSG
+surface formed by the rotation of an ellipse about a main axis
 
-European Petroleum Survey Group.
+<geodesy> geometric reference surface embedded in 3D Euclidean space represented by an ellipsoid
 
-=== evaluation
+Note 1 to entry: 	For the Earth the ellipsoid is bi-axial with rotation about the polar axis. This results in an oblate ellipsoid with the midpoint of the foci located at the nominal center of the Earth.
 
-Determination of the values of a coverage at a direct position within the domain of the coverage.
+ [Source: ISO 19111 Rev 2017-12-17, in progress]
 
 === flattening
 
-A ratio of the difference between the semi-major (a) and semi-minor axis (b) of an ellipsoid to the semi-major axis; f = (a - b)/a
+ratio of the difference between the semi-major (a) and semi-minor axis (b) of an ellipsoid to the semi-major axis; f = (a - b)/a
+
+Note 1 to entry:	Sometimes inverse flattening 1/f = a/(a - b) is given instead; 1/f is also known as reciprocal flattening.
+
+ [Source: ISO 19111 Rev 2017-12-17 in progress]
+
 
 === geocoding
 
-A translation of one form of location into another
+translation of one form of location into another
 
 === geographic coordinate system
 
-A Geographic CS consists of a well-defined ellipsoidal datum, a Prime Meridian, and an angular unit, allowing the assignment of a Latitude-Longitude (and optionally, geodetic height) vector to a location on earth.
+coordinate system consisting of a well-defined ellipsoidal datum, a Prime Meridian, and an angular unit, allowing the assignment of a Latitude-Longitude (and optionally, geodetic height) vector to a location on earth
 
 === geokey
 
-In GeoTIFF, a GeoKey is equivalent in function to a TIFF tag, but uses a different storage mechanism.
+in GeoTIFF, a GeoKey is equivalent in function to a TIFF tag, but uses a different storage mechanism
 
 === georectified grid
 
-Rectified Grid: grid for which there is an affine transformation between the grid coordinates and the coordinates of an external coordinate reference system
+__rectified grid__
+
+grid for which there is an affine transformation between the grid coordinates and the coordinates of an external coordinate reference system
+
+Note 1 to entry:	If the coordinate reference system is related to the earth by a datum, the grid is a georectified grid.								
+
+ [Source: ISO 19123:2005, 4.1.32]
 
 === georeferencing
 
 geopositioning an object using a Correspondence Model derived from a set of points for which both ground and image coordinates are known
 
-=== geoTIFF
+ [Source: ISO 19130:2010, 4.37]
 
-A standard for storing georeference and geocoding information in a TIFF 6.0 compliant raster file.
+=== GeoTIFF
+
+standard for storing georeference and geocoding information in a TIFF 6.0 compliant raster file
 
 === grid
 
-A network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in an algorithmic way
+network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in an algorithmic way
 
 === grid
 
 gridded data Network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in a algorithmic way.
 
-=== IEEE
+Note 1 to entry: 	The curves partition a space into grid cells.
 
-Institute of Electrical and Electronics Engineers, Inc.
-
-=== IFD
-
-In TIFF format, an Image File Directory, containing all the TIFF tags for one image in the file (there may be more than one).
+ [Source: ISO 19123:2005, 4.1.23]
 
 === imagery
 
-Representation of phenomena as images produced electronically and/or
-optical techniques.
+representation of phenomena as images produced electronically and/or optical techniques
+
+Note 1 to entry:	In this document, it is assumed that the phenomena have been sensed or detected by one or more devices such as radar, cameras, photometers, and infra-red and multispectral scanners
+
+ [Source: 19101-2:2008, 4.14]
 
 === meridian
 
 An intersection of an ellipsoid by a plane containing the shortest axis of the ellipsoid
 
+An intersection of an ellipsoid by a plane containing the shortest axis of the ellipsoid
+
+Note 1 to entry: 	This term is generally used the describe the pole-to-pole arc rather than the complete closed figure.
+
+ [Source: 19111 Rev. 2017-12-17 in progress]
+
+
 === metadata
 
-Data about data.
+information about a resource
+
+ [Source: ISO 19115-1:2014, 4.10]
+
 
 === model space
 
-A flat geometrical space used to model a portion of the earth.
+flat geometrical space used to model a portion of the earth
 
 === mosaic
 
-For purposes of this profile, a mosaic image is an image composed of two or more separately collected (sensed) images. Additional XML metadata may be used to identify the cut-lines (boundaries and parameters for the images used to compose the mosaic.
+an image composed of two or more separately collected (sensed) images 
 
-=== null value
-
-Value having no value or existence.
+Note 1 to entry:	Additional XML metadata may be used to identify the cut-lines (boundaries and parameters for the images used to compose the mosaic.
 
 === orthorectified grid
 
-Georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid.
+orthoimage
+
+georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid
+
+
+image in which by orthogonal projection to a reference surface, displacement of image points due to sensor orientation and terrain relief has been removed
+
+Note 1 to entry:	The amount of displacement depends on the resolution and the level of detail of the elevation information and on the software implementation.
 
 === parallel
 
-Lines of constant latitude, parallel to the equator.
+lines of constant latitude, parallel to the equator
 
 === pixel
 
-Smallest element of a digital image to which attributes are assigned.
+smallest element of a digital image to which attributes are assigned.
 
-NOTE 1 This term originated as a contraction of “picture element”.
+Note 1 This term originated as a contraction of “picture element”.
 
-NOTE 2 Related to the concept of a grid cell The intensity of each pixel is variable; in color systems, each pixel has typically three or four dimensions of variability such as red, green and blue, or cyan, magenta, yellow and black.
+Note 2 Related to the concept of a grid cell.
 
-=== POSC
-
-Petrotechnical Open Software Corporation.
+Note 3 to entry: The intensity of each pixel is variable; in color systems, each pixel has typically three or four dimensions of variability such as red, green and blue, or cyan, magenta, yellow and black.
 
 === prime meridian
 
-A meridian from which the longitudes of other meridians are quantified
+meridian from which the longitudes of other meridians are quantified
+
+ [Source: ISO 19111 Rev 2017-12-17 in progress]
 
 === projected coordinate system
 
-A coordinate reference system derived from a two-dimensional geodetic coordinate reference system by applying a map projection
+__projected coordinate reference system__
+
+coordinate reference system derived from a two-dimensional geodetic coordinate reference system by applying a map projection
+
+projected coordinate reference system
+coordinate reference system derived from a geographic coordinate reference system by ap-plying a map projection
+
+Note 1 to entry:  	May be two- or three-dimensional, the dimension being equal to that of the geo-graphic coordinate reference system from which it is derived.
+
+Note 2 to entry: 	In the three-dimensional case the horizontal coordinates (geodetic latitude and ge-odetic longitude coordinates) are projected to northing and easting and the ellipsoidal height is un-changed.
+
+ [Source ISO 19111 Rev 2017-12-17, in progress]
 
 === projection
 
-projected coordinate reference system: coordinate reference system derived from a two-dimensional geodetic coordinate reference system by applying a map projection
+projected coordinate reference system 
 
-=== qualification layer
+coordinate reference system derived from a two-dimensional geodetic coordinate reference system by applying a map projection
+projected coordinate reference system
 
-A qualification layer is a coverage consisting of graphics information associated to geospatial data together with associated metadata (these metadata mostly identify the meaning of colour codes used in graphics).
+coordinate reference system derived from a geographic coordinate reference system by ap-plying a map projection
 
-=== range
+Note 1 to entry:  	May be two- or three-dimensional, the dimension being equal to that of the geo-graphic coordinate reference system from which it is derived.
 
-Set of feature attribute values associated by a function with the elements of the domain of a coverage.
+Note 2 to entry: 	In the three-dimensional case the horizontal coordinates (geodetic latitude and ge-odetic longitude coordinates) are projected to northing and easting and the ellipsoidal height is unchanged.
 
-=== raster space
+ [Source: ISO 19111 Rev 2017-12-17, in progress]
 
-Raster: usually rectangular pattern of parallel scanning lines forming or corresponding to the display on a cathode ray tube
+range <coverage>
 
-=== rational
+set of feature attribute values associated by a function with the elements of the domain of a coverage
 
-In TIFF format, a RATIONAL value is a fractional value represented by the ratio of two unsigned 4-byte integers.
+ [Source: ISO 19123:2005, 4.1.29]
+
+=== raster
+
+__raster space__
+
+usually rectangular pattern of parallel scanning lines forming or corresponding to the display on a cathode ray tube
+
+ Note 1 to entry:	A raster is a type of grid.
+
+ [Source: ISO 19123:2005, 4.1.30]
+
+=== rational <TIFF>
+
+a RATIONAL value is a fractional value represented by the ratio of two unsigned 4-byte integers
 
 === rectified grid
 
-Grid for which there is an affine transformation between the grid coordinates and the coordinates of an external coordinate reference system.
+grid for which there is an affine transformation between the grid coordinates and the coordinates of an external coordinate reference system
 
 === referenceable grid
 
-Grid associated with a transformation that can be used to convert grid coordinate values to values of coordinates referenced to an external coordinate reference system
+grid associated with a transformation that can be used to convert grid coordinate values to values of coordinates referenced to an external coordinate reference system
 
 === relative accuracy / relative positional accuracy
 
-Evaluation of the random errors in determining the position of one point or feature with respect to another / closeness of coordinate difference value to the true or accepted value in a specified reference system
+evaluation of the random errors in determining the position of one point or feature with respect to another / closeness of coordinate difference value to the true or accepted value in a specified reference system
 
-=== SDTS
+=== short
+2-byte IEEE signed integer
 
-The USGS Spatial Data Transmission Standard.
+=== tag <TIFF>
 
-=== tag
-
-In TIFF format, a tag is packet of numerical or ASCII values, which have a numerical "Tag" ID indicating their information content.
-
-=== tessellation / tiling
-
-Partitioning of a space into a set of conterminous subspaces having the same dimension as the space being partitioned
-
-=== TIFF
-
-Acronym for Tagged Image File Format; a platform-independent, extensive specification for storing raster data and ancillary information in a single file.
-
-=== transparency mask
-
-A Transparency Mask defines visible pixels of another image in the same TIFF file (that may be organised as an irregularly shaped region of visible pixels). The 1-bits define the visible pixels; the 0-bits define transparent pixels. (fdefinition based on TIFF specification)
-
-=== USGS
-
-US Geological Survey
-
+a tag is packet of numerical or ASCII values, which have a numerical "Tag" ID indicating their information content
