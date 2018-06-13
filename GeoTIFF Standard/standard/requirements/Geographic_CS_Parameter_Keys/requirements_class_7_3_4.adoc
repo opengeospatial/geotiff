@@ -7,6 +7,8 @@
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeogPrimeMeridianGeoKey.EPSGEllipsoid +
 _GeogPrimeMeridianGeoKey values in the range__1024-32766 SHALL be EPSG Prime Meridian Codes_
+
+NOTE: Original range was 8000-8999 
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
