@@ -13,6 +13,10 @@
 |4200-4999
 |1024-32766
 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.EPSGEllipsoid
+|7000-7999
+|1024-32766
+
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeogPrimeMeridianGeoKey.EPSGEllipsoid
 |8000-8999
 |1024-32766
@@ -25,3 +29,6 @@
 |9100-9199
 |1024-32766
 
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.EPSGProjection
+|20000 - 32760
+|1024-32766
