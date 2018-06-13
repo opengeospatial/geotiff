@@ -7,6 +7,8 @@
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.EPSGProjection +
 _ProjectedCSTypeGeoKey values in the range_ _1024-32766 SHALL be EPSG__Projected CRS Codes_
+
+NOTE: Original range was 20000-32760
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

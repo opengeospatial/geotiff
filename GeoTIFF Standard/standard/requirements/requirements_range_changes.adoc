@@ -1,0 +1,50 @@
+[width="90%",cols="<,2*^"]
+
+|===
+3+|*Range Changes* 
+
+|Requirement|Original Range|Revised Range
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.EPSGEllipsoid
+|4000-4199
+|1024-32766
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.EPSGDatum
+|4200-4999
+|1024-32766
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.EPSGEllipsoid
+|5000-5099
+|1024-32766
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.EPSGOrthometric
+|5100-5199
+|1024-32766
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.EPSGEllipsoid
+|7000-7999
+|1024-32766
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogPrimeMeridianGeoKey.EPSGEllipsoid
+|8000-8999
+|1024-32766
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.linear
+|9000-9099
+|1024-32766
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.linear
+|9000 - 9099
+|1024-32766
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.angular
+|9100-9199
+|1024-32766
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.angular
+|9100-9199
+|1024-32766
+
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.EPSGProjection
+|20000 - 32760
+|1024-32766

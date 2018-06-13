@@ -7,6 +7,8 @@
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.EPSGEllipsoid +
 _GeogEllipsoidGeoKey values in the range_ _1024-32766 SHALL be EPSG Ellipsoid Codes_
+
+NOTE: Original range was 7000-7999
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
