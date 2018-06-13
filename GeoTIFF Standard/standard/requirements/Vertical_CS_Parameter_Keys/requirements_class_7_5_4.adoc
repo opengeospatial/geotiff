@@ -7,6 +7,9 @@
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.angular +
 _VerticalUnitsGeoKey values in the range_ _1024-32766 SHALL be EPSG__Unit of Measure (UOM) Codes_
+
+NOTE: Original range was 9100-9199
+
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -17,6 +20,9 @@ _The VerticalUnitsGeoKey SHALL have ID = 4099_
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.linear +
 _VerticalUnitsGeoKey values in the range_ _1024-32766 SHALL be EPSG Unit of Measure (UOM) Codes_
+
+NOTE: Original range was 9000-9099
+
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
