@@ -5,18 +5,11 @@
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.EPSGDatum +
-_GeographicTypeGeoKey values in the range_ _1024-32766 SHALL be EPSG CRS codes_
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.EPSGGeographic +
+_GeographicTypeGeoKey values in the range 1024-32766 SHALL be geographic 
+2D or 3D EPSG CRS codes_
 
-NOTE: Original range was 4200-4999
-
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.EPSGEllipsoid +
-_GeographicTypeGeoKey values in the range_ _1024-32766 SHALL be EPSG CRS codes_
-
-NOTE: Original range was 4000-4199 
+NOTE: Original ranges were 4000-4199 and 4200-4999
 
 {set:cellbgcolor:#FFFFFF}
 

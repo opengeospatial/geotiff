@@ -34,6 +34,11 @@ _The third unsigned short integer in the GeoKeyDirectoryTag SHALL hold the Minor
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.minorRevisionValue +
+_The MinorRevision for this standard SHALL be 1.0._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.numberOfKeys +
 _The fourth unsigned short integer in the GeoKeyDirectoryTag SHALL hold the NumberOfKeys defined in the rest of the GeoKeyDirectoryTag._
 {set:cellbgcolor:#FFFFFF}

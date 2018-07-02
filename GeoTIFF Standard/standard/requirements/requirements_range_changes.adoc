@@ -48,3 +48,38 @@
 |http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.EPSGProjection
 |20000 - 32760
 |1024-32766
+|===
+
+== Obsolete and Reserved Range Requirements Deleted
+Obsolete/Reserved ranges that overlap EPSG Range (1024-32766) should be deleted
+
+=== 7.3.1
+http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.reserved
+GeographicTypeGeoKey values in the range 1001-3999 and 5000-32766 SHALL be reserved
+
+=== 7.3.6
+http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.obsolete
+GeogLinearUnitsGeoKey values in the range 1-2000 SHALL be obsolete GeoTIFF Codes
+
+http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.reserved
+GeogLinearUnitsGeoKey values in the range 2001-8999 SHALL be reserved
+
+=== 7.3.10
+http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.reserved
+GeogEllipsoidGeoKey values in the range 1001-6999 and 8000-32766 SHALL be reserved
+
+=== 7.5.4
+http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.obsolete
+VerticalUnitsGeoKey values in the range 1-2000 SHALL be obsolete GeoTIFF Codes
+
+http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.reserved
+VerticalUnitsGeoKey values in the range 2001-8999 SHALL be reserved
+
+
+== Minor Revision Number
+Added requirement to Requirements Class GeoKeyDirectoryTag:
+
+http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.minorRevisionValue +
+_The MinorRevision for this standard SHALL be 1.0._
+
+

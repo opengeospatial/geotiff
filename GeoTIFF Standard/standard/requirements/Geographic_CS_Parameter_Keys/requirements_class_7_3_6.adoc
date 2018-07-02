@@ -5,20 +5,13 @@
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.angular +
-_GeogLinearUnitsGeoKey values in the range_ _1024-32766 SHALL be EPSG__Unit of Measure (UOM) Codes_
-
-NOTE: Original range was 9100-9199 
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.ID +
 _The GeogLinearUnitsGeoKey SHALL have ID = 2052_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.linear +
-_GeogLinearUnitsGeoKey values in the range_ _1024-32766 SHALL be EPSG__Unit Of Measure (UOM) Codes_
+_GeogLinearUnitsGeoKey values in the range 1024-32766 SHALL be EPSG Unit Of Measure (UOM) Codes that express linear units_
 
 NOTE: Original range was 9000-9099 
 {set:cellbgcolor:#FFFFFF}

@@ -5,17 +5,10 @@
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.EPSGEllipsoid +
-_VerticalCSTypeGeoKey values in the range_ _1024-32766 SHALL be EPSG__Vertical CRS Codes_
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.EPSGValues +
+_VerticalCSTypeGeoKey values in the range 1024-32766 SHALL be EPSG Vertical CRS Codes_
 
-NOTE: Original range was 5000-5099
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.EPSGOrthometric +
-_VerticalCSTypeGeoKey values in the range_ _1024-32766 SHALL be EPSG__Vertical CRS Codes_
-
-NOTE: Original range was 5100-5199
+NOTE: Original ranges were 5000-5099 and 5100-5199
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
