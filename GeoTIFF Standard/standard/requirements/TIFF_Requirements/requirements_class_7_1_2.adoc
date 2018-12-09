@@ -4,23 +4,23 @@
 2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.count +
-_The GeoKeyDirectoryTag SHALL include at least 4 keys (short integers) as header information_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.ID +
 _The GeoKeyDirectoryTag SHALL have ID = 34735_ 
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyDirectoryVersion +
-_The first unsigned short integer in the GeoKeyDirectoryTag SHALL hold the KeyDirectoryVersion._
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.type +
+_The GeoKeyDirectoryTag SHALL have type = SHORT (2-byte unsigned integer)_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntrySetCount +
-_The GeoKeyDirectoryTag SHALL hold NumberOfKeys KeyEntry Sets in addition to the header information_
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.count +
+_The GeoKeyDirectoryTag SHALL include at least 4 keys (short integers) as header information_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyDirectoryVersion +
+_The first unsigned short integer in the GeoKeyDirectoryTag SHALL hold the KeyDirectoryVersion._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -44,8 +44,32 @@ _The fourth unsigned short integer in the GeoKeyDirectoryTag SHALL hold the Numb
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.type +
-_The GeoKeyDirectoryTag SHALL have type = SHORT (2-byte unsigned integer)_
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntrySetCount +
+_The GeoKeyDirectoryTag SHALL hold NumberOfKeys KeyEntry Sets in addition to the header information_
 {set:cellbgcolor:#FFFFFF}
 
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.KeyEntry +
+_Each Key Entry in the Key Entry Set SHALL include 4 unsigned short integer values_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryKeyID +
+_The first unsigned short integer in the Key Entry SHALL hold the key identifier._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryTIFFTagLocation +
+_The second unsigned short integer in the Key Entry SHALL hold the TIFF Tag Location. The value of this entry shall be a valid GeoTIFF tag identifier or a zero (0)_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryKeyCount +
+_The Third unsigned short integer in the Key Entry SHALL indicate the number of values associated with this key._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryValueOffset +
+_The fourth unsigned short integer in the Key Entry SHALL hold either the key value (if TIFF Tag location = 0) or the index into the tag indicated by the TIFF Tag Location value._
+{set:cellbgcolor:#FFFFFF}
 |===

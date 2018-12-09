@@ -1,0 +1,31 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.ID +
+_The GeoAsciiParamsTag SHALL have ID = 34737_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.count +
+_The GeoAsciiParamsTag MAY hold any number of key parameters with type = ASCII. (May not be necessary, the same as keyentry.count)_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.NULLRead +
+_Pipe characters ("\|") in the GeoAsciiParamsTag SHALL be converted NULL characters before returning strings to the client_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.NULLWrite +
+_NULL characters used to terminate strings in the GeoAsciiParamsTag SHALL be converted to a “\|” (pipe) prior to being written into the GeoAsciiParamsTag_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.type +
+_The GeoAsciiParamsTag SHALL have type = ASCII_
+{set:cellbgcolor:#FFFFFF}
+|===

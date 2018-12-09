@@ -4,13 +4,33 @@ Introduction To Be Provided
  7.1 Underlying TIFF Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+This Standardization Target addresses the core Requirements Classes applicable to all GeoTIFF files.
+ 
+A GeoTIFF file is a TIFF 6.0 file and inherits the file structure as described in the corresponding portion of the TIFF spec. In addition, all GeoTIFF specific information is encoded in several reserved TIFF tags. The following requirements formalize compliance with TIFF and the GeoTIFF reserved tag structure.    
+
 7.1.1 Requirements Class TIFF 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A GeoTIFF file is a TIFF 6.0 file.
 
 include::requirements/TIFF_Requirements/requirements_class_7_1_1.adoc[]
 
 7.1.2 Requirements Class GeoKeyDirectoryTag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The GeoKeyDirectoryTag Requirements Class specifies the requirements for implementing the reserved GeoKeyDirectoryTag TIFF tag.
+
+A GeoTIFF file stores projection parameters in a set of "Keys" which are virtually identical in function to a TIFF tag, but have one more level of abstraction above TIFF. Like a tag, a Key has an ID number ranging from 0 to 65535, but unlike TIFF tags, all key ID's are available for use in GeoTIFF parameter definitions.
+
+The Keys in GeoTIFF (also call "GeoKeys") are all referenced from the GeoKeyDirectoryTag tag. The first four keys form the GeoKey Directory Header. These keys which make up this header are; KeyDirectoryVersion, KeyRevision, MinorRevision, and NumberOfKeys.
+
+The GeoKey Directory Header is followed by NumberOfKeys Key Entries. Each Key Entry consists of four values:
+
+* "KeyID" gives the key-ID value of the Key (identical in function to TIFF tag ID, but completely independent of TIFF tag-space),
+     
+* "TIFFTagLocation" indicates which TIFF tag contains the value(s) of the Key: if TIFFTagLocation is 0, then the value is SHORT, and is contained in the "Value_Offset" entry. Otherwise, the type (format) of the value is implied by the TIFF-Type of the tag containing the value.
+  
+* "Count" indicates the number of values in this key.
+   
+* "Value_Offset" Value_Offset indicates the index- offset *into* the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then Value_Offset contains the actual (SHORT) value of the Key, and Count=1 is implied. Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array. 
 
 include::requirements/TIFF_Requirements/requirements_class_7_1_2.adoc[]
 
@@ -19,10 +39,20 @@ include::requirements/TIFF_Requirements/requirements_class_7_1_2.adoc[]
 
 include::requirements/TIFF_Requirements/requirements_class_7_1_3.adoc[]
 
+7.1.4 Requirements Class GeoShortParams
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+include::requirements/TIFF_Requirements/requirements_class_7_1_4.adoc[]
+
+7.1.4 Requirements Class GeoDoubleParamsTag
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+include::requirements/TIFF_Requirements/requirements_class_7_1_5.adoc[]
+
 7.1.4 Requirements Class GeoAsciiParamsTag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/TIFF_Requirements/requirements_class_7_1_4.adoc[]
+include::requirements/TIFF_Requirements/requirements_class_7_1_6.adoc[]
 
  7.2 GeoTIFF Configuration GeoKeys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -6,6 +6,6 @@
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/TBD +
-_To Be Determined_
+_A GeoTIFF file shall be compliant with the TIFF 6.0 specification_
 {set:cellbgcolor:#FFFFFF}
 |===

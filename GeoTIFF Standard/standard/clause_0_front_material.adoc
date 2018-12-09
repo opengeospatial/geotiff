@@ -37,6 +37,6 @@ All questions regarding this submission should be directed to the editor or the 
 |============================
 |Name |Affiliation
 |Ted Habermann |The HDF Group
-| |
-| |
+|Emmanuel Devys |IGN
+|Charles Heazel |Heazeltech LLC
 |============================
