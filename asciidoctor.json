@@ -1,0 +1,12 @@
+{
+        "1": {
+                "OGC_doc_number": "YY-nnnrx",
+                "urn":"http://www.opengis.net/doc/IS/GeoTIFF/",
+                "title":"OGC GeoTIFF Standard",
+                "path":"geotiff/GeoTIFF Standard/standard/GeoTiff.adoc",
+                "options": ["--trace"],
+                "a":[
+                        "data-uri"
+                ]
+        }
+}
