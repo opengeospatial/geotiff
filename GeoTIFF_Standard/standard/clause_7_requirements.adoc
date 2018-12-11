@@ -1,8 +1,8 @@
 == Requirements
 Introduction To Be Provided
 
- 7.1 Underlying TIFF Requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7.1 Underlying TIFF Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This Standardization Target addresses the core Requirements Classes applicable to all GeoTIFF files.
  
@@ -10,9 +10,9 @@ A GeoTIFF file is a TIFF 6.0 file and inherits the file structure as described i
 
 7.1.1 Requirements Class TIFF 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A GeoTIFF file is a TIFF 6.0 file.
+A GeoTIFF file is a valid TIFF 6.0 file.
 
-include::requirements/TIFF_Requirements/requirements_class_7_1_1.adoc[]
+include::requirements/TIFF_Requirements/requirements_class_TIFF.adoc[]
 
 7.1.2 Requirements Class GeoKeyDirectoryTag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -20,11 +20,11 @@ The GeoKeyDirectoryTag Requirements Class specifies the requirements for impleme
 
 A GeoTIFF file stores projection parameters in a set of "Keys" which are virtually identical in function to a TIFF tag, but have one more level of abstraction above TIFF. Like a tag, a Key has an ID number ranging from 0 to 65535, but unlike TIFF tags, all key ID's are available for use in GeoTIFF parameter definitions.
 
-The Keys in GeoTIFF (also call "GeoKeys") are all referenced from the GeoKeyDirectoryTag tag. The first four keys form the GeoKey Directory Header. These keys which make up this header are; KeyDirectoryVersion, KeyRevision, MinorRevision, and NumberOfKeys.
+The Keys in GeoTIFF (also call "GeoKeys") are all referenced from the GeoKeyDirectoryTag tag. The first four keys form the GeoKey Directory Header. The keys which make up this header are; KeyDirectoryVersion, KeyRevision, MinorRevision, and NumberOfKeys.
 
-The GeoKey Directory Header is followed by NumberOfKeys Key Entries. Each Key Entry consists of four values:
+The GeoKey Directory Header is followed by <NumberOfKeys> Key Entries. Each Key Entry consists of four values:
 
-* "KeyID" gives the key-ID value of the Key (identical in function to TIFF tag ID, but completely independent of TIFF tag-space),
+* "KeyID" gives the key-ID value of the Key (identical in function to TIFF tag ID, but completely independent of TIFF tag-space).
      
 * "TIFFTagLocation" indicates which TIFF tag contains the value(s) of the Key: if TIFFTagLocation is 0, then the value is SHORT, and is contained in the "Value_Offset" entry. Otherwise, the type (format) of the value is implied by the TIFF-Type of the tag containing the value.
   
@@ -32,27 +32,33 @@ The GeoKey Directory Header is followed by NumberOfKeys Key Entries. Each Key En
    
 * "Value_Offset" Value_Offset indicates the index- offset *into* the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then Value_Offset contains the actual (SHORT) value of the Key, and Count=1 is implied. Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array. 
 
-include::requirements/TIFF_Requirements/requirements_class_7_1_2.adoc[]
+include::requirements/TIFF_Requirements/requirements_class_GeoKeyDirectoryTag.adoc[]
 
 7.1.3 Requirements Class GeoKeyCode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/TIFF_Requirements/requirements_class_7_1_3.adoc[]
+include::requirements/TIFF_Requirements/requirements_class_GeoKeyCode.adoc[]
 
 7.1.4 Requirements Class GeoShortParams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/TIFF_Requirements/requirements_class_7_1_4.adoc[]
+The following requirements govern the storage of parameter values when there are two or more values of type Short.
+
+include::requirements/TIFF_Requirements/requirements_class_GeoShortParams.adoc[]
 
 7.1.4 Requirements Class GeoDoubleParamsTag
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/TIFF_Requirements/requirements_class_7_1_5.adoc[]
+The following requirements govern the storage of parameter values when the values are of type Double.
+
+include::requirements/TIFF_Requirements/requirements_class_GeoDoubleParamsTag.adoc[]
 
 7.1.4 Requirements Class GeoAsciiParamsTag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/TIFF_Requirements/requirements_class_7_1_6.adoc[]
+The following requirements govern the storage of parameter values when the values are of type ASCII. All text values in a TIFF file must be null-terminated ASCII.
+
+include::requirements/TIFF_Requirements/requirements_class_GeoAsciiParamsTag.adoc[]
 
  7.2 GeoTIFF Configuration GeoKeys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,17 +66,17 @@ include::requirements/TIFF_Requirements/requirements_class_7_1_6.adoc[]
 7.2.1 Requirements Class GTModelTypeGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Configuration_Keys/requirements_class_7_2_1.adoc[]
+include::requirements/Configuration_Keys/requirements_class_GTModelTypeGeoKey.adoc[]
 
 7.2.2 Requirements Class GTRasterTypeGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Configuration_Keys/requirements_class_7_2_2.adoc[]
+include::requirements/Configuration_Keys/requirements_class_GTRasterTypeGeoKey.adoc[]
 
 7.2.3 Requirements Class GTCitationGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Configuration_Keys/requirements_class_7_2_3.adoc[]
+include::requirements/Configuration_Keys/requirements_class_GTCitationGeoKey.adoc[]
 
  7.3 Geographic CS Parameter GeoKeys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,67 +84,67 @@ include::requirements/Configuration_Keys/requirements_class_7_2_3.adoc[]
 7.3.1 Requirements Class GeographicTypeGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_1.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeographicTypeGeoKey.adoc[]
 
 7.3.2 Requirements Class GeogCitationGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_2.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogCitationGeoKey.adoc[]
 
 7.3.3 Requirements Class GeogGeodeticDatumGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_3.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogGeodeticDatumGeoKey.adoc[]
 
 7.3.4 Requirements Class GeogPrimeMeridianGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_4.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogPrimeMeridianGeoKey.adoc[]
 
 7.3.5 Requirements Class GeogPrimeMeridianLongGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_5.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogPrimeMeridianLongGeoKey.adoc[]
 
 7.3.6 Requirements Class GeogLinearUnitsGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_6.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogLinearUnitsGeoKey.adoc[]
 
 7.3.7 Requirements Class GeogLinearUnitSizeGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_7.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogLinearUnitSizeGeoKey.adoc[]
 
 7.3.8 Requirements Class GeogAngularUnitsGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_8.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogAngularUnitsGeoKey.adoc[]
 
 7.3.9 Requirements Class GeogAngularUnitSizeGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_9.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogAngularUnitSizeGeoKey.adoc[]
 
 7.3.10 Requirements Class GeogEllipsoidGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_10.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogEllipsoidGeoKey.adoc[]
 
 7.3.11 Requirements Class GeogSemiMajorAxisGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_11.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogSemiMajorAxisGeoKey.adoc[]
 
 7.3.12 Requirements Class GeogSemiMinorAxisGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_12.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogSemiMinorAxisGeoKey.adoc[]
 
 7.3.13 Requirements Class GeogInvFlatteningGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_13.adoc[]
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogInvFlatteningGeoKey.adoc[]
 
  7.4 Projected CS Parameter GeoKeys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -146,17 +152,17 @@ include::requirements/Geographic_CS_Parameter_Keys/requirements_class_7_3_13.ado
 7.4.1 Requirements Class GeogAzimuthUnitsGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Projected_CS_Parameter_Keys/requirements_class_7_4_1.adoc[]
+include::requirements/Projected_CS_Parameter_Keys/requirements_class_GeogAzimuthUnitsGeoKey.adoc[]
 
 7.4.2 Requirements Class ProjectedCSTypeGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Projected_CS_Parameter_Keys/requirements_class_7_4_2.adoc[]
+include::requirements/Projected_CS_Parameter_Keys/requirements_class_ProjectedCSTypeGeoKey.adoc[]
 
 7.4.3 Requirements Class PCSCitationGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Projected_CS_Parameter_Keys/requirements_class_7_4_3.adoc[]
+include::requirements/Projected_CS_Parameter_Keys/requirements_class_PCSCitationGeoKey.adoc[]
 
  7.5 Vertical CS Parameter Keys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -164,19 +170,19 @@ include::requirements/Projected_CS_Parameter_Keys/requirements_class_7_4_3.adoc[
 7.5.1 Requirements Class VerticalCSTypeGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Vertical_CS_Parameter_Keys/requirements_class_7_5_1.adoc[]
+include::requirements/Vertical_CS_Parameter_Keys/requirements_class_VerticalCSTypeGeoKey.adoc[]
 
 7.5.2 Requirements Class VerticalCitationGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Vertical_CS_Parameter_Keys/requirements_class_7_5_2.adoc[]
+include::requirements/Vertical_CS_Parameter_Keys/requirements_class_VerticalCitationGeoKey.adoc[]
 
 7.5.3 Requirements Class VerticalDatumGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Vertical_CS_Parameter_Keys/requirements_class_7_5_3.adoc[]
+include::requirements/Vertical_CS_Parameter_Keys/requirements_class_VerticalDatumGeoKey.adoc[]
 
 7.5.4 Requirements Class VerticalUnitsGeoKey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-include::requirements/Vertical_CS_Parameter_Keys/requirements_class_7_5_4.adoc[]
+include::requirements/Vertical_CS_Parameter_Keys/requirements_class_VerticalUnitsGeoKey.adoc[]
