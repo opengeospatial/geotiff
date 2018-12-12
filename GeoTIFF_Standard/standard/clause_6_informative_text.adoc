@@ -2,6 +2,6 @@
 
 The following section of this Standard is included for informative purposes only. It serves to assist in correct implemetation of this standard but do not impose any additional requirements.
 
-=== Annex B: The GeoTIFF File Structure
-This sub-clause provides a discription of the community GeoTIFF specification and supporting information on how various elements of that specification should be used.
+* *Annex B: The GeoTIFF File Structure:* This Annex provides a discription of the community GeoTIFF specification and supporting information on how various elements of that specification should be used.
+
 

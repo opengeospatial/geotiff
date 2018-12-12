@@ -1,6 +1,6 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|*Requirements Class: GeographicTypeGeoKey* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey 
 {set:cellbgcolor:#FFFFFF}
 
