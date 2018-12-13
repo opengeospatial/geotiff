@@ -59,9 +59,13 @@ include::requirements/TIFF_Requirements/requirements_class_GeoAsciiParamsTag.ado
 
 ==== Requirements Class GTModelTypeGeoKey
 
+This GeoKey defines the general type of model Coordinate system used, and to which the raster space will be transformed:unknown, Geocentric (rarely used), Geographic, Projected Coordinate System, or user-defined. If the coordinate system is a PCS, then only the PCS code need be specified. If the coordinate system does not fit into one of the standard registered PCS'S, but it uses one of the standard projections and datums, then its should be documented as a PCS model with "user-defined" type, requiring the specification of projection parameters, etc. 
+
 include::requirements/Configuration_Keys/requirements_class_GTModelTypeGeoKey.adoc[]
 
 ==== Requirements Class GTRasterTypeGeoKey
+
+This establishes the Raster Space coordinate system used; there are currently only two, namely RasterPixelIsPoint and RasterPixelIsArea. No user-defined raster spaces are currently supported. For variance in imaging display parameters, such as pixel aspect-ratios, use the standard TIFF 6.0 device-space tags instead.
 
 include::requirements/Configuration_Keys/requirements_class_GTRasterTypeGeoKey.adoc[]
 
