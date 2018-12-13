@@ -5,23 +5,13 @@
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geocentric +
-_A value of 3 for the GTModelTypeGeoKey SHALL indicate a geocentric(X,Y,Z) coordinate system_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geographic +
-_A value of 2 for the GTModelTypeGeoKey SHALL indicate a geographic latitude-longitude coordinate system_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.ID +
 _The GTModelTypeGeoKey SHALL have ID = 1024_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.private +
-_GTModelTypeGeoKey values in the range 32768-65535 SHALL be private_
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.type +
+_The GTModelTypeGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -30,12 +20,22 @@ _A value of 1 for the GTModelTypeGeoKey SHALL indicate a projected coordinate sy
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geographic +
+_A value of 2 for the GTModelTypeGeoKey SHALL indicate a geographic latitude-longitude coordinate system_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geocentric +
+_A value of 3 for the GTModelTypeGeoKey SHALL indicate a geocentric(X,Y,Z) coordinate system_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.reserved +
 _GTModelTypeGeoKey values in the range 1-32766 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.type +
-_The GTModelTypeGeoKey SHALL have type = SHORT_
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.private +
+_GTModelTypeGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===
