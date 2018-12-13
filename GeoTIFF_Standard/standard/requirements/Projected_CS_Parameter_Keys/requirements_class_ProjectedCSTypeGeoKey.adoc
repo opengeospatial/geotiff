@@ -5,15 +5,19 @@
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.EPSGProjection +
-_ProjectedCSTypeGeoKey values in the range_ _1024-32766 SHALL be EPSG__Projected CRS Codes_
-
-NOTE: Original range was 20000-32760
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.ID +
+_The ProjectedCSTypeGeoKey SHALL have ID = 3072_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.ID +
-_The ProjectedCSTypeGeoKey SHALL have ID = 3072_
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.type +
+_The ProjectedCSTypeGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.EPSGProjection +
+_ProjectedCSTypeGeoKey values in the range_ _1024-32766 SHALL be EPSG__Projected CRS Codes_
+NOTE: Original range was 20000-32760
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -24,10 +28,5 @@ _ProjectedCSTypeGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Da
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.private +
 _ProjectedCSTypeGeoKey values in the range 32768-65535 SHALL be private_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.type +
-_The ProjectedCSTypeGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 |===

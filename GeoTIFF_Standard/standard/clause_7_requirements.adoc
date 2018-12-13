@@ -169,11 +169,17 @@ include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogAzimut
 
 === Projected CS Parameter GeoKeys
 
+The PCS range of GeoKeys includes the projection and coordinate transformation keys as well. The projection keys are included in this block since they can only be used to define projected coordinate systems.
+
 ==== Requirements Class ProjectedCSTypeGeoKey
+
+This code is provided to specify the projected coordinate system.
 
 include::requirements/Projected_CS_Parameter_Keys/requirements_class_ProjectedCSTypeGeoKey.adoc[]
 
 ==== Requirements Class PCSCitationGeoKey
+
+As with all the "Citation" GeoKeys, this is provided to give an ASCII reference to published documentation on the Projected  Coordinate System particularly if this is a "user-defined" PCS.
 
 include::requirements/Projected_CS_Parameter_Keys/requirements_class_PCSCitationGeoKey.adoc[]
 
