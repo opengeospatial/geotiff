@@ -191,6 +191,8 @@ With the exception of the first two keys, these are mostly  projection-specific 
 
 Allows specification of the coordinate transformation method and projection zone parameters. Note : when associated with an appropriate Geographic Coordinate System, this forms a Projected Coordinate System.
 
+include::requirements/Projection_Definition_Keys/requirements_class_ProjectionGeoKey.adoc[]
+
 ==== ProjCoordTransGeoKey
 
 Allows specification of the coordinate transformation method used. Note: this does not include the definition of the corresponding Geographic Coordinate System to which the projected CS is related; only the transformation method is defined here.
