@@ -1,0 +1,16 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: ProjLinearUnitsGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.ID +
+_The ProjLinearUnitsGeoKey SHALL have ID = 3076_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.type +
+_The ProjLinearUnitsGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+|===
