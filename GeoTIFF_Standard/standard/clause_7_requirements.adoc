@@ -77,64 +77,97 @@ include::requirements/Configuration_Keys/requirements_class_GTCitationGeoKey.ado
 
 === Geographic CS Parameter GeoKeys
 
+In general, the geographic coordinate system used will be implied by the projected coordinate system code. If however, this is a user-defined PCS, or the ModelType was chosen to be Geographic, then the system must be explicitly defined here, using the Horizontal datum code.
+
 ==== Requirements Class GeographicTypeGeoKey
+
+This key may be used to specify the code for the geographic coordinate system used to map lat-long to a specific ellipsoid over the earth.
 
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeographicTypeGeoKey.adoc[]
 
 ==== Requirements Class GeogCitationGeoKey
 
+General citation and reference for all Geographic CS parameters.
+
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogCitationGeoKey.adoc[]
 
 ==== Requirements Class GeogGeodeticDatumGeoKey
+
+This key may be used to specify the horizontal datum, defining the size, position and orientation of the reference ellipsoid used in user-defined geographic coordinate systems.
 
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogGeodeticDatumGeoKey.adoc[]
 
 ==== Requirements Class GeogPrimeMeridianGeoKey
 
+Allows specification of the location of the Prime meridian for user-defined geographic coordinate systems. The default standard is Greenwich, England.
+
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogPrimeMeridianGeoKey.adoc[]
 
 ==== Requirements Class GeogPrimeMeridianLongGeoKey
+
+This key allows definition of user-defined Prime Meridians, the location of which is defined by its longitude relative to Greenwich.
 
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogPrimeMeridianLongGeoKey.adoc[]
 
 ==== Requirements Class GeogLinearUnitsGeoKey
 
+Allows the definition of geocentric CS linear units for user-defined GCS.
+
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogLinearUnitsGeoKey.adoc[]
 
 ==== Requirements Class GeogLinearUnitSizeGeoKey
+
+Allows the definition of user-defined linear geocentric units, as measured in meters.
 
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogLinearUnitSizeGeoKey.adoc[]
 
 ==== Requirements Class GeogAngularUnitsGeoKey
 
+Allows the definition of **geocentric** CS Linear units for user-defined GCS and for ellipsoids.
+
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogAngularUnitsGeoKey.adoc[]
 
 ==== Requirements Class GeogAngularUnitSizeGeoKey
+
+Allows the definition of user-defined angular geographic units, as measured in radians.
 
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogAngularUnitSizeGeoKey.adoc[]
 
 ==== Requirements Class GeogEllipsoidGeoKey
 
+This key may be used to specify the coded ellipsoid used in the geodetic datum of the Geographic Coordinate System.
+
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogEllipsoidGeoKey.adoc[]
 
 ==== Requirements Class GeogSemiMajorAxisGeoKey
+
+Allows the specification of user-defined Ellipsoid Semi-Major Axis (a).
 
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogSemiMajorAxisGeoKey.adoc[]
 
 ==== Requirements Class GeogSemiMinorAxisGeoKey
 
+Allows the specification of user-defined Ellipsoid Semi-Minor Axis (b).
+
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogSemiMinorAxisGeoKey.adoc[]
 
 ==== Requirements Class GeogInvFlatteningGeoKey
 
+Allows the specification of the **inverse** of user-defined Ellipsoid's flattening parameter (f). The eccentricity-squared e^2 of the ellipsoid is related to the non-inverted f by:
+
+      e^2 = 2*f - f^2
+
+Note: if the ellipsoid is spherical the inverse-flattening becomes infinite; use the GeogSemiMinorAxisGeoKey instead, and set it equal to the semi-major axis length.
+
 include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogInvFlatteningGeoKey.adoc[]
-
-=== Projected CS Parameter GeoKeys
-
 
 ==== Requirements Class GeogAzimuthUnitsGeoKey
 
-include::requirements/Projected_CS_Parameter_Keys/requirements_class_GeogAzimuthUnitsGeoKey.adoc[]
+This key may be used to specify the angular units of measurement used to defining azimuths, in geographic coordinate systems. These may be used for defining azimuthal parameters for some projection algorithms, and may not necessarily be the same angular units used for lat-long.
+
+include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogAzimuthUnitsGeoKey.adoc[]
+
+=== Projected CS Parameter GeoKeys
 
 ==== Requirements Class ProjectedCSTypeGeoKey
 
