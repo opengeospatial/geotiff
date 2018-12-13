@@ -67,6 +67,8 @@ include::requirements/Configuration_Keys/requirements_class_GTRasterTypeGeoKey.a
 
 ==== Requirements Class GTCitationGeoKey
 
+As with all the "Citation" GeoKeys, this is provided to give an ASCII reference to published documentation on the overall configuration of this GeoTIFF file.
+
 include::requirements/Configuration_Keys/requirements_class_GTCitationGeoKey.adoc[]
 
 === Geographic CS Parameter GeoKeys
