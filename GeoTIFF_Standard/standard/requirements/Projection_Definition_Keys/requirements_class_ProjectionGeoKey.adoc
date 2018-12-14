@@ -13,4 +13,24 @@ _The ProjectionGeoKey SHALL have ID = 3074_
 |http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.type +
 _The ProjectionGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.obsolete +
+_ProjectionGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Geographic Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG +
+_ProjectionGeoKey values in the range 20000-32760 SHALL be valid EPSG/POSC Geographic Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.private +
+_ProjectionGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.user_defined +
+_A ProjectionGeoKey value of 32767 indicates a user defined projection. In this case the PCSCitationGeoKey, ProjCoordTransGeoKey, and ProjLinearUnitsGeoKey SHALL be populated_
+{set:cellbgcolor:#FFFFFF}
 |===

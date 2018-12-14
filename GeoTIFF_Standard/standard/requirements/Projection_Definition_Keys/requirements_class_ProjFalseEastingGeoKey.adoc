@@ -1,0 +1,21 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: ProjFalseEastingGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseEastingGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseEastingGeoKey.ID +
+_The ProjFalseEastingGeoKey SHALL have ID = 3082_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseEastingGeoKey.type +
+_The ProjFalseEastingGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseEastingGeoKey.units +
+_The ProjFalseEastingGeoKey SHALL have units as specified by the ProjLinearUnit GeoKey_
+{set:cellbgcolor:#FFFFFF}
+|===

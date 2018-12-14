@@ -1,0 +1,47 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: ProjLinearUnitsGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.ID +
+_The ProjLinearUnitsGeoKey SHALL have ID = 3076_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.type +
+_The ProjLinearUnitsGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.obsolete +
+_ProjLinearUnitsGeoKey values in the range 1-2000 SHALL be obsolete GeoTIFF codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.reserved +
+_ProjLinearUnitsGeoKey values in the range 2001-8999 SHALL be reserved codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.linear_units +
+_ProjLinearUnitsGeoKey values in the range 9000-9099 SHALL be EPSG linear Unit codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.angular_units +
+_ProjLinearUnitsGeoKey values in the range 9100-9199 SHALL be EPSG Angular Unit codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.user_defined +
+_A ProjLinearUnitsGeoKey value of 32767 SHALL indicate user defined units_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.private +
+_ProjLinearUnitsGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+
+|===

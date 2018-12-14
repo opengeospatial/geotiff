@@ -1,0 +1,21 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: ProjNatOriginLatGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjNatOriginLatGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjNatOriginLatGeoKey.ID +
+_The ProjNatOriginLatGeoKey SHALL have ID = 3081_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjNatOriginLatGeoKey.type +
+_The ProjNatOriginLatGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjNatOriginLatGeoKey.units +
+_The ProjNatOriginLatGeoKey SHALL have units as specified by the GeogAngularUnit GeoKey_
+{set:cellbgcolor:#FFFFFF}
+|===

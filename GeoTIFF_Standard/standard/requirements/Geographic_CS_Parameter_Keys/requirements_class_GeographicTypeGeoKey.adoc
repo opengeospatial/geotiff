@@ -5,17 +5,13 @@
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.EPSGGeographic +
-_GeographicTypeGeoKey values in the range 1024-32766 SHALL be geographic 
-2D or 3D EPSG CRS codes_
-
-NOTE: Original ranges were 4000-4199 and 4200-4999
-
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.ID +
+_The GeographicTypeGeoKey SHALL have ID = 2048_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.ID +
-_The GeographicTypeGeoKey SHALL have ID = 2048_
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.type +
+_The GeographicTypeGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -24,18 +20,15 @@ _GeographicTypeGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Geo
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.EPSGGeographic +
+_GeographicTypeGeoKey values in the range 1024-32766 SHALL be geographic 2D or 3D EPSG CRS codes_
+
+NOTE: Original ranges were 4000-4199 and 4200-4999
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.private +
 _GeographicTypeGeoKey values in the range 32768-65535 SHALL be private_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.reserved +
-_GeographicTypeGeoKey values in the range_ _1001-3999 and 5000-32766__SHALL be reserved_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.type +
-_The GeographicTypeGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 |===
 

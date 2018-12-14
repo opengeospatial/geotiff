@@ -5,34 +5,36 @@
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.EPSGValues +
-_VerticalCSTypeGeoKey values in the range 1024-32766 SHALL be EPSG Vertical CRS Codes_
-
-NOTE: Original ranges were 5000-5099 and 5100-5199
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.ID +
 _The VerticalCSTypeGeoKey SHALL have ID = 4096_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.private +
-_VerticalCSTypeGeoKey values in the range 32768-65535 SHALL be private_
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.type +
+_The VerticalCSTypeGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.reserved +
-_VerticalCSTypeGeoKey values in the range 1-4999 and 6000-32766 SHALL be reserved_
+_VerticalCSTypeGeoKey values in the range 1-1023 SHALL be reserved_
+
+NOTE: Original ranges were 0001-4999 and 6000-32766
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.reservedEPSG +
-_VerticalCSTypeGeoKey values in the range 5200-5999 SHALL be reserved EPSG_
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.EPSGValues +
+_VerticalCSTypeGeoKey values in the range 1024-32766 SHALL be EPSG Vertical CRS Codes_
+
+NOTE: Original ranges were 5000-5099 and 5200-5999
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.type +
-_The VerticalCSTypeGeoKey SHALL have type = SHORT_
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.user_defined +
+_The VerticalCSTypeGeoKey value of 32767 SHALL indicate a User Defined CS type_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.private +
+_VerticalCSTypeGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===

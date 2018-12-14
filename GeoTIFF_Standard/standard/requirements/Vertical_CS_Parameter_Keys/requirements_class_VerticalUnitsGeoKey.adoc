@@ -10,30 +10,31 @@ _The VerticalUnitsGeoKey SHALL have ID = 4099_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.linear +
-_VerticalUnitsGeoKey values in the range_ _1024-32766 SHALL be EPSG Unit of Measure (UOM) Codes that express linear units_
-
-NOTE: Original ranges were 9000-9099 and 9100-9199
-
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.type +
+_The VerticalUnitsGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.obsolete +
-_VerticalUnitsGeoKey values in the range 1-2000 SHALL be obsolete GeoTIFF Codes_
+_VerticalUnitsGeoKey values in the range 1-1023 SHALL be obsolete GeoTIFF Codes_
+
+NOTE: Original range was 0001-2000 for obsolete codes and 2001-8999 for reserved
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.linear +
+_VerticalUnitsGeoKey values in the range 1024-32766 SHALL be EPSG Unit of Measure (UOM) Codes that express linear units_
+
+NOTE: Original ranges were 9000-9099 and 9100-9199
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.user_defined +
+_A VerticalUnitsGeoKey with the value of 32767 SHALL be considered user defined_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.private +
 _VerticalUnitsGeoKey values in the range 32768-65535 SHALL be private_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.reserved +
-_VerticalUnitsGeoKey values in the range 2001-8999 SHALL be reserved_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.type +
-_The VerticalUnitsGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 |===

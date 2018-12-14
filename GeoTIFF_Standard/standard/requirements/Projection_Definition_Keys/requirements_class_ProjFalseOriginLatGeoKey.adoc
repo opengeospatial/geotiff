@@ -1,0 +1,21 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: ProjFalseOriginLatGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseOriginLatGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseOriginLatGeoKey.ID +
+_The ProjFalseOriginLatGeoKey SHALL have ID = 3085_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseOriginLatGeoKey.type +
+_The ProjFalseOriginLatGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseOriginLatGeoKey.units +
+_The ProjFalseOriginLatGeoKey SHALL have units as specified by the GeogAngularUnit GeoKey_
+{set:cellbgcolor:#FFFFFF}
+|===

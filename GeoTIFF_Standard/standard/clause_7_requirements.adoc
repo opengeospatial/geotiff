@@ -187,99 +187,137 @@ include::requirements/Projected_CS_Parameter_Keys/requirements_class_PCSCitation
 
 With the exception of the first two keys, these are mostly  projection-specific parameters, and only a few will be required for any particular projection type. Projected coordinate systems automatically imply a specific projection type, as well as specific parameters for that projection, and so the keys below will only be necessary for user-defined projected coordinate systems.
 
-==== ProjectionGeoKey
+==== Requirements Class ProjectionGeoKey
 
 Allows specification of the coordinate transformation method and projection zone parameters. Note : when associated with an appropriate Geographic Coordinate System, this forms a Projected Coordinate System.
 
 include::requirements/Projection_Definition_Keys/requirements_class_ProjectionGeoKey.adoc[]
 
-==== ProjCoordTransGeoKey
+==== Requirements Class ProjCoordTransGeoKey
 
 Allows specification of the coordinate transformation method used. Note: this does not include the definition of the corresponding Geographic Coordinate System to which the projected CS is related; only the transformation method is defined here.
 
-==== ProjLinearUnitsGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjCoordTransGeoKey.adoc[]
+
+==== Requirements Class ProjLinearUnitsGeoKey
 
 Defines linear units used by this projection.
 
-==== ProjLinearUnitSizeGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjLinearUnitsGeoKey.adoc[]
+
+==== Requirements Class ProjLinearUnitSizeGeoKey
 
 Defines size of user-defined linear units in meters.
 
-==== ProjStdParallel1GeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjLinearUnitSizeGeoKey.adoc[]
+
+==== Requirements Class ProjStdParallel1GeoKey
 
 Latitude of primary Standard Parallel.
 
-==== ProjStdParallel2GeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjStdParallel1GeoKey.adoc[]
+
+==== Requirements Class ProjStdParallel2GeoKey
 
 Latitude of second Standard Parallel.
 
-==== ProjNatOriginLongGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjStdParallel2GeoKey.adoc[]
+ 
+==== Requirements Class ProjNatOriginLongGeoKey
 
 Longitude of map-projection Natural origin.
 
-==== ProjNatOriginLatGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjNatOriginLongGeoKey.adoc[]
+
+==== Requirements Class ProjNatOriginLatGeoKey
 
 Latitude of map-projection Natural origin.
 
-==== ProjFalseEastingGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjNatOriginLatGeoKey.adoc[]
+
+==== Requirements Class ProjFalseEastingGeoKey
 
 Gives the easting coordinate of the map projection Natural origin.
 
-==== ProjFalseNorthingGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseEastingGeoKey.adoc[]
+
+==== Requirements Class ProjFalseNorthingGeoKey
 
 Gives the northing coordinate of the map projection Natural origin.
 
-==== ProjFalseOriginLongGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseNorthingGeoKey.adoc[]
+
+==== Requirements Class ProjFalseOriginLongGeoKey
 
 Gives the longitude of the False origin.
 
-==== ProjFalseOriginLatGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseOriginLongGeoKey.adoc[]
+
+==== Requirements Class ProjFalseOriginLatGeoKey
 
 Gives the latitude of the False origin.
 
-==== ProjFalseOriginEastingGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseOriginLatGeoKey.adoc[]
+
+==== Requirements Class ProjFalseOriginEastingGeoKey
 
 Gives the easting coordinate of the false origin. This is NOT the False Easting, which is the easting attached to the Natural origin.
 
-==== ProjFalseOriginNorthingGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseOriginEastingGeoKey.adoc[]
+
+==== Requirements Class ProjFalseOriginNorthingGeoKey
 
 Gives the northing coordinate of the False origin. This is NOT the False Northing, which is the northing attached to the Natural origin.
 
-==== ProjCenterLongGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseOriginNorthingGeoKey.adoc[]
+
+==== Requirements Class ProjCenterLongGeoKey
 
 Longitude of Center of Projection. Note that this is not necessarily the origin of the projection.
 
-==== ProjCenterLatGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjCenterLongGeoKey.adoc[]
+
+==== Requirements Class ProjCenterLatGeoKey
 
 Latitude of Center of Projection. Note that this is not necessarily the origin of the projection.
 
-==== ProjCenterEastingGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjCenterLatGeoKey.adoc[]
+
+==== Requirements Class ProjCenterEastingGeoKey
 
 Gives the easting coordinate of the center. This is NOT the False Easting.
 
-==== ProjFalseOriginNorthingGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjCenterEastingGeoKey.adoc[]
+
+==== Requirements Class ProjCenterNorthingGeoKey
 
 Gives the northing coordinate of the center. This is NOT the False Northing.
 
-==== ProjScaleAtNatOriginGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjCenterNorthingGeoKey.adoc[]
+
+==== Requirements Class ProjScaleAtNatOriginGeoKey
 
 Scale at Natural Origin. This is a ratio, so no units are required.
 
-==== ProjScaleAtCenterGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjScaleAtNatOriginGeoKey.adoc[]
+
+==== Requirements Class ProjScaleAtCenterGeoKey
 
 Scale at Center. This is a ratio, so no units are required.
 
-==== ProjAzimuthAngleGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjScaleAtCenterGeoKey.adoc[]
+
+==== Requirements Class ProjAzimuthAngleGeoKey
 
 Azimuth angle east of true north of the central line passing through the projection center (for elliptical (Hotine) Oblique Mercator). Note that this is the standard method of measuring azimuth, but is opposite the usual mathematical convention of positive indicating counter-clockwise.
 
-==== ProjStraightVertPoleLongGeoKey
+include::requirements/Projection_Definition_Keys/requirements_class_ProjAzimuthAngleGeoKey.adoc[]
+
+==== Requirements Class ProjStraightVertPoleLongGeoKey
 
 Longitude at Straight Vertical Pole. For polar stereographic.
 
-==== GeogAzimuthUnitsGeoKey
-
-This key is actually part of the "Geographic CS Parameter Keys" section, but is mentioned here as it is useful for defining units used in the azimuthal projection parameters.
+include::requirements/Projection_Definition_Keys/requirements_class_ProjStraightVertPoleLongGeoKey.adoc[]
 
 === Vertical CS Parameter Keys
 

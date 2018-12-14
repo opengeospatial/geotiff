@@ -1,0 +1,21 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: ProjCenterEastingGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjCenterEastingGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjCenterEastingGeoKey.ID +
+_The ProjCenterEastingGeoKey SHALL have ID = 3090_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjCenterEastingGeoKey.type +
+_The ProjCenterEastingGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjCenterEastingGeoKey.units +
+_The ProjCenterEastingGeoKey SHALL have units as specified by the ProjLinearUnit GeoKey_
+{set:cellbgcolor:#FFFFFF}
+|===

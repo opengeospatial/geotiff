@@ -1,0 +1,21 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: ProjStraightVertPoleLongGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjStraightVertPoleLongGeoKey 
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjStraightVertPoleLongGeoKey.ID +
+_The ProjStraightVertPoleLongGeoKey SHALL have ID = 3095_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjStraightVertPoleLongGeoKey.type +
+_The ProjStraightVertPoleLongGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjStraightVertPoleLongGeoKey.units +
+_The ProjStraightVertPoleLongGeoKey SHALL have units as specified by the GeogAngularUnit GeoKey_
+{set:cellbgcolor:#FFFFFF}
+|===
