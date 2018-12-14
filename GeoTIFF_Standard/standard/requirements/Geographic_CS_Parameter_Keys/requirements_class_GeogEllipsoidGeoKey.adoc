@@ -5,15 +5,13 @@
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.EPSGEllipsoid +
-_GeogEllipsoidGeoKey values in the range_ _1024-32766 SHALL be EPSG Ellipsoid Codes_
-
-NOTE: Original range was 7000-7999
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.ID +
+_The GeogEllipsoidGeoKey SHALL have ID = 2056_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.ID +
-_The GeogEllipsoidGeoKey SHALL have ID = 2056_
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.type +
+_The GeogEllipsoidGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -22,17 +20,14 @@ _GeogEllipsoidGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Datu
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.EPSGEllipsoid +
+_GeogEllipsoidGeoKey values in the range 1024-32766 SHALL be EPSG Ellipsoid Codes_
+
+NOTE: Original range was 7000-7999
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.private +
 _GeogEllipsoidGeoKey values in the range 32768-65535 SHALL be private_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.reserved +
-_GeogEllipsoidGeoKey values in the range 1001-6999 and 8000-32766 SHALL be reserved_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.type +
-_The GeogEllipsoidGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 |===

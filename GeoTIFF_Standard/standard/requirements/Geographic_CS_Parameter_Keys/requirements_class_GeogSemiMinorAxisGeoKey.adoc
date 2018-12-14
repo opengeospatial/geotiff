@@ -16,6 +16,6 @@ _The GeogSemiMinorAxisGeoKey SHALL have type = DOUBLE_
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeogSemiMinorAxisGeoKey.units +
-_The units of the GeogSemiMinorAxisGeoKey HALL be Geocentric CS linear Units_
+_The units of the GeogSemiMinorAxisGeoKey SHALL be Geocentric CS linear Units_
 {set:cellbgcolor:#FFFFFF}
 |===

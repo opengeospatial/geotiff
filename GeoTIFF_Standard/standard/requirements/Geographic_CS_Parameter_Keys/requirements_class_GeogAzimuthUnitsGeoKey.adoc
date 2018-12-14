@@ -14,4 +14,3 @@ _The GeogAzimuthUnitsGeoKey SHALL have ID = 2060_
 _The GeogAzimuthUnitsGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 |===
-
