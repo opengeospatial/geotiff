@@ -1,16 +1,21 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: ProjectionGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey 
+2+|*Requirements Class: ProjLinearUnitSizeGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitSizeGeoKey 
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.ID +
-_The ProjectionGeoKey SHALL have ID = 3074_
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitSizeGeoKey.ID +
+_The ProjLinearUnitSizeGeoKey SHALL have ID = 3077_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.type +
-_The ProjectionGeoKey SHALL have type = SHORT_
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitSizeGeoKey.type +
+_The ProjLinearUnitSizeGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitSizeGeoKey.units +
+_The ProjLinearUnitSizeGeoKey SHALL have units = meters_
 {set:cellbgcolor:#FFFFFF}
 |===

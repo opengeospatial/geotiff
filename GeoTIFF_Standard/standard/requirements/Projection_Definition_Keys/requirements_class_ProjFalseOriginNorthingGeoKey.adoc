@@ -1,16 +1,21 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: ProjectionGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey 
+2+|*Requirements Class: ProjFalseOriginNorthingGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseOriginNorthingGeoKey 
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.ID +
-_The ProjectionGeoKey SHALL have ID = 3074_
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseOriginNorthingGeoKey.ID +
+_The ProjFalseOriginNorthingGeoKey SHALL have ID = 3087_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.type +
-_The ProjectionGeoKey SHALL have type = SHORT_
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseOriginNorthingGeoKey.type +
+_The ProjFalseOriginNorthingGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjFalseOriginNorthingGeoKey.units +
+_The ProjFalseOriginNorthingGeoKey SHALL have units as specified by the ProjLinearUnit GeoKey_
 {set:cellbgcolor:#FFFFFF}
 |===

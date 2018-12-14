@@ -1,16 +1,16 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: ProjectionGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey 
+2+|*Requirements Class: ProjScaleAtCenterGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjScaleAtCenterGeoKey 
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.ID +
-_The ProjectionGeoKey SHALL have ID = 3074_
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjScaleAtCenterGeoKey.ID +
+_The ProjScaleAtCenterGeoKey SHALL have ID = 3093_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.type +
-_The ProjectionGeoKey SHALL have type = SHORT_
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjScaleAtCenterGeoKey.type +
+_The ProjScaleAtCenterGeoKey SHALL have type = DOUBLE_
 {set:cellbgcolor:#FFFFFF}
 |===

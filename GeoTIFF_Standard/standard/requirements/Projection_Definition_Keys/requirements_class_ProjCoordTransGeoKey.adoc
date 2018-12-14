@@ -13,4 +13,24 @@ _The ProjCoordTransGeoKey SHALL have ID = 3075_
 |http://www.opengis.net/spec/GeoTIFF/0.0/ProjCoordTransGeoKey.type +
 _The ProjCoordTransGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjCoordTransGeoKey.transform +
+_ProjCoordTransGeoKey values in the range 1-16383 SHALL be valid GeoTIFF Coordinate Transformation codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjCoordTransGeoKey.reserved +
+_ProjCoordTransGeoKey values in the range 16384-32766 SHALL be reserved by GeoTIFF_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjCoordTransGeoKey.private +
+_ProjCoordTransGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjCoordTransGeoKey.user_defined +
+_A ProjCoordTransGeoKey value of 32767 indicates a user defined projection. In this case the PCSCitationGeoKey SHALL be populated_
+{set:cellbgcolor:#FFFFFF}
 |===

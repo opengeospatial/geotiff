@@ -1,16 +1,21 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: ProjectionGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey 
+2+|*Requirements Class: ProjNatOriginLongGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjNatOriginLongGeoKey 
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.ID +
-_The ProjectionGeoKey SHALL have ID = 3074_
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjNatOriginLongGeoKey.ID +
+_The ProjNatOriginLongGeoKey SHALL have ID = 3080_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.type +
-_The ProjectionGeoKey SHALL have type = SHORT_
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjNatOriginLongGeoKey.type +
+_The ProjNatOriginLongGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjNatOriginLongGeoKey.units +
+_The ProjNatOriginLongGeoKey SHALL have units as specified by the GeogAngularUnit Geo Key_
 {set:cellbgcolor:#FFFFFF}
 |===
