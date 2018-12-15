@@ -13,4 +13,11 @@ _The GeogAzimuthUnitsGeoKey SHALL have ID = 2060_
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeogAzimuthUnitsGeoKey.type +
 _The GeogAzimuthUnitsGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeogAzimuthUnitsGeoKey.values +
+_GeogAzimuthUnitsGeoKey values SHALL lie in the range of 9101-9108_
+
+TODO: Add a table defining the Angular Units
+{set:cellbgcolor:#FFFFFF}
 |===

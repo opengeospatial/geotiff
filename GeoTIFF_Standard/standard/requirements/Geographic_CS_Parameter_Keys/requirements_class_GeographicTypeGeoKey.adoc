@@ -27,6 +27,11 @@ NOTE: Original ranges were 4000-4199 and 4200-4999
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.user-defined +
+_If the GTGeographicTypeGeoKey value is 32767 (User-Defined) then the GeogCitationGeoKey, GeogGeodeticDatumGeoKey, GeogAngularUnitsGeoKey, and GeogPrimeMeridianGeoKey SHALL be populated_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.private +
 _GeographicTypeGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}

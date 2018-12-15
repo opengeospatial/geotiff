@@ -31,7 +31,12 @@ _A value of 3 for the GTModelTypeGeoKey SHALL indicate a geocentric(X,Y,Z) coord
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.reserved +
-_GTModelTypeGeoKey values in the range 1-32766 SHALL be reserved_
+_GTModelTypeGeoKey values in the range 4-32766 SHALL be reserved_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.user-defined +
+_If the GTModelTypeGeoKey value is 32767 (User-Defined) then the GTCitationGeoKey SHALL be populated_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
