@@ -29,11 +29,6 @@ NOTE: Original ranges were 9000-9099 and 9100-9199
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.user_defined +
-_A VerticalUnitsGeoKey with the value of 32767 SHALL be considered user defined_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.private +
 _VerticalUnitsGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}

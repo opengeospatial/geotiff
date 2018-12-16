@@ -1,11 +1,15 @@
 == Requirements
-Introduction To Be Provided
+This OGC Standard specifies the content and structure of a group of industry-standard tag sets for the management of georeference or geocoded raster imagery using Aldus-Adobe's public domain Tagged-Image File Format (TIFF).
+
+This standard defines a set of TIFF tags provided to describe all "Cartographic" information associated with TIFF imagery that originates from satellite imaging systems, scanned aerial photography, scanned maps, digital elevation models, or as a result of geographic analyses. Its aim is to allow means for tying a raster image to a known model space or map projection, and for describing those projections.
 
 === Underlying TIFF Requirements
 
 This Standardization Target addresses the core Requirements Classes applicable to all GeoTIFF files.
- 
-A GeoTIFF file is a TIFF 6.0 file and inherits the file structure as described in the corresponding portion of the TIFF spec. In addition, all GeoTIFF specific information is encoded in several reserved TIFF tags. The following requirements formalize compliance with TIFF and the GeoTIFF reserved tag structure.    
+
+A GeoTIFF file is a TIFF 6.0 file and inherits the file structure as described in the corresponding portion of the TIFF spec. In addition, all GeoTIFF specific information is encoded in several reserved TIFF tags. The following requirements formalize compliance with TIFF and the GeoTIFF reserved tag structure.
+
+The tags documented in this standard are to be considered completely orthogonal to the raster-data descriptions of the TIFF spec, and impose no restrictions on how the standard TIFF tags are to be interpreted, which color spaces or compression types are to be used, etc.
 
 ==== Requirements Class TIFF
 
@@ -35,7 +39,13 @@ include::requirements/TIFF_Requirements/requirements_class_GeoKeyDirectoryTag.ad
 
 ==== Requirements Class GeoKeyCode
 
+For consistency, several key codes have the same meaning in all implemented GeoKeys
+
 include::requirements/TIFF_Requirements/requirements_class_GeoKeyCode.adoc[]
+
+The "undefined" code means that this parameter is intentionally omitted.
+
+In some cases, additional GeoKeys are required when the "User-Defined" is used. Those requirements are included within a Requirements Class where appropriate.
 
 ==== Requirements Class GeoShortParams
 
@@ -55,7 +65,33 @@ The following requirements govern the storage of parameter values when the value
 
 include::requirements/TIFF_Requirements/requirements_class_GeoAsciiParamsTag.adoc[]
 
+=== Coordinate Tranformation Requirements
+
+For most common applications, the transformation between raster and model space may be defined with a set of raster-to-model tiepoints and scaling parameters. The ModelTiepointTag and ModelPixesScaleTag may be used for this purpose.
+
+Alternatively, the ModelTransformationTag may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space. 
+
+The IntergraphMatrixTag has been deprecated and should not be used. It is included in this version of the GeoTIFF standard for completeness.
+
+==== Requirements Class ModelTiepointTag
+
+include::requirements/Model_Tags/requirements_class_ModelTiepointTag.adoc[]
+
+==== Requirements Class ModelPixelScaleTag
+
+include::requirements/Model_Tags/requirements_class_ModelPixelScaleTag.adoc[]
+
+==== Requirements Class ModelTransformationTag
+
+include::requirements/Model_Tags/requirements_class_ModelTransformationTag.adoc[]
+
+==== Requirements Class IntergraphMatrixTag
+
+include::requirements/Model_Tags/requirements_class_ItergraphMatrixTag.adoc[]
+
 === GeoTIFF Configuration GeoKeys
+
+This Standardization Target addresses encoding of Configuration values essential for interpreting the rest of the GeoKeys.
 
 ==== Requirements Class GTModelTypeGeoKey
 
