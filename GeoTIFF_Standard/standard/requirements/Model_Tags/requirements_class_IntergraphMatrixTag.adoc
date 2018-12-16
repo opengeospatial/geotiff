@@ -1,0 +1,21 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: IntergraphMatrixTag* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/IntergraphMatrixTag
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/IntergraphMatrixTag.ID +
+_The IntergraphMatrixTag SHALL have ID = 33920_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/IntergraphMatrixTag.type +
+_The IntergraphMatrixTag SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/IntergraphMatrixTag.count +
+_The IntergraphMatrixTag SHALL have 17 values_
+{set:cellbgcolor:#FFFFFF}
+|===

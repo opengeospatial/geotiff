@@ -35,11 +35,6 @@ _ProjLinearUnitsGeoKey values in the range 9100-9199 SHALL be EPSG Angular Unit 
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.user_defined +
-_A ProjLinearUnitsGeoKey value of 32767 SHALL indicate user defined units_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearUnitsGeoKey.private +
 _ProjLinearUnitsGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
