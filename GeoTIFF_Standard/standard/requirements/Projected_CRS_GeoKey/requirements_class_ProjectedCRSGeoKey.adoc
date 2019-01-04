@@ -1,0 +1,43 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: ProjectedCRSGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.ID +
+_The ProjectedCRSGeoKey SHALL have ID = 3072_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.type +
+_The ProjectedCRSGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.obsolete +
+_ProjectedCRSGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Datum Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.reserved +
+_ProjectedCRSGeoKey values in the range 1001-1023 SHALL be reserved._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.EPSG +
+_ProjectedCRSGeoKey values in the range 1024-32766 SHALL be EPSG Projected CRS Codes_
+
+NOTE: In GeoTIFF v1.0 the range was 20000-32760. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See Annex B.5.4, Table 1.
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.user-defined +
+_A ProjectedCRSGeoKey value of 32767 SHALL be a user-defined projected CRS.  If the ProjectedCRSGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and ProjectionGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.private +
+_ProjectedCRSGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+|===

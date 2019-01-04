@@ -1,0 +1,45 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: GeodeticDatumGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.ID +
+_The GeodeticDatumGeoKey SHALL have ID = 2050_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.type +
+_The GeodeticDatumGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.obsolete +
+_GeodeticDatumGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Datum Codes_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.reserved +
+_GeodeticDatumGeoKey values in the range 1001-1023 SHALL be reserved._
+
+NOTE: In GeoTIFF v1.0 the reserved ranges were 1001-5999 and 7000-32766.
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.EPSG +
+_GeodeticDatumGeoKey values in the range 1024-32766 SHALL be EPSG geodetic datum codes._
+
+NOTE: In GeoTIFF v1.0 the range was 6000-6999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See Annex B.5.4, Table 4.
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.user-defined +
+_A GeodeticDatumGeoKey value of 32767 SHALL be a user-defined geodetic datum.  If the GeodeticDatumGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.private +
+_GeodeticDatumGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+|===

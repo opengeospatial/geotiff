@@ -5,7 +5,7 @@
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.ID +
-_The GeoKeyDirectoryTag SHALL have ID = 34735_ 
+_The GeoKeyDirectoryTag SHALL have ID = 34735_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -24,8 +24,18 @@ _The first unsigned short integer in the GeoKeyDirectoryTag SHALL hold the KeyDi
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyDirectoryVersionValue +
+_The value of KeyDirectoryVersion SHALL be 1._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyRevision +
 _The second unsigned short integer in the GeoKeyDirectoryTag SHALL hold the KeyRevision._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyRevisionValue +
+_The value of KeyRevision SHALL be 1._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -35,7 +45,11 @@ _The third unsigned short integer in the GeoKeyDirectoryTag SHALL hold the Minor
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.minorRevisionValue +
-_The MinorRevision for this standard SHALL be 1.0._
+_The MinorRevision for this standard SHALL be O or 1._
+
+0 = 1995 version
+
+1 = 2019 version
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

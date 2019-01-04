@@ -27,48 +27,38 @@ one of a sequence of numbers designating the position of a point
 
 Note 1 to entry: In a spatial coordinate reference system, the coordinate numbers are qualified by units.
 
- [Source: ISO 19111 Rev 2017-12-17 in progress]
+ [Source: ISO 19111:2019, 3.1.5]
 
 === coordinate reference system
 
-coordinate system that is related to an object (of the real world) by a datum
+coordinate system that is related to an object by a datum
 
 Note 1 to entry:	 Geodetic and vertical datums are referred to as reference frames.
 
-Note 2 to entry:	For geodetic and vertical reference frames, the object will be the Earth.
+Note 2 to entry:	For geodetic and vertical reference frames, the object will be the Earth. In planetary applications, geodetic and vertical reference frames may be applied to other celestial bodies.
 
-Note 3 to entry:	In planetary applications geodetic reference frames may be applied to other celestial bod-ies.
+ [Source: ISO 19111:2019, 3.1.9]
 
- [Source: ISO 19111 Rev 2017-12-17 in progress]
+ Note: This term is also called Model Coordinate Reference system in the context of this document.
 
 === coordinate system
 
 set of mathematical rules for specifying how coordinates are to be assigned to points
 
- [Source: ISO 19111 Rev 2017-12-17 in progress]
+ [Source: ISO 19111:2019, 3.1.11]
 
 === correspondence model
-functional relationship between ground and image coordinates based on the correlation be-tween a set of ground control points and their corresponding image coordinates		
+functional relationship between ground and image coordinates based on the correlation be-tween a set of ground control points and their corresponding image coordinates
 
  [Source: ISO/TS 19130:2010, 4.3]
-
-=== coverage
-
-feature that acts as a function to return values from its range for any direct position within its spatial, temporal, or spatiotemporal domain
-
-Example: Examples include a digital image, raster map, and digital elevation matrix.
-
-Note 1 to entry: In other words, a coverage is a feature that has multiple values for each attribute type, where each direct position within the geometric representation of the feature has a single value for each attribute type.
-
- [Source: ISO 19123:2005, 4.1.7]
 
 === datum
 __reference frame__
 
-parameter or set of parameters that define the position of the origin, the scale, and the orientation of a coordinate system
+parameter or set of parameters that realize the position of the origin, the scale, and the orientation of a coordinate system
 
- [Source ISO 19111 Rev 2017-12-17 in progress]
- 
+ [Source ISO 19111:2019, 3.1.15]
+
 === device space
 
 coordinate space referencing scanner, printers and display devices
@@ -79,7 +69,7 @@ position described by a single set of coordinates within a coordinate reference 
 
 === domain
 
-well-defined set. 
+well-defined set.
 
 Note 1 to entry: Domains are used to define the domain set and range set of operators and functions.
 
@@ -95,30 +85,33 @@ Note 2 to entry: 	Well-defined means that the definition is both necessary and s
 
 __reference ellipsoid__
 
-surface formed by the rotation of an ellipse about a main axis
+<geodesy> geometric reference surface embedded in 3D Euclidean space formed by an ellipse that is rotated about a main axis
 
-<geodesy> geometric reference surface embedded in 3D Euclidean space represented by an ellipsoid
+Note 1 to entry: 	For the Earth the ellipsoid is bi-axial with rotation about the polar axis. This results in an oblate ellipsoid with the midpoint of the foci located at the nominal centre of the Earth.
 
-Note 1 to entry: 	For the Earth the ellipsoid is bi-axial with rotation about the polar axis. This results in an oblate ellipsoid with the midpoint of the foci located at the nominal center of the Earth.
-
- [Source: ISO 19111 Rev 2017-12-17, in progress]
+ [Source: ISO 19111:2019, 3.1.22]
 
 === flattening
+__f__
 
 ratio of the difference between the semi-major (a) and semi-minor axis (b) of an ellipsoid to the semi-major axis; f = (a - b)/a
 
 Note 1 to entry:	Sometimes inverse flattening 1/f = a/(a - b) is given instead; 1/f is also known as reciprocal flattening.
 
- [Source: ISO 19111 Rev 2017-12-17 in progress]
+ [Source: ISO 19111:2019, 3.1.28]
 
 
 === geocoding
 
 translation of one form of location into another
 
-=== geographic coordinate system
+=== geographic coordinate reference system
 
-coordinate system consisting of a well-defined ellipsoidal datum, a Prime Meridian, and an angular unit, allowing the assignment of a Latitude-Longitude (and optionally, geodetic height) vector to a location on earth
+coordinate reference system that has a geodetic reference frame and an ellipsoidal coordinate system
+
+ [Source: ISO 19111:2019, 3.1.35]
+
+Note: This allows the assignment of a Latitude-Longitude vector to a location on earth (plus optionally a geodetic height).
 
 === geokey
 
@@ -130,7 +123,7 @@ __rectified grid__
 
 grid for which there is an affine transformation between the grid coordinates and the coordinates of an external coordinate reference system
 
-Note 1 to entry:	If the coordinate reference system is related to the earth by a datum, the grid is a georectified grid.								
+Note 1 to entry:	If the coordinate reference system is related to the earth by a datum, the grid is a georectified grid.
 
  [Source: ISO 19123:2005, 4.1.32]
 
@@ -148,10 +141,6 @@ standard for storing georeference and geocoding information in a TIFF 6.0 compli
 
 network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in an algorithmic way
 
-=== grid
-
-gridded data Network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in a algorithmic way.
-
 Note 1 to entry: 	The curves partition a space into grid cells.
 
  [Source: ISO 19123:2005, 4.1.23]
@@ -166,13 +155,11 @@ Note 1 to entry:	In this document, it is assumed that the phenomena have been se
 
 === meridian
 
-An intersection of an ellipsoid by a plane containing the shortest axis of the ellipsoid
-
-An intersection of an ellipsoid by a plane containing the shortest axis of the ellipsoid
+intersection of an ellipsoid by a plane containing the shortest axis of the ellipsoid
 
 Note 1 to entry: 	This term is generally used the describe the pole-to-pole arc rather than the complete closed figure.
 
- [Source: 19111 Rev. 2017-12-17 in progress]
+ [Source: 19111:2019, 3.1.42]
 
 
 === metadata
@@ -184,11 +171,11 @@ information about a resource
 
 === model space
 
-flat geometrical space used to model a portion of the earth
+space in a coordinate reference system related to the earth or a part of the earth
 
 === mosaic
 
-an image composed of two or more separately collected (sensed) images 
+an image composed of two or more separately collected (sensed) images
 
 Note 1 to entry:	Additional XML metadata may be used to identify the cut-lines (boundaries and parameters for the images used to compose the mosaic.
 
@@ -205,7 +192,7 @@ Note 1 to entry:	The amount of displacement depends on the resolution and the le
 
 === parallel
 
-lines of constant latitude, parallel to the equator
+line of constant latitude, parallel to the equator
 
 === pixel
 
@@ -221,43 +208,26 @@ Note 3 to entry: The intensity of each pixel is variable; in color systems, each
 
 meridian from which the longitudes of other meridians are quantified
 
- [Source: ISO 19111 Rev 2017-12-17 in progress]
+ [Source: ISO 19111:2019, 3.1.50]
 
-=== projected coordinate system
+=== projected coordinate reference system
 
-__projected coordinate reference system__
+coordinate reference system derived from a geographic coordinate reference system by applying a map projection
 
-coordinate reference system derived from a two-dimensional geodetic coordinate reference system by applying a map projection
+Note 1 to entry:  	May be two- or three-dimensional, the dimension being equal to that of the geographic coordinate reference system from which it is derived.
 
-projected coordinate reference system
-coordinate reference system derived from a geographic coordinate reference system by ap-plying a map projection
+Note 2 to entry: 	In the three-dimensional case the horizontal coordinates (geodetic latitude and geodetic longitude coordinates) are projected to northing and easting and the ellipsoidal height is unchanged.
 
-Note 1 to entry:  	May be two- or three-dimensional, the dimension being equal to that of the geo-graphic coordinate reference system from which it is derived.
-
-Note 2 to entry: 	In the three-dimensional case the horizontal coordinates (geodetic latitude and ge-odetic longitude coordinates) are projected to northing and easting and the ellipsoidal height is un-changed.
-
- [Source ISO 19111 Rev 2017-12-17, in progress]
+ [Source ISO 19111:2019, 3.1.51]
 
 === projection
 
-projected coordinate reference system 
-
-coordinate reference system derived from a two-dimensional geodetic coordinate reference system by applying a map projection
 projected coordinate reference system
 
-coordinate reference system derived from a geographic coordinate reference system by ap-plying a map projection
+coordinate conversion from an ellipsoidal coordinate system to a plane
 
-Note 1 to entry:  	May be two- or three-dimensional, the dimension being equal to that of the geo-graphic coordinate reference system from which it is derived.
+ [Source: ISO 19111:2019, 3.1.40]
 
-Note 2 to entry: 	In the three-dimensional case the horizontal coordinates (geodetic latitude and ge-odetic longitude coordinates) are projected to northing and easting and the ellipsoidal height is unchanged.
-
- [Source: ISO 19111 Rev 2017-12-17, in progress]
-
-range <coverage>
-
-set of feature attribute values associated by a function with the elements of the domain of a coverage
-
- [Source: ISO 19123:2005, 4.1.29]
 
 === raster
 
@@ -291,3 +261,9 @@ evaluation of the random errors in determining the position of one point or feat
 === tag <TIFF>
 
 a tag is packet of numerical or ASCII values, which have a numerical "Tag" ID indicating their information content
+
+=== vertical coordinate reference system
+
+one-dimensional coordinate reference system based on a vertical reference frame
+
+ [Source: ISO 19111:2019, 3.1.70]

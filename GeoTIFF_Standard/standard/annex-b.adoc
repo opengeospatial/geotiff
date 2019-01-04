@@ -46,13 +46,13 @@ To avoid these problems, a GeoTIFF file stores projection parameters in a set of
 
 The Keys in GeoTIFF (also call "GeoKeys") are all referenced from the GeoKeyDirectoryTag, which defined as follows (Clause 7.1):
 
- GeoKeyDirectoryTag: 
-     Tag = 34735 (87AF.H) 
-     Type = SHORT (2-byte unsigned short) 
-     N = variable, >= 4 
-     Alias: ProjectionInfoTag, CoordSystemInfoTag 
+ GeoKeyDirectoryTag:
+     Tag = 34735 (87AF.H)
+     Type = SHORT (2-byte unsigned short)
+     N = variable, >= 4
+     Alias: ProjectionInfoTag, CoordSystemInfoTag
      Owner: SPOT Image, Inc.
-    
+
 This tag may be used to store the GeoKey Directory, which defines and references the "GeoKeys", as described below.
 
 The tag is an array of unsigned SHORT values, which are primarily grouped into blocks of 4. The first 4 values are special, and contain GeoKey directory header information. The header values consist of the following information, in order:
@@ -80,7 +80,7 @@ Following the KeyEntry definitions, the KeyDirectory tag may also contain additi
 
 All key-values which are not of type SHORT are to be stored in one of the following two tags, based on their format:
 
- GeoDoubleParamsTag: 
+ GeoDoubleParamsTag:
      Tag = 34736 (87BO.H)
      Type = DOUBLE (IEEE Double precision)
      N = variable
@@ -156,7 +156,7 @@ In standard TIFF 6.0 there are tags that relate raster space R with device space
      XPosition (286)
      YPosition (287)
 
-In GeoTIFF, provision is made to identify earth-referenced coordinate systems (model space M) and to relate M space with R space. This provision is independent of and can co-exist with the relationship between raster and device spaces. To emphasize the distinction, this spec shall not refer to "X" and "Y" raster coordinates, but rather to raster space "J" (row) and "I" (column) coordinate variables instead, as defined in section 2.5.2.2.
+In GeoTIFF, provision is made to identify earth-referenced coordinate systems (model space M) and to relate M space with R space. This provision is independent of and can co-exist with the relationship between raster and device spaces. To emphasize the distinction, this spec shall not refer to "X" and "Y" raster coordinates, but rather to raster space "J" (row) and "I" (column) coordinate variables instead, as defined in section <<RasterSpace>>.
 
 ==== Raster Coordinate Systems
 ===== _Raster Data_
@@ -167,6 +167,7 @@ Raster data values, as read in from a file, are organized by software into two-d
 
 Many different types of raster data may be georeferenced, and there may be subtle ways in which the nature of the data itself influences how the coordinate system (Raster Space) is defined for raster data. For example, pixel data derived from imaging devices and sensors represent aggregate values collected over a small, finite, geographic area, and so it is natural to define coordinate systems in which the pixel value is thought of as filling an area. On the other hand, digital elevations models may consist of discrete "postings", which may best be considered as point measurements at the vertices of a grid, and not in the interior of a cell.
 
+[#RasterSpace]
 ===== _Raster Space_
 
 The choice of origin for raster space is not entirely arbitrary, and depends upon the nature of the data collected. Raster space coordinates shall be referred to by their pixel types, i.e., as "PixelIsArea" or "PixelIsPoint".
@@ -448,7 +449,7 @@ This matrix tag should not be used if the ModelTiepointTag and the ModelPixelSca
 
      |-               -|
      | Sx  0.0 0.0 Tx  |    Tx = X - I/Sx
-     | 0.0 -Sy 0.0 Ty  |    Ty = Y + J/Sy  
+     | 0.0 -Sy 0.0 Ty  |    Ty = Y + J/Sy
      | 0.0 0.0 Sz  Tz  |    Tz = Z - K/Sz (if not 0)
      | 0.0 0.0 0.0 1.0 |
      |-               -|
@@ -643,4 +644,3 @@ Remarks:
 . Note the "RasterPixelIsPoint" raster space, indicating that the DEM posting of the first pixel is at the raster point (0,0,0), and therefore corresponds to 120W,32N exactly.
 
 . The third value of the "PixelScale" is 1.0 to indicate that a single pixel-value unit corresponds to 1 meter, and the last tiepoint value indicates that base value zero indicates 1000m above the reference surface.
-

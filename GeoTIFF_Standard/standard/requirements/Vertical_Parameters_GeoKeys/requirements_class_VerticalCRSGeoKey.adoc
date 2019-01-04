@@ -1,0 +1,40 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: VerticalCRSGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCRSGeoKey
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCRSGeoKey.ID +
+_The VerticalCRSGeoKey SHALL have ID = 4096_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCRSGeoKey.type +
+_The VerticalCRSGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCRSGeoKey.reserved +
+_VerticalCRSGeoKey values in the range 1-1023 SHALL be reserved_
+
+NOTE: In GeoTIFF v1.0 the reserved ranges were 0001-4999 and 6000-32766.
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCRSGeoKey.EPSG +
+_VerticalCRSGeoKey values in the range 1024-32766 SHALL be EPSG Vertical CRS Codes_
+
+NOTE: In GeoTIFF v1.0 the ranges were 5000-5099 and 5200-5999. As at 2018-05-29 no EPSG vertical CRSs have been or are in this range. Values in this range have been and are used as EPSG vertical datum codes; in this document their use as codes for vertical CRSs is deprecated.
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCRSGeoKey.userdefined +
+_A VerticalCRSGeoKey value of 32767 SHALL be a user-defined vertical CRS.  If the VerticalCRSGeoKey value is 32767 (User-Defined) then the VerticalCRSCitationGeoKey and VerticalDatumGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCRSGeoKey.private +
+_VerticalCRSGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+|===

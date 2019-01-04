@@ -1,0 +1,21 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: EllipsoidSemiMinorAxisGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidSemiMinorAxisGeoKey
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidSemiMinorAxisGeoKey.ID +
+_The EllipsoidSemiMinorAxisGeoKey SHALL have ID = 2058_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidSemiMinorAxisGeoKey.type +
+_The EllipsoidSemiMinorAxisGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidSemiMinorAxisGeoKey.units +
+_The units of the EllipsoidSemiMinorAxisGeoKey SHALL be defined by the value of GeogLinearUnitsGeoKey_
+{set:cellbgcolor:#FFFFFF}
+|===

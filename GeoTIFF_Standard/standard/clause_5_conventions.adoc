@@ -6,8 +6,9 @@
 [American Standard Code for Information Interchange] The predominant character set encoding of present-day computers.
 
 === EPSG
- European Petroleum Survey Group.
- 
+Geodetic parameter dataset initiated by the now-disbanded European Petroleum Survey Group and now maintained at
+http://www.epsg-registry.org by the International Association of Oil and Gas Producers (IOGP).
+
 === IEEE
 Institute of Electrical and Electronics Engineers, Inc.
 
