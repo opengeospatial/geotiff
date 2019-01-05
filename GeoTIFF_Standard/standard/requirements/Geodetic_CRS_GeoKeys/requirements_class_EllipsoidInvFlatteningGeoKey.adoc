@@ -1,0 +1,16 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: EllipsoidInvFlatteningGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidInvFlatteningGeoKey
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidInvFlatteningGeoKey.ID +
+_The EllipsoidInvFlatteningGeoKey SHALL have ID = 2059_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidInvFlatteningGeoKey.type +
+_The EllipsoidInvFlatteningGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+|===

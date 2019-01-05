@@ -1,22 +1,38 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: GTRasterTypeGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey 
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey.ID +
-_The GTModelTypeGeoKey SHALL have ID = 1025_
+_The GTRasterTypeGeoKey SHALL have ID = 1025_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey.type +
-_The GTModelTypeGeoKey SHALL have type = SHORT_
+_The GTRasterTypeGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey.value +
+_The GTRasterTypeGeoKey value SHALL be:_
+
+*	0 to indicate that the Raster type is undefined or unknown; or
+
+*	1 to indicate that the Raster type is PixelIsArea; or
+
+*	2 to indicate that the Raster type is PixelIsPoint; or
+
+*	32767 to indicate that the Raster type is user-defined.
+
+Recommendation: the use of 0 (undefined) or 32767 (user-defined) is not recommended
+
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GTRasterTypeGeoKey.reserved +
-_GTRasterTypeGeoKey values in the range 1-32766 SHALL be reserved_
+_GTRasterTypeGeoKey values in the range 3-32766 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -24,4 +40,3 @@ _GTRasterTypeGeoKey values in the range 1-32766 SHALL be reserved_
 _GTRasterTypeGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===
-

@@ -1,7 +1,7 @@
 == Requirements
-This OGC Standard specifies the content and structure of a group of industry-standard tag sets for the management of georeference or geocoded raster imagery using Aldus-Adobe's public domain Tagged-Image File Format (TIFF).
+This OGC Standard specifies the content and structure of a group of industry-standard tag sets for the management of georeferenced or geocoded raster imagery using Aldus-Adobe's public domain Tagged-Image File Format (TIFF).
 
-This standard defines a set of TIFF tags provided to describe all "Cartographic" information associated with TIFF imagery that originates from satellite imaging systems, scanned aerial photography, scanned maps, digital elevation models, or as a result of geographic analyses. Its aim is to allow means for tying a raster image to a known model space or map projection, and for describing those projections.
+This standard defines a set of TIFF tags provided to describe all "Cartographic" information associated with TIFF imagery that originates from satellite imaging systems, scanned aerial photography, scanned maps, digital elevation models, or as a result of geographic analyses. Its aim is to allow means for tying a raster image to a known model space or earth-referenced coordinate reference system, and for describing that CRS.
 
 === Underlying TIFF Requirements
 
@@ -28,12 +28,12 @@ The Keys in GeoTIFF (also call "GeoKeys") are all referenced from the GeoKeyDire
 The GeoKey Directory Header is followed by <NumberOfKeys> Key Entries. Each Key Entry consists of four values:
 
 * "KeyID" gives the key-ID value of the Key (identical in function to TIFF tag ID, but completely independent of TIFF tag-space).
-     
+
 * "TIFFTagLocation" indicates which TIFF tag contains the value(s) of the Key: if TIFFTagLocation is 0, then the value is SHORT, and is contained in the "Value_Offset" entry. Otherwise, the type (format) of the value is implied by the TIFF-Type of the tag containing the value.
-  
+
 * "Count" indicates the number of values in this key.
-   
-* "Value_Offset" Value_Offset indicates the index- offset *into* the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then Value_Offset contains the actual (SHORT) value of the Key, and Count=1 is implied. Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array. 
+
+* "Value_Offset" Value_Offset indicates the index- offset *into* the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then Value_Offset contains the actual (SHORT) value of the Key, and Count=1 is implied. Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array.
 
 include::requirements/TIFF_Requirements/requirements_class_GeoKeyDirectoryTag.adoc[]
 
@@ -65,320 +65,237 @@ The following requirements govern the storage of parameter values when the value
 
 include::requirements/TIFF_Requirements/requirements_class_GeoAsciiParamsTag.adoc[]
 
-=== Coordinate Tranformation Requirements
-
-For most common applications, the transformation between raster and model space may be defined with a set of raster-to-model tiepoints and scaling parameters. The ModelTiepointTag and ModelPixesScaleTag may be used for this purpose.
-
-Alternatively, the ModelTransformationTag may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space. 
-
-The IntergraphMatrixTag has been deprecated and should not be used. It is included in this version of the GeoTIFF standard for completeness.
-
-==== Requirements Class ModelTiepointTag
-
-include::requirements/Model_Tags/requirements_class_ModelTiepointTag.adoc[]
-
-==== Requirements Class ModelPixelScaleTag
-
-include::requirements/Model_Tags/requirements_class_ModelPixelScaleTag.adoc[]
-
-==== Requirements Class ModelTransformationTag
-
-include::requirements/Model_Tags/requirements_class_ModelTransformationTag.adoc[]
-
-==== Requirements Class IntergraphMatrixTag
-
-include::requirements/Model_Tags/requirements_class_ItergraphMatrixTag.adoc[]
-
 === GeoTIFF Configuration GeoKeys
 
 This Standardization Target addresses encoding of Configuration values essential for interpreting the rest of the GeoKeys.
 
-==== Requirements Class GTModelTypeGeoKey
+===== Citation GeoKeys
 
-This GeoKey defines the general type of model Coordinate system used, and to which the raster space will be transformed:unknown, Geocentric (rarely used), Geographic, Projected Coordinate System, or user-defined. If the coordinate system is a PCS, then only the PCS code need be specified. If the coordinate system does not fit into one of the standard registered PCS'S, but it uses one of the standard projections and datums, then its should be documented as a PCS model with "user-defined" type, requiring the specification of projection parameters, etc. 
+These keys are used to describe Model CRS elements through ASCII free text. A citation may be included with a CRS identified through the GeoTIFF CRS register (i.e. EPSG register, see <<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>.
+). A citation is mandatory for a user-defined CRSs and CRS objects (see <<Requirements for definition of user-defined Model CRS>>). The _GeodeticCitationGeoKey_, _ProjectedCitationGeoKey_ and _VerticalCitationGeoKey_ are used with CRSs and CRS components.
+The _GTCitationGeoKey_ is provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file.
 
-include::requirements/Configuration_Keys/requirements_class_GTModelTypeGeoKey.adoc[]
+NOTE: In GeoTIFF 1.0 the GeodeticCitationGeoKey key was called GeogCitationGeoKey and the ProjectedCitationGeoKey key was called PCSCitationGeoKey
+
+include::requirements/Citation_Keys/requirements_class_CitationGeoKeys.adoc[]
 
 ==== Requirements Class GTRasterTypeGeoKey
 
-This establishes the Raster Space coordinate system used; there are currently only two, namely RasterPixelIsPoint and RasterPixelIsArea. No user-defined raster spaces are currently supported. For variance in imaging display parameters, such as pixel aspect-ratios, use the standard TIFF 6.0 device-space tags instead.
+This establishes the Raster Space used; there are currently only two options, namely RasterPixelIsPoint and RasterPixelIsArea. No user-defined raster spaces are currently supported. For variance in imaging display parameters, such as pixel aspect-ratios, use the standard TIFF 6.0 device-space tags.
+The use of this geokey is *highly recommended* for accurate georeferencing of raster.
 
 include::requirements/Configuration_Keys/requirements_class_GTRasterTypeGeoKey.adoc[]
 
-==== Requirements Class GTCitationGeoKey
+==== Requirements Class GTModelTypeGeoKey
 
-As with all the "Citation" GeoKeys, this is provided to give an ASCII reference to published documentation on the overall configuration of this GeoTIFF file.
+This GeoKey defines the type of Model coordinate reference system used, to which the transformation from the raster space is made:
 
-include::requirements/Configuration_Keys/requirements_class_GTCitationGeoKey.adoc[]
+*	Model CRS is unknown or unspecified;
+*	Model CRS is a Geographic CRS;
+*	Model CRS is a Geocentric CRS;
+* Model CRS is a Projected CRS;
+*	Model CRS is user-defined.
 
-=== Geographic CS Parameter GeoKeys
+If the Model coordinate reference system is from the GeoTIFF standard CRS register (i.e EPSG register), then only the registered CRS code need be specified. See <<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>.
 
-In general, the geographic coordinate system used will be implied by the projected coordinate system code. If however, this is a user-defined PCS, or the ModelType was chosen to be Geographic, then the system must be explicitly defined here, using the Horizontal datum code.
+If the Model coordinate reference system is not from the GeoTIFF standard CRS register, then it requires the specification of some or all CRS elements. See <<Requirements for definition of user-defined Model CRS>>.
 
-==== Requirements Class GeographicTypeGeoKey
+The GeoTIFF v1.0 format has also been used to describe pseudo-3D compound CRSs consisting of a projected CRS and a vertical CRS or a geographic 2D CRS and a vertical CRS, as well as a geographic 3D CRS. In this document, this usage is permitted but not explicitly described through the GTModelTypeGeoKey. Recommendations are given in Annex D.
 
-This key may be used to specify the code for the geographic coordinate system used to map lat-long to a specific ellipsoid over the earth.
+include::requirements/Configuration_Keys/requirements_class_GTModelTypeGeoKey.adoc[]
+NOTE: The GTCitationGeoKey is also provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file (see <<Citation GeoKeys>>).
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeographicTypeGeoKey.adoc[]
+=== Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)
 
-==== Requirements Class GeogCitationGeoKey
+==== Overview
 
-General citation and reference for all Geographic CS parameters.
+When the Model CRS is included in the GeoTIFF CRS register (i.e EPSG register), only its register code is required. For 2D projected CRSs ("map grids") the code is given through the ProjectedCRSGeoKey. For geodetic CRSs (geographic 2D, geographic 3D and geocentric CRSs) the code is given through the GeodeticCRSGeoKey. If the Model CRS is a pseudo-3D compound CRS consisting of either a projected CRS or a geographic 2D CRS together with a vertical CRS, the code of the vertical component is given through the VerticalCRSGeoKey.
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogCitationGeoKey.adoc[]
+NOTE: It has been practice in some Communities to indicate a geographic 3D CRS (with ellipsoidal height) by including the code of the geographic 3D CRS in a VerticalCRSGeoKey. See Annex D.
 
-==== Requirements Class GeogGeodeticDatumGeoKey
+===== GeodeticCRSGeoKey
 
-This key may be used to specify the horizontal datum, defining the size, position and orientation of the reference ellipsoid used in user-defined geographic coordinate systems.
+This key is provided to specify the geodetic (geographic or geocentric) coordinate reference system from the GeoTIFF CRS register or to indicate that the Model CRS is a user-defined geodetic coordinate reference system.
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogGeodeticDatumGeoKey.adoc[]
+NOTE: In GeoTIFF 1.0 this key was called GeographicTypeGeoKey. Geodetic CRS is a superset of geographic 2D CRS, geographic 3D CRS and geocentric (earth-centred 3D Cartesian) CRS.
 
-==== Requirements Class GeogPrimeMeridianGeoKey
+include::requirements/Geodetic_CRS_GeoKeys/requirements_class_GeodeticCRSGeoKey.adoc[]
 
-Allows specification of the location of the Prime meridian for user-defined geographic coordinate systems. The default standard is Greenwich, England.
+===== VerticalCRSGeoKey
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogPrimeMeridianGeoKey.adoc[]
+This key is provided to specify the vertical coordinate reference system from the GeoTIFF CRS register or to indicate that the CRS is a user-defined vertical coordinate reference system.
 
-==== Requirements Class GeogPrimeMeridianLongGeoKey
+NOTE: In GeoTIFF 1.0 this key was called VerticalCSTypeGeoKey. In GeoTIFF v1.0 vertical coordinate reference systems were described in draft form, with the statement "Vertical coordinate systems are not yet implemented. These sections are provided for future development, and any vertical coordinate systems in the current revision must be defined using the VerticalCitationGeoKey".
 
-This key allows definition of user-defined Prime Meridians, the location of which is defined by its longitude relative to Greenwich.
+include::requirements/Vertical_Parameters_GeoKeys/requirements_class_VerticalCRSGeoKey.adoc[]
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogPrimeMeridianLongGeoKey.adoc[]
+=== Requirements for definition of user-defined Model CRS
 
-==== Requirements Class GeogLinearUnitsGeoKey
+The GeoKeys described in this section are needed only when Model CRSs are not available from the GeoTIFF CRS register and the CRS or one or more of its component objects is user-defined, that is if one or more of ProjectedCRSGeoKey, GeodeticCRSGeoKey or VerticalCRSGeoKey has a value of 32767.
 
-Allows the definition of geocentric CS linear units for user-defined GCS.
+NOTE: Anyone not interested in constructing a user-defined system can ignore that whole section.
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogLinearUnitsGeoKey.adoc[]
+==== Units GeoKeys
 
-==== Requirements Class GeogLinearUnitSizeGeoKey
+These keys are used to specify Units of Measure (UoM) through the identification of a unit from the GeoTIFF CRS register or to indicate that the unit is user-defined
 
-Allows the definition of user-defined linear geocentric units, as measured in meters.
+The GeogAngularUnitsGeoKey key is used to specify the angular unit for:
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogLinearUnitSizeGeoKey.adoc[]
+*	the axes in user-defined geographic 2D CRSs;
+*	the horizontal axes in user-defined geographic 3D CRSs;
+*	the longitude from the reference meridian in user-defined prime meridians;
+*	user-defined map projection parameters that are angles.
 
-==== Requirements Class GeogAngularUnitsGeoKey
+The GeogAzimuthUnitsGeoKey key is used to specify the angular unit for user-defined map projection parameters when these differ from the angular unit described through the GeogAngularUnitsGeoKey.
 
-Allows the definition of **geocentric** CS Linear units for user-defined GCS and for ellipsoids.
+The GeogLinearUnitsGeoKey key is used to specify the linear unit for:
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogAngularUnitsGeoKey.adoc[]
+* the axes in user-defined geocentric Cartesian CRSs;
+*	the height axis of a user-defined geographic 3D CRS;
+*	for user-defined ellipsoid axes.
 
-==== Requirements Class GeogAngularUnitSizeGeoKey
+The ProjLinearUnitsGeoKey key is used to specify the linear units for:
 
-Allows the definition of user-defined angular geographic units, as measured in radians.
+*	the axes of  a user-defined projected CRS;
+*	map projection parameters that are lengths.
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogAngularUnitSizeGeoKey.adoc[]
+The VerticalUnitsGeoKey key is used to specify the linear unit for:
 
-==== Requirements Class GeogEllipsoidGeoKey
+*	the axis of a user-defined vertical CRS.
 
-This key may be used to specify the coded ellipsoid used in the geodetic datum of the Geographic Coordinate System.
+include::requirements/Units_Keys/requirements_class_UnitsGeoKeys.adoc[]
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogEllipsoidGeoKey.adoc[]
+==== Unit Size GeoKeys
 
-==== Requirements Class GeogSemiMajorAxisGeoKey
+These keys allow the definition of size of user-defined angular and linear units, given in the SI base unit for that unit type (meters for length, radians for angle).
 
-Allows the specification of user-defined Ellipsoid Semi-Major Axis (a).
+include::requirements/Units_Keys/requirements_class_UnitSizeGeoKeys.adoc[]
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogSemiMajorAxisGeoKey.adoc[]
+==== Geodetic Datum
 
-==== Requirements Class GeogSemiMinorAxisGeoKey
+===== GeodeticDatumGeoKey
 
-Allows the specification of user-defined Ellipsoid Semi-Minor Axis (b).
+This key is used to specify a geodetic datum from the GeoTIFF CRS register, or to indicate that the geodetic datum or one or both of its component ellipsoid or prime meridian is user-defined.
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogSemiMinorAxisGeoKey.adoc[]
+: In GeoTIFF 1.0 this key was called GeogGeodeticDatumGeoKey.
 
-==== Requirements Class GeogInvFlatteningGeoKey
+include::requirements/Geodetic_CRS_GeoKeys/requirements_class_GeodeticDatumGeoKey.adoc[]
 
-Allows the specification of the **inverse** of user-defined Ellipsoid's flattening parameter (f). The eccentricity-squared e^2 of the ellipsoid is related to the non-inverted f by:
+===== PrimeMeridianGeoKey
 
-      e^2 = 2*f - f^2
+This key is used to specify a Prime Meridian from the GeoTIFF CRS register or to indicate that the Prime Meridian is user-defined. The default is Greenwich, England.
 
-Note: if the ellipsoid is spherical the inverse-flattening becomes infinite; use the GeogSemiMinorAxisGeoKey instead, and set it equal to the semi-major axis length.
+NOTE: In GeoTIFF 1.0 this key was called GeogPrimeMeridianGeoKey.
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogInvFlatteningGeoKey.adoc[]
+include::requirements/Geodetic_CRS_GeoKeys/requirements_class_PrimeMeridianGeoKey.adoc[]
 
-==== Requirements Class GeogAzimuthUnitsGeoKey
+===== PrimeMeridianLongitudeGeoKey
 
-This key may be used to specify the angular units of measurement used to defining azimuths, in geographic coordinate systems. These may be used for defining azimuthal parameters for some projection algorithms, and may not necessarily be the same angular units used for lat-long.
+This key allows definition of a user-defined Prime Meridian, the location of which is defined by its
+longitude relative to the international reference meridian (for the earth this is Greenwich).
 
-include::requirements/Geographic_CS_Parameter_Keys/requirements_class_GeogAzimuthUnitsGeoKey.adoc[]
+NOTE: In GeoTIFF 1.0 this key was called GeogPrimeMeridianLongGeoKey.
 
-=== Projected CS Parameter GeoKeys
+include::requirements/Geodetic_CRS_GeoKeys/requirements_class_PrimeMeridianLongitudeGeoKey.adoc[]
 
-The PCS range of GeoKeys includes the projection and coordinate transformation keys as well. The projection keys are included in this block since they can only be used to define projected coordinate systems.
+===== Ellipsoid
 
-==== Requirements Class ProjectedCSTypeGeoKey
+====== EllipsoidGeoKey
+This key is provided to specify an ellipsoid (or sphere) from the GeoTIFF CRS register or to indicate that the ellipsoid (or sphere) is user-defined.
 
-This code is provided to specify the projected coordinate system.
+NOTE: In GeoTIFF 1.0 this key was called GeogEllipsoidGeoKey.
 
-include::requirements/Projected_CS_Parameter_Keys/requirements_class_ProjectedCSTypeGeoKey.adoc[]
+include::requirements/Geodetic_CRS_GeoKeys/requirements_class_EllipsoidGeoKey.adoc[]
 
-==== Requirements Class PCSCitationGeoKey
+====== Ellipsoid parameter GeoKeys
 
-As with all the "Citation" GeoKeys, this is provided to give an ASCII reference to published documentation on the Projected  Coordinate System particularly if this is a "user-defined" PCS.
+These keys are used to specify the size and shape of a user-defined ellipsoid or sphere used as the model of the earth. Only bi-axial ellipsoids and spheres are catered for. An ellipsoid is defined through two parameters, its semi-major axis (a) and either its semi-minor axis (b) or its inverse flattening (1/f) where 1/f = a/(a - b). If the model is a sphere, 1/f is infinite so a and b must be used, with the value of b set to that of a.
 
-include::requirements/Projected_CS_Parameter_Keys/requirements_class_PCSCitationGeoKey.adoc[]
+*EllipsoidSemiMajorAxisGeoKey*
 
-=== Projection Definition GeoKeys
+This key is provided to specify the first defining parameter of a user-defined bi-axial ellipsoid  or a user-defined sphere. It allows the specification of the ellipsoid semi-major axis (a) or the sphere radius.
 
-With the exception of the first two keys, these are mostly  projection-specific parameters, and only a few will be required for any particular projection type. Projected coordinate systems automatically imply a specific projection type, as well as specific parameters for that projection, and so the keys below will only be necessary for user-defined projected coordinate systems.
+NOTE: In GeoTIFF 1.0 this key was called GeogSemiMajorAxisGeoKey.
 
-==== Requirements Class ProjectionGeoKey
+include::requirements/Geodetic_CRS_GeoKeys/requirements_class_EllipsoidSemiMajorAxisGeoKey.adoc[]
 
-Allows specification of the coordinate transformation method and projection zone parameters. Note : when associated with an appropriate Geographic Coordinate System, this forms a Projected Coordinate System.
+*EllipsoidSemiMinorAxisGeoKey*
 
-include::requirements/Projection_Definition_Keys/requirements_class_ProjectionGeoKey.adoc[]
+This key is provided to specify the second defining parameter of a user-defined bi-axial ellipsoid or of a user-defined sphere. It allows the specification of the ellipsoid semi-minor axis (b) or the sphere radius.
 
-==== Requirements Class ProjCoordTransGeoKey
+NOTE: In GeoTIFF 1.0 this key was called GeogSemiMinorAxisGeoKey.
 
-Allows specification of the coordinate transformation method used. Note: this does not include the definition of the corresponding Geographic Coordinate System to which the projected CS is related; only the transformation method is defined here.
+include::requirements/Geodetic_CRS_GeoKeys/requirements_class_EllipsoidSemiMinorAxisGeoKey.adoc[]
 
-include::requirements/Projection_Definition_Keys/requirements_class_ProjCoordTransGeoKey.adoc[]
+*EllipsoidInvFlatteningGeoKey*
 
-==== Requirements Class ProjLinearUnitsGeoKey
+This key is provided to specify the second defining parameter of a user-defined bi-axial ellipsoid. It allows the specification of the ellipsoid inverse flattening (1/f). It is a ratio and does not require a unit.
 
-Defines linear units used by this projection.
+NOTE: In GeoTIFF 1.0 this key was called GeogInvFlatteningGeoKey.
 
-include::requirements/Projection_Definition_Keys/requirements_class_ProjLinearUnitsGeoKey.adoc[]
+include::requirements/Geodetic_CRS_GeoKeys/requirements_class_EllipsoidInvFlatteningGeoKey.adoc[]
 
-==== Requirements Class ProjLinearUnitSizeGeoKey
+==== Vertical Datum
 
-Defines size of user-defined linear units in meters.
+This key may be used to specify the vertical datum for a user-defined vertical coordinate reference system.
 
-include::requirements/Projection_Definition_Keys/requirements_class_ProjLinearUnitSizeGeoKey.adoc[]
-
-==== Requirements Class ProjStdParallel1GeoKey
-
-Latitude of primary Standard Parallel.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjStdParallel1GeoKey.adoc[]
-
-==== Requirements Class ProjStdParallel2GeoKey
-
-Latitude of second Standard Parallel.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjStdParallel2GeoKey.adoc[]
- 
-==== Requirements Class ProjNatOriginLongGeoKey
-
-Longitude of map-projection Natural origin.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjNatOriginLongGeoKey.adoc[]
-
-==== Requirements Class ProjNatOriginLatGeoKey
-
-Latitude of map-projection Natural origin.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjNatOriginLatGeoKey.adoc[]
-
-==== Requirements Class ProjFalseEastingGeoKey
-
-Gives the easting coordinate of the map projection Natural origin.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseEastingGeoKey.adoc[]
-
-==== Requirements Class ProjFalseNorthingGeoKey
-
-Gives the northing coordinate of the map projection Natural origin.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseNorthingGeoKey.adoc[]
-
-==== Requirements Class ProjFalseOriginLongGeoKey
-
-Gives the longitude of the False origin.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseOriginLongGeoKey.adoc[]
-
-==== Requirements Class ProjFalseOriginLatGeoKey
-
-Gives the latitude of the False origin.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseOriginLatGeoKey.adoc[]
-
-==== Requirements Class ProjFalseOriginEastingGeoKey
-
-Gives the easting coordinate of the false origin. This is NOT the False Easting, which is the easting attached to the Natural origin.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseOriginEastingGeoKey.adoc[]
-
-==== Requirements Class ProjFalseOriginNorthingGeoKey
-
-Gives the northing coordinate of the False origin. This is NOT the False Northing, which is the northing attached to the Natural origin.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjFalseOriginNorthingGeoKey.adoc[]
-
-==== Requirements Class ProjCenterLongGeoKey
-
-Longitude of Center of Projection. Note that this is not necessarily the origin of the projection.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjCenterLongGeoKey.adoc[]
-
-==== Requirements Class ProjCenterLatGeoKey
-
-Latitude of Center of Projection. Note that this is not necessarily the origin of the projection.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjCenterLatGeoKey.adoc[]
-
-==== Requirements Class ProjCenterEastingGeoKey
-
-Gives the easting coordinate of the center. This is NOT the False Easting.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjCenterEastingGeoKey.adoc[]
-
-==== Requirements Class ProjCenterNorthingGeoKey
-
-Gives the northing coordinate of the center. This is NOT the False Northing.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjCenterNorthingGeoKey.adoc[]
-
-==== Requirements Class ProjScaleAtNatOriginGeoKey
-
-Scale at Natural Origin. This is a ratio, so no units are required.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjScaleAtNatOriginGeoKey.adoc[]
-
-==== Requirements Class ProjScaleAtCenterGeoKey
-
-Scale at Center. This is a ratio, so no units are required.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjScaleAtCenterGeoKey.adoc[]
-
-==== Requirements Class ProjAzimuthAngleGeoKey
-
-Azimuth angle east of true north of the central line passing through the projection center (for elliptical (Hotine) Oblique Mercator). Note that this is the standard method of measuring azimuth, but is opposite the usual mathematical convention of positive indicating counter-clockwise.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjAzimuthAngleGeoKey.adoc[]
-
-==== Requirements Class ProjStraightVertPoleLongGeoKey
-
-Longitude at Straight Vertical Pole. For polar stereographic.
-
-include::requirements/Projection_Definition_Keys/requirements_class_ProjStraightVertPoleLongGeoKey.adoc[]
-
-=== Vertical CS Parameter Keys
-
-Note: Vertical coordinate systems are not yet implemented. These sections are provided for future development, and any vertical coordinate systems in the current revision must be defined using the VerticalCitationGeoKey.
-
-==== Requirements Class VerticalCSTypeGeoKey
-
-This key may be used to specify the vertical coordinate system.
-
-include::requirements/Vertical_CS_Parameter_Keys/requirements_class_VerticalCSTypeGeoKey.adoc[]
-
-==== Requirements Class VerticalCitationGeoKey
-
-This key may be used to document the vertical coordinate system used, and its parameters.
-
-include::requirements/Vertical_CS_Parameter_Keys/requirements_class_VerticalCitationGeoKey.adoc[]
-
-==== Requirements Class VerticalDatumGeoKey
+===== Requirements Class VerticalDatumGeoKey
 
 This key may be used to specify the vertical datum for the vertical coordinate system.
 
-include::requirements/Vertical_CS_Parameter_Keys/requirements_class_VerticalDatumGeoKey.adoc[]
+include::requirements/Vertical_Parameters_GeoKeys/requirements_class_VerticalDatumGeoKey.adoc[]
 
-==== Requirements Class VerticalUnitsGeoKey
+==== Map Projection GeoKeys
 
-This key may be used to specify the vertical units of measurement used in the geographic coordinate system, in cases where geographic CS's need to reference the vertical coordinate. This, together with the Citation key, comprise the only fully implemented keys in this section, at present.
+===== Requirements Class ProjectionGeoKey*
 
-include::requirements/Vertical_CS_Parameter_Keys/requirements_class_VerticalUnitsGeoKey.adoc[]
+The _ProjectionGeoKey_ key is used to specify a map projection from the GeoTIFF CRS register or to indicate that the map projection is user-defined. In the EPSG Dataset a map projection is a coordinate conversion, a subtype of coordinate operation.
+
+include::requirements/Projection_Definition_Keys/requirements_class_ProjectionGeoKey.adoc[]
+
+===== Requirements Class ProjMethodGeoKey (coordinate operation method)
+
+The _ProjMethodGeoKey_ key is used to specify a map projection method from the GeoTIFF v1.0 coordinate transformation code list (Annex C), or to indicate that the map projection method is user-defined.
+
+NOTE: In GeoTIFF 1.0 this key was called ProjCoordTransGeoKey.
+
+NOTE: GeoTIFF v1.0 did not make reference to the EPSG coordinate operation methods (a future version of GeoTIFF might do this).
+
+include::requirements/Projection_Definition_Keys/requirements_class_ProjMethodGeoKey.adoc[]
+
+===== Map Projection parameters (coordinate operation parameters)
+
+Each map projection method requires several map projection parameters (coordinate operation parameters). GeoTIFF v1.0 did not specify which parameters should be associated with which methods, nor make reference to the EPSG coordinate operation parameters associated with each method (a future version of GeoTIFF might do this).
+
+====== Requirements Class ProjAngularParameters
+
+include::requirements/Projection_Definition_Keys/requirements_class_ProjAngularParameters.adoc[]
+
+====== Requirements Class ProjAzimuthAngleGeoKey
+
+include::requirements/Projection_Definition_Keys/requirements_class_ProjAzimuthAngleGeoKey.adoc[]
+
+====== Requirements Class ProjLinearParameters
+
+include::requirements/Projection_Definition_Keys/requirements_class_ProjLinearParameters.adoc[]
+
+====== Requirements Class ProjScalarParameters
+include::requirements/Projection_Definition_Keys/requirements_class_ProjScalarParameters.adoc[]
+
+=== Raster to Model Coordinate Transformation Requirements
+
+For most common applications, the transformation between raster space and model space may be defined with a set of raster-to-model tiepoints and scaling parameters. The _ModelTiepointTag_ and _ModelPixesScaleTag_ may be used for this purpose.
+
+Alternatively, the _ModelTransformationTag_ may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space.
+
+==== Requirements Class ModelTiepointTag
+
+include::requirements/Raster2Model_CoordinateTransformation_Tags/requirements_class_ModelTiepointTag.adoc[]
+
+==== Requirements Class ModelPixelScaleTag
+
+include::requirements/Raster2Model_CoordinateTransformation_Tags/requirements_class_ModelPixelScaleTag.adoc[]
+
+==== Requirements Class ModelTransformationTag
+
+include::requirements/Raster2Model_CoordinateTransformation_Tags/requirements_class_ModelTransformationTag.adoc[]

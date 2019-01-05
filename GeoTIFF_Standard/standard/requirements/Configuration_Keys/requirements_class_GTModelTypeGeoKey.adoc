@@ -5,6 +5,11 @@
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.required +
+_A GeoTIFF file SHALL include a GTModelTypeGeoKey_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.ID +
 _The GTModelTypeGeoKey SHALL have ID = 1024_
 {set:cellbgcolor:#FFFFFF}
@@ -15,18 +20,18 @@ _The GTModelTypeGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.projected +
-_A value of 1 for the GTModelTypeGeoKey SHALL indicate a projected coordinate system_
-{set:cellbgcolor:#FFFFFF}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.value +
+_The GTModelTypeGeoKey value SHALL be:_
 
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geographic +
-_A value of 2 for the GTModelTypeGeoKey SHALL indicate a geographic latitude-longitude coordinate system_
-{set:cellbgcolor:#FFFFFF}
+*	0 to indicate that the Model CRS in undefined or unknown; or
 
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geocentric +
-_A value of 3 for the GTModelTypeGeoKey SHALL indicate a geocentric(X,Y,Z) coordinate system_
+*	1 to indicate that the Model CRS is a projected coordinate reference system, indicated by the value of the ProjectedCRSGeoKey; or
+
+*	2 to indicate that the Model CRS is a geographic coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
+
+*	3 to indicate that the Model CRS is a geocentric Cartesian 3D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
+
+*	32767 to indicate that the Model CRS type is user-defined.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -35,12 +40,28 @@ _GTModelTypeGeoKey values in the range 4-32766 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.user-defined +
-_If the GTModelTypeGeoKey value is 32767 (User-Defined) then the GTCitationGeoKey SHALL be populated_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.private +
 _GTModelTypeGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.projCRS +
+_If the GTModelTypeGeoKey value is 1 (Model CRS is a projected CRS) then the GeoTIFF file SHALL include a ProjectedCRSGeoKey._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geogCRS +
+_If the GTModelTypeGeoKey value is 2 (Model CRS is a geographic CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geocenCRS +
+_If the GTModelTypeGeoKey value is 3 (Model CRS is a geocentric CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.user-defined +
+_If the GTModelTypeGeoKey value is 32767 (user-defined) then the GTCitationGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
 |===

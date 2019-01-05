@@ -1,0 +1,18 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: ProjScalarParameters* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjScalarParameters
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjScalarParameters.ID +
+_The ProjScaleAtNatOriginGeoKey SHALL have ID = 3092_
+_The ProjScaleAtCenterGeoKey SHALL have ID = 3093_
+_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjScalarParameters.type +
+_All parameters in this requirements class SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+|===
