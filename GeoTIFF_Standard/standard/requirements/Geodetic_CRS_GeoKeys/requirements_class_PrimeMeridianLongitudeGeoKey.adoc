@@ -1,0 +1,21 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class: PrimeMeridianLongitudeGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianLongitudeGeoKey
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianLongitudeGeoKey.ID +
+_The PrimeMeridianLongitudeGeoKey SHALL have ID = 2061_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianLongitudeGeoKey.type +
+_The PrimeMeridianLongitudeGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianLongitudeGeoKey.units +
+_The unit for the PrimeMeridianLongitudeGeoKey value SHALL be GeogAngularUnits_
+{set:cellbgcolor:#FFFFFF}
+|===
