@@ -458,16 +458,6 @@ where the -Sy is due the reversal of direction from J increasing- down in raster
 
 Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.
 
-Note: In Revision 0.2 and earlier, another tag was used for this matrix, which has been renamed as follows:
-
-     IntergraphMatrixTag
-          Tag = 33920 (8480.H)
-          Type = DOUBLE
-          N = 17 (Intergraph implementation) or 16 (GeoTIFF 0.2 impl.)
-          Owner: Intergraph
-
-This tag conflicts with an internal software implementation at Intergraph, and so its use is no longer encouraged. A GeoTIFF reader should look first for the new tag, and only if it is not found should it check for this older tag. If found, it should only consider it to be contain valid GeoTIFF matrix information if the tag-count is 16; the Intergraph version uses 17 values.
-
 ==== Coordinate Transformation Data Flow
 
 TBD
