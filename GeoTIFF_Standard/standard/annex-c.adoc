@@ -1,0 +1,15 @@
+[appendix]
+:appendix-caption: Annex
+== GeoTIFF Map Projection Method codes
+(Normative)
+=== Map Projection methods
+GeoTIFF v1.0 lists a number of map projection methods (which it calls 'coordinate transformations'). These are names, without any formulas or clear citation. As such they are an ambiguous identification of method. It is not possible to identify whether the formulas are ellipsoidal or spherical. If it is assumed that they are ellipsoidal formulas, for some the name does not adequately distinguish between method variations where different formulas lead to significantly different results in application. The codes for these listed methods are given in table C.1.
+
+Table C.1 - Codes for GeoTIFF v1.0 map projection methods
+(Source: GeoTIFF v1.0 table 6.3.3.3)
+
+=== Map Projection parameters
+GeoTIFF v1.0 lists a number of map projection parameters. These are names, without any definition or clear citation. As such they are ambiguous. It is also not clear which parameters should be used for which methods. The map projection parameter GeoKey codes are listed in table C.2.
+
+Table C.2 - GeoKey codes for GeoTIFF v1.0 map projection parameters
+(Source: GeoTIFF v1.0 table 6.3.3.3)
