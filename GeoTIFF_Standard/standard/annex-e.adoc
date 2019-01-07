@@ -1,0 +1,6 @@
+[appendix]
+:appendix-caption: Annex
+== Summary of GeoKey IDs and names
+(Informative)
+
+Table E.1 - Summary of GeoKey IDs and names
