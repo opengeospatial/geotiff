@@ -3,12 +3,8 @@
 [[Bibliography]]
 = Bibliography
 
-Association Adobe Developers. (1992). _Revision 6.0_.
-
-GeoTIFF profile for Georeferenced Imagery, DGIWG 108, 2014-03-17, Retreived from https://portal.dgiwg.org/files/?artifact_id=5440&format=pdf
+GeoTIFF profile for Georeferenced Imagery, DGIWG 108, 2017-12-08, Retrieved from https://portal.dgiwg.org/files/?artifact_id=68102&format=pdf
 
 Ritter, N., & Ruth, M. (1997). The GeoTiff data interchange standard for raster geographic images. _International Journal of Remote Sensing, 18_(7), 1637–1647. doi:10.1080/014311697218340Ritter
-
-Niles, & Ruth, M. (1995). GeoTIFF Format Specification 
 
 Wiggins, R. H., Davidson, H. C., Harnsberger, H. R., Lauman, J. R., & Goede, P. a. (2001). Image file formats: past, present, and future. _Radiographics : a review publication of the Radiological Society of North America, Inc, 21_(3), 789–98. Retrieved from http://www.ncbi.nlm.nih.gov/pubmed/11353125

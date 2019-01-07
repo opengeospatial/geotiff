@@ -1,4 +1,6 @@
 == Requirements
+This document uses the terms defined in Sub-clause 5.3 of [OGC 06-121r8], which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
+
 This OGC Standard specifies the content and structure of a group of industry-standard tag sets for the management of georeferenced or geocoded raster imagery using Aldus-Adobe's public domain Tagged-Image File Format (TIFF).
 
 This standard defines a set of TIFF tags provided to describe all "Cartographic" information associated with TIFF imagery that originates from satellite imaging systems, scanned aerial photography, scanned maps, digital elevation models, or as a result of geographic analyses. Its aim is to allow means for tying a raster image to a known model space or earth-referenced coordinate reference system, and for describing that CRS.
