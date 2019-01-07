@@ -458,10 +458,6 @@ where the -Sy is due the reversal of direction from J increasing- down in raster
 
 Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.
 
-==== Coordinate Transformation Data Flow
-
-TBD
-
 ==== Cookbook for Defining Transformations
 
 Here is a 4-step guide to producing a set of Baseline GeoTIFF tags for defining coordinate transformation information of a raster dataset.
