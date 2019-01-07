@@ -13,6 +13,7 @@ _The ProjectedCitationGeoKey SHALL have ID = 3073_
 _The VerticalCitationGeoKey SHALL have ID = 4097_
 
 _The GTCitationGeoKey SHALL have ID = 1026_
+
 NOTE: This is provided to give an ASCII
 reference to published documentation on the overall configuration of this
 GeoTIFF file.
