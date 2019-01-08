@@ -5,11 +5,53 @@
 === Map Projection methods
 GeoTIFF v1.0 lists a number of map projection methods (which it calls 'coordinate transformations'). These are names, without any formulas or clear citation. As such they are an ambiguous identification of method. It is not possible to identify whether the formulas are ellipsoidal or spherical. If it is assumed that they are ellipsoidal formulas, for some the name does not adequately distinguish between method variations where different formulas lead to significantly different results in application. The codes for these listed methods are given in table C.1.
 
-Table C.1 - Codes for GeoTIFF v1.0 map projection methods
+[cols="1,4",width="90%" options="header"]
+|===
+^|Code {set:cellbgcolor:#CACCCE} ^| Description 
+^| {set:cellbgcolor:#FFFFFF} test <| answer 
+^|  <|
+^| <|
+^| <|
+|===
+
+_Table C.1 - Codes for GeoTIFF v1.0 map projection methods_
+
 (Source: GeoTIFF v1.0 table 6.3.3.3)
 
 === Map Projection parameters
 GeoTIFF v1.0 lists a number of map projection parameters. These are names, without any definition or clear citation. As such they are ambiguous. It is also not clear which parameters should be used for which methods. The map projection parameter GeoKey codes are listed in table C.2.
 
-Table C.2 - GeoKey codes for GeoTIFF v1.0 map projection parameters
+[cols="1,4",width="90%" options="header"]
+|===
+^|Code {set:cellbgcolor:#CACCCE} ^| Description 
+^| {set:cellbgcolor:#FFFFFF} 1 <| CT_TransverseMercator
+^|2 <| CT_TransvMercator_Modified_Alaska
+^|3 <| CT_ObliqueMercator
+^|4 <| CT_ObliqueMercator_Laborde
+^|5 <| CT_ObliqueMercator_Rosenmund
+^|6 <| CT_ObliqueMercator_Spherical
+^|7 <| CT_Mercator
+^|8 <| CT_LambertConfConic_2SP
+^|9 <| CT_LambertConfConic_Helmert
+^|10 <| CT_LambertAzimEqualArea
+^|11 <| CT_AlbersEqualArea
+^|12 <| CT_AzimuthalEquidistant
+^|13 <| CT_EquidistantConic
+^|14 <| CT_Stereographic
+^|15 <| CT_PolarStereographic
+^|16 <| CT_ObliqueStereographic
+^|17 <| CT_Equirectangular
+^|18 <| CT_CassiniSoldner
+^|19 <| CT_Gnomonic
+^|20 <| CT_MillerCylindrical
+^|21 <| CT_Orthographic
+^|22 <| CT_Polyconic
+^|23 <| CT_Robinson
+^|24 <| CT_Sinusoidal
+^|25 <| CT_VanDerGrinten
+^|26 <| CT_NewZealandMapGrid
+^|27 <| CT_TransvMercator_SouthOriented
+|===
+_Table C.2 - GeoKey codes for GeoTIFF v1.0 map projection parameters_
+
 (Source: GeoTIFF v1.0 table 6.3.3.3)

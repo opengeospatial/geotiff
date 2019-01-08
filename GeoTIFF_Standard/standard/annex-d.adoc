@@ -31,4 +31,12 @@ None of these are long-term solutions. Until a revision of this specification is
 
 Note: a possible long-term solution would be to assign a GTModelTypeGeoKey value of 6 to indicate a geographic 3D CRS, with the VerticalCRSGeoKey not populated (modification of (a) above). This is not a valid value in this specification.
 
-Table D.1 - Codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights
+[cols="1,4",width="90%" options="header"]
+|===
+^|Code {set:cellbgcolor:#CACCCE} ^| Description 
+^| {set:cellbgcolor:#FFFFFF} test <| answer 
+^| <|
+^| <|
+^| <|
+|===
+_Table D.1 - Codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights_

@@ -433,20 +433,69 @@ A reference to an EPSG coordinate reference system code is sufficient for a comp
 ==== Deprecated and deleted EPSG codes
 Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects available at that time. Most of these remain valid, although there may have been minor changes to names and other non-essential detail. However since the publication of GeoTIFF v1.0 several of these object records have been either deprecated or deleted from the EPSG Dataset. Deprecated records usually have been superseded by a later record, with a cross reference included in the EPSG Dataset. Deleted records have been removed from the EPSG dataset and the code could be (and in some cases has been) reused for a totally different object. Particular care is needed in the treatment of GeoTIFF files that have used these deleted object records, _shown in red_ in tables B.1 through B.6 below. These tables list the EPSG codes listed in GeoTIFF v1.0 that are no longer valid and which should no longer be used. The list was correct at 29th May 2018. For any later deprecation and replacement of records refer to the EPSG Dataset. Note that the names in the GeoTIFF v1.0 specification and given in these tables have prefixes and underscores not found in the EPSG Dataset.
 
+[cols="1,4",width="90%" options="header"]
+|===
+^|Code {set:cellbgcolor:#CACCCE}
+^| Description 
+^| {set:cellbgcolor:#FFFFFF} test 
+<| answer 
+|  |
+| |
+| |
+| |
+|===
+__Table B.1 - Deprecated and deleted EPSG Projected CRS codes  __ 
 
-Table B.1 - Deprecated and deleted EPSG Projected CRS codes
+[cols="1,4",width="90%" options="header"]
+|===
+^|Code {set:cellbgcolor:#CACCCE} ^| Description 
+^| {set:cellbgcolor:#FFFFFF} test <| answer 
+^| <|
+^| <|
+^| <|
+|===
+_Table B.2 - Deprecated and deleted EPSG Geodetic CRS codes_
 
-Table B.1 - Deprecated and deleted EPSG Projected CRS codes
+[cols="1,4",width="90%"]
+[cols="1,4",width="90%" options="header"]
+|===
+^|Code {set:cellbgcolor:#CACCCE} ^| Description 
+^| {set:cellbgcolor:#FFFFFF} test <| answer 
+^| <|
+^| <|
+^| <|
+|===
+_Table B.3 - Deprecated and deleted EPSG Unit of Measure codes_
 
-Table B.2 - Deprecated and deleted EPSG Geodetic CRS codes
+[cols="1,4",width="90%" options="header"]
+|===
+^|Code {set:cellbgcolor:#CACCCE} ^| Description 
+^| {set:cellbgcolor:#FFFFFF} test <| answer 
+^| <|
+^| <|
+^| <|
+|===
+_Table B.4 - Deprecated and deleted EPSG Geodetic Datum codes_
 
-Table B.3 - Deprecated and deleted EPSG Unit of Measure codes
+[cols="1,4",width="90%" options="header"]
+|===
+^|Code {set:cellbgcolor:#CACCCE} ^| Description 
+^| {set:cellbgcolor:#FFFFFF} test <| answer 
+^| <|
+^| <|
+^| <|
+|===
+_Table B.5 - Deprecated and deleted EPSG Ellipsoid codes_
 
-Table B.4 - Deprecated and deleted EPSG Geodetic Datum codes
-
-Table B.5 - Deprecated and deleted EPSG Ellipsoid codes
-
-Table B.6 - Deprecated and deleted EPSG Map projection codes
+[cols="1,4",width="90%" options="header"]
+|===
+^|Code {set:cellbgcolor:#CACCCE} ^| Description 
+^| {set:cellbgcolor:#FFFFFF} test <| answer 
+^| <|
+^| <|
+^| <|
+|===
+_Table B.6 - Deprecated and deleted EPSG Map projection codes_
 
 == Coordinate Transformations
 
