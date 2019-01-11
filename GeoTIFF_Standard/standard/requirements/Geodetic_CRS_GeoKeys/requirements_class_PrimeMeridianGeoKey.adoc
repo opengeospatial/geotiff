@@ -35,7 +35,7 @@ NOTE: In GeoTIFF v1.0 the range was 8000-8999
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianGeoKey.user-defined +
-_A PrimeMeridianGeoKey value of 32767 SHALL be a user-defined prime meridian. If the PrimeMeridianGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, and PrimeMeridianLongGeoKey SHALL be populated_
+_If the PrimeMeridianGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, and PrimeMeridianLongGeoKey SHALL be populated_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

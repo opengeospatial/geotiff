@@ -35,7 +35,7 @@ NOTE: In GeoTIFF v1.0 the range was 6000-6999. Several values in this range have
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.user-defined +
-_A GeodeticDatumGeoKey value of 32767 SHALL be a user-defined geodetic datum.  If the GeodeticDatumGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey SHALL be populated._
+_If the GeodeticDatumGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
