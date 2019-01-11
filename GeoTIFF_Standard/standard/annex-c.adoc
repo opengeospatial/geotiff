@@ -9,7 +9,7 @@ GeoTIFF v1.0 lists a number of map projection methods (which it calls 'coordinat
 |===
 ^|Code {set:cellbgcolor:#CACCCE} ^| Description 
 ^| {set:cellbgcolor:#FFFFFF} test <| answer 
-^|  <|
+^| stuff <|
 ^| <|
 ^| <|
 |===
