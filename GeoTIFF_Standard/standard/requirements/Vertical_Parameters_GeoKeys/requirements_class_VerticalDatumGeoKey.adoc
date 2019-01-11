@@ -30,7 +30,7 @@ NOTE: In GeoTIFF v1.0 the range was given as 1-16383 but without reference to EP
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.user-defined +
-_A VerticalDatumGeoKey value of 32767 SHALL be a user-defined Vertical datum. If the VerticalDatumGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey SHALL be populated._
+_If the VerticalDatumGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

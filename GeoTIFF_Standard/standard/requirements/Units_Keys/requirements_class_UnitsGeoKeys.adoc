@@ -7,9 +7,13 @@
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.ID +
 _The GeogAngularUnitsGeoKey SHALL have ID = 2054_
+
 _The GeogAzimuthUnitsGeoKey SHALL have ID = 2060_
+
 _The GeogLinearUnitsGeoKey SHALL have ID = 2052_
+
 _The ProjLinearUnitsGeoKey SHALL have ID = 3076_
+
 _The VerticalUnitsGeoKey SHALL have ID = 4099_
 {set:cellbgcolor:#FFFFFF}
 
@@ -45,20 +49,20 @@ _A GeogAngularUnitsGeoKey or a GeogAzimuthUnitsGeoKey value of 32767 SHALL be a 
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.userdefined +
+|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.userdefinedGeogLinear +
 _A GeogLinearUnitsGeoKey value of 32767 SHALL be a user-defined linear unit. If the value is 32767 (User-Defined) then the GeodeticCitationGeoKey and the GeogLinearUnitSizeGeoKey SHALL be populated_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.userdefinedForbidden +
-_A VerticalUnitsGeoKey value of 32767 (user defined) SHALL not be used_
-
-NOTE: The rationale for this is that it would imply to fill a VerticalUnitSizeGeoKey, which does not exist in GeoTIFF 1.0. The user should use of the EPSG linear unit.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.userdefinedProjLinear +
 _A ProjLinearUnitsGeoKey value of 32767 SHALL be a user-defined linear unit. If the value is 32767 (User-Defined) then the ProjectedCitationGeoKey and the ProjLinearUnitSizeGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.userdefinedVertical +
+_A VerticalUnitsGeoKey value of 32767 (user defined) SHALL not be used_
+
+NOTE: The rationale for this is that it would imply to fill a VerticalUnitSizeGeoKey, which does not exist in GeoTIFF 1.0. The user should use of the EPSG linear unit.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

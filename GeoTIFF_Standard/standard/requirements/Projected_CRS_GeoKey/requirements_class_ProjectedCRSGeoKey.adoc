@@ -33,7 +33,7 @@ NOTE: In GeoTIFF v1.0 the range was 20000-32760. Several values in this range ha
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.user-defined +
-_A ProjectedCRSGeoKey value of 32767 SHALL be a user-defined projected CRS.  If the ProjectedCRSGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and ProjectionGeoKey SHALL be populated._
+_If the ProjectedCRSGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and ProjectionGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
