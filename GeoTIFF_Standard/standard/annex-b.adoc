@@ -961,33 +961,129 @@ _Table B.2 - Deprecated and deleted EPSG Geodetic CRS codes_
 |===
 _Table B.3 - Deprecated and deleted EPSG Unit of Measure codes_
 
-[cols="1,4",width="90%" options="header"]
+[cols="2,1,4",width="90%" options="header"]
 |===
-^|Code {set:cellbgcolor:#CACCCE} ^| Description 
-^| {set:cellbgcolor:#FFFFFF} test <| answer 
-^| <|
-^| <|
-^| <|
+^| *Name given in GeoTIFF v1.0*
+^| *EPSG CRS Code* 
+^| *Comment*
+<| Datum_Bern_1898
+^| _6217_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, entity not replaced._
+<| Datum_Cote_d_Ivoire
+^| 6226
+<| Deprecated in EPSG, replaced by 6142 Locodjo 1965 and 6143 Abidjan 1987.
+<| Datum_Douala
+^| 6228
+<| Deprecated in EPSG, replaced by 6192 Douala 1948.
+<| Datum_Gandajika_1970
+^| 6233
+<| Deprecated in EPSG, replaced by 6684 Gan 1970 and 6685 Gandajika.
+<| Datum_Garoua
+^| 6234
+<| Deprecated in EPSG, replaced by 6197 Garoua.
+<| Datum_Guyane_Francaise
+^| 6235
+<| Deprecated in EPSG, replaced by 6623 CSG67.
+<| Datum_Manoca
+^| 6260
+<| Deprecated in EPSG, replaced by 6193 Manoca 1962.
+<| Datum_Mhast
+^| 6264
+<| Deprecated in EPSG, replaced by 6704 Mhast (onshore) and 6705 Mhast (offshore).
+<| Datum_NAD_Michigan
+^| 6268
+<| Deprecated in EPSG, replaced by 6267 North American Datum 1927.
+<| Datum_Qornoq
+^| 6287
+<| Deprecated in EPSG, replaced by 6194 Qornoq 1927.
+<| Datum_RT38
+^| _6290_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, entity replaced by 6308 Stockholm 1938._
+<| Datum_South_American_Datum_1969
+^| 6291
+<| Deprecated in EPSG, replaced by 6618 SAD69.
+<| Datum_Segora
+^| 6294
+<| Deprecated in EPSG, replaced by 6613 Gunung Segara.
+<| Datum_Sudan
+^| 6296
+<| Deprecated in EPSG, replaced by 6201 Adindan.
+<| Datum_Voirol_Unifie_1960
+^| _6305_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, entity replaced by 6307 Nord Sahara 1959._
+<| Datum_Nord_de_Guerre
+^| 6902
+<| Deprecated in EPSG, replaced by 6901 ATF (Paris)
 |===
 _Table B.4 - Deprecated and deleted EPSG Geodetic Datum codes_
 
-[cols="1,4",width="90%" options="header"]
+[cols="2,1,4",width="90%" options="header"]
 |===
-^|Code {set:cellbgcolor:#CACCCE} ^| Description 
-^| {set:cellbgcolor:#FFFFFF} test <| answer 
-^| <|
-^| <|
-^| <|
+^| *Name given in GeoTIFF v1.0*
+^| *EPSG CRS Code* 
+^| *Comment*
+<| Ellipse_Bessel_Namibia
+^| 7006
+<| Deprecated in EPSG, replaced by 7046 Bessel Namibia (GLM).
+<| Ellipse_Clarke_1866_Michigan
+^| 7009
+<| Deprecated in EPSG, replaced by 7008 Clarke 1866.
+<| Ellipse_Everest_1830_1975_Definition
+^| _7017_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, entity not replaced._
+<| Ellipse_International_1967
+^| _7023_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, entity replaced by 7036 GRS 1967 and 7050 GRS 1967 Modified._
+<| Ellipse_NWL_10D
+^| _7026_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, entity not replaced._
+<| Ellipse_Sphere
+^| 7035
+<| Deprecated in EPSG, replaced by 7047 GRS 1980 Authalic Sphere.
 |===
 _Table B.5 - Deprecated and deleted EPSG Ellipsoid codes_
 
-[cols="1,4",width="90%" options="header"]
+[cols="2,1,4",width="90%" options="header"]
 |===
-^|Code {set:cellbgcolor:#CACCCE} ^| Description 
-^| {set:cellbgcolor:#FFFFFF} test <| answer 
-^| <|
-^| <|
-^| <|
+^| *Name given in GeoTIFF v1.0*
+^| *EPSG CRS Code* 
+^| *Comment*
+<| Proj_California_CS27_VII
+^| 10407
+<| Deprecated in EPSG, replaced by 10408 California CS27 zone VII.
+<| Proj_Kentucky_CS83_North
+^| 11631
+<| Deprecated in EPSG, replaced by 15303 Kentucky CS83 North zone (metres).
+<| Proj_Michigan_CS27_North
+^| 12111
+<| Deprecated in EPSG, replaced by 6965 Michigan CS27 North zone.
+<| Proj_Michigan_CS27_Central
+^| 12112
+<| Deprecated in EPSG, replaced by 6198 Michigan CS27 Central zone.
+<| Proj_Michigan_CS27_South
+^| 12113
+<| Deprecated in EPSG, replaced by 6199 Michigan CS27 South zone.
+<| Proj_New_York_CS27_Long_Island
+^| 13104
+<| Deprecated in EPSG, replaced by 4454 New York CS27 Long Island zone.
+<| Proj_Pennsylvania_CS27_South
+^| 13702
+<| Deprecated in EPSG, replaced by 4436 Pennsylvania CS27 South zone.
+<| Proj_BLM_14N_feet
+^| _15914_
+<| _BLM zone 14N (US survey feet) (incorrect unit in GeoTIFF v1.0 specification)._
+<| Proj_BLM_15N_feet
+^| _15915_
+<| _BLM zone 15N (US survey feet) (incorrect unit in GeoTIFF v1.0 specification)._
+<| Proj_BLM_16N_feet
+^| _15916_
+<| _BLM zone 16N (US survey feet) (incorrect unit in GeoTIFF v1.0 specification)._
+<| Proj_BLM_17N_feet
+^| _15917_
+<| _BLM zone 17N (US survey feet) (incorrect unit in GeoTIFF v1.0 specification)._
+<| Proj_RSO_Borneo
+^| _19912_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 19956 Rectified Skew Orthomorphic Borneo Grid (chains), 19957 Rectified Skew Orthomorphic Borneo Grid (feet) and 19958 Rectified Skew Orthomorphic Borneo Grid (metres)._
 |===
 _Table B.6 - Deprecated and deleted EPSG Map projection codes_
 
