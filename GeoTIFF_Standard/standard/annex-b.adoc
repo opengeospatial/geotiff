@@ -431,18 +431,420 @@ The GeoTIFF v1.0 specification refers to "obsolete EPSG/POSC codes". These refer
 A reference to an EPSG coordinate reference system code is sufficient for a complete definition: it implies use of the CRS components (datum, ellipsoid, map projection, etc.) that are associated with that CRS in the EPSG Dataset definition. The EPSG codes for coordinate reference system components should only be referenced when describing a user-defined coordinate reference system.
 
 ==== Deprecated and deleted EPSG codes
-Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects available at that time. Most of these remain valid, although there may have been minor changes to names and other non-essential detail. However since the publication of GeoTIFF v1.0 several of these object records have been either deprecated or deleted from the EPSG Dataset. Deprecated records usually have been superseded by a later record, with a cross reference included in the EPSG Dataset. Deleted records have been removed from the EPSG dataset and the code could be (and in some cases has been) reused for a totally different object. Particular care is needed in the treatment of GeoTIFF files that have used these deleted object records, _shown in red_ in tables B.1 through B.6 below. These tables list the EPSG codes listed in GeoTIFF v1.0 that are no longer valid and which should no longer be used. The list was correct at 29th May 2018. For any later deprecation and replacement of records refer to the EPSG Dataset. Note that the names in the GeoTIFF v1.0 specification and given in these tables have prefixes and underscores not found in the EPSG Dataset.
+Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects available at that time. Most of these remain valid, although there may have been minor changes to names and other non-essential detail. However since the publication of GeoTIFF v1.0 several of these object records have been either deprecated or deleted from the EPSG Dataset. Deprecated records usually have been superseded by a later record, with a cross reference included in the EPSG Dataset. Deleted records have been removed from the EPSG dataset and the code could be (and in some cases has been) reused for a totally different object. Particular care is needed in the treatment of GeoTIFF files that have used these deleted object records, _shown in italics_ in tables B.1 through B.6 below. These tables list the EPSG codes listed in GeoTIFF v1.0 that are no longer valid and which should no longer be used. The list was correct at 29th May 2018. For any later deprecation and replacement of records refer to the EPSG Dataset. Note that the names in the GeoTIFF v1.0 specification and given in these tables have prefixes and underscores not found in the EPSG Dataset.
 
-[cols="1,4",width="90%" options="header"]
+[cols="2,1,4",width="90%" options="header"]
 |===
-^|Code {set:cellbgcolor:#CACCCE}
-^| Description 
-^| {set:cellbgcolor:#FFFFFF} test 
-<| answer 
-|  |
-| |
-| |
-| |
+^| *Name given in GeoTIFF v1.0*
+^| *EPSG CRS Code* 
+^| *Comment*
+<| PCS_AGD66_AMG_zone_48
+^| 20248  
+<| Deprecated in EPSG, no replacement.
+<| PCS_AGD84_AMG_zone_48
+^| 20348  
+<| Deprecated in EPSG, no replacement.  
+<| PCS_AGD84_AMG_zone_57
+^| _20357_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement_.   
+<| PCS_AGD84_AMG_zone_58
+^| 20358  
+<| Deprecated in EPSG, no replacement.   
+<| PCS_Lisbon_Portugese_Grid
+^| _20700_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._  
+<| PCS_Arc_1950_Lo13
+^| _20973_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
+<| PCS_Arc_1950_Lo15
+^| _20975_  
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._  
+<| PCS_Arc_1950_Lo17
+^| _20977_  
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._   
+<| PCS_Arc_1950_Lo19
+^| _20979_  
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._ 
+<| PCS_Arc_1950_Lo21
+^| _20981_  
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._   
+<| PCS_Arc_1950_Lo23
+^| _20983_ 
+<| __Deleted in EPSG, code not re-used as at 2018-05-29, no replacement__.  
+<| PCS_Arc_1950_Lo25
+^| _20985_  
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._   
+<| PCS_Arc_1950_Lo27
+^| _20987_  
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._ 
+<| PCS_Arc_1950_Lo29
+^| _20989_  
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._   
+<| PCS_Arc_1950_Lo31
+^| _20991_  
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._   
+<| PCS_Arc_1950_Lo33
+^| _20993_   
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
+<| PCS_Arc_1950_Lo35
+^| _20995_  
+<| __Deleted in EPSG, code not re-used as at 2018-05-29, no replacement__.
+<| PCS_Batavia_NEIEZ
+^| 21100  
+<| Deprecated in EPSG, replaced by 3001 Batavia / NEIEZ.
+<| PCS_Beijing_Gauss_13N
+^| 21473  
+<| Deprecated in EPSG, replaced by 21453 Beijing 1954 / Gauss-Kruger 13N.
+<| PCS_Beijing_Gauss_14N
+^| 21474 
+<| Deprecated in EPSG, replaced by 21454 Beijing 1954 / Gauss-Kruger 14N.
+<| PCS_Beijing_Gauss_15N
+^| 21475
+<| Deprecated in EPSG, replaced by 21455 Beijing 1954 / Gauss-Kruger 15N.
+<| PCS_Beijing_Gauss_16N
+^| 21476
+<| Deprecated in EPSG, replaced by 21456 Beijing 1954 / Gauss-Kruger 16N.
+<| PCS_Beijing_Gauss_17N
+^| 21477
+<| Deprecated in EPSG, replaced by 21457 Beijing 1954 / Gauss-Kruger 17N.
+<| PCS_Beijing_Gauss_18N
+^| 21478
+<| Deprecated in EPSG, replaced by 21458 Beijing 1954 / Gauss-Kruger 18N.
+<| PCS_Beijing_Gauss_19N
+^| 21479
+<| Deprecated in EPSG, replaced by 21459 Beijing 1954 / Gauss-Kruger 19N.
+<| PCS_Beijing_Gauss_20N
+^| 21480
+<| Deprecated in EPSG, replaced by 21460 Beijing 1954 / Gauss-Kruger 20N.
+<| PCS_Beijing_Gauss_21N
+^| 21481
+<| Deprecated in EPSG, replaced by 21461 Beijing 1954 / Gauss-Kruger 21N.
+<| PCS_Beijing_Gauss_22N
+^| 21482
+<| Deprecated in EPSG, replaced by 21462 Beijing 1954 / Gauss-Kruger 22N.
+<| PCS_Beijing_Gauss_23N
+^| 21483
+<| Deprecated in EPSG, replaced by 21463 Beijing 1954 / Gauss-Kruger 23N.
+<| PCS_Bern_1898_Swiss_Old
+^| _21790_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 21780 Bern 1898 (Bern) / LV03C._
+<| PCS_Bogota_UTM_zone_17N
+^| 21817
+<| Deprecated in EPSG, no replacement.
+<| PCS_Bogota_Colombia_3W
+^| 21891
+<| Deprecated in EPSG, replaced by 21896 Bogota 1975 / Colombia West zone.<
+<| PCS_Bogota_Colombia_Bogota
+^| 21892
+<| Deprecated in EPSG, replaced by 21897 Bogota 1975 / Colombia Bogota zone.
+<| PCS_Bogota_Colombia_3E
+^| 21893
+<| Deprecated in EPSG, replaced by 21898 Bogota 1975 / Colombia East Central zone.
+<| PCS_Bogota_Colombia_6E
+^| 21894
+<| Deprecated in EPSG, replaced by 21899 Bogota 1975 / Colombia East.
+<| PCS_Douala_UTM_zone_32N
+^| 22832
+<| Deprecated in EPSG, replaced by 2214 Douala 1948 / AOF west.
+<| PCS_Garoua_UTM_zone_33N
+^| 23433
+<| Deprecated in EPSG, replaced by 2312 Garoua / UTM zone 33N.
+<| PCS_ID74_UTM_zone_53N
+^| 23853
+<| Deprecated in EPSG, no replacement.
+<| PCS_ID74_UTM_zone_46S
+^| 23886
+<| Deprecated in EPSG, no replacement.
+<| PCS_Kalianpur_India_IVb
+^| _24384_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29._
+<| PCS_La_Canoa_UTM_zone_21N
+^| _24721_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29._
+<| PCS_Mhast_UTM_zone_32S
+^| 26432
+<| Deprecated in EPSG, replaced by 3353 Mhast (onshore) / UTM zone 32S and 3354 Mhast (offshore) / UTM zone 32S.
+<| PCS_Monte_Mario_Italy_1
+^| 26591
+<| Deprecated in EPSG, replaced by 3003 Monte Mario / Italy zone 1.
+<| PCS_Monte_Mario_Italy_2
+^| 26592
+<| Deprecated in EPSG, replaced by 3004 Monte Mario / Italy zone 2.
+<| PCS_NAD27_California_VII
+^| 26747
+<| Deprecated in EPSG, replaced by 26799 NAD27 / California zone VII.
+<| PCS_NAD27_Hawaii_zone_1
+^| _26761_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29._
+<| PCS_NAD27_Hawaii_zone_2
+^| _26762_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29._
+<| PCS_NAD27_Hawaii_zone_3
+^| _26763_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29._
+<| PCS_NAD27_Hawaii_zone_4
+^| _26764_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29._
+<| PCS_NAD27_Hawaii_zone_5
+^| _26765_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29._
+<| PCS_NAD27_BLM_14N_feet
+^| _26774_
+<| _This GeoTIFF v1.0 entry is incorrect. 26774 is NAD27 / Indiana West. NAD27 / BLM 14N (feet) is 32074, see below._
+<| PCS_NAD27_BLM_15N_feet
+^| _26775_
+<| _This GeoTIFF v1.0 entry is incorrect. 26775 is NAD27 / Iowa North. NAD27 / BLM 15N (feet) is 32075, see below._
+<| PCS_NAD27_BLM_16N_feet
+^| _26776_
+<| _This GeoTIFF v1.0 entry is incorrect. 26776 is NAD27 / Iowa South. NAD27 / BLM 16N (feet) is 32076, see below._
+<| PCS_NAD27_BLM_17N_feet
+^| _26777_
+<| _This GeoTIFF v1.0 entry is incorrect. 26777 is NAD27 / Kansas North. NAD27 / BLM 17N (feet) is 32077, see below._
+<| PCS_NAD27_Michigan_North
+^| _26788_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 6966 NAD27 / Michigan North._
+<| PCS_NAD27_Michigan_Central
+^| _26789_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 6201 NAD27 / Michigan Central._
+<| PCS_NAD27_Michigan_South
+^| _26790_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 6202 NAD27 / Michigan South._
+<| PCS_NAD_Michigan_Michigan_East
+^| 26801
+<| Deprecated in EPSG, replaced by 5623 NAD27 Michigan / Michigan East.
+<| PCS_NAD_Michigan_Michigan_Old_Central
+^| 26802
+<| Deprecated in EPSG, replaced by 5624 NAD27 Michigan / Michigan Old Central.
+<| PCS_NAD_Michigan_Michigan_West
+^| 26803
+<| Deprecated in EPSG, replaced by 5625 NAD27 Michigan / Michigan West.
+<| PCS_NAD83_Kentucky_North
+^| 26979
+<| Deprecated in EPSG, replaced by 2205 NAD83 / Kentucky North.
+<| PCS_Nahrwan_1967_UTM_38N
+^| 27038
+<| Deprecated in EPSG, replaced by 7006 Nahrwan 1934 / UTM zone 38N.
+<| PCS_NTF_France_I
+^| 27581
+<| Deprecated in EPSG, replaced by 27571 NTF (Paris) / Lambert zone I.
+<| PCS_NTF_France_II
+^| 27582
+<| Deprecated in EPSG, replaced by 27572 NTF (Paris) / Lambert zone II.
+<| PCS_NTF_France_III
+^| 27583
+<| Deprecated in EPSG, replaced by 27573 NTF (Paris) / Lambert zone III.
+<| PCS_NTF_Nord_France
+^| 27591
+<| Deprecated in EPSG, replaced by 27561 NTF (Paris) / Nord France.
+<| PCS_NTF_Centre_France
+^| 27592
+<| Deprecated in EPSG, replaced by 27562 NTF (Paris) / Centre France.
+<| PCS_NTF_Sud_France
+^| 27593
+<| Deprecated in EPSG, replaced by 27563 NTF (Paris) / Sud France.
+<| PCS_Pulkovo_Gauss_4N
+^| 28464
+<| Deprecated in EPSG, replaced by 2494 Pulkovo 1942 / Gauss-Kruger CM 21E.
+<| PCS_Pulkovo_Gauss_5N
+^| 28465
+<| Deprecated in EPSG, replaced by 2495 Pulkovo 1942 / Gauss-Kruger CM 27E.
+<| PCS_Pulkovo_Gauss_6N
+^| 28466
+<| Deprecated in EPSG, replaced by 2496 Pulkovo 1942 / Gauss-Kruger CM 33E.
+<| PCS_Pulkovo_Gauss_7N
+^| 28467
+<| Deprecated in EPSG, replaced by 2497 Pulkovo 1942 / Gauss-Kruger CM 39E.
+<| PCS_Pulkovo_Gauss_8N
+^| 28468
+<| Deprecated in EPSG, replaced by 2498 Pulkovo 1942 / Gauss-Kruger CM 45E.
+<| PCS_Pulkovo_Gauss_9N
+^| 28469
+<| Deprecated in EPSG, replaced by 2499 Pulkovo 1942 / Gauss-Kruger CM 51E.
+<| PCS_Pulkovo_Gauss_10N
+^| 28470
+<| Deprecated in EPSG, replaced by 2500 Pulkovo 1942 / Gauss-Kruger CM 57E.
+<| PCS_Pulkovo_Gauss_11N
+^| 28471
+<| Deprecated in EPSG, replaced by 2501 Pulkovo 1942 / Gauss-Kruger CM 63E.
+<| PCS_Pulkovo_Gauss_12N
+^| 28472
+<| Deprecated in EPSG, replaced by 2502 Pulkovo 1942 / Gauss-Kruger CM 69E.
+<| PCS_Pulkovo_Gauss_13N
+^| 28473
+<| Deprecated in EPSG, replaced by 2503 Pulkovo 1942 / Gauss-Kruger CM 75E.
+<| PCS_Pulkovo_Gauss_14N
+^| 28474
+<| Deprecated in EPSG, replaced by 2504 Pulkovo 1942 / Gauss-Kruger CM 81E.
+<| PCS_Pulkovo_Gauss_15N
+^| 28475
+<| Deprecated in EPSG, replaced by 2505 Pulkovo 1942 / Gauss-Kruger CM 87E.
+<| PCS_Pulkovo_Gauss_16N
+^| 28476
+<| Deprecated in EPSG, replaced by 2506 Pulkovo 1942 / Gauss-Kruger CM 93E.
+<| PCS_Pulkovo_Gauss_17N
+^| 28477
+<| Deprecated in EPSG, replaced by 2507 Pulkovo 1942 / Gauss-Kruger CM 99E.
+<| PCS_Pulkovo_Gauss_18N
+^| 28478
+<| Deprecated in EPSG, replaced by 2508 Pulkovo 1942 / Gauss-Kruger CM 105E.
+<| PCS_Pulkovo_Gauss_19N
+^| 28479
+<| Deprecated in EPSG, replaced by 2509 Pulkovo 1942 / Gauss-Kruger CM 111E.
+<| PCS_Pulkovo_Gauss_20N
+^| 28480
+<| Deprecated in EPSG, replaced by 2510 Pulkovo 1942 / Gauss-Kruger CM 117E.
+<| PCS_Pulkovo_Gauss_21N
+^| 28481
+<| Deprecated in EPSG, replaced by 2511 Pulkovo 1942 / Gauss-Kruger CM 123E.
+^| 28482
+<| Deprecated in EPSG, replaced by 2512 Pulkovo 1942 / Gauss-Kruger CM 129E.
+<| PCS_Pulkovo_Gauss_23N
+^| 28483
+<| Deprecated in EPSG, replaced by 2513 Pulkovo 1942 / Gauss-Kruger CM 135E.
+<| PCS_Pulkovo_Gauss_24N
+^| 28484
+<| Deprecated in EPSG, replaced by 2514 Pulkovo 1942 / Gauss-Kruger CM 141E.
+<| PCS_Pulkovo_Gauss_25N
+^| 28485
+<| Deprecated in EPSG, replaced by 2515 Pulkovo 1942 / Gauss-Kruger CM 147E.
+<| PCS_Pulkovo_Gauss_26N
+^| 28486
+<| Deprecated in EPSG, replaced by 2516 Pulkovo 1942 / Gauss-Kruger CM 153E.
+<| PCS_Pulkovo_Gauss_27N
+^| 28487
+<| Deprecated in EPSG, replaced by 2517 Pulkovo 1942 / Gauss-Kruger CM 159E.
+<| PCS_Pulkovo_Gauss_28N
+^| 28488
+<| Deprecated in EPSG, replaced by 2518 Pulkovo 1942 / Gauss-Kruger CM 165E.
+<| PCS_Pulkovo_Gauss_29N
+^| 28489
+<| Deprecated in EPSG, replaced by 2519 Pulkovo 1942 / Gauss-Kruger CM 171E.
+<| PCS_Pulkovo_Gauss_30N
+^| 28490
+<| Deprecated in EPSG, replaced by 2520 Pulkovo 1942 / Gauss-Kruger CM 177E.
+<| PCS_Pulkovo_Gauss_31N
+^| 28491
+<| Deprecated in EPSG, replaced by 2521 Pulkovo 1942 / Gauss-Kruger CM 177W.
+<| PCS_Pulkovo_Gauss_32N
+^| 28492
+<| Deprecated in EPSG, replaced by 2522 Pulkovo 1942 / Gauss-Kruger CM 171W.
+<| PCS_SAD69_UTM_zone_18N
+^| 29118
+<| Deprecated in EPSG, replaced by 29168 SAD69 / UTM zone 18N.
+<| PCS_SAD69_UTM_zone_19N
+^| 29119
+<| Deprecated in EPSG, replaced by 29169 SAD69 / UTM zone 19N.
+<|PCS_SAD69_UTM_zone_20N
+^| 29120
+<| Deprecated in EPSG, replaced by 29170 SAD69 / UTM zone 20N.
+<| PCS_SAD69_UTM_zone_21N
+^| 29121
+<| Deprecated in EPSG, replaced by 29171 SAD69 / UTM zone 21N.
+<| PCS_SAD69_UTM_zone_22N
+^| 29122
+<| Deprecated in EPSG, replaced by 29172 SAD69 / UTM zone 22N.
+<| PCS_SAD69_UTM_zone_17S
+^| 29177
+<| Deprecated in EPSG, replaced by 29187 SAD69 / UTM zone 17S.
+<| PCS_SAD69_UTM_zone_18S
+^| 29178
+<| Deprecated in EPSG, replaced by 29188 SAD69 / UTM zone 18S.
+<| PCS_SAD69_UTM_zone_19S
+^| 29179
+<| Deprecated in EPSG, replaced by 29189 SAD69 / UTM zone 19S.
+<| PCS_SAD69_UTM_zone_20S
+^| 29180
+<| Deprecated in EPSG, replaced by 29190 SAD69 / UTM zone 20S.
+<| PCS_SAD69_UTM_zone_21S
+^| 29181
+<| Deprecated in EPSG, replaced by 29191 SAD69 / UTM zone 21S.
+<| PCS_SAD69_UTM_zone_22S
+^| 29182
+<| Deprecated in EPSG, replaced by 29192 SAD69 / UTM zone 22S.
+<| PCS_SAD69_UTM_zone_23S
+^| 29183
+<| Deprecated in EPSG, replaced by 29193 SAD69 / UTM zone 23S.
+<| PCS_SAD69_UTM_zone_24S
+^| 29184
+<| Deprecated in EPSG, replaced by 29194 SAD69 / UTM zone 24S.
+<| PCS_SAD69_UTM_zone_25S
+^| 29185
+<| Deprecated in EPSG, replaced by 29195 SAD69 / UTM zone 25S.
+<| PCS_Sudan_UTM_zone_35N
+^| 29635
+<| Deprecated in EPSG, replaced by 20135 Adindan / UTM zone 35N.
+<| PCS_Sudan_UTM_zone_36N
+^| 29636
+<| Deprecated in EPSG, replaced by 20136 Adindan / UTM zone 36N.
+<| PCS_Tananarive_Laborde
+^| 29700
+<| Deprecated in EPSG, replaced by 20701 Tananarive (Paris) / Laborde Grid and 29702 Tananarive (Paris) / Laborde Grid approximation.
+<| PCS_Timbalai_1948_Borneo
+^| _29800_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 29873 Timbalai 1948 / RSO Borneo (m)._____
+<| PCS_TM65_Irish_Nat_Grid
+^| 29900
+<| Deprecated in EPSG, replaced by 29903 TM65 / Irish Grid.
+<| PCS_Voirol_Unifie_N_Algerie
+^| _30591_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 30791 Nord Sahara 1959 / Nord Algerie._
+<| PCS_Voirol_Unifie_S_Algerie
+^| _30592_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 30792 Nord Sahara 1959 / Sud Algerie._
+<| PCS_Bern_1938_Swiss_New
+^| _30600_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 21780 Bern 1898 (Bern) / LV03C._
+<| PCS_MGI_Austria_West
+^| 31291
+<| Deprecated in EPSG, replaced by 31281 MGI (Ferro) / Austria West Zone.
+<| PCS_MGI_Austria_Central
+^| 31292
+<| Deprecated in EPSG, replaced by 31282 MGI (Ferro) / Austria Central Zone.
+<| PCS_MGI_Austria_East
+^| 31293
+<| Deprecated in EPSG, replaced by 31283 MGI (Ferro) / Austria East Zone.
+<| PCS_DHDN_Germany_zone_1
+^| _31491_
+<| __Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 5520 DHDN / 3-degree Gauss-Kruger zone 1__.
+<| PCS_DHDN_Germany_zone_2
+^| _31492_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 31466 DHDN / 3-degree Gauss-Kruger zone 2._
+<| PCS_DHDN_Germany_zone_3
+^| _31493_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 31467 DHDN / 3-degree Gauss-Kruger zone 3._
+<| PCS_DHDN_Germany_zone_4
+^| _31494_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 31468 DHDN / 3-degree Gauss-Kruger zone 4._
+<| PCS_DHDN_Germany_zone_5
+^| _31495_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 31469 DHDN / 3-degree Gauss-Kruger zone 5._
+<| PCS_NAD27_New_York_Long_Is
+^| 32018
+<| Deprecated in EPSG, replaced by 4456 NAD27 / New York Long Island.
+<| PCS_NAD27_Pennsylvania_S
+^| 32029
+<| Deprecated in EPSG, replaced by 4455 NAD27 / Pennsylvania South.
+<| PCS_NAD27_Tennessee
+^| 32036
+<| Deprecated in EPSG, replaced by 2204 NAD27 / Tennessee.
+<| PCS_NAD27_Puerto_Rico
+^| _32059_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 3991 Puerto Rico State Plane CS of 1927._
+<| PCS_NAD27_St_Croix
+^| _32060_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 3992  Puerto Rico / St. Croix._
+<| PCS_NAD27_BLM_14N_feet
+^| 32074
+<| Deprecated in EPSG, replaced by 32064 NAD27 / BLM 14N (ftUS).
+<| PCS_NAD27_BLM_15N_feet
+^| 32075
+<| Deprecated in EPSG, replaced by 32065 NAD27 / BLM 15N (ftUS).
+<| PCS_NAD27_BLM_16N_feet
+^| 32076
+<| Deprecated in EPSG, replaced by 32066 NAD27 / BLM 16N (ftUS).
+<| PCS_NAD27_BLM_17N_feet
+^| 32077
+<| Deprecated in EPSG, replaced by 32067 NAD27 / BLM 17N (ftUS).
 |===
 __Table B.1 - Deprecated and deleted EPSG Projected CRS codes  __ 
 
