@@ -150,7 +150,7 @@ include::requirements/Vertical_Parameters_GeoKeys/requirements_class_VerticalCRS
 
 ==== Citation GeoKeys
 
-These keys are used to describe Model CRS elements through ASCII free text. A citation may be included with a CRS identified through the GeoTIFF CRS register (7.4.1). A citation is mandatory for a user-defined CRSs and CRS objects (7.4.3). The GeodeticCitationGeoKey, ProjectedCitationGeoKey and VerticalCitationGeoKey are used with CRSs and CRS components.
+These keys are used to describe Model CRS elements through ASCII free text. A citation may be included with a CRS identified through the GeoTIFF CRS register (7.4.1). A citation is mandatory for a user-defined CRSs and CRS objects (7.4.3). The GeodeticCitationGeoKey, ProjectedCitationGeoKey and VerticalCitationGeoKey are used with CRSs and CRS components. The GTCitationGeoKey is provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file.
 
 NOTE: In GeoTIFF 1.0 the GeodeticCitationGeoKey key was called GeogCitationGeoKey and the ProjectedCitationGeoKey key was called PCSCitationGeoKey
 
