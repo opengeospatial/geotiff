@@ -696,6 +696,7 @@ Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects avai
 <| PCS_Pulkovo_Gauss_21N
 ^| 28481
 <| Deprecated in EPSG, replaced by 2511 Pulkovo 1942 / Gauss-Kruger CM 123E.
+<| PCS_Pulkovo_Gauss_22N
 ^| 28482
 <| Deprecated in EPSG, replaced by 2512 Pulkovo 1942 / Gauss-Kruger CM 129E.
 <| PCS_Pulkovo_Gauss_23N
@@ -854,7 +855,7 @@ __Table B.1 - Deprecated and deleted EPSG Projected CRS codes  __ 
 ^| *EPSG CRS Code* 
 ^| *Comment*
 <| GCS_Bern_1898
-<| _4217_
+^| _4217_
 <| _Deleted in EPSG, code reassigned to NAD83 / BLM 59N (ftUS) projected CRS, entity not replaced._
 <| GCS_Cote_d_Ivoire
 ^| 4226
