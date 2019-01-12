@@ -848,24 +848,115 @@ Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects avai
 |===
 __Table B.1 - Deprecated and deleted EPSG Projected CRS codes  __ 
 
-[cols="1,4",width="90%" options="header"]
+[cols="2,1,4",width="90%" options="header"]
 |===
-^|Code {set:cellbgcolor:#CACCCE} ^| Description 
-^| {set:cellbgcolor:#FFFFFF} test <| answer 
-^| <|
-^| <|
-^| <|
+^| *Name given in GeoTIFF v1.0*
+^| *EPSG CRS Code* 
+^| *Comment*
+<| GCS_Bern_1898
+<| _4217_
+<| _Deleted in EPSG, code reassigned to NAD83 / BLM 59N (ftUS) projected CRS, entity not replaced._
+<| GCS_Cote_d_Ivoire
+^| 4226
+<| Deprecated in EPSG, replaced by 4142 Locodjo 1965 and 4143 Abidjan 1987.
+<| GCS_Douala
+^| 4228
+<| Deprecated in EPSG, replaced by 4192 Douala 1948.
+<| GCS_Gandajika_1970
+^| 4233
+<| Deprecated in EPSG, replaced by 4684 Gan 1970 and 4685 Gandajika.
+<| GCS_Garoua
+^| 4234
+<| Deprecated in EPSG, replaced by 4197 Garoua.
+<| GCS_Guyane_Francaise
+^| 4235
+<| Deprecated in EPSG, replaced by 4623 CSG67.
+<| GCS_Manoca
+^| 4260
+<| Deprecated in EPSG, replaced by 4193 Manoca 1962.
+<| GCS_Mhast
+^| 4264
+<| Deprecated in EPSG, replaced by 4704 Mhast (onshore) and 4705 Mhast (offshore).
+<| GCS_NAD_Michigan
+^| 4268
+<| Deprecated in EPSG, replaced by 4267 NAD27.
+<| GCS_Qornoq
+^| 4287
+<| Deprecated in EPSG, replaced by 4194 Qornoq 1927.
+<| GCS_RT38
+^| _4290_
+<| _Deleted in EPSG, code re-used for a coordinate transformation, entity replaced by 4308 RT38._
+<| GCS_SAD69
+^| 4291
+<| Deprecated in EPSG, replaced by 4618 SAD69.
+<| GCS_Segora
+^| 4294
+<| Deprecated in EPSG, replaced by 4613 Segara.
+<| GCS_Sudan
+^| 4296
+<| Deprecated in EPSG, replaced by 4201 Adindan.
+<| GCS_Voirol_Unifie
+^| _4305_
+<| _Deleted in EPSG, code re-used for a map projection, entity replaced by 4307 Nord Sahara 1959._
+<| GCS_Voirol_Unifie_Paris
+^| _4812_
+<| _Deleted in EPSG, code reassigned to New Beijing / 3-degree Gauss-Kruger CM 132E projected CRS, entity replaced by 4819 Nord Sahara 1959 (Paris)._
+<| GCS_NDG_Paris
+^| 4902
+<| Deprecated in EPSG, replaced by 4901 ATF (Paris)
+<| GCSE_Clarke1866Michigan
+^| 4009
+<| Deprecated in EPSG, no replacement.
+<| GCSE_Everest1830_1975Definition
+^| _4017_
+<| _Deleted in EPSG, code reassigned to MOLDREF99 geographic 3D CRS, entity replaced by 4045 Unknown datum based upon the Everest 1830 (1975 Definition) ellipsoid._
+<| GCSE_International1967
+^| _4023_
+<| _Deleted in EPSG, code reassigned to MOLDREF99 geographic 2D CRS, entity replaced by 4036 Unknown datum based upon the GRS 1967 ellipsoid._
+<| GCSE_NWL10D
+^| _4026_
+<| _Deleted in EPSG, code reassigned to MOLDREF99 / Moldova TM projected CRS, entity not replaced._
+<| GCSE_Sphere
+^| 4035
+<| Deprecated in EPSG, replaced by 4047 Unspecified datum based upon the GRS 1980 Authalic Sphere.
 |===
 _Table B.2 - Deprecated and deleted EPSG Geodetic CRS codes_
 
-[cols="1,4",width="90%"]
-[cols="1,4",width="90%" options="header"]
+[cols="2,1,4",width="90%" options="header"]
 |===
-^|Code {set:cellbgcolor:#CACCCE} ^| Description 
-^| {set:cellbgcolor:#FFFFFF} test <| answer 
-^| <|
-^| <|
-^| <|
+^| *Name given in GeoTIFF v1.0*
+^| *EPSG CRS Code* 
+^| *Comment*
+<| Linear_Foot_Modified_American
+^| _9004_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29._
+<| Linear_Foot_Indian
+^| _9006_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 9080 Indian foot, 9081 Indian foot (1937), 9082 Indian foot (1962) and 9083 Indian foot (1975)._
+<| Linear_Link
+^| _9007_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 9098 link._
+<| Linear_Link_Benoit
+^| _9008_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 9053 British link (Benoit 1895 A) and 9063 British link (Benoit 1895 B)._
+<| Linear_Link_Sears
+^| _9009_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 9043 British link (Sears 1922)._
+<| Linear_Chain_Benoit
+^| _9010_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 9052 British chain (Benoit 1895 A) and 9062 British chain (Benoit 1895 B)._
+<| Linear_Chain_Sears
+^| _9011_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 9042 British chain (Sears 1922)._
+<| Linear_Yard_Sears
+^| _9012_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 9040 British yard (Sears 1922)._
+<| Linear_Yard_Indian
+^| _9013_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 9084 Indian yard, 9085 Indian yard (1937), 9086 Indian yard (1962) and 9087 Indian yard (1975)._
+<| Linear_Mile_International_Nautical
+^| _9015_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 9030 nautical mile._
 |===
 _Table B.3 - Deprecated and deleted EPSG Unit of Measure codes_
 
