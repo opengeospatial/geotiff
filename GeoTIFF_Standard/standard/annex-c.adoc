@@ -5,53 +5,179 @@
 === Map Projection methods
 GeoTIFF v1.0 lists a number of map projection methods (which it calls 'coordinate transformations'). These are names, without any formulas or clear citation. As such they are an ambiguous identification of method. It is not possible to identify whether the formulas are ellipsoidal or spherical. If it is assumed that they are ellipsoidal formulas, for some the name does not adequately distinguish between method variations where different formulas lead to significantly different results in application. The codes for these listed methods are given in table C.1.
 
-[cols="1,4",width="90%" options="header"]
-|===
-^|Code {set:cellbgcolor:#CACCCE} ^| Description 
-^| {set:cellbgcolor:#FFFFFF} test <| answer 
-^| stuff <|
-^| <|
-^| <|
-|===
+[cols="4,4,1",width="90%" options="header"]
+|====
+^| [underline]#*GeoTIFF v1.0 Map Projection Method Name*#
+^| [underline]#*GeoTIFF v1.0 Map Projection Method Name Alias*# 
+^| [underline]#*GeoTIFF v1.0 Value for ProjMethodGeoKey*#
+<| TransverseMercator
+<| GaussBoaga; GaussKruger
+^| 1
+<| TransvMercator_Modified_Alaska 
+<| AlaskaConformal
+^| 2
+<| ObliqueMercator
+<| ObliqueMercator_Hotine
+^| 3
+<| ObliqueMercator_Laborde
+<|
+^| 4
+<| ObliqueMercator_Rosenmund
+<| SwissObliqueCylindrical
+^| 5
+<| ObliqueMercator_Spherical
+<|
+^| 6
+<| Mercator
+<|
+^| 7
+<| LambertConfConic_2SP
+<|
+^| 8
+<| LambertConfConic_Helmert
+<|
+^| 9
+<| LambertAzimEqualArea
+<|
+^| 10
+<| AlbersEqualArea
+<|
+^| 11
+<| AzimuthalEquidistant
+<|
+^| 12
+<| EquidistantConic
+<|
+^| 13
+<| Stereographic
+<|
+^| 14
+<| PolarStereographic
+<|
+^| 15
+<| ObliqueStereographic
+<|
+^| 16
+<| Equirectangular
+<|
+^| 17
+<| CassiniSoldner
+<| TransvEquidistCylindrical
+^| 18
+<| Gnomonic
+<|
+^| 19
+<| MillerCylindrical
+<|
+^| 20
+<| Orthographic
+<|
+^| 21
+<| Polyconic
+<|
+^| 22
+<| Robinson
+<|
+^| 23
+<| Sinusoidal
+<|
+^| 24
+<| VanDerGrinten
+<|
+^| 25
+<| NewZealandMapGrid
+<|
+^| 26
+<| TransvMercator_SouthOriented
+<|
+^| 27
+|====
 
 _Table C.1 - Codes for GeoTIFF v1.0 map projection methods_
 
-(Source: GeoTIFF v1.0 table 6.3.3.3)
+NOTE: ProjMethodGeoKey was called ProjCoordTransGeoKey in GeoTIFF v1.0
 
 === Map Projection parameters
 GeoTIFF v1.0 lists a number of map projection parameters. These are names, without any definition or clear citation. As such they are ambiguous. It is also not clear which parameters should be used for which methods. The map projection parameter GeoKey codes are listed in table C.2.
 
-[cols="1,4",width="90%" options="header"]
-|===
-^|Code {set:cellbgcolor:#CACCCE} ^| Description 
-^| {set:cellbgcolor:#FFFFFF} 1 <| CT_TransverseMercator
-^|2 <| CT_TransvMercator_Modified_Alaska
-^|3 <| CT_ObliqueMercator
-^|4 <| CT_ObliqueMercator_Laborde
-^|5 <| CT_ObliqueMercator_Rosenmund
-^|6 <| CT_ObliqueMercator_Spherical
-^|7 <| CT_Mercator
-^|8 <| CT_LambertConfConic_2SP
-^|9 <| CT_LambertConfConic_Helmert
-^|10 <| CT_LambertAzimEqualArea
-^|11 <| CT_AlbersEqualArea
-^|12 <| CT_AzimuthalEquidistant
-^|13 <| CT_EquidistantConic
-^|14 <| CT_Stereographic
-^|15 <| CT_PolarStereographic
-^|16 <| CT_ObliqueStereographic
-^|17 <| CT_Equirectangular
-^|18 <| CT_CassiniSoldner
-^|19 <| CT_Gnomonic
-^|20 <| CT_MillerCylindrical
-^|21 <| CT_Orthographic
-^|22 <| CT_Polyconic
-^|23 <| CT_Robinson
-^|24 <| CT_Sinusoidal
-^|25 <| CT_VanDerGrinten
-^|26 <| CT_NewZealandMapGrid
-^|27 <| CT_TransvMercator_SouthOriented
-|===
+[cols="4,4,1,4",width="90%" options="header"]
+|====
+<| [underline]#*GeoTIFF v1.0 Map Projection Parameter Name*#
+<| [underline]#*GeoTIFF v1.0 Map Projection Parameter Alias*# 
+^| [underline]#*GeoTIFF v1.0 GeoKey*#
+^| [underline]#*Parameter Value Unit*#
+<| ProjStdParallel1GeoKey
+<| ProjStdParallelGeoKey
+^| 3078
+^| GeogAngularUnits
+<| ProjStdParallel2GeoKey
+<| 
+^| 3079
+^| GeogAngularUnits
+<| ProjNatOriginLongGeoKey
+<| ProjOriginLongGeoKey
+^| 3080
+^| GeogAngularUnits
+<| ProjNatOriginLatGeoKey
+<| ProjOriginLatGeoKey
+^| 3081
+^| GeogAngularUnits
+<| ProjFalseEastingGeoKey
+<| 
+^| 3082
+^| ProjLinearUnits
+<| ProjFalseNorthingGeoKey
+<| 
+^| 3083
+^| ProjLinearUnits
+<| ProjFalseOriginLongGeoKey
+<| 
+^| 3084
+^| GeogAngularUnits
+<| ProjFalseOriginLatGeoKey
+<| 
+^| 3085
+^| GeogAngularUnits
+<| ProjFalseOriginEastingGeoKey
+<| 
+^| 3086
+^| ProjLinearUnits
+<| ProjFalseOriginNorthingGeoKey
+<| 
+^| 3087
+^| ProjLinearUnits
+<| ProjCenterLongGeoKey
+<| 
+^| 3088
+^| GeogAngularUnits
+<| ProjCenterLatGeoKey
+<| 
+^| 3089
+^| GeogAngularUnits
+<| ProjCenterEastingGeoKey
+<| 
+^| 3090
+^| ProjLinearUnits
+<| ProjCenterNorthingGeoKey
+<| 
+^| 3091
+^| ProjLinearUnits
+<| ProjScaleAtNatOriginGeoKey
+<| ProjScaleAtOriginGeoKey
+^| 3092
+^| ratio
+<| ProjScaleAtCenterGeoKey
+<| 
+^| 3093
+^| ratio
+<| ProjAzimuthAngleGeoKey
+<| 
+^| 3094
+^| GeogAzimuthUnits
+<| ProjStraightVertPoleLongGeoKey
+<| 
+^| 3095
+^| GeogAngularUnits
+|====
 _Table C.2 - GeoKey codes for GeoTIFF v1.0 map projection parameters_
 
-(Source: GeoTIFF v1.0 table 6.3.3.3)

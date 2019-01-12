@@ -3,4 +3,241 @@
 == Summary of GeoKey IDs and names
 (Informative)
 
-Table E.1 - Summary of GeoKey IDs and names
+[cols="2,2,4,4,4",width="90%" options="header"]
+.Summary of GeoKey IDs and names
+|====
+^| **[underline]#Key ID#** 
+^| **[underline]#Type#** 
+^| **[underline]#GeoTIFF v1.0 key name#** 
+^| **[underline]#GeoTIFF v1.0 key alias#** 
+^| **[underline]#This document key name#**
+5+<| [underline]#GeoTIFF Configuration Keys#
+^| 1024
+^| Short
+<| GTModelTypeGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 1025
+^| [underline]#_Short_#
+<| GTRasterTypeGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 1026
+^| Ascii
+<| GTCitationGeoKey
+<| 
+<|(as GeoTIFF v1.0)
+5+<| [underline]#Geodetic CRS Parameter Keys#
+^| 2048
+^| Short
+<| GeographicTypeGeoKey
+<|
+<| GeodeticCRSGeoKey
+^| 2049
+^| Ascii
+<| GeogCitationGeoKey
+<|
+<| GeodeticCitationGeoKey
+^| 2050
+^| Short
+<| GeogGeodeticDatumGeoKey
+<|
+<| GeodeticDatumGeoKey
+^| 2051
+^| Short
+<| GeogPrimeMeridianGeoKey
+<|
+<| PrimeMeridianGeoKey
+^| 2052
+^| [underline]#_Short_#
+<| GeogLinearUnitsGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 2053
+^| Double
+<| GeogLinearUnitSizeGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 2054
+^| Short
+<| GeogAngularUnitsGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 2055
+^| Double
+<| GeogAngularUnitSizeGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 2056
+^| Short
+<| GeogEllipsoidGeoKey
+<|
+<| EllipsoidGeoKey
+^| 2057
+^| Double
+<| GeogSemiMajorAxisGeoKey
+<|
+<| EllipsoidSemiMajorAxisGeoKey
+^| 2058
+^| Double
+<| GeogSemiMinorAxisGeoKey
+<|
+<| EllipsoidSemiMinorAxisGeoKey
+^| 2059
+^| Double
+<| GeogInvFlatteningGeoKey
+<|
+<| EllipsoidInvFlatteningGeoKey
+^| 2061
+^| Double
+<| GeogPrimeMeridianLongGeoKey
+<|
+<| PrimeMeridianLongitudeGeoKey
+5+<| [underline]#Projected CRS Parameter Keys#
+^| [underline]#_2060_#
+^| Short
+<| GeogAzimuthUnitsGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3072
+^| Short
+<| ProjectedCSTypeGeoKey
+<|
+<| ProjectedCRSGeoKey
+^| 3073
+^| Ascii
+<| PCSCitationGeoKey
+<|
+<| ProjectedCitationGeoKey
+^| 3074
+^| Short
+<| ProjectionGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3075
+^| Short
+<| ProjCoordTransGeoKey
+<|
+<| ProjMethodGeoKey
+^| 3076
+^| Short
+<| ProjLinearUnitsGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3077
+^| Double
+<| ProjLinearUnitSizeGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3078
+^| Double
+<| ProjStdParallel1GeoKey
+<| ProjStdParallelGeoKey
+<| (as GeoTIFF v1.0)
+^| 3079
+^| Double
+<| ProjStdParallel2GeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3080
+^| Double
+<| ProjNatOriginLongGeoKey
+<| ProjOriginLongGeoKey
+<| (as GeoTIFF v1.0)
+^| 3081
+^| Double
+<| ProjNatOriginLatGeoKey
+<| ProjOriginLatGeoKey
+<| (as GeoTIFF v1.0)
+^| 3082
+^| Double
+<| ProjFalseEastingGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3083
+^| Double
+<| ProjFalseNorthingGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3084
+^| Double
+<| ProjFalseOriginLongGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3085
+^| Double
+<| ProjFalseOriginLatGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3086
+^| Double
+<| ProjFalseOriginEastingGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3087
+^| Double
+<| ProjFalseOriginNorthingGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3088
+^| Double
+<| ProjCenterLongGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3089
+^| Double
+<| ProjCenterLatGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3090
+^| Double
+<| ProjCenterEastingGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3091
+^| Double
+<| Proj[underline]##__Center__##NorthingGeoKey
+<| 
+<| (as GeoTIFF v1.0)
+^| 3092
+^| Double
+<| ProjScaleAtNatOriginGeoKey
+<| ProjScaleAtOriginGeoKey
+<| (as GeoTIFF v1.0)
+^| 3093
+^| Double
+<| ProjScaleAtCenterGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3094
+^| Double
+<| ProjAzimuthAngleGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 3095
+^| Double
+<| ProjStraightVertPoleLongGeoKey
+<|
+<| (as GeoTIFF v1.0)
+5+<| [underline]#Vertical CRS Parameter Keys (4096-5119)#
+^| 4096
+^| Short
+<| VerticalCSTypeGeoKey
+<|
+<| VerticalCRSGeoKey
+^| 4097
+^| Ascii
+<| VerticalCitationGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 4098
+^| Short
+<| VerticalDatumGeoKey
+<|
+<| (as GeoTIFF v1.0)
+^| 4099
+^| Short
+<| VerticalUnitsGeoKey
+<|
+<| (as GeoTIFF v1.0)
+|====
