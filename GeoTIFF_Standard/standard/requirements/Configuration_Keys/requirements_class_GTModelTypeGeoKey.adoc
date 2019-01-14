@@ -25,9 +25,9 @@ _The GTModelTypeGeoKey value SHALL be:_
 
 *	0 to indicate that the Model CRS in undefined or unknown; or
 
-*	1 to indicate that the Model CRS is a projected coordinate reference system, indicated by the value of the ProjectedCRSGeoKey; or
+*	1 to indicate that the Model CRS is a 2D projected coordinate reference system, indicated by the value of the ProjectedCRSGeoKey; or
 
-*	2 to indicate that the Model CRS is a geographic coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
+*	2 to indicate that the Model CRS is a 2D geographic coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
 
 *	3 to indicate that the Model CRS is a geocentric Cartesian 3D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
 
@@ -46,12 +46,12 @@ _GTModelTypeGeoKey values in the range 32768-65535 SHALL be private_
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.projCRS +
-_If the GTModelTypeGeoKey value is 1 (Model CRS is a projected CRS) then the GeoTIFF file SHALL include a ProjectedCRSGeoKey._
+_If the GTModelTypeGeoKey value is 1 (Model CRS is a projected 2D CRS) then the GeoTIFF file SHALL include a ProjectedCRSGeoKey._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geogCRS +
-_If the GTModelTypeGeoKey value is 2 (Model CRS is a geographic CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey._
+_If the GTModelTypeGeoKey value is 2 (Model CRS is a geographic 2D CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

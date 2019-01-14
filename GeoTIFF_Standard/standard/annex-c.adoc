@@ -1,19 +1,19 @@
 [appendix]
 :appendix-caption: Annex
-== GeoTIFF Map Projection Method codes
-(Normative)
+== GeoTIFF Map Projection Method codes (Normative)
+
 === Map Projection methods
 GeoTIFF v1.0 lists a number of map projection methods (which it calls 'coordinate transformations'). These are names, without any formulas or clear citation. As such they are an ambiguous identification of method. It is not possible to identify whether the formulas are ellipsoidal or spherical. If it is assumed that they are ellipsoidal formulas, for some the name does not adequately distinguish between method variations where different formulas lead to significantly different results in application. The codes for these listed methods are given in table C.1.
 
 [cols="4,4,1",width="90%" options="header"]
 |====
 ^| [underline]#*GeoTIFF v1.0 Map Projection Method Name*#
-^| [underline]#*GeoTIFF v1.0 Map Projection Method Name Alias*# 
+^| [underline]#*GeoTIFF v1.0 Map Projection Method Name Alias*#
 ^| [underline]#*GeoTIFF v1.0 Value for ProjMethodGeoKey*#
 <| TransverseMercator
 <| GaussBoaga; GaussKruger
 ^| 1
-<| TransvMercator_Modified_Alaska 
+<| TransvMercator_Modified_Alaska
 <| AlaskaConformal
 ^| 2
 <| ObliqueMercator
@@ -103,7 +103,7 @@ GeoTIFF v1.0 lists a number of map projection parameters. These are names, witho
 [cols="4,4,1,4",width="90%" options="header"]
 |====
 <| [underline]#*GeoTIFF v1.0 Map Projection Parameter Name*#
-<| [underline]#*GeoTIFF v1.0 Map Projection Parameter Alias*# 
+<| [underline]#*GeoTIFF v1.0 Map Projection Parameter Alias*#
 ^| [underline]#*GeoTIFF v1.0 GeoKey*#
 ^| [underline]#*Parameter Value Unit*#
 <| ProjStdParallel1GeoKey
@@ -111,7 +111,7 @@ GeoTIFF v1.0 lists a number of map projection parameters. These are names, witho
 ^| 3078
 ^| GeogAngularUnits
 <| ProjStdParallel2GeoKey
-<| 
+<|
 ^| 3079
 ^| GeogAngularUnits
 <| ProjNatOriginLongGeoKey
@@ -123,43 +123,43 @@ GeoTIFF v1.0 lists a number of map projection parameters. These are names, witho
 ^| 3081
 ^| GeogAngularUnits
 <| ProjFalseEastingGeoKey
-<| 
+<|
 ^| 3082
 ^| ProjLinearUnits
 <| ProjFalseNorthingGeoKey
-<| 
+<|
 ^| 3083
 ^| ProjLinearUnits
 <| ProjFalseOriginLongGeoKey
-<| 
+<|
 ^| 3084
 ^| GeogAngularUnits
 <| ProjFalseOriginLatGeoKey
-<| 
+<|
 ^| 3085
 ^| GeogAngularUnits
 <| ProjFalseOriginEastingGeoKey
-<| 
+<|
 ^| 3086
 ^| ProjLinearUnits
 <| ProjFalseOriginNorthingGeoKey
-<| 
+<|
 ^| 3087
 ^| ProjLinearUnits
 <| ProjCenterLongGeoKey
-<| 
+<|
 ^| 3088
 ^| GeogAngularUnits
 <| ProjCenterLatGeoKey
-<| 
+<|
 ^| 3089
 ^| GeogAngularUnits
 <| ProjCenterEastingGeoKey
-<| 
+<|
 ^| 3090
 ^| ProjLinearUnits
 <| ProjCenterNorthingGeoKey
-<| 
+<|
 ^| 3091
 ^| ProjLinearUnits
 <| ProjScaleAtNatOriginGeoKey
@@ -167,17 +167,16 @@ GeoTIFF v1.0 lists a number of map projection parameters. These are names, witho
 ^| 3092
 ^| ratio
 <| ProjScaleAtCenterGeoKey
-<| 
+<|
 ^| 3093
 ^| ratio
 <| ProjAzimuthAngleGeoKey
-<| 
+<|
 ^| 3094
 ^| GeogAzimuthUnits
 <| ProjStraightVertPoleLongGeoKey
-<| 
+<|
 ^| 3095
 ^| GeogAngularUnits
 |====
 _Table C.2 - GeoKey codes for GeoTIFF v1.0 map projection parameters_
-

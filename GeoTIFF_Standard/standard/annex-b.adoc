@@ -33,7 +33,7 @@ GeoTIFF requires support for all documented TIFF 6.0 tag data-types, and in part
 
 It is worth emphasizing here that the TIFF spec indicates that TIFF-compliant readers shall honor the 'byte-order' indicator, meaning that 4-byte integers from files created on opposite order machines will be swapped in software, and that 8-byte DOUBLE's will be 8-byte swapped.
 
-A GeoTIFF reader/writer, in addition to supporting the standard TIFF tag types, must also have an additional module which can parse the "Geokey" MetaTag information. A public-domain software package for performing this function is now available; see the "References" (section 5 of Ritter and Ruth, 1995) for the location.
+A GeoTIFF reader/writer, in addition to supporting the standard TIFF tag types, must also have an additional module which can parse the "Geokey" MetaTag information. A public-domain software package for performing this function is available; (libgeotiff) see https://trac.osgeo.org/geotiff#libgeotiff.
 
 === GeoTIFF File and "Key" Structure
 
@@ -123,7 +123,7 @@ To follow the TIFF philosophy, GeoTIFF-writers shall store the GeoKey entries in
 
 The first line indicates that this is a Version 1 GeoTIFF GeoKey directory, the keys are Rev. 1.2, and there are 6 Keys defined in this tag.
 
-The next line indicates that the first Key (ID=1024 = GTModelTypeGeoKey) has the value 2 (Geographic), explicitly placed in the entry list (since TIFFTagLocation=0). The next line indicates that the Key 1026 (the GTCitationGeoKey) is listed in the GeoAsciiParamsTag (34737) array, starting at offset 0 (the first in array), and running for 12 bytes and so has the value "Custom File" (the "|" is converted to a null delimiter at the end). Going further down the list, the Key 2051 (GeogLinearUnitSizeGeoKey) is located in the GeoDoubleParamsTag (34736), at offset 0 and has the value 1.5; the value of key 2049 (GeogCitationGeoKey) is "My Geographic".
+The next line indicates that the first Key (ID=1024 = GTModelTypeGeoKey) has the value 2 (Geographic 2D), explicitly placed in the entry list (since TIFFTagLocation=0). The next line indicates that the Key 1026 (the GTCitationGeoKey) is listed in the GeoAsciiParamsTag (34737) array, starting at offset 0 (the first in array), and running for 12 bytes and so has the value "Custom File" (the "|" is converted to a null delimiter at the end). Going further down the list, the Key 2051 (GeogLinearUnitSizeGeoKey) is located in the GeoDoubleParamsTag (34736), at offset 0 and has the value 1.5; the value of key 2049 (GeogCitationGeoKey) is "My Geographic".
 
 The TIFF layer handles all the problems of data structure, platform independence, format types, etc, by specifying byte-offsets, byte-order format and count, while the Key describes its key values at the TIFF level by specifying Tag number, array-index, and count. Since all TIFF information occurs in TIFF arrays of some sort, we have a robust method for storing anything in a Key that would occur in a Tag.
 
@@ -255,9 +255,9 @@ Geocentric coordinates are readily converted to and from geographic 3D coordinat
 Before digital computing capabilities were available, calculation on the surface of an ellipsoid was a non-trivial task. Reduction of the ellipsoid surface to a plane facilitated spatial calculations. A geographical coordinate reference system cannot be represented on a plane surface without distortion. Map projections are conversions of ellipsoidal coordinates (latitude and longitude) to Cartesian coordinates in a plane. A map projection consists of a coordinate operation method (through which the characteristics of the distortions are controlled) and a set of defining parameters specific to the method which are parameters in the method formulas, together with specified values for the set of coordinate operation parameters required by the projection method. A projected coordinate reference system results from the application of a map projection to a geographic coordinate reference system, associated with a planar coordinate system, in practice almost always Cartesian.
 
 ==== Vertical Coordinate Reference Systems
-Many uses of GeoTIFF will be limited to a two-dimensional, horizontal, description of location for which geographic 2D coordinate reference systems and projected coordinate reference systems are adequate. If a three-dimensional description of location is required, GeoTIFF allows this either through a geocentric coordinate reference system, or through the use of a geographic 3D coordinate reference system (where the vertical component is height above the ellipsoid), or by defining a 1D vertical coordinate reference system and using this together with a geographic 2D or projected coordinate reference system in an implicit compound CRS structure.
+Many uses of GeoTIFF will be limited to a two-dimensional, horizontal, description of location for which geographic 2D coordinate reference systems and projected 2D coordinate reference systems are adequate. If a three-dimensional description of location is required, GeoTIFF allows this either through a geocentric coordinate reference system, or through the use of a geographic 3D coordinate reference system (where the vertical component is height above the ellipsoid), or by defining a 1D vertical coordinate reference system and using this together with a geographic 2D or projected coordinate reference system in an implicit compound CRS structure.
 Vertical CRS are referenced to a vertical reference surface (vertical datum) at or close to the geoid, and associated with a 1D vertical coordinate system in which heights or depths are given.
-Through increasing use of satellite navigation and positioning systems the ellipsoid is increasingly being used as a vertical reference surface. Heights above the ellipsoid are expressed as part of a geographic 3D CRS, and are not referenced to a vertical CRS. The ellipsoid surface may be offset vertically from the reference surface for a vertical CRS approximating the geoid by up to +/- 100m, and generally the two surfaces will not be exactly parallel to each other.
+Through increasing use of satellite navigation and positioning systems the ellipsoid is increasingly being used as a vertical reference surface. Heights above the ellipsoid are expressed as part of a geographic 3D CRS, but are not referenced to a vertical CRS (see Annex D). The ellipsoid surface may be offset vertically from the reference surface for a vertical CRS approximating the geoid by up to +/- 100m, and generally the two surfaces will not be exactly parallel to each other.
 
 == Defining Geographic Coordinate Reference Systems
 Within the GeoTIFF standard a Model coordinate reference system (geocentric, geographic, projected or vertical) can be identified either by
@@ -310,29 +310,12 @@ For a user-defined geographic 2D CRS the user is expected to provide:
 **	the geodetic datum code (if available through standard EPSG code), or
 **	user-defined geodetic datum name and other defining information:
 ***	the geodetic datum name (through the _GeodeticCitationGeoKey_),
-***	the ellipsoid (through the _EllipsoidGeoKey_, see B.5.3.7.2.4 below), and
-***	the prime meridian (through the _PrimeMeridianGeoKey_, see B.5.3.7.2.5 below)
+***	the ellipsoid (through the _EllipsoidGeoKey_, see <<User-defined ellipsoid>>), and
+***	the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>)
 *	axis unit through the _GeogAngularUnitsGeoKey_, either
 **	angle unit code (if available through standard EPSG code), or
 **	user-defined angle unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of radian (through the _GeogAngularUnitSizeGeoKey_).
 *	if the CRS uses a user-defined ellipsoid, the ellipsoid axis unit through the _GeogLinearUnitsGeoKey_, either
-**	length unit code (if available through standard EPSG code), or
-**	user-defined length unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_).
-
-==== User-defined geographic 3D CRS
-For a user-defined geographic 3D CRS the user is expected to provide:
-
-*	geographic coordinate reference system name (through the _GeodeticCitationGeoKey_),
-*	geodetic datum through the _GeodeticDatumGeoKey_, either
-**	the geodetic datum code (if available through standard EPSG code), or
-**	user-defined geodetic datum name and other defining information:
-***	the geodetic datum name (through the _GeodeticCitationGeoKey_),
-***	the ellipsoid (through the _EllipsoidGeoKey_, see B.5.3.7.2.4 below), and
-***	the prime meridian (through the _PrimeMeridianGeoKey_, see B.5.3.7.2.5 below)
-*	horizontal axis unit through the _GeogAngularUnitsGeoKey_, either
-**	angle unit code (if available through standard EPSG code), or
-**	user-defined angle unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of radian (through the _GeogAngularUnitSizeGeoKey_).
-*	vertical axis unit through the _GeogLinearUnitsGeoKey_, either
 **	length unit code (if available through standard EPSG code), or
 **	user-defined length unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_).
 
@@ -344,8 +327,8 @@ For a user-defined geocentric CRS the user is expected to provide:
 **	the geodetic datum code (if available through standard EPSG code), or
 **	user-defined geodetic datum name and other defining information:
 ***	the geodetic datum name (through the _GeodeticCitationGeoKey_),
-***	the ellipsoid (through the _EllipsoidGeoKey_, see B.5.3.7.2.4 below), and
-***	the prime meridian (through the _PrimeMeridianGeoKey_, see B.5.3.7.2.5)
+***	the ellipsoid (through the _EllipsoidGeoKey_, see <<User-defined ellipsoid>>), and
+***	the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>)
 *	axis unit through the _GeogLinearUnitsGeoKey_, either
 **	length unit code (if available through standard EPSG code), or
 **	user-defined length unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_).
@@ -363,7 +346,7 @@ For any user-defined geocentric, geographic 3D or geographic 2D CRS an ellipsoid
 ***	the ellipsoid semi-major axis (through the _EllipsoidSemiMajorAxisGeoKey_)
 ***	either the ellipsoid semi-minor axis (through the _EllipsoidSemiMinorAxisGeoKey_) or the ellipsoid inverse flattening (through the _EllipsoidInvFlatteningGeoKey_).
 ***	The units for the ellipsoid axis or axes:
-*	For geocentric and geographic 3D CRSs the ellipsoid axis or axes values must given in the length unit defined through the _GeogLinearUnitsGeoKey_ already required (see B.5.3.7.2.2 and B.5.3.7.2.3).
+*	For geocentric the ellipsoid axis or axes values must given in the length unit defined through the _GeogLinearUnitsGeoKey_ already required (see <<User-defined geocentric CRS>>).
 *	For geographic 2D CRSs, then a _GeogLinearUnitsGeoKey_ is additionally required.
 
 ==== User-defined prime meridian
@@ -375,14 +358,14 @@ For any user-defined geocentric, geographic 3D or geographic 2D CRS a prime meri
 ***	the prime meridian name (through the _GeodeticCitationGeoKey_),
 ***	the prime meridian longitude (through the _PrimeMeridianLongitudeGeoKey_),
 ***	the units for the prime meridian longitude:
-*	For geographic CRSs the prime meridian longitude value must given in the angle unit defined through the _GeogAngularUnitsGeoKey_ already required (see B.5.3.7.2.1 and B.5.3.7.2.2).
+*	For geographic CRSs the prime meridian longitude value must given in the angle unit defined through the _GeogAngularUnitsGeoKey_ already required (see <<User-defined geographic 2D CRS>>).
 *	For geocentric CRSs, then a _GeogAngularUnitsGeoKey_ is additionally required.
 
 ==== User-defined Projected Coordinate Reference Systems
 For a user-defined projected CRS the user is expected to provide:
 
 *	projected coordinate reference system name (through _ProjectedCitationGeoKey_),
-*	base geographic CRS (either standard EPSG code or user-defined, see B.5.3.7.2.1)
+*	base geographic CRS (either standard EPSG code or user-defined, see <<User-defined geographic 2D CRS>>)
 *	map projection through the _ProjectionGeoKey_, either
 **	map projection code (if available through standard EPSG code), or
 **	user-defined map projection (see below).
@@ -403,13 +386,166 @@ For a user-defined map projection the user is expected to provide:
 ==== User-defined Vertical Coordinate Reference Systems
 For a user-defined vertical CRS the user is expected to provide:
 
-*vertical coordinate reference system name (through _VerticalCRSCitationGeoKey_),
+*vertical coordinate reference system name (through _VerticalCitationGeoKey_),
 *	user-defined vertical datum through _VerticalDatumGeoKey_, either
 **	the vertical datum code (if available through standard EPSG code), or
-**	the vertical datum name and other defining information (through the _VerticalCRSCitationGeoKey_)
+**	the vertical datum name and other defining information (through the _VerticalCitationGeoKey_)
 *	vertical axis unit through _VerticalUnitsGeoKey_, either
 **	linear unit code (if available through standard EPSG code), or
-**	linear unit name (through _VerticalCRSCitationGeoKey_) and scaling from SI base unit of meter (through _GeogLinearUnitSizeGeoKey_).
+**	linear unit name (through _VerticalCitationGeoKey_) and scaling from SI base unit of meter (through _GeogLinearUnitSizeGeoKey_).
+
+== Coordinate Transformations
+
+The purpose of GeoTIFF is to allow the definitive identification of georeferenced locations within a raster dataset. This is generally accomplished through tying raster space coordinates to a model space coordinate system, when no further information is required. In the GeoTIFF nomenclature, "georeferencing" refers to tying raster space to a model space M, while "geocoding" refers to defining how the model space M assigns coordinates to points on the earth.
+
+The three tags defined below may be used for defining the relationship between R and M, and the relationship may be diagrammed as:
+
+            ModelPixelScaleTag
+             ModelTiepointTag
+     R ------------ OR --------------> M
+    (I,J,K) ModelTransformationTag (X,Y,Z)
+
+The next section describes these Baseline georeferencing tags in detail.
+
+=== GeoTIFF Tags for Coordinate Transformations
+
+For most common applications, the transformation between raster and model space may be defined with a set of raster-to-model tiepoints and scaling parameters. The following two tags may be used for this purpose:
+
+    ModelTiepointTag:
+          Tag = 33922 (8482.H)
+          Type = DOUBLE (IEEE Double precision)
+          N = 6*K, K = number of tiepoints
+          Alias: GeoreferenceTag
+
+This tag stores raster->model tiepoint pairs in the order
+
+     ModelTiepointTag = (...,I,J,K, X,Y,Z...),
+
+where (I,J,K) is the point at location (I,J) in raster space with pixel-value K, and (X,Y,Z) is a vector in model space. In most cases the model space is only two-dimensional, in which case both K and Z should be set to zero; this third dimension is provided in anticipation of support for 3D digital elevation models and vertical coordinate systems.
+
+A raster image may be georeferenced simply by specifying its location, size and orientation in the model coordinate space M. This may be done by specifying the location of three of the four bounding corner points. However, tiepoints are only to be considered exact at the points specified; thus defining such a set of bounding tiepoints does *not* imply that the model space locations of the interior of the image may be exactly computed by a linear interpolation of these tiepoints.
+
+However, since the relationship between the Raster space and the model space will often be an exact, affine transformation, this relationship can be defined using one set of tiepoints and the "ModelPixelScaleTag", described below, which gives the vertical and horizontal raster grid cell size, specified in model units.
+
+If possible, the first tiepoint placed in this tag shall be the one establishing the location of the point (0,0) in raster space. However, if this is not possible (for example, if (0,0) is goes to a part of model space in which the projection is ill-defined), then there is no particular order in which the tiepoints need be listed.
+
+For orthorectification or mosaicking applications a large number of tiepoints may be specified on a mesh over the raster image. However, the definition of associated grid interpolation methods is not in the scope of the current GeoTIFF spec.
+
+Remark: As mentioned in section 2.5.1, all GeoTIFF information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.
+
+The next two tags are optional tags provided for defining exact affine transformations between raster and model space; baseline GeoTIFF files may use either, but shall never use both within the same TIFF image directory.
+
+     ModelPixelScaleTag:
+          Tag = 33550
+          Type = DOUBLE (IEEE Double precision)
+          N = 3
+
+This tag may be used to specify the size of raster pixel spacing in the model space units, when the raster space can be embedded in the model space coordinate system without rotation, and consists of the following 3 values:
+
+     ModelPixelScaleTag = (ScaleX, ScaleY, ScaleZ)
+
+where ScaleX and ScaleY give the horizontal and vertical spacing of raster pixels. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale, and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).
+
+A single tiepoint in the ModelTiepointTag, together with this tag, completely determine the relationship between raster and model space; thus they comprise the two tags which Baseline GeoTIFF files most often will use to place a raster image into a "standard position" in model space.
+
+Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, Resolution and Orientation tags of the standard TIFF 6.0 spec. However, simple reversals of orientation between raster and model space (e.g. horizontal or vertical flips) may be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers must honor this sign-reversal convention.
+
+This tag must not be used if the raster image requires rotation or shearing to place it into the standard model space. In such cases the transformation shall be defined with the more general ModelTransformationTag, defined below.
+
+     ModelTransformationTag
+          Tag = 34264 (85D8.H)
+          Type = DOUBLE
+          N = 16
+
+This tag may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space. If specified, the tag shall have the following organization:
+
+     ModelTransformationTag = (a,b,c,d,e....m,n,o,p).
+
+where
+
+     model                  image
+     coords =     matrix  * coords
+     |- -|     |-       -|  |- -|
+     | X |     | a b c d |  | I |
+     | | |     |         |  |   |
+     | Y |     | e f g h |  | J |
+     |   |  =  |         |  |   |
+     | Z |     | i j k l |  | K |
+     | | |     |         |  |   |
+     | 1 |     | m n o p |  | 1 |
+     |- -|     |-       -|  |- -|
+
+By convention, and without loss of generality, the following parameters are currently hard-coded and will always be the same (but must be specified nonetheless):
+
+     m = n = o = 0, p = 1.
+
+For Baseline GeoTIFF, the model space is always 2-D, and so the matrix will have the more limited form:
+
+     |- -|   |-       -| |- -|
+     | X |   | a b 0 d | | I |
+     | | |   |         | |   |
+     | Y |   | e f 0 h | | J |
+     |   | = |         | |   |
+     | Z |   | 0 0 0 0 | | K |
+     | | |   |         | |   |
+     | 1 |   | 0 0 0 1 | | 1 |
+     |- -|   |-       -| |- -|
+
+Values "d" and "h" will often be used to represent translations in X and Y, and so will not necessarily be zero. All 16 values should be specified, in all cases. Only the raster-to-model transformation is defined; if the inverse transformation is required it must be computed by the client, to the desired accuracy.
+
+This matrix tag should not be used if the ModelTiepointTag and the ModelPixelScaleTag are already defined. If only a single tiepoint (I,J,K,X,Y,Z) is specified, and the ModelPixelScale = (Sx, Sy, Sz) is specified, then the corresponding transformation matrix may be computed from them as:
+
+     |-               -|
+     | Sx  0.0 0.0 Tx  |    Tx = X - I/Sx
+     | 0.0 -Sy 0.0 Ty  |    Ty = Y + J/Sy
+     | 0.0 0.0 Sz  Tz  |    Tz = Z - K/Sz (if not 0)
+     | 0.0 0.0 0.0 1.0 |
+     |-               -|
+
+where the -Sy is due the reversal of direction from J increasing- down in raster space to Y increasing-up in model space.
+
+Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.
+
+=== Cookbook for Defining Transformations
+
+Here is a 4-step guide to producing a set of Baseline GeoTIFF tags for defining coordinate transformation information of a raster dataset.
+
+  Step 1: Establish the Raster Space coordinate system used: RasterPixelIsArea or RasterPixelIsPoint.
+
+  Step 2: Establish/define the model space Type in which the image is to be georeferenced. Usually this will be a projected coordinate Reference system. If you are geocoding this data set, then the model space is defined to be the corresponding geographic, geocentric or projected coordinate reference system.
+
+  Step 3: Identify the nature of the transformations needed to tie the raster data down to the model space coordinate reference system:
+
+      Case 1: The model-location of a raster point (x,y) is known, but not the scale or orientations: Use the ModelTiepointTag to define the (X,Y,Z) coordinates of the known raster point.
+
+      Case 2: The location of three non-collinear raster points are known exactly, but the linearity of the transformation is not known.
+
+      Use the ModelTiepointTag to define the (X,Y,Z) coordinates of all three known raster points. Do not compute or define the ModelPixelScale or ModelTransformation tag.
+
+      Case 3: The position and scale of the data is known exactly, and no rotation or shearing is needed to fit into the model space.
+
+      Use the ModelTiepointTag to define the (X,Y,Z) coordinates of the known raster point, and the ModelPixelScaleTag to specify the scale.
+
+      Case 4: The raster data requires rotation and/or lateral shearing to fit into the defined model space:
+
+      Use the ModelTransformation matrix to define the transformation.
+
+      Case 5: The raster data cannot be fit into the model space with a simple affine transformation (rubber-sheeting required). Use only the ModelTiepoint tag, and specify as many tiepoints as your application requires. Note, however, that this is not a Baseline GeoTIFF implementation, and should not be used for interchange; it is recommended that the image be geometrically rectified first, and put into a standard projected coordinate reference system.
+
+  Step 4: Install the defined tag values in the TIFF file and close it.
+
+== Geocoding Raster Data
+=== General Approach
+
+A geocoded image is a georeferenced image as described in section <<Coordinate Transformations>>, which also specifies a model space coordinate reference system (CRS) between the model space M (to which the raster space has been tied) and the earth. The relationship can be diagrammed, including the associated TIFF tags, as follows:
+
+         ModelPixelScaleTag
+         ModelTiepointTag              GeoKeyDirectoryTag CRS
+     R -------- OR ---------------> M --------- AND -----------> Earth
+         ModelTransformationTag        GeoDoubleParamsTag
+                                       GeoAsciiParamsTag
+
+The geocoding coordinate system is defined by the GeoKeyDirectoryTag, while the Georeferencing information (T) is defined by the ModelTiepointTag and the ModelPixelScale, or ModelTransformationTag. Since these two systems are independent of each other, the tags used to store the parameters are separated from each other in the GeoTIFF file to emphasize the orthogonality.
 
 == Model CRS Reference Parameters
 
@@ -436,67 +572,67 @@ Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects avai
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
-^| *EPSG CRS Code* 
+^| *EPSG CRS Code*
 ^| *Comment*
 <| PCS_AGD66_AMG_zone_48
-^| 20248  
+^| 20248
 <| Deprecated in EPSG, no replacement.
 <| PCS_AGD84_AMG_zone_48
-^| 20348  
-<| Deprecated in EPSG, no replacement.  
+^| 20348
+<| Deprecated in EPSG, no replacement.
 <| PCS_AGD84_AMG_zone_57
 ^| _20357_
-<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement_.   
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement_.
 <| PCS_AGD84_AMG_zone_58
-^| 20358  
-<| Deprecated in EPSG, no replacement.   
+^| 20358
+<| Deprecated in EPSG, no replacement.
 <| PCS_Lisbon_Portugese_Grid
 ^| _20700_
-<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._  
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo13
 ^| _20973_
 <| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo15
-^| _20975_  
-<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._  
+^| _20975_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo17
-^| _20977_  
-<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._   
+^| _20977_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo19
-^| _20979_  
-<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._ 
+^| _20979_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo21
-^| _20981_  
-<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._   
+^| _20981_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo23
-^| _20983_ 
-<| __Deleted in EPSG, code not re-used as at 2018-05-29, no replacement__.  
+^| _20983_
+<| __Deleted in EPSG, code not re-used as at 2018-05-29, no replacement__.
 <| PCS_Arc_1950_Lo25
-^| _20985_  
-<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._   
+^| _20985_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo27
-^| _20987_  
-<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._ 
+^| _20987_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo29
-^| _20989_  
-<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._   
+^| _20989_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo31
-^| _20991_  
-<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._   
+^| _20991_
+<| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo33
-^| _20993_   
+^| _20993_
 <| _Deleted in EPSG, code not re-used as at 2018-05-29, no replacement._
 <| PCS_Arc_1950_Lo35
-^| _20995_  
+^| _20995_
 <| __Deleted in EPSG, code not re-used as at 2018-05-29, no replacement__.
 <| PCS_Batavia_NEIEZ
-^| 21100  
+^| 21100
 <| Deprecated in EPSG, replaced by 3001 Batavia / NEIEZ.
 <| PCS_Beijing_Gauss_13N
-^| 21473  
+^| 21473
 <| Deprecated in EPSG, replaced by 21453 Beijing 1954 / Gauss-Kruger 13N.
 <| PCS_Beijing_Gauss_14N
-^| 21474 
+^| 21474
 <| Deprecated in EPSG, replaced by 21454 Beijing 1954 / Gauss-Kruger 14N.
 <| PCS_Beijing_Gauss_15N
 ^| 21475
@@ -852,7 +988,7 @@ __Table B.1 - Deprecated and deleted EPSG Projected CRS codes  __ 
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
-^| *EPSG CRS Code* 
+^| *EPSG CRS Code*
 ^| *Comment*
 <| GCS_Bern_1898
 ^| _4217_
@@ -926,7 +1062,7 @@ _Table B.2 - Deprecated and deleted EPSG Geodetic CRS codes_
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
-^| *EPSG CRS Code* 
+^| *EPSG CRS Code*
 ^| *Comment*
 <| Linear_Foot_Modified_American
 ^| _9004_
@@ -964,7 +1100,7 @@ _Table B.3 - Deprecated and deleted EPSG Unit of Measure codes_
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
-^| *EPSG CRS Code* 
+^| *EPSG CRS Code*
 ^| *Comment*
 <| Datum_Bern_1898
 ^| _6217_
@@ -1020,7 +1156,7 @@ _Table B.4 - Deprecated and deleted EPSG Geodetic Datum codes_
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
-^| *EPSG CRS Code* 
+^| *EPSG CRS Code*
 ^| *Comment*
 <| Ellipse_Bessel_Namibia
 ^| 7006
@@ -1046,7 +1182,7 @@ _Table B.5 - Deprecated and deleted EPSG Ellipsoid codes_
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
-^| *EPSG CRS Code* 
+^| *EPSG CRS Code*
 ^| *Comment*
 <| Proj_California_CS27_VII
 ^| 10407
@@ -1086,286 +1222,3 @@ _Table B.5 - Deprecated and deleted EPSG Ellipsoid codes_
 <| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 19956 Rectified Skew Orthomorphic Borneo Grid (chains), 19957 Rectified Skew Orthomorphic Borneo Grid (feet) and 19958 Rectified Skew Orthomorphic Borneo Grid (metres)._
 |===
 _Table B.6 - Deprecated and deleted EPSG Map projection codes_
-
-== Coordinate Transformations
-
-The purpose of GeoTIFF is to allow the definitive identification of georeferenced locations within a raster dataset. This is generally accomplished through tying raster space coordinates to a model space coordinate system, when no further information is required. In the GeoTIFF nomenclature, "georeferencing" refers to tying raster space to a model space M, while "geocoding" refers to defining how the model space M assigns coordinates to points on the earth.
-
-The three tags defined below may be used for defining the relationship between R and M, and the relationship may be diagrammed as:
-
-            ModelPixelScaleTag
-             ModelTiepointTag
-     R ------------ OR --------------> M
-    (I,J,K) ModelTransformationTag (X,Y,Z)
-
-The next section describes these Baseline georeferencing tags in detail.
-
-=== GeoTIFF Tags for Coordinate Transformations
-
-For most common applications, the transformation between raster and model space may be defined with a set of raster-to-model tiepoints and scaling parameters. The following two tags may be used for this purpose:
-
-    ModelTiepointTag:
-          Tag = 33922 (8482.H)
-          Type = DOUBLE (IEEE Double precision)
-          N = 6*K, K = number of tiepoints
-          Alias: GeoreferenceTag
-
-This tag stores raster->model tiepoint pairs in the order
-
-     ModelTiepointTag = (...,I,J,K, X,Y,Z...),
-
-where (I,J,K) is the point at location (I,J) in raster space with pixel-value K, and (X,Y,Z) is a vector in model space. In most cases the model space is only two-dimensional, in which case both K and Z should be set to zero; this third dimension is provided in anticipation of future support for 3D digital elevation models and vertical coordinate systems.
-
-A raster image may be georeferenced simply by specifying its location, size and orientation in the model coordinate space M. This may be done by specifying the location of three of the four bounding corner points. However, tiepoints are only to be considered exact at the points specified; thus defining such a set of bounding tiepoints does *not* imply that the model space locations of the interior of the image may be exactly computed by a linear interpolation of these tiepoints.
-
-However, since the relationship between the Raster space and the model space will often be an exact, affine transformation, this relationship can be defined using one set of tiepoints and the "ModelPixelScaleTag", described below, which gives the vertical and horizontal raster grid cell size, specified in model units.
-
-If possible, the first tiepoint placed in this tag shall be the one establishing the location of the point (0,0) in raster space. However, if this is not possible (for example, if (0,0) is goes to a part of model space in which the projection is ill-defined), then there is no particular order in which the tiepoints need be listed.
-
-For orthorectification or mosaicking applications a large number of tiepoints may be specified on a mesh over the raster image. However, the definition of associated grid interpolation methods is not in the scope of the current GeoTIFF spec.
-
-Remark: As mentioned in section 2.5.1, all GeoTIFF information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.
-
-The next two tags are optional tags provided for defining exact affine transformations between raster and model space; baseline GeoTIFF files may use either, but shall never use both within the same TIFF image directory.
-
-     ModelPixelScaleTag:
-          Tag = 33550
-          Type = DOUBLE (IEEE Double precision)
-          N = 3
-
-This tag may be used to specify the size of raster pixel spacing in the model space units, when the raster space can be embedded in the model space coordinate system without rotation, and consists of the following 3 values:
-
-     ModelPixelScaleTag = (ScaleX, ScaleY, ScaleZ)
-
-where ScaleX and ScaleY give the horizontal and vertical spacing of raster pixels. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale, and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).
-
-A single tiepoint in the ModelTiepointTag, together with this tag, completely determine the relationship between raster and model space; thus they comprise the two tags which Baseline GeoTIFF files most often will use to place a raster image into a "standard position" in model space.
-
-Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, Resolution and Orientation tags of the standard TIFF 6.0 spec. However, simple reversals of orientation between raster and model space (e.g. horizontal or vertical flips) may be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers must honor this sign-reversal convention.
-
-This tag must not be used if the raster image requires rotation or shearing to place it into the standard model space. In such cases the transformation shall be defined with the more general ModelTransformationTag, defined below.
-
-     ModelTransformationTag
-          Tag = 34264 (85D8.H)
-          Type = DOUBLE
-          N = 16
-
-This tag may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space. If specified, the tag shall have the following organization:
-
-     ModelTransformationTag = (a,b,c,d,e....m,n,o,p).
-
-where
-
-     model                  image
-     coords =     matrix  * coords
-     |- -|     |-       -|  |- -|
-     | X |     | a b c d |  | I |
-     | | |     |         |  |   |
-     | Y |     | e f g h |  | J |
-     |   |  =  |         |  |   |
-     | Z |     | i j k l |  | K |
-     | | |     |         |  |   |
-     | 1 |     | m n o p |  | 1 |
-     |- -|     |-       -|  |- -|
-
-By convention, and without loss of generality, the following parameters are currently hard-coded and will always be the same (but must be specified nonetheless):
-
-     m = n = o = 0, p = 1.
-
-For Baseline GeoTIFF, the model space is always 2-D, and so the matrix will have the more limited form:
-
-     |- -|   |-       -| |- -|
-     | X |   | a b 0 d | | I |
-     | | |   |         | |   |
-     | Y |   | e f 0 h | | J |
-     |   | = |         | |   |
-     | Z |   | 0 0 0 0 | | K |
-     | | |   |         | |   |
-     | 1 |   | 0 0 0 1 | | 1 |
-     |- -|   |-       -| |- -|
-
-Values "d" and "h" will often be used to represent translations in X and Y, and so will not necessarily be zero. All 16 values should be specified, in all cases. Only the raster-to-model transformation is defined; if the inverse transformation is required it must be computed by the client, to the desired accuracy.
-
-This matrix tag should not be used if the ModelTiepointTag and the ModelPixelScaleTag are already defined. If only a single tiepoint (I,J,K,X,Y,Z) is specified, and the ModelPixelScale = (Sx, Sy, Sz) is specified, then the corresponding transformation matrix may be computed from them as:
-
-     |-               -|
-     | Sx  0.0 0.0 Tx  |    Tx = X - I/Sx
-     | 0.0 -Sy 0.0 Ty  |    Ty = Y + J/Sy
-     | 0.0 0.0 Sz  Tz  |    Tz = Z - K/Sz (if not 0)
-     | 0.0 0.0 0.0 1.0 |
-     |-               -|
-
-where the -Sy is due the reversal of direction from J increasing- down in raster space to Y increasing-up in model space.
-
-Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.
-
-==== Cookbook for Defining Transformations
-
-Here is a 4-step guide to producing a set of Baseline GeoTIFF tags for defining coordinate transformation information of a raster dataset.
-
-  Step 1: Establish the Raster Space coordinate system used: RasterPixelIsArea or RasterPixelIsPoint.
-
-  Step 2: Establish/define the model space Type in which the image is to be georeferenced. Usually this will be a projected coordinate Reference system (PCS). If you are geocoding this data set, then the model space is defined to be the corresponding geographic, geocentric or projected coordinate reference system (skip to the "Cookbook" section 2.7.3 first to do determine this).
-
-  Step 3: Identify the nature of the transformations needed to tie the raster data down to the model space coordinate reference system:
-
-      Case 1: The model-location of a raster point (x,y) is known, but not the scale or orientations: Use the ModelTiepointTag to define the (X,Y,Z) coordinates of the known raster point.
-
-      Case 2: The location of three non-collinear raster points are known exactly, but the linearity of the transformation is not known.
-
-      Use the ModelTiepointTag to define the (X,Y,Z) coordinates of all three known raster points. Do not compute or define the ModelPixelScale or ModelTransformation tag.
-
-      Case 3: The position and scale of the data is known exactly, and no rotation or shearing is needed to fit into the model space.
-
-      Use the ModelTiepointTag to define the (X,Y,Z) coordinates of the known raster point, and the ModelPixelScaleTag to specify the scale.
-
-      Case 4: The raster data requires rotation and/or lateral shearing to fit into the defined model space:
-
-      Use the ModelTransformation matrix to define the transformation.
-
-      Case 5: The raster data cannot be fit into the model space with a simple affine transformation (rubber-sheeting required). Use only the ModelTiepoint tag, and specify as many tiepoints as your application requires. Note, however, that this is not a Baseline GeoTIFF implementation, and should not be used for interchange; it is recommended that the image be geometrically rectified first, and put into a standard projected coordinate reference system.
-
-  Step 4: Install the defined tag values in the TIFF file and close it.
-
-== Geocoding Raster Data
-=== General Approach
-
-A geocoded image is a georeferenced image as described in section 2.6, which also specifies a model space coordinate reference system (CS) between the model space M (to which the raster space has been tied) and the earth. The relationship can be diagrammed, including the associated TIFF tags, as follows:
-
-         ModelPixelScaleTag
-         ModelTiepointTag              GeoKeyDirectoryTag CS
-     R -------- OR ---------------> M --------- AND -----------> Earth
-         ModelTransformationTag        GeoDoubleParamsTag
-                                       GeoAsciiParamsTag
-
-The geocoding coordinate system is defined by the GeoKeyDirectoryTag, while the Georeferencing information (T) is defined by the ModelTiepointTag and the ModelPixelScale, or ModelTransformationTag. Since these two systems are independent of each other, the tags used to store the parameters are separated from each other in the GeoTIFF file to emphasize the orthogonality.
-
-Examples of how GeoTIFF may be implemented at the Tag and GeoKey level, following the general "Cookbook" approach above.
-
-==== Common Examples
-===== _UTM Projected Aerial Photo_
-
-We have an aerial photo which has been orthorectified and resampled to a UTM grid, zone 60, using WGS 84 coordinate reference system; the coordinates of the upper-left corner of the image is are given in easting/northing, as 350807.4m, 5316081.3m. The scanned map pixel scale is 100 meters/pixels (the actual dpi scanning ratio is irrelevant).
-
-     ModelTiepointTag = (0, 0, 0, 350807.4, 5316081.3, 0.0)
-     ModelPixelScaleTag = (100.0, 100.0, 0.0)
-     GeoKeyDirectoryTag:
-          GTModelTypeGeoKey = 1 (ModelTypeProjected)
-          GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-          ProjectedCSTypeGeoKey = 32660 (PCS_WGS84_UTM_zone_60N)
-          PCSCitationGeoKey = "UTM Zone 60 N with WGS84"
-
-Notes:
-
-. We did not need to specify the GCS lat-long, since the PCS_WGS84_UTM_zone_60N codes implies particular GCS and units already (WGS_84 and meters). The citation was added just for documentation.
-
-. The "GeoKeyDirectoryTag" is expressed using the "GeoKey" structure defined above. At the TIFF level the tags look like this:
-
-    GeoKeyDirectoryTag=( 1,     0,  2,     4,
-                      1024,     0,  1,     1,
-                      1025,     0,  1,     1,
-                      3072,     0,  1, 32660,
-                      3073, 34737, 25,     0 )
-    GeoAsciiParamsTag(34737)=("UTM Zone 60 N with WGS84|")
-
-For the rest of these examples we will only show the GeoKey-level
- dump, with the understanding that the actual TIFF-level tag
- representation can be determined from the documentation.
-
-===== Standard State Plane
-
-We have a USGS State Plane Map of Texas, Central Zone, using NAD83, correctly oriented. The map resolution is 1000 meters/pixel, at origin. There is a grid intersection line in the image at pixel location (50,100), and corresponds to the projected coordinate reference system easting/northing of (949465.0, 3070309.1).
-
-     ModelTiepointTag = ( 50, 100, 0, 949465.0, 3070309.1, 0)
-     ModelPixelScaleTag = (1000, 1000, 0)
-     GeoKeyDirectoryTag:
-          GTModelTypeGeoKey = 1 (ModelTypeProjected)
-          GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-          ProjectedCSTypeGeoKey = 32139 (PCS_NAD83_Texas_Central)
-
-Notice that in this case, since the PCS is a standard code, we do not need to define the GCS, datum, etc, since those are implied by the PCS code. Also, since this is NAD83, meters are used rather than US Survey feet (as in NAD 27).
-
-===== Lambert Conformal Conic Aeronautical Chart
-
-We have a 500 x 500 scanned aeronautical chart of Seattle, WA, using Lambert Conformal Conic projection, correctly oriented. The central meridian is at 120 degrees west. The map resolution is 1000 meters/pixel, at origin, and uses NAD27 datum. The standard parallels of the projection are at 41d20m N and 48d40m N. The latitude of the origin is at 45 degrees North, and occurs in the image at the raster coordinates (80,100). The origin is given a false easting and northing of 200000m, 1500000m.
-
-     ModelTiepointTag = ( 80, 100, 0, 200000, 1500000, 0)
-     ModelPixelScaleTag = (1000, 1000, 0)
-     GeoKeyDirectoryTag:
-          GTModelTypeGeoKey = 1 (ModelTypeProjected)
-          GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-          GeographicTypeGeoKey = 4267 (GCS_NAD27)
-          ProjectedCSTypeGeoKey = 32767 (user-defined)
-          ProjectionGeoKey = 32767 (user-defined)
-          ProjLinearUnitsGeoKey = 9001 (Linear_Meter)
-          ProjCoordTransGeoKey = 8 (CT_LambertConfConic_2SP)
-               ProjStdParallel1GeoKey = 41.333
-               ProjStdParallel2GeoKey = 48.666
-               ProjCenterLongGeoKey =-120.0
-               ProjNatOriginLatGeoKey = 45.0
-               ProjFalseEastingGeoKey, = 200000.0
-               ProjFalseNorthingGeoKey, = 1500000.0
-
-Notice that the Tiepoint takes the false easting and northing into account when tying the raster point (50,100) to the projection origin.
-
-===== DMA ADRG Raster Graphic Map
-
-The U.S. Defense Mapping Agency produces ARC digitized raster graphics datasets by scanning maps and geometrically resampling them into an equirectangular projection, so that they may be directly indexed with WGS84 geographic coordinates. The scale for one map is 0.2 degrees per pixel horizontally, 0.1 degrees per pixel vertically. If stored in a GeoTIFF file it contains the following information:
-
-     ModelTiepointTag=(0.0, 0.0, 0.0, -120.0, 32.0, 0.0)
-     ModelPixelScale = (0.2, 0.1, 0.0)
-     GeoKeyDirectoryTag:
-          GTModelTypeGeoKey = 2 (ModelTypeGeographic)
-          GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-          GeographicTypeGeoKey = 4326 (GCS_WGS_84)
-
-==== Less Common Examples
-===== Unrectified Aerial photo, known tiepoints, in degrees.
-
-We have an aerial photo, and know only the WGS 84 GPS location of several points in the scene: the upper left corner is 120 degrees West, 32 degrees North, the lower-left corner is at 120 degrees West, 30 degrees 20 minutes North, and the lower-right hand corner of the image is at 116 degrees 40 minutes West, 30 degrees 20 minutes North. The photo is not geometrically corrected, however, and the complete projection is therefore not known.
-
-     ModelTiepointTag=( 0.0,    0.0, 0.0,       -120.0,     32.0, 0.0,
-                        0.0, 1000.0, 0.0,       -120.0, 30.33333, 0.0,
-                     1000.0, 1000.0, 0.0, -116.6666667, 30.33333, 0.0)
-         GeoKeyDirectoryTag:
-              GTModelTypeGeoKey = 1 (ModelTypeGeographic)
-              GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-              GeographicTypeGeoKey = 4326 (GCS_WGS_84)
-
-Remark: Since we have not specified the ModelPixelScaleTag, clients reading this GeoTIFF file are not permitted to infer that there is a simple linear relationship between the raster data and the geographic model coordinate space. The only points that are know to be exact are the ones specified in the tiepoint tag.
-
-===== Rotated Scanned Map
-
-We have a scanned standard British National Grid, covering the 100km grid zone NZ. Consulting documentation for BNG we find that the southwest corner of the NZ zone has an easting,northing of 400000m, 500000m, relative to the BNG standard false origin. This scanned map has a resolution of 100 meter pixels, and was rotated 90 degrees to fit onto the scanner, so that the southwest corner is now the northwest corner. In this case we must use the ModelTransformation tag rather than the tiepoint/scale pair to map the raster data into model space:
-
-     ModelTransformationTag = ( 0, 100.0, 0, 400000.0,
-                            100.0,     0, 0, 500000.0,
-                                0,     0, 0,        0,
-                                0,     0, 0,        1)
-       GeoKeyDirectoryTag:
-            GTModelTypeGeoKey = 1 ( ModelTypeProjected)
-            GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-            ProjectedCSTypeGeoKey = 27700 (PCS_British_National_Grid)
-            PCSCitationGeoKey = "British National Grid, Zone NZ"
-
-Remark: the matrix has 100.0 in the off-diagonals due to the 90 degree rotation; increasing I points north, and increasing J points east.
-
-===== Digital Elevation Model
-
-The DMA stores digital elevation models using an equirectangular projection, so that it may be indexed with WGS 84 geographic coordinates. Since elevation postings are point-values, the pixels should not be considered as filling areas, but as point-values at grid vertices. To accommodate the base elevation of the Angeles Crest forest, the pixel value of 0 corresponds to an elevation of 1000 meters relative to WGS 84 reference ellipsoid. The upper left corner is at 120 degrees West, 32 degrees North, and has a pixel scale of 0.2 degrees/pixel longitude, 0.1 degrees/pixel latitude.
-
-     ModelTiepointTag=(0.0, 0.0, 0.0, -120.0, 32.0, 1000.0)
-     ModelPixelScale = (0.2, 0.1, 1.0)
-     GeoKeyDirectoryTag:
-          GTModelTypeGeoKey = 2 (ModelTypeGeographic)
-          GTRasterTypeGeoKey = 2 (RasterPixelIsPoint)
-          GeographicTypeGeoKey = 4326 (GCS_WGS_84)
-          VerticalCSTypeGeoKey = 5030 (VertCS_WGS_84_ellipsoid)
-          VerticalCitationGeoKey = "WGS 84 Ellipsoid"
-          VerticalUnitsGeoKey = 9001 (Linear_Meter)
-
-Remarks:
-
-. Note the "RasterPixelIsPoint" raster space, indicating that the DEM posting of the first pixel is at the raster point (0,0,0), and therefore corresponds to 120W,32N exactly.
-
-. The third value of the "PixelScale" is 1.0 to indicate that a single pixel-value unit corresponds to 1 meter, and the last tiepoint value indicates that base value zero indicates 1000m above the reference surface.

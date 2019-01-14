@@ -1,35 +1,32 @@
 [appendix]
 :appendix-caption: Annex
-== Recommendations for describing compound and geographic 3D CRSs
+== Recommendations for describing compound and geographic 3D CRSs (for grids containing height values)
 (Informative)
+
+=== Introduction
+It is reminded here that GeoTIFF presently only handles Geographic 2D CRS or Projected 2D CRS, or geocentric (intrinsically 3D) as ModelTypeGeoKey.
+It is also reminded that a verticalCRS is a 1D gravity-related CRS and that ellipsoidal height cannot be 1D, only as the height part of a geographic 3D CRS.
+In all cases, when the GeoTIFF file contains digital elevation models (Terrain or Surface model, or gridded bathymetric data), the vertical reference is provided by the coumpound CRSs mechanism (Horizontal 2D CRS + VerticalGeoKey) documented below.
+However, it should be clear that the value of the VerticalGeoKey may be a verticalCRS (case of 1D gravity-related CRS) or describe a geographic 3D CRS (case of ellipsoïdal height). Therefore this key is named VerticalGeoKey (and can't be called VerticalCRSGeoKey).
 
 === Compound CRSs
 A future version of GeoTIFF may expand the values of the GTModelTypeGeoKey to explicitly describe the Model CRS being compound. This document does not do that.
 
-Recommendation: For a 2D+1D compound CRS comprised of projected CRS + vertical CRS,  GTModelTypeGeoKey value should be 1 and both a ProjectedCRSGeoKey and a VerticalCRSGeoKey should be given. The ProjectedCRSGeoKey should describe a 2D projected CRS.
+Recommendation: For a 2D+1D compound CRS comprised of projected CRS + vertical CRS,  GTModelTypeGeoKey value should be 1 and both a ProjectedCRSGeoKey and a VerticalGeoKey should be given. The ProjectedCRSGeoKey should describe a 2D projected CRS.
 
-Recommendation: For a 2D+1D compound CRS comprised of geographic 2D CRS + vertical CRS,  GTModelTypeGeoKey value should be 2 and both a GeodeticCRSGeoKey and a VerticalCRSGeoKey should be given. The GeodeticCRSGeoKey should describe a geographic 2D CRS.
+Recommendation: For a 2D+1D compound CRS comprised of geographic 2D CRS + vertical CRS,  GTModelTypeGeoKey value should be 2 and both a GeodeticCRSGeoKey and a VerticalGeoKey should be given. The GeodeticCRSGeoKey should describe a geographic 2D CRS.
 
-Note: a possible long-term solution would be to assign a GTModelTypeGeoKey value of 4 to indicate a compound CRS comprised of projected CRS + vertical CRS, and value of 5 to indicate a compound CRS comprised of geographic 2D CRS + vertical CRS. These are not valid values in this specification.
-
-=== Geographic 3D CRS
+=== Geographic 3D CRS (case of ellipsoïdal height)
 A future version of GeoTIFF may expand the values of the GTModelTypeGeoKey to explicitly differentiate between geographic 2D and geographic 3D CRSs. This document does not do that.
-In this document there are several possible means of describing a geographic 3D CRS:
+In this document there are two possible means of describing a geographic 3D CRS:
 
-a) give GTModelTypeGeoKey value of 2 and identify a geographic 3D CRS through the GeodeticCRSGeoKey. The VerticalCRSGeoKey is not populated.
+a) give GTModelTypeGeoKey value of 2 and identify a geographic 2D CRS through the GeodeticCRSGeoKey, giving the geographic 3D CRS description through the VerticalGeoKey. The geographic 2D CRS should be the horizontal component of the geographic 3D CRS. (This is the **recommended option**)
 
-b) give GTModelTypeGeoKey value of 2 and identify a geographic 3D CRS through the GeodeticCRSGeoKey, plus identify the ellipsoidal height unit through a GeogLinearUnitGeoKey. The VerticalCRSGeoKey is not populated.
+b) give GTModelTypeGeoKey value of 2 and use the VerticalGeoKey to describe an ellipsoid from which the ellipsoid height is measured using the GeoTIFF v1.0 codes in Table D.1 below.
 
-c) give GTModelTypeGeoKey value of 2 and identify a geographic 2D CRS through the GeodeticCRSGeoKey, plus identifying the geographic 3D CRS through the VerticalCRSGeoKey.
+NOTE: This option is documented only for compatibility with some past Community practices. In this document a 1D ellipsoidal height is an invalid concept and use of these codes is deprecated.
 
-d) give GTModelTypeGeoKey value of 2 and use the VerticalCRSGeoKey to describe an ellipsoid from which the ellipsoid height is measured using the GeoTIFF v1.0 codes in Table D.1 below.
-Note: This option is documented only for compatibility with some past Community practices. In this document a 1D ellipsoidal height is an invalid concept and use of these codes is deprecated.
-
-e) give GTModelTypeGeoKey value of 2 and use the GeodeticCRSGeoKey to describe a geographic 2D CRS, giving the geographic 3D CRS description through the VerticalCRSGeoKey. The geographic 2D CRS should be the horizontal component of the geographic 3D CRS.
-
-None of these are long-term solutions. Until a revision of this specification is available, recommended practice for writers is to use (e). Readers should be prepared for any of these options.
-
-Note: a possible long-term solution would be to assign a GTModelTypeGeoKey value of 6 to indicate a geographic 3D CRS, with the VerticalCRSGeoKey not populated (modification of (a) above). This is not a valid value in this specification.
+None of these are long-term solutions. Until a major revision of this specification is available, recommended practice for producers/writers is to use (a). Readers should be prepared for any of these options.
 
 [cols="4,1",width="90%" options="header"]
 |====
@@ -54,7 +51,7 @@ Note: a possible long-term solution would be to assign a GTModelTypeGeoKey value
 <| Clarke_1880_Benoit_ellipsoid
 ^| 5010
 <| Clarke_1880_IGN_ellipsoid
-^| 5011 
+^| 5011
 <| Clarke_1880_RGS_ellipsoid
 ^| 5012
 <| Clarke_1880_Arc_ellipsoid
@@ -100,4 +97,4 @@ Note: a possible long-term solution would be to assign a GTModelTypeGeoKey value
 <| OSU91A_ellipsoid
 ^| 5033
 |====
-_Table D.1 - Codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights_
+_Table D.1 - Deprecated codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights (corresponding to option b)_
