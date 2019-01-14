@@ -155,11 +155,13 @@ Geodetic latitude is defined to be the angle subtended with the ellipsoid’s eq
 Geodetic longitude is defined to be the angle measured about the minor (polar) axis of the ellipsoid from a prime meridian (see below) to the meridian through a point, positive if east of the prime meridian and negative if west. Unlike latitude, which has a natural origin at the equator, there is no feature on the ellipsoid which forms a natural origin for the measurement of longitude. The zero longitude can be any defined meridian. Historically, nations have used the meridian through their national astronomical observatories, giving rise to several prime meridians. By international convention, the meridian through Greenwich, England is the standard prime meridian. Longitude is only unambiguous if the longitude of its prime meridian relative to Greenwich is given. Prime meridians other than Greenwich that are sometimes used for earth mapping are included in the GeoTIFF reference lists.
 
 ===  Geodetic Datum (Geodetic Reference Frame)
-As well as there being several ellipsoids in use to model the earth, any one particular ellipsoid can have its location and orientation relative to the earth defined in different ways. If the relationship between the ellipsoid and the earth is changed, then the coordinates of a point will change.
+As well as there being several ellipsoids in use to model the earth, any one particular ellipsoid can have its location and orientation relative to the earth defined in different ways. If the relationship between the ellipsoid and the earth is changed, then the coordinates of a point will change. Conversely, for coordinates to uniquely describe a location, the relationship between the earth and the ellipsoid must be defined. This relationship is described by a geodetic datum or geodetic reference frame. An exact geodetic definition of geodetic datums and reference frames is beyond the scope of GeoTIFF. However the GeoTIFF standard requires  that:
 
-Conversely, for coordinates to uniquely describe a location, the relationship between the earth and the ellipsoid must be defined. This relationship is described by a geodetic datum or geodetic reference frame. An exact geodetic definition of geodetic datums and reference frames is beyond the scope of GeoTIFF. However the GeoTIFF standard requires  that for user-defined Model CRSs the geodetic datum being utilized be identified by numerical code. If required, defining parameters for the geodetic datum can be included as a citation.
+i) if geocentric/geographic/projected CRS is in the GeoTIFF CRS register:	cite the CRS code, through the GeodeticCRSGeoKey if geocentric or geographic, or if projected through the ProjectedCRSGeoKey. The geodetic datum is included in that register CRS definition.
 
-_Note (even Rouault): Is it really a requirement ? That would involve making GeodeticDatumGeoKey != User-Defined a requirement. There are GeoTIFF in the wild with user defined GeodeticDatumGeoKey_
+ii) if the GeoTIFF CRS register contains the geodetic datum but not the geocentric/geographic/projected CRS: cite the CRS as user-defined (32767) through the GeodeticCRSGeoKey if geocentric or geographic, or through the ProjectedCRSGeoKey if projected, and then cite the geodetic datum code from the CRS register through the GeodeticDatumGeoKey.
+
+iii) if geodetic datum is not in the GeoTIFF CRS register (so the GeoTIFF CRS register will not have any CRSs associated with the datum): cite the CRS as user-defined (32767) through the GeodeticCRSGeoKey if geocentric or geographic, or through the ProjectedCRSGeoKey if projected, and then cite the geodetic datum code as user-defined through the GeodeticDatumGeoKey. Requirement http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.user-defined then requires that the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey be populated". The definition of the user-defined geodetic datum in addition to its ellipsoid and prime meridian should be described through the geodetic citation.
 
 == Coordinate Reference Systems in GeoTIFF
 In the TIFF/GeoTIFF framework, there are essentially three different spaces in which coordinates may be defined. The spaces are:
@@ -283,13 +285,14 @@ GeoTIFF attempts to allow Model CRSs that are not described in the standard CRS 
 In practice, user-defined Model CRS definition is limited to the following cases:
 
 i)	a user-defined projected CRS which uses a base geographic CRS and a map projection that are both individually available from the GeoTIFF CRS register but, in the register, not associated together.
+EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticCRSGeoKey.EPSG, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG
 
 ii)	a user-defined projected CRS which uses a user-defined geographic CRS with a map projection that is available from the GeoTIFF CRS register.
-_Note (even Rouault): User-defined map projections can also be found (as of GeoTIFF 1995). I cannot tell how frequent they are but certainly libgeotiff and GDAL can read and write those. Emmanuel: do we allow this or not in this revision?_
+GeogCRS needs defining as in Requirement http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticCRSGeoKey.userdefined, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG
 
-iii)	a user-defined geographic CRS.
+iii)	a user-defined geographic CRS available from the GeoTIFF CRS register and a map projection not in EPSG register. EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticCRSGeoKey.EPSG, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.user_defined using the v1.0 provisions (use the names in annex C).
 
-iv)	A user-defined vertical CRS.
+ iv) Neither base GeogCRS or map projection is in EPSG. GeogCRS needs defining, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.user_defined using the v1.0 provisions (the names in annex C).
 
 But even for these cases, unless stated through a Citation, some assumption is required about axis positive direction and axis order. Based on the standards available for US FGDC metadata and in the EPSG Dataset when the GeoTIFF v1.0 specification was written, it is assumed that:
 
