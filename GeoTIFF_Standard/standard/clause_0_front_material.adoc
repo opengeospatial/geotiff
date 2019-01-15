@@ -39,4 +39,6 @@ All questions regarding this submission should be directed to the editor or the 
 |Ted Habermann |The HDF Group
 |Emmanuel Devys |IGN
 |Charles Heazel |Heazeltech LLC
+|Roger Lott   |  International Association of Oil & Gas Producers (IOGP)
+|Even Rouault |Spatialys  |
 |============================

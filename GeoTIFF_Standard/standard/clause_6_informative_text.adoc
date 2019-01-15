@@ -2,10 +2,10 @@
 
 The following section of this Standard is included for informative purposes only. It serves to assist in correct implementation of this standard but do not impose any additional requirements.
 
-* *Annex B: The GeoTIFF File Structure:* This Annex provides a description of the community GeoTIFF specification and supporting information on how various elements of that specification should be used.
+* <<annex-a.adoc#,Annex B: The GeoTIFF File Structure>>: This Annex provides a description of the community GeoTIFF specification and supporting information on how various elements of that specification should be used.
 
-* *Annex D: Recommendations for describing compound and geographic 3D CRSs:* This Annex provides recommendations for describing 3D Model CRS subtypes to which heights are referenced (compound and geographic 3D) that are not fully supported in this community specification.
+* <<annex-d.adoc#,Annex D: Recommendations for describing compound and geographic 3D CRSs>>: This Annex provides recommendations for describing 3D Model CRS subtypes to which heights are referenced (compound and geographic 3D) that are not fully supported in this community specification.
 
-* *Annex E: Summary of GeoKey IDs and names:* This Annex lists the names and IDs of all GeoKeys supported in this specification.
+* <<annex-e.adoc#,Annex E: Summary of GeoKey IDs and names>>: This Annex lists the names and IDs of all GeoKeys supported in this specification.
 
-(Note: add cross-references hyperlinks)
+* <<annex-f.adoc#,Annex F: Examples>>: This Annex contains a set of illustrative examples of GeoTIFF tags contents.

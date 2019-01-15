@@ -270,7 +270,7 @@ This key may be used to specify the vertical datum for a user-defined vertical c
 
 ===== Requirements Class VerticalDatumGeoKey
 
-include::requirements/Vertical_Parameters_GeoKeys/requirements_class_VerticalDatumGeoKey.adoc[]
+include::requirements/Vertical_GeoKeys/requirements_class_VerticalDatumGeoKey.adoc[]
 
 ==== Map Projection GeoKeys
 
