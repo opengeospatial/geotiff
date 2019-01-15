@@ -105,6 +105,14 @@ include::annex-a.adoc[]
 
 include::annex-b.adoc[]
 
+include::annex-c.adoc[]
+
+include::annex-d.adoc[]
+
+include::annex-e.adoc[]
+
+include::annex-f.adoc[]
+
 <<<
 ////
 Revision History should be the last annex before the Bibliography
