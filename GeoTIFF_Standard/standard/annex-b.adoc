@@ -232,7 +232,7 @@ If a point-pixel image were to be displayed on a display device with pixel cells
 ==== Model Coordinate Reference Systems (Model space)
 'Real world' coordinate reference systems are imposed on models of the earth, hence the term _model coordinate reference system_ used in GeoTIFF. To georeference an image in GeoTIFF, you must specify a Raster Space coordinate system, choose a Model coordinate reference system, and specify a transformation between these two, as described in B.6.
 
-To describe a location uniquely, a coordinate must be referenced to an adequately defined Model coordinate reference system. If the Model coordinate reference system is from the GeoTIFF standard definitions (B.5.4), the only reference required is the standard coordinate reference system code. If the Model coordinate reference system is non-standard, it must be defined.
+To describe a location uniquely, a coordinate must be referenced to an adequately defined Model coordinate reference system. If the Model coordinate reference system is from the GeoTIFF standard definitions (<<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>), the only reference required is the standard coordinate reference system code. If the Model coordinate reference system is non-standard, it must be defined.
 
 The following subtypes of Model coordinate  reference system (CRS) are recognized in GeoTIFF:
 
@@ -271,7 +271,7 @@ or by
      a user-defined system.
 
 ==== Standard Model Coordinate Reference Systems
-In GeoTIFF, standard CRSs are identified through reference to an EPSG CRS code. This is sufficient to define the CRS component objects. Further information on EPSG codes is given in B.5.4.
+In GeoTIFF, standard CRSs are identified through reference to an EPSG CRS code. This is sufficient to define the CRS component objects. Further information on EPSG codes is given in <<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>.
 
 NOTE: This document removes the reference to the specific EPSG codes listed in the 1995 GeoTIFF v1.0 specification and replaces it by *allowing reference to any code in the EPSG Dataset*, including codes for any objects introduced into the EPSG Dataset after publication of this document.
 
