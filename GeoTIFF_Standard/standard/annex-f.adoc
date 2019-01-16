@@ -151,7 +151,6 @@ Geotiff_Information:
    Keyed_Information:
       GTModelTypeGeoKey (Short,1): ModelTypeProjected
       GTRasterTypeGeoKey (Short,1): RasterPixelIsArea
-      GTCitationGeoKey (Ascii,29): "SimpleCylindrical Moon"
       GeodeticCRSGeoKey (Short,1): User-Defined
       GeodeticCitationGeoKey (Ascii,124): "GCS Name = Moon 2000|Datum = D_Moon_2000|Ellipsoid =
           Moon_2000_IAU_IAG|Primem = Reference_Meridian|AUnits = Decimal_Degree|"
@@ -162,6 +161,7 @@ Geotiff_Information:
       EllipsoidSemiMinorAxisGeoKey (Double,1): 1737400
       PrimeMeridianLongitudeGeoKey (Double,1): 0
       ProjectedCRSGeoKey (Short,1): User-Defined
+      ProjectedCitationGeoKey (Ascii,30): "SimpleCylindrical Moon|"
       ProjectionGeoKey (Short,1): User-Defined
       ProjMethodGeoKey (Short,1): CT_Equirectangular
       ProjLinearUnitsGeoKey (Short,1): Linear_Meter
