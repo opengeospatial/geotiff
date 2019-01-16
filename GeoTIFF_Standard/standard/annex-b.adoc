@@ -133,7 +133,7 @@ This GeoKey mechanism is used extensively in Clause 7 where the parameters for d
 
 === GeoTIFF Models of the earth
 ==== Ellipsoid
-The geoid - the earth stripped of all topography - forms a reference surface for the earth. However, because it is related to the earth’s gravity field, the geoid is a very complex surface; indeed, at a detailed level its description is not well known. The geoid is therefore not used in practical mapping.
+The geoid - the earth stripped of all topography - forms a reference surface for the earth. However, because it is related to the earth's gravity field, the geoid is a very complex surface; indeed, at a detailed level its description is not well known. The geoid is therefore not used in practical mapping.
 
 It has been found that an oblate ellipsoid (an ellipse rotated about its minor axis) is a good approximation to the shape of the geoid and therefore a good model of the earth. Many approximations exist: several hundred ellipsoids have been defined for scientific purposes and about 30 are in day-to-day use for Earth mapping. The size and shape of these bi-axial ellipsoids can be defined through two parameters. GeoTIFF requires one of these to be
 
@@ -150,7 +150,7 @@ Numeric codes for ellipsoids regularly used for earth mapping are included in th
 ==== Prime Meridian
 The coordinate axes of the system referencing points on an ellipsoid are called latitude and longitude. More precisely, geodetic latitude and longitude are required in this GeoTIFF standard. A discussion of the several other types of latitude and longitude is beyond the scope of this document as they are not required for conventional georeferencing.
 
-Geodetic latitude is defined to be the angle subtended with the ellipsoid’s equatorial plane by a perpendicular through the surface of the ellipsoid from a point. Latitude is positive if north of the equator, negative if south.
+Geodetic latitude is defined to be the angle subtended with the ellipsoid's equatorial plane by a perpendicular through the surface of the ellipsoid from a point. Latitude is positive if north of the equator, negative if south.
 
 Geodetic longitude is defined to be the angle measured about the minor (polar) axis of the ellipsoid from a prime meridian (see below) to the meridian through a point, positive if east of the prime meridian and negative if west. Unlike latitude, which has a natural origin at the equator, there is no feature on the ellipsoid which forms a natural origin for the measurement of longitude. The zero longitude can be any defined meridian. Historically, nations have used the meridian through their national astronomical observatories, giving rise to several prime meridians. By international convention, the meridian through Greenwich, England is the standard prime meridian. Longitude is only unambiguous if the longitude of its prime meridian relative to Greenwich is given. Prime meridians other than Greenwich that are sometimes used for earth mapping are included in the GeoTIFF reference lists.
 
@@ -241,14 +241,14 @@ The following subtypes of Model coordinate  reference system (CRS) are recognize
 * Projected ('map grid')
 * Vertical
 
-Projected ('map grid') and geographical 2D CRSs form two-dimensional horizontal coordinate systems (i.e. horizontal with respect to the earth’s surface). Height is not part of these systems. To describe a position in three dimensions using these 2D systems it is necessary to consider height as a second one-dimensional vertical coordinate reference system in a 2D + 1D pseudo 3D compound CRS structure. Recommendations for describing compound CRSs are given in Annex D.
+Projected ('map grid') and geographical 2D CRSs form two-dimensional horizontal coordinate systems (i.e. horizontal with respect to the earth's surface). Height is not part of these systems. To describe a position in three dimensions using these 2D systems it is necessary to consider height as a second one-dimensional vertical coordinate reference system in a 2D + 1D pseudo 3D compound CRS structure. Recommendations for describing compound CRSs are given in Annex D.
 
 True spatial 3D CRS subtypes are geocentric and geographic 3D. See Annex D for recommendations for describing geographic 3D CRSs.
 
 ===== Geodetic Coordinate Reference Systems
 A geodetic coordinate reference system is created by associating a coordinate system - a set of axes - with a geodetic datum. Subtypes of geodetic CRS supported by GeoTIFF are:
 
-* geocentric, when the coordinate system is a 3-dimensional Cartesian coordinate system with its origin at or near the centre of the earth. The Z-axis is in or parallel to the earth’s axis of rotation (or to the axis around which the rotational axis precesses). The X-axis is in the plane of the equator and passes through its intersection with the prime meridian, and the Y-axis is in the plane of the equator forming a right-handed coordinate system with the X and Z axes.
+* geocentric, when the coordinate system is a 3-dimensional Cartesian coordinate system with its origin at or near the centre of the earth. The Z-axis is in or parallel to the earth's axis of rotation (or to the axis around which the rotational axis precesses). The X-axis is in the plane of the equator and passes through its intersection with the prime meridian, and the Y-axis is in the plane of the equator forming a right-handed coordinate system with the X and Z axes.
 * geographic, when the coordinate system is ellipsoidal, i.e. latitude and longitude in the 2D case and in the 3D case additionally with ellipsoidal height. GeoTIFF v1.0 did not clearly define whether geographic CRSs are 2D or 3D.
 
 Geocentric coordinates are readily converted to and from geographic 3D coordinates. Geographic 2D coordinates cannot be converted to geocentric coordinates without some assumption regarding height.
@@ -983,7 +983,7 @@ Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects avai
 ^| 32077
 <| Deprecated in EPSG, replaced by 32067 NAD27 / BLM 17N (ftUS).
 |===
-__Table B.1 - Deprecated and deleted EPSG Projected CRS codes  __ 
+__Table B.1 - Deprecated and deleted EPSG Projected CRS codes  __
 
 [cols="2,1,4",width="90%" options="header"]
 |===
