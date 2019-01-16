@@ -3,7 +3,7 @@
 == Examples
 
 === Introduction
-This annex provides examples of how GeoTIFF may be implemented at the Tag and GeoKey level, following the general "Cookbook" approach presented in <<annex_b.adoc#Cookbook for Defining Transformations, Cookbook>>: common examples, less common ones, including a Lunar example.
+This annex provides examples of how GeoTIFF may be implemented at the Tag and GeoKey level, following the general "Cookbook" approach presented in <<Cookbook for Defining Transformations>>: common examples, less common ones, including a Lunar example.
 
 === Common Examples
 ==== _UTM Projected Aerial Photo_
