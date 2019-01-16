@@ -28,7 +28,7 @@ _ProjectedCRSGeoKey values in the range 1001-1023 SHALL be reserved._
 |http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.EPSG +
 _ProjectedCRSGeoKey values in the range 1024-32766 SHALL be EPSG Projected CRS Codes_
 
-NOTE: In GeoTIFF v1.0 the range was 20000-32760. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See Annex B.5.4, Table 1.
+NOTE: In GeoTIFF v1.0 the range was 20000-32760. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-b.adoc#deprecated_projected_crs_codes,Table B.1 - Deprecated and deleted EPSG Projected CRS codes>>
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

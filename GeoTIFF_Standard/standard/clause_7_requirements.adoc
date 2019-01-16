@@ -103,6 +103,8 @@ For most common applications, the transformation between raster space and model 
 
 Alternatively, the _ModelTransformationTag_ may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space.
 
+Consult <<GeoTIFF Tags for Coordinate Transformations>> for a description of their semantics.
+
 ==== Requirements Class ModelTiepointTag
 
 include::requirements/Raster2Model_CoordinateTransformation_Tags/requirements_class_ModelTiepointTag.adoc[]
@@ -150,7 +152,7 @@ include::requirements/Vertical_GeoKeys/requirements_class_VerticalGeoKey.adoc[]
 
 ==== Citation GeoKeys
 
-These keys are used to describe Model CRS elements through ASCII free text. A citation may be included with a CRS identified through the GeoTIFF CRS register (7.4.1). A citation is mandatory for a user-defined CRSs and CRS objects (7.4.3). The _GeodeticCitationGeoKey_, _ProjectedCitationGeoKey_ and _VerticalCitationGeoKey_ are used with CRSs and CRS components.
+These keys are used to describe Model CRS elements through ASCII free text. A citation may be included with a CRS identified through the GeoTIFF CRS register (<<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>). A citation is mandatory for a user-defined CRSs and CRS objects (<<Requirements for definition of user-defined Model CRS>>). The _GeodeticCitationGeoKey_, _ProjectedCitationGeoKey_ and _VerticalCitationGeoKey_ are used with CRSs and CRS components.
 Moreover, the _GTCitationGeoKey_ is provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file.
 Moreover,
 
