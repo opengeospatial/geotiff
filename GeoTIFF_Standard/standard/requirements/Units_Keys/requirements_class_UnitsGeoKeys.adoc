@@ -40,7 +40,7 @@ NOTE: In GeoTIFF v1.0 the range was 9100-9199
 |http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.linear +
 _GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 1024-32766 SHALL be EPSG Unit Of Measure (UOM) codes with type = length._
 
-NOTE: In GeoTIFF v1.0 the range was 9000-9099. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See Annex B.5.4, Table 3.
+NOTE: In GeoTIFF v1.0 the range was 9000-9099. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-b.adoc#deprecated_units_codes,Table B.3 - Deprecated and deleted EPSG Unit of Measure codes>>
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

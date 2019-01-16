@@ -569,6 +569,7 @@ A reference to an EPSG coordinate reference system code is sufficient for a comp
 ===== Deprecated and deleted EPSG codes
 Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects available at that time. Most of these remain valid, although there may have been minor changes to names and other non-essential detail. However since the publication of GeoTIFF v1.0 several of these object records have been either deprecated or deleted from the EPSG Dataset. Deprecated records usually have been superseded by a later record, with a cross reference included in the EPSG Dataset. Deleted records have been removed from the EPSG dataset and the code could be (and in some cases has been) reused for a totally different object. Particular care is needed in the treatment of GeoTIFF files that have used these deleted object records, _shown in italics_ in tables B.1 through B.6 below. These tables list the EPSG codes listed in GeoTIFF v1.0 that are no longer valid and which should no longer be used. The list was correct at 29th May 2018. For any later deprecation and replacement of records refer to the EPSG Dataset. Note that the names in the GeoTIFF v1.0 specification and given in these tables have prefixes and underscores not found in the EPSG Dataset.
 
+[[deprecated_projected_crs_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
@@ -985,6 +986,7 @@ Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects avai
 |===
 __Table B.1 - Deprecated and deleted EPSG Projected CRS codes  __
 
+[[deprecated_geodetic_crs_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
@@ -1059,6 +1061,7 @@ __Table B.1 - Deprecated and deleted EPSG Projected CRS codes  __
 |===
 _Table B.2 - Deprecated and deleted EPSG Geodetic CRS codes_
 
+[[deprecated_units_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
@@ -1097,6 +1100,7 @@ _Table B.2 - Deprecated and deleted EPSG Geodetic CRS codes_
 |===
 _Table B.3 - Deprecated and deleted EPSG Unit of Measure codes_
 
+[[deprecated_geodetic_datum_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
@@ -1153,6 +1157,7 @@ _Table B.3 - Deprecated and deleted EPSG Unit of Measure codes_
 |===
 _Table B.4 - Deprecated and deleted EPSG Geodetic Datum codes_
 
+[[deprecated_ellipsoid_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
@@ -1179,6 +1184,7 @@ _Table B.4 - Deprecated and deleted EPSG Geodetic Datum codes_
 |===
 _Table B.5 - Deprecated and deleted EPSG Ellipsoid codes_
 
+[[deprecated_map_projection_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
 ^| *Name given in GeoTIFF v1.0*
