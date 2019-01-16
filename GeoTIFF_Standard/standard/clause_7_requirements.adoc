@@ -103,6 +103,8 @@ For most common applications, the transformation between raster space and model 
 
 Alternatively, the _ModelTransformationTag_ may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space.
 
+Consult <<GeoTIFF Tags for Coordinate Transformations>> for a description of their semantics.
+
 ==== Requirements Class ModelTiepointTag
 
 include::requirements/Raster2Model_CoordinateTransformation_Tags/requirements_class_ModelTiepointTag.adoc[]
