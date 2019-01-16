@@ -54,11 +54,11 @@ We have a 500 x 500 scanned aeronautical chart of Seattle, WA, using Lambert Con
      GeoKeyDirectoryTag:
           GTModelTypeGeoKey = 1 (ModelTypeProjected 2D)
           GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-          GeographicTypeGeoKey = 4267 (GCS_NAD27)
+          GeodeticCRSGeoKey = 4267 (GCS_NAD27)
           ProjectedCRSGeoKey = 32767 (user-defined)
           ProjectionGeoKey = 32767 (user-defined)
           ProjLinearUnitsGeoKey = 9001 (Linear_Meter)
-          ProjCoordTransGeoKey = 8 (CT_LambertConfConic_2SP)
+          ProjMethodGeoKey = 8 (CT_LambertConfConic_2SP)
                ProjStdParallel1GeoKey = 41.333
                ProjStdParallel2GeoKey = 48.666
                ProjCenterLongGeoKey =-120.0
@@ -76,7 +76,7 @@ The U.S. Defense Mapping Agency produces ARC digitized raster graphics datasets 
      GeoKeyDirectoryTag:
           GTModelTypeGeoKey = 2 (ModelTypeGeographic 2D)
           GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-          GeographicTypeGeoKey = 4326 (Geographic 2D WGS 84)
+          GeodeticCRSGeoKey = 4326 (Geographic 2D WGS 84)
 
 === Less Common Examples
 ==== Unrectified Aerial photo, known tiepoints, in degrees.
@@ -89,7 +89,7 @@ We have an aerial photo, and know only the WGS 84 GPS location of several points
          GeoKeyDirectoryTag:
               GTModelTypeGeoKey = 1 (ModelTypeGeographic 2D)
               GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-              GeographicTypeGeoKey = 4326 (Geographic 2D WGS 84)
+              GeodeticCRSGeoKey = 4326 (Geographic 2D WGS 84)
 
 Remark: Since we have not specified the ModelPixelScaleTag, clients reading this GeoTIFF file are not permitted to infer that there is a simple linear relationship between the raster data and the geographic model coordinate space. The only points that are know to be exact are the ones specified in the tiepoint tag.
 
@@ -116,7 +116,7 @@ The DMA stores digital elevation models using an equirectangular projection, so 
      GeoKeyDirectoryTag:
           GTModelTypeGeoKey = 2 (ModelTypeGeographic 2D)
           GTRasterTypeGeoKey = 2 (RasterPixelIsPoint)
-          GeographicTypeGeoKey = 4326 (Geographic 2D WGS 84)
+          GeodeticCRSGeoKey = 4326 (Geographic 2D WGS 84)
           VerticalGeoKey = 4979 (Geographic 3D WGS 84, used here to document use of ellipsoidal height)
           VerticalCitationGeoKey = "Geographic 3D WGS 84, Ellipsoidal height"
           VerticalUnitsGeoKey = 9001 (Linear_Meter)
@@ -152,18 +152,18 @@ Geotiff_Information:
       GTModelTypeGeoKey (Short,1): ModelTypeProjected
       GTRasterTypeGeoKey (Short,1): RasterPixelIsArea
       GTCitationGeoKey (Ascii,29): "SimpleCylindrical Moon"
-      GeographicTypeGeoKey (Short,1): User-Defined
-      GeogCitationGeoKey (Ascii,124): "GCS Name = Moon 2000|Datum = D_Moon_2000|Ellipsoid =
+      GeodeticCRSGeoKey (Short,1): User-Defined
+      GeodeticCitationGeoKey (Ascii,124): "GCS Name = Moon 2000|Datum = D_Moon_2000|Ellipsoid =
           Moon_2000_IAU_IAG|Primem = Reference_Meridian|AUnits = Decimal_Degree|"
-      GeogGeodeticDatumGeoKey (Short,1): User-Defined
+      GeodeticDatumGeoKey (Short,1): User-Defined
       GeogAngularUnitSizeGeoKey (Double,1): 0.0174532925199433
-      GeogEllipsoidGeoKey (Short,1): User-Defined
-      GeogSemiMajorAxisGeoKey (Double,1): 1737400
-      GeogSemiMinorAxisGeoKey (Double,1): 1737400
-      GeogPrimeMeridianLongGeoKey (Double,1): 0
-      ProjectedCSTypeGeoKey (Short,1): User-Defined
+      EllipsoidGeoKey (Short,1): User-Defined
+      EllipsoidSemiMajorAxisGeoKey (Double,1): 1737400
+      EllipsoidSemiMinorAxisGeoKey (Double,1): 1737400
+      PrimeMeridianLongitudeGeoKey (Double,1): 0
+      ProjectedCRSGeoKey (Short,1): User-Defined
       ProjectionGeoKey (Short,1): User-Defined
-      ProjCoordTransGeoKey (Short,1): CT_Equirectangular
+      ProjMethodGeoKey (Short,1): CT_Equirectangular
       ProjLinearUnitsGeoKey (Short,1): Linear_Meter
       ProjStdParallel1GeoKey (Double,1): 0
       ProjFalseEastingGeoKey (Double,1): 0
@@ -173,3 +173,5 @@ Geotiff_Information:
       End_Of_Keys.
    End_Of_Geotiff.
 ```
+
+NOTE: as of writing, listgeo outputs older GeoKey names. The above output has been slightly modified to use the new GeoKey names.
