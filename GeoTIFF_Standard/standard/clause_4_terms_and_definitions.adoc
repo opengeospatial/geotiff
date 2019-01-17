@@ -93,7 +93,7 @@ coordinate reference system that has a geodetic reference frame and an ellipsoid
 
 Note: This allows the assignment of a Latitude-Longitude vector to a location on earth (plus optionally a geodetic height).
 
-NOTE: In the the 1995 GeoTIFF v1.0, this term was "geographic coordinate system"
+NOTE: In the 1995 GeoTIFF v1.0, this term was "geographic coordinate system"
 
 === geokey
 in GeoTIFF, a GeoKey is equivalent in function to a TIFF tag, but uses a different storage mechanism
@@ -198,7 +198,7 @@ Note 2: 	In the three-dimensional case the horizontal coordinates (geodetic lati
 
  [Source ISO 19111:2019, 3.1.51]
 
-NOTE: In the the 1995 GeoTIFF v1.0, this term was "projected coordinate system"
+NOTE: In the 1995 GeoTIFF v1.0, this term was "projected coordinate system"
 
 === projection
 projected coordinate reference system
@@ -216,7 +216,7 @@ usually rectangular pattern of parallel scanning lines forming or corresponding 
 
  [Source: ISO 19123:2005, 4.1.30]
 
-NOTE: In the the 1995 GeoTIFF v1.0, "A continuous planar space in which pixel values are
+NOTE: In the 1995 GeoTIFF v1.0, "A continuous planar space in which pixel values are
 visually realized."
 
 === rational <TIFF>
