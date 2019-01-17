@@ -1,7 +1,7 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: TIFF* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/Core 
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/Core
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -21,7 +21,7 @@ _GeoTIFF implementation software SHALL support all documented TIFF 6.0 tag data-
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/0.0/ByteOrder +
-_GeoTIFF implementation software SHALL honor the 'byte-order' indicator by performing byte swaps as necesssary to provide an accurate in-memory representation of the values encoded in the GeoTIFF file_
+_GeoTIFF implementation software SHALL honor the 'byte-order' indicator by performing byte swaps as necessary to provide an accurate in-memory representation of the values encoded in the GeoTIFF file_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
