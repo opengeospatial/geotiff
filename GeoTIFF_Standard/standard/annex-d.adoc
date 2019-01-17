@@ -6,7 +6,13 @@
 It is reminded here that GeoTIFF presently only handles Geographic 2D CRS or Projected 2D CRS, or geocentric (intrinsically 3D) as ModelTypeGeoKey.
 It is also reminded that a verticalCRS is a 1D gravity-related CRS and that ellipsoidal height cannot be 1D, only as the height part of a geographic 3D CRS.
 In all cases, when the GeoTIFF file contains digital elevation models (Terrain or Surface model, or gridded bathymetric data), the vertical reference is provided by the coumpound CRSs mechanism (Horizontal 2D CRS + VerticalGeoKey) documented below.
-However, it should be clear that the value of the VerticalGeoKey may be a verticalCRS (case of 1D gravity-related CRS) or describe a geographic 3D CRS (case of ellipsoïdal height). Therefore this key is named VerticalGeoKey (and can't be called VerticalCRSGeoKey).
+
+The value of the VerticalGeoKey may be:
+
+* either a verticalCRS (case of 1D gravity-related CRS)
+* or describe a geographic 3D CRS (case of ellipsoïdal height).
+
+Therefore this key is named VerticalGeoKey (and can't be called VerticalCRSGeoKey).
 
 === Compound CRSs
 A future version of GeoTIFF may expand the values of the GTModelTypeGeoKey to explicitly describe the Model CRS being compound. This document does not do that.
