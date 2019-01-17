@@ -814,7 +814,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_summary_of_geokey_ids_and_names">Annex E: Summary of GeoKey IDs and names</a></li>
-<li><a href="#_annex_examples">Annex F: Annex: Examples</a>
+<li><a href="#_examples">Annex F: Examples</a>
 <ul class="sectlevel2">
 <li><a href="#_introduction_3">F.1. Introduction</a></li>
 <li><a href="#_common_examples">F.2. Common Examples</a>
@@ -1888,7 +1888,7 @@ __georeferenceable grid__</pre>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #CACCCE;"><p class="tableblock">*Requirements Class: GeoKeyCode </p></td>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #CACCCE;"><p class="tableblock"><strong>Requirements Class: GeoKeyCode </strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyCode" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyCode</a></p></td>
@@ -2001,13 +2001,19 @@ __georeferenceable grid__</pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.NULLRead" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.NULLRead</a><br>
-<em>Pipe characters ("|") in the GeoAsciiParamsTag SHALL be converted NULL characters before returning strings to the client</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.terminator" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.terminator</a><br>
+<em>The pipe character ("|") in the GeoAsciiParamsTag SHALL be used as the character to terminate a string written in as ASCII tag.</em></p>
+<p class="tableblock">NOTE: if multiple strings are written in the same tag, this terminator character also serves as a separator.</p>
+<p class="tableblock">NOTE: this requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.</p>
+<p class="tableblock">Example of a GeoAscii tag containing only one string: "NAD27 / UTM zone 11N|{NULL}" (where {NULL} is the ASCII character of code 0)</p>
+<p class="tableblock">Example of a GeoAscii tag containing two strings: "NAD27 / UTM zone 11N|NAD27|{NULL}"
+</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.NULLWrite" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.NULLWrite</a><br>
-<em>NULL characters used to terminate strings in the GeoAsciiParamsTag SHALL be converted to a “|” (pipe) prior to being written into the GeoAsciiParamsTag</em></p></td>
+<em>NULL (ASCII code = 0) characters SHALL not be present in the string content written in the GeoAsciiParamsTag.</em></p>
+<p class="tableblock">NOTE: this requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -2173,7 +2179,7 @@ The use of this geokey is <strong>highly recommended</strong> for accurate geore
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.user-defined" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.user-defined</a><br>
-<em>If the GTModelTypeGeoKey value is 32767 (user-defined) then the GeoTIFF file SHALL include at least one of ProjectedCRSGeoKey of GeodeticCRSGeoKey and the GTCitationGeoKey SHALL be populated.</em></p></td>
+<em>If the GTModelTypeGeoKey value is 32767 (user-defined) then the GTCitationGeoKey SHALL be populated.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -2198,6 +2204,9 @@ The GTCitationGeoKey is also provided to give an ASCII reference to published do
 </div>
 <div class="paragraph">
 <p>Alternatively, the <em>ModelTransformationTag</em> may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space.</p>
+</div>
+<div class="paragraph">
+<p>Consult <a href="#_geotiff_tags_for_coordinate_transformations">GeoTIFF Tags for Coordinate Transformations</a> for a description of their semantics.</p>
 </div>
 <div class="sect3">
 <h4 id="_requirements_class_modeltiepointtag"><a class="anchor" href="#_requirements_class_modeltiepointtag"></a>7.3.1. Requirements Class ModelTiepointTag</h4>
@@ -2369,7 +2378,7 @@ In GeoTIFF 1.0 this key was called ProjectedCSTypeGeoKey
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.EPSG</a><br>
 <em>ProjectedCRSGeoKey values in the range 1024-32766 SHALL be EPSG Projected CRS Codes</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 20000-32760. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See Annex B.5.4, Table 1.</p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 20000-32760. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_projected_crs_codes">Table B.1 - Deprecated and deleted EPSG Projected CRS codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -2438,7 +2447,7 @@ In GeoTIFF 1.0 this key was called GeographicTypeGeoKey. Geodetic CRS is a super
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticCRSGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticCRSGeoKey.EPSG</a><br>
 <em>GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geodetic CRS codes (geographic 2D CRS, geographic 3D CRS and geocentric CRS)</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 4000-4999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See Annex B.5.4, Table 2.</p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 4000-4999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_geodetic_crs_codes">Table B.2 - Deprecated and deleted EPSG Geodetic CRS codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -2523,7 +2532,7 @@ In GeoTIFF 1.0 this key was called VerticalCSTypeGeoKey. In GeoTIFF v1.0 vertica
 <div class="sect3">
 <h4 id="_citation_geokeys"><a class="anchor" href="#_citation_geokeys"></a>7.4.2. Citation GeoKeys</h4>
 <div class="paragraph">
-<p>These keys are used to describe Model CRS elements through ASCII free text. A citation may be included with a CRS identified through the GeoTIFF CRS register (7.4.1). A citation is mandatory for a user-defined CRSs and CRS objects (7.4.3). The <em>GeodeticCitationGeoKey</em>, <em>ProjectedCitationGeoKey</em> and <em>VerticalCitationGeoKey</em> are used with CRSs and CRS components.
+<p>These keys are used to describe Model CRS elements through ASCII free text. A citation may be included with a CRS identified through the GeoTIFF CRS register (<a href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register">Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</a>). A citation is mandatory for a user-defined CRSs and CRS objects (<a href="#_requirements_for_definition_of_user_defined_model_crs">Requirements for definition of user-defined Model CRS</a>). The <em>GeodeticCitationGeoKey</em>, <em>ProjectedCitationGeoKey</em> and <em>VerticalCitationGeoKey</em> are used with CRSs and CRS components.
 Moreover, the <em>GTCitationGeoKey</em> is provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file.
 Moreover,</p>
 </div>
@@ -2696,7 +2705,7 @@ Anyone not interested in constructing a user-defined system can ignore that whol
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.linear" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.linear</a><br>
 <em>GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 1024-32766 SHALL be EPSG Unit Of Measure (UOM) codes with type = length.</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 9000-9099. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See Annex B.5.4, Table 3.</p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 9000-9099. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_units_codes">Table B.3 - Deprecated and deleted EPSG Unit of Measure codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -2822,7 +2831,7 @@ In GeoTIFF 1.0 this key was called GeogGeodeticDatumGeoKey.
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.EPSG</a><br>
 <em>GeodeticDatumGeoKey values in the range 1024-32766 SHALL be EPSG geodetic datum codes.</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 6000-6999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See Annex B.5.4, Table 4.</p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 6000-6999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_geodetic_datum_codes">Table B.4 - Deprecated and deleted EPSG geodetic datum codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -3004,7 +3013,7 @@ In GeoTIFF 1.0 this key was called GeogEllipsoidGeoKey.
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.EPSG</a><br>
 <em>EllipsoidGeoKey values in the range 1024-32766 SHALL be EPSG ellipsoid Codes</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 7000-7999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See Annex B.5.4, Table 5.</p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 7000-7999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_ellipsoid_codes">Table B.5 - Deprecated and deleted EPSG ellipsoid codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -3262,7 +3271,7 @@ In GeoTIFF 1.0 this key was called GeogInvFlatteningGeoKey.
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG</a><br>
 <em>ProjectionGeoKey values in the range 1024-32766 SHALL be valid EPSG map projection (coordinate operation) codes</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 10000-19999. Several values in this range have been deprecated or deleted from the EPSG Dataset. See Annex B.5.4, Table 6.</p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 10000-19999. Several values in this range have been deprecated or deleted from the EPSG Dataset. See <a href="#deprecated_map_projection_codes">Table B.6 - Deprecated and deleted EPSG Map projection codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -3785,7 +3794,7 @@ International Association of Oil and Gas Producers, and mechanisms for adding us
 <div class="sect3">
 <h4 id="_ellipsoid_3"><a class="anchor" href="#_ellipsoid_3"></a>B.2.1. Ellipsoid</h4>
 <div class="paragraph">
-<p>The geoid - the earth stripped of all topography - forms a reference surface for the earth. However, because it is related to the earth’s gravity field, the geoid is a very complex surface; indeed, at a detailed level its description is not well known. The geoid is therefore not used in practical mapping.</p>
+<p>The geoid - the earth stripped of all topography - forms a reference surface for the earth. However, because it is related to the earth&#8217;s gravity field, the geoid is a very complex surface; indeed, at a detailed level its description is not well known. The geoid is therefore not used in practical mapping.</p>
 </div>
 <div class="paragraph">
 <p>It has been found that an oblate ellipsoid (an ellipse rotated about its minor axis) is a good approximation to the shape of the geoid and therefore a good model of the earth. Many approximations exist: several hundred ellipsoids have been defined for scientific purposes and about 30 are in day-to-day use for Earth mapping. The size and shape of these bi-axial ellipsoids can be defined through two parameters. GeoTIFF requires one of these to be</p>
@@ -3812,7 +3821,7 @@ International Association of Oil and Gas Producers, and mechanisms for adding us
 <p>The coordinate axes of the system referencing points on an ellipsoid are called latitude and longitude. More precisely, geodetic latitude and longitude are required in this GeoTIFF standard. A discussion of the several other types of latitude and longitude is beyond the scope of this document as they are not required for conventional georeferencing.</p>
 </div>
 <div class="paragraph">
-<p>Geodetic latitude is defined to be the angle subtended with the ellipsoid’s equatorial plane by a perpendicular through the surface of the ellipsoid from a point. Latitude is positive if north of the equator, negative if south.</p>
+<p>Geodetic latitude is defined to be the angle subtended with the ellipsoid&#8217;s equatorial plane by a perpendicular through the surface of the ellipsoid from a point. Latitude is positive if north of the equator, negative if south.</p>
 </div>
 <div class="paragraph">
 <p>Geodetic longitude is defined to be the angle measured about the minor (polar) axis of the ellipsoid from a prime meridian (see below) to the meridian through a point, positive if east of the prime meridian and negative if west. Unlike latitude, which has a natural origin at the equator, there is no feature on the ellipsoid which forms a natural origin for the measurement of longitude. The zero longitude can be any defined meridian. Historically, nations have used the meridian through their national astronomical observatories, giving rise to several prime meridians. By international convention, the meridian through Greenwich, England is the standard prime meridian. Longitude is only unambiguous if the longitude of its prime meridian relative to Greenwich is given. Prime meridians other than Greenwich that are sometimes used for earth mapping are included in the GeoTIFF reference lists.</p>
@@ -3953,7 +3962,7 @@ YPosition (287)</pre>
 <p>'Real world' coordinate reference systems are imposed on models of the earth, hence the term <em>model coordinate reference system</em> used in GeoTIFF. To georeference an image in GeoTIFF, you must specify a Raster Space coordinate system, choose a Model coordinate reference system, and specify a transformation between these two, as described in B.6.</p>
 </div>
 <div class="paragraph">
-<p>To describe a location uniquely, a coordinate must be referenced to an adequately defined Model coordinate reference system. If the Model coordinate reference system is from the GeoTIFF standard definitions (B.5.4), the only reference required is the standard coordinate reference system code. If the Model coordinate reference system is non-standard, it must be defined.</p>
+<p>To describe a location uniquely, a coordinate must be referenced to an adequately defined Model coordinate reference system. If the Model coordinate reference system is from the GeoTIFF standard definitions (<a href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register">Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</a>), the only reference required is the standard coordinate reference system code. If the Model coordinate reference system is non-standard, it must be defined.</p>
 </div>
 <div class="paragraph">
 <p>The following subtypes of Model coordinate  reference system (CRS) are recognized in GeoTIFF:</p>
@@ -3975,7 +3984,7 @@ YPosition (287)</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>Projected ('map grid') and geographical 2D CRSs form two-dimensional horizontal coordinate systems (i.e. horizontal with respect to the earth’s surface). Height is not part of these systems. To describe a position in three dimensions using these 2D systems it is necessary to consider height as a second one-dimensional vertical coordinate reference system in a 2D + 1D pseudo 3D compound CRS structure. Recommendations for describing compound CRSs are given in Annex D.</p>
+<p>Projected ('map grid') and geographical 2D CRSs form two-dimensional horizontal coordinate systems (i.e. horizontal with respect to the earth&#8217;s surface). Height is not part of these systems. To describe a position in three dimensions using these 2D systems it is necessary to consider height as a second one-dimensional vertical coordinate reference system in a 2D + 1D pseudo 3D compound CRS structure. Recommendations for describing compound CRSs are given in Annex D.</p>
 </div>
 <div class="paragraph">
 <p>True spatial 3D CRS subtypes are geocentric and geographic 3D. See Annex D for recommendations for describing geographic 3D CRSs.</p>
@@ -3988,7 +3997,7 @@ YPosition (287)</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>geocentric, when the coordinate system is a 3-dimensional Cartesian coordinate system with its origin at or near the centre of the earth. The Z-axis is in or parallel to the earth’s axis of rotation (or to the axis around which the rotational axis precesses). The X-axis is in the plane of the equator and passes through its intersection with the prime meridian, and the Y-axis is in the plane of the equator forming a right-handed coordinate system with the X and Z axes.</p>
+<p>geocentric, when the coordinate system is a 3-dimensional Cartesian coordinate system with its origin at or near the centre of the earth. The Z-axis is in or parallel to the earth&#8217;s axis of rotation (or to the axis around which the rotational axis precesses). The X-axis is in the plane of the equator and passes through its intersection with the prime meridian, and the Y-axis is in the plane of the equator forming a right-handed coordinate system with the X and Z axes.</p>
 </li>
 <li>
 <p>geographic, when the coordinate system is ellipsoidal, i.e. latitude and longitude in the 2D case and in the 3D case additionally with ellipsoidal height. GeoTIFF v1.0 did not clearly define whether geographic CRSs are 2D or 3D.</p>
@@ -4036,7 +4045,7 @@ Through increasing use of satellite navigation and positioning systems the ellip
 <div class="sect3">
 <h4 id="_standard_model_coordinate_reference_systems"><a class="anchor" href="#_standard_model_coordinate_reference_systems"></a>B.4.1. Standard Model Coordinate Reference Systems</h4>
 <div class="paragraph">
-<p>In GeoTIFF, standard CRSs are identified through reference to an EPSG CRS code. This is sufficient to define the CRS component objects. Further information on EPSG codes is given in B.5.4.</p>
+<p>In GeoTIFF, standard CRSs are identified through reference to an EPSG CRS code. This is sufficient to define the CRS component objects. Further information on EPSG codes is given in <a href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register">Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4725,7 +4734,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 <div class="paragraph">
 <p>Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects available at that time. Most of these remain valid, although there may have been minor changes to names and other non-essential detail. However since the publication of GeoTIFF v1.0 several of these object records have been either deprecated or deleted from the EPSG Dataset. Deprecated records usually have been superseded by a later record, with a cross reference included in the EPSG Dataset. Deleted records have been removed from the EPSG dataset and the code could be (and in some cases has been) reused for a totally different object. Particular care is needed in the treatment of GeoTIFF files that have used these deleted object records, <em>shown in italics</em> in tables B.1 through B.6 below. These tables list the EPSG codes listed in GeoTIFF v1.0 that are no longer valid and which should no longer be used. The list was correct at 29th May 2018. For any later deprecation and replacement of records refer to the EPSG Dataset. Note that the names in the GeoTIFF v1.0 specification and given in these tables have prefixes and underscores not found in the EPSG Dataset.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="deprecated_projected_crs_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 28.5714%;">
 <col style="width: 14.2857%;">
@@ -5424,7 +5433,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 <div class="paragraph">
 <p><em>Table B.1 - Deprecated and deleted EPSG Projected CRS codes  </em></p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="deprecated_geodetic_crs_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 28.5714%;">
 <col style="width: 14.2857%;">
@@ -5553,7 +5562,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 <div class="paragraph">
 <p><em>Table B.2 - Deprecated and deleted EPSG Geodetic CRS codes</em></p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="deprecated_units_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 28.5714%;">
 <col style="width: 14.2857%;">
@@ -5622,7 +5631,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 <div class="paragraph">
 <p><em>Table B.3 - Deprecated and deleted EPSG Unit of Measure codes</em></p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="deprecated_geodetic_datum_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 28.5714%;">
 <col style="width: 14.2857%;">
@@ -5721,7 +5730,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 <div class="paragraph">
 <p><em>Table B.4 - Deprecated and deleted EPSG Geodetic Datum codes</em></p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="deprecated_ellipsoid_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 28.5714%;">
 <col style="width: 14.2857%;">
@@ -5770,7 +5779,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 <div class="paragraph">
 <p><em>Table B.5 - Deprecated and deleted EPSG Ellipsoid codes</em></p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="deprecated_map_projection_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 28.5714%;">
 <col style="width: 14.2857%;">
@@ -6725,12 +6734,12 @@ This option is documented only for compatibility with some past Community practi
 </div>
 </div>
 <div class="sect1">
-<h2 id="_annex_examples"><a class="anchor" href="#_annex_examples"></a>Annex F: Annex: Examples</h2>
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>Annex F: Examples</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_introduction_3"><a class="anchor" href="#_introduction_3"></a>F.1. Introduction</h3>
 <div class="paragraph">
-<p>This annex provides examples of how GeoTIFF may be implemented at the Tag and GeoKey level, following the general "Cookbook" approach presented in <a href="annex_b.html#Cookbook for Defining Transformations">Cookbook</a>: common examples, less common ones, including a Lunar example.</p>
+<p>This annex provides examples of how GeoTIFF may be implemented at the Tag and GeoKey level, following the general "Cookbook" approach presented in <a href="#_cookbook_for_defining_transformations">Cookbook for Defining Transformations</a>: common examples, less common ones, including a Lunar example.</p>
 </div>
 </div>
 <div class="sect2">
@@ -6811,11 +6820,11 @@ ModelPixelScaleTag = (1000, 1000, 0)
 GeoKeyDirectoryTag:
      GTModelTypeGeoKey = 1 (ModelTypeProjected 2D)
      GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-     GeographicTypeGeoKey = 4267 (GCS_NAD27)
+     GeodeticCRSGeoKey = 4267 (GCS_NAD27)
      ProjectedCRSGeoKey = 32767 (user-defined)
      ProjectionGeoKey = 32767 (user-defined)
      ProjLinearUnitsGeoKey = 9001 (Linear_Meter)
-     ProjCoordTransGeoKey = 8 (CT_LambertConfConic_2SP)
+     ProjMethodGeoKey = 8 (CT_LambertConfConic_2SP)
           ProjStdParallel1GeoKey = 41.333
           ProjStdParallel2GeoKey = 48.666
           ProjCenterLongGeoKey =-120.0
@@ -6840,7 +6849,7 @@ ModelPixelScale = (0.2, 0.1, 0.0)
 GeoKeyDirectoryTag:
      GTModelTypeGeoKey = 2 (ModelTypeGeographic 2D)
      GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-     GeographicTypeGeoKey = 4326 (Geographic 2D WGS 84)</pre>
+     GeodeticCRSGeoKey = 4326 (Geographic 2D WGS 84)</pre>
 </div>
 </div>
 </div>
@@ -6860,7 +6869,7 @@ GeoKeyDirectoryTag:
     GeoKeyDirectoryTag:
          GTModelTypeGeoKey = 1 (ModelTypeGeographic 2D)
          GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
-         GeographicTypeGeoKey = 4326 (Geographic 2D WGS 84)</pre>
+         GeodeticCRSGeoKey = 4326 (Geographic 2D WGS 84)</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6901,7 +6910,7 @@ ModelPixelScale = (0.2, 0.1, 1.0)
 GeoKeyDirectoryTag:
      GTModelTypeGeoKey = 2 (ModelTypeGeographic 2D)
      GTRasterTypeGeoKey = 2 (RasterPixelIsPoint)
-     GeographicTypeGeoKey = 4326 (Geographic 2D WGS 84)
+     GeodeticCRSGeoKey = 4326 (Geographic 2D WGS 84)
      VerticalGeoKey = 4979 (Geographic 3D WGS 84, used here to document use of ellipsoidal height)
      VerticalCitationGeoKey = "Geographic 3D WGS 84, Ellipsoidal height"
      VerticalUnitsGeoKey = 9001 (Linear_Meter)</pre>
@@ -6953,19 +6962,19 @@ GeoKeyDirectoryTag:
    Keyed_Information:
       GTModelTypeGeoKey (Short,1): ModelTypeProjected
       GTRasterTypeGeoKey (Short,1): RasterPixelIsArea
-      GTCitationGeoKey (Ascii,29): "SimpleCylindrical Moon"
-      GeographicTypeGeoKey (Short,1): User-Defined
-      GeogCitationGeoKey (Ascii,124): "GCS Name = Moon 2000|Datum = D_Moon_2000|Ellipsoid =
+      GeodeticCRSGeoKey (Short,1): User-Defined
+      GeodeticCitationGeoKey (Ascii,124): "GCS Name = Moon 2000|Datum = D_Moon_2000|Ellipsoid =
           Moon_2000_IAU_IAG|Primem = Reference_Meridian|AUnits = Decimal_Degree|"
-      GeogGeodeticDatumGeoKey (Short,1): User-Defined
+      GeodeticDatumGeoKey (Short,1): User-Defined
       GeogAngularUnitSizeGeoKey (Double,1): 0.0174532925199433
-      GeogEllipsoidGeoKey (Short,1): User-Defined
-      GeogSemiMajorAxisGeoKey (Double,1): 1737400
-      GeogSemiMinorAxisGeoKey (Double,1): 1737400
-      GeogPrimeMeridianLongGeoKey (Double,1): 0
-      ProjectedCSTypeGeoKey (Short,1): User-Defined
+      EllipsoidGeoKey (Short,1): User-Defined
+      EllipsoidSemiMajorAxisGeoKey (Double,1): 1737400
+      EllipsoidSemiMinorAxisGeoKey (Double,1): 1737400
+      PrimeMeridianLongitudeGeoKey (Double,1): 0
+      ProjectedCRSGeoKey (Short,1): User-Defined
+      ProjectedCitationGeoKey (Ascii,30): "SimpleCylindrical Moon|"
       ProjectionGeoKey (Short,1): User-Defined
-      ProjCoordTransGeoKey (Short,1): CT_Equirectangular
+      ProjMethodGeoKey (Short,1): CT_Equirectangular
       ProjLinearUnitsGeoKey (Short,1): Linear_Meter
       ProjStdParallel1GeoKey (Double,1): 0
       ProjFalseEastingGeoKey (Double,1): 0
@@ -6975,6 +6984,18 @@ GeoKeyDirectoryTag:
       End_Of_Keys.
    End_Of_Geotiff.</code></pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+as of writing, listgeo outputs older GeoKey names. The above output has been slightly modified to use the new GeoKey names.
+</td>
+</tr>
+</table>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -7046,7 +7067,7 @@ GeoKeyDirectoryTag:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-01-15 22:17:20 -0500
+Last updated 2019-01-16 22:17:46 -0500
 </div>
 </div>
 </body>
