@@ -1,7 +1,6 @@
 [appendix]
 :appendix-caption: Annex
-== Recommendations for describing compound and geographic 3D CRSs (for grids containing height values)
-(Informative)
+== Recommendations for including height in model CRS definitions (Informative)
 
 === Introduction
 It is reminded here that GeoTIFF presently only handles Geographic 2D CRS or Projected 2D CRS, or geocentric (intrinsically 3D) as ModelTypeGeoKey.
