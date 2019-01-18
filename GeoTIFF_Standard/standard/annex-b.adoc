@@ -428,7 +428,7 @@ The GeoTIFF v1.0 specification refers to "obsolete EPSG/POSC codes". These refer
 
 A reference to an EPSG coordinate reference system code is sufficient for a complete definition: it implies use of the CRS components (datum, ellipsoid, map projection, etc.) that are associated with that CRS in the EPSG Dataset definition. The EPSG codes for coordinate reference system components should only be referenced when describing a user-defined coordinate reference system.
 
-==== GeoTIFF Tags for Coordinate Transformations
+=== GeoTIFF Tags for Coordinate Transformations
 
 For most common applications, the transformation between raster and model space may be defined with a set of raster-to-model tiepoints and scaling parameters. The following two tags may be used for this purpose:
 
@@ -527,7 +527,7 @@ where the -Sy is due the reversal of direction from J increasing- down in raster
 
 Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.
 
-==== Cookbook for Defining Transformations
+=== Cookbook for Defining Transformations
 
 Here is a 4-step guide to producing a set of Baseline GeoTIFF tags for defining coordinate transformation information of a raster dataset.
 
