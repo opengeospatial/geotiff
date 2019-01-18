@@ -1,0 +1,16 @@
+[appendix]
+:appendix-caption: Annex
+== Backward compatibility
+This revision 1.1 of GeoTIFF is aimed at being backward compatible with the 1.0 version (dated 1995, including last revision dating December 2000, as available at http://geotiff.maptools.org/spec/geotiffhome.html), both for coordinate reference systems based on EPSG register codes, or user-defined coordinate reference systems.
+
+This annex provides the description of the changes:
+
+* alignment of Terminology with the ISO TC211 and OGC terminology. An example of this is the Coordinate system term in 1.0 (which was in fact a Coordinate Reference System), renamed Coordinate Reference System).
+* subsequently, GeoKey names have been changed and clarified (but the corresponding code values have been preserved)
+* use of EPSG register codes instead of static codes: this allows a modernization of GeoTIFF and the use of EPSG coordinate reference systems that are more recent than 1995. This is a key value of this revision.
+* clarification of the VerticalGeoKeys (previously named Vertical CS Keys). This is the 2nd key value of this revision, which provides clear GeoTIFF identification of elevation data and their vertical reference.
+* clarification of requirements (which were previously identified by "is" or "shall"), according to OGC rules
+* addition of Annex A (Abstract test suite)
+* clarification of clauses and descriptive statements on the geodetic sections, including Coordinate Reference Systems, projection, datums, thanks to a full revision from Roger Lott (IOGP) and chair of OGC AS Topic 2, equivalent of ISO 19111:2019 - under publication)
+* Deprecation respectively suppression of EPSG codes that have been either deprecated respectively deleted from the EPSG Dataset (see <<annex-g.adoc#,Deprecated and deleted EPSG codes>>)
+* Suppression of Intergraph tag, which was already deprecated in 1.0, and which is no longer in use (this has been confirmed by "Hexagon Geospatial").

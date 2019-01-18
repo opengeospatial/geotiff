@@ -24,7 +24,7 @@
 |Internal reference number of this OGC(R) document:    YY-nnnrx
 |Version: 0.3
 |Category: OGC(R) <Implementation>
-|Editor: Ted Habermann 
+|Editors: Ted Habermann, Emmanuel Devys, Roger Lott, Chuck Heazel, Even Rouault
 |===
 
 [cols = "^", frame = "none"]
@@ -113,6 +113,9 @@ include::annex-e.adoc[]
 
 include::annex-f.adoc[]
 
+include::annex-g.adoc[]
+
+include::annex-h.adoc[]
 <<<
 ////
 Revision History should be the last annex before the Bibliography
