@@ -23,7 +23,7 @@ _EllipsoidGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Datum Co
 |http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.EPSG +
 _EllipsoidGeoKey values in the range 1024-32766 SHALL be EPSG ellipsoid Codes_
 
-NOTE: In GeoTIFF v1.0 the range was 7000-7999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-b.adoc#deprecated_ellipsoid_codes,Table B.5 - Deprecated and deleted EPSG ellipsoid codes>>
+NOTE: In GeoTIFF v1.0 the range was 7000-7999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-g.adoc#deprecated_ellipsoid_codes,Table G.5 - Deprecated and deleted EPSG ellipsoid codes>>
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

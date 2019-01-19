@@ -25,7 +25,7 @@ NOTE: In GeoTIFF v1.0 the range was 1-9999.
 |http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG +
 _ProjectionGeoKey values in the range 1024-32766 SHALL be valid EPSG map projection (coordinate operation) codes_
 
-NOTE: In GeoTIFF v1.0 the range was 10000-19999. Several values in this range have been deprecated or deleted from the EPSG Dataset. See <<annex-b.adoc#deprecated_map_projection_codes,Table B.6 - Deprecated and deleted EPSG Map projection codes>>
+NOTE: In GeoTIFF v1.0 the range was 10000-19999. Several values in this range have been deprecated or deleted from the EPSG Dataset. See <<annex-g.adoc#deprecated_map_projection_codes,Table G.6 - Deprecated and deleted EPSG Map projection codes>>
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
