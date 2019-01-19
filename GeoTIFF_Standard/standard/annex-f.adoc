@@ -109,7 +109,8 @@ We have a scanned standard British National Grid, covering the 100km grid zone N
 Remark: the matrix has 100.0 in the off-diagonals due to the 90 degree rotation; increasing I points north, and increasing J points east.
 
 ==== Digital Elevation Model
-The DMA stores digital elevation models using an equirectangular projection, so that it may be indexed with WGS 84 geographic coordinates. Since elevation postings are point-values, the pixels should not be considered as filling areas, but as point-values at grid vertices. To accommodate the base elevation of the Angeles Crest forest, the pixel value of 0 corresponds to an elevation of 1000 meters relative to WGS 84 reference ellipsoid. The upper left corner is at 120 degrees West, 32 degrees North, and has a pixel scale of 0.2 degrees/pixel longitude, 0.1 degrees/pixel latitude.
+===== Example 1 (DMA)
+This DMA (Defense Mapping Agency, now NGA) example stores digital elevation models using an equirectangular projection, so that it may be indexed with WGS 84 geographic coordinates. Since elevation postings are point-values, the pixels should not be considered as filling areas, but as point-values at grid vertices. To accommodate the base elevation of the Angeles Crest forest, the pixel value of 0 corresponds to an elevation of 1000 meters relative to WGS 84 reference ellipsoid. The upper left corner is at 120 degrees West, 32 degrees North, and has a pixel scale of 0.2 degrees/pixel longitude, 0.1 degrees/pixel latitude.
 
      ModelTiepointTag=(0.0, 0.0, 0.0, -120.0, 32.0, 1000.0)
      ModelPixelScale = (0.2, 0.1, 1.0)
@@ -126,6 +127,19 @@ Remarks:
 . Note the "RasterPixelIsPoint" raster space, indicating that the DEM posting of the first pixel is at the raster point (0,0,0), and therefore corresponds to 120W,32N exactly.
 
 . The third value of the "PixelScale" is 1.0 to indicate that a single pixel-value unit corresponds to 1 meter, and the last tiepoint value indicates that base value zero indicates 1000m above the reference surface.
+
+===== Example 2: DGED Level 6 example (DGIWG)
+The DGIWG (Defense Geographic Information Working Group) has published a Defense Gridded Elevation Data (DGED) product specification, including levels ranking between 0 (DTED0) to 9 (#12.5 cm). This example is at Level 6 Geographic and stores digital elevation models using an equirectangular projection, using WGS 84 geographic coordinates. Since elevation postings are point-values, the pixels should not be considered as filling areas, but as point-values at grid vertices. Elevation values are absolute values above geoid EGM 2008 (EPSG code 3855), as the Z coordinate of ModelTiepointTag is 0. The upper left corner is at 12.5 degrees East, 55.7 degrees North, and has a pixel scale of 1.25e-05 degrees/pixel longitude, 8.33e-06 degrees/pixel latitude.
+
+ModelTiepointTag=(0.0, 0.0, 0.0, 12.5000063, 55.7000042, 0)
+ModelPixelScale = (1.25e-05, 8.3333333e-06, 1.0)
+GeoKeyDirectoryTag:
+     GTModelTypeGeoKey = 2 (ModelTypeGeographic 2D)
+     GTRasterTypeGeoKey = 2 (RasterPixelIsPoint)
+     GeodeticCRSGeoKey = 4326 (Geographic 2D WGS 84)
+     VerticalGeoKey = 3855 (EGM2008)
+     VerticalCitationGeoKey = "EGM2008 geoid height"
+     VerticalUnitsGeoKey = 9001 (Linear_Meter)
 
 ==== Spherical Moon Example
 
