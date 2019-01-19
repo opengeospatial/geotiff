@@ -2,54 +2,43 @@
 
 === Abbreviations
 
-==== ASCII
+*ASCII*
 [American Standard Code for Information Interchange] The predominant character set encoding of present-day computers.
 
-==== CRS
+*CRS*
 Coordinate Reference System
 
-==== EPSG
+*EPSG*
 Geodetic parameter dataset initiated by the now-disbanded European Petroleum Survey Group and now maintained at
 http://www.epsg-registry.org by the International Association of Oil and Gas Producers (IOGP).
 
-==== IEEE
+*IEEE*
 Institute of Electrical and Electronics Engineers, Inc.
 
-==== IFD
+*IFD*
 In TIFF format, an Image File Directory, containing all the TIFF tags for one image in the file (there may be more than one).
 
-==== POSC
+*POSC*
 Petrotechnical Open Software Corporation.
 
-==== TIFF
+*TIFF*
 Acronym for Tagged Image File Format; a platform-independent, extensive specification for storing raster data and ancillary information in a single file.
 
-==== URI
+*URI*
 Uniform Resource Identifier
 
-==== USGS
+*USGS*
 United States Geological Survey
 
-==== 2D
+*2D*
 two-dimensional
 
-==== 3D
+*3D*
 three-dimensional
 
-==== Identifiers
+*Identifiers*
 The normative provisions in this specification are denoted by the URI
 
 http://www.opengis.net/spec/{standard}/{m.n}
 
 All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
-
-=== Symbols
-
-==== a
-semi-major axis of ellipsoid
-
-==== b
-semi-minor axis of bi-axial ellipsoid
-
-==== f
-flattening
