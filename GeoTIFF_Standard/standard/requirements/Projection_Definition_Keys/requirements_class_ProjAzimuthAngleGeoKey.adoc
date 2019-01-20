@@ -1,21 +1,21 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: ProjAzimuthAngleGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjAzimuthAngleGeoKey 
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey 
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjAzimuthAngleGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey.ID +
 The ProjAzimuthAngleGeoKey SHALL have ID = 3094_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjAzimuthAngleGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey.type +
 _The ProjAzimuthAngleGeoKey SHALL have type = DOUBLE_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjAzimuthAngleGeoKey.units +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey.units +
 _The ProjAzimuthAngleGeoKey SHALL have units as specified by the GeogAzimuthUnitsGeoKey_
 {set:cellbgcolor:#FFFFFF}
 |===

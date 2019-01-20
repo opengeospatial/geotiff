@@ -1,26 +1,26 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: EllipsoidSemiMinorAxisGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidSemiMinorAxisGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidSemiMinorAxisGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.ID +
 _The EllipsoidSemiMinorAxisGeoKey SHALL have ID = 2058_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidSemiMinorAxisGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.type +
 _The EllipsoidSemiMinorAxisGeoKey SHALL have type = DOUBLE_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidSemiMinorAxisGeoKey.units +
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.units +
 _The units of the EllipsoidSemiMinorAxisGeoKey SHALL be defined by the value of GeogLinearUnitsGeoKey_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidSemiMinorAxisGeoKey.sphere +
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.sphere +
 _If the Model CRS is a sphere, the value of the EllipsoidSemiMinorAxisGeoKey SHALL equal that of the  EllipsoidSemiMajorAxisGeoKey._
 {set:cellbgcolor:#FFFFFF}
 |===

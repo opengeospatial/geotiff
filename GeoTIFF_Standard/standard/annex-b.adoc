@@ -161,7 +161,7 @@ i) if geocentric/geographic/projected CRS is in the GeoTIFF CRS register:	cite t
 
 ii) if the GeoTIFF CRS register contains the geodetic datum but not the geocentric/geographic/projected CRS: cite the CRS as user-defined (32767) through the GeodeticCRSGeoKey if geocentric or geographic, or through the ProjectedCRSGeoKey if projected, and then cite the geodetic datum code from the CRS register through the GeodeticDatumGeoKey.
 
-iii) if geodetic datum is not in the GeoTIFF CRS register (so the GeoTIFF CRS register will not have any CRSs associated with the datum): cite the CRS as user-defined (32767) through the GeodeticCRSGeoKey if geocentric or geographic, or through the ProjectedCRSGeoKey if projected, and then cite the geodetic datum code as user-defined through the GeodeticDatumGeoKey. Requirement http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.user-defined then requires that the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey be populated". The definition of the user-defined geodetic datum in addition to its ellipsoid and prime meridian should be described through the geodetic citation.
+iii) if geodetic datum is not in the GeoTIFF CRS register (so the GeoTIFF CRS register will not have any CRSs associated with the datum): cite the CRS as user-defined (32767) through the GeodeticCRSGeoKey if geocentric or geographic, or through the ProjectedCRSGeoKey if projected, and then cite the geodetic datum code as user-defined through the GeodeticDatumGeoKey. Requirement http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.user-defined then requires that the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey be populated". The definition of the user-defined geodetic datum in addition to its ellipsoid and prime meridian should be described through the geodetic citation.
 
 === Coordinate Reference Systems in GeoTIFF
 In the TIFF/GeoTIFF framework, there are essentially three different spaces in which coordinates may be defined. The spaces are:
@@ -285,14 +285,14 @@ GeoTIFF attempts to allow Model CRSs that are not described in the standard CRS 
 In practice, user-defined Model CRS definition is limited to the following cases:
 
 i)	a user-defined projected CRS which uses a base geographic CRS and a map projection that are both individually available from the GeoTIFF CRS register but, in the register, not associated together.
-EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticCRSGeoKey.EPSG, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG
+EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.EPSG, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.EPSG
 
 ii)	a user-defined projected CRS which uses a user-defined geographic CRS with a map projection that is available from the GeoTIFF CRS register.
-GeogCRS needs defining as in Requirement http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticCRSGeoKey.userdefined, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG
+GeogCRS needs defining as in Requirement http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.userdefined, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.EPSG
 
-iii)	a user-defined geographic CRS available from the GeoTIFF CRS register and a map projection not in EPSG register. EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticCRSGeoKey.EPSG, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.user_defined using the v1.0 provisions (use the names in annex C).
+iii)	a user-defined geographic CRS available from the GeoTIFF CRS register and a map projection not in EPSG register. EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.EPSG, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.user_defined using the v1.0 provisions (use the names in annex C).
 
- iv) Neither base GeogCRS or map projection is in EPSG. GeogCRS needs defining, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.user_defined using the v1.0 provisions (the names in annex C).
+ iv) Neither base GeogCRS or map projection is in EPSG. GeogCRS needs defining, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.user_defined using the v1.0 provisions (the names in annex C).
 
 But even for these cases, unless stated through a Citation, some assumption is required about axis positive direction and axis order. Based on the standards available for US FGDC metadata and in the EPSG Dataset when the GeoTIFF v1.0 specification was written, it is assumed that:
 

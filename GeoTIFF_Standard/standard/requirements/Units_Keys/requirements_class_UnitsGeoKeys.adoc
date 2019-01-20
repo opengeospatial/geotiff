@@ -1,11 +1,11 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: UnitsGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.ID +
 _The GeogAngularUnitsGeoKey SHALL have ID = 2054_
 
 _The GeogAzimuthUnitsGeoKey SHALL have ID = 2060_
@@ -18,55 +18,55 @@ _The VerticalUnitsGeoKey SHALL have ID = 4099_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.type +
 _The GeogAngularUnitsGeoKey, the GeogAzimuthUnitsGeoKey, the GeogLinearUnitsGeoKey, the ProjLinearUnitsGeoKey and the VerticalUnitsGeoKey SHALL each have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.obsolete +
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.obsolete +
 _GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 1-1023 SHALL be obsolete GeoTIFF codes._
 
 NOTE: In GeoTIFF v1.0 the range was 0001-2000
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.angular +
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.angular +
 _GeogAngularUnitsGeoKey and GeogAzimuthUnitsGeoKey values in the range 1024-32766 SHALL be EPSG Unit Of Measure (UOM) codes with type = angle._
 
 NOTE: In GeoTIFF v1.0 the range was 9100-9199
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.linear +
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.linear +
 _GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 1024-32766 SHALL be EPSG Unit Of Measure (UOM) codes with type = length._
 
 NOTE: In GeoTIFF v1.0 the range was 9000-9099. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-g.adoc#deprecated_units_codes,Table G.3 - Deprecated and deleted EPSG Unit of Measure codes>>
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.userdefinedAngular +
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.userdefinedAngular +
 _A GeogAngularUnitsGeoKey or a GeogAzimuthUnitsGeoKey value of 32767 SHALL be a user-defined angular unit.  If the value is 32767 (User-Defined) then the GeodeticCitationGeoKey and the GeogAngularUnitSizeGeoKey SHALL be populated_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.userdefinedGeogLinear +
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.userdefinedGeogLinear +
 _A GeogLinearUnitsGeoKey value of 32767 SHALL be a user-defined linear unit. If the value is 32767 (User-Defined) then the GeodeticCitationGeoKey and the GeogLinearUnitSizeGeoKey SHALL be populated_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.userdefinedProjLinear +
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.userdefinedProjLinear +
 _A ProjLinearUnitsGeoKey value of 32767 SHALL be a user-defined linear unit. If the value is 32767 (User-Defined) then the ProjectedCitationGeoKey and the ProjLinearUnitSizeGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.userdefinedVertical +
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.userdefinedVertical +
 _A VerticalUnitsGeoKey value of 32767 (user defined) SHALL not be used_
 
 NOTE: The rationale for this is that it would imply to fill a VerticalUnitSizeGeoKey, which does not exist in GeoTIFF 1.0. The user should use of the EPSG linear unit.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.private +
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.private +
 _GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 32768-65535 SHALL be private._
 {set:cellbgcolor:#FFFFFF}
 |===

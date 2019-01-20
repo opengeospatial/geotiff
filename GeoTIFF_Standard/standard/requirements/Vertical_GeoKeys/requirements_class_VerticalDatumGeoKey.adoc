@@ -1,40 +1,40 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: VerticalDatumGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.ID +
 _The VerticalDatumGeoKey SHALL have ID = 4098_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.type +
 _The VerticalDatumGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.reserved +
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.reserved +
 _VerticalDatumGeoKey values in the range 1-1023 SHALL be reserved_
 
 NOTE: In GeoTIFF v1.0 the reserved range was 16384-32766.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.EPSG +
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.EPSG +
 _VerticalDatumGeoKey values in the range 1024-32766 SHALL be EPSG vertical datum codes_
 
 NOTE: In GeoTIFF v1.0 the range was given as 1-16383 but without reference to EPSG.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.user-defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.user-defined +
 _If the VerticalDatumGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalDatumGeoKey.private +
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.private +
 _VerticalDatumGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===

@@ -5,47 +5,47 @@
 
 |Requirement|Original Range|Revised Range
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.EPSGEllipsoid
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeographicTypeGeoKey.EPSGEllipsoid
 |4000-4199
 |1024-32766
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.EPSGDatum
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeographicTypeGeoKey.EPSGDatum
 |4200-4999
 |1024-32766
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.EPSGEllipsoid
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalCSTypeGeoKey.EPSGEllipsoid
 |5000-5099
 |1024-32766
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalCSTypeGeoKey.EPSGOrthometric
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalCSTypeGeoKey.EPSGOrthometric
 |5100-5199
 |1024-32766
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.EPSGEllipsoid
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeogEllipsoidGeoKey.EPSGEllipsoid
 |7000-7999
 |1024-32766
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeogPrimeMeridianGeoKey.EPSGEllipsoid
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeogPrimeMeridianGeoKey.EPSGEllipsoid
 |8000-8999
 |1024-32766
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.linear
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeogLinearUnitsGeoKey.linear
 |9000-9099
 |1024-32766
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.linear
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalUnitsGeoKey.linear
 |9000 - 9099
 |1024-32766
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.angular
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeogLinearUnitsGeoKey.angular
 |9100-9199
 |1024-32766
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.angular
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalUnitsGeoKey.angular
 |9100-9199
 |1024-32766
 
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCSTypeGeoKey.EPSGProjection
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCSTypeGeoKey.EPSGProjection
 |20000 - 32760
 |1024-32766
 |===
@@ -54,32 +54,32 @@
 Obsolete/Reserved ranges that overlap EPSG Range (1024-32766) should be deleted
 
 === 7.3.1
-http://www.opengis.net/spec/GeoTIFF/0.0/GeographicTypeGeoKey.reserved
+http://www.opengis.net/spec/GeoTIFF/1.1/GeographicTypeGeoKey.reserved
 GeographicTypeGeoKey values in the range 1001-3999 and 5000-32766 SHALL be reserved
 
 === 7.3.6
-http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.obsolete
+http://www.opengis.net/spec/GeoTIFF/1.1/GeogLinearUnitsGeoKey.obsolete
 GeogLinearUnitsGeoKey values in the range 1-2000 SHALL be obsolete GeoTIFF Codes
 
-http://www.opengis.net/spec/GeoTIFF/0.0/GeogLinearUnitsGeoKey.reserved
+http://www.opengis.net/spec/GeoTIFF/1.1/GeogLinearUnitsGeoKey.reserved
 GeogLinearUnitsGeoKey values in the range 2001-8999 SHALL be reserved
 
 === 7.3.10
-http://www.opengis.net/spec/GeoTIFF/0.0/GeogEllipsoidGeoKey.reserved
+http://www.opengis.net/spec/GeoTIFF/1.1/GeogEllipsoidGeoKey.reserved
 GeogEllipsoidGeoKey values in the range 1001-6999 and 8000-32766 SHALL be reserved
 
 === 7.5.4
-http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.obsolete
+http://www.opengis.net/spec/GeoTIFF/1.1/VerticalUnitsGeoKey.obsolete
 VerticalUnitsGeoKey values in the range 1-2000 SHALL be obsolete GeoTIFF Codes
 
-http://www.opengis.net/spec/GeoTIFF/0.0/VerticalUnitsGeoKey.reserved
+http://www.opengis.net/spec/GeoTIFF/1.1/VerticalUnitsGeoKey.reserved
 VerticalUnitsGeoKey values in the range 2001-8999 SHALL be reserved
 
 
 == Minor Revision Number
 Added requirement to Requirements Class GeoKeyDirectoryTag:
 
-http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.minorRevisionValue +
+http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevisionValue +
 _The MinorRevision for this standard SHALL be 1.0._
 
 

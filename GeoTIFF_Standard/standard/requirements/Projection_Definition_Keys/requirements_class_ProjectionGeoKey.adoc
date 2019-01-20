@@ -1,40 +1,40 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: ProjectionGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.ID +
 _The ProjectionGeoKey SHALL have ID = 3074_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.type +
 _The ProjectionGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.obsolete +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.obsolete +
 _ProjectionGeoKey values in the range 1-1023 SHALL be obsolete EPSG/POSC map projection codes_
 
 NOTE: In GeoTIFF v1.0 the range was 1-9999.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.EPSG +
 _ProjectionGeoKey values in the range 1024-32766 SHALL be valid EPSG map projection (coordinate operation) codes_
 
 NOTE: In GeoTIFF v1.0 the range was 10000-19999. Several values in this range have been deprecated or deleted from the EPSG Dataset. See <<annex-g.adoc#deprecated_map_projection_codes,Table G.6 - Deprecated and deleted EPSG Map projection codes>>
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.user_defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.user_defined +
 _If the ProjectionGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, ProjectionMethodGeoKey, and ProjLinearUnitsGeoKey SHALL be populated_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.private +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.private +
 _ProjectionGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===
