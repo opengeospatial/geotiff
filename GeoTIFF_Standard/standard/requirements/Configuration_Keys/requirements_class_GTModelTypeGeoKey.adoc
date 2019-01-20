@@ -1,26 +1,26 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: GTModelTypeGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.required +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.required +
 _A GeoTIFF file SHALL include a GTModelTypeGeoKey_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.ID +
 _The GTModelTypeGeoKey SHALL have ID = 1024_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.type +
 _The GTModelTypeGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.value +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.value +
 _The GTModelTypeGeoKey value SHALL be:_
 
 *	0 to indicate that the Model CRS in undefined or unknown; or
@@ -35,32 +35,32 @@ _The GTModelTypeGeoKey value SHALL be:_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.reserved +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.reserved +
 _GTModelTypeGeoKey values in the range 4-32766 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.private +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.private +
 _GTModelTypeGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.projCRS +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.projCRS +
 _If the GTModelTypeGeoKey value is 1 (Model CRS is a projected 2D CRS) then the GeoTIFF file SHALL include a ProjectedCRSGeoKey._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geogCRS +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.geogCRS +
 _If the GTModelTypeGeoKey value is 2 (Model CRS is a geographic 2D CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.geocenCRS +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.geocenCRS +
 _If the GTModelTypeGeoKey value is 3 (Model CRS is a geocentric CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GTModelTypeGeoKey.user-defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.user-defined +
 _If the GTModelTypeGeoKey value is 32767 (user-defined) then the GTCitationGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 

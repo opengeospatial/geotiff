@@ -1,11 +1,11 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: CitationGeoKeys* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/CitationGeoKeys
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/CitationGeoKeys.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.ID +
 _The GeodeticCitationGeoKey SHALL have ID = 2049_
 
 _The ProjectedCitationGeoKey SHALL have ID = 3073_
@@ -20,7 +20,7 @@ GeoTIFF file.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/CitationGeoKeys.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.type +
 _The CitationGeoKeys SHALL have type = ASCII_
 {set:cellbgcolor:#FFFFFF}
 |===

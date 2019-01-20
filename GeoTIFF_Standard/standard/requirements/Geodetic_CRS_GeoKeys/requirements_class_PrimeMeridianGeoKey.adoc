@@ -1,45 +1,45 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: PrimeMeridianGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.ID +
 _The PrimeMeridianGeoKey SHALL have ID = 2051_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.type +
 _The PrimeMeridianGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianGeoKey.obsolete +
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.obsolete +
 _PrimeMeridianGeoKey values in the range 1-100 SHALL be obsolete EPSG/POSC Datum Codes_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianGeoKey.reserved +
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.reserved +
 _PrimeMeridianGeoKey values in the range 101-1023 SHALL be reserved_
 
 NOTE: In GeoTIFF v1.0 the range was 101-7999 and 9000-32766
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianGeoKey.EPSG +
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.EPSG +
 _PrimeMeridianGeoKey values in the range 1024-32766 SHALL be EPSG Prime Meridian Codes_
 
 NOTE: In GeoTIFF v1.0 the range was 8000-8999
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianGeoKey.user-defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.user-defined +
 _If the PrimeMeridianGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, and PrimeMeridianLongGeoKey SHALL be populated_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/PrimeMeridianGeoKey.private +
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.private +
 _PrimeMeridianGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===

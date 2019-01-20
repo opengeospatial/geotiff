@@ -1,11 +1,11 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: ProjLinearParameters* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearParameters
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameters
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearParameters.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameters.ID +
 _The ProjFalseEastingGeoKey SHALL have ID = 3082_
 
 _The ProjFalseNorthingGeoKey SHALL have ID = 3083_
@@ -20,12 +20,12 @@ _The ProjCenterNorthingGeoKey SHALL have ID = 3091_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearParameters.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameters.type +
 _All parameters in this requirements class SHALL have type = DOUBLE_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ProjLinearParameters.units +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameters.units +
 _All parameters in this requirements class SHALL have units as specified by the ProjLinearUnitsGeoKey_
 {set:cellbgcolor:#FFFFFF}
 |===

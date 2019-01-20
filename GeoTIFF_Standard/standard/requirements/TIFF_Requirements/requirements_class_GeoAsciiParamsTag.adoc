@@ -1,21 +1,21 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: GeoAsciiParamsTag* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID +
 _The GeoAsciiParamsTag SHALL have ID = 34737_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.count +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count +
 _The GeoAsciiParamsTag MAY hold any number of key parameters with type = ASCII. (May not be necessary, the same as the count KeyEntry)_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.terminator +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.terminator +
 _The pipe character ("\|") in the GeoAsciiParamsTag SHALL be used as the character to terminate a string written in as ASCII tag._
 
 NOTE: if multiple strings are written in the same tag, this terminator character also serves as a separator.
@@ -29,14 +29,14 @@ Example of a GeoAscii tag containing two strings: "NAD27 / UTM zone 11N\|NAD27\|
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.NULLWrite +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.NULLWrite +
 _NULL (ASCII code = 0) characters SHALL not be present in the string content written in the GeoAsciiParamsTag._
 
 NOTE: this requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.type +
 _The GeoAsciiParamsTag SHALL have type = ASCII_
 {set:cellbgcolor:#FFFFFF}
 |===

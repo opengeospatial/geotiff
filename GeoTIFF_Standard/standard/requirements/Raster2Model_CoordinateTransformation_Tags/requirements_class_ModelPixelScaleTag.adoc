@@ -1,21 +1,21 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: ModelPixelScaleTag* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID +
 _The ModelPixelScaleTag SHALL have ID = 33550_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type +
 _The ModelPixelScaleTag SHALL have type = DOUBLE_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.count +
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.count +
 _The ModelPixelScaleTag SHALL have 3 values representing the scale factor in the X, Y, and Z directions_
 {set:cellbgcolor:#FFFFFF}
 |===
