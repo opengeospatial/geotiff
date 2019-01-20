@@ -527,7 +527,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Approval Date:   &lt;yyyy-mm-dd&gt;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Publication Date:   &lt;2018-12-16&gt;</p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Publication Date:   &lt;2019-01-20&gt;</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">External identifier of this OGC&#174; document: <a href="http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}" class="bare">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</a></p></td>
@@ -565,7 +565,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Copyright notice</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Copyright &#169; 2018 Open Geospatial Consortium</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Copyright &#169; 2019 Open Geospatial Consortium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">To obtain additional rights of use, visit <a href="http://www.opengeospatial.org/legal/" class="bare">http://www.opengeospatial.org/legal/</a></p></td>
@@ -677,29 +677,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_conventions">5. Conventions</a>
 <ul class="sectlevel2">
-<li><a href="#_abbreviations">5.1. Abbreviations</a>
-<ul class="sectlevel3">
-<li><a href="#_ascii">5.1.1. ASCII</a></li>
-<li><a href="#_crs">5.1.2. CRS</a></li>
-<li><a href="#_epsg">5.1.3. EPSG</a></li>
-<li><a href="#_ieee">5.1.4. IEEE</a></li>
-<li><a href="#_ifd">5.1.5. IFD</a></li>
-<li><a href="#_posc">5.1.6. POSC</a></li>
-<li><a href="#_tiff">5.1.7. TIFF</a></li>
-<li><a href="#_uri">5.1.8. URI</a></li>
-<li><a href="#_usgs">5.1.9. USGS</a></li>
-<li><a href="#_2d">5.1.10. 2D</a></li>
-<li><a href="#_3d">5.1.11. 3D</a></li>
-<li><a href="#_identifiers">5.1.12. Identifiers</a></li>
-</ul>
-</li>
-<li><a href="#_symbols">5.2. Symbols</a>
-<ul class="sectlevel3">
-<li><a href="#_a">5.2.1. a</a></li>
-<li><a href="#_b">5.2.2. b</a></li>
-<li><a href="#_f">5.2.3. f</a></li>
-</ul>
-</li>
+<li><a href="#_abbreviations">5.1. Abbreviations</a></li>
 </ul>
 </li>
 <li><a href="#_clauses_not_containing_normative_material">6. Clauses not Containing Normative Material</a></li>
@@ -862,7 +840,7 @@ Geographic Tagged Image File Format (GeoTIFF) file format.</p>
 <p>The GeoTIFF format was initially developed during the early 1990’s (N. Ritter &amp; Ruth, 1997) in order to leverage a mature platform independent file format (TIFF) by adding metadata required for describing and using geographic image data. TIFF met the requirements for an underlying format, as it was lossless and extensible. In September 1994, SPOT Image Corp proposed a GeoTIFF structure that was limited to Universal Transverse Mercator (N. Ritter &amp; Ruth, 1997). The proposed GeoTIFF specification has augmented and formalized by Niles and Ruth as Revision 1.0, specification version 1.8.2 in November 1995 (N. Ritter &amp; Ruth,1995). This specification is currently the official GeoTIFF specification (GeoTIFF, n.d).</p>
 </div>
 <div class="paragraph">
-<p>The GeoTIFF format is used throughout the geospatial and earth science communities to share geographic image data. That usage inevitably leads to identification of new requirements and needs for profiles, extensions, and improvements to the original GeoTIFF Specification. The OGC is well established as a forum for standardization in the GeoTIFF producer and user communities and, as such, it provides an inclusive standardization process for those communities. This document is the first step in the process of integration of the GeoTIFF into that standardization process. Once GeoTIFF is ensconced in the OGC, the standard can be evolved using a formal process.</p>
+<p>The GeoTIFF format is used throughout the geospatial and earth science communities to share geographic image data. That usage inevitably leads to identification of new requirements and needs for profiles, extensions, and improvements to the original GeoTIFF Specification. The OGC is well established as a forum for standardization in the GeoTIFF producer and user communities and, as such, it provides an inclusive standardization process for those communities. This document is the first step in the process of integration of the GeoTIFF into that standardization process, with the adjustment of a minor revision in order to allow the use of modern EPSG register, allowing backward compatibility with Revision 1.0. Once GeoTIFF is ensconced in the OGC, the standard can be evolved using a formal process.</p>
 </div>
 <div class="paragraph">
 <p>Suggested additions, changes, and comments on this standard are welcome and encouraged. Such suggestions may be submitted by email message or by submitting an official OGC Change Request using the online CR application:</p>
@@ -946,7 +924,7 @@ GeoTIFF defines a set of TIFF tags provided to describe all "Cartographic" infor
 <h2 id="_conformance"><a class="anchor" href="#_conformance"></a>2. Conformance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This standard defines 120 Requirements grouped into 29 Requirements Classes.</p>
+<p>This standard defines 181 Requirements grouped into 49 Requirements Classes.</p>
 </div>
 <div class="paragraph">
 <p>These Requirements address five (5) standardization target types:</p>
@@ -1545,105 +1523,60 @@ __georeferenceable grid__</pre>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_abbreviations"><a class="anchor" href="#_abbreviations"></a>5.1. Abbreviations</h3>
-<div class="sect3">
-<h4 id="_ascii"><a class="anchor" href="#_ascii"></a>5.1.1. ASCII</h4>
 <div class="paragraph">
-<p>[American Standard Code for Information Interchange] The predominant character set encoding of present-day computers.</p>
+<p><strong>ASCII</strong>
+[American Standard Code for Information Interchange] The predominant character set encoding of present-day computers.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_crs"><a class="anchor" href="#_crs"></a>5.1.2. CRS</h4>
 <div class="paragraph">
-<p>Coordinate Reference System</p>
+<p><strong>CRS</strong>
+Coordinate Reference System</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_epsg"><a class="anchor" href="#_epsg"></a>5.1.3. EPSG</h4>
 <div class="paragraph">
-<p>Geodetic parameter dataset initiated by the now-disbanded European Petroleum Survey Group and now maintained at
+<p><strong>EPSG</strong>
+Geodetic parameter dataset initiated by the now-disbanded European Petroleum Survey Group and now maintained at
 <a href="http://www.epsg-registry.org" class="bare">http://www.epsg-registry.org</a> by the International Association of Oil and Gas Producers (IOGP).</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_ieee"><a class="anchor" href="#_ieee"></a>5.1.4. IEEE</h4>
 <div class="paragraph">
-<p>Institute of Electrical and Electronics Engineers, Inc.</p>
+<p><strong>IEEE</strong>
+Institute of Electrical and Electronics Engineers, Inc.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_ifd"><a class="anchor" href="#_ifd"></a>5.1.5. IFD</h4>
 <div class="paragraph">
-<p>In TIFF format, an Image File Directory, containing all the TIFF tags for one image in the file (there may be more than one).</p>
+<p><strong>IFD</strong>
+In TIFF format, an Image File Directory, containing all the TIFF tags for one image in the file (there may be more than one).</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_posc"><a class="anchor" href="#_posc"></a>5.1.6. POSC</h4>
 <div class="paragraph">
-<p>Petrotechnical Open Software Corporation.</p>
+<p><strong>POSC</strong>
+Petrotechnical Open Software Corporation.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_tiff"><a class="anchor" href="#_tiff"></a>5.1.7. TIFF</h4>
 <div class="paragraph">
-<p>Acronym for Tagged Image File Format; a platform-independent, extensive specification for storing raster data and ancillary information in a single file.</p>
+<p><strong>TIFF</strong>
+Acronym for Tagged Image File Format; a platform-independent, extensive specification for storing raster data and ancillary information in a single file.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_uri"><a class="anchor" href="#_uri"></a>5.1.8. URI</h4>
 <div class="paragraph">
-<p>Uniform Resource Identifier</p>
+<p><strong>URI</strong>
+Uniform Resource Identifier</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_usgs"><a class="anchor" href="#_usgs"></a>5.1.9. USGS</h4>
 <div class="paragraph">
-<p>United States Geological Survey</p>
+<p><strong>USGS</strong>
+United States Geological Survey</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_2d"><a class="anchor" href="#_2d"></a>5.1.10. 2D</h4>
 <div class="paragraph">
-<p>two-dimensional</p>
+<p><strong>2D</strong>
+two-dimensional</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_3d"><a class="anchor" href="#_3d"></a>5.1.11. 3D</h4>
 <div class="paragraph">
-<p>three-dimensional</p>
+<p><strong>3D</strong>
+three-dimensional</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_identifiers"><a class="anchor" href="#_identifiers"></a>5.1.12. Identifiers</h4>
 <div class="paragraph">
-<p>The normative provisions in this specification are denoted by the URI</p>
+<p><strong>Identifiers</strong>
+The normative provisions in this specification are denoted by the URI</p>
 </div>
 <div class="paragraph">
 <p><a href="http://www.opengis.net/spec/{standard}/{m.n}" class="bare">http://www.opengis.net/spec/{standard}/{m.n}</a></p>
 </div>
 <div class="paragraph">
 <p>All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_symbols"><a class="anchor" href="#_symbols"></a>5.2. Symbols</h3>
-<div class="sect3">
-<h4 id="_a"><a class="anchor" href="#_a"></a>5.2.1. a</h4>
-<div class="paragraph">
-<p>semi-major axis of ellipsoid</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_b"><a class="anchor" href="#_b"></a>5.2.2. b</h4>
-<div class="paragraph">
-<p>semi-minor axis of bi-axial ellipsoid</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_f"><a class="anchor" href="#_f"></a>5.2.3. f</h4>
-<div class="paragraph">
-<p>flattening</p>
-</div>
 </div>
 </div>
 </div>
@@ -1667,6 +1600,12 @@ __georeferenceable grid__</pre>
 </li>
 <li>
 <p><a href="#">Annex F: Examples</a>: This Annex contains a set of illustrative examples of GeoTIFF tags contents.</p>
+</li>
+<li>
+<p><a href="#">Annex G: Deprecated and deleted EPSG codes</a>: This Annex documents the EPSG codes that have been deprecated or deleted (since revision 1.0 of GeoTIFF)</p>
+</li>
+<li>
+<p><a href="#">Annex H: Backward compatibility</a>: This Annex documents backward compatibility of this minor revision with revision 1.0 of GeoTIFF, and evolutions that have been incorporated.</p>
 </li>
 </ul>
 </div>
@@ -2374,7 +2313,7 @@ In GeoTIFF 1.0 this key was called ProjectedCSTypeGeoKey
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/ProjectedCRSGeoKey.EPSG</a><br>
 <em>ProjectedCRSGeoKey values in the range 1024-32766 SHALL be EPSG Projected CRS Codes</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 20000-32760. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_projected_crs_codes">Table B.1 - Deprecated and deleted EPSG Projected CRS codes</a></p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 20000-32760. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_projected_crs_codes">Table G.1 - Deprecated and deleted EPSG Projected CRS codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -2443,7 +2382,7 @@ In GeoTIFF 1.0 this key was called GeographicTypeGeoKey. Geodetic CRS is a super
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticCRSGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticCRSGeoKey.EPSG</a><br>
 <em>GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geodetic CRS codes (geographic 2D CRS, geographic 3D CRS and geocentric CRS)</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 4000-4999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_geodetic_crs_codes">Table B.2 - Deprecated and deleted EPSG Geodetic CRS codes</a></p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 4000-4999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_geodetic_crs_codes">Table G.2 - Deprecated and deleted EPSG Geodetic CRS codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -2701,7 +2640,7 @@ Anyone not interested in constructing a user-defined system can ignore that whol
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.linear" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/UnitsGeoKey.linear</a><br>
 <em>GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 1024-32766 SHALL be EPSG Unit Of Measure (UOM) codes with type = length.</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 9000-9099. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_units_codes">Table B.3 - Deprecated and deleted EPSG Unit of Measure codes</a></p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 9000-9099. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_units_codes">Table G.3 - Deprecated and deleted EPSG Unit of Measure codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -2827,7 +2766,7 @@ In GeoTIFF 1.0 this key was called GeogGeodeticDatumGeoKey.
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/GeodeticDatumGeoKey.EPSG</a><br>
 <em>GeodeticDatumGeoKey values in the range 1024-32766 SHALL be EPSG geodetic datum codes.</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 6000-6999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_geodetic_datum_codes">Table B.4 - Deprecated and deleted EPSG geodetic datum codes</a></p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 6000-6999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_geodetic_datum_codes">Table G.4 - Deprecated and deleted EPSG geodetic datum codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -3009,7 +2948,7 @@ In GeoTIFF 1.0 this key was called GeogEllipsoidGeoKey.
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.EPSG</a><br>
 <em>EllipsoidGeoKey values in the range 1024-32766 SHALL be EPSG ellipsoid Codes</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 7000-7999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_ellipsoid_codes">Table B.5 - Deprecated and deleted EPSG ellipsoid codes</a></p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 7000-7999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_ellipsoid_codes">Table G.5 - Deprecated and deleted EPSG ellipsoid codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -3267,7 +3206,7 @@ In GeoTIFF 1.0 this key was called GeogInvFlatteningGeoKey.
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.EPSG</a><br>
 <em>ProjectionGeoKey values in the range 1024-32766 SHALL be valid EPSG map projection (coordinate operation) codes</em></p>
-<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 10000-19999. Several values in this range have been deprecated or deleted from the EPSG Dataset. See <a href="#deprecated_map_projection_codes">Table B.6 - Deprecated and deleted EPSG Map projection codes</a></p></td>
+<p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 10000-19999. Several values in this range have been deprecated or deleted from the EPSG Dataset. See <a href="#deprecated_map_projection_codes">Table G.6 - Deprecated and deleted EPSG Map projection codes</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -5778,8 +5717,10 @@ GeoKeyDirectoryTag:
 </div>
 <div class="sect3">
 <h4 id="_digital_elevation_model"><a class="anchor" href="#_digital_elevation_model"></a>F.3.3. Digital Elevation Model</h4>
+<div class="sect4">
+<h5 id="_example_1_dma"><a class="anchor" href="#_example_1_dma"></a>Example 1 (DMA)</h5>
 <div class="paragraph">
-<p>The DMA stores digital elevation models using an equirectangular projection, so that it may be indexed with WGS 84 geographic coordinates. Since elevation postings are point-values, the pixels should not be considered as filling areas, but as point-values at grid vertices. To accommodate the base elevation of the Angeles Crest forest, the pixel value of 0 corresponds to an elevation of 1000 meters relative to WGS 84 reference ellipsoid. The upper left corner is at 120 degrees West, 32 degrees North, and has a pixel scale of 0.2 degrees/pixel longitude, 0.1 degrees/pixel latitude.</p>
+<p>This DMA (Defense Mapping Agency, now NGA) example stores digital elevation models using an equirectangular projection, so that it may be indexed with WGS 84 geographic coordinates. Since elevation postings are point-values, the pixels should not be considered as filling areas, but as point-values at grid vertices. To accommodate the base elevation of the Angeles Crest forest, the pixel value of 0 corresponds to an elevation of 1000 meters relative to WGS 84 reference ellipsoid. The upper left corner is at 120 degrees West, 32 degrees North, and has a pixel scale of 0.2 degrees/pixel longitude, 0.1 degrees/pixel latitude.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -5806,6 +5747,24 @@ GeoKeyDirectoryTag:
 <p>The third value of the "PixelScale" is 1.0 to indicate that a single pixel-value unit corresponds to 1 meter, and the last tiepoint value indicates that base value zero indicates 1000m above the reference surface.</p>
 </li>
 </ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_example_2_dged_level_6_example_dgiwg"><a class="anchor" href="#_example_2_dged_level_6_example_dgiwg"></a>Example 2: DGED Level 6 example (DGIWG)</h5>
+<div class="paragraph">
+<p>The DGIWG (Defense Geographic Information Working Group) has published a Defense Gridded Elevation Data (DGED) product specification, including levels ranking between 0 (DTED0) to 9 (#12.5 cm). This example is at Level 6 Geographic and stores digital elevation models using an equirectangular projection, using WGS 84 geographic coordinates. Since elevation postings are point-values, the pixels should not be considered as filling areas, but as point-values at grid vertices. Elevation values are absolute values above geoid EGM 2008 (EPSG code 3855), as the Z coordinate of ModelTiepointTag is 0. The upper left corner is at 12.5 degrees East, 55.7 degrees North, and has a pixel scale of 1.25e-05 degrees/pixel longitude, 8.33e-06 degrees/pixel latitude.</p>
+</div>
+<div class="paragraph">
+<p>ModelTiepointTag=(0.0, 0.0, 0.0, 12.5000063, 55.7000042, 0)
+ModelPixelScale = (1.25e-05, 8.3333333e-06, 1.0)
+GeoKeyDirectoryTag:
+     GTModelTypeGeoKey = 2 (ModelTypeGeographic 2D)
+     GTRasterTypeGeoKey = 2 (RasterPixelIsPoint)
+     GeodeticCRSGeoKey = 4326 (Geographic 2D WGS 84)
+     VerticalGeoKey = 3855 (EGM2008)
+     VerticalCitationGeoKey = "EGM2008 geoid height"
+     VerticalUnitsGeoKey = 9001 (Linear_Meter)</p>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -7122,7 +7081,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-01-18 22:17:52 -0500
+Last updated 2019-01-19 22:17:25 -0500
 </div>
 </div>
 </body>
