@@ -34,7 +34,7 @@ Note 2:	For geodetic and vertical reference frames, the object will be the Earth
 
  [Source: ISO 19111:2019, 3.1.9]
 
-NOTE: This term is also called Model Coordinate Reference system in the context of this document, and was called Model Coordinate system in the 1995 GeoTIFF v1.0.
+NOTE: This term is also called Model Coordinate Reference system in the context of this document, and was called Model Coordinate System in the 1995 GeoTIFF v1.0.
 
 === coordinate system
 set of mathematical rules for specifying how coordinates are to be assigned to points
@@ -42,7 +42,7 @@ set of mathematical rules for specifying how coordinates are to be assigned to p
  [Source: ISO 19111:2019, 3.1.11]
 
 === correspondence model
-functional relationship between ground and image coordinates based on the correlation be-tween a set of ground control points and their corresponding image coordinates
+functional relationship between ground and image coordinates based on the correlation between a set of ground control points and their corresponding image coordinates
 
  [Source: ISO/TS 19130:2010, 4.3]
 
@@ -99,6 +99,10 @@ NOTE: In the 1995 GeoTIFF v1.0, this term was "geographic coordinate system"
 in GeoTIFF, a GeoKey is equivalent in function to a TIFF tag, but uses a different storage mechanism
 
  [Source: GeoTIFF Format Specification, October 31, 1995]
+
+=== georectified
+corrected for positional displacement with respect to the surface of the Earth
+ [Source: ISO 19115-2:2019, 3.11]
 
 === georeferencing
 geopositioning an object using a Correspondence Model derived from a set of points for which both ground and image coordinates are known
@@ -157,14 +161,15 @@ an image composed of two or more separately collected (sensed) images
 
 Note:	Additional XML metadata may be used to identify the cut-lines (boundaries and parameters for the images used to compose the mosaic.
 
-=== orthorectified grid
-__orthoimage__
+=== orthoimage
 
 image in which by orthogonal projection to a reference surface, displacement of image points due to sensor orientation and terrain relief has been removed
 
 Note:	The amount of displacement depends on the resolution and the level of detail of the elevation information and on the software implementation.
 
- [Source: 19101-2:2008, 3.25]
+ [Source: 19101-2:2018, 3.25]
+
+=== orthorectified grid
 
  georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid
 
@@ -231,8 +236,8 @@ grid for which there is an affine transformation between the grid coordinates an
 Note:	If the coordinate reference system is related to the earth by a datum, the grid is a georectified grid.
 
  [Source: ISO 19123:2005, 4.1.32]
+
 === referenceable grid
-__georeferenceable grid__
 
 grid associated with a transformation that can be used to convert grid coordinate values to values of coordinates referenced to an external coordinate reference system
 

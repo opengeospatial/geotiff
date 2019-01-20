@@ -1,9 +1,7 @@
-== Conventions
-
-=== Abbreviations
+== Abbreviations
 
 *ASCII*
-[American Standard Code for Information Interchange] The predominant character set encoding of present-day computers.
+[American Standard Code for Information Interchange] The character set encoding standard for electronic communication, which was developed in the US and based on the typographical symbols predominantly in use there.
 
 *CRS*
 Coordinate Reference System
@@ -17,9 +15,6 @@ Institute of Electrical and Electronics Engineers, Inc.
 
 *IFD*
 In TIFF format, an Image File Directory, containing all the TIFF tags for one image in the file (there may be more than one).
-
-*POSC*
-Petrotechnical Open Software Corporation.
 
 *TIFF*
 Acronym for Tagged Image File Format; a platform-independent, extensive specification for storing raster data and ancillary information in a single file.
@@ -39,6 +34,6 @@ three-dimensional
 *Identifiers*
 The normative provisions in this specification are denoted by the URI
 
-http://www.opengis.net/spec/{standard}/{m.n}
+-http://www.opengis.net/spec/{standard}/{m.n}
 
 All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
