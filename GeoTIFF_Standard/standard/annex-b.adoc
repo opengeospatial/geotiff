@@ -455,7 +455,7 @@ This tag may be used to specify the size of raster pixel spacing in the model sp
 
      ModelPixelScaleTag = (ScaleX, ScaleY, ScaleZ)
 
-where ScaleX and ScaleY give the horizontal and vertical spacing of raster pixels. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale, and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).
+where ScaleX and ScaleY give the horizontal and vertical spacing of raster pixels. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale (in other words a *Z-Scaling factor*), and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).
 
 A single tiepoint in the ModelTiepointTag, together with this tag, completely determine the relationship between raster and model space; thus they comprise the two tags which GeoTIFF files most often will use to place a raster image into a "standard position" in model space.
 
