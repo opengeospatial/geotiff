@@ -15,13 +15,8 @@ _The GeodeticDatumGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.obsolete +
-_GeodeticDatumGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Datum Codes_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.reserved +
-_GeodeticDatumGeoKey values in the range 1001-1023 SHALL be reserved._
+_GeodeticDatumGeoKey values in the range 1-1023 SHALL be reserved._
 
 NOTE: In GeoTIFF v1.0 the reserved ranges were 1001-5999 and 7000-32766.
 {set:cellbgcolor:#FFFFFF}

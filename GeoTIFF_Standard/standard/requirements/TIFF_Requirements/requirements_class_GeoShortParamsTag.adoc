@@ -1,16 +1,16 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: GeoShortParams* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoShortParams
+2+|*Requirements Class: GeoShortParamsTag* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoShortParamsTag
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoShortParams.Criteria +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoShortParamsTag.Criteria +
 _In the case where a Parameter of type Short has more than one value, those values SHALL be stored in the GeoKeysDirectory_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoShortParams.Location. +
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoShortParamsTag.Location. +
 _Parameter values stored in the GeoKeysDirectory SHALL appear after the last Key Entry_
 {set:cellbgcolor:#FFFFFF}
 |===

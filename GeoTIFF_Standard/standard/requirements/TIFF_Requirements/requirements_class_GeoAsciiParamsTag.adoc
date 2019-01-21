@@ -11,7 +11,7 @@ _The GeoAsciiParamsTag SHALL have ID = 34737_
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count +
-_The GeoAsciiParamsTag MAY hold any number of key parameters with type = ASCII. (May not be necessary, the same as the count KeyEntry)_
+_The GeoAsciiParamsTag SHALL contain the values of the key parameters of type = ASCII referenced by the GeoKeyDirectoryTag. If there is no key parameters of type = ASCII, it SHALL not be present_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

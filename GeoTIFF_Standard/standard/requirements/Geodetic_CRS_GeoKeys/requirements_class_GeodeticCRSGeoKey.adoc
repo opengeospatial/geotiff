@@ -15,20 +15,15 @@ _The GeodeticCRSGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.obsolete +
-_GeodeticCRSGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Geographic Codes_
-{set:cellbgcolor:#FFFFFF}
-
-|Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.reserved +
-_GeodeticCRSGeoKey values in the range 1001-1023 SHALL be reserved._
+_GeodeticCRSGeoKey values in the range 1-1023 SHALL be reserved._
 
 NOTE: In GeoTIFF v1.0 the reserved ranges were 1001-3999 and 5000-32766.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.EPSG +
-_GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geodetic CRS codes (geographic 2D CRS, geographic 3D CRS and geocentric CRS)_
+_GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geodetic 2D or geocentric CRS codes_
 
 NOTE: In GeoTIFF v1.0 the range was 4000-4999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-g.adoc#deprecated_geodetic_crs_codes,Table G.2 - Deprecated and deleted EPSG Geodetic CRS codes>>
 {set:cellbgcolor:#FFFFFF}
@@ -37,7 +32,7 @@ NOTE: In GeoTIFF v1.0 the range was 4000-4999. Several values in this range have
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.user-defined +
 _If the GeodeticCRSGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, GeodeticDatumGeoKey and at least one of GeogAngularUnitsGeoKey or GeogLinearUnitsGeoKey SHALL be populated._
 
-NOTE: if the user-defined CRS is geographic 2D, GeogAngularUnitsGeoKey should be populated, if the user-defined CRS is geographic 3D, both GeogAngularUnitsGeoKey and GeogLinearUnitsGeoKey should be populated, if the user-defined CRS is geocentric, GeogLinearUnitsGeoKey should be populated.
+NOTE: if the user-defined CRS is geographic 2D, GeogAngularUnitsGeoKey should be populated ; if the user-defined CRS is geocentric, GeogLinearUnitsGeoKey should be populated.
 
 {set:cellbgcolor:#FFFFFF}
 

@@ -1,12 +1,12 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: GeoKeyCode {set:cellbgcolor:#CACCCE}*
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyCode 
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyCode
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyCode.undefined +
-_GeoKeys with a value of zero SHALL indicate intentionally omitted parameters_
+_GeoKeys with a value of 0 SHALL indicate intentionally omitted parameters_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

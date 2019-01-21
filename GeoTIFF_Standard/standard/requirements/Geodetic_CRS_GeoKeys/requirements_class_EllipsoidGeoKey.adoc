@@ -15,8 +15,8 @@ _The EllipsoidGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.obsolete +
-_EllipsoidGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Datum Codes_
+Requirement http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.reserved
+EllipsoidGeoKey values in the range 1-1023 SHALL be reserved
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

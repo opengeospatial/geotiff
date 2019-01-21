@@ -27,7 +27,7 @@ _The GTModelTypeGeoKey value SHALL be:_
 
 *	1 to indicate that the Model CRS is a 2D projected coordinate reference system, indicated by the value of the ProjectedCRSGeoKey; or
 
-*	2 to indicate that the Model CRS is a 2D geographic coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
+*	2 to indicate that the Model CRS is a geographic 2D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
 
 *	3 to indicate that the Model CRS is a geocentric Cartesian 3D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
 

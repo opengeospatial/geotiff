@@ -23,10 +23,10 @@ _The GeogAngularUnitsGeoKey, the GeogAzimuthUnitsGeoKey, the GeogLinearUnitsGeoK
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.obsolete +
-_GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 1-1023 SHALL be obsolete GeoTIFF codes._
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.reserved +
+_GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 1-1023 SHALL be reserved._
 
-NOTE: In GeoTIFF v1.0 the range was 0001-2000
+NOTE: In GeoTIFF v1.0 the range 0001-2000 was used for obsolete GeoTIFF codes.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
@@ -62,7 +62,7 @@ _A ProjLinearUnitsGeoKey value of 32767 SHALL be a user-defined linear unit. If 
 |http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.userdefinedVertical +
 _A VerticalUnitsGeoKey value of 32767 (user defined) SHALL not be used_
 
-NOTE: The rationale for this is that it would imply to fill a VerticalUnitSizeGeoKey, which does not exist in GeoTIFF 1.0. The user should use of the EPSG linear unit.
+NOTE: The rationale for this is that it would require a VerticalUnitSizeGeoKey, which does not exist in GeoTIFF 1.0. For vertical units, this document supports only EPSG linear units.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
