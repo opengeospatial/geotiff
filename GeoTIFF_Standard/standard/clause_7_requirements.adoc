@@ -237,7 +237,12 @@ include::requirements/Geodetic_CRS_GeoKeys/requirements_class_EllipsoidGeoKey.ad
 
 ===== Ellipsoid parameter GeoKeys
 
-These keys are used to specify the size and shape of a user-defined ellipsoid or sphere used as the model of the earth. Only bi-axial ellipsoids and spheres are catered for. An ellipsoid is defined through two parameters, its semi-major axis _(a)_ and either its semi-minor axis _(b)_ or its inverse flattening _(1/f)_ where __1/f = a/(a - b)__. If the model is a sphere, _1/f_ is infinite so _a_ and _b_ must be used, with the value of _b_ set to that of __a__.
+These keys are used to specify the size and shape of a user-defined ellipsoid or sphere used as the model of the earth. Only bi-axial ellipsoids and spheres are catered for. An ellipsoid is defined through two parameters,
+its semi-major axis _(a)_
+
+and either its semi-minor axis _(b)_ or its inverse flattening _(1/f)_ where __1/f = a/(a - b)__.
+
+If the model is a sphere, _1/f_ is infinite so _a_ and _b_ must be used, with the value of _b_ set to that of __a__.
 
 *EllipsoidSemiMajorAxisGeoKey*
 

@@ -3,7 +3,7 @@
 == GeoTIFF Map Projection Method codes (Normative)
 
 === Map Projection methods
-GeoTIFF v1.0 lists a number of map projection methods (which it calls 'coordinate transformations'). These are names, without any formulas or clear citation. As such they are an ambiguous identification of method. It is not possible to identify whether the formulas are ellipsoidal or spherical. If it is assumed that they are ellipsoidal formulas, for some the name does not adequately distinguish between method variations where different formulas lead to significantly different results in application. The codes for these listed methods are given in table C.1.
+GeoTIFF v1.0 lists a number of map projection methods (which it calls 'coordinate transformations'). These are names, without any formulas or clear citation. As such they are an ambiguous identification of method. It is not possible to identify whether the formulas are ellipsoidal or spherical. If it is assumed that they are ellipsoidal formulas, for some the name does not adequately distinguish between method variations where different formulas lead to significantly different results in application. The codes for these listed methods are given in table C.1. These remain valid for this v1.1 revision.
 
 [cols="4,4,1",width="90%" options="header"]
 |====
@@ -98,7 +98,7 @@ _Table C.1 - Codes for GeoTIFF v1.0 map projection methods_
 NOTE: ProjMethodGeoKey was called ProjCoordTransGeoKey in GeoTIFF v1.0
 
 === Map Projection parameters
-GeoTIFF v1.0 lists a number of map projection parameters. These are names, without any definition or clear citation. As such they are ambiguous. It is also not clear which parameters should be used for which methods. The map projection parameter GeoKey codes are listed in table C.2.
+GeoTIFF v1.0 lists a number of map projection parameters. These are names, without any definition or clear citation. As such they are ambiguous. It is also not clear which parameters should be used for which methods. The map projection parameter GeoKey codes are listed in table C.2. These remain valid for this v1.1 revision.
 
 [cols="4,4,1,4",width="90%" options="header"]
 |====

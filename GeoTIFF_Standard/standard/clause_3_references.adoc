@@ -7,3 +7,5 @@ edition of the normative document referred to applies.
 
 * Association Adobe Developers, **_TIFF Specification Revision 6.0_**, June 3, 1992
 * Ritter, Niles & Ruth, Mike, **_GeoTIFF Format Specification_**, October 31, 1995
+
+Note: The GeoTIFF standard, dated 1995, has undergone minor adjustments till 2000. The resulting specification, referenced as GeoTIFF 1.0, is available at http://geotiff.maptools.org/spec/geotiffhome.html

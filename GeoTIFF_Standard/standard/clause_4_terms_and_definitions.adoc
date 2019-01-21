@@ -102,6 +102,7 @@ in GeoTIFF, a GeoKey is equivalent in function to a TIFF tag, but uses a differe
 
 === georectified
 corrected for positional displacement with respect to the surface of the Earth
+
  [Source: ISO 19115-2:2019, 3.11]
 
 === georeferencing
@@ -171,7 +172,7 @@ Note:	The amount of displacement depends on the resolution and the level of deta
 
 === orthorectified grid
 
- georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid
+georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid
 
 === parallel
 
