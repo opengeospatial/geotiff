@@ -16,21 +16,16 @@ _The GeoAsciiParamsTag SHALL contain the values of the key parameters of type = 
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.terminator +
-_The pipe character ("\|") in the GeoAsciiParamsTag SHALL be used as the character to terminate a string written in as ASCII tag._
+_The pipe character &#124; in the GeoAsciiParamsTag SHALL be used as the character to terminate a string written in as ASCII tag_
 
-NOTE: if multiple strings are written in the same tag, this terminator character also serves as a separator.
+NOTE: If multiple strings are written in the same tag, this terminator character also serves as a separator.
 
-NOTE: this requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.
-
-Example of a GeoAscii tag containing only one string: "NAD27 / UTM zone 11N\|{NULL}" (where {NULL} is the ASCII character of code 0)
-
-Example of a GeoAscii tag containing two strings: "NAD27 / UTM zone 11N\|NAD27\|{NULL}"
-
+NOTE: This requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.NULLWrite +
-_NULL (ASCII code = 0) characters SHALL not be present in the string content written in the GeoAsciiParamsTag._
+_NULL (ASCII code = 0) characters SHALL not be present in the string content written in the GeoAsciiParamsTag_
 
 NOTE: this requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.
 {set:cellbgcolor:#FFFFFF}

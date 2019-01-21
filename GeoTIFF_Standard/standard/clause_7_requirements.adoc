@@ -67,6 +67,10 @@ The following requirements govern the storage of parameter values when the value
 
 include::requirements/TIFF_Requirements/requirements_class_GeoAsciiParamsTag.adoc[]
 
+Example of a GeoAscii tag containing only one string: "NAD27 / UTM zone 11N\|{NULL}" (where {NULL} is the ASCII character of code 0)
+
+Example of a GeoAscii tag containing two strings: "NAD27 / UTM zone 11N\|NAD27\|{NULL}"
+
 === GeoTIFF Configuration GeoKeys
 
 This Standardization Target addresses encoding of Configuration values essential for interpreting the rest of the GeoKeys.
