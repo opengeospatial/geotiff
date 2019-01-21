@@ -23,7 +23,7 @@ NOTE: In GeoTIFF v1.0 the reserved ranges were 1001-3999 and 5000-32766.
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.EPSG +
-_GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geodetic 2D or geocentric CRS codes_
+_GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geographic 2D or geocentric CRS codes_
 
 NOTE: In GeoTIFF v1.0 the range was 4000-4999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-g.adoc#deprecated_geodetic_crs_codes,Table G.2 - Deprecated and deleted EPSG Geodetic CRS codes>>
 {set:cellbgcolor:#FFFFFF}
