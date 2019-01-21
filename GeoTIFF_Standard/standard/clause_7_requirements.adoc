@@ -109,6 +109,8 @@ Alternatively, the _ModelTransformationTag_ may be used to specify the transform
 
 Consult <<GeoTIFF Tags for Coordinate Transformations>> for a description of their semantics.
 
+NOTE: It should be noted that model space axis order in the following 3 tags _ModelTiepointTag_, _ModelPixelScaleTag_ and _ModelTransformationTag_ is fixed at (lon,lat,height) in case of geographic 2D and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is implicit in this revision.
+
 ==== Requirements Class ModelTiepointTag
 
 include::requirements/Raster2Model_CoordinateTransformation_Tags/requirements_class_ModelTiepointTag.adoc[]
@@ -167,6 +169,8 @@ include::requirements/Citation_Keys/requirements_class_CitationGeoKeys.adoc[]
 The GeoKeys described in this section are needed only when Model CRSs are not available from the GeoTIFF CRS register and the CRS or one or more of its component objects is user-defined, that is if one or more of ProjectedCRSGeoKey, GeodeticCRSGeoKey or VerticalGeoKey has a value of 32767.
 
 NOTE: Anyone not interested in constructing a user-defined model CRS can ignore this section.
+
+NOTE: It should be noted that the implicit axis order of user-defined CRS definitions is fixed at (lon,lat,height) in case of geographic and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is implicit in this revision.
 
 ==== Units GeoKeys
 
