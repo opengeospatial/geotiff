@@ -170,7 +170,7 @@ The GeoKeys described in this section are needed only when Model CRSs are not av
 
 NOTE: Anyone not interested in constructing a user-defined model CRS can ignore this section.
 
-NOTE: It should be noted that the implicit axis order of user-defined CRS definitions is fixed at (lon,lat,height) in case of geographic and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is implicit in this revision.
+NOTE: It should be noted that the implicit axis order of user-defined CRS definitions is fixed at (lon,lat,height) in case of geographic and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is implicit in this revision. As with GeoTIFF 1.0, it is not possible to express a user-defined CRS that deviates from this implicit axis order. The intention is to address this limitation in a future revision.
 
 ==== Units GeoKeys
 
