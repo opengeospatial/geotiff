@@ -16,6 +16,6 @@ _The ModelTiepointTag SHALL have type = DOUBLE_
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.count +
-_The ModelTiepointTag SHALL have 6 values for each of the K tiepoints_
+_The ModelTiepointTag SHALL have 6 values for each of the tiepoints_
 {set:cellbgcolor:#FFFFFF}
 |===

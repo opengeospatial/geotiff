@@ -5,7 +5,6 @@
 === The GeoTIFF File Structure
 
 ==== Introduction
-
 The GeoTIFF 1.0 specification (Ritter and Ruth, 1995) includes a detailed description of the structural approach used in GeoTIFF and the semantics and values of the tags. The tag specifications are included in Clause 7 of this standard as requirements. This Annex provides an informative overview of the structure of a GeoTIFF file and tags. Much of this information is excerpted from Ritter and Ruth, 1995.
 
 GeoTIFF fully complies with the TIFF 6.0 specifications, and its extensions do not in any way go against the TIFF recommendations, nor do they limit the scope of raster data supported by TIFF.
@@ -20,7 +19,6 @@ International Association of Oil and Gas Producers, and mechanisms for adding us
 While GeoTIFF provides a robust framework for specifying a broad class of existing coordinate reference systems, it is also fully extensible, permitting internal, private or proprietary information storage. However, since this standard arose from the need to avoid multiple proprietary encoding systems, use of private implementations is to be discouraged.
 
 ==== GeoTIFF Design Considerations
-
 Every effort has been made to adhere to the philosophy of TIFF data abstraction. The GeoTIFF tags conform to a hierarchical data structure of tags and keys, similar to the tags which have been implemented in the "basic" and "extended" TIFF tags already supported in TIFF Version 6 specification. The following are some points considered in the design of GeoTIFF:
 
 * Private binary structures, while permitted under the TIFF spec, are in general difficult to maintain, and are intrinsically platform- dependent. Whenever possible, information should be sorted into their intrinsic data-types, and placed into appropriately named tags. Also, implementers of TIFF readers would be more willing to honor a new tag specification if it does not require parsing novel binary structures.
@@ -28,15 +26,13 @@ Every effort has been made to adhere to the philosophy of TIFF data abstraction.
 * True "Extensibility" strongly suggests that the Tags defined have a sufficiently abstract definition so that the same tag and its values may be used and interpreted in different ways as more complex information spaces are developed. For example, the old SubFileType tag (255) had to be obsoleted and replaced with a NewSubFileType tag, because images began appearing which could not fit into the narrowly defined classes for that Tag. Conversely, the YCbCrSubsampling Tag has taken on new meaning and importance as the JPEG compression standard for TIFF becomes finalized.
 
 ==== GeoTIFF Software Requirements
-
 GeoTIFF requires support for all documented TIFF 6.0 tag data-types, and in particular requires the IEEE double-precision floating-point "DOUBLE" type tag. Most of the parameters for georeferencing will not have sufficient accuracy with single-precision IEEE, nor with RATIONAL format storage. The only other alternative for storing high-precision values would be to encode as ASCII, but this does not conform to TIFF recommendations for data encoding.
 
 It is worth emphasizing here that the TIFF spec indicates that TIFF-compliant readers shall honor the 'byte-order' indicator, meaning that 4-byte integers from files created on opposite order machines will be swapped in software, and that 8-byte DOUBLE's will be 8-byte swapped.
 
-A GeoTIFF reader/writer, in addition to supporting the standard TIFF tag types, must also have an additional module which can parse the "Geokey" MetaTag information. A public-domain software package for performing this function is available; (libgeotiff) see https://trac.osgeo.org/geotiff#libgeotiff.
+A GeoTIFF reader/writer, in addition to supporting the standard TIFF tag types, must also have an additional module which can parse the "Geokey" MetaTag information. A public-domain software package for performing this function is available (libgeotiff), see https://trac.osgeo.org/geotiff#libgeotiff.
 
 ==== GeoTIFF File and "Key" Structure
-
 This section describes the abstract file-format and "GeoKey" data storage mechanism used in GeoTIFF. Uses of this mechanism for implementing georeferencing and geocoding is detailed in sections  <<Coordinate Transformations>> and <<Geocoding Raster Data>>.
 
 A GeoTIFF file is a TIFF 6.0 file, and inherits the file structure as described in the corresponding portion of the TIFF spec. All GeoTIFF specific information is encoded in several additional reserved TIFF tags, and contains no private Image File Directories (IFD's), binary structures or other private information invisible to standard TIFF readers.
@@ -154,7 +150,6 @@ In GeoTIFF, provision is made to identify earth-referenced coordinate systems (m
 
 ==== Raster Space
 ===== _Raster Data_
-
 Raster data consists of spatially coherent, digitally stored numerical data, collected from sensors, scanners, or in other ways numerically derived. The manner in which this storage is implemented in a TIFF file is described in the standard TIFF specification (see <<clause_3_references.adoc#,TIFF Specification Revision 6.0>>).
 
 Raster data values, as read in from a file, are organized by software into two-dimensional arrays, the indices of the arrays being used as coordinates. There may also be additional indices for multispectral data, but these indices do not refer to spatial coordinates but spectral, and so are not of concern here.
@@ -163,7 +158,6 @@ Many different types of raster data may be georeferenced, and there may be subtl
 
 [#RasterSpace]
 ===== _Raster Space_
-
 The choice of origin for raster space is not entirely arbitrary, and depends upon the nature of the data collected. Raster space coordinates shall be referred to by their pixel types, i.e., as "PixelIsArea" or "PixelIsPoint".
 
 Note: For simplicity, both raster spaces documented below use a fixed pixel size and spacing of 1. Information regarding the visual representation of this data, such as pixels with non-unit aspect ratios, scales, orientations, etc., are best communicated with the TIFF 6.0 standard tags.
@@ -179,20 +173,20 @@ and so on; by extension this one-by-one grid cell is also referred to as a pixel
       +---+---+-> I
       | * | * |
       +---+---+       Standard (PixelIsArea) TIFF Raster space R,
-      | (1,1)   (2,1) showing the areas (*) of several pixels.
-      |
+      | (1,1) (2,1)   showing the areas (*) of several pixels.
+      v
       J
 
 ====== "PixelIsPoint" Raster Space
-
 The PixelIsPoint raster grid space R uses the same coordinate axis names as used in PixelIsArea Raster space, with increasing I to the right, increasing J down. The first pixel-value however, is realized as a point value located at (0,0). An N by M pixel image consists of points which fill the mathematically defined bounds (0,0), (N-1,M-1).
 
-     (0,0) (1,0)
+     (0,0)  (1,0)
       *-------*------> I
       |       |
       |       |      PixelIsPoint TIFF Raster space R,
       *-------*      showing the location (*) of several pixels.
-      | (1,1)
+      |     (1,1)
+      v
       J
 
 If a point-pixel image were to be displayed on a display device with pixel cells having the same size as the raster spacing, then the upper-left corner of the displayed image would be located in raster space at (-0.5, -0.5).
@@ -398,7 +392,9 @@ The terms of use of the EPSG Dataset are given at http://www.epsg.org/Termsofuse
 Within the EPSG Dataset each object has a code. There have been three generations of coding:
 
 i)	In v1.x of the publicly-available EPSG Dataset (1994-1996, published by the Petrotechnical Open Software Corporation, POSC), codes were alphanumeric. The initial letter indicated the object type, and objects within each type were then assigned sequential numbers.
+
 ii)	With the introduction of GeoTIFF v1.0, EPSG Dataset v2.1 object codes were changed to integer values in the range 1024 through 32766. This overall code range was divided into non-overlapping sub-ranges, with one sub-range range for each object type. At that time, all EPSG object codes were unique. The GeoTIFF v1.0 specification was written at this time, and the EPSG code ranges for object types were written into the GeoTIFF v1.0 specification.
+
 iii)	However as the number of items in the EPSG Dataset grew, some of the object code sub-ranges became fully assigned. The unique code system broke down. Since 2006, all object types have been separately assigned codes within the range 1024 through 32766. Within each object type codes remain unique, but one code value may be used for several object types. For example, code 4326 is used for both a CRS and for a geographic extent (in EPSG called 'area'). Codes at and just above the lower end of the range 1024 through 32766 may be used by numerous object types: for example by the year 2018 code 1026 has been assigned to 10 different object types. EPSG codes therefore are only unique when the object type is disclosed. EPSG::4326 is ambiguous, crs:EPSG::4326 and area:EPSG::4326 are unambiguous.
 
 The GeoTIFF v1.0 specification refers to "obsolete EPSG/POSC codes". These refer to the numeric part of the alphanumeric coding in (i) above. These values had been used in some GeoTIFF v0.x files and for backward compatibility with those earlier files GeoTIFF v1.0 retained references to them. As all of these alphanumeric codes were changed to the integer coding in (ii) above, reference to these obsolete codes should now be unnecessary. In effect, for model CRS GeoKeys the obsolete code range may be treated as a reserved code range. Note: 'EPSG/POSC obsolete codes' refers specifically to the coding in generation (i) above, and should not be confused with codes from generations (ii) and (iii) which have been given the status of 'deprecated'.
@@ -406,7 +402,6 @@ The GeoTIFF v1.0 specification refers to "obsolete EPSG/POSC codes". These refer
 A reference to an EPSG coordinate reference system code is sufficient for a complete definition: it implies use of the CRS components (datum, ellipsoid, map projection, etc.) that are associated with that CRS in the EPSG Dataset definition. The EPSG codes for coordinate reference system components should only be referenced when describing a user-defined coordinate reference system.
 
 === Coordinate Transformations
-
 The purpose of GeoTIFF is to allow the definitive identification of georeferenced locations within a raster dataset. This is generally accomplished through tying raster space coordinates to a model space coordinate system, when no further information is required. In the GeoTIFF nomenclature, "georeferencing" refers to tying raster space to a model space M, while "geocoding" refers to defining how the model space M assigns coordinates to points on the earth.
 
 The three tags defined below may be used for defining the relationship between R and M, and the relationship may be diagrammed as:
@@ -419,7 +414,6 @@ The three tags defined below may be used for defining the relationship between R
 The next section describes these Baseline georeferencing tags in detail.
 
 === GeoTIFF Tags for Coordinate Transformations
-
 For most common applications, the transformation between raster and model space may be defined with a set of raster-to-model tiepoints and scaling parameters. The following two tags may be used for this purpose:
 
     ModelTiepointTag:
@@ -518,7 +512,6 @@ where the -Sy is due the reversal of direction from J increasing- down in raster
 Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.
 
 === Cookbook for Defining Transformations
-
 Here is a 4-step guide to producing a set of GeoTIFF tags for defining coordinate transformation information of a raster dataset.
 
   Step 1: Establish the Raster Space coordinate system used: RasterPixelIsArea or RasterPixelIsPoint.
@@ -548,10 +541,10 @@ Here is a 4-step guide to producing a set of GeoTIFF tags for defining coordinat
 === Geocoding Raster Data
 A geocoded image is a georeferenced image as described in section <<Coordinate Transformations>>, which also specifies a model space coordinate reference system (CRS) between the model space M (to which the raster space has been tied) and the earth. The relationship can be diagrammed, including the associated TIFF tags, as follows:
 
-         ModelPixelScaleTag
-         ModelTiepointTag              GeoKeyDirectoryTag CRS
-     R -------- OR ---------------> M --------- AND -----------> Earth
-         ModelTransformationTag        GeoDoubleParamsTag
-                                       GeoAsciiParamsTag
+             ModelPixelScaleTag
+             ModelTiepointTag                 GeoKeyDirectoryTag CRS
+     R ------------ OR ---------------> M --------- AND --------------> Earth
+    (I,J,K)  ModelTransformationTag  (X,Y,Z)  GeoDoubleParamsTag
+                                              GeoAsciiParamsTag
 
 The geocoding coordinate reference system is defined by the GeoKeyDirectoryTag, while the Georeferencing information (T) is defined by the ModelTiepointTag and the ModelPixelScale, or ModelTransformationTag. Since these two systems are independent of each other, the tags used to store the parameters are separated from each other in the GeoTIFF file to emphasize the orthogonality.

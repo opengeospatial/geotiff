@@ -16,6 +16,9 @@ Institute of Electrical and Electronics Engineers, Inc.
 *IFD*
 In TIFF format, an Image File Directory, containing all the TIFF tags for one image in the file (there may be more than one).
 
+*SI*
+International System of Units
+
 *TIFF*
 Acronym for Tagged Image File Format; a platform-independent, extensive specification for storing raster data and ancillary information in a single file.
 
