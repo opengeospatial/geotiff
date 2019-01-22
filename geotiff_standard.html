@@ -2222,8 +2222,13 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.standardConvention" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.standardConvention</a><br>
+<em>A positive ScaleX in the ModelPixelScaleTag SHALL indicate that model space X coordinates increase as raster space I indices increase. This is the standard horizontal relationship between raster space and model space. A positive ScaleY in the ModelPixelScaleTag SHALL indicate that model space Y coordinates decrease as raster space J indices increase. This is the standard vertical relationship between raster space and model space.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.axisReversal" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.axisReversal</a><br>
-<em>Simple reversals of orientation between raster and model space (e.g. horizontal or vertical flips) SHALL be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers shall honor this sign-reversal convention.</em></p></td>
+<em>Simple reversals of orientation from the standard relationship between raster and model space (e.g., horizontal or vertical flips) SHALL be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers shall honor this sign-reversal convention.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -2546,7 +2551,7 @@ Anyone not interested in constructing a user-defined model CRS can ignore this s
 <div class="title">Note</div>
 </td>
 <td class="content">
-It should be noted that the implicit axis order of user-defined CRS definitions is fixed at (lon,lat,height) in case of geographic and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is implicit in this revision.
+It should be noted that the implicit axis order of user-defined CRS definitions is fixed at (lon,lat,height) in case of geographic and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is implicit in this revision. As with GeoTIFF 1.0, it is not possible to express a user-defined CRS that deviates from this implicit axis order. The intention is to address this limitation in a future revision.
 </td>
 </tr>
 </table>
@@ -4022,7 +4027,7 @@ GeogCRS needs defining as in Requirement <a href="http://www.opengis.net/spec/Ge
 </ol>
 </div>
 <div class="paragraph">
-<p>But even for these cases, unless stated through a Citation, some assumption is required about axis positive direction and axis order, based on the values for the transformation from raster space to model space. With no negative values in the <em>ModelPixelScaleTag</em> it is assumed that:</p>
+<p>But even for these cases, unless stated through a Citation, some assumption is required about axis positive direction and axis order, based on the values for the transformation from raster space to model space. With no negative values in the <em>ModelTransformationTag</em> it is assumed that:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -7095,7 +7100,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-01-21 22:17:29 -0500
+Last updated 2019-01-22 13:48:22 -0500
 </div>
 </div>
 </body>
