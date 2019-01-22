@@ -286,7 +286,7 @@ iii)	a user-defined geographic CRS available from the GeoTIFF CRS register and a
 
  iv) Neither base GeogCRS or map projection is in EPSG. GeogCRS needs defining, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.user_defined using the v1.0 provisions (the names in annex C).
 
-But even for these cases, unless stated through a Citation, some assumption is required about axis positive direction and axis order, based on the values for the transformation from raster space to model space. With no negative values in the _ModelPixelScaleTag_ it is assumed that:
+But even for these cases, unless stated through a Citation, some assumption is required about axis positive direction and axis order, based on the values for the transformation from raster space to model space. With no negative values in the _ModelTransformationTag_ it is assumed that:
 
 *	projected CRS axes are easting, northing;
 *	geographic 2D CRS axes are longitude east, latitude north;
