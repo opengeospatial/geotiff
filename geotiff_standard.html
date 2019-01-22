@@ -971,6 +971,9 @@ edition of the normative document referred to applies.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Note: The GeoTIFF standard, dated 1995, has undergone minor adjustments till 2000. The resulting specification, referenced as GeoTIFF 1.0, is available at <a href="http://geotiff.maptools.org/spec/geotiffhome.html" class="bare">http://geotiff.maptools.org/spec/geotiffhome.html</a></p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1208,8 +1211,12 @@ In the 1995 GeoTIFF v1.0, this term was "geographic coordinate system"
 <div class="sect2">
 <h3 id="_georectified"><a class="anchor" href="#_georectified"></a>4.16. georectified</h3>
 <div class="paragraph">
-<p>corrected for positional displacement with respect to the surface of the Earth
- [Source: ISO 19115-2:2019, 3.11]</p>
+<p>corrected for positional displacement with respect to the surface of the Earth</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[Source: ISO 19115-2:2019, 3.11]</pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1332,10 +1339,8 @@ tying model space to the earth is not known".
 </div>
 <div class="sect2">
 <h3 id="_orthorectified_grid"><a class="anchor" href="#_orthorectified_grid"></a>4.26. orthorectified grid</h3>
-<div class="literalblock">
-<div class="content">
-<pre>georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid</pre>
-</div>
+<div class="paragraph">
+<p>georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid</p>
 </div>
 </div>
 <div class="sect2">
@@ -1766,8 +1771,8 @@ The normative provisions in this specification are denoted by the URI</p>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevisionValue" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevisionValue</a><br>
 <em>The MinorRevision for this standard SHALL be O or 1.</em></p>
-<p class="tableblock">0 = 1995 version</p>
-<p class="tableblock">1 = 2019 version</p></td>
+<p class="tableblock">0 = GeoTIFF 1.0 version</p>
+<p class="tableblock">1 = this version 1.1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -1933,17 +1938,14 @@ The normative provisions in this specification are denoted by the URI</p>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.terminator" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.terminator</a><br>
-<em>The pipe character ("|") in the GeoAsciiParamsTag SHALL be used as the character to terminate a string written in as ASCII tag.</em></p>
-<p class="tableblock">NOTE: if multiple strings are written in the same tag, this terminator character also serves as a separator.</p>
-<p class="tableblock">NOTE: this requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.</p>
-<p class="tableblock">Example of a GeoAscii tag containing only one string: "NAD27 / UTM zone 11N|{NULL}" (where {NULL} is the ASCII character of code 0)</p>
-<p class="tableblock">Example of a GeoAscii tag containing two strings: "NAD27 / UTM zone 11N|NAD27|{NULL}"
-</p></td>
+<em>The pipe character &#124; in the GeoAsciiParamsTag SHALL be used as the character to terminate a string written in as ASCII tag</em></p>
+<p class="tableblock">NOTE: If multiple strings are written in the same tag, this terminator character also serves as a separator.</p>
+<p class="tableblock">NOTE: This requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.NULLWrite" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.NULLWrite</a><br>
-<em>NULL (ASCII code = 0) characters SHALL not be present in the string content written in the GeoAsciiParamsTag.</em></p>
+<em>NULL (ASCII code = 0) characters SHALL not be present in the string content written in the GeoAsciiParamsTag</em></p>
 <p class="tableblock">NOTE: this requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.</p></td>
 </tr>
 <tr>
@@ -1953,6 +1955,12 @@ The normative provisions in this specification are denoted by the URI</p>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Example of a GeoAscii tag containing only one string: "NAD27 / UTM zone 11N\|{NULL}" (where {NULL} is the ASCII character of code 0)</p>
+</div>
+<div class="paragraph">
+<p>Example of a GeoAscii tag containing two strings: "NAD27 / UTM zone 11N\|NAD27\|{NULL}"</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2138,6 +2146,18 @@ The GTCitationGeoKey is also provided to give an ASCII reference to published do
 </div>
 <div class="paragraph">
 <p>Consult <a href="#_geotiff_tags_for_coordinate_transformations">GeoTIFF Tags for Coordinate Transformations</a> for a description of their semantics.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+It should be noted that model space axis order in the following 3 tags <em>ModelTiepointTag</em>, <em>ModelPixelScaleTag</em> and <em>ModelTransformationTag</em> is fixed at (lon,lat,height) in case of geographic 2D and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is implicit in this revision.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_requirements_class_modeltiepointtag"><a class="anchor" href="#_requirements_class_modeltiepointtag"></a>7.3.1. Requirements Class ModelTiepointTag</h4>
@@ -2373,7 +2393,7 @@ In GeoTIFF 1.0 this key was called GeographicTypeGeoKey. Geodetic CRS is a super
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.EPSG</a><br>
-<em>GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geodetic 2D or geocentric CRS codes</em></p>
+<em>GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geographic 2D or geocentric CRS codes</em></p>
 <p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 4000-4999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_geodetic_crs_codes">Table G.2 - Deprecated and deleted EPSG Geodetic CRS codes</a></p></td>
 </tr>
 <tr>
@@ -2515,6 +2535,18 @@ In GeoTIFF 1.0 the GeodeticCitationGeoKey key was called GeogCitationGeoKey and 
 </td>
 <td class="content">
 Anyone not interested in constructing a user-defined model CRS can ignore this section.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+It should be noted that the implicit axis order of user-defined CRS definitions is fixed at (lon,lat,height) in case of geographic and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is implicit in this revision.
 </td>
 </tr>
 </table>
@@ -2918,21 +2950,25 @@ In GeoTIFF 1.0 this key was called GeogEllipsoidGeoKey.
 <em>The EllipsoidGeoKey SHALL have type = SHORT</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Requirement 
-Requirement <a href="http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.reserved" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.reserved</a>
-EllipsoidGeoKey values in the range 1-1023 SHALL be reserved</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Requirement <a href="http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.reserved" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.reserved</a>
+<em>EllipsoidGeoKey values in the range 1-1023 SHALL be reserved</em></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.EPSG" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.EPSG</a><br>
 <em>EllipsoidGeoKey values in the range 1024-32766 SHALL be EPSG ellipsoid Codes</em></p>
 <p class="tableblock">NOTE: In GeoTIFF v1.0 the range was 7000-7999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <a href="#deprecated_ellipsoid_codes">Table G.5 - Deprecated and deleted EPSG ellipsoid codes</a></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.user-defined" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.user-defined</a><br>
 <em>If the EllipsoidGeoKey value is 32767 (User-Defined) then the GTCitationGeoKey and the EllipsoidSemiMajorAxisGeoKey SHALL be populated together with the one of either the EllipsoidSemiMinorAxisGeoKey or the EllipsoidInvFlatteningGeoKey.</em></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.private" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.private</a><br>
+<em>EllipsoidGeoKey values in the range 32768-65535 SHALL be private</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -2940,7 +2976,14 @@ EllipsoidGeoKey values in the range 1-1023 SHALL be reserved</p></td>
 <div class="sect4">
 <h5 id="_ellipsoid_parameter_geokeys"><a class="anchor" href="#_ellipsoid_parameter_geokeys"></a>Ellipsoid parameter GeoKeys</h5>
 <div class="paragraph">
-<p>These keys are used to specify the size and shape of a user-defined ellipsoid or sphere used as the model of the earth. Only bi-axial ellipsoids and spheres are catered for. An ellipsoid is defined through two parameters, its semi-major axis <em>(a)</em> and either its semi-minor axis <em>(b)</em> or its inverse flattening <em>(1/f)</em> where <em>1/f = a/(a - b)</em>. If the model is a sphere, <em>1/f</em> is infinite so <em>a</em> and <em>b</em> must be used, with the value of <em>b</em> set to that of <em>a</em>.</p>
+<p>These keys are used to specify the size and shape of a user-defined ellipsoid or sphere used as the model of the earth. Only bi-axial ellipsoids and spheres are catered for. An ellipsoid is defined through two parameters,
+its semi-major axis <em>(a)</em></p>
+</div>
+<div class="paragraph">
+<p>and either its semi-minor axis <em>(b)</em> or its inverse flattening <em>(1/f)</em> where <em>1/f = a/(a - b)</em>.</p>
+</div>
+<div class="paragraph">
+<p>If the model is a sphere, <em>1/f</em> is infinite so <em>a</em> and <em>b</em> must be used, with the value of <em>b</em> set to that of <em>a</em>.</p>
 </div>
 <div class="paragraph">
 <p><strong>EllipsoidSemiMajorAxisGeoKey</strong></p>
@@ -4454,7 +4497,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 </div>
 </div>
 <div class="paragraph">
-<p>where ScaleX and ScaleY give the horizontal and vertical spacing of raster pixels. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale, and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).</p>
+<p>where ScaleX and ScaleY give the horizontal and vertical spacing of raster pixels. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale (in other words a <strong>Z-Scaling factor</strong>), and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).</p>
 </div>
 <div class="paragraph">
 <p>A single tiepoint in the ModelTiepointTag, together with this tag, completely determine the relationship between raster and model space; thus they comprise the two tags which GeoTIFF files most often will use to place a raster image into a "standard position" in model space.</p>
@@ -4638,7 +4681,7 @@ R -------- OR ---------------&gt; M --------- AND -----------&gt; Earth
 <div class="sect2">
 <h3 id="_map_projection_methods"><a class="anchor" href="#_map_projection_methods"></a>C.1. Map Projection methods</h3>
 <div class="paragraph">
-<p>GeoTIFF v1.0 lists a number of map projection methods (which it calls 'coordinate transformations'). These are names, without any formulas or clear citation. As such they are an ambiguous identification of method. It is not possible to identify whether the formulas are ellipsoidal or spherical. If it is assumed that they are ellipsoidal formulas, for some the name does not adequately distinguish between method variations where different formulas lead to significantly different results in application. The codes for these listed methods are given in table C.1.</p>
+<p>GeoTIFF v1.0 lists a number of map projection methods (which it calls 'coordinate transformations'). These are names, without any formulas or clear citation. As such they are an ambiguous identification of method. It is not possible to identify whether the formulas are ellipsoidal or spherical. If it is assumed that they are ellipsoidal formulas, for some the name does not adequately distinguish between method variations where different formulas lead to significantly different results in application. The codes for these listed methods are given in table C.1. These remain valid for this v1.1 revision.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -4810,7 +4853,7 @@ ProjMethodGeoKey was called ProjCoordTransGeoKey in GeoTIFF v1.0
 <div class="sect2">
 <h3 id="_map_projection_parameters"><a class="anchor" href="#_map_projection_parameters"></a>C.2. Map Projection parameters</h3>
 <div class="paragraph">
-<p>GeoTIFF v1.0 lists a number of map projection parameters. These are names, without any definition or clear citation. As such they are ambiguous. It is also not clear which parameters should be used for which methods. The map projection parameter GeoKey codes are listed in table C.2.</p>
+<p>GeoTIFF v1.0 lists a number of map projection parameters. These are names, without any definition or clear citation. As such they are ambiguous. It is also not clear which parameters should be used for which methods. The map projection parameter GeoKey codes are listed in table C.2. These remain valid for this v1.1 revision.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -5624,7 +5667,8 @@ GeoKeyDirectoryTag:
 <div class="sect3">
 <h4 id="_dma_adrg_raster_graphic_map"><a class="anchor" href="#_dma_adrg_raster_graphic_map"></a>F.2.4. DMA ADRG Raster Graphic Map</h4>
 <div class="paragraph">
-<p>The U.S. Defense Mapping Agency produces ARC digitized raster graphics datasets by scanning maps and geometrically resampling them into an equirectangular projection, so that they may be directly indexed with WGS 84 geographic coordinates. The scale for one map is 0.2 degrees per pixel horizontally, 0.1 degrees per pixel vertically. If stored in a GeoTIFF file it contains the following information:</p>
+<p>The U.S. Defense Mapping Agency produces ARC digitized raster graphics datasets by scanning maps and geometrically resampling them into an equirectangular projection, so that they may be directly indexed with WGS 84 geographic coordinates. The upper left corner is 120 degrees West, 32 degrees
+North. The scale for one map is 0.2 degrees per pixel horizontally, 0.1 degrees per pixel vertically. If stored in a GeoTIFF file it contains the following information:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -5721,8 +5765,9 @@ GeoKeyDirectoryTag:
 <div class="paragraph">
 <p>The DGIWG (Defense Geographic Information Working Group) has published a Defense Gridded Elevation Data (DGED) product specification, including levels ranking between 0 (DTED0) to 9 (#12.5 cm). This example is at Level 6 Geographic and stores digital elevation models using an equirectangular projection, using WGS 84 geographic coordinates. Since elevation postings are point-values, the pixels should not be considered as filling areas, but as point-values at grid vertices. Elevation values are absolute values above geoid EGM 2008 (EPSG code 3855), as the Z coordinate of ModelTiepointTag is 0. The upper left corner is at 12.5 degrees East, 55.7 degrees North, and has a pixel scale of 1.25e-05 degrees/pixel longitude, 8.33e-06 degrees/pixel latitude.</p>
 </div>
-<div class="paragraph">
-<p>ModelTiepointTag=(0.0, 0.0, 0.0, 12.5000063, 55.7000042, 0)
+<div class="literalblock">
+<div class="content">
+<pre>ModelTiepointTag=(0.0, 0.0, 0.0, 12.5000063, 55.7000042, 0)
 ModelPixelScale = (1.25e-05, 8.3333333e-06, 1.0)
 GeoKeyDirectoryTag:
      GTModelTypeGeoKey = 2 (ModelTypeGeographic 2D)
@@ -5730,7 +5775,8 @@ GeoKeyDirectoryTag:
      GeodeticCRSGeoKey = 4326 (Geographic 2D WGS 84)
      VerticalGeoKey = 3855 (EGM2008)
      VerticalCitationGeoKey = "EGM2008 geoid height"
-     VerticalUnitsGeoKey = 9001 (Linear_Meter)</p>
+     VerticalUnitsGeoKey = 9001 (Linear_Meter)</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7049,7 +7095,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-01-20 22:17:50 -0500
+Last updated 2019-01-21 22:17:29 -0500
 </div>
 </div>
 </body>
