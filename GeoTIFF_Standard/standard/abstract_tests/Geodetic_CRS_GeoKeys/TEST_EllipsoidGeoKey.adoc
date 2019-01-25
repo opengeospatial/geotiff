@@ -1,0 +1,24 @@
+==== Requirements Class GeoDoubleParamsTag
+http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey
+
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoDoubleParamsTag.ID
+|Requirement: |The GeoDoubleParamsTag SHALL have ID = 34736
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoDoubleParamsTag.count
+|Requirement: |The GeoDoubleParamsTag MAY hold any number of key parameters with type = Double
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.type
+|Requirement: |The EllipsoidGeoKey SHALL have type = SHORT
+|Test purpose: | Verify that...
+|Test method: | Verify that this test was not called from http://www.opengis.net/spec/GeoTIFF/0.0/GeoDoubleParamsTag or http://www.opengis.net/spec/GeoTIFF/0.0/GeoASCIIParamsTag.
+|===

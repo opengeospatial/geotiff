@@ -1,0 +1,48 @@
+==== Requirements Class GeoAsciiParamsTag
+http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag
+[cols=">20h,<80d",width="100%"]
+|===
+<|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag
+2+<|Requirements: +
+ - The GeoAsciiParamsTag SHALL have ID = 34737 +
+ - The GeoAsciiParamsTag MAY hold any number of key parameters with type = ASCII. (May not be necessary, the same as keyentry.count)
+<|Test purpose: | Verify all GeoKeys who's values are of type ASCII
+2+<|Test method:
+2+<| Locate TIFF tag 34737
+
+For each GeoKey in the directory +
+  1) Locate the GeoKey value in table +
+  2) Execute the corresponding test
+|===
+
+[[ASCII_GeoKey_Tests]]
+[cols="2,4",width="100%", options="header"]
+|===
+^| GeoKey 
+^| Test
+^| 1026 <| GeoTIFFConfigurationKeys/GTCitationGeoKey
+^| 1049 <| GeodeticCRSParameterKeys/GeodeticCitaionGeoKey
+^| 3073 <| ProjectedCRSParameterKeys/ProjectedCitationGeoKey
+^| 4097 <| VerticalCRSParameterKeys/VerticalCitationGeoKey
+|===
+
+
+
+
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.NULLRead
+|Requirement: |Pipe characters ("\|") in the GeoAsciiParamsTag SHALL be converted NULL characters before returning strings to the client
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/
+GeoAsciiParamsTag.NULLWrite
+|Requirement: |NULL characters used to terminate strings in the GeoAsciiParamsTag SHALL be converted to a “\|” (pipe) prior to being written into the GeoAsciiParamsTag
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===
+[cols=">20h,<80d",width="100%"]
+|===

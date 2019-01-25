@@ -1,0 +1,55 @@
+==== Requirements Class GeoShortParams
+http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams
+
+[cols=">20h,<80d",width="100%"]
+|===
+<|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParamsTag
+2+<|Requirements: +
+ - The GeoDoubleParamsTag SHALL have ID = 34736 +
+ - The GeoDoubleParamsTag MAY hold any number of key parameters with type = Short
+<|Test purpose: | Verify all GeoKeys who's values are of type double
+2+<|Test method:
+2+<| Locate TIFF tag 34736
+
+For each GeoKey in the directory +
+  1) Locate the GeoKey value in table +
+  2) Execute the corresponding test
+|===
+
+[[Double_GeoKey_Tests]]
+[cols="2,4",width="100%", options="header"]
+|===
+^| GeoKey 
+^| Test
+^| 1024 <| GeoTIFFConfigurationKeys/GTModelTypeGeoKey
+^| 1025 <| GeoTIFFConfigurationKeys/GTRasterTypeGeoKey
+^| 2048 <| GeodeticCRSParameterKeys/GeodeticCRSGeoKey
+^| 2050 <| GeodeticDatumGeoKey
+^| 2051 <| PrimeMeridianGeoKey
+^| 2052 <| GeogLinearUnitsGeoKey
+^| 2054 <| GeogAngularUnitsGeoKey
+^| 2056 <| EllipsoidGeoKey
+^| 2060 <| ProjectedCRSParameterKeys/GeogAzimuthUnitsGeoKey
+^| 3072 <| ProjectedCRSGeoKey
+^| 3074 <| ProjectionGeoKey
+^| 3075 <| ProjMethodGeoKey
+^| 3076 <| ProjLinearUnitsGeoKey
+^| 4096 <| VerticalCRSParameterKeys/VerticalGeoKey
+^| 4098 <| VerticalDatumGeoKey
+^| 4099 <| VerticalUnitsGeoKey
+|===
+
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Criteria
+|Requirement: |In the case where a Parameter of type Short has more than one value, those values SHALL be stored in the GeoKeysDirectory
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Location
+|Requirement: |Parameter values stored in the GeoKeysDirectory SHALL appear after the last Key Entry
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===

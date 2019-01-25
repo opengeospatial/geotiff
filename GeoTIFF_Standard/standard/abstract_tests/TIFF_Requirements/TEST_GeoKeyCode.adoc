@@ -1,0 +1,17 @@
+==== Requirements Class GeoKeyCode
+http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyCode
+
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyCode.undefined
+|Requirement: |GeoKeys with a value of zero SHALL indicate intentionally omitted parameters
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyCode.userDefined
+|Requirement: |GeoKeys with a value of 32767 SHALL indicate user-defined parameters
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===

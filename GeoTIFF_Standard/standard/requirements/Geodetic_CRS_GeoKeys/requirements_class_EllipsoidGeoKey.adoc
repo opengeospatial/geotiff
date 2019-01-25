@@ -1,7 +1,8 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: EllipsoidGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGehttp://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey
+{set:cellbgcolor:#FFFFFF}oKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
