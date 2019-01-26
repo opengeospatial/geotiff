@@ -908,7 +908,7 @@ Geographic Tagged Image File Format (GeoTIFF) file format.</p>
 GeoTIFF defines a set of TIFF tags provided to describe all "Cartographic" information associated with TIFF imagery that originates from satellite imaging systems, scanned aerial photography, scanned maps, digital elevation models, or as a result of geographic analyses. Its aim is to allow means for tying a raster image to a known model space or earth-based coordinate reference system, and for describing those coordinate reference systems.</p>
 </div>
 <div class="paragraph">
-<p>The tags documented in this spec are to be considered completely orthogonal to the raster-data descriptions of the TIFF spec, and impose no restrictions on how the standard TIFF tags are to be interpreted, which color spaces or compression types are to be used, etc.</p>
+<p>The tags documented in this specification are to be considered completely orthogonal to the raster-data descriptions of the TIFF specification, and impose no restrictions on how the standard TIFF tags are to be interpreted, which color spaces or compression types are to be used, etc.</p>
 </div>
 <div class="paragraph">
 <p>This minor revision of GeoTIFF focuses on updating the current GeoTIFF community specification and aligning it with current OGC standardization practice, as well as enabling the use of coordinate reference systems that have been included in EPSG register since the GeoTIFF 1.0 specification dating from 1995. It should therefore be backward compatible with the 1.0 version, both for coordinate reference systems based on EPSG register codes, or user-defined coordinate reference systems. <a href="#">Backward compatibility</a> documents this backward compatibility and evolutions of this revision 1.1.</p>
@@ -1551,6 +1551,10 @@ Institute of Electrical and Electronics Engineers, Inc.</p>
 In TIFF format, an Image File Directory, containing all the TIFF tags for one image in the file (there may be more than one).</p>
 </div>
 <div class="paragraph">
+<p><strong>SI</strong>
+International System of Units</p>
+</div>
+<div class="paragraph">
 <p><strong>TIFF</strong>
 Acronym for Tagged Image File Format; a platform-independent, extensive specification for storing raster data and ancillary information in a single file.</p>
 </div>
@@ -2186,7 +2190,7 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.count" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.count</a><br>
-<em>The ModelTiepointTag SHALL have 6 values for each of the K tiepoints</em></p></td>
+<em>The ModelTiepointTag SHALL have 6 values for each of the tiepoints</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -3568,7 +3572,7 @@ International Association of Oil and Gas Producers, and mechanisms for adding us
 <p>It is worth emphasizing here that the TIFF spec indicates that TIFF-compliant readers shall honor the 'byte-order' indicator, meaning that 4-byte integers from files created on opposite order machines will be swapped in software, and that 8-byte DOUBLE&#8217;s will be 8-byte swapped.</p>
 </div>
 <div class="paragraph">
-<p>A GeoTIFF reader/writer, in addition to supporting the standard TIFF tag types, must also have an additional module which can parse the "Geokey" MetaTag information. A public-domain software package for performing this function is available; (libgeotiff) see <a href="https://trac.osgeo.org/geotiff#libgeotiff" class="bare">https://trac.osgeo.org/geotiff#libgeotiff</a>.</p>
+<p>A GeoTIFF reader/writer, in addition to supporting the standard TIFF tag types, must also have an additional module which can parse the "Geokey" MetaTag information. A public-domain software package for performing this function is available (libgeotiff), see <a href="https://trac.osgeo.org/geotiff#libgeotiff" class="bare">https://trac.osgeo.org/geotiff#libgeotiff</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3810,8 +3814,8 @@ YPosition (287)</pre>
  +---+---+-&gt; I
  | * | * |
  +---+---+       Standard (PixelIsArea) TIFF Raster space R,
- | (1,1)   (2,1) showing the areas (*) of several pixels.
- |
+ | (1,1) (2,1)   showing the areas (*) of several pixels.
+ v
  J</pre>
 </div>
 </div>
@@ -3823,12 +3827,13 @@ YPosition (287)</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>(0,0) (1,0)
+<pre>(0,0)  (1,0)
  *-------*------&gt; I
  |       |
  |       |      PixelIsPoint TIFF Raster space R,
  *-------*      showing the location (*) of several pixels.
- | (1,1)
+ |     (1,1)
+ v
  J</pre>
 </div>
 </div>
@@ -4027,7 +4032,7 @@ GeogCRS needs defining as in Requirement <a href="http://www.opengis.net/spec/Ge
 </ol>
 </div>
 <div class="paragraph">
-<p>But even for these cases, unless stated through a Citation, some assumption is required about axis positive direction and axis order, based on the values for the transformation from raster space to model space. With no negative values in the <em>ModelTransformationTag</em> it is assumed that:</p>
+<p>For the transformation from raster space to model space, some implicit convention is made about axis positive direction and axis order. It is assumed that:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -4667,11 +4672,11 @@ coords =     matrix  * coords
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>    ModelPixelScaleTag
-    ModelTiepointTag              GeoKeyDirectoryTag CRS
-R -------- OR ---------------&gt; M --------- AND -----------&gt; Earth
-    ModelTransformationTag        GeoDoubleParamsTag
-                                  GeoAsciiParamsTag</pre>
+<pre>         ModelPixelScaleTag
+         ModelTiepointTag                 GeoKeyDirectoryTag CRS
+ R ------------ OR ---------------&gt; M --------- AND --------------&gt; Earth
+(I,J,K)  ModelTransformationTag  (X,Y,Z)  GeoDoubleParamsTag
+                                          GeoAsciiParamsTag</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -7100,7 +7105,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-01-22 13:57:15 -0500
+Last updated 2019-01-25 22:17:17 -0500
 </div>
 </div>
 </body>
