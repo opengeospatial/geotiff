@@ -38,6 +38,6 @@ NOTE: if the user-defined CRS is geographic 2D, GeogAngularUnitsGeoKey should be
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.private +
-_GGeodeticCRSGeoKey values in the range 32768-65535 SHALL be private_
+_GeodeticCRSGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===
