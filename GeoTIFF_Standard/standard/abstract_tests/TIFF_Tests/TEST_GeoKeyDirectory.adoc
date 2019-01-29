@@ -1,0 +1,75 @@
+=== GeoKey Directory Test
+
+*Test id:* TIFF_Test/GeoKeyDirectory
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyDirectoryVersion 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyRevision 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.minorRevision 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.numberOfKeys 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.KeyEntry.ID 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryValueOffset
+|===
+
+
+*Purpose:* Verify the GeoKey Directory
+
+*Pre-conditions* A GeoKey Directory has been located 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|IFD_Offset |Local |Location within the TIFF file of an IFD
+|GeoKeyDirectory |Global |Location of the GeoTIFF GeoKey directory
+|ASCIIValues |Global |Location of the ASCII values for GeoTIFF ASCII GeoKeys 
+|DoubleValues |Global |Location of the Double values for GeoTIFF Double GeoKeys
+|KeySetCount |Local |The number of entries in the GeoKey directory
+|GeoKey |Local |Temporary value of the GeoKey
+|KeyLength |Local |Temporary value for the length of the value for the GeoKey
+|KeyValueOffset |Local |The location of the GeoKey value 
+|===
+
+*Test Process:*
+
+.   Validate and process the GeoKey Directory Header
+*      Verify that Bytes 0-1 = ?? (Key Directory Version).
+*      Verify that Bytes 2-3 = ?? (Key Revision)
+*      Verify that Bytes 4-5 = ?? (Key Minor Revision)
+*      Bytes 6-7 contain the number of Key Entry Sets in this directory. Set KeySetCount to this value.
+
+. Process each Key Entry Set using the following pseudocode:
+
+  WHILE KeySetCount is not 0 
+     {
+     Process the first Short integer in the Key Entry Set
+         {
+         Set GeoKey to the value
+         }
+     Process the third Short integer in the Key Entry Set
+         {
+         Set KeyLength to the value
+         }
+     Process the forth Short integer in the Key Entry Set
+         {
+         Set KeyValueOffset to the value
+         }
+     Process the second Short integer in the Key Entry Set
+         {
+         IF value = 0 THEN Execute test TIFF_Test/Short_Param passing GeoKey, KeyLength, and KeyValueOffset as parameters
+         IF value = 34736 THEN Execute test TIFF_Test/Double_Param passing GeoKey, KeyLength, and KeyValueOffset as parameters
+         IF value = 34737 THEN  Execute test TIFF_Test/ASCII_Param passing GeoKey, KeyLength, and KeyValueOffset as parameters
+         }
+     KeySetCount = KeySetCount - 1
+     }
+
+. Validate that the number of Key Sets processed equal the number specified in the header.
+
+
+

@@ -1,0 +1,67 @@
+=== TIFF Tags Test
+
+*Test id:* TIFF_Tests/TIFF.Tags
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/DataGeoTags
+|http://www.opengis.net/spec/GeoTIFF/1.1/ByteOrder
+|http://www.opengis.net/spec/GeoTIFF/1.1/TagSort
+|===
+
+*Purpose:* Verify the TIFF header and prepare for processing the GeoTIFF tags.
+
+*Pre-conditions:* None 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|IFD_Offset |Local |Location within the TIFF file of an IFD
+|GeoKeyDirectory |Global |Location of the GeoTIFF GeoKey directory
+|ASCIIValues |Global |Location of the ASCII values for GeoTIFF ASCII GeoKeys 
+|DoubleValues |Global |Location of the Double values for GeoTIFF Double GeoKeys
+|===
+
+*Test Process:*
+
+.   Validate and process the TIFF header
+*      Verify that Bytes 0-1 = 0X4949 ("II" = little endian) or 0X4D4D ("MM" = big endian).
+*      Verify that Bytes 2-3 = the short integer value 42 intepreted using the byte order specified in bytes 0-1.
+*      Bytes 4-7 are the offset to the first Image File Directory. Save this value as IFD_Offset.
+
+. Process each IFD using the following pseudocode:
+
+  WHILE IFD_Offset is not 0 
+     { 
+     Bytes 0-1 contain the number of IFD entries in this IFD. 
+     DO FOR each IFD entry (processed in sequence) 
+        { 
+        Bytes 0-1 contain the TIFF tag value. 
+        Verify that the new tag value is greater than the previous tag value. 
+        IF value = 34735 THEN 
+            {
+            Validate that Bytes 2-3 = 3 (Short Integer)
+            Validate that Bytes 4-5 represent a Short Integer value greater than or equal to 4
+            Set GeoKeyDirectory to the value in Bytes 8-11
+            }
+        IF value = 34736 THEN 
+            {
+            Validate that Bytes 2-3 = 12 (Double)
+            Set DoubleValues to the value in Bytes 8-11
+            }
+        IF value = 34737 THEN
+            {
+            Validate that Bytes 2-3 = 2 (ASCII)
+            Set ASCIIValues to the value in Bytes 8-11
+            }
+        } 
+     IF GeoKeyDirectory has been set THEN
+         {
+         execute test TIFF_Tests/GeoKeyDirectory 
+         }
+     IFD_Offset = the last four bytes of the current IFD 
+     }
