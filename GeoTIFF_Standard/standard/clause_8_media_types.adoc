@@ -1,6 +1,6 @@
-== Media Types for any data encoding(s)
-A section describing the MIME-types to be used is mandatory for any standard involving data encodings. If no suitable MIME type exists in http://www.iana.org/assignments/media-types/index.html then this section may be used to define a new MIME type for registration with IANA.
+== Media Types for GeoTIFF data encoding
+A GeoTIFF file is a TIFF file. It is common to use the tiff MIME type,	image/tiff	according to [RFC3302] (see also http://www.iana.org/assignments/media-types/media-types.xhtml#image).
 
-A GeoTIFF file is a TIFF file. It is common to use the tiff MIME type,	image/tiff	according to [RFC3302].
 OGC GMLCOV GeoTIFF extension (OGC 12-100r1) specifies image/tiff as MIME identifier (cf. Requirement #5 in OGC 12-100r1).
+
 The recommendation for a specific MIME type such as image/tiff+geo, or image/tiff-geo is under consideration in this revision, and should be discussed within the OGC and the imagery communities.
