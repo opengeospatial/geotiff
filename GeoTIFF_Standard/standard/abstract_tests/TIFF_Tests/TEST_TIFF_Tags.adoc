@@ -35,7 +35,7 @@
 
 . Process each IFD using the following pseudocode:
 
-  WHILE IFD_Offset is not 0 
+  WHILE IFD_Offset is not 0, process this IFD 
      { 
      Bytes 0-1 contain the number of IFD entries in this IFD. 
      DO FOR each IFD entry (processed in sequence) 
@@ -60,8 +60,8 @@
             }
         } 
      IF GeoKeyDirectory has been set THEN
-         {
-         execute test TIFF_Tests/GeoKeyDirectory 
-         }
+        {
+        execute test TIFF_Tests/GeoKeyDirectory 
+        }
      IFD_Offset = the last four bytes of the current IFD 
      }

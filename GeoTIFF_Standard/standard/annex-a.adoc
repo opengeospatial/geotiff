@@ -2,6 +2,10 @@
 :appendix-caption: Annex
 = Abstract Test Suite (Normative)
 
+== Requirements Trace Matrix
+
+include::abstract_tests/Requirements_Trace_Matrix.adoc[]
+
 == Conformance Class TIFF
 http://www.opengis.net/spec/GeoTIFF/1.1/Core
 
@@ -11,5 +15,9 @@ include::abstract_tests/TIFF_Tests/TEST_TIFF_Tags.adoc[]
 
 include::abstract_tests/TIFF_Tests/TEST_GeoKeyDirectory.adoc[]
 
+include::abstract_tests/TIFF_Tests/TEST_Short_Param.adoc[]
 
+include::abstract_tests/TIFF_Tests/TEST_Double_Param.adoc[]
+
+include::abstract_tests/TIFF_Tests/TEST_ASCII_Param.adoc[]
 

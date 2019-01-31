@@ -19,6 +19,6 @@
 
 *Test Process:*
 
-There is no authoritative conformance test for TIFF 6.0. The best that can be achieved is to use the TIFF reference implementations to validate a GeoTIFF file.
+There is no authoritative conformance test for TIFF 6.0. The best that can be achieved is to use a TIFF reference implementation to sucessfully read a GeoTIFF file. The OGC will provide such a reference implementation based on the open source LibTIFF library (https://gitlab.com/libtiff/libtiff).
 
 Once TIFF 6.0 confirmance has been validated, execute test TIFF_Tests/TIFF.Tags.
