@@ -725,7 +725,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#_media_types_for_any_data_encodings">8. Media Types for any data encoding(s)</a></li>
+<li><a href="#_media_types_for_geotiff_data_encoding">8. Media Types for GeoTIFF data encoding</a></li>
 <li><a href="#_conformance_class_abstract_test_suite_normative">Annex A: Conformance Class Abstract Test Suite (Normative)</a>
 <ul class="sectlevel2">
 <li><a href="#_conformance_class_a">A.1. Conformance Class A</a>
@@ -1594,6 +1594,9 @@ The normative provisions in this specification are denoted by the URI</p>
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p><a href="#">Media Types for GeoTIFF data encoding</a>: This informative clause documents the MIME type usages for GeoTIFF files.</p>
+</li>
 <li>
 <p><a href="#">Annex B: The GeoTIFF File Structure</a>: This Annex provides a description of the community GeoTIFF specification and supporting information on how various elements of that specification should be used.</p>
 </li>
@@ -3453,15 +3456,16 @@ NOTE: See Annex C</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_media_types_for_any_data_encodings"><a class="anchor" href="#_media_types_for_any_data_encodings"></a>8. Media Types for any data encoding(s)</h2>
+<h2 id="_media_types_for_geotiff_data_encoding"><a class="anchor" href="#_media_types_for_geotiff_data_encoding"></a>8. Media Types for GeoTIFF data encoding</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A section describing the MIME-types to be used is mandatory for any standard involving data encodings. If no suitable MIME type exists in <a href="http://www.iana.org/assignments/media-types/index.html" class="bare">http://www.iana.org/assignments/media-types/index.html</a> then this section may be used to define a new MIME type for registration with IANA.</p>
+<p>A GeoTIFF file is a TIFF file. It is common to use the tiff MIME type,	image/tiff	according to [RFC3302] (see also <a href="http://www.iana.org/assignments/media-types/media-types.xhtml#image" class="bare">http://www.iana.org/assignments/media-types/media-types.xhtml#image</a>).</p>
 </div>
 <div class="paragraph">
-<p>A GeoTIFF file is a TIFF file. It is common to use the tiff MIME type,	image/tiff	according to [RFC3302].
-OGC GMLCOV GeoTIFF extension (OGC 12-100r1) specifies image/tiff as MIME identifier (cf. Requirement #5 in OGC 12-100r1).
-The recommendation for a specific MIME type such as image/tiff+geo, or image/tiff-geo is under consideration in this revision, and should be discussed within the OGC and the imagery communities.</p>
+<p>OGC GMLCOV GeoTIFF extension (OGC 12-100r1) specifies image/tiff as MIME identifier (cf. Requirement #5 in OGC 12-100r1).</p>
+</div>
+<div class="paragraph">
+<p>The recommendation for a specific MIME type such as image/tiff+geo, or image/tiff-geo is under consideration in this revision, and should be discussed within the OGC and the imagery communities.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -7034,8 +7038,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 (see <a href="#">Deprecated and deleted EPSG codes</a>)</p>
 </li>
 <li>
-<p>Suppression of Intergraph tag, which was already deprecated in 1.0, and which is no longer in use (this has been confirmed by "Hexagon Geospatial").
-&lt;&lt;&lt;</p>
+<p>Suppression of Intergraph tag, which was already deprecated in 1.0, and which is no longer in use (this has been confirmed by "Hexagon Geospatial").</p>
 </li>
 </ul>
 </div>
@@ -7065,7 +7068,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">2016-04-28</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">0.1</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">G. Editor</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">T. Habermann</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">all</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">initial version</p></td>
 </tr>
@@ -7105,7 +7108,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-01-30 22:17:23 -0500
+Last updated 2019-01-31 22:17:48 -0500
 </div>
 </div>
 </body>
