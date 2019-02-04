@@ -3,6 +3,10 @@
 [[Bibliography]]
 = Bibliography
 
+**_GeoTIFF Format Specification_**, Ritter, Niles & Ruth, Mike, October 31, 1995, revised December 2000
+
+Note: The GeoTIFF standard, dated 1995, has undergone minor adjustments and was republished in 2000. The resulting specification, referenced as GeoTIFF 1.0, is available at http://geotiff.maptools.org/spec/geotiffhome.html
+
 GeoTIFF profile for Georeferenced Imagery, DGIWG 108, 2017-12-08, Retrieved from https://portal.dgiwg.org/files/?artifact_id=68102&format=pdf
 
 Ritter, N., & Ruth, M. (1997). The GeoTiff data interchange standard for raster geographic images. _International Journal of Remote Sensing, 18_(7), 1637–1647. doi:10.1080/014311697218340Ritter

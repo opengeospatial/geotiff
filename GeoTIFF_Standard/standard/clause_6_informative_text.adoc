@@ -10,7 +10,7 @@ The following section of this Standard is included for informative purposes only
 
 * <<annex-e.adoc#,Annex E: Summary of GeoKey IDs and names>>: This Annex lists the names and IDs of all GeoKeys supported in this specification.
 
-* <<annex-f.adoc#,Annex F: Examples>>: This Annex contains a set of illustrative examples of GeoTIFF tags contents.
+* <<annex-f.adoc#,Annex F: Examples>>: This Annex contains a set of illustrative examples of GeoTIFF tags' contents.
 
 * <<annex-g.adoc#,Annex G: Deprecated and deleted EPSG codes>>: This Annex documents EPSG codes explicitly cited in the 1995 v1.0 GeoTIFF specification that are no longer valid.
 

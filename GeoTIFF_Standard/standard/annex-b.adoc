@@ -55,14 +55,14 @@ This tag may be used to store the GeoKey Directory, which defines and references
 
 The tag is an array of unsigned SHORT values, which are primarily grouped into blocks of 4. The first 4 values are special, and contain GeoKey directory header information. The header values consist of the following information, in order:
 
-Header=\{KeyDirectoryVersion, KeyRevision, MinorRevision, NumberOfKeys} where
+Header={KeyDirectoryVersion, KeyRevision, MinorRevision, NumberOfKeys} where
 
 * _KeyDirectoryVersion_ indicates the current version of Key implementation, and will only change if this Tag's Key structure is changed. (Similar to the TIFFVersion (42)). The current DirectoryVersion number is 1. This value will most likely never change, and may be used to ensure that this is a valid Key-implementation.
 * _KeyRevision_ indicates what revision of Key-Sets are used.
 * _MinorRevision_ indicates what set of Key-codes are used. The complete revision number is denoted <KeyRevision>.<MinorRevision>
 * _NumberOfKeys_ indicates how many Keys are defined by the rest of this Tag.
 
-This header is immediately followed by a collection of <NumberOfKeys> KeyEntry sets, each of which is also 4-SHORTS long. Each KeyEntry is modeled on the "TIFFEntry" format of the TIFF directory header, and isof the form:
+This header is immediately followed by a collection of <NumberOfKeys> KeyEntry sets, each of which is also 4-SHORTS long. Each KeyEntry is modeled on the "TIFFEntry" format of the TIFF directory header, and is of the form:
 
 * KeyEntry = { KeyID, TIFFTagLocation, Count, Value_Offset } where
 
@@ -125,7 +125,7 @@ The TIFF layer handles all the problems of data structure, platform independence
 
 With this Key-value approach, there are 65536 Keys which have all the flexibility of TIFF tag, with the added advantage that a TIFF dump will provide all the information that exists in the GeoTIFF implementation.
 
-This GeoKey mechanism is used extensively in Clause 7 where the parameters for defining Coordinate Reference Systems and, if necessary, their underlying component elements.
+This GeoKey mechanism is used extensively in Clause 7 where the parameters for defining Coordinate Reference Systems and, if necessary, their underlying component elements, are specified.
 
 === Coordinate Reference Systems in GeoTIFF
 In the TIFF/GeoTIFF framework, there are essentially three different spaces in which coordinates may be defined. The spaces are:
@@ -441,7 +441,7 @@ Remark: all GeoTIFF information is independent of the XPosition, YPosition, and 
 The next two tags are optional tags provided for defining exact affine transformations between raster and model space; GeoTIFF files may use either, but shall never use both within the same TIFF image directory.
 
      ModelPixelScaleTag:
-          Tag = 33550
+          Tag = 33550 (830E.H)
           Type = DOUBLE (IEEE Double precision)
           N = 3
 

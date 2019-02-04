@@ -103,13 +103,13 @@ NOTE: The GTCitationGeoKey is also provided to give an ASCII reference to publis
 
 === Raster to Model Coordinate Transformation Requirements
 
-For most common applications, the transformation between raster space and model space may be defined with a set of raster-to-model tiepoints and scaling parameters. The _ModelTiepointTag_ and _ModelPixesScaleTag_ may be used for this purpose.
+For most common applications, the transformation between raster space and model space may be defined with a set of raster-to-model tiepoints and scaling parameters. The _ModelTiepointTag_ and _ModelPixelScaleTag_ may be used for this purpose.
 
 Alternatively, the _ModelTransformationTag_ may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space.
 
 Consult <<GeoTIFF Tags for Coordinate Transformations>> for a description of their semantics.
 
-NOTE: It should be noted that model space axis order in the following 3 tags _ModelTiepointTag_, _ModelPixelScaleTag_ and _ModelTransformationTag_ is fixed at (lon,lat,height) in case of geographic 2D and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is implicit in this revision.
+NOTE: It should be noted that model space axis order in the following 3 tags _ModelTiepointTag_, _ModelPixelScaleTag_ and _ModelTransformationTag_ is fixed at (lon,lat,height) in case of geographic 2D and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is valid in this revision.
 
 ==== Requirements Class ModelTiepointTag
 
@@ -170,7 +170,7 @@ The GeoKeys described in this section are needed only when Model CRSs are not av
 
 NOTE: Anyone not interested in constructing a user-defined model CRS can ignore this section.
 
-NOTE: It should be noted that the implicit axis order of user-defined CRS definitions is fixed at (lon,lat,height) in case of geographic and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is implicit in this revision. As with GeoTIFF 1.0, it is not possible to express a user-defined CRS that deviates from this implicit axis order. The intention is to address this limitation in a future revision.
+NOTE: It should be noted that the implicit axis order of user-defined CRS definitions is fixed at (lon,lat,height) in case of geographic and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is valid in this revision. As with GeoTIFF 1.0, it is not possible to express a user-defined CRS that deviates from this axis order convention. The intention is to address this limitation in a future revision.
 
 ==== Units GeoKeys
 

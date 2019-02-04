@@ -1,6 +1,8 @@
 == Terms and Definitions
 For the purposes of this document, the following additional terms and definitions apply.
 
+NOTE: For GeoTIFF Format Specification 1.0, see <<annex-bibliography.adoc#, GeoTIFF Format Specification>>
+
 === band
 range of wavelengths of electromagnetic radiation that produce a single response by a sensing device
 
@@ -11,7 +13,7 @@ Note: At the pixel level, a band is represented as one of the vector values of t
 === cell
 rectangular area in raster space, in which a single pixel value is filled
 
- [Source: GeoTIFF Format Specification, October 31, 1995]
+ [Source: GeoTIFF Format Specification 1.0]
 
 === code
 representation of a label according to a specified scheme
@@ -56,7 +58,7 @@ parameter or set of parameters that realize the position of the origin, the scal
 === device space
 coordinate space referencing scanner, printers and display devices
 
- [Source: GeoTIFF Format Specification, October 31, 1995]
+ [Source: GeoTIFF Format Specification 1.0]
 
 === double
 8-byte IEEE double precision floating point
@@ -98,7 +100,7 @@ NOTE: In the 1995 GeoTIFF v1.0, this term was "geographic coordinate system"
 === geokey
 in GeoTIFF, a GeoKey is equivalent in function to a TIFF tag, but uses a different storage mechanism
 
- [Source: GeoTIFF Format Specification, October 31, 1995]
+ [Source: GeoTIFF Format Specification 1.0]
 
 === georectified
 corrected for positional displacement with respect to the surface of the Earth
@@ -118,7 +120,7 @@ tying model space to the earth is not known".
 
 standard for storing georeference and geocoding information in a TIFF 6.0 compliant raster file
 
- [Source: GeoTIFF Format Specification, October 31, 1995]
+ [Source: GeoTIFF Format Specification 1.0]
 
 === grid
 
@@ -160,7 +162,7 @@ space in a coordinate reference system related to the earth or a part of the ear
 
 an image composed of two or more separately collected (sensed) images
 
-Note:	Additional XML metadata may be used to identify the cut-lines (boundaries and parameters for the images used to compose the mosaic.
+Note:	Additional metadata may be used to identify the cut-lines (boundaries and parameters for the images used to compose the mosaic).
 
 === orthoimage
 
@@ -178,7 +180,7 @@ georectified grid created using ground control points and elevation data where c
 
 line of constant latitude, parallel to the equator
 
- [Source: GeoTIFF Format Specification, October 31, 1995]
+ [Source: GeoTIFF Format Specification 1.0]
 
 === pixel
 
@@ -225,9 +227,11 @@ usually rectangular pattern of parallel scanning lines forming or corresponding 
 NOTE: In the 1995 GeoTIFF v1.0, "A continuous planar space in which pixel values are
 visually realized."
 
-=== rational <TIFF>
+=== rational
 
-a _rational_ value is a fractional value represented by the ratio of two unsigned 4-byte integers
+in TIFF format, a _rational_ value is a fractional value represented by the ratio of two unsigned 4-byte integers
+
+ [Source: GeoTIFF Format Specification 1.0]
 
 === rectified grid
 __georectified grid__
@@ -249,11 +253,11 @@ grid associated with a transformation that can be used to convert grid coordinat
 === short
 2-byte IEEE signed integer
 
-=== tag <TIFF>
+=== tag
 
-a tag is packet of numerical or ASCII values, which have a numerical "Tag" ID indicating their information content
+in TIFF format, a tag is packet of numerical or ASCII values, which have a numerical "Tag" ID indicating their information content
 
- [Source: GeoTIFF Format Specification, October 31, 1995]
+ [Source: GeoTIFF Format Specification 1.0]
 
 === vertical coordinate reference system
 

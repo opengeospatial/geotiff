@@ -69,7 +69,7 @@ We have a 500 x 500 scanned aeronautical chart of Seattle, WA, using Lambert Con
 Notice that the Tiepoint takes the false easting and northing into account when tying the raster point (50,100) to the projection origin.
 
 ==== DMA ADRG Raster Graphic Map
-The U.S. Defense Mapping Agency produces ARC digitized raster graphics datasets by scanning maps and geometrically resampling them into an equirectangular projection, so that they may be directly indexed with WGS 84 geographic coordinates. The upper left corner is 120 degrees West, 32 degrees
+The U.S. Defense Mapping Agency (now NGA) produces ARC digitized raster graphics datasets by scanning maps and geometrically resampling them into an equirectangular projection, so that they may be directly indexed with WGS 84 geographic coordinates. The upper left corner is 120 degrees West, 32 degrees
 North. The scale for one map is 0.2 degrees per pixel horizontally, 0.1 degrees per pixel vertically. If stored in a GeoTIFF file it contains the following information:
 
      ModelTiepointTag=(0.0, 0.0, 0.0, -120.0, 32.0, 0.0)
@@ -92,7 +92,7 @@ We have an aerial photo, and know only the WGS 84 GPS location of several points
               GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
               GeodeticCRSGeoKey = 4326 (Geographic 2D WGS 84)
 
-Remark: Since we have not specified the ModelPixelScaleTag, clients reading this GeoTIFF file are not permitted to infer that there is a simple linear relationship between the raster data and the geographic model coordinate space. The only points that are know to be exact are the ones specified in the tiepoint tag.
+Remark: Since we have not specified the ModelPixelScaleTag, clients reading this GeoTIFF file are not permitted to infer that there is a simple linear relationship between the raster data and the geographic model coordinate space. The only points that are known to be exact are the ones specified in the tiepoint tag.
 
 ==== Rotated Scanned Map
 We have a scanned standard British National Grid, covering the 100km grid zone NZ. Consulting documentation for BNG we find that the southwest corner of the NZ zone has an easting, northing of 400000m, 500000m. This scanned map has a resolution of 100 meter pixels, and was rotated 90 degrees to fit onto the scanner, so that the southwest corner is now the northwest corner. In this case we must use the ModelTransformation tag rather than the tiepoint/scale pair to map the raster data into model space:
