@@ -148,8 +148,7 @@ The DGIWG (Defense Geographic Information Working Group) has published a Defense
 The GeoTIFF Standard can be used for images from extraterrestrial bodies as well as the Earth. This Annex illustrates a simple example for a spherical Moon. This example also shows how more custom Earth-base examples could also be defined, highlighting the flexibility of the GeoTiff standard.
 
 ===== Example
-Note this example (using listgeo), is showing the header values as mapped strings instead of the original short Integer. e.g. GTModelTypeGeoKey = ModelTypeProjected (which is really mapped from value 1) see:
-https://github.com/ufz/geotiff/blob/473ab941f80592ada6a226ec666d7e6e8f79c21b/geonames.h#L67
+Note this example (using listgeo), is showing the header values as mapped strings instead of the original short Integer. e.g. GTModelTypeGeoKey = ModelTypeProjected (which is really mapped from value 1).
 
 $ listgeo Lunar_LRO_LOLA_Global_LDEM_118m_Mar2014.tif
 ```

@@ -7,4 +7,4 @@ edition of the normative document referred to applies.
 
 * Association Adobe Developers, **_TIFF Specification Revision 6.0_**, June 3, 1992
 
-* ISO 19111:2019 Geographic information -- Referencing by coordinates (equivalent to OGC Abstract Topic 2: Spatial referencing by coordinates) 
+* ISO 19111:2019 Geographic information -- Referencing by coordinates (equivalent to OGC Abstract Topic 2: Referencing by coordinates) 
