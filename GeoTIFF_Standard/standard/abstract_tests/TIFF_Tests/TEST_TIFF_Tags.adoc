@@ -6,9 +6,17 @@
 
 [width="100%"]
 |===
+|http://www.opengis.net/spec/GeoTIFF/1.1/TIFF
 |http://www.opengis.net/spec/GeoTIFF/1.1/DataGeoTags
 |http://www.opengis.net/spec/GeoTIFF/1.1/ByteOrder
 |http://www.opengis.net/spec/GeoTIFF/1.1/TagSort
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.type
 |===
 
 *Purpose:* Verify the TIFF header and prepare for processing the GeoTIFF tags.

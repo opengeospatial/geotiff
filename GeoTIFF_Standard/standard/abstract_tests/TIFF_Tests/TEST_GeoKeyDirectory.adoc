@@ -6,10 +6,18 @@
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyDirectoryVersion 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyRevision 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.minorRevision 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.numberOfKeys 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyDirectoryVersion 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyDirectoryVersionValue 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyRevision 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyRevisionValue 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevision 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevisionValue 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.numberOfKeys 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntrySetCount
+|http://www.opengis.net/apec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry
+|http://www.opengis.net/apec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntryKeyID
+|http://www.opengis.net/apec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntryTIFFTagLocation
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeySort
 |===
 
 
@@ -43,9 +51,11 @@
   SET GeoKeyOffset = 8
   WHILE KeySetCount is not 0 
      {
+     Verify that the GeoKey (first Short integer) is greater than the previous GeoKey.
      Process the second Short integer in the Key Entry Set
          {
          IF value = 0 THEN Execute test TIFF_Test/Short_Param passing GeoKeyOffset as a parameter
+         IF value = 34735 THEN Execute test TIFF_Test/Short_Param passing GeoKeyOffset as a parameter
          IF value = 34736 THEN Execute test TIFF_Test/Double_Param passing GeoKeyOffset as a parameter
          IF value = 34737 THEN  Execute test TIFF_Test/ASCII_Param passing GeoKeyOffset as a parameter
          }

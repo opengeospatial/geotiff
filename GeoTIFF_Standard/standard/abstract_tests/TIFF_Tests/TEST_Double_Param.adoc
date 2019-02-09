@@ -6,17 +6,17 @@
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.KeyEntry.ID 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryKeyCount 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryValueOffset
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoDoubleParamsTag.ID (issue) 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoDoubleParamsTag.count (issue)
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count
 |===
 
-*Purpose:* Verify a Short parameter
+*Purpose:* Verify a Double parameter
 
-*Pre-conditions* The GeoKeyDirectory and GeoKeyOffset values have been set. 
+*Pre-conditions* The GeoKeyDirectory, DoubleValues and GeoKeyOffset values have been set. 
 
 *Test Variables:*
 
@@ -51,7 +51,7 @@
         {
         SET KeyValueOffset to the value
         }
-    SET KeyValueOffset = GeoKeyDirectory + (KeyValueOffset * 8)
+    SET KeyValueOffset = DoubleValues + (KeyValueOffset * 8)
 
     Validate the parameter
         Locate the GeoKey value in the following table

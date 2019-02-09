@@ -1,19 +1,61 @@
-==== Requirements Class GeoAsciiParamsTag
-http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag
-[cols=">20h,<80d",width="100%"]
-|===
-<|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag
-2+<|Requirements: +
- - The GeoAsciiParamsTag SHALL have ID = 34737 +
- - The GeoAsciiParamsTag MAY hold any number of key parameters with type = ASCII. (May not be necessary, the same as keyentry.count)
-<|Test purpose: | Verify all GeoKeys who's values are of type ASCII
-2+<|Test method:
-2+<| Locate TIFF tag 34737
+=== Short Parameters Test
 
-For each GeoKey in the directory +
-  1) Locate the GeoKey value in table +
-  2) Execute the corresponding test
+*Test id:* TIFF_Test/ShortParameters
+
+*Requirements:* 
+
+[width="100%"]
 |===
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count
+|===
+
+*Purpose:* Verify an ASCII parameter
+
+*Pre-conditions* The GeoKeyDirectory, ASCIIValues and GeoKeyOffset values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|GeoKeyDirectory |Global |Location of the GeoTIFF GeoKey directory
+|ASCIIValues |Global |Location of the ASCII values for GeoTIFF ASCII GeoKeys
+|GeoKeyOffset |Parameter| Location of this Key Entry Set in the GeoKey directory
+|GeoKey |Local |Temporary value of the GeoKey
+|KeyLength |Local |Temporary value for the length of the value for the GeoKey
+|KeyValueOffset |Local |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Locate the Key Entry Set using the GeoKeyDirectory and GeoKeyOffset values.
+
+    Process the second Short integer in the Key Entry Set
+        {
+        IF value != 34737 THEN error out
+        }
+    Process the first Short integer in the Key Entry Set
+        {
+        Set GeoKey to the value
+        }
+    Process the third Short integer in the Key Entry Set
+        {
+        Set KeyLength to the value
+        }
+    Process the fourth Short integer in the Key Entry Set
+        {
+        SET KeyValueOffset to the value
+        }
+    SET KeyValueOffset = AsciiValues + KeyValueOffset
+
+    Validate the parameter
+        Locate the GeoKey value in the following table
+        Execute the corresponding test passing KeyLength and KeyValueOffset as parameters
 
 [[ASCII_GeoKey_Tests]]
 [cols="2,4",width="100%", options="header"]
@@ -26,23 +68,3 @@ For each GeoKey in the directory +
 ^| 4097 <| VerticalCRSParameterKeys/VerticalCitationGeoKey
 |===
 
-
-
-
-[cols=">20h,<80d",width="100%"]
-|===
-|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/GeoAsciiParamsTag.NULLRead
-|Requirement: |Pipe characters ("\|") in the GeoAsciiParamsTag SHALL be converted NULL characters before returning strings to the client
-|Test purpose: | Verify that...
-|Test method: | Inspect...
-|===
-[cols=">20h,<80d",width="100%"]
-|===
-|Test id: |http://www.opengis.net/spec/GeoTIFF/0.0/
-GeoAsciiParamsTag.NULLWrite
-|Requirement: |NULL characters used to terminate strings in the GeoAsciiParamsTag SHALL be converted to a “\|” (pipe) prior to being written into the GeoAsciiParamsTag
-|Test purpose: | Verify that...
-|Test method: | Inspect...
-|===
-[cols=">20h,<80d",width="100%"]
-|===

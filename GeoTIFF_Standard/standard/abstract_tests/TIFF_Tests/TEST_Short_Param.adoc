@@ -36,7 +36,7 @@
 
     Process the second Short integer in the Key Entry Set
         {
-        IF value != 0 THEN error out
+        IF value != 0 OR 34735 THEN error out
         }
     Process the first Short integer in the Key Entry Set
         {
@@ -55,6 +55,8 @@
             SET KeyValueOffset to the value
             }
         SET KeyValueOffset = GeoKeyDirectory + (KeyValueOffset * 2)
+        }
+        
     Validate the parameter
         Locate the GeoKey value in the following table
         Execute the corresponding test passing KeyLength and KeyValueOffset as parameters

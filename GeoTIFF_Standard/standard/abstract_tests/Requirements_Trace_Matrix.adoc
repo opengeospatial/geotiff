@@ -4,14 +4,14 @@
 [cols="<80,^20",width="100%", Options="header"]
 |===
 ^|**Requirement** ^|**Test** 
-^| *requirements_class_TIFF.adoc* |
-| A GeoTIFF file SHALL be compliant with the TIFF 6.0 specification |TIFF_Tests/TIFF.Core
-| GeoTIFF files SHALL encode all GeoTIFF specific information using the specified reserved TIFF tags |<testable?>
-| GeoTIFF implementation software SHALL support all documented TIFF 6.0 tag data-types, and in particular the IEEE double-precision floating point "DOUBLE" type |TIFF_Tests/TIFF.Core
+^| *requirements_class_TIFF* |
+| A GeoTIFF file SHALL be compliant with the TIFF 6.0 specification |TIFF_Tests/TIFF.Core & TIFF.Tags
+| GeoTIFF files SHALL encode all GeoTIFF specific information using the specified reserved TIFF tags |__**<testable?>**__
+| GeoTIFF implementation software SHALL support all documented TIFF 6.0 tag data-types, and in particular ASCII, SHORT the IEEE double-precision floating point "DOUBLE" type |TIFF_Tests/TIFF.Core
 | GeoTIFF implementation software SHALL honor the 'byte-order' indicator by performing byte swaps as necessary to provide an accurate in-memory representation of the values encoded in the GeoTIFF file |TIFF_Tests/TIFF.Core & TIFF_Tests/TIFF.Tags
 | The TIFF tags in a GeoTIFF file SHALL be written out to the file with the tag-IDs sorted in ascending order |TIFF_Tests/TIFF.Tags
-| The GeoKey entries in a GeoTIFF file SHALL be written out to the file with the key-IDs sorted in ascending order |<missing>
-^| *requirements_class_GeoKeyDirectoryTag.adoc* |
+| The GeoKey entries in a GeoTIFF file SHALL be written out to the file with the key-IDs sorted in ascending order |TIFF_Test/GeoKeyDirectory
+^| *requirements_class_GeoKeyDirectoryTag* |
 | The GeoKeyDirectoryTag SHALL have ID = 34735 |TIFF_Test/TIFF.Tags
 | The GeoKeyDirectoryTag SHALL have type = SHORT (2-byte unsigned integer) |TIFF_Test/TIFF.Tags
 | The GeoKeyDirectoryTag SHALL include at least 4 keys (short integers) as header information |TIFF_Test/TIFF.Tags
@@ -22,35 +22,34 @@
 | The third unsigned short integer in the GeoKeyDirectoryTag SHALL hold the MinorRevision. |TIFF_Test/TIFF.Tags
 | The MinorRevision for this standard SHALL be O or 1. |TIFF_Test/GeoKeyDirectory
 | The fourth unsigned short integer in the GeoKeyDirectoryTag SHALL hold the NumberOfKeys defined in the rest of the GeoKeyDirectoryTag. |TIFF_Test/GeoKeyDirectory
-| The GeoKeyDirectoryTag SHALL hold NumberOfKeys KeyEntry Sets in addition to the header information |<testable?>
-| Each Key Entry in the Key Entry Set SHALL include 4 unsigned short integer values |
-| The first unsigned short integer in the Key Entry SHALL hold the key identifier. |TIFF_Test/ShortParameters
-| The second unsigned short integer in the Key Entry SHALL hold the TIFF Tag Location. The value of this entry shall be a valid GeoTIFF tag identifier or a zero (0) |TIFF_Test/ShortParameters
-| The Third unsigned short integer in the Key Entry SHALL indicate the number of values associated with this key. |TIFF_Test/ShortParameters
-| The fourth unsigned short integer in the Key Entry SHALL hold either the key value (if TIFF Tag location = 0) or the index into the tag indicated by the TIFF Tag Location value. |TIFF_Test/ShortParameters
-^| *requirements_class_GeoKeyCode.adoc* |
+| The GeoKeyDirectoryTag SHALL hold NumberOfKeys KeyEntry Sets in addition to the header information |TIFF_Test/GeoKeyDirectory
+| Each Key Entry in the Key Entry Set SHALL include 4 unsigned short integer values |TIFF_Test/GeoKeyDirectory
+| The first unsigned short integer in the Key Entry SHALL hold the key identifier. |TIFF_Test/GeoKeyDirectory, TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters 
+| The second unsigned short integer in the Key Entry SHALL hold the TIFF Tag Location. The value of this entry shall be a valid GeoTIFF tag identifier or a zero (0) |TIFF_Test/GeoKeyDirectory, TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters
+| The Third unsigned short integer in the Key Entry SHALL indicate the number of values associated with this key. |TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters
+| The fourth unsigned short integer in the Key Entry SHALL hold either the key value (if TIFF Tag location = or the index into the tag indicated by the TIFF Tag Location value. |TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters
+^| *requirements_class_GeoKeyCode* |
 | GeoKeys with a value of 0 SHALL indicate intentionally omitted parameters |
 | GeoKeys with a value of 32767 SHALL indicate user-defined parameters |
-^| *requirements_class_GeoAsciiParamsTag.adoc* |
-| The GeoAsciiParamsTag SHALL have ID = 34737 |
-| The GeoAsciiParamsTag SHALL contain the values of the key parameters of type = ASCII referenced by the GeoKeyDirectoryTag. If there is no key parameters of type = ASCII, it SHALL not be present |
-| The pipe character &#124; in the GeoAsciiParamsTag SHALL be used as the character
-  to terminate a string written in as ASCII tag |
-| NULL (ASCII code = 0) characters SHALL not be present in the string content
-  written in the GeoAsciiParamsTag |
-| The GeoAsciiParamsTag SHALL have type = ASCII |
-^| *requirements_class_GeoDoubleParamsTag.adoc* |
-| The GeoDoubleParamsTag SHALL have ID = 34736 |<inconsistent with other parameter types>
-^| *requirements_class_GeoShortParamsTag.adoc* |
+^| *requirements_class_GeoShortParamsTag* |
 | In the case where a Parameter of type Short has more than one value, those values SHALL be stored in the GeoKeysDirectory |TIFF_Test/ShortParameters
 | Parameter values stored in the GeoKeysDirectory SHALL appear after the last Key Entry |TIFF_Test/ShortParameters
-|<Missing discussion of what happes if there is only one value> |
-^| *requirements_class_CitationGeoKeys.adoc* |
-| The GTCitationGeoKey SHALL have ID = 1026 |
-| The GeodeticCitationGeoKey SHALL have ID = 2049 |
-| The ProjectedCitationGeoKey SHALL have ID = 3073 |
-| The VerticalCitationGeoKey SHALL have ID = 4097 |
-| The CitationGeoKeys SHALL have type = ASCII |
+^| *requirements_class_GeoDoubleParamsTag* |
+| The GeoDoubleParamsTag SHALL have ID = 34736 |TIFF_Test/TIFF.Tags, TIFF_Test/DoubleParameters
+| The GeoDoubleParamsTag MAY hold any number of key parameters with type = double | TIFF_Test/TIFF.Tags, TIFF_Test/DoubleParameters
+^| *requirements_class_GeoAsciiParamsTag* |
+| The GeoAsciiParamsTag SHALL have ID = 34737 |TIFF_Test/TIFF.Tags
+| The GeoAsciiParamsTag SHALL contain the values of the key parameters of type = ASCII referenced by the GeoKeyDirectoryTag. If there is no key parameters of type = ASCII, it SHALL not be present |TIFF_Test/TIFF.Tags
+| The pipe character &#124; in the GeoAsciiParamsTag SHALL be used as the character to terminate a string written in as ASCII tag |TIFF_Test/AsciiParameters
+| NULL (ASCII code = 0) characters SHALL not be present in the string content
+  written in the GeoAsciiParamsTag |TIFF_Test/AsciiParameters
+| The GeoAsciiParamsTag SHALL have type = ASCII |TIFF_Test/TIFF.Tags
+^| *requirements_class_CitationGeoKeys* |
+| The GTCitationGeoKey SHALL have ID = 1026 |Citation_GeoKey/GTCitationGeoKey
+| The GeodeticCitationGeoKey SHALL have ID = 2049 |Citation_GeoKey/GeodeticCitationGeoKey
+| The ProjectedCitationGeoKey SHALL have ID = 3073 |Citation_GeoKey/ProjectedCitationGeoKey
+| The VerticalCitationGeoKey SHALL have ID = 4097 |Citation_GeoKey/VerticalCitationGeoKey
+| The CitationGeoKeys SHALL have type = ASCII |Citation_GeoKey/GTCitationGeoKey, Citation_GeoKey/GeodeticCitationGeoKey, Citation_GeoKey/ProjectedCitationGeoKey, Citation_GeoKey/VerticalCitationGeoKey
 | *Requirements_class_GTModelTypeGeoKey.adoc* |
 | A GeoTIFF file SHALL include a GTModelTypeGeoKey |
 | The GTModelTypeGeoKey SHALL have ID = 1024 |

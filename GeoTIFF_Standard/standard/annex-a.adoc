@@ -21,3 +21,13 @@ include::abstract_tests/TIFF_Tests/TEST_Double_Param.adoc[]
 
 include::abstract_tests/TIFF_Tests/TEST_ASCII_Param.adoc[]
 
+== Conformance Class CitationGeoKeys
+http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys
+
+include::abstract_tests/Citation_GeoKeys/TEST_GeodeticCitationGeoKey.adoc[]
+
+include::abstract_tests/Citation_GeoKeys/TEST_GTCitationGeoKey.adoc[]
+
+include::abstract_tests/Citation_GeoKeys/TEST_ProjectedCitationGeoKey.adoc[]
+
+include::abstract_tests/Citation_GeoKeys/TEST_VerticalCitationGeoKey.adoc[]
