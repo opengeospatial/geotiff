@@ -44,139 +44,74 @@
 | NULL (ASCII code = 0) characters SHALL not be present in the string content
   written in the GeoAsciiParamsTag |TIFF_Test/AsciiParameters
 | The GeoAsciiParamsTag SHALL have type = ASCII |TIFF_Test/TIFF.Tags
+^| *requirements_class_GTRasterTypeGeoKey* |
+| The GTRasterTypeGeoKey SHALL have ID = 1025 |
+| The GTRasterTypeGeoKey SHALL have type = SHORT |
+| The GTRasterTypeGeoKey value SHALL be +
+ - 0 to indicate that the Raster type is undefined or unknown; or +
+ - 1 to indidate that the Raster type is PixelIsArea; or +
+ - 2 to indicate that the Raster type is PixelIsPoint; or +
+ - 32767 to indicate that the Raster type is user-defined |
+| GTRasterTypeGeoKey values in the range 3-32766 SHALL be reserved|
+| GTRasterTypeGeoKey values in the range 32768-65535 SHALL be private |
+^| *Requirements_class_GTModelTypeGeoKey* |
+| A GeoTIFF file SHALL include a GTModelTypeGeoKey |
+| The GTModelTypeGeoKey SHALL have ID = 1024 |
+| The GTModelTypeGeoKey SHALL have type = SHORT |
+| The GTModelTypeGeoKey value SHALL be: +
+ - 0 to indicate that the Model CRS is undefined or unknown +
+ - 1 to indicate that the Model CRS is a 2D projected Coordinate Reference System, indicated by the value of the  ProjectedCRSGeoKey; or +
+ - 2 to indicate that the Model CRS is a 2DD geographic coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or +
+ - 3 to indicate that the Model CRS is a geocentric Cartesian 3D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or +
+ - 32767 to indicate that the Model CRS type is user-defined.|
+| GTModelTypeGeoKey values in the range 4-32766 SHALL be reserved |
+| GTModelTypeGeoKey values in the range 32768-65535 SHALL be private |
+| If the GTModelTypeGeoKey value is 1 (Model CRS is a projected 2D CRS) then the GeoTIFF file SHALL include a ProjectedCRSGeoKey |
+| If the GTModelTypeGeoKey value is 2 (Model CRS is a geographic 2D CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey |
+| If the GTModelTypeGeoKey value is 3 (Model CRS is a geocentric CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey |
+| If the GTModelTypeGeoKey value is 32767 (user-defined) then the GTCitationGeoKey SHALL be populated |
+^| *requirements_class_ModelTiepointTag* |
+| The ModelTiepointTag SHALL have ID = 33922 |
+| The ModelTiepointTag SHALL have type = DOUBLE |
+| The ModelTiepointTag SHALL have 6 values for each of the K tiepoints |
+^| *requirements_class_ModelPixelScaleTag* |
+| The ModelPixelScaleTag SHALL have ID = 33550 |
+| The ModelPixelScaleTag SHALL have type = DOUBLE |
+| The ModelPixelScaleTag SHALL have 3 values representing the scale factor in the X, Y, and Z directions |
+^| *requirements_class_ModelTransformationTag* |
+| The ModelTransformationTag SHALL have ID = 34264 |
+| The ModelTransformationTag SHALL have type = DOUBLE |
+| The ModelTransformationTag SHALL have 16 values representing the terms of the 4 by 4 transformation matrix. The terms SHALL be in row-major order |
+| *requirements_class_ProjectedCRSGeoKey* |
+| The ProjectedCRSGeoKey SHALL have ID = 3072 |
+| The ProjectedCRSGeoKey SHALL have type = SHORT |
+| ProjectedCRSGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POC Datum Codes. |
+| ProjectedCRSGeoKey values in the range 1001-1023 SHALL be reserved. |
+| ProjectedCRSGeoKey values in the range 1024-32766 SHALL be EPSG Projected CRS Codes |
+| A ProjectedCRSGeoKey value of 32767 SHALL be a user-defined projected CRS.  If the ProjectedCRSGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, GeodeticCRSGeoKey and ProjectionGeoKey SHALL be populated. |
+| ProjectedCRSGeoKey values in the range 32768-65535 SHALL be private |
+^| *requirements_class_GeodeticCRSGeoKey* |
+| The GeodeticCRSGeoKey SHALL have ID = 2048 |
+| The GeodeticCRSGeoKey SHALL have type = SHORT |
+| GeodeticCRSGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POC Geographic Codes |
+| GeodeticCRSGeoKey values in the range 1001-1023 SHALL be reserved. |
+| GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geodetic CRS codes (geographic 2D CRS, geographic 3D CRS, and geocentric CRS) |
+| If the GeodeticCRSGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, GeodeticDatumGeoKey and at least one of GeogAngularUnitsGeoKey or GeogLinearUnitsGeoKey SHALL be populated. |
+| GeodeticCRSGeoKeyvalues in the range 32768-65535 SHALL be private |
+^| *requirements_class_VerticalGeoKey* |
+| The VerticalGeoKey SHALL have ID = 4096 |
+| The VerticalGeoKey SHALL have type = SHORT |
+| VerticalGeoKey values in the range 1-1023 SHALL be reserved |
+| VerticalGeoKey values in the range 1024-32766 SHALL be **either** EPSG Vertical CRS Codes **or** EPSG geographic 3D CRS codes |
+| If the VerticalGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey, the VerticalUnitsGeoKey and VerticalDatumGeoKey SHALL be populated. |
+| VerticalGeoKey values in the range 32768-65535 SHALL be private |
 ^| *requirements_class_CitationGeoKeys* |
 | The GTCitationGeoKey SHALL have ID = 1026 |Citation_GeoKey/GTCitationGeoKey
 | The GeodeticCitationGeoKey SHALL have ID = 2049 |Citation_GeoKey/GeodeticCitationGeoKey
 | The ProjectedCitationGeoKey SHALL have ID = 3073 |Citation_GeoKey/ProjectedCitationGeoKey
 | The VerticalCitationGeoKey SHALL have ID = 4097 |Citation_GeoKey/VerticalCitationGeoKey
 | The CitationGeoKeys SHALL have type = ASCII |Citation_GeoKey/GTCitationGeoKey, Citation_GeoKey/GeodeticCitationGeoKey, Citation_GeoKey/ProjectedCitationGeoKey, Citation_GeoKey/VerticalCitationGeoKey
-| *Requirements_class_GTModelTypeGeoKey.adoc* |
-| A GeoTIFF file SHALL include a GTModelTypeGeoKey |
-| The GTModelTypeGeoKey SHALL have ID = 1024 |
-| The GTModelTypeGeoKey SHALL have type = SHORT |
-| The GTModelTypeGeoKey value SHALL be: + 
- - GTModelTypeGeoKey values in the range 4-32766 SHALL be reserved +
- - GTModelTypeGeoKey values in the range 32768-65535 SHALL be private |
-| If the GTModelTypeGeoKey value is 1 (Model CRS is a projected 2D CRS) then the GeoTIFF file SHALL include a ProjectedCRSGeoKey |
-| If the GTModelTypeGeoKey value is 2 (Model CRS is a geographic 2D CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey. |
-| If the GTModelTypeGeoKey value is 3 (Model CRS is a geocentric CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey |
-| If the GTModelTypeGeoKey value is 32767 (user-defined) then the GTCitationGeoKey SHALL be populated |
-| *requirements_class_GTRasterTypeGeoKey.adoc* |
-| The GTRasterTypeGeoKey SHALL have ID = 1025 |
-| The GTRasterTypeGeoKey SHALL have type = SHORT |
-| The GTRasterTypeGeoKey value SHALL be: +
- - GTRasterTypeGeoKey values in the range 3-32766 SHALL be reserved +
- - GTRasterTypeGeoKey values in the range 32768-65535 SHALL be private |
-| *requirements_class_EllipsoidGeoKey.adoc* |
-| The EllipsoidGeoKey SHALL have ID = 2056 |
-| The EllipsoidGeoKey SHALL have type = SHORT |
-| EllipsoidGeoKey values in the range 1-1023 SHALL be reserved |
-| EllipsoidGeoKey values in the range 1024-32766 SHALL be EPSG ellipsoid Codes |
-| If the EllipsoidGeoKey value is 32767 (User-Defined) then the GTCitationGeoKey and the EllipsoidSemiMajorAxisGeoKey SHALL be populated together with the one of either the EllipsoidSemiMinorAxisGeoKey or the EllipsoidInvFlatteningGeoKey |
-| EllipsoidGeoKey values in the range 32768-65535 SHALL be private |
-| *requirements_class_EllipsoidInvFlatteningGeoKey.adoc* |
-| The EllipsoidInvFlatteningGeoKey SHALL have ID = 2059 | 
-| The EllipsoidInvFlatteningGeoKey SHALL have type = DOUBLE |
-| *requirements_class_EllipsoidSemiMajorAxisGeoKey.adoc* |
-| The EllipsoidSemiMajorAxisGeoKey SHALL have ID = 2057 |
-| The EllipsoidSemiMajorAxisGeoKey SHALL have type = DOUBLE |
-| The units of the EllipsoidSemiMajorAxisGeoKey SHALL be defined by the value of GeogLinearUnitsGeoKey |
-| *requirements_class_EllipsoidSemiMinorAxisGeoKey.adoc* |
-| The EllipsoidSemiMinorAxisGeoKey SHALL have ID = 2058 |
-| The EllipsoidSemiMinorAxisGeoKey SHALL have type = DOUBLE |
-| The units of the EllipsoidSemiMinorAxisGeoKey SHALL be defined by the value of GeogLinearUnitsGeoKey |
-| If the Model CRS is a sphere, the value of the EllipsoidSemiMinorAxisGeoKey SHALL equal that of the EllipsoidSemiMajorAxisGeoKey |
-| *requirements_class_GeodeticCRSGeoKey.adoc* |
-| The GeodeticCRSGeoKey SHALL have ID = 2048 |
-| The GeodeticCRSGeoKey SHALL have type = SHORT |
-| GeodeticCRSGeoKey values in the range 1-1023 SHALL be reserved. |
-| GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geographic 2D or geocentric CRS codes |
-| If the GeodeticCRSGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, GeodeticDatumGeoKey and at least one of GeogAngularUnitsGeoKey or GeogLinearUnitsGeoKey SHALL be populated. |
-| GeodeticCRSGeoKeyvalues in the range 32768-65535 SHALL be private |
-| *requirements_class_GeodeticDatumGeoKey.adoc* |
-| The GeodeticDatumGeoKey SHALL have ID = 2050 |
-| The GeodeticDatumGeoKey SHALL have type = SHORT |
-| GeodeticDatumGeoKey values in the range 1-1023 SHALL be reserved. |
-| GeodeticDatumGeoKey values in the range 1024-32766 SHALL be EPSG geodetic datum codes. |
-| If the GeodeticDatumGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey SHALL be populated. |
-| GeodeticDatumGeoKey values in the range 32768-65535 SHALL be private |
-| *requirements_class_PrimeMeridianGeoKey.adoc* |
-| The PrimeMeridianGeoKey SHALL have ID = 2051 |
-| The PrimeMeridianGeoKey SHALL have type = SHORT |
-| PrimeMeridianGeoKey values in the range 1-1023 SHALL be reserved |
-| PrimeMeridianGeoKey values in the range 1024-32766 SHALL be EPSG Prime Meridian Codes |
-| If the PrimeMeridianGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, and PrimeMeridianLongGeoKey SHALL be populated |
-| PrimeMeridianGeoKey values in the range 32768-65535 SHALL be private |
-| *requirements_class_PrimeMeridianLongitudeGeoKey.adoc* |
-| The PrimeMeridianLongitudeGeoKey SHALL have ID = 2061 |
-| The PrimeMeridianLongitudeGeoKey SHALL have type = DOUBLE |
-| The unit for the PrimeMeridianLongitudeGeoKey value SHALL be GeogAngularUnits |
-| *requirements_class_ProjectedCRSGeoKey.adoc* |
-| The ProjectedCRSGeoKey SHALL have ID = 3072 |
-| The ProjectedCRSGeoKey SHALL have type = SHORT |
-| ProjectedCRSGeoKey values in the range 1-1023 SHALL be reserved. |
-| ProjectedCRSGeoKey values in the range 1024-32766 SHALL be EPSG Projected CRS Codes |
-| A ProjectedCRSGeoKey value of 32767 SHALL be a user-defined projected CRS.  If the ProjectedCRSGeoKey value is 32767
-  (User-Defined) then the ProjectedCitationGeoKey, GeodeticCRSGeoKey and ProjectionGeoKey SHALL be populated. |
-| ProjectedCRSGeoKey values in the range 32768-65535 SHALL be private |
-| *requirements_class_ProjAngularParameters.adoc* |
-| The ProjStdParallel1GeoKey SHALL have ID = 3078 |
-| The ProjStdParallel2GeoKey SHALL have ID = 3079 |
-| The ProjNatOriginLongGeoKey SHALL have ID = 3080 |
-| The ProjNatOriginLatGeoKey SHALL have ID = 3081 |
-| The ProjFalseOriginLongGeoKey SHALL have ID = 3084 |
-| The ProjFalseOriginLatGeoKey SHALL have ID = 3085 |
-| The ProjCenterLongGeoKey SHALL have ID = 3088 |
-| The ProjCenterLatGeoKey SHALL have ID = 3089 |
-| The ProjStraightVertPoleLongGeoKey SHALL have ID = 3095 |
-| The ProjAngularParameters SHALL have type = DOUBLE |
-| All parameters in this requirements class SHALL have units as specified by the GeogAngularUnitsGeoKey |
-| *requirements_class_ProjAzimuthAngleGeoKey.adoc***** |
-| The ProjAzimuthAngleGeoKey SHALL have ID = 3094 |
-| The ProjAzimuthAngleGeoKey SHALL have type = DOUBLE |
-| The ProjAzimuthAngleGeoKey SHALL have units as specified by the GeogAzimuthUnitsGeoKey |
-| *requirements_class_ProjectionGeoKey.adoc* |
-| The ProjectionGeoKey SHALL have ID = 3074 |
-| The ProjectionGeoKey SHALL have type = SHORT |
-| ProjectionGeoKey values in the range 1-1023 SHALL be reserved |
-| ProjectionGeoKey values in the range 1024-32766 SHALL be valid EPSG map projection (coordinate operation) codes |
-| If the ProjectionGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, ProjectionMethodGeoKey, and ProjLinearUnitsGeoKey SHALL be populated |
-| ProjectionGeoKey values in the range 32768-65535 SHALL be private |
-| *requirements_class_ProjLinearParameters.adoc* |
-| The ProjFalseEastingGeoKey SHALL have ID = 3082 |
-| The ProjFalseNorthingGeoKey SHALL have ID = 3083 |
-| The ProjFalseOriginEastingGeoKey SHALL have ID = 3086 |
-| The ProjFalseOriginNorthingGeoKey SHALL have ID = 3087 |
-| The ProjCenterEastingGeoKey SHALL have ID = 3090 |
-| The ProjCenterNorthingGeoKey SHALL have ID = 3091 |
-| All parameters in this requirements class SHALL have type = DOUBLE |
-| All parameters in this requirements class SHALL have units as specified by the ProjLinearUnitsGeoKey |
-| *requirements_class_ProjMethodGeoKey.adoc* |
-| The ProjMethodGeoKey SHALL have ID = 3075 |
-| The ProjMethodGeoKey SHALL have type = SHORT |
-| ProjMethodGeoKey values in the range 1-27 SHALL be GeoTIFF map projection method codes |
-| ProjMethodGeoKey values in the range 28-32766 SHALL be reserved |
-| If the ProjectionMethodGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and keys for each map projection parameter (coordinate operation parameter) appropriate to that method SHALL be populated. |
-| ProjMethodGeoKey values in the range 32768-65535 SHALL be private |
-| *requirements_class_ProjScalarParameters.adoc* |
-| The ProjScaleAtNatOriginGeoKey SHALL have ID = 3092 |
-| The ProjScaleAtCenterGeoKey SHALL have ID = 3093 |
-| All parameters in this requirements class SHALL have type = DOUBLE |
-| *requirements_class_ModelPixelScaleTag.adoc* |
-| The ModelPixelScaleTag SHALL have ID = 33550 |
-| The ModelPixelScaleTag SHALL have type = DOUBLE |
-| The ModelPixelScaleTag SHALL have 3 values representing the scale factor in the X, Y, and Z directions |
-| A positive ScaleX in the ModelPixelScaleTag SHALL indicate that model space X coordinates increase as raster space I indices increase. This is the standard horizontal relationship between raster space and model space. A positive ScaleY in the ModelPixelScaleTag SHALL indicate that model space Y coordinates decrease as raster space J indices increase. This is the standard vertical relationship between raster space and model space. |
-| Simple reversals of orientation from the standard relationship between raster and model space (e.g., horizontal or vertical flips) SHALL be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers shall honor this sign-reversal convention. |
-| *requirements_class_ModelTiepointTag.adoc* |
-| The ModelTiepointTag SHALL have ID = 33922 |
-| The ModelTiepointTag SHALL have type = DOUBLE |
-| The ModelTiepointTag SHALL have 6 values for each of the tiepoints |
-| *requirements_class_ModelTransformationTag.adoc* |
-| The ModelTransformationTag SHALL have ID = 34264 |
-| The ModelTransformationTag SHALL have type = DOUBLE |
-| The ModelTransformationTag SHALL have 16 values representing the terms of the 4 by 4 transformation matrix. The terms SHALL be in row-major order |
-| *requirements_class_UnitsGeoKeys.adoc* |
+^| *requirements_class_UnitsGeoKeys* |
 | The GeogAngularUnitsGeoKey SHALL have ID = 2054 |
 | The GeogAzimuthUnitsGeoKey SHALL have ID = 2060 |
 | The GeogLinearUnitsGeoKey SHALL have ID = 2052 |
@@ -191,7 +126,7 @@
 | A ProjLinearUnitsGeoKey value of 32767 SHALL be a user-defined linear unit. If the value is 32767 (User-Defined) then the ProjectedCitationGeoKey and the ProjLinearUnitSizeGeoKey SHALL be populated. |
 | A VerticalUnitsGeoKey value of 32767 (user defined) SHALL not be used |
 | GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 32768-65535 SHALL be private. |
-| *requirements_class_UnitSizeGeoKeys.adoc* |
+^| *requirements_class_UnitSizeGeoKeys* |
 | The GeogAngularUnitSizeGeoKey SHALL have ID = 2055 |
 | The GeogLinearUnitSizeGeoKey SHALL have ID = 2053 |
 | The ProjLinearUnitSizeGeoKey SHALL have ID = 3077 |
@@ -199,18 +134,100 @@
 | The units of the GeogAngularUnitSizeGeoKey value SHALL be radians. |
 | The units of the GeogLinearUnitSizeGeoKey value SHALL be meters. |
 | The units of the ProjLinearUnitSizeGeoKey value SHALL be meters. |
-| *requirements_class_VerticalDatumGeoKey.adoc* |
+^| *requirements_class_GeodeticDatumGeoKey* |
+| The GeodeticDatumGeoKey SHALL have ID = 2050 |
+| The GeodeticDatumGeoKey SHALL have type = SHORT |
+| GeodeticDatumGeoKey values in the range 1-1000 SHAL be obsolete EPSG/POS Datume Codes. |
+| GeodeticDatumGeoKey values in the range 1001-1023 SHALL be reserved. |
+| GeodeticDatumGeoKey values in the range 1024-32766 SHALL be EPSG geodetic datum codes. |
+| If the GeodeticDatumGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey SHALL be populated. |
+| GeodeticDatumGeoKey values in the range 32768-65535 SHALL be private |
+^| *requirements_class_PrimeMeridianGeoKey* |
+| The PrimeMeridianGeoKey SHALL have ID = 2051 |
+| The PrimeMeridianGeoKey SHALL have type = SHORT |
+| PrimeMeridianGeoKey values in the range 1-100 SHALL be obsolete EPSG/POSC Datum Codes |
+| PrimeMeridianGeoKey values in the range 101-1023 SHALL be reserved |
+| PrimeMeridianGeoKey values in the range 1024-32766 SHALL be EPSG Prime Meridian Codes |
+| If the PrimeMeridianGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, and PrimeMeridianLongGeoKey SHALL be populated |
+| PrimeMeridianGeoKey values in the range 32768-65535 SHALL be private |
+^| *requirements_class_PrimeMeridianLongitudeGeoKey* |
+| The PrimeMeridianLongitudeGeoKey SHALL have ID = 2061 |
+| The PrimeMeridianLongitudeGeoKey SHALL have type = DOUBLE |
+| The unit for the PrimeMeridianLongitudeGeoKey value SHALL be GeogAngularUnits |
+^| *requirements_class_EllipsoidGeoKey* |
+| The EllipsoidGeoKey SHALL have ID = 2056 |
+| The EllipsoidGeoKey SHALL have type = SHORT |
+| EllipsoidGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Datum Codes |
+| EllipsoidGeoKey values in the range 1024-32766 SHALL be EPSG ellipsoid Codes |
+| If the EllipsoidGeoKey value is 32767 (User-Defined) then the GTCitationGeoKey and the EllipsoidSemiMajorAxisGeoKey SHALL be populated together with the one of either the EllipsoidSemiMinorAxisGeoKey or the EllipsoidInvFlatteningGeoKey |
+| EllipsoidGeoKey values in the range 32768-65535 SHALL be private |
+^| *requirements_class_EllipsoidSemiMajorAxisGeoKey* |
+| The EllipsoidSemiMajorAxisGeoKey SHALL have ID = 2057 |
+| The EllipsoidSemiMajorAxisGeoKey SHALL have type = DOUBLE |
+| The units of the EllipsoidSemiMajorAxisGeoKey SHALL be defined by the value of GeogLinearUnitsGeoKey |
+^| *requirements_class_EllipsoidSemiMinorAxisGeoKey* |
+| The EllipsoidSemiMinorAxisGeoKey SHALL have ID = 2058 |
+| The EllipsoidSemiMinorAxisGeoKey SHALL have type = DOUBLE |
+| The units of the EllipsoidSemiMinorAxisGeoKey SHALL be defined by the value of GeogLinearUnitsGeoKey |
+| If the Model CRS is a sphere, the value of the EllipsoidSemiMinorAxisGeoKey SHALL equal that of the EllipsoidSemiMajorAxisGeoKey |
+^| *requirements_class_EllipsoidInvFlatteningGeoKey* |
+| The EllipsoidInvFlatteningGeoKey SHALL have ID = 2059 | 
+| The EllipsoidInvFlatteningGeoKey SHALL have type = DOUBLE |
+^| *requirements_class_VerticalDatumGeoKey* |
 | The VerticalDatumGeoKey SHALL have ID = 4098 |
 | The VerticalDatumGeoKey SHALL have type = SHORT |
 | VerticalDatumGeoKey values in the range 1-1023 SHALL be reserved |
 | VerticalDatumGeoKey values in the range 1024-32766 SHALL be EPSG vertical datum codes |
 | If the VerticalDatumGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey SHALL be populated. |
 | VerticalDatumGeoKey values in the range 32768-65535 SHALL be private |
-| *requirements_class_VerticalGeoKey.adoc* |
-| The VerticalGeoKey SHALL have ID = 4096 |
-| The VerticalGeoKey SHALL have type = SHORT |
-| VerticalGeoKey values in the range 1-1023 SHALL be reserved |
-| VerticalGeoKey values in the range 1024-32766 SHALL be **either** EPSG Vertical CRS Codes **or** EPSG geographic 3D CRS codes |
-| If the VerticalGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey, the VerticalUnitsGeoKey and VerticalDatumGeoKey SHALL be populated. |
-| VerticalGeoKey values in the range 32768-65535 SHALL be private |
+^| *requirements_class_ProjectionGeoKey* |
+| The ProjectionGeoKey SHALL have ID = 3074 |
+| The ProjectionGeoKey SHALL have type = SHORT |
+| ProjectionGeoKey values in the range 1-1023 SHALL be reserved |
+| ProjectionGeoKey values in the range 1024-32766 SHALL be valid EPSG map projection (coordinate operation) codes |
+| If the ProjectionGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, ProjectionMethodGeoKey, and ProjLinearUnitsGeoKey SHALL be populated |
+| ProjectionGeoKey values in the range 32768-65535 SHALL be private |
+^| *requirements_class_ProjMethodGeoKey* |
+| The ProjMethodGeoKey SHALL have ID = 3075 |
+| The ProjMethodGeoKey SHALL have type = SHORT |
+| ProjMethodGeoKey values in the range 1-27 SHALL be GeoTIFF map projection method codes |
+| ProjMethodGeoKey values in the range 28-32766 SHALL be reserved |
+| If the ProjectionMethodGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and keys for each map projection parameter (coordinate operation parameter) appropriate to that method SHALL be populated. |
+| ProjMethodGeoKey values in the range 32768-65535 SHALL be private |
+^| *requirements_class_ProjAngularParameters* |
+| The ProjStdParallel1GeoKey SHALL have ID = 3078 |
+| The ProjStdParallel2GeoKey SHALL have ID = 3079 |
+| The ProjNatOriginLongGeoKey SHALL have ID = 3080 |
+| The ProjNatOriginLatGeoKey SHALL have ID = 3081 |
+| The ProjFalseOriginLongGeoKey SHALL have ID = 3084 |
+| The ProjFalseOriginLatGeoKey SHALL have ID = 3085 |
+| The ProjCenterLongGeoKey SHALL have ID = 3088 |
+| The ProjCenterLatGeoKey SHALL have ID = 3089 |
+| The ProjStraightVertPoleLongGeoKey SHALL have ID = 3095 |
+| The ProjAngularParameters SHALL have type = DOUBLE |
+| All parameters in this requirements class SHALL have units as specified by the GeogAngularUnitsGeoKey |
+^| *requirements_class_ProjAzimuthAngleGeoKey* |
+| The ProjAzimuthAngleGeoKey SHALL have ID = 3094 |
+| The ProjAzimuthAngleGeoKey SHALL have type = DOUBLE |
+| The ProjAzimuthAngleGeoKey SHALL have units as specified by the GeogAzimuthUnitsGeoKey |
+^| *requirements_class_ProjLinearParameters* |
+| The ProjFalseEastingGeoKey SHALL have ID = 3082 |
+| The ProjFalseNorthingGeoKey SHALL have ID = 3083 |
+| The ProjFalseOriginEastingGeoKey SHALL have ID = 3086 |
+| The ProjFalseOriginNorthingGeoKey SHALL have ID = 3087 |
+| The ProjCenterEastingGeoKey SHALL have ID = 3090 |
+| The ProjCenterNorthingGeoKey SHALL have ID = 3091 |
+| All parameters in this requirements class SHALL have type = DOUBLE |
+| All parameters in this requirements class SHALL have units as specified by the ProjLinearUnitsGeoKey |
+^| *requirements_class_ProjScalarParameters* |
+| The ProjScaleAtNatOriginGeoKey SHALL have ID = 3092 |
+| The ProjScaleAtCenterGeoKey SHALL have ID = 3093 |
+| All parameters in this requirements class SHALL have type = DOUBLE |
+
+
+
+
+
+
+
 |===
