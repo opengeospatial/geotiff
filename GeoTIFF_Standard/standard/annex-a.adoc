@@ -39,4 +39,14 @@ include::abstract_tests/Configuration_GeoKeys/TEST_GTModelTypeGeoKey.adoc[]
 
 include::abstract_tests/Configuration_GeoKeys/TEST_GTRasterTypeGeoKey.adoc[]
 
+== Conformance Class Raster2Model_CoordinateTransformation_GeoKey
+http://www.opengis.net/spec/GeoTIFF/1.1/Raster2Model_CoordinateTransformation_GeoKey
+
+include::abstract_tests/Raster2Model_CoordinateTransformation_GeoKeys/TEST_ModelPixelScaleTag.adoc[]
+
+include::abstract_tests/Raster2Model_CoordinateTransformation_GeoKeys/TEST_ModelTiepointTag.adoc[]
+
+include::abstract_tests/Raster2Model_CoordinateTransformation_GeoKeys/TEST_ModelTransformationTag.adoc[]
+
+
 

@@ -1,0 +1,34 @@
+=== ModelPixelScaleTag Test
+
+*Test id:* Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardCovention
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal
+|===
+
+*Purpose:* Verify the contents of the ModelPixelScaleTag parameter
+
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|KeyLength |Parameter |The length of the value for this GeoKey
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Verify that the KeyLength is three (3)
+    
+    Read three douuble values from the GeoTIFF file starting at KeyValueOffset.
+    

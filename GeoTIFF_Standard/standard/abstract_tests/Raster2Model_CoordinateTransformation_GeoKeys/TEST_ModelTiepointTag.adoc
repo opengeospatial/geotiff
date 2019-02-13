@@ -1,0 +1,32 @@
+=== ModelTiepointTag Test
+
+*Test id:* Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.count
+|===
+
+*Purpose:* Verify the contents of the ModelTiepointTag parameter
+
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|KeyLength |Parameter |The length of the value for this GeoKey
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Verify that the KeyLength is six (6)
+    
+    Read six douuble values from the GeoTIFF file starting at KeyValueOffset.
+    

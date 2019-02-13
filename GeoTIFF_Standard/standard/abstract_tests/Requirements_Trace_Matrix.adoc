@@ -71,17 +71,17 @@
 | If the GTModelTypeGeoKey value is 3 (Model CRS is a geocentric CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey |Configuration_GeoKey/GTModelTypeGeoKey
 | If the GTModelTypeGeoKey value is 32767 (user-defined) then the GTCitationGeoKey SHALL be populated |Configuration_GeoKey/GTModelTypeGeoKey
 ^| *requirements_class_ModelTiepointTag* |
-| The ModelTiepointTag SHALL have ID = 33922 |
-| The ModelTiepointTag SHALL have type = DOUBLE |
-| The ModelTiepointTag SHALL have 6 values for each of the K tiepoints |
+| The ModelTiepointTag SHALL have ID = 33922 |Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
+| The ModelTiepointTag SHALL have type = DOUBLE |Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
+| The ModelTiepointTag SHALL have 6 values for each of the K tiepoints |Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
 ^| *requirements_class_ModelPixelScaleTag* |
-| The ModelPixelScaleTag SHALL have ID = 33550 |
-| The ModelPixelScaleTag SHALL have type = DOUBLE |
-| The ModelPixelScaleTag SHALL have 3 values representing the scale factor in the X, Y, and Z directions |
+| The ModelPixelScaleTag SHALL have ID = 33550 |Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
+| The ModelPixelScaleTag SHALL have type = DOUBLE |Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
+| The ModelPixelScaleTag SHALL have 3 values representing the scale factor in the X, Y, and Z directions |Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
 ^| *requirements_class_ModelTransformationTag* |
-| The ModelTransformationTag SHALL have ID = 34264 |
-| The ModelTransformationTag SHALL have type = DOUBLE |
-| The ModelTransformationTag SHALL have 16 values representing the terms of the 4 by 4 transformation matrix. The terms SHALL be in row-major order |
+| The ModelTransformationTag SHALL have ID = 34264 |Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
+| The ModelTransformationTag SHALL have type = DOUBLE |Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
+| The ModelTransformationTag SHALL have 16 values representing the terms of the 4 by 4 transformation matrix. The terms SHALL be in row-major order |Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
 | *requirements_class_ProjectedCRSGeoKey* |
 | The ProjectedCRSGeoKey SHALL have ID = 3072 |
 | The ProjectedCRSGeoKey SHALL have type = SHORT |
