@@ -28,6 +28,15 @@ include::abstract_tests/Citation_GeoKeys/TEST_GeodeticCitationGeoKey.adoc[]
 
 include::abstract_tests/Citation_GeoKeys/TEST_GTCitationGeoKey.adoc[]
 
-include::abstract_tests/Citation_GeoKeys/TEST_ProjectedCitationGeoKey.adoc[]
+include::abstract_tests/CitatieoKeys/TEST_ProjectedCitationGeoKey.adoc[]
 
 include::abstract_tests/Citation_GeoKeys/TEST_VerticalCitationGeoKey.adoc[]
+
+== Conformance Class ConfigurationGeoKeys
+http://www.opengis.net/spec/GeoTIFF/1.1/ConfigurationGeoKeys
+
+include::abstract_tests/Configuration_GeoKeys/TEST_GTModelTypeGeoKey.adoc[]
+
+include::abstract_tests/Configuration_GeoKeys/TEST_GTRasterTypeGeoKey.adoc[]
+
+
