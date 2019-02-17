@@ -10,8 +10,6 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.terminator 
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.NULLWrite
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count
 |===
 
 *Purpose:* Verify the contents of the GeodeticCitationGeoKey parameter

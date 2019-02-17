@@ -1,0 +1,44 @@
+=== GeodeticCRSGeoKey Test
+
+*Test id:* Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.obsolete
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.reserved
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.EPSG
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.user-defined
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.private
+|===
+
+*Purpose:* Verify the contents of the GeodeticCRSGeoKey parameter
+
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|KeyLength |Parameter |The length of the value for this GeoKey
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Read a Short value from the GeoTIFF file starting at KeyValueOffset.
+    
+    Verify that the value is between 1 and 1000 OR between 1024 and 32767.
+    
+    IF value = 32767 THEN verify that there is a GeodeticCitationGeoKey (GeoKey 2049) and GeodeticDatumGeoKey (GeoKey 2050) in the GeoTIFF file.
+    
+    IF value = 32767 and the user-defined CRS is geographic 2D THEN verify that there is a GeogAngularUnitsGeoKey (GeoKey 2055)in the GeoTIFF file.
+    
+    IF value = 32767 and the user-defined CRS is geographic 3D THEN verify that there is a GeogAngularUnitsGeoKey (GeoKey 2055) and GeogLinearUnitsGeoKey (GeoKey 2052) in the GeoTIFF file.
+
+    IF value = 32767 and the user-defined CRS is geocentric THEN verify that there is a GeogLinearUnitsGeoKey (GeoKey 2052) in the GeoTIFF file.
+    

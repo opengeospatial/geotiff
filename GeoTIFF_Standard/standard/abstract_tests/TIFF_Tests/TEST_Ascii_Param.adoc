@@ -1,6 +1,6 @@
-=== Short Parameters Test
+=== ASCII Parameters Test
 
-*Test id:* TIFF_Test/ShortParameters
+*Test id:* TIFF_Test/AsciiParameters
 
 *Requirements:* 
 
@@ -12,6 +12,8 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.type
 |===
 
 *Purpose:* Verify an ASCII parameter
@@ -62,9 +64,9 @@
 |===
 ^| GeoKey 
 ^| Test
-^| 1026 <| GeoTIFFConfigurationKeys/GTCitationGeoKey
-^| 1049 <| GeodeticCRSParameterKeys/GeodeticCitaionGeoKey
-^| 3073 <| ProjectedCRSParameterKeys/ProjectedCitationGeoKey
-^| 4097 <| VerticalCRSParameterKeys/VerticalCitationGeoKey
+^| 1026 <| CitationGeoKeys/GTCitationGeoKey
+^| 1049 <| CitationGeoKeys/GeodeticCitationGeoKey
+^| 3073 <| CitationGeoKeys/ProjectedCitationGeoKey
+^| 4097 <| CitationGeoKeys/VerticalCitationGeoKey
 |===
 

@@ -11,7 +11,13 @@
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryKeyCount 
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryValueOffset
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Criteria 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Location 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Location
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.type
 |===
 
 *Purpose:* Verify a Short parameter
@@ -66,9 +72,8 @@
 |===
 ^| GeoKey ^| Test
 ^| 0 <| ignore
-^| 32767 <| TIFFTest/UserDefinedShort
-^| 1024 <| GeoTIFFConfigurationKeys/GTModelTypeGeoKey
-^| 1025 <| GeoTIFFConfigurationKeys/GTRasterTypeGeoKey
+^| 1024 <| Configuration_GeoKeys/GTModelTypeGeoKey
+^| 1025 <| Configuration_GeoKeys/GTRasterTypeGeoKey
 ^| 2048 <| GeodeticCRSParameterKeys/GeodeticCRSGeoKey
 ^| 2050 <| GeodeticDatumGeoKey
 ^| 2051 <| PrimeMeridianGeoKey
