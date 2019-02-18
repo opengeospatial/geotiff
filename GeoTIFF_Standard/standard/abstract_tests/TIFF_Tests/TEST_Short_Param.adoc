@@ -18,12 +18,19 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.type 
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.type
 |===
 
 *Purpose:* Verify a Short parameter
 
-*Pre-conditions* The GeoKeyDirectory and GeoKeyOffset values have been set. 
-
+*Pre-conditions* The GeoKeyDirectory and GeoKeyOffset values have been se
 *Test Variables:*
 
 [cols=">20,^20,<80",width="100%", Options="header"]
@@ -67,26 +74,26 @@
         Locate the GeoKey value in the following table
         Execute the corresponding test passing KeyLength and KeyValueOffset as parameters
 
-[[Double_GeoKey_Tests]]
+[[_ShortGeoKey_Tests]]
 [cols="1,4",width="75%", options="header"]
 |===
 ^| GeoKey ^| Test
 ^| 0 <| ignore
 ^| 1024 <| Configuration_GeoKeys/GTModelTypeGeoKey
 ^| 1025 <| Configuration_GeoKeys/GTRasterTypeGeoKey
-^| 2048 <| GeodeticCRSParameterKeys/GeodeticCRSGeoKey
-^| 2050 <| GeodeticDatumGeoKey
-^| 2051 <| PrimeMeridianGeoKey
-^| 2052 <| GeogLinearUnitsGeoKey
-^| 2054 <| GeogAngularUnitsGeoKey
-^| 2056 <| EllipsoidGeoKey
-^| 2060 <| ProjectedCRSParameterKeys/GeogAzimuthUnitsGeoKey
+^| 2048 <| Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
+^| 2050 <| Geodetic_CRS_GeoKey/GeodeticDatumGeoKey
+^| 2051 <| Geodetic_CRS_GeoKey/PrimeMeridianGeoKey
+^| 2052 <| Units_GeoKeys/UnitsGeoKey (Linear Units)
+^| 2054 <| Units_GeoKeys/UnitsGeoKey (Angular Units)
+^| 2056 <| Geodetic_CRS_GeoKey/EllipsoidGeoKey
+^| 2060 <| Units_GeoKeys/UnitsGeoKey (Azimuth Units)
 ^| 3072 <| ProjectedCRSGeoKey
 ^| 3074 <| ProjectionGeoKey
 ^| 3075 <| ProjMethodGeoKey
-^| 3076 <| ProjLinearUnitsGeoKey
+^| 3076 <| Units_GeoKeys/UnitsGeoKey (Linear Units)
 ^| 4096 <| VerticalCRSParameterKeys/VerticalGeoKey
 ^| 4098 <| VerticalDatumGeoKey
-^| 4099 <| VerticalUnitsGeoKey
+^| 4099 <| Units_GeoKeys/UnitsGeoKey (Vertical Units)
 |===
 

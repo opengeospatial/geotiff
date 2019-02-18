@@ -12,6 +12,10 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.type
 |===
 
 *Purpose:* Verify a Double parameter
@@ -62,14 +66,13 @@
 |===
 ^| GeoKey ^| Test
 ^| 0 <| ignore
-^| 32767 <| TIFFTest/UserDefinedDouble
-^| 2053 <| GeodeticCRSParameterKeys/GeogLinearUnitSizeGeoKey
-^| 2055 <| GeogAngularUnitSizeGeoKey
+^| 2053 <| Units_GeoKeys/UnitSizeGeoKey (Geog Linear)
+^| 2055 <| Units_GeoKeys/UnitSizeGeoKey (Geog Angular)
 ^| 2057 <| EllipsoidSemiMajorAxisGeoKey
 ^| 2058 <| EllipsoidSemiMinorAxisGeoKey
 ^| 2059 <| EllipsoidInvFlatteningGeoKey
-^| 2061 <| PrimeMeridianLongitudeGeoKey
-^| 3077 <| ProjectedCRSParameterKeys/ProjLinearUnitSizeGeoKey
+^| 2061 <| Geodetic_CRS_GeoKey/PrimeMeridianLongitudeGeoKey
+^| 3077 <| Units_GeoKeys/UnitSizeGeoKey (Projected Linear)
 ^| 3078 <| ProjStdParallel1GeoKey
 ^| 3079 <| ProjStdParallel2GeoKey
 ^| 3080 <| ProjNatOriginLongGeoKey

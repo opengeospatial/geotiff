@@ -1,0 +1,41 @@
+=== GeodeticDatumGeoKey Test
+
+*Test id:* Geodetic_CRS_GeoKey/GeodeticDatumGeoKey
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.reserved
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.EPSG
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.user-defined
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.private
+|===
+
+*Purpose:* Verify the contents of the GeodeticDatumGeoKey parameter
+
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|KeyLength |Parameter |The length of the value for this GeoKey
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Read a Short value from the GeoTIFF file starting at KeyValueOffset.
+    
+    Verify that the value is between 1024 and 32766 (EPSG Codes)
+      or
+    between 6000 and 6999 (private) 
+      or
+    equal to 32767 (user-defined).
+    
+    IF value = 32767 THEN verify that there is a GeodeticCitationGeoKey (GeoKey 2049), PrimeMeridianGeoKey (GeoKey 2051) and EllipsoidGeoKey (GeoKey 2056) in the GeoTIFF file.
+    
