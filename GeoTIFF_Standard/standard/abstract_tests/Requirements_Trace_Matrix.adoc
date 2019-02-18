@@ -83,13 +83,13 @@
 | The ModelTransformationTag SHALL have type = DOUBLE |Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
 | The ModelTransformationTag SHALL have 16 values representing the terms of the 4 by 4 transformation matrix. The terms SHALL be in row-major order |Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
 | *requirements_class_ProjectedCRSGeoKey* |
-| The ProjectedCRSGeoKey SHALL have ID = 3072 |
-| The ProjectedCRSGeoKey SHALL have type = SHORT |
-| ProjectedCRSGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POC Datum Codes. |
-| ProjectedCRSGeoKey values in the range 1001-1023 SHALL be reserved. |
-| ProjectedCRSGeoKey values in the range 1024-32766 SHALL be EPSG Projected CRS Codes |
-| A ProjectedCRSGeoKey value of 32767 SHALL be a user-defined projected CRS.  If the ProjectedCRSGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, GeodeticCRSGeoKey and ProjectionGeoKey SHALL be populated. |
-| ProjectedCRSGeoKey values in the range 32768-65535 SHALL be private |
+| The ProjectedCRSGeoKey SHALL have ID = 3072 |TIFF_Test/ShortParameters, Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| The ProjectedCRSGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| ProjectedCRSGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POC Datum Codes. |Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| ProjectedCRSGeoKey values in the range 1001-1023 SHALL be reserved. |Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| ProjectedCRSGeoKey values in the range 1024-32766 SHALL be EPSG Projected CRS Codes |Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| A ProjectedCRSGeoKey value of 32767 SHALL be a user-defined projected CRS.  If the ProjectedCRSGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, GeodeticCRSGeoKey and ProjectionGeoKey SHALL be populated. |Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| ProjectedCRSGeoKey values in the range 32768-65535 SHALL be private |Projection_CRS_GeoKey/ProjectedCRSGeoKey
 ^| *requirements_class_GeodeticCRSGeoKey* |
 | The GeodeticCRSGeoKey SHALL have ID = 2048 |TIFF_Test/ShortParameters, Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
 | The GeodeticCRSGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
@@ -174,26 +174,26 @@
 | The EllipsoidInvFlatteningGeoKey SHALL have ID = 2059 | 
 | The EllipsoidInvFlatteningGeoKey SHALL have type = DOUBLE |
 ^| *requirements_class_VerticalDatumGeoKey* |
-| The VerticalDatumGeoKey SHALL have ID = 4098 |
-| The VerticalDatumGeoKey SHALL have type = SHORT |
-| VerticalDatumGeoKey values in the range 1-1023 SHALL be reserved |
-| VerticalDatumGeoKey values in the range 1024-32766 SHALL be EPSG vertical datum codes |
-| If the VerticalDatumGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey SHALL be populated. |
-| VerticalDatumGeoKey values in the range 32768-65535 SHALL be private |
+| The VerticalDatumGeoKey SHALL have ID = 4098 |TIFF_Test/ShortParameters, Vertical_GeoKeys/VerticalDatumGeoKey
+| The VerticalDatumGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Vertical_GeoKeys/VerticalDatumGeoKey
+| VerticalDatumGeoKey values in the range 1-1023 SHALL be reserved |Vertical_GeoKeys/VerticalDatumGeoKey
+| VerticalDatumGeoKey values in the range 1024-32766 SHALL be EPSG vertical datum codes |Vertical_GeoKeys/VerticalDatumGeoKey
+| If the VerticalDatumGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey SHALL be populated. |Vertical_GeoKeys/VerticalDatumGeoKey
+| VerticalDatumGeoKey values in the range 32768-65535 SHALL be private |Vertical_GeoKeys/VerticalDatumGeoKey
 ^| *requirements_class_ProjectionGeoKey* |
-| The ProjectionGeoKey SHALL have ID = 3074 |
-| The ProjectionGeoKey SHALL have type = SHORT |
-| ProjectionGeoKey values in the range 1-1023 SHALL be reserved |
-| ProjectionGeoKey values in the range 1024-32766 SHALL be valid EPSG map projection (coordinate operation) codes |
-| If the ProjectionGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, ProjectionMethodGeoKey, and ProjLinearUnitsGeoKey SHALL be populated |
-| ProjectionGeoKey values in the range 32768-65535 SHALL be private |
+| The ProjectionGeoKey SHALL have ID = 3074 |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjectionGeoKey
+| The ProjectionGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjectionGeoKey
+| ProjectionGeoKey values in the range 1-1023 SHALL be reserved |Projection_Definition_GeoKey/ProjectionGeoKey
+| ProjectionGeoKey values in the range 1024-32766 SHALL be valid EPSG map projection (coordinate operation) codes |Projection_Definition_GeoKey/ProjectionGeoKey
+| If the ProjectionGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, ProjectionMethodGeoKey, and ProjLinearUnitsGeoKey SHALL be populated |Projection_Definition_GeoKey/ProjectionGeoKey
+| ProjectionGeoKey values in the range 32768-65535 SHALL be private |Projection_Definition_GeoKey/ProjectionGeoKey
 ^| *requirements_class_ProjMethodGeoKey* |
-| The ProjMethodGeoKey SHALL have ID = 3075 |
-| The ProjMethodGeoKey SHALL have type = SHORT |
-| ProjMethodGeoKey values in the range 1-27 SHALL be GeoTIFF map projection method codes |
-| ProjMethodGeoKey values in the range 28-32766 SHALL be reserved |
-| If the ProjectionMethodGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and keys for each map projection parameter (coordinate operation parameter) appropriate to that method SHALL be populated. |
-| ProjMethodGeoKey values in the range 32768-65535 SHALL be private |
+| The ProjMethodGeoKey SHALL have ID = 3075 |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjMethodGeoKey
+| The ProjMethodGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjMethodGeoKey
+| ProjMethodGeoKey values in the range 1-27 SHALL be GeoTIFF map projection method codes |Projection_Definition_GeoKey/ProjMethodGeoKey
+| ProjMethodGeoKey values in the range 28-32766 SHALL be reserved |Projection_Definition_GeoKey/ProjMethodGeoKey
+| If the ProjectionMethodGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and keys for each map projection parameter (coordinate operation parameter) appropriate to that method SHALL be populated. |Projection_Definition_GeoKey/ProjMethodGeoKey
+| ProjMethodGeoKey values in the range 32768-65535 SHALL be private |Projection_Definition_GeoKey/ProjMethodGeoKey
 ^| *requirements_class_ProjAngularParameters* |
 | The ProjStdParallel1GeoKey SHALL have ID = 3078 |
 | The ProjStdParallel2GeoKey SHALL have ID = 3079 |

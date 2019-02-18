@@ -1,0 +1,44 @@
+=== ProjMethodGeoKey Test
+
+*Test id:* Projection_Definition_GeoKey/ProjMethodGeoKey
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.transform
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.reserved
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.user-defined
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.private
+|===
+
+*Purpose:* Verify the contents of the ProjMethodGeoKey parameter
+
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|KeyLength |Parameter |The length of the value for this GeoKey
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Read a Short value from the GeoTIFF file starting at KeyValueOffset.
+    
+    IF the value is valid if it is:
+    
+    Between 1 and 27 AND the value maps to a valid GeoTIFF map projection method as documented in Annex C
+      or
+    Between 32768 and 65535 (private) 
+      or
+    Equals 32767 (user-defined).
+    
+    IF value = 32767 THEN verify that there is a ProjectedCitationGeoKey in the GeoTIFF file.
+    
+    Note: validation that "appropriate" coordinate operation parameters are provided is likely beyond the scope of a compliance test.

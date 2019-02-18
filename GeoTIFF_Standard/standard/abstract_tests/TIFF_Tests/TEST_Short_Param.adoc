@@ -26,6 +26,14 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.type
 |===
 
 *Purpose:* Verify a Short parameter
@@ -88,12 +96,12 @@
 ^| 2054 <| Units_GeoKeys/UnitsGeoKey (Angular Units)
 ^| 2056 <| Geodetic_CRS_GeoKey/EllipsoidGeoKey
 ^| 2060 <| Units_GeoKeys/UnitsGeoKey (Azimuth Units)
-^| 3072 <| ProjectedCRSGeoKey
-^| 3074 <| ProjectionGeoKey
-^| 3075 <| ProjMethodGeoKey
+^| 3072 <| Projection_CRS_GeoKey/ProjectedCRSGeoKey
+^| 3074 <| Projection_Definition_GeoKey/ProjectionGeoKey
+^| 3075 <| Projection_Definition_GeoKey/ProjMethodGeoKey
 ^| 3076 <| Units_GeoKeys/UnitsGeoKey (Linear Units)
 ^| 4096 <| VerticalCRSParameterKeys/VerticalGeoKey
-^| 4098 <| VerticalDatumGeoKey
+^| 4098 <| Vertical_GeoKeys/VerticalDatumGeoKey
 ^| 4099 <| Units_GeoKeys/UnitsGeoKey (Vertical Units)
 |===
 
