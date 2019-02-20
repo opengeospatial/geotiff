@@ -1,6 +1,9 @@
 [appendix]
 :appendix-caption: Annex
 = Abstract Test Suite (Normative)
+== Approach
+
+A general description of how a GeoTIFF codec should be tested.
 
 == Requirements Trace Matrix
 
@@ -48,5 +51,59 @@ include::abstract_tests/Raster2Model_CoordinateTransformation_GeoKeys/TEST_Model
 
 include::abstract_tests/Raster2Model_CoordinateTransformation_GeoKeys/TEST_ModelTransformationTag.adoc[]
 
+== Conformance Class Geodetic_CRS_GeoKey
+http://www.opengis.net/spec/GeoTIFF/1.1/Geodetic_CRS_GeoKey
+
+include::abstract_tests/Geodetic_CRS_GeoKeys/TEST_EllipsoidGeoKey.adoc[]
+
+include::abstract_tests/Geodetic_CRS_GeoKeys/TEST_EllipsoidInvFlatteningGeoKey.adoc[]
+
+include::abstract_tests/Geodetic_CRS_GeoKeys/TEST_EllipsoidSemiMajorAxisGeoKey.adoc[]
+
+include::abstract_tests/Geodetic_CRS_GeoKeys/TEST_EllipsoidSemiMinorAxisGeoKey.adoc[]
+
+include::abstract_tests/Geodetic_CRS_GeoKeys/TEST_GeodeticCRSGeoKey.adoc[]
+
+include::abstract_tests/Geodetic_CRS_GeoKeys/TEST_GeodeticDatumGeoKey.adoc[]
+
+include::abstract_tests/Geodetic_CRS_GeoKeys/TEST_PrimeMeridianGeoKey.adoc[]
+
+include::abstract_tests/Geodetic_CRS_GeoKeys/TEST_PrimeMeridianLongitudeGeoKey.adoc[]
+
+== Conformance Class Projection_CRS_GeoKey
+http://www.opengis.net/spec/GeoTIFF/1.1/Projection_CRS_GeoKey
+
+include::abstract_tests/Projection_CRS_GeoKeys/TEST_ProjectedCRSGeoKey.adoc[]
+
+== Conformance Class Projection_Definition_GeoKey
+http://www.opengis.net/spec/GeoTIFF/1.1/Projection_Definition_GeoKey
+
+include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjAngularParametersGeoKey.adoc[]
+
+include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjAzimuthAngleGeoKey.adoc[]
+
+
+include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjectionGeoKey.adoc[]
+
+
+include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjLinearParametersGeoKey.adoc[]
+
+
+include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjMethodGeoKey.adoc[]
+
+
+include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjScalarParametersGeoKey.adoc[]
+
+== Conformance Class Units_GeoKey
+http://www.opengis.net/spec/GeoTIFF/1.1/Units_GeoKey
+
+include::abstract_tests/Units_GeoKeys/TEST_UnitsGeoKey.adoc[]
+
+include::abstract_tests/Units_GeoKeys/TEST_UnitSizeGeoKey.adoc[]
+
+== Conformance Class Vertical_GeoKey
+http://www.opengis.net/spec/GeoTIFF/1.1/Vertical_GeoKey
+
+include::abstract_tests/Vertical_GeoKeys/TEST_VerticalDatumGeoKey.adoc[]
 
 
