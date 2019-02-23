@@ -1,16 +1,16 @@
-=== ProjScalarParameterGeoKey Test
+=== ProjScalarParameters Test
 
-*Test id:* Projection_Definition_GeoKeys/ProjScalarParameterGeoKey
+*Test id:* Projection_Definition_GeoKeys/ProjScalarParameters
 
 *Requirements:* 
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameterGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameterGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameters.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameters.type
 |===
 
-*Purpose:* Verify the contents of the ProjScalarParameterGeoKey parameters
+*Purpose:* Verify the contents of the GeoKeys defined by the ProjScalarParameter requirements class
 
 *Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
 

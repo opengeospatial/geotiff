@@ -1,17 +1,17 @@
 === ProjAngularParameterGeoKey Test
 
-*Test id:* Projection_Definition_GeoKeys/ProjAngularParameterGeoKey
+*Test id:* Projection_Definition_GeoKeys/ProjAngularParameters
 
 *Requirements:* 
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey.units
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameters.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameters.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameters.units
 |===
 
-*Purpose:* Verify the contents of the ProjAngularParameterGeoKey parameters
+*Purpose:* Verify the contents of the GeoKeys defined by the ProjAngularParameter requirements class
 
 *Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
 

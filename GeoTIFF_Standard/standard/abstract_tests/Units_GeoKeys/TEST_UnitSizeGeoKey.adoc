@@ -28,8 +28,8 @@
 
     Read a Double value from the GeoTIFF file starting at KeyValueOffset.
     
-    IF the GeoKey = GeogAngularUnitSize then validate that the value is in radians.
+    IF the GeoKey = GeogAngularUnitSize (2055) then validate that the value is in radians.
     
-    IF the GeoKey = GeogLinearUnitSize then validate that the value is in meters.
+    IF the GeoKey = GeogLinearUnitSize (2053) then validate that the value is in meters.
     
-    IF the GeoKey = ProjLinearUnitSize then validate that the value is in meters.
+    IF the GeoKey = ProjLinearUnitSize (3077) then validate that the value is in meters.

@@ -1,17 +1,17 @@
-=== ProjLinearParameterGeoKey Test
+=== ProjLinearParameters Test
 
-*Test id:* Projection_Definition_GeoKeys/ProjLinearParameterGeoKey
+*Test id:* Projection_Definition_GeoKeys/ProjLinearParameters
 
 *Requirements:* 
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey.units
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameters.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameters.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameters.units
 |===
 
-*Purpose:* Verify the contents of the ProjLinearParameterGeoKey parameters
+*Purpose:* Verify the contents of the GeoKeys defined by the ProjLinearParameter requirements class
 
 *Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
 

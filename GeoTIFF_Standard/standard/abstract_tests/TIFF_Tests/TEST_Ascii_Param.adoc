@@ -65,7 +65,7 @@
 ^| GeoKey 
 ^| Test
 ^| 1026 <| CitationGeoKeys/GTCitationGeoKey
-^| 1049 <| CitationGeoKeys/GeodeticCitationGeoKey
+^| 2049 <| CitationGeoKeys/GeodeticCitationGeoKey
 ^| 3073 <| CitationGeoKeys/ProjectedCitationGeoKey
 ^| 4097 <| CitationGeoKeys/VerticalCitationGeoKey
 |===
