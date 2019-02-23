@@ -33,7 +33,7 @@
     
     Values between 1 and 1000 are only valid for GeoTIFF version 1.0 (obsolete EPSG/POSC codes) 
     
-    Values between 101 and 1023 are invalid (Reserved)
+    Values between 1001 and 1023 are invalid (Reserved)
     
     Values between 1024 and 32766 are valid (EPSG codes)
     
