@@ -1,20 +1,20 @@
-=== VerticalDatumGeoKey Test
+=== VerticalGeoKey Test
 
-*Test id:* Vertical_GeoKeys/VerticalDatumGeoKey
+*Test id:* Vertical_GeoKeys/VerticalGeoKey
 
 *Requirements:* 
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.reserved
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.EPSG
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.user-defined
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.private
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.reserved
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.EPSG
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.user-defined
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.private
 |===
 
-*Purpose:* Verify the contents of the VerticalDatumGeoKey parameter
+*Purpose:* Verify the contents of the VerticalGeoKey parameter
 
 *Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
 
@@ -37,6 +37,6 @@
     
     A value of 32767 is valid (User-defined)
 
-    IF value = 32767 THEN verify that there is a VerticalCitationGeoKey (GeoKey 4097) in the GeoTIFF file.
+    IF value = 32767 THEN verify that there is a VerticalCitationGeoKey (GeoKey 4097) and a VerticalDatumGeoKey (GeoKey 4098) in the GeoTIFF file.
  
     Values of 32768 through 65535 are valid (private)

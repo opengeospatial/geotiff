@@ -31,14 +31,14 @@
 
     Read a Short value from the GeoTIFF file starting at KeyValueOffset.
     
-    IF the value is valid if it is:
-    
-    Between 1 and 27 AND the value maps to a valid GeoTIFF map projection method as documented in Annex C
-      or
-    Between 32768 and 65535 (private) 
-      or
-    Equals 32767 (user-defined).
-    
+    Values between 1 and 27 are valid GeoTIFF projection codes.
+   
+    Values between 28 and 32766 are invalid (Reserved)
+
+    A value of 32767 is valid (User-defined)
+
     IF value = 32767 THEN verify that there is a ProjectedCitationGeoKey in the GeoTIFF file.
     
     Note: validation that "appropriate" coordinate operation parameters are provided is likely beyond the scope of a compliance test.
+    
+    Values of 32768 through 65535 are valid (private)

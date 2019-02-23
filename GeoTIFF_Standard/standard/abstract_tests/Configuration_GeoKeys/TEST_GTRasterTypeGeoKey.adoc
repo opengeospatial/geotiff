@@ -30,7 +30,15 @@
 
     Read a Short value from the GeoTIFF file starting at KeyValueOffset.
     
-    Verify that the value is between 0 and 65535.
+    Verify that the value is not between 3 and 32766 (reserved).
     
-    Verify that the value is not between 3 and 32766
+    Values of:
+        0 (unkonwn) 
+        1 (Pixel is Area) 
+        2 (Pixel is Point) 
+        32767 (user defined) 
+    are valid.
+    
+    Values of 32768 through 65535 are valid (private).
+
     

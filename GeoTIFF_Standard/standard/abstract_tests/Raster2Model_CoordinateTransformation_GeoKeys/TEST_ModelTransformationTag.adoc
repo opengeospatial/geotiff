@@ -28,5 +28,5 @@
 
     Verify that the KeyLength is sixteen (16)
     
-    Read sixteen douuble values from the GeoTIFF file starting at KeyValueOffset.
+    Read sixteen double values from the GeoTIFF file starting at KeyValueOffset.
     

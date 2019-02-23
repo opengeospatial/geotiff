@@ -30,5 +30,5 @@
 
     Verify that the KeyLength is three (3)
     
-    Read three douuble values from the GeoTIFF file starting at KeyValueOffset.
+    Read three double values from the GeoTIFF file starting at KeyValueOffset.
     

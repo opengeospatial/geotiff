@@ -33,11 +33,9 @@
 *Test Process:*
 
     Read a Short value from the GeoTIFF file starting at KeyValueOffset.
-    
-    Verify that the value is between 0 and 65535.
-    
-    Verify that the value is not between 3 and 32766
-    
+
+    Verify that the value is not between 4 and 32766 (reserved).
+
     IF value = 1 THEN verify that there is a ProjectedCRSGeoKey (GeoKey 3072) in the GeoTIFF file.
     
     IF value = 2 THEN verify that there is a GeodeticCRSGeoKey (GeoKey 2048) in the GeoTIFF file.
@@ -46,4 +44,5 @@
     
     IF value = 32767 THEN verify that there is a GTCitationGeoKey (GeoKey 2049) in the GeoTIFF file.
     
-        
+    Values of 32768 through 65535 are valid (private)
+ 

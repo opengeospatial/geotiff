@@ -83,21 +83,17 @@ include::abstract_tests/Projection_CRS_GeoKeys/TEST_ProjectedCRSGeoKey.adoc[]
 == Conformance Class Projection_Definition_GeoKey
 http://www.opengis.net/spec/GeoTIFF/1.1/Projection_Definition_GeoKey
 
-include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjAngularParametersGeoKey.adoc[]
+include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjAngularParameters.adoc[]
 
 include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjAzimuthAngleGeoKey.adoc[]
 
-
 include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjectionGeoKey.adoc[]
 
-
-include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjLinearParametersGeoKey.adoc[]
-
+include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjLinearParameters.adoc[]
 
 include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjMethodGeoKey.adoc[]
 
-
-include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjScalarParametersGeoKey.adoc[]
+include::abstract_tests/Projection_Definition_GeoKeys/TEST_ProjScalarParameters.adoc[]
 
 == Conformance Class Units_GeoKey
 http://www.opengis.net/spec/GeoTIFF/1.1/Units_GeoKey
@@ -108,6 +104,8 @@ include::abstract_tests/Units_GeoKeys/TEST_UnitSizeGeoKey.adoc[]
 
 == Conformance Class Vertical_GeoKey
 http://www.opengis.net/spec/GeoTIFF/1.1/Vertical_GeoKey
+
+include::abstract_tests/Vertical_GeoKeys/TEST_VerticalGeoKey.adoc[]
 
 include::abstract_tests/Vertical_GeoKeys/TEST_VerticalDatumGeoKey.adoc[]
 

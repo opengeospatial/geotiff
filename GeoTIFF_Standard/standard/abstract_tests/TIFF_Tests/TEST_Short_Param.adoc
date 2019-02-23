@@ -32,6 +32,8 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.type
 |===
@@ -100,7 +102,7 @@
 ^| 3074 <| Projection_Definition_GeoKey/ProjectionGeoKey
 ^| 3075 <| Projection_Definition_GeoKey/ProjMethodGeoKey
 ^| 3076 <| Units_GeoKeys/UnitsGeoKey (Linear Units)
-^| 4096 <| VerticalCRSParameterKeys/VerticalGeoKey
+^| 4096 <| Vertical_GeoKeys/VerticalGeoKey
 ^| 4098 <| Vertical_GeoKeys/VerticalDatumGeoKey
 ^| 4099 <| Units_GeoKeys/UnitsGeoKey (Vertical Units)
 |===

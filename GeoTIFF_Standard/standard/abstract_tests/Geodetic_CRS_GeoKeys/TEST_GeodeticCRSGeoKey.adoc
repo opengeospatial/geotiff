@@ -32,7 +32,13 @@
 
     Read a Short value from the GeoTIFF file starting at KeyValueOffset.
     
-    Verify that the value is between 1 and 1000 OR between 1024 and 32767.
+    Values between 1 and 1000 are only valid for GeoTIFF version 1.0 (obsolete EPSG/POSC codes) 
+    
+    Values between 1001 and 1023 are invalid (Reserved)
+    
+    Values between 1024 and 32766 are valid (EPSG codes)
+    
+    A value of 32767 is valid (User-defined)
     
     IF value = 32767 THEN verify that there is a GeodeticCitationGeoKey (GeoKey 2049) and GeodeticDatumGeoKey (GeoKey 2050) in the GeoTIFF file.
     
@@ -42,3 +48,4 @@
 
     IF value = 32767 and the user-defined CRS is geocentric THEN verify that there is a GeogLinearUnitsGeoKey (GeoKey 2052) in the GeoTIFF file.
     
+    Values of 32768 through 65535 are valid (private)

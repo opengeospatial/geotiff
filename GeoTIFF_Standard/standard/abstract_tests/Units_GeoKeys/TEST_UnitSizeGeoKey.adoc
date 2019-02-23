@@ -11,7 +11,7 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.units
 |===
 
-*Purpose:* Verify the contents of the UnitSizeGeoKey parameter
+*Purpose:* Verify the contents of the UnitSizeGeoKey parameters
 
 *Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
 
