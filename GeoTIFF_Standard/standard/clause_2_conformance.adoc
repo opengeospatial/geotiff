@@ -1,5 +1,5 @@
 == Conformance
-This standard defines 181 Requirements grouped into 49 Requirements Classes.
+This standard defines 150 Requirements grouped into 31 Requirements Classes.
 
 These Requirements address five (5) standardization target types:
 
