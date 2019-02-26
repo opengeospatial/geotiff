@@ -11,7 +11,13 @@ _A GeoTIFF file SHALL be compliant with the TIFF 6.0 specification_
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/DataGeoTags +
-_GeoTIFF files SHALL encode all GeoTIFF specific information using the specified reserved TIFF tags_
+_GeoTIFF files SHALL encode all GeoTIFF specific information using the following specified reserved TIFF tags_ +
+ - 34735  GeoKeyDirectoryTag (mandatory) +
+ - 34736  GeoDoubleParamsTag (optional) +
+ - 34737  GeoAsciiParamsTag (optional) +
+ - 33550  ModelPixelScaleTag  (optional) +
+ - 33922  ModelTiepointTag (optional) +
+ - 34264  ModelTransformationTag (optional) +
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
