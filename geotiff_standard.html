@@ -919,7 +919,7 @@ GeoTIFF defines a set of TIFF tags provided to describe all "Cartographic" infor
 <h2 id="_conformance"><a class="anchor" href="#_conformance"></a>2. Conformance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This standard defines 181 Requirements grouped into 49 Requirements Classes.</p>
+<p>This standard defines 150 Requirements grouped into 31 Requirements Classes.</p>
 </div>
 <div class="paragraph">
 <p>These Requirements address five (5) standardization target types:</p>
@@ -1675,7 +1675,13 @@ The normative provisions in this specification are denoted by the URI</p>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/DataGeoTags" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/DataGeoTags</a><br>
-<em>GeoTIFF files SHALL encode all GeoTIFF specific information using the specified reserved TIFF tags</em></p></td>
+<em>GeoTIFF files SHALL encode all GeoTIFF specific information using the following specified reserved TIFF tags</em><br>
+ - 34735  GeoKeyDirectoryTag (mandatory)<br>
+ - 34736  GeoDoubleParamsTag (optional)<br>
+ - 34737  GeoAsciiParamsTag (optional)<br>
+ - 33550  ModelPixelScaleTag  (optional)<br>
+ - 33922  ModelTiepointTag (optional)<br>
+ - 34264  ModelTransformationTag (optional)<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -2237,12 +2243,12 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.standardConvention" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.standardConvention</a><br>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardConvention" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardConvention</a><br>
 <em>A positive ScaleX in the ModelPixelScaleTag SHALL indicate that model space X coordinates increase as raster space I indices increase. This is the standard horizontal relationship between raster space and model space. A positive ScaleY in the ModelPixelScaleTag SHALL indicate that model space Y coordinates decrease as raster space J indices increase. This is the standard vertical relationship between raster space and model space.</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.axisReversal" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/ModelPixelScaleTag.axisReversal</a><br>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal</a><br>
 <em>Simple reversals of orientation from the standard relationship between raster and model space (e.g., horizontal or vertical flips) SHALL be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers shall honor this sign-reversal convention.</em></p></td>
 </tr>
 </tbody>
@@ -2971,7 +2977,7 @@ In GeoTIFF 1.0 this key was called GeogEllipsoidGeoKey.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Requirement <a href="http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.reserved" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.reserved</a>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Requirement <a href="http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.reserved" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.reserved</a>
 <em>EllipsoidGeoKey values in the range 1-1023 SHALL be reserved</em></p></td>
 </tr>
 <tr>
@@ -3096,11 +3102,6 @@ In GeoTIFF 1.0 this key was called GeogSemiMinorAxisGeoKey.
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.units" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.units</a><br>
 <em>The units of the EllipsoidSemiMinorAxisGeoKey SHALL be defined by the value of GeogLinearUnitsGeoKey</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.sphere" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.sphere</a><br>
-<em>If the Model CRS is a sphere, the value of the EllipsoidSemiMinorAxisGeoKey SHALL equal that of the  EllipsoidSemiMajorAxisGeoKey.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -3231,7 +3232,7 @@ In GeoTIFF 1.0 this key was called GeogInvFlatteningGeoKey.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Requirement <a href="http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.reserved" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/ProjectionGeoKey.reserved</a>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Requirement <a href="http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.reserved" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.reserved</a>
 <em>ProjectionGeoKey values in the range 1-1023 SHALL be reserved</em></p></td>
 </tr>
 <tr>
@@ -7121,7 +7122,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-02-25 22:17:41 -0500
+Last updated 2019-02-26 22:17:28 -0500
 </div>
 </div>
 </body>
