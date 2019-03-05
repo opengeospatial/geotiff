@@ -12,24 +12,15 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameterGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameterGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameterGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey
 |===
 
 *Purpose:* Verify a Double parameter
@@ -71,40 +62,42 @@
         }
     SET KeyValueOffset = DoubleValues + (KeyValueOffset * 8)
 
-    Validate the parameter
-        Locate the GeoKey value in the following table
-        Execute the corresponding test passing KeyLength and KeyValueOffset as parameters
+    Read a KeyLength Double values from the GeoTIFF file starting at KeyValueOffset.    
+    Validate the value
+        Locate the GeoKey in the following table
+        Verify that the values read satisfy the constraints defined in the associated Requirements Class.
+        Verify that any GeoKeys required by the associated Requirements Class are present in the GeoKey Directory. 
 
 [[Double_GeoKey_Tests]]
 [cols="2,4",width="100%", options="header"]
 |===
-^| GeoKey ^| Test
+^| GeoKey ^| Requirements Class
 ^| 0 <| ignore
-^| 2053 <| Units_GeoKeys/UnitSizeGeoKey (Geog Linear)
-^| 2055 <| Units_GeoKeys/UnitSizeGeoKey (Geog Angular)
-^| 2057 <| Geodetic_CRS_GeoKey/EllipsoidSemiMajorAxisGeoKey
-^| 2058 <| Geodetic_CRS_GeoKey/EllipsoidSemiMinorAxisGeoKey
-^| 2059 <| Geodetic_CRS_GeoKey/EllipsoidInvFlatteningGeoKey
-^| 2061 <| Geodetic_CRS_GeoKey/PrimeMeridianLongitudeGeoKey
-^| 3077 <| Units_GeoKeys/UnitSizeGeoKey (Projected Linear)
-^| 3078 <| Projection_Definition_GeoKeys/ProjAngularParameters (Standard Parallel 1)
-^| 3079 <| Projection_Definition_GeoKeys/ProjAngularParameters (Standard Parallel 2)
-^| 3080 <| Projection_Definition_GeoKeys/ProjAngularParameters (Natural Oriding Longitude)
-^| 3081 <| Projection_Definition_GeoKeys/ProjAngularParameters (Natural Origine Latitude)
-^| 3082 <| Projection_Definition_GeoKeys/ProjLinearParameters (False Easting)
-^| 3083 <| Projection_Definition_GeoKeys/ProjLinearParameters (False Northing)
-^| 3084 <| Projection_Definition_GeoKeys/ProjAngularParameters (False Origin Longitude)
-^| 3085 <| Projection_Definition_GeoKeys/ProjAngularParameters (False Origin Latitude)
-^| 3086 <| Projection_Definition_GeoKeys/ProjLinearParameters (False Origin Easting)
-^| 3087 <| Projection_Definition_GeoKeys/ProjLinearParameters (False Origin Northing)
-^| 3088 <| Projection_Definition_GeoKeys/ProjAngularParameters (Center Longitude)
-^| 3089 <| Projection_Definition_GeoKeys/ProjAngularParameters (Center Latitude)
-^| 3090 <| Projection_Definition_GeoKeys/ProjLinearParameters (Projection Center Easting)
-^| 3091 <| Projection_Definition_GeoKeys/ProjLinearParameters (Projection Center Northing)
-^| 3092 <| Projection_Definition_GeoKeys/ProjScalarParameters (Scale at Natural Origin)
-^| 3093 <| Projection_Definition_GeoKeys/ProjScalarParameters (Scale at Center)
-^| 3094 <| Projection_Definition_GeoKeys/ProjAzimuthAngleGeoKey
-^| 3095 <| Projection_Definition_GeoKeys/ProjAngularParameters (Straight Vertical Pole)
+^| 2053 <| UnitSizeGeoKey (Geog Linear)
+^| 2055 <| UnitSizeGeoKey (Geog Angular)
+^| 2057 <| EllipsoidSemiMajorAxisGeoKey
+^| 2058 <| EllipsoidSemiMinorAxisGeoKey
+^| 2059 <| EllipsoidInvFlatteningGeoKey
+^| 2061 <| PrimeMeridianLongitudeGeoKey
+^| 3077 <| UnitSizeGeoKey (Projected Linear)
+^| 3078 <| ProjAngularParameters (Standard Parallel 1)
+^| 3079 <| ProjAngularParameters (Standard Parallel 2)
+^| 3080 <| ProjAngularParameters (Natural Origin Longitude)
+^| 3081 <| ProjAngularParameters (Natural Origin Latitude)
+^| 3082 <| ProjLinearParameters (False Easting)
+^| 3083 <| ProjLinearParameters (False Northing)
+^| 3084 <| ProjAngularParameters (False Origin Longitude)
+^| 3085 <| ProjAngularParameters (False Origin Latitude)
+^| 3086 <| ProjLinearParameters (False Origin Easting)
+^| 3087 <| ProjLinearParameters (False Origin Northing)
+^| 3088 <| ProjAngularParameters (Center Longitude)
+^| 3089 <| ProjAngularParameters (Center Latitude)
+^| 3090 <| ProjLinearParameters (Projection Center Easting)
+^| 3091 <| ProjLinearParameters (Projection Center Northing)
+^| 3092 <| ProjScalarParameters (Scale at Natural Origin)
+^| 3093 <| ProjScalarParameters (Scale at Center)
+^| 3094 <| ProjAzimuthAngleGeoKey
+^| 3095 <| ProjAngularParameters (Straight Vertical Pole)
 |===
 
 Double GeoKey Tests

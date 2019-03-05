@@ -1,0 +1,30 @@
+=== ModelTransformationTag Test
+
+*Test id:* Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.count
+|===
+
+*Purpose:* Verify the contents of the ModelTransformationTag parameter
+
+*Pre-conditions* The TagLength and TagValue values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|TagLength |Parameter |Length of the value of a TIFF Tag
+|TagValue |Parameter |Location of the value of a TIFF tag in the GeoTIFF file
+|===
+
+*Test Process:*
+
+    Verify that the TagLength is sixteen (16)
+    
+    Read sixteen double values from the GeoTIFF file starting at TagValue.
+    

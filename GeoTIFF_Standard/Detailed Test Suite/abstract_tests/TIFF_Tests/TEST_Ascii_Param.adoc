@@ -12,7 +12,8 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys 
+|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.type
 |===
 
 *Purpose:* Verify an ASCII parameter
@@ -54,22 +55,18 @@
         }
     SET KeyValueOffset = AsciiValues + KeyValueOffset
 
-    Read a KeyLength ASCII string values from the GeoTIFF file starting at KeyValueOffset.
-        - The individual strings are delimited by the "|" character.
-        - The set of ASCII strings is null terminated.
-    Validate the value
-        Locate the GeoKey in the following table
-        Verify that the values read satisfy the constraints defined in the associated Requirements Class.
-        Verify that any GeoKeys required by the associated Requirements Class are present in the GeoKey Directory. 
+    Validate the parameter
+        Locate the GeoKey value in the following table
+        Execute the corresponding test passing KeyLength and KeyValueOffset as parameters
 
 [[ASCII_GeoKey_Tests]]
 [cols="2,4",width="100%", options="header"]
 |===
 ^| GeoKey 
-^| Requirements Class
-^| 1026 <| CitationGeoKeys (GTCitationGeoKey)
-^| 2049 <| CitationGeoKeys (GeodeticCitationGeoKey)
-^| 3073 <| CitationGeoKeys (ProjectedCitationGeoKey)
-^| 4097 <| CitationGeoKeys (VerticalCitationGeoKey)
+^| Test
+^| 1026 <| CitationGeoKeys/GTCitationGeoKey
+^| 2049 <| CitationGeoKeys/GeodeticCitationGeoKey
+^| 3073 <| CitationGeoKeys/ProjectedCitationGeoKey
+^| 4097 <| CitationGeoKeys/VerticalCitationGeoKey
 |===
 

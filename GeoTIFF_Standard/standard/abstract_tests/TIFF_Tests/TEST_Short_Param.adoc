@@ -12,35 +12,23 @@
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryValueOffset
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Criteria 
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Location
-|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.type 
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey 
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey
 |===
 
 *Purpose:* Verify a Short parameter
 
-*Pre-conditions* The GeoKeyDirectory and GeoKeyOffset values have been se
+*Pre-conditions* The GeoKeyDirectory and GeoKeyOffset values have been set
 *Test Variables:*
 
 [cols=">20,^20,<80",width="100%", Options="header"]
@@ -79,31 +67,33 @@
             }
         SET KeyValueOffset = GeoKeyDirectory + (KeyValueOffset * 2)
         }
-        
-    Validate the parameter
-        Locate the GeoKey value in the following table
-        Execute the corresponding test passing KeyLength and KeyValueOffset as parameters
+
+    Read a KeyLength Short values from the GeoTIFF file starting at KeyValueOffset.    
+    Validate the value
+        Locate the GeoKey in the following table
+        Verify that the values read satisfy the constraints defined in the associated Requirements Class.
+        Verify that any GeoKeys required by the associated Requirements Class are present in the GeoKey Directory. 
 
 [[_ShortGeoKey_Tests]]
 [cols="1,4",width="75%", options="header"]
 |===
-^| GeoKey ^| Test
+^| GeoKey ^| Requirements Class
 ^| 0 <| ignore
-^| 1024 <| Configuration_GeoKeys/GTModelTypeGeoKey
-^| 1025 <| Configuration_GeoKeys/GTRasterTypeGeoKey
-^| 2048 <| Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
-^| 2050 <| Geodetic_CRS_GeoKey/GeodeticDatumGeoKey
-^| 2051 <| Geodetic_CRS_GeoKey/PrimeMeridianGeoKey
-^| 2052 <| Units_GeoKeys/UnitsGeoKey (Linear Units)
-^| 2054 <| Units_GeoKeys/UnitsGeoKey (Angular Units)
-^| 2056 <| Geodetic_CRS_GeoKey/EllipsoidGeoKey
-^| 2060 <| Units_GeoKeys/UnitsGeoKey (Azimuth Units)
-^| 3072 <| Projection_CRS_GeoKey/ProjectedCRSGeoKey
-^| 3074 <| Projection_Definition_GeoKey/ProjectionGeoKey
-^| 3075 <| Projection_Definition_GeoKey/ProjMethodGeoKey
-^| 3076 <| Units_GeoKeys/UnitsGeoKey (Linear Units)
-^| 4096 <| Vertical_GeoKeys/VerticalGeoKey
-^| 4098 <| Vertical_GeoKeys/VerticalDatumGeoKey
-^| 4099 <| Units_GeoKeys/UnitsGeoKey (Vertical Units)
+^| 1024 <| GTModelTypeGeoKey
+^| 1025 <| GTRasterTypeGeoKey
+^| 2048 <| GeodeticCRSGeoKey
+^| 2050 <| GeodeticDatumGeoKey
+^| 2051 <| PrimeMeridianGeoKey
+^| 2052 <| UnitsGeoKey (Linear Units)
+^| 2054 <| UnitsGeoKey (Angular Units)
+^| 2056 <| EllipsoidGeoKey
+^| 2060 <| UnitsGeoKey (Azimuth Units)
+^| 3072 <| ProjectedCRSGeoKey
+^| 3074 <| ProjectionGeoKey
+^| 3075 <| ProjMethodGeoKey
+^| 3076 <| UnitsGeoKey (Linear Units)
+^| 4096 <| VerticalGeoKey
+^| 4098 <| VerticalDatumGeoKey
+^| 4099 <| UnitsGeoKey (Vertical Units)
 |===
 
