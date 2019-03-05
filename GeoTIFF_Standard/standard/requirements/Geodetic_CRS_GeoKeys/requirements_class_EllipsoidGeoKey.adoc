@@ -1,39 +1,38 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class: EllipsoidGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGehttp://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey
-{set:cellbgcolor:#FFFFFF}oKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.ID +
 _The EllipsoidGeoKey SHALL have ID = 2056_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.type +
 _The EllipsoidGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.obsolete +
-_EllipsoidGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Datum Codes_
+|Requirement http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.reserved
+_EllipsoidGeoKey values in the range 1-1023 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.EPSG +
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.EPSG +
 _EllipsoidGeoKey values in the range 1024-32766 SHALL be EPSG ellipsoid Codes_
 
-NOTE: In GeoTIFF v1.0 the range was 7000-7999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-b.adoc#deprecated_ellipsoid_codes,Table B.5 - Deprecated and deleted EPSG ellipsoid codes>>
+NOTE: In GeoTIFF v1.0 the range was 7000-7999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-g.adoc#deprecated_ellipsoid_codes,Table G.5 - Deprecated and deleted EPSG ellipsoid codes>>
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.user-defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.user-defined +
 _If the EllipsoidGeoKey value is 32767 (User-Defined) then the GTCitationGeoKey and the EllipsoidSemiMajorAxisGeoKey SHALL be populated together with the one of either the EllipsoidSemiMinorAxisGeoKey or the EllipsoidInvFlatteningGeoKey._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/0.0/EllipsoidGeoKey.private +
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.private +
 _EllipsoidGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===
