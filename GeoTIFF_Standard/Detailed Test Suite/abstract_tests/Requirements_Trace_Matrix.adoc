@@ -1,0 +1,225 @@
+=== Requirements Trace Matrix
+
+[[Requirements_Trace_Matrix]]
+[cols="<80,^20",width="100%", Options="header"]
+|===
+^|**Requirement** ^|**Test** 
+^| *requirements_class_TIFF* |
+| A GeoTIFF file SHALL be compliant with the TIFF 6.0 specification |TIFF_Tests/TIFF.Core & TIFF.Tags
+| GeoTIFF files SHALL encode all GeoTIFF specific information using the specified reserved TIFF tags |TIFF_Tests/TIFF.Tags
+| GeoTIFF implementation software SHALL support all documented TIFF 6.0 tag data-types, and in particular ASCII, SHORT the IEEE double-precision floating point "DOUBLE" type |TIFF_Tests/TIFF.Core
+| GeoTIFF implementation software SHALL honor the 'byte-order' indicator by performing byte swaps as necessary to provide an accurate in-memory representation of the values encoded in the GeoTIFF file |TIFF_Tests/TIFF.Core & TIFF_Tests/TIFF.Tags
+| The TIFF tags in a GeoTIFF file SHALL be written out to the file with the tag-IDs sorted in ascending order |TIFF_Tests/TIFF.Tags
+| The GeoKey entries in a GeoTIFF file SHALL be written out to the file with the key-IDs sorted in ascending order |TIFF_Test/GeoKeyDirectory
+^| *requirements_class_GeoKeyDirectoryTag* |
+| The GeoKeyDirectoryTag SHALL have ID = 34735 |TIFF_Test/TIFF.Tags
+| The GeoKeyDirectoryTag SHALL have type = SHORT (2-byte unsigned integer) |TIFF_Test/TIFF.Tags
+| The GeoKeyDirectoryTag SHALL include at least 4 keys (short integers) as header information |TIFF_Test/TIFF.Tags
+| The first unsigned short integer in the GeoKeyDirectoryTag SHALL hold the KeyDirectoryVersion. |TIFF_Test/TIFF.Tags
+| The value of KeyDirectoryVersion SHALL be 1. |TIFF_Test/GeoKeyDirectory
+| The second unsigned short integer in the GeoKeyDirectoryTag SHALL hold the KeyRevision. |TIFF_Test/TIFF.Tags
+| The value of KeyRevision SHALL be 1. |TIFF_Test/GeoKeyDirectory
+| The third unsigned short integer in the GeoKeyDirectoryTag SHALL hold the MinorRevision. |TIFF_Test/TIFF.Tags
+| The MinorRevision for this standard SHALL be O or 1. |TIFF_Test/GeoKeyDirectory
+| The fourth unsigned short integer in the GeoKeyDirectoryTag SHALL hold the NumberOfKeys defined in the rest of the GeoKeyDirectoryTag. |TIFF_Test/GeoKeyDirectory
+| The GeoKeyDirectoryTag SHALL hold NumberOfKeys KeyEntry Sets in addition to the header information |TIFF_Test/GeoKeyDirectory
+| Each Key Entry in the Key Entry Set SHALL include 4 unsigned short integer values |TIFF_Test/GeoKeyDirectory
+| The first unsigned short integer in the Key Entry SHALL hold the key identifier. |TIFF_Test/GeoKeyDirectory, TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters 
+| The second unsigned short integer in the Key Entry SHALL hold the TIFF Tag Location. The value of this entry shall be a valid GeoTIFF tag identifier or a zero (0) |TIFF_Test/GeoKeyDirectory, TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters
+| The Third unsigned short integer in the Key Entry SHALL indicate the number of values associated with this key. |TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters
+| The fourth unsigned short integer in the Key Entry SHALL hold either the key value (if TIFF Tag location = or the index into the tag indicated by the TIFF Tag Location value. |TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters
+^| *requirements_class_GeoKeyCode* |
+| GeoKeys with a value of 0 SHALL indicate intentionally omitted parameters |
+| GeoKeys with a value of 32767 SHALL indicate user-defined parameters |
+^| *requirements_class_GeoShortParamsTag* |
+| In the case where a Parameter of type Short has more than one value, those values SHALL be stored in the GeoKeysDirectory |TIFF_Test/ShortParameters
+| Parameter values stored in the GeoKeysDirectory SHALL appear after the last Key Entry |TIFF_Test/ShortParameters
+^| *requirements_class_GeoDoubleParamsTag* |
+| The GeoDoubleParamsTag SHALL have ID = 34736 |TIFF_Test/TIFF.Tags, TIFF_Test/DoubleParameters
+| The GeoDoubleParamsTag MAY hold any number of key parameters with type = double | TIFF_Test/TIFF.Tags, TIFF_Test/DoubleParameters
+^| *requirements_class_GeoAsciiParamsTag* |
+| The GeoAsciiParamsTag SHALL have ID = 34737 |TIFF_Test/TIFF.Tags
+| The GeoAsciiParamsTag SHALL contain the values of the key parameters of type = ASCII referenced by the GeoKeyDirectoryTag. If there is no key parameters of type = ASCII, it SHALL not be present |TIFF_Test/TIFF.Tags
+| The pipe character &#124; in the GeoAsciiParamsTag SHALL be used as the character to terminate a string written in as ASCII tag |Citation_GeoKey/GTCitationGeoKey, Citation_GeoKey/GeodeticCitationGeoKey, Citation_GeoKey/ProjectedCitationGeoKey, Citation_GeoKey/VerticalCitationGeoKey
+| NULL (ASCII code = 0) characters SHALL not be present in the string content
+  written in the GeoAsciiParamsTag |Citation_GeoKey/GTCitationGeoKey, Citation_GeoKey/VerticalCitationGeoKey  Citation_GeoKey/GeodeticCitationGeoKey, Citation_GeoKey/ProjectedCitationGeoKey, 
+| The GeoAsciiParamsTag SHALL have type = ASCII |TIFF_Test/TIFF.Tags
+^| *requirements_class_GTRasterTypeGeoKey* |
+| The GTRasterTypeGeoKey SHALL have ID = 1025 |TIFF_Test/ShortParameters, Configuration_GeoKey/GTRasterTypeGeoKey
+| The GTRasterTypeGeoKey SHALL have type = SHORT | TIFF_Test/ShortParameters, Configuration_GeoKey/GTRasterTypeGeoKey
+| The GTRasterTypeGeoKey value SHALL be +
+ - 0 to indicate that the Raster type is undefined or unknown; or +
+ - 1 to indidate that the Raster type is PixelIsArea; or +
+ - 2 to indicate that the Raster type is PixelIsPoint; or +
+ - 32767 to indicate that the Raster type is user-defined |Configuration_GeoKey/GTRasterTypeGeoKey
+| GTRasterTypeGeoKey values in the range 3-32766 SHALL be reserved|Configuration_GeoKey/GTRasterTypeGeoKey
+| GTRasterTypeGeoKey values in the range 32768-65535 SHALL be private |Configuration_GeoKey/GTRasterTypeGeoKey
+^| *Requirements_class_GTModelTypeGeoKey* |
+| A GeoTIFF file SHALL include a GTModelTypeGeoKey |TIFF_Tests/TIFF.Tags
+| The GTModelTypeGeoKey SHALL have ID = 1024 |TIFF_Test/ShortParameters, Configuration_GeoKey/GTModelTypeGeoKey
+| The GTModelTypeGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Configuration_GeoKey/GTModelTypeGeoKey
+| The GTModelTypeGeoKey value SHALL be: +
+ - 0 to indicate that the Model CRS is undefined or unknown +
+ - 1 to indicate that the Model CRS is a 2D projected Coordinate Reference System, indicated by the value of the  ProjectedCRSGeoKey; or +
+ - 2 to indicate that the Model CRS is a 2DD geographic coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or +
+ - 3 to indicate that the Model CRS is a geocentric Cartesian 3D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or +
+ - 32767 to indicate that the Model CRS type is user-defined.|Configuration_GeoKey/GTModelTypeGeoKey
+| GTModelTypeGeoKey values in the range 4-32766 SHALL be reserved |Configuration_GeoKey/GTModelTypeGeoKey
+| GTModelTypeGeoKey values in the range 32768-65535 SHALL be private |Configuration_GeoKey/GTModelTypeGeoKey
+| If the GTModelTypeGeoKey value is 1 (Model CRS is a projected 2D CRS) then the GeoTIFF file SHALL include a ProjectedCRSGeoKey |Configuration_GeoKey/GTModelTypeGeoKey
+| If the GTModelTypeGeoKey value is 2 (Model CRS is a geographic 2D CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey |Configuration_GeoKey/GTModelTypeGeoKey
+| If the GTModelTypeGeoKey value is 3 (Model CRS is a geocentric CRS) then the GeoTIFF file SHALL include a GeodeticCRSGeoKey |Configuration_GeoKey/GTModelTypeGeoKey
+| If the GTModelTypeGeoKey value is 32767 (user-defined) then the GTCitationGeoKey SHALL be populated |Configuration_GeoKey/GTModelTypeGeoKey
+^| *requirements_class_ModelTiepointTag* |
+| The ModelTiepointTag SHALL have ID = 33922 |TIFF_Tests/TIFF.Tags
+| The ModelTiepointTag SHALL have type = DOUBLE |TIFF_Tests/TIFF.Tags
+| The ModelTiepointTag SHALL have 6 values for each of the K tiepoints |Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
+^| *requirements_class_ModelPixelScaleTag* |
+| The ModelPixelScaleTag SHALL have ID = 33550 |TIFF_Tests/TIFF.Tags
+| The ModelPixelScaleTag SHALL have type = DOUBLE |TIFF_Tests/TIFF.Tags
+| The ModelPixelScaleTag SHALL have 3 values representing the scale factor in the X, Y, and Z directions |Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
+^| *requirements_class_ModelTransformationTag* |
+| The ModelTransformationTag SHALL have ID = 34264 |TIFF_Tests/TIFF.Tags
+| The ModelTransformationTag SHALL have type = DOUBLE |TIFF_Tests/TIFF.Tags
+| The ModelTransformationTag SHALL have 16 values representing the terms of the 4 by 4 transformation matrix. The terms SHALL be in row-major order |Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
+| *requirements_class_ProjectedCRSGeoKey* |
+| The ProjectedCRSGeoKey SHALL have ID = 3072 |TIFF_Test/ShortParameters, Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| The ProjectedCRSGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| ProjectedCRSGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POC Datum Codes. |Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| ProjectedCRSGeoKey values in the range 1001-1023 SHALL be reserved. |Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| ProjectedCRSGeoKey values in the range 1024-32766 SHALL be EPSG Projected CRS Codes |Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| A ProjectedCRSGeoKey value of 32767 SHALL be a user-defined projected CRS.  If the ProjectedCRSGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, GeodeticCRSGeoKey and ProjectionGeoKey SHALL be populated. |Projection_CRS_GeoKey/ProjectedCRSGeoKey
+| ProjectedCRSGeoKey values in the range 32768-65535 SHALL be private |Projection_CRS_GeoKey/ProjectedCRSGeoKey
+^| *requirements_class_GeodeticCRSGeoKey* |
+| The GeodeticCRSGeoKey SHALL have ID = 2048 |TIFF_Test/ShortParameters, Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
+| The GeodeticCRSGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
+| GeodeticCRSGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POC Geographic Codes |Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
+| GeodeticCRSGeoKey values in the range 1001-1023 SHALL be reserved. |Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
+| GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geodetic CRS codes (geographic 2D CRS, geographic 3D CRS, and geocentric CRS) |Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
+| If the GeodeticCRSGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, GeodeticDatumGeoKey and at least one of GeogAngularUnitsGeoKey or GeogLinearUnitsGeoKey SHALL be populated. |Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
+| GeodeticCRSGeoKeyvalues in the range 32768-65535 SHALL be private |Geodetic_CRS_GeoKey/GeodeticCRSGeoKey
+^| *requirements_class_VerticalGeoKey* |
+| The VerticalGeoKey SHALL have ID = 4096 |TIFF_Test/ShortParameters, Vertical_GeoKeys/VerticalGeoKey
+| The VerticalGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Vertical_GeoKeys/VerticalGeoKey
+| VerticalGeoKey values in the range 1-1023 SHALL be reserved |Vertical_GeoKeys/VerticalGeoKey
+| VerticalGeoKey values in the range 1024-32766 SHALL be **either** EPSG Vertical CRS Codes **or** EPSG geographic 3D CRS codes |Vertical_GeoKeys/VerticalGeoKey
+| If the VerticalGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey, the VerticalUnitsGeoKey and VerticalDatumGeoKey SHALL be populated. |Vertical_GeoKeys/VerticalGeoKey
+| VerticalGeoKey values in the range 32768-65535 SHALL be private |Vertical_GeoKeys/VerticalGeoKey
+^| *requirements_class_CitationGeoKeys* |
+| The GTCitationGeoKey SHALL have ID = 1026 |TIFF_Test/AsciiParameters, Citation_GeoKey/GTCitationGeoKey
+| The GeodeticCitationGeoKey SHALL have ID = 2049 |TIFF_Test/AsciiParameters, Citation_GeoKey/GeodeticCitationGeoKey
+| The ProjectedCitationGeoKey SHALL have ID = 3073 |TIFF_Test/AsciiParameters, Citation_GeoKey/ProjectedCitationGeoKey
+| The VerticalCitationGeoKey SHALL have ID = 4097 |TIFF_Test/AsciiParameters, Citation_GeoKey/VerticalCitationGeoKey
+| The CitationGeoKeys SHALL have type = ASCII |TIFF_Test/AsciiParameters, Citation_GeoKey/GTCitationGeoKey, Citation_GeoKey/GeodeticCitationGeoKey, Citation_GeoKey/ProjectedCitationGeoKey, Citation_GeoKey/VerticalCitationGeoKey
+^| *requirements_class_UnitsGeoKeys* |
+| The GeogAngularUnitsGeoKey SHALL have ID = 2054 |TIFF_Test/ShortParameters, Units_GeoKeys/UnitsGeoKey
+| The GeogAzimuthUnitsGeoKey SHALL have ID = 2060 |TIFF_Test/ShortParameters, Units_GeoKeys/UnitsGeoKey
+| The GeogLinearUnitsGeoKey SHALL have ID = 2052 |TIFF_Test/ShortParameters, Units_GeoKeys/UnitsGeoKey
+| The ProjLinearUnitsGeoKey SHALL have ID = 3076 |TIFF_Test/ShortParameters, Units_GeoKeys/UnitsGeoKey
+| The VerticalUnitsGeoKey SHALL have ID = 4099 |TIFF_Test/ShortParameters, Units_GeoKeys/UnitsGeoKey
+| The GeogAngularUnitsGeoKey, the GeogAzimuthUnitsGeoKey, the GeogLinearUnitsGeoKey, the ProjLinearUnitsGeoKey and the VerticalUnitsGeoKey SHALL each have type = SHORT |TIFF_Test/ShortParameters, Units_GeoKeys/UnitsGeoKey
+| GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 1-1023 SHALL be reserved. |Units_GeoKeys/UnitsGeoKey
+| GeogAngularUnitsGeoKey and GeogAzimuthUnitsGeoKey values in the range 1024-32766 SHALL be EPSG Unit Of Measure (UOM) codes with type = angle. |Units_GeoKeys/UnitsGeoKey
+| GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 1024-32766 SHALL be EPSG Unit Of Measure (UOM) codes with type = length. |Units_GeoKeys/UnitsGeoKey
+| A GeogAngularUnitsGeoKey or a GeogAzimuthUnitsGeoKey value of 32767 SHALL be a user-defined angular unit.  If the value is 32767 (User-Defined) then the GeodeticCitationGeoKey and the GeogAngularUnitSizeGeoKey SHALL be populated |Units_GeoKeys/UnitsGeoKey
+| A GeogLinearUnitsGeoKey value of 32767 SHALL be a user-defined linear unit. If the value is 32767 (User-Defined) then the GeodeticCitationGeoKey and the GeogLinearUnitSizeGeoKey SHALL be populated |Units_GeoKeys/UnitsGeoKey
+| A ProjLinearUnitsGeoKey value of 32767 SHALL be a user-defined linear unit. If the value is 32767 (User-Defined) then the ProjectedCitationGeoKey and the ProjLinearUnitSizeGeoKey SHALL be populated. |Units_GeoKeys/UnitsGeoKey
+| A VerticalUnitsGeoKey value of 32767 (user defined) SHALL not be used |Units_GeoKeys/UnitsGeoKey
+| GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 32768-65535 SHALL be private. |Units_GeoKeys/UnitsGeoKey
+^| *requirements_class_UnitSizeGeoKeys* |
+| The GeogAngularUnitSizeGeoKey SHALL have ID = 2055 |TIFF_Test/DoubleParameters, Units_GeoKeys/UnitSizeGeoKey 
+| The GeogLinearUnitSizeGeoKey SHALL have ID = 2053 |TIFF_Test/DoubleParameters, Units_GeoKeys/UnitSizeGeoKey 
+| The ProjLinearUnitSizeGeoKey SHALL have ID = 3077 |TIFF_Test/DoubleParameters, Units_GeoKeys/UnitSizeGeoKey
+| The GeogAngularUnitSizeGeoKey, GeogLinearUnitSizeGeoKey and ProjLinearUnitSizeGeoKey SHALL each have type = DOUBLE |TIFF_Test/DoubleParameters, Units_GeoKeys/UnitSizeGeoKey
+| The units of the GeogAngularUnitSizeGeoKey value SHALL be radians. |Units_GeoKeys/UnitSizeGeoKey
+| The units of the GeogLinearUnitSizeGeoKey value SHALL be meters. |Units_GeoKeys/UnitSizeGeoKey
+| The units of the ProjLinearUnitSizeGeoKey value SHALL be meters. |Units_GeoKeys/UnitSizeGeoKey
+^| *requirements_class_GeodeticDatumGeoKey* |
+| The GeodeticDatumGeoKey SHALL have ID = 2050 |TIFF_Test/ShortParameters, Geodetic_CRS_GeoKey/GeodeticDatumGeoKey
+| The GeodeticDatumGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Geodetic_CRS_GeoKey/GeodeticDatumGeoKey
+| GeodeticDatumGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POS Datum Codes. |Geodetic_CRS_GeoKey/GeodeticDatumGeoKey
+| GeodeticDatumGeoKey values in the range 1001-1023 SHALL be reserved. |Geodetic_CRS_GeoKey/GeodeticDatumGeoKey
+| GeodeticDatumGeoKey values in the range 1024-32766 SHALL be EPSG geodetic datum codes. |Geodetic_CRS_GeoKey/GeodeticDatumGeoKey
+| If the GeodeticDatumGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey SHALL be populated. |Geodetic_CRS_GeoKey/GeodeticDatumGeoKey
+| GeodeticDatumGeoKey values in the range 32768-65535 SHALL be private |Geodetic_CRS_GeoKey/GeodeticDatumGeoKey
+^| *requirements_class_PrimeMeridianGeoKey* |
+| The PrimeMeridianGeoKey SHALL have ID = 2051 |TIFF_Test/ShortParameters, Geodetic_CRS_GeoKey/PrimeMeridianGeoKey
+| The PrimeMeridianGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Geodetic_CRS_GeoKey/PrimeMeridianGeoKey
+| PrimeMeridianGeoKey values in the range 1-100 SHALL be obsolete EPSG/POSC Datum Codes |Geodetic_CRS_GeoKey/PrimeMeridianGeoKey
+| PrimeMeridianGeoKey values in the range 101-1023 SHALL be reserved |Geodetic_CRS_GeoKey/PrimeMeridianGeoKey
+| PrimeMeridianGeoKey values in the range 1024-32766 SHALL be EPSG Prime Meridian Codes |Geodetic_CRS_GeoKey/PrimeMeridianGeoKey
+| If the PrimeMeridianGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, and PrimeMeridianLongGeoKey SHALL be populated |Geodetic_CRS_GeoKey/PrimeMeridianGeoKey
+| PrimeMeridianGeoKey values in the range 32768-65535 SHALL be private |Geodetic_CRS_GeoKey/PrimeMeridianGeoKey
+^| *requirements_class_PrimeMeridianLongitudeGeoKey* |
+| The PrimeMeridianLongitudeGeoKey SHALL have ID = 2061 |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/PrimeMeridianLongitudeGeoKey
+| The PrimeMeridianLongitudeGeoKey SHALL have type = DOUBLE |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/PrimeMeridianLongitudeGeoKey
+| The unit for the PrimeMeridianLongitudeGeoKey value SHALL be GeogAngularUnits |Geodetic_CRS_GeoKey/PrimeMeridianLongitudeGeoKey
+^| *requirements_class_EllipsoidGeoKey* |
+| The EllipsoidGeoKey SHALL have ID = 2056 |TIFF_Test/ShortParameters, Geodetic_CRS_GeoKey/EllipsoidGeoKey
+| The EllipsoidGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Geodetic_CRS_GeoKey/EllipsoidGeoKey
+| EllipsoidGeoKey values in the range 1-1000 SHALL be obsolete EPSG/POSC Datum Codes |Geodetic_CRS_GeoKey/EllipsoidGeoKey
+| EllipsoidGeoKey values in the range 1024-32766 SHALL be EPSG ellipsoid Codes |Geodetic_CRS_GeoKey/EllipsoidGeoKey
+| If the EllipsoidGeoKey value is 32767 (User-Defined) then the GTCitationGeoKey and the EllipsoidSemiMajorAxisGeoKey SHALL be populated together with the one of either the EllipsoidSemiMinorAxisGeoKey or the EllipsoidInvFlatteningGeoKey |Geodetic_CRS_GeoKey/EllipsoidGeoKey
+| EllipsoidGeoKey values in the range 32768-65535 SHALL be private |Geodetic_CRS_GeoKey/EllipsoidGeoKey
+^| *requirements_class_EllipsoidSemiMajorAxisGeoKey* |
+| The EllipsoidSemiMajorAxisGeoKey SHALL have ID = 2057 |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/EllipsoidSemiMajorAxisGeoKey
+| The EllipsoidSemiMajorAxisGeoKey SHALL have type = DOUBLE |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/EllipsoidSemiMajorAxisGeoKey
+| The units of the EllipsoidSemiMajorAxisGeoKey SHALL be defined by the value of GeogLinearUnitsGeoKey |Geodetic_CRS_GeoKey/EllipsoidSemiMajorAxisGeoKey
+^| *requirements_class_EllipsoidSemiMinorAxisGeoKey* |
+| The EllipsoidSemiMinorAxisGeoKey SHALL have ID = 2058 |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/EllipsoidSemiMinorAxisGeoKey
+| The EllipsoidSemiMinorAxisGeoKey SHALL have type = DOUBLE |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/EllipsoidSemiMinorAxisGeoKey
+| The units of the EllipsoidSemiMinorAxisGeoKey SHALL be defined by the value of GeogLinearUnitsGeoKey |Geodetic_CRS_GeoKey/EllipsoidSemiMinorAxisGeoKey
+^| *requirements_class_EllipsoidInvFlatteningGeoKey* |
+| The EllipsoidInvFlatteningGeoKey SHALL have ID = 2059 |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/EllipsoidInvFlatteningGeoKey 
+| The EllipsoidInvFlatteningGeoKey SHALL have type = DOUBLE |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/EllipsoidInvFlatteningGeoKey
+^| *requirements_class_VerticalDatumGeoKey* |
+| The VerticalDatumGeoKey SHALL have ID = 4098 |TIFF_Test/ShortParameters, Vertical_GeoKeys/VerticalDatumGeoKey
+| The VerticalDatumGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Vertical_GeoKeys/VerticalDatumGeoKey
+| VerticalDatumGeoKey values in the range 1-1023 SHALL be reserved |Vertical_GeoKeys/VerticalDatumGeoKey
+| VerticalDatumGeoKey values in the range 1024-32766 SHALL be EPSG vertical datum codes |Vertical_GeoKeys/VerticalDatumGeoKey
+| If the VerticalDatumGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey SHALL be populated. |Vertical_GeoKeys/VerticalDatumGeoKey
+| VerticalDatumGeoKey values in the range 32768-65535 SHALL be private |Vertical_GeoKeys/VerticalDatumGeoKey
+^| *requirements_class_ProjectionGeoKey* |
+| The ProjectionGeoKey SHALL have ID = 3074 |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjectionGeoKey
+| The ProjectionGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjectionGeoKey
+| ProjectionGeoKey values in the range 1-1023 SHALL be reserved |Projection_Definition_GeoKey/ProjectionGeoKey
+| ProjectionGeoKey values in the range 1024-32766 SHALL be valid EPSG map projection (coordinate operation) codes |Projection_Definition_GeoKey/ProjectionGeoKey
+| If the ProjectionGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, ProjectionMethodGeoKey, and ProjLinearUnitsGeoKey SHALL be populated |Projection_Definition_GeoKey/ProjectionGeoKey
+| ProjectionGeoKey values in the range 32768-65535 SHALL be private |Projection_Definition_GeoKey/ProjectionGeoKey
+^| *requirements_class_ProjMethodGeoKey* |
+| The ProjMethodGeoKey SHALL have ID = 3075 |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjMethodGeoKey
+| The ProjMethodGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjMethodGeoKey
+| ProjMethodGeoKey values in the range 1-27 SHALL be GeoTIFF map projection method codes |Projection_Definition_GeoKey/ProjMethodGeoKey
+| ProjMethodGeoKey values in the range 28-32766 SHALL be reserved |Projection_Definition_GeoKey/ProjMethodGeoKey
+| If the ProjectionMethodGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and keys for each map projection parameter (coordinate operation parameter) appropriate to that method SHALL be populated. |Projection_Definition_GeoKey/ProjMethodGeoKey
+| ProjMethodGeoKey values in the range 32768-65535 SHALL be private |Projection_Definition_GeoKey/ProjMethodGeoKey
+^| *requirements_class_ProjAngularParameters* |
+| The ProjStdParallel1GeoKey SHALL have ID = 3078 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
+| The ProjStdParallel2GeoKey SHALL have ID = 3079 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
+| The ProjNatOriginLongGeoKey SHALL have ID = 3080 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
+| The ProjNatOriginLatGeoKey SHALL have ID = 3081 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
+|The ProjFalseOriginLongGeoKey SHALL have ID = 3084 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
+| The ProjFalseOriginLatGeoKey SHALL have ID = 3085 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
+| The ProjCenterLongGeoKey SHALL have ID = 3088 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
+| The ProjCenterLatGeoKey SHALL have ID = 3089 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
+| The ProjStraightVertPoleLongGeoKey SHALL have ID = 3095 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
+| The ProjAngularParameters SHALL have type = DOUBLE |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
+| All parameters in this requirements class SHALL have units as specified by the GeogAngularUnitsGeoKey |Projection_Definition_GeoKeys/ProjAngularParameters
+^| *requirements_class_ProjAzimuthAngleGeoKey* |
+| The ProjAzimuthAngleGeoKey SHALL have ID = 3094 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAzimuthAngleGeoKey
+| The ProjAzimuthAngleGeoKey SHALL have type = DOUBLE |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAzimuthAngleGeoKey
+| The ProjAzimuthAngleGeoKey SHALL have units as specified by the GeogAzimuthUnitsGeoKey |Projection_Definition_GeoKeys/ProjAzimuthAngleGeoKey
+^| *requirements_class_ProjLinearParameters* |
+| The ProjFalseEastingGeoKey SHALL have ID = 3082 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjLinearParameters
+| The ProjFalseNorthingGeoKey SHALL have ID = 3083 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjLinearParameters
+| The ProjFalseOriginEastingGeoKey SHALL have ID = 3086 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjLinearParameters Projection_Definition_GeoKeys/ProjLinearParameterGeoKey
+| The ProjFalseOriginNorthingGeoKey SHALL have ID = 3087 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjLinearParameters  Projection_Definition_GeoKeys/ProjLinearParameterGeoKey
+| The ProjCenterEastingGeoKey SHALL have ID = 3090 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjLinearParameters
+| The ProjCenterNorthingGeoKey SHALL have ID = 3091 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjLinearParameters
+| All parameters in this requirements class SHALL have type = DOUBLE |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjLinearParameters
+| All parameters in this requirements class SHALL have units as specified by the ProjLinearUnitsGeoKey |Projection_Definition_GeoKeys/ProjLinearParameters
+^| *requirements_class_ProjScalarParameters* |
+| The ProjScaleAtNatOriginGeoKey SHALL have ID = 3092 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjScalarParameters
+| The ProjScaleAtCenterGeoKey SHALL have ID = 3093 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjScalarParameters
+| All parameters in this requirements class SHALL have type = DOUBLE |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjScalarParameters
+|===

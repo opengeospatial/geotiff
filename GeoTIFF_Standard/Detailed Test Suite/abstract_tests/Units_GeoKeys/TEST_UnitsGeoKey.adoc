@@ -1,0 +1,53 @@
+=== UnitsGeoKey Test
+
+*Test id:* Units_GeoKeys/UnitsGeoKey
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.reserved
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.angular
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.linear
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.userdefinedAngular
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.userdefinedLinear
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.userdefinedProjLinear
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.userdefinedVertical
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.private
+|===
+
+*Purpose:* Verify the contents of the UnitsGeoKey parameter
+
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|KeyLength |Parameter |The length of the value for this GeoKey
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Read a Short value from the GeoTIFF file starting at KeyValueOffset.
+    
+    Verify that the value is not between 1 and 1023 (reserved).
+    
+    If the value is between 1024 and 32766 THEN the value represents an EPSG Unit of Measure.
+     - UOM type = length for GeogLinearUnits, ProjLinearUnits, and VerticalUnits GeoKeys
+     - UOM type = angle for GeogAngularUnits and GeogAzimuthUnits GeoKeys
+    
+    IF value = 32767 and the GeoKey = GeogAngularUnits or GeogAzimuthUnits THEN verify that there is a GeodeticCitationGeoKey (GeoKey 2049) and GeogAngularUnitSizeGeoKey (GeoKey 2055) in the GeoTIFF file.
+    
+    IF value = 32767 and the GeoKey = GeogLinearUnits THEN verify that there is a GeodeticCitationGeoKey (GeoKey 2049) and GeogLinearUnitSizeGeoKey (GeoKey 2053) in the GeoTIFF file.
+    
+    IF value = 32767 and the GeoKey = ProjLinearUnits THEN verify that there is a ProjectedCitationGeoKey (GeoKey 3073) and ProjLinearUnitSizeGeoKey (GeoKey 3077) in the GeoTIFF file.
+    
+    IF value = 32767 and the GeoKey = VerticalUnits THEN indicate an error.
+    
+    Values of 32768 through 65535 are valid (private)
+ 

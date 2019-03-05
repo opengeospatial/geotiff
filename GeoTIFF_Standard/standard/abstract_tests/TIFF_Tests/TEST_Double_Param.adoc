@@ -1,0 +1,103 @@
+==== Double Parameters Test
+
+*Test id:* TIFF_Test/DoubleParameters
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameterGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey
+|===
+
+*Purpose:* Verify a Double parameter
+
+*Pre-conditions* The GeoKeyDirectory, DoubleValues and GeoKeyOffset values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|GeoKeyDirectory |Global |Location of the GeoTIFF GeoKey directory
+|DoubleValues |Global |Location of the Double values for GeoTIFF Double GeoKeys
+|GeoKeyOffset |Parameter| Location of this Key Entry Set in the GeoKey directory
+|GeoKey |Local |Temporary value of the GeoKey
+|KeyLength |Local |Temporary value for the length of the value for the GeoKey
+|KeyValueOffset |Local |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Locate the Key Entry Set using the GeoKeyDirectory and GeoKeyOffset values.
+
+    Process the second Short integer in the Key Entry Set
+        {
+        IF value != 34736 THEN error out
+        }
+    Process the first Short integer in the Key Entry Set
+        {
+        Set GeoKey to the value
+        }
+    Process the third Short integer in the Key Entry Set
+        {
+        Set KeyLength to the value
+        }
+    Process the fourth Short integer in the Key Entry Set
+        {
+        SET KeyValueOffset to the value
+        }
+    SET KeyValueOffset = DoubleValues + (KeyValueOffset * 8)
+
+    Read a KeyLength Double values from the GeoTIFF file starting at KeyValueOffset.    
+    Validate the value
+        Locate the GeoKey in the following table
+        Verify that the values read satisfy the constraints defined in the associated Requirements Class.
+        Verify that any GeoKeys required by the associated Requirements Class are present in the GeoKey Directory. 
+
+[[Double_GeoKey_Tests]]
+[cols="2,4",width="100%", options="header"]
+|===
+^| GeoKey ^| Requirements Class
+^| 0 <| ignore
+^| 2053 <| UnitSizeGeoKey (Geog Linear)
+^| 2055 <| UnitSizeGeoKey (Geog Angular)
+^| 2057 <| EllipsoidSemiMajorAxisGeoKey
+^| 2058 <| EllipsoidSemiMinorAxisGeoKey
+^| 2059 <| EllipsoidInvFlatteningGeoKey
+^| 2061 <| PrimeMeridianLongitudeGeoKey
+^| 3077 <| UnitSizeGeoKey (Projected Linear)
+^| 3078 <| ProjAngularParameters (Standard Parallel 1)
+^| 3079 <| ProjAngularParameters (Standard Parallel 2)
+^| 3080 <| ProjAngularParameters (Natural Origin Longitude)
+^| 3081 <| ProjAngularParameters (Natural Origin Latitude)
+^| 3082 <| ProjLinearParameters (False Easting)
+^| 3083 <| ProjLinearParameters (False Northing)
+^| 3084 <| ProjAngularParameters (False Origin Longitude)
+^| 3085 <| ProjAngularParameters (False Origin Latitude)
+^| 3086 <| ProjLinearParameters (False Origin Easting)
+^| 3087 <| ProjLinearParameters (False Origin Northing)
+^| 3088 <| ProjAngularParameters (Center Longitude)
+^| 3089 <| ProjAngularParameters (Center Latitude)
+^| 3090 <| ProjLinearParameters (Projection Center Easting)
+^| 3091 <| ProjLinearParameters (Projection Center Northing)
+^| 3092 <| ProjScalarParameters (Scale at Natural Origin)
+^| 3093 <| ProjScalarParameters (Scale at Center)
+^| 3094 <| ProjAzimuthAngleGeoKey
+^| 3095 <| ProjAngularParameters (Straight Vertical Pole)
+|===
+
+Double GeoKey Tests

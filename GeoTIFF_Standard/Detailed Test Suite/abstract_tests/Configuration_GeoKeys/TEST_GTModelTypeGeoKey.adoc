@@ -1,0 +1,48 @@
+=== GTModelTypeGeoKey Test
+
+*Test id:* Configuration_GeoKey/GTModelTypeGeoKey
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.value
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.reserved
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.private 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.projCRS 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.geogCRS 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.geocenCRS 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.userDefined 
+|===
+
+*Purpose:* Verify the contents and dependencies of the GTModelTypeGeoKey parameter
+
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|KeyLength |Parameter |The length of the value for this GeoKey
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Read a Short value from the GeoTIFF file starting at KeyValueOffset.
+
+    Verify that the value is not between 4 and 32766 (reserved).
+
+    IF value = 1 THEN verify that there is a ProjectedCRSGeoKey (GeoKey 3072) in the GeoTIFF file.
+    
+    IF value = 2 THEN verify that there is a GeodeticCRSGeoKey (GeoKey 2048) in the GeoTIFF file.
+    
+    IF value = 3 THEN verify that there is a GeodeticCRSGeoKey (GeoKey 2048) in the GeoTIFF file.
+    
+    IF value = 32767 THEN verify that there is a GTCitationGeoKey (GeoKey 2049) in the GeoTIFF file.
+    
+    Values of 32768 through 65535 are valid (private)
+ 

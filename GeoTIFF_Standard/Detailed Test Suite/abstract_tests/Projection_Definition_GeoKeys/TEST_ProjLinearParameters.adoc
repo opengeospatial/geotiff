@@ -1,0 +1,31 @@
+=== ProjLinearParameters Test
+
+*Test id:* Projection_Definition_GeoKeys/ProjLinearParameters
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameters.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameters.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameters.units
+|===
+
+*Purpose:* Verify the contents of the GeoKeys defined by the ProjLinearParameter requirements class
+
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|KeyLength |Parameter |The length of the value for this GeoKey
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Read a Double value from the GeoTIFF file starting at KeyValueOffset.
+    
+    Verify that there is a GeogLinearUnitsGeoKey (GeoKey 3076) in the GeoTIFF file.

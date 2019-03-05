@@ -1,0 +1,99 @@
+=== Short Parameters Test
+
+*Test id:* TIFF_Test/ShortParameters
+
+*Requirements:* 
+
+[width="100%"]
+|===
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.KeyEntry.ID 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryValueOffset
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Criteria 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Location
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey 
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey
+|===
+
+*Purpose:* Verify a Short parameter
+
+*Pre-conditions* The GeoKeyDirectory and GeoKeyOffset values have been set
+*Test Variables:*
+
+[cols=">20,^20,<80",width="100%", Options="header"]
+|===
+^|**Variable** ^|**Scope** ^|**Description**
+|GeoKeyDirectory |Global |Location of the GeoTIFF GeoKey directory
+|GeoKeyOffset |Parameter| Location of this Key Entry Set in the GeoKey directory
+|GeoKey |Local |Temporary value of the GeoKey
+|KeyLength |Local |Temporary value for the length of the value for the GeoKey
+|KeyValueOffset |Local |The location of the GeoKey value in the file 
+|===
+
+*Test Process:*
+
+    Locate the Key Entry Set using the GeoKeyDirectory and GeoKeyOffset values.
+
+    Process the second Short integer in the Key Entry Set
+        {
+        IF value != 0 OR 34735 THEN error out
+        }
+    Process the first Short integer in the Key Entry Set
+        {
+        SET GeoKey to the value
+        }
+    Process the third Short integer in the Key Entry Set
+        {
+        SET KeyLength to the value
+        }
+    IF KeyLength = 1 THEN 
+        SET KeyValueOffset = GeoKeyDirectory + GeoKeyOffset + 6
+    ELSE 
+        {
+        Process the fourth Short integer in the Key Entry Set
+            {
+            SET KeyValueOffset to the value
+            }
+        SET KeyValueOffset = GeoKeyDirectory + (KeyValueOffset * 2)
+        }
+
+    Read a KeyLength Short values from the GeoTIFF file starting at KeyValueOffset.    
+    Validate the value
+        Locate the GeoKey in the following table
+        Verify that the values read satisfy the constraints defined in the associated Requirements Class.
+        Verify that any GeoKeys required by the associated Requirements Class are present in the GeoKey Directory. 
+
+[[_ShortGeoKey_Tests]]
+[cols="1,4",width="75%", options="header"]
+|===
+^| GeoKey ^| Requirements Class
+^| 0 <| ignore
+^| 1024 <| GTModelTypeGeoKey
+^| 1025 <| GTRasterTypeGeoKey
+^| 2048 <| GeodeticCRSGeoKey
+^| 2050 <| GeodeticDatumGeoKey
+^| 2051 <| PrimeMeridianGeoKey
+^| 2052 <| UnitsGeoKey (Linear Units)
+^| 2054 <| UnitsGeoKey (Angular Units)
+^| 2056 <| EllipsoidGeoKey
+^| 2060 <| UnitsGeoKey (Azimuth Units)
+^| 3072 <| ProjectedCRSGeoKey
+^| 3074 <| ProjectionGeoKey
+^| 3075 <| ProjMethodGeoKey
+^| 3076 <| UnitsGeoKey (Linear Units)
+^| 4096 <| VerticalGeoKey
+^| 4098 <| VerticalDatumGeoKey
+^| 4099 <| UnitsGeoKey (Vertical Units)
+|===
+
