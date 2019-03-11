@@ -22,7 +22,7 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/MOdelPixelScaleTag.dependency
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.required
