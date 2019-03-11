@@ -28,4 +28,10 @@ _A positive ScaleX in the ModelPixelScaleTag SHALL indicate that model space X c
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal +
 _Simple reversals of orientation from the standard relationship between raster and model space (e.g., horizontal or vertical flips) SHALL be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers shall honor this sign-reversal convention._
 {set:cellbgcolor:#FFFFFF}
+
+|Requirement {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency +
+_A ModelTiepointTag SHALL be included in any Image File Directory which contains a ModelPixelScaleTag._
+{set:cellbgcolor:#FFFFFF}
+
 |===
