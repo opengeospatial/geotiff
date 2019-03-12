@@ -2262,6 +2262,11 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal</a><br>
 <em>Simple reversals of orientation from the standard relationship between raster and model space (e.g., horizontal or vertical flips) SHALL be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers shall honor this sign-reversal convention.</em></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency</a><br>
+<em>A ModelTiepointTag SHALL be included in any Image File Directory which contains a ModelPixelScaleTag.</em></p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -2293,6 +2298,11 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.count" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.count</a><br>
 <em>The ModelTransformationTag SHALL have 16 values representing the terms of the 4 by 4 transformation matrix. The terms SHALL be in row-major order</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive</a><br>
+<em>Neither the ModelTiepointTag nor the ModelPixelScaleTag SHALL be included in an Image File Directory which contains a ModelTransformationTag.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -3612,10 +3622,16 @@ NOTE: See Annex C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.type" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.type</a></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive</a></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID</a></p></td>
@@ -3759,7 +3775,7 @@ NOTE: See Annex C</p></td>
   IF GeoKeyDirectory has been set THEN
       {
       execute test TIFF_Tests/GeoKeyDirectory
-      Validate that there is a GTModelType GeoKey in the GeoKey Directory
+      Validate that there is a GTModelType GeoKey in the GeoKey Directory�
       }
       ELSE Throw an error.
   IF PixelScaleTag has been set THEN
@@ -3767,6 +3783,7 @@ NOTE: See Annex C</p></td>
       Validate that Bytes 2-3 = 12 (Double)
       Set TagLength to the value in Bytes 4-7
       Set TagValue to the value in Bytes 8-11
+      Validate that this IFD contains a ModelTiepointTag
       Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
       }
   IF TiepointTag has been set THEN
@@ -3781,6 +3798,7 @@ NOTE: See Annex C</p></td>
       Validate that Bytes 2-3 = 12 (Double)
       Set TagLength to the value in Bytes 4-7
       Set TagValue to the value in Bytes 8-11
+      Validate that this IFD does not contain a ModelPixelScaleTag nor a ModelTiepointTag.
       Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
       }
   IFD_Offset = the last four bytes of the current IFD
@@ -8260,7 +8278,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-10 22:17:30 -0400
+Last updated 2019-03-11 22:17:32 -0400
 </div>
 </div>
 </body>
