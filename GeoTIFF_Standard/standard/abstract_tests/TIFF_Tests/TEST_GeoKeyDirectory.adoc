@@ -1,4 +1,4 @@
-=== GeoKey Directory Test
+==== GeoKey Directory Test
 
 *Test id:* TIFF_Test/GeoKeyDirectory
 

@@ -1,4 +1,4 @@
-=== ModelTiepointTag Test
+==== ModelTiepointTag Test
 
 *Test id:* Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
 

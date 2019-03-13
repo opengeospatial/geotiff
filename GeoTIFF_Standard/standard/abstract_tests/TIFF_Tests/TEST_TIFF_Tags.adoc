@@ -1,4 +1,4 @@
-=== TIFF Tags Test
+==== TIFF Tags Test
 
 *Test id:* TIFF_Tests/TIFF.Tags
 

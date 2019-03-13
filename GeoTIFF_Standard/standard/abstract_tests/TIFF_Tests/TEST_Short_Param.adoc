@@ -1,4 +1,4 @@
-=== Short Parameters Test
+==== Short Parameters Test
 
 *Test id:* TIFF_Test/ShortParameters
 

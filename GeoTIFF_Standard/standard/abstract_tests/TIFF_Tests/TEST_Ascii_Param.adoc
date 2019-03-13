@@ -1,4 +1,4 @@
-=== ASCII Parameters Test
+==== ASCII Parameters Test
 
 *Test id:* TIFF_Test/AsciiParameters
 

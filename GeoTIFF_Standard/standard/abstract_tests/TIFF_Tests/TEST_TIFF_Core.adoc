@@ -1,4 +1,4 @@
-=== TIFF Core Test
+==== TIFF Core Test
 
 *Test id:* TIFF_Tests/TIFF.Core
 
