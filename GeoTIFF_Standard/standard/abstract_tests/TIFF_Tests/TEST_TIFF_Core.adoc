@@ -2,23 +2,23 @@
 
 *Test id:* TIFF_Tests/TIFF.Core
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/TIFF 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ByteOrder 
+|http://www.opengis.net/spec/GeoTIFF/1.1/TIFF
+|http://www.opengis.net/spec/GeoTIFF/1.1/ByteOrder
 |http://www.opengis.net/spec/GeoTIFF/1.1/DataTypes
 |===
 
 *Purpose:* Verify that the GeoTIFF file conforms to the TIFF specification.
 
-*Pre-conditions:* None 
+*Pre-conditions:* None
 
 *Test Variables:* None
 
 *Test Process:*
 
-There is no authoritative conformance test for TIFF 6.0. The best that can be achieved is to use a TIFF reference implementation to sucessfully read a GeoTIFF file. The OGC will provide such a reference implementation based on the open source LibTIFF library (https://gitlab.com/libtiff/libtiff).
+There is no authoritative conformance test for TIFF 6.0. The best that can be achieved is to use a TIFF reference implementation to successfully read a GeoTIFF file. The OGC recommends the use of tiffdump based on the open source LibTIFF library (https://gitlab.com/libtiff/libtiff) for dumping the content of TIFF tags (displaying error messages if any), or opensource TIFF file validator (such as the JHOVE tool, opensource developed in Java - cf. http://jhove.openpreservation.org/).
 
 Once TIFF 6.0 confirmance has been validated, execute test TIFF_Tests/TIFF.Tags.
