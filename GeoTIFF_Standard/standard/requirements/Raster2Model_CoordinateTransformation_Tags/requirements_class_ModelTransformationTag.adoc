@@ -19,8 +19,4 @@ _The ModelTransformationTag SHALL have type = DOUBLE_
 _The ModelTransformationTag SHALL have 16 values representing the terms of the 4 by 4 transformation matrix. The terms SHALL be in row-major order_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive +
-_Neither the ModelTiepointTag nor the ModelPixelScaleTag SHALL be included in an Image File Directory which contains a ModelTransformationTag._
-{set:cellbgcolor:#FFFFFF}
 |===
