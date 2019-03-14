@@ -134,7 +134,7 @@ In the TIFF/GeoTIFF framework, there are essentially three different spaces in w
 . The Device space D, and
 . The Model space, M, used to reference points on the earth.
 
-In the sections that follow we shall discuss the relevance and use of each of these spaces, and their corresponding coordinate systems, from the standpoint of GeoTIFF.
+In the sections that follow we discuss the relevance and use of each of these spaces, and their corresponding coordinate systems, from the standpoint of GeoTIFF.
 
 ==== Device Space and GeoTIFF
 In standard TIFF 6.0 there are tags that relate raster space R with device space D, such as monitor, scanner or printer. The list of such tags consists of the following:
@@ -146,7 +146,7 @@ In standard TIFF 6.0 there are tags that relate raster space R with device space
      XPosition (286)
      YPosition (287)
 
-In GeoTIFF, provision is made to identify earth-referenced coordinate systems (model space M) and to relate M space with R space. This provision is independent of and can co-exist with the relationship between raster and device spaces. To emphasize the distinction, this spec shall not refer to "X" and "Y" raster coordinates, but rather to raster space "J" (row) and "I" (column) coordinate variables instead, as defined in section <<RasterSpace>>.
+In GeoTIFF, provision is made to identify earth-referenced coordinate systems (model space M) and to relate M space with R space. This provision is independent of and can co-exist with the relationship between raster and device spaces. To emphasize the distinction, this specification shall not refer to "X" and "Y" raster coordinates, but rather to raster space "J" (row) and "I" (column) coordinate variables instead, as defined in section <<RasterSpace>>.
 
 ==== Raster Space
 ===== _Raster Data_
@@ -411,7 +411,7 @@ The three tags defined below may be used for defining the relationship between R
      R ------------ OR --------------> M
     (I,J,K) ModelTransformationTag (X,Y,Z)
 
-The next section describes these Baseline georeferencing tags in detail.
+The next section describes these georeferencing tags in detail.
 
 === GeoTIFF Tags for Coordinate Transformations
 For most common applications, the transformation between raster and model space may be defined with a set of raster-to-model tiepoints and scaling parameters. The following two tags may be used for this purpose:
@@ -438,7 +438,7 @@ For orthorectification or mosaicking applications a large number of tiepoints ma
 
 Remark: all GeoTIFF information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.
 
-The next two tags are optional tags provided for defining exact affine transformations between raster and model space; GeoTIFF files may use either, but shall never use both within the same TIFF image directory.
+The next two tags ModelPixelScaleTag and ModelTransformationTag are optional tags provided for defining exact affine transformations between raster and model space; GeoTIFF files may use either, but *shall never use both* within the same TIFF image directory.
 
      ModelPixelScaleTag:
           Tag = 33550 (830E.H)
@@ -449,20 +449,20 @@ This tag may be used to specify the size of raster pixel spacing in the model sp
 
      ModelPixelScaleTag = (ScaleX, ScaleY, ScaleZ)
 
-where ScaleX and ScaleY give the horizontal and vertical spacing of raster pixels. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale (in other words a *Z-Scaling factor*), and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).
+where ScaleX and ScaleY give the horizontal spacing of raster pixels in the 2 directions. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale (in other words a *Z-Scaling factor*), and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).
 
 A single tiepoint in the ModelTiepointTag, together with this tag, completely determine the relationship between raster and model space; thus they comprise the two tags which GeoTIFF files most often will use to place a raster image into a "standard position" in model space.
 
 Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, Resolution and Orientation tags of the standard TIFF 6.0 spec. However, simple reversals of orientation between raster and model space (e.g. horizontal or vertical flips) may be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers must honor this sign-reversal convention.
 
-This tag must not be used if the raster image requires rotation or shearing to place it into the standard model space. In such cases the transformation shall be defined with the more general ModelTransformationTag, defined below.
+This ModelPixelScaleTag tag must not be used if the raster image requires rotation or shearing to place it into the standard model space. In such cases the transformation must be defined with the more general ModelTransformationTag, defined below.
 
      ModelTransformationTag
           Tag = 34264 (85D8.H)
           Type = DOUBLE
           N = 16
 
-This tag may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space. If specified, the tag shall have the following organization:
+This tag may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space. If specified, the tag has the following organization:
 
      ModelTransformationTag = (a,b,c,d,e....m,n,o,p).
 
