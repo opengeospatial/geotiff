@@ -2,17 +2,17 @@
 
 *Test id:* Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardCovention
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardConvention
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal
 |===
 
 *Purpose:* Verify the contents of the ModelPixelScaleTag parameter
 
-*Pre-conditions* The TagLength and TagValue values have been set. 
+*Pre-conditions* The TagLength and TagValue values have been set.
 
 *Test Variables:*
 
@@ -26,6 +26,5 @@
 *Test Process:*
 
     Verify that the TagLength is three (3)
-    
+
     Read three double values from the GeoTIFF file starting at TagValue.
-    

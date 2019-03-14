@@ -23,7 +23,7 @@ include::abstract_tests/TIFF_Tests/TEST_Short_Param.adoc[]
 
 include::abstract_tests/TIFF_Tests/TEST_Double_Param.adoc[]
 
-include::abstract_tests/TIFF_Tests/TEST_ASCII_Param.adoc[]
+include::abstract_tests/TIFF_Tests/TEST_Ascii_Param.adoc[]
 
 === Conformance Class Raster2Model_CoordinateTransformation_GeoKey
 http://www.opengis.net/spec/GeoTIFF/1.1/Raster2Model_CoordinateTransformation_GeoKey
@@ -33,4 +33,3 @@ include::abstract_tests/Raster2Model_CoordinateTransformation_GeoKeys/TEST_Model
 include::abstract_tests/Raster2Model_CoordinateTransformation_GeoKeys/TEST_ModelTiepointTag.adoc[]
 
 include::abstract_tests/Raster2Model_CoordinateTransformation_GeoKeys/TEST_ModelTransformationTag.adoc[]
-
