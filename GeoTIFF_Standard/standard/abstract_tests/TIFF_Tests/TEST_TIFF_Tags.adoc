@@ -117,6 +117,7 @@ Process each IFD using the following pseudocode:
         Validate that Bytes 2-3 = 12 (Double)
         Set TagLength to the value in Bytes 4-7
         Set TagValue to the value in Bytes 8-1
+        Validate that this IFD does not contain a ModelPixelScaleTag
         Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
         }
     Validate that this IFD contains either a ModelTransformationTag or a ModelTiepointTag.
