@@ -726,25 +726,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_media_types_for_geotiff_data_encoding">8. Media Types for GeoTIFF data encoding</a></li>
-<li><a href="#_abstract_test_suite_normative">Annex A: Abstract Test Suite (Normative)</a></li>
-<li><a href="#_general_approach">9. General Approach</a></li>
-<li><a href="#_conformance_class_tiff">10. Conformance Class TIFF</a>
+<li><a href="#_abstract_test_suite_normative">Annex A: Abstract Test Suite (Normative)</a>
 <ul class="sectlevel2">
-<li><a href="#_tiff_core_test">10.1. TIFF Core Test</a></li>
-<li><a href="#_tiff_tags_test">10.2. TIFF Tags Test</a></li>
-<li><a href="#_geokey_directory_test">10.3. GeoKey Directory Test</a></li>
-<li><a href="#_short_parameters_test">10.4. Short Parameters Test</a>
+<li><a href="#_general_approach">A.1. General Approach</a></li>
+<li><a href="#_conformance_class_tiff">A.2. Conformance Class TIFF</a>
 <ul class="sectlevel3">
-<li><a href="#_double_parameters_test">10.4.1. Double Parameters Test</a></li>
+<li><a href="#_tiff_core_test">A.2.1. TIFF Core Test</a></li>
+<li><a href="#_tiff_tags_test">A.2.2. TIFF Tags Test</a></li>
+<li><a href="#_geokey_directory_test">A.2.3. GeoKey Directory Test</a></li>
+<li><a href="#_short_parameters_test">A.2.4. Short Parameters Test</a></li>
+<li><a href="#_double_parameters_test">A.2.5. Double Parameters Test</a></li>
 </ul>
 </li>
+<li><a href="#_conformance_class_raster2model_coordinatetransformation_geokey">A.3. Conformance Class Raster2Model_CoordinateTransformation_GeoKey</a>
+<ul class="sectlevel3">
+<li><a href="#_modelpixelscaletag_test">A.3.1. ModelPixelScaleTag Test</a></li>
+<li><a href="#_modeltiepointtag_test">A.3.2. ModelTiepointTag Test</a></li>
+<li><a href="#_modeltransformationtag_test">A.3.3. ModelTransformationTag Test</a></li>
 </ul>
 </li>
-<li><a href="#_conformance_class_raster2model_coordinatetransformation_geokey">11. Conformance Class Raster2Model_CoordinateTransformation_GeoKey</a>
-<ul class="sectlevel2">
-<li><a href="#_modelpixelscaletag_test">11.1. ModelPixelScaleTag Test</a></li>
-<li><a href="#_modeltiepointtag_test">11.2. ModelTiepointTag Test</a></li>
-<li><a href="#_modeltransformationtag_test">11.3. ModelTransformationTag Test</a></li>
 </ul>
 </li>
 <li><a href="#_geotiff_file_structure_and_geotiff_crs_and_models_principles_informative">Annex B: GeoTIFF File Structure and GeoTIFF CRS and models principles (Informative)</a>
@@ -1690,9 +1690,12 @@ The normative provisions in this specification are denoted by the URI</p>
  - 34735  GeoKeyDirectoryTag (mandatory)<br>
  - 34736  GeoDoubleParamsTag (optional)<br>
  - 34737  GeoAsciiParamsTag (optional)<br>
- - 33550  ModelPixelScaleTag  (optional)<br>
- - 33922  ModelTiepointTag (optional)<br>
- - 34264  ModelTransformationTag (optional)<br></p></td>
+ - 33550  ModelPixelScaleTag (optional)<br>
+ - 33922  ModelTiepointTag (conditional)<br>
+ - 34264  ModelTransformationTag (conditional)<br>
+<em>The conditional tags shall follow the following rules:</em><br>
+ - One of ModelTiepointTag or ModelTransformationTag SHALL be included in an Image File Directory (IFD)<br>
+ - If the ModelPixelScaleTag is included in an IFD, then a ModelTiepointTag SHALL also be included.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -2262,11 +2265,6 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal</a><br>
 <em>Simple reversals of orientation from the standard relationship between raster and model space (e.g., horizontal or vertical flips) SHALL be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers shall honor this sign-reversal convention.</em></p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency</a><br>
-<em>A ModelTiepointTag SHALL be included in any Image File Directory which contains a ModelPixelScaleTag.</em></p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -2298,11 +2296,6 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.count" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.count</a><br>
 <em>The ModelTransformationTag SHALL have 16 values representing the terms of the 4 by 4 transformation matrix. The terms SHALL be in row-major order</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive</a><br>
-<em>Neither the ModelTiepointTag nor the ModelPixelScaleTag SHALL be included in an Image File Directory which contains a ModelTransformationTag.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -3503,31 +3496,25 @@ NOTE: See Annex C</p></td>
 <div class="sect1">
 <h2 id="_abstract_test_suite_normative"><a class="anchor" href="#_abstract_test_suite_normative"></a>Annex A: Abstract Test Suite (Normative)</h2>
 <div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_general_approach"><a class="anchor" href="#_general_approach"></a>9. General Approach</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_general_approach"><a class="anchor" href="#_general_approach"></a>A.1. General Approach</h3>
 <div class="paragraph">
 <p>This GeoTIFF standard specifies an encoding of information for exchange between software components. As such, this Abstract Test Suite can only validate the conformance of a specific GeoTIFF document. In most cases, GeoTIFF conformance will be incorporated into the conformance testing of a software component. These components fall into two categories; GeoTIFF readers and GeoTIFF writers.</p>
 </div>
 <div class="paragraph">
-<p>Conformance of GeoTIFF readers will validated by the successful processing of a representative sample of validated GeoTIFF files.</p>
+<p>Conformance of GeoTIFF readers will validated by the successful processing of a set of representative samples of validated GeoTIFF files.</p>
 </div>
 <div class="paragraph">
-<p>Conformance of GeoTIFF writers will be validated by the successful validation of a representative sample of GeoTIFF files generated by that software component.</p>
+<p>Conformance of GeoTIFF writers will be validated by the successful validation of a set of representative samples of GeoTIFF files generated by that software component.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_conformance_class_tiff"><a class="anchor" href="#_conformance_class_tiff"></a>10. Conformance Class TIFF</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_conformance_class_tiff"><a class="anchor" href="#_conformance_class_tiff"></a>A.2. Conformance Class TIFF</h3>
 <div class="paragraph">
 <p><a href="http://www.opengis.net/spec/GeoTIFF/1.1/Core" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/Core</a></p>
 </div>
-<div class="sect2">
-<h3 id="_tiff_core_test"><a class="anchor" href="#_tiff_core_test"></a>10.1. TIFF Core Test</h3>
+<div class="sect3">
+<h4 id="_tiff_core_test"><a class="anchor" href="#_tiff_core_test"></a>A.2.1. TIFF Core Test</h4>
 <div class="paragraph">
 <p><strong>Test id:</strong> TIFF_Tests/TIFF.Core</p>
 </div>
@@ -3569,8 +3556,8 @@ NOTE: See Annex C</p></td>
 <p>Once TIFF 6.0 confirmance has been validated, execute test TIFF_Tests/TIFF.Tags.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_tiff_tags_test"><a class="anchor" href="#_tiff_tags_test"></a>10.2. TIFF Tags Test</h3>
+<div class="sect3">
+<h4 id="_tiff_tags_test"><a class="anchor" href="#_tiff_tags_test"></a>A.2.2. TIFF Tags Test</h4>
 <div class="paragraph">
 <p><strong>Test id:</strong> TIFF_Tests/TIFF.Tags</p>
 </div>
@@ -3622,25 +3609,16 @@ NOTE: See Annex C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.type" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.type</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive</a></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency</a></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.type" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.type</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.required" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.required</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3775,7 +3753,7 @@ NOTE: See Annex C</p></td>
   IF GeoKeyDirectory has been set THEN
       {
       execute test TIFF_Tests/GeoKeyDirectory
-      Validate that there is a GTModelType GeoKey in the GeoKey Directory�
+      Validate that there is a GTModelType GeoKey in the GeoKey Directory
       }
       ELSE Throw an error.
   IF PixelScaleTag has been set THEN
@@ -3797,17 +3775,17 @@ NOTE: See Annex C</p></td>
       {
       Validate that Bytes 2-3 = 12 (Double)
       Set TagLength to the value in Bytes 4-7
-      Set TagValue to the value in Bytes 8-11
-      Validate that this IFD does not contain a ModelPixelScaleTag nor a ModelTiepointTag.
+      Set TagValue to the value in Bytes 8-1
       Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
       }
+  Validate that this IFD contains either a ModelTransformationTag or a ModelTiepointTag.
   IFD_Offset = the last four bytes of the current IFD
   }</pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_geokey_directory_test"><a class="anchor" href="#_geokey_directory_test"></a>10.3. GeoKey Directory Test</h3>
+<div class="sect3">
+<h4 id="_geokey_directory_test"><a class="anchor" href="#_geokey_directory_test"></a>A.2.3. GeoKey Directory Test</h4>
 <div class="paragraph">
 <p><strong>Test id:</strong> TIFF_Test/GeoKeyDirectory</p>
 </div>
@@ -3961,8 +3939,8 @@ WHILE KeySetCount is not 0
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_short_parameters_test"><a class="anchor" href="#_short_parameters_test"></a>10.4. Short Parameters Test</h3>
+<div class="sect3">
+<h4 id="_short_parameters_test"><a class="anchor" href="#_short_parameters_test"></a>A.2.4. Short Parameters Test</h4>
 <div class="paragraph">
 <p><strong>Test id:</strong> TIFF_Test/ShortParameters</p>
 </div>
@@ -4201,8 +4179,9 @@ Validate the value
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect3">
-<h4 id="_double_parameters_test"><a class="anchor" href="#_double_parameters_test"></a>10.4.1. Double Parameters Test</h4>
+<h4 id="_double_parameters_test"><a class="anchor" href="#_double_parameters_test"></a>A.2.5. Double Parameters Test</h4>
 <div class="paragraph">
 <p><strong>Test id:</strong> TIFF_Test/DoubleParameters</p>
 </div>
@@ -4478,16 +4457,13 @@ Validate the value
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_conformance_class_raster2model_coordinatetransformation_geokey"><a class="anchor" href="#_conformance_class_raster2model_coordinatetransformation_geokey"></a>11. Conformance Class Raster2Model_CoordinateTransformation_GeoKey</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_conformance_class_raster2model_coordinatetransformation_geokey"><a class="anchor" href="#_conformance_class_raster2model_coordinatetransformation_geokey"></a>A.3. Conformance Class Raster2Model_CoordinateTransformation_GeoKey</h3>
 <div class="paragraph">
 <p><a href="http://www.opengis.net/spec/GeoTIFF/1.1/Raster2Model_CoordinateTransformation_GeoKey" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/Raster2Model_CoordinateTransformation_GeoKey</a></p>
 </div>
-<div class="sect2">
-<h3 id="_modelpixelscaletag_test"><a class="anchor" href="#_modelpixelscaletag_test"></a>11.1. ModelPixelScaleTag Test</h3>
+<div class="sect3">
+<h4 id="_modelpixelscaletag_test"><a class="anchor" href="#_modelpixelscaletag_test"></a>A.3.1. ModelPixelScaleTag Test</h4>
 <div class="paragraph">
 <p><strong>Test id:</strong> Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag</p>
 </div>
@@ -4554,8 +4530,8 @@ Validate the value
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_modeltiepointtag_test"><a class="anchor" href="#_modeltiepointtag_test"></a>11.2. ModelTiepointTag Test</h3>
+<div class="sect3">
+<h4 id="_modeltiepointtag_test"><a class="anchor" href="#_modeltiepointtag_test"></a>A.3.2. ModelTiepointTag Test</h4>
 <div class="paragraph">
 <p><strong>Test id:</strong> Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag</p>
 </div>
@@ -4619,8 +4595,8 @@ Validate the value
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_modeltransformationtag_test"><a class="anchor" href="#_modeltransformationtag_test"></a>11.3. ModelTransformationTag Test</h3>
+<div class="sect3">
+<h4 id="_modeltransformationtag_test"><a class="anchor" href="#_modeltransformationtag_test"></a>A.3.3. ModelTransformationTag Test</h4>
 <div class="paragraph">
 <p><strong>Test id:</strong> Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag</p>
 </div>
@@ -4681,6 +4657,7 @@ Validate the value
 <div class="literalblock">
 <div class="content">
 <pre>Read sixteen double values from the GeoTIFF file starting at TagValue.</pre>
+</div>
 </div>
 </div>
 </div>
@@ -8278,7 +8255,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-12 22:17:53 -0400
+Last updated 2019-03-13 22:17:30 -0400
 </div>
 </div>
 </body>
