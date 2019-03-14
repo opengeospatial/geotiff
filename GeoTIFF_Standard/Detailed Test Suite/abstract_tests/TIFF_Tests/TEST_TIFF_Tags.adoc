@@ -19,10 +19,8 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.exclusive
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID 
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.dependency
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.required
@@ -97,7 +95,7 @@ Process each IFD using the following pseudocode:
     IF GeoKeyDirectory has been set THEN
         {
         execute test TIFF_Tests/GeoKeyDirectory
-        Validate that there is a GTModelType GeoKey in the GeoKey Directory�
+        Validate that there is a GTModelType GeoKey in the GeoKey Directory
         } 
         ELSE Throw an error.
     IF PixelScaleTag has been set THEN
@@ -120,9 +118,9 @@ Process each IFD using the following pseudocode:
         Validate that Bytes 2-3 = 12 (Double)
         Set TagLength to the value in Bytes 4-7
         Set TagValue to the value in Bytes 8-11
-        Validate that this IFD does not contain a ModelPixelScaleTag nor a ModelTiepointTag.
         Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
         }
+    Validate that this IFD contains either a ModelTransformationTag or a ModelTiepointTag.
     IFD_Offset = the last four bytes of the current IFD 
     }
 

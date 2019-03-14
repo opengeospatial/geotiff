@@ -94,7 +94,7 @@ Process each IFD using the following pseudocode:
     IF GeoKeyDirectory has been set THEN
         {
         execute test TIFF_Tests/GeoKeyDirectory
-        Validate that there is a GTModelType GeoKey in the GeoKey Directory�
+        Validate that there is a GTModelType GeoKey in the GeoKey Directory
         } 
         ELSE Throw an error.
     IF PixelScaleTag has been set THEN
