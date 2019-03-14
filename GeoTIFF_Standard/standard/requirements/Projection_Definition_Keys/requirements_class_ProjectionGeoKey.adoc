@@ -15,7 +15,7 @@ _The ProjectionGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
-|Requirement http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.reserved
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.reserved
 _ProjectionGeoKey values in the range 1-1023 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 

@@ -20,8 +20,8 @@ _GeoTIFF files SHALL encode all GeoTIFF specific information using the following
  - 34264  ModelTransformationTag (conditional) +
 _The conditional tags shall follow the following rules:_ +
  - One of ModelTiepointTag or ModelTransformationTag SHALL be included in an Image File Directory (IFD) +
+ - If the ModelTransformationTag is included in an IFD, then a ModelPixelScaleTag SHALL NOT be included +
  - If the ModelPixelScaleTag is included in an IFD, then a ModelTiepointTag SHALL also be included.
- - If the ModelTransformationTag is included in an IFD, then a ModelPixelScaleTag SHALL NOT be included.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}
