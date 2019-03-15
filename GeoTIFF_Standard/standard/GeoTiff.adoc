@@ -24,7 +24,7 @@
 |Internal reference number of this OGC(R) document:    19-008
 |Version: 0.4
 |Category: OGC(R) <Implementation>
-|Editors: Emmanuel Devys, Roger Lott, Chuck Heazel, Even Rouault, Ted Habermann
+|Editors: Emmanuel Devys, Ted Habermann, Chuck Heazel, Roger Lott, Even Rouault 
 |===
 
 [cols = "^", frame = "none"]
