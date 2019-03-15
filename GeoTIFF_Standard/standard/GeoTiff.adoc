@@ -17,14 +17,14 @@
 |===
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
-|Submission Date: <yyyy-mm-dd>
+|Submission Date: <2019-03-15>
 |Approval Date:   <yyyy-mm-dd>
-|Publication Date:   <2019-01-20>
+|Publication Date:   <2019-mm-dd>
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
-|Internal reference number of this OGC(R) document:    YY-nnnrx
-|Version: 0.3
+|Internal reference number of this OGC(R) document:    19-008
+|Version: 0.4
 |Category: OGC(R) <Implementation>
-|Editors: Ted Habermann, Emmanuel Devys, Roger Lott, Chuck Heazel, Even Rouault
+|Editors: Emmanuel Devys, Roger Lott, Chuck Heazel, Even Rouault, Ted Habermann
 |===
 
 [cols = "^", frame = "none"]
