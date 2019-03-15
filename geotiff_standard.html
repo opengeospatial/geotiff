@@ -736,6 +736,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_geokey_directory_test">A.2.3. GeoKey Directory Test</a></li>
 <li><a href="#_short_parameters_test">A.2.4. Short Parameters Test</a></li>
 <li><a href="#_double_parameters_test">A.2.5. Double Parameters Test</a></li>
+<li><a href="#_ascii_parameters_test">A.2.6. ASCII Parameters Test</a></li>
 </ul>
 </li>
 <li><a href="#_conformance_class_raster2model_coordinatetransformation_geokey">A.3. Conformance Class Raster2Model_CoordinateTransformation_GeoKey</a>
@@ -1695,6 +1696,7 @@ The normative provisions in this specification are denoted by the URI</p>
  - 34264  ModelTransformationTag (conditional)<br>
 <em>The conditional tags shall follow the following rules:</em><br>
  - One of ModelTiepointTag or ModelTransformationTag SHALL be included in an Image File Directory (IFD)<br>
+ - If the ModelTransformationTag is included in an IFD, then a ModelPixelScaleTag SHALL NOT be included<br>
  - If the ModelPixelScaleTag is included in an IFD, then a ModelTiepointTag SHALL also be included.</p></td>
 </tr>
 <tr>
@@ -2991,7 +2993,7 @@ In GeoTIFF 1.0 this key was called GeogEllipsoidGeoKey.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Requirement <a href="http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.reserved" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.reserved</a>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.reserved" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.reserved</a>
 <em>EllipsoidGeoKey values in the range 1-1023 SHALL be reserved</em></p></td>
 </tr>
 <tr>
@@ -3246,7 +3248,7 @@ In GeoTIFF 1.0 this key was called GeogInvFlatteningGeoKey.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Requirement <a href="http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.reserved" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.reserved</a>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.reserved" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.reserved</a>
 <em>ProjectionGeoKey values in the range 1-1023 SHALL be reserved</em></p></td>
 </tr>
 <tr>
@@ -3776,6 +3778,7 @@ NOTE: See Annex C</p></td>
       Validate that Bytes 2-3 = 12 (Double)
       Set TagLength to the value in Bytes 4-7
       Set TagValue to the value in Bytes 8-1
+      Validate that this IFD does not contain a ModelPixelScaleTag
       Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
       }
   Validate that this IFD contains either a ModelTransformationTag or a ModelTiepointTag.
@@ -4452,9 +4455,166 @@ Validate the value
 <div class="paragraph">
 <p>Double GeoKey Tests</p>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in annex-a.adoc - include::abstract_tests/TIFF_Tests/TEST_ASCII_Param.adoc[]</p>
 </div>
+<div class="sect3">
+<h4 id="_ascii_parameters_test"><a class="anchor" href="#_ascii_parameters_test"></a>A.2.6. ASCII Parameters Test</h4>
+<div class="paragraph">
+<p><strong>Test id:</strong> TIFF_Test/AsciiParameters</p>
+</div>
+<div class="paragraph">
+<p><strong>Requirements:</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Purpose:</strong> Verify an ASCII parameter</p>
+</div>
+<div class="paragraph">
+<p><strong>Pre-conditions</strong> The GeoKeyDirectory, ASCIIValues and GeoKeyOffset values have been set.</p>
+</div>
+<div class="paragraph">
+<p><strong>Test Variables:</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 66.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Variable</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Scope</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Description</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GeoKeyDirectory</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Global</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Location of the GeoTIFF GeoKey directory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">ASCIIValues</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Global</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Location of the ASCII values for GeoTIFF ASCII GeoKeys</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GeoKeyOffset</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Parameter</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Location of this Key Entry Set in the GeoKey directory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GeoKey</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Local</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Temporary value of the GeoKey</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">KeyLength</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Local</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Temporary value for the length of the value for the GeoKey</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">KeyValueOffset</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Local</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The location of the GeoKey value in the file</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Test Process:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Locate the Key Entry Set using the GeoKeyDirectory and GeoKeyOffset values.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Process the second Short integer in the Key Entry Set
+    {
+    IF value != 34737 THEN error out
+    }
+Process the first Short integer in the Key Entry Set
+    {
+    Set GeoKey to the value
+    }
+Process the third Short integer in the Key Entry Set
+    {
+    Set KeyLength to the value
+    }
+Process the fourth Short integer in the Key Entry Set
+    {
+    SET KeyValueOffset to the value
+    }
+SET KeyValueOffset = AsciiValues + KeyValueOffset</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Read a KeyLength ASCII string values from the GeoTIFF file starting at KeyValueOffset.
+    - The individual strings are delimited by the "|" character.
+    - The set of ASCII strings is null terminated.
+Validate the value
+    Locate the GeoKey in the following table
+    Verify that the values read satisfy the constraints defined in the associated Requirements Class.
+    Verify that any GeoKeys required by the associated Requirements Class are present in the GeoKey Directory.</pre>
+</div>
+</div>
+<table id="ASCII_GeoKey_Tests" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top" style="background-color: #FFFFFF;">GeoKey</th>
+<th class="tableblock halign-center valign-top" style="background-color: #FFFFFF;">Requirements Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">1026</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">CitationGeoKeys (GTCitationGeoKey)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">2049</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">CitationGeoKeys (GeodeticCitationGeoKey)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">3073</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">CitationGeoKeys (ProjectedCitationGeoKey)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">4097</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">CitationGeoKeys (VerticalCitationGeoKey)</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -4476,7 +4636,7 @@ Validate the value
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardCovention" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardCovention</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardConvention" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardConvention</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal</a></p></td>
@@ -4898,7 +5058,7 @@ International Association of Oil and Gas Producers, and mechanisms for adding us
 </ol>
 </div>
 <div class="paragraph">
-<p>In the sections that follow we shall discuss the relevance and use of each of these spaces, and their corresponding coordinate systems, from the standpoint of GeoTIFF.</p>
+<p>In the sections that follow we discuss the relevance and use of each of these spaces, and their corresponding coordinate systems, from the standpoint of GeoTIFF.</p>
 </div>
 <div class="sect3">
 <h4 id="_device_space_and_geotiff"><a class="anchor" href="#_device_space_and_geotiff"></a>B.2.1. Device Space and GeoTIFF</h4>
@@ -4916,7 +5076,7 @@ YPosition (287)</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In GeoTIFF, provision is made to identify earth-referenced coordinate systems (model space M) and to relate M space with R space. This provision is independent of and can co-exist with the relationship between raster and device spaces. To emphasize the distinction, this spec shall not refer to "X" and "Y" raster coordinates, but rather to raster space "J" (row) and "I" (column) coordinate variables instead, as defined in section <a href="#RasterSpace"><em>Raster Space</em></a>.</p>
+<p>In GeoTIFF, provision is made to identify earth-referenced coordinate systems (model space M) and to relate M space with R space. This provision is independent of and can co-exist with the relationship between raster and device spaces. To emphasize the distinction, this specification shall not refer to "X" and "Y" raster coordinates, but rather to raster space "J" (row) and "I" (column) coordinate variables instead, as defined in section <a href="#RasterSpace"><em>Raster Space</em></a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -5590,7 +5750,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 </div>
 </div>
 <div class="paragraph">
-<p>The next section describes these Baseline georeferencing tags in detail.</p>
+<p>The next section describes these georeferencing tags in detail.</p>
 </div>
 </div>
 <div class="sect2">
@@ -5634,7 +5794,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 <p>Remark: all GeoTIFF information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.</p>
 </div>
 <div class="paragraph">
-<p>The next two tags are optional tags provided for defining exact affine transformations between raster and model space; GeoTIFF files may use either, but shall never use both within the same TIFF image directory.</p>
+<p>The next two tags ModelPixelScaleTag and ModelTransformationTag are optional tags provided for defining exact affine transformations between raster and model space; GeoTIFF files may use either, but <strong>shall never use both</strong> within the same TIFF image directory.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -5653,7 +5813,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 </div>
 </div>
 <div class="paragraph">
-<p>where ScaleX and ScaleY give the horizontal and vertical spacing of raster pixels. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale (in other words a <strong>Z-Scaling factor</strong>), and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).</p>
+<p>where ScaleX and ScaleY give the horizontal spacing of raster pixels in the 2 directions. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale (in other words a <strong>Z-Scaling factor</strong>), and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).</p>
 </div>
 <div class="paragraph">
 <p>A single tiepoint in the ModelTiepointTag, together with this tag, completely determine the relationship between raster and model space; thus they comprise the two tags which GeoTIFF files most often will use to place a raster image into a "standard position" in model space.</p>
@@ -5662,7 +5822,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 <p>Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, Resolution and Orientation tags of the standard TIFF 6.0 spec. However, simple reversals of orientation between raster and model space (e.g. horizontal or vertical flips) may be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers must honor this sign-reversal convention.</p>
 </div>
 <div class="paragraph">
-<p>This tag must not be used if the raster image requires rotation or shearing to place it into the standard model space. In such cases the transformation shall be defined with the more general ModelTransformationTag, defined below.</p>
+<p>This ModelPixelScaleTag tag must not be used if the raster image requires rotation or shearing to place it into the standard model space. In such cases the transformation must be defined with the more general ModelTransformationTag, defined below.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -5673,7 +5833,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 </div>
 </div>
 <div class="paragraph">
-<p>This tag may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space. If specified, the tag shall have the following organization:</p>
+<p>This tag may be used to specify the transformation matrix between the raster space (and its dependent pixel-value space) and the (possibly 3D) model space. If specified, the tag has the following organization:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -8255,7 +8415,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-13 22:17:30 -0400
+Last updated 2019-03-14 22:17:27 -0400
 </div>
 </div>
 </body>
