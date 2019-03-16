@@ -521,28 +521,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">Open Geospatial Consortium</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Submission Date: &lt;yyyy-mm-dd&gt;</p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Submission Date: &lt;2019-03-15&gt;</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Approval Date:   &lt;yyyy-mm-dd&gt;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Publication Date:   &lt;2019-01-20&gt;</p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Publication Date:   &lt;2019-mm-dd&gt;</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">External identifier of this OGC&#174; document: <a href="http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}" class="bare">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Internal reference number of this OGC&#174; document:    YY-nnnrx</p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Internal reference number of this OGC&#174; document:    19-008</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 0.3</p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 0.4</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Category: OGC&#174; &lt;Implementation&gt;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Editors: Ted Habermann, Emmanuel Devys, Roger Lott, Chuck Heazel, Even Rouault</p></td>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Editors: Emmanuel Devys, Ted Habermann, Chuck Heazel, Roger Lott, Even Rouault</p></td>
 </tr>
 </tbody>
 </table>
@@ -708,18 +708,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register">7.4. Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</a>
 <ul class="sectlevel3">
 <li><a href="#_overview">7.4.1. Overview</a></li>
-<li><a href="#_projectedcrsgeokey">7.4.2. ProjectedCRSGeoKey</a></li>
-<li><a href="#_geodeticcrsgeokey">7.4.3. GeodeticCRSGeoKey</a></li>
-<li><a href="#_verticalgeokey">7.4.4. VerticalGeoKey</a></li>
-<li><a href="#_citation_geokeys">7.4.5. Citation GeoKeys</a></li>
+<li><a href="#_requirements_class_projectedcrsgeokey">7.4.2. Requirements Class ProjectedCRSGeoKey</a></li>
+<li><a href="#_requirements_class_geodeticcrsgeokey">7.4.3. Requirements Class GeodeticCRSGeoKey</a></li>
+<li><a href="#_requirements_class_verticalgeokey">7.4.4. Requirements Class VerticalGeoKey</a></li>
+<li><a href="#_requirements_class_citation_geokeys">7.4.5. Requirements Class Citation GeoKeys</a></li>
 </ul>
 </li>
 <li><a href="#_requirements_for_definition_of_user_defined_model_crs">7.5. Requirements for definition of user-defined Model CRS</a>
 <ul class="sectlevel3">
-<li><a href="#_units_geokeys">7.5.1. Units GeoKeys</a></li>
-<li><a href="#_unit_size_geokeys">7.5.2. Unit Size GeoKeys</a></li>
+<li><a href="#_requirements_class_units_geokeys">7.5.1. Requirements Class Units GeoKeys</a></li>
+<li><a href="#_requirements_class_unit_size_geokeys">7.5.2. Requirements Class Unit Size GeoKeys</a></li>
 <li><a href="#_geodetic_datum">7.5.3. Geodetic Datum</a></li>
-<li><a href="#_vertical_datum">7.5.4. Vertical Datum</a></li>
+<li><a href="#_requirements_class_vertical_datum">7.5.4. Requirements Class Vertical Datum</a></li>
 <li><a href="#_map_projection_geokeys">7.5.5. Map Projection GeoKeys</a></li>
 </ul>
 </li>
@@ -2166,7 +2166,7 @@ The use of this geokey is <strong>highly recommended</strong> for accurate geore
 <div class="title">Note</div>
 </td>
 <td class="content">
-The GTCitationGeoKey is also provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file (see <a href="#_citation_geokeys">Citation GeoKeys</a>).
+The GTCitationGeoKey is also provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file (see <a href="#Citation GeoKeys">[Citation GeoKeys]</a>).
 </td>
 </tr>
 </table>
@@ -2324,7 +2324,7 @@ It is a practice in some Communities to indicate a geographic 3D CRS (with ellip
 </div>
 </div>
 <div class="sect3">
-<h4 id="_projectedcrsgeokey"><a class="anchor" href="#_projectedcrsgeokey"></a>7.4.2. ProjectedCRSGeoKey</h4>
+<h4 id="_requirements_class_projectedcrsgeokey"><a class="anchor" href="#_requirements_class_projectedcrsgeokey"></a>7.4.2. Requirements Class ProjectedCRSGeoKey</h4>
 <div class="paragraph">
 <p>This key is used to specify the projected coordinate reference system from the GeoTIFF CRS register or to indicate that the Model CRS is a user-defined
 projected coordinate reference system.</p>
@@ -2388,7 +2388,7 @@ In GeoTIFF 1.0 this key was called ProjectedCSTypeGeoKey
 </table>
 </div>
 <div class="sect3">
-<h4 id="_geodeticcrsgeokey"><a class="anchor" href="#_geodeticcrsgeokey"></a>7.4.3. GeodeticCRSGeoKey</h4>
+<h4 id="_requirements_class_geodeticcrsgeokey"><a class="anchor" href="#_requirements_class_geodeticcrsgeokey"></a>7.4.3. Requirements Class GeodeticCRSGeoKey</h4>
 <div class="paragraph">
 <p>This key is provided to specify the geodetic (geographic or geocentric) coordinate reference system from the GeoTIFF CRS register or to indicate that the Model CRS is a user-defined geodetic coordinate reference system.</p>
 </div>
@@ -2454,7 +2454,7 @@ In GeoTIFF 1.0 this key was called GeographicTypeGeoKey. Geodetic CRS is a super
 </table>
 </div>
 <div class="sect3">
-<h4 id="_verticalgeokey"><a class="anchor" href="#_verticalgeokey"></a>7.4.4. VerticalGeoKey</h4>
+<h4 id="_requirements_class_verticalgeokey"><a class="anchor" href="#_requirements_class_verticalgeokey"></a>7.4.4. Requirements Class VerticalGeoKey</h4>
 <div class="paragraph">
 <p>This key is provided to specify the vertical coordinate reference system from the GeoTIFF CRS register or to indicate that the CRS is a user-defined vertical coordinate reference system.</p>
 </div>
@@ -2518,7 +2518,7 @@ In GeoTIFF 1.0 this key was called VerticalCSTypeGeoKey. In GeoTIFF v1.0 vertica
 </table>
 </div>
 <div class="sect3">
-<h4 id="_citation_geokeys"><a class="anchor" href="#_citation_geokeys"></a>7.4.5. Citation GeoKeys</h4>
+<h4 id="_requirements_class_citation_geokeys"><a class="anchor" href="#_requirements_class_citation_geokeys"></a>7.4.5. Requirements Class Citation GeoKeys</h4>
 <div class="paragraph">
 <p>The <em>GTCitationGeoKey</em> is provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file.
 The <em>GeodeticCitationGeoKey</em>, <em>ProjectedCitationGeoKey</em> and <em>VerticalCitationGeoKey</em> are used to describe Model CRS elements through ASCII free text. A citation may be included with a CRS identified through the GeoTIFF CRS register (<a href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register">Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</a>). A citation is mandatory for a user-defined CRSs and CRS objects (<a href="#_requirements_for_definition_of_user_defined_model_crs">Requirements for definition of user-defined Model CRS</a>). The <em>GeodeticCitationGeoKey</em>, <em>ProjectedCitationGeoKey</em> and <em>VerticalCitationGeoKey</em> are used with CRSs and CRS components.</p>
@@ -2594,7 +2594,7 @@ It should be noted that the implicit axis order of user-defined CRS definitions 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_units_geokeys"><a class="anchor" href="#_units_geokeys"></a>7.5.1. Units GeoKeys</h4>
+<h4 id="_requirements_class_units_geokeys"><a class="anchor" href="#_requirements_class_units_geokeys"></a>7.5.1. Requirements Class Units GeoKeys</h4>
 <div class="paragraph">
 <p>These keys are used to specify Units of Measure (UoM) through the identification of a unit from the GeoTIFF CRS register or to indicate that the unit is user-defined</p>
 </div>
@@ -2733,7 +2733,7 @@ It should be noted that the implicit axis order of user-defined CRS definitions 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_unit_size_geokeys"><a class="anchor" href="#_unit_size_geokeys"></a>7.5.2. Unit Size GeoKeys</h4>
+<h4 id="_requirements_class_unit_size_geokeys"><a class="anchor" href="#_requirements_class_unit_size_geokeys"></a>7.5.2. Requirements Class Unit Size GeoKeys</h4>
 <div class="paragraph">
 <p>These keys allow the definition of size of user-defined angular and linear units, given in the SI base unit for that unit type (meters for length, radians for angle).</p>
 </div>
@@ -2777,7 +2777,7 @@ It should be noted that the implicit axis order of user-defined CRS definitions 
 <div class="sect3">
 <h4 id="_geodetic_datum"><a class="anchor" href="#_geodetic_datum"></a>7.5.3. Geodetic Datum</h4>
 <div class="sect4">
-<h5 id="_geodeticdatumgeokey"><a class="anchor" href="#_geodeticdatumgeokey"></a>GeodeticDatumGeoKey</h5>
+<h5 id="_requirements_class_geodeticdatumgeokey"><a class="anchor" href="#_requirements_class_geodeticdatumgeokey"></a>Requirements Class GeodeticDatumGeoKey</h5>
 <div class="paragraph">
 <p>This key is used to specify a geodetic datum from the GeoTIFF CRS register, or to indicate that the geodetic datum or one or both of its component ellipsoid or prime meridian is user-defined.</p>
 </div>
@@ -2841,7 +2841,7 @@ In GeoTIFF 1.0 this key was called GeogGeodeticDatumGeoKey.
 </table>
 </div>
 <div class="sect4">
-<h5 id="_primemeridiangeokey"><a class="anchor" href="#_primemeridiangeokey"></a>PrimeMeridianGeoKey</h5>
+<h5 id="_requirements_class_primemeridiangeokey"><a class="anchor" href="#_requirements_class_primemeridiangeokey"></a>Requirements Class PrimeMeridianGeoKey</h5>
 <div class="paragraph">
 <p>This key is used to specify a Prime Meridian from the GeoTIFF CRS register or to indicate that the Prime Meridian is user-defined. The default is Greenwich, England.</p>
 </div>
@@ -2905,7 +2905,7 @@ In GeoTIFF 1.0 this key was called GeogPrimeMeridianGeoKey.
 </table>
 </div>
 <div class="sect4">
-<h5 id="_primemeridianlongitudegeokey"><a class="anchor" href="#_primemeridianlongitudegeokey"></a>PrimeMeridianLongitudeGeoKey</h5>
+<h5 id="_requirements_class_primemeridianlongitudegeokey"><a class="anchor" href="#_requirements_class_primemeridianlongitudegeokey"></a>Requirements Class PrimeMeridianLongitudeGeoKey</h5>
 <div class="paragraph">
 <p>This key allows definition of a user-defined Prime Meridian, the location of which is defined by its
 longitude relative to the international reference meridian (for the earth this is Greenwich).</p>
@@ -2953,7 +2953,7 @@ In GeoTIFF 1.0 this key was called GeogPrimeMeridianLongGeoKey.
 </table>
 </div>
 <div class="sect4">
-<h5 id="_ellipsoidgeokey"><a class="anchor" href="#_ellipsoidgeokey"></a>EllipsoidGeoKey</h5>
+<h5 id="_requirements_class_ellipsoidgeokey"><a class="anchor" href="#_requirements_class_ellipsoidgeokey"></a>Requirements Class EllipsoidGeoKey</h5>
 <div class="paragraph">
 <p>This key is provided to specify an ellipsoid (or sphere) from the GeoTIFF CRS register or to indicate that the ellipsoid (or sphere) is user-defined.</p>
 </div>
@@ -3028,7 +3028,7 @@ its semi-major axis <em>(a)</em></p>
 <p>If the model is a sphere, <em>1/f</em> is infinite so <em>a</em> and <em>b</em> must be used, with the value of <em>b</em> set to that of <em>a</em>.</p>
 </div>
 <div class="paragraph">
-<p><strong>EllipsoidSemiMajorAxisGeoKey</strong></p>
+<p><strong>Requirements Class EllipsoidSemiMajorAxisGeoKey</strong></p>
 </div>
 <div class="paragraph">
 <p>This key is provided to specify the first defining parameter of a user-defined bi-axial ellipsoid  or a user-defined sphere. It allows the specification of the ellipsoid semi-major axis <em>(a)</em> or the sphere&#8217;s radius.</p>
@@ -3075,7 +3075,7 @@ In GeoTIFF 1.0 this key was called GeogSemiMajorAxisGeoKey.
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>EllipsoidSemiMinorAxisGeoKey</strong></p>
+<p><strong>Requirements Class EllipsoidSemiMinorAxisGeoKey</strong></p>
 </div>
 <div class="paragraph">
 <p>This key is provided to specify the second defining parameter of a user-defined bi-axial ellipsoid or of a user-defined sphere. It allows the specification of the ellipsoid semi-minor axis <em>(b)</em> or the sphere&#8217;s radius.</p>
@@ -3166,7 +3166,7 @@ In GeoTIFF 1.0 this key was called GeogInvFlatteningGeoKey.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_vertical_datum"><a class="anchor" href="#_vertical_datum"></a>7.5.4. Vertical Datum</h4>
+<h4 id="_requirements_class_vertical_datum"><a class="anchor" href="#_requirements_class_vertical_datum"></a>7.5.4. Requirements Class Vertical Datum</h4>
 <div class="paragraph">
 <p>This key may be used to specify the vertical datum for a user-defined vertical coordinate reference system.</p>
 </div>
@@ -8415,7 +8415,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-14 22:17:27 -0400
+Last updated 2019-03-15 22:17:30 -0400
 </div>
 </div>
 </body>
