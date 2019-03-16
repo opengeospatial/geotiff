@@ -36,8 +36,8 @@ All questions regarding this submission should be directed to the editor or the 
 [cols=",",]
 |============================
 |Name |Affiliation
-|Ted Habermann |The HDF Group
 |Emmanuel Devys |IGN
+|Ted Habermann |The HDF Group
 |Charles Heazel |Heazeltech LLC
 |Roger Lott   |  International Association of Oil & Gas Producers (IOGP)
 |Even Rouault |Spatialys  |
