@@ -3,12 +3,12 @@
 :doctype: book
 :encoding: utf-8
 :lang: en
-:toc:
-:toc-placement!:
-:toclevels: 3
-:numbered:
 :sectanchors:
 :source-highlighter: pygments
+:toc:
+:toc-placement:
+:toclevels: 3
+:numbered:
 
 = {title}
 
@@ -24,7 +24,7 @@
 |Internal reference number of this OGC(R) document:    19-008
 |Version: 0.4
 |Category: OGC(R) <Implementation>
-|Editors: Emmanuel Devys, Ted Habermann, Chuck Heazel, Roger Lott, Even Rouault 
+|Editors: Emmanuel Devys, Ted Habermann, Chuck Heazel, Roger Lott, Even Rouault
 |===
 
 [cols = "^", frame = "none"]
@@ -122,6 +122,5 @@ Revision History should be the last annex before the Bibliography
 Bibliography should be the last annex
 ////
 include::annex-history.adoc[]
-
 <<<
 include::annex-bibliography.adoc[]
