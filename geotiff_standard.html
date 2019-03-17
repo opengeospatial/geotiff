@@ -630,199 +630,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><span class="small">Except as contained in this notice, the name of LICENSOR or of any other holder of a copyright in all or part of the Intellectual Property shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Intellectual Property without prior written authorization of LICENSOR or such copyright holder. LICENSOR is and shall at all times be the sole entity that may authorize you or any third party to use certification marks, trademarks or other special designations to indicate compliance with any LICENSOR standards or specifications. This Agreement is governed by the laws of the Commonwealth of Massachusetts. The application to this Agreement of the United Nations Convention on Contracts for the International Sale of Goods is hereby expressly excluded. In the event any provision of this Agreement shall be deemed unenforceable, void or invalid, such provision shall be modified so as to make it valid and enforceable, and as so modified the entire Agreement shall remain in full force and effect. No decision, action or inaction by LICENSOR shall be construed to be a waiver of any rights or remedies available to it.</span></p>
 </div>
 <div style="page-break-after: always;"></div>
-<div id="toc" class="toc">
-<div id="toctitle" class="title">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_scope">1. Scope</a></li>
-<li><a href="#_conformance">2. Conformance</a></li>
-<li><a href="#_references">3. References</a></li>
-<li><a href="#_terms_and_definitions">4. Terms and Definitions</a>
-<ul class="sectlevel2">
-<li><a href="#_band">4.1. band</a></li>
-<li><a href="#_cell">4.2. cell</a></li>
-<li><a href="#_code">4.3. code</a></li>
-<li><a href="#_coordinate">4.4. coordinate</a></li>
-<li><a href="#_coordinate_reference_system">4.5. coordinate reference system</a></li>
-<li><a href="#_coordinate_system">4.6. coordinate system</a></li>
-<li><a href="#_correspondence_model">4.7. correspondence model</a></li>
-<li><a href="#_datum">4.8. datum</a></li>
-<li><a href="#_device_space">4.9. device space</a></li>
-<li><a href="#_double">4.10. double</a></li>
-<li><a href="#_ellipsoid">4.11. ellipsoid</a></li>
-<li><a href="#_flattening">4.12. flattening</a></li>
-<li><a href="#_geocoding">4.13. geocoding</a></li>
-<li><a href="#_geographic_coordinate_reference_system">4.14. geographic coordinate reference system</a></li>
-<li><a href="#_geokey">4.15. geokey</a></li>
-<li><a href="#_georectified">4.16. georectified</a></li>
-<li><a href="#_georeferencing">4.17. georeferencing</a></li>
-<li><a href="#_geotiff">4.18. GeoTIFF</a></li>
-<li><a href="#_grid">4.19. grid</a></li>
-<li><a href="#_imagery">4.20. imagery</a></li>
-<li><a href="#_meridian">4.21. meridian</a></li>
-<li><a href="#_metadata">4.22. metadata</a></li>
-<li><a href="#_model_space">4.23. model space</a></li>
-<li><a href="#_mosaic">4.24. mosaic</a></li>
-<li><a href="#_orthoimage">4.25. orthoimage</a></li>
-<li><a href="#_orthorectified_grid">4.26. orthorectified grid</a></li>
-<li><a href="#_parallel">4.27. parallel</a></li>
-<li><a href="#_pixel">4.28. pixel</a></li>
-<li><a href="#_prime_meridian">4.29. prime meridian</a></li>
-<li><a href="#_projected_coordinate_reference_system">4.30. projected coordinate reference system</a></li>
-<li><a href="#_projection">4.31. projection</a></li>
-<li><a href="#_raster">4.32. raster</a></li>
-<li><a href="#_rational">4.33. rational</a></li>
-<li><a href="#_rectified_grid">4.34. rectified grid</a></li>
-<li><a href="#_referenceable_grid">4.35. referenceable grid</a></li>
-<li><a href="#_short">4.36. short</a></li>
-<li><a href="#_tag">4.37. tag</a></li>
-<li><a href="#_vertical_coordinate_reference_system">4.38. vertical coordinate reference system</a></li>
-</ul>
-</li>
-<li><a href="#_abbreviations">5. Abbreviations</a></li>
-<li><a href="#_clauses_not_containing_normative_material">6. Clauses not Containing Normative Material</a></li>
-<li><a href="#_requirements">7. Requirements</a>
-<ul class="sectlevel2">
-<li><a href="#_underlying_tiff_requirements">7.1. Underlying TIFF Requirements</a>
-<ul class="sectlevel3">
-<li><a href="#_requirements_class_tiff">7.1.1. Requirements Class TIFF</a></li>
-<li><a href="#_requirements_class_geokeydirectorytag">7.1.2. Requirements Class GeoKeyDirectoryTag</a></li>
-<li><a href="#_requirements_class_geokeycode">7.1.3. Requirements Class GeoKeyCode</a></li>
-<li><a href="#_requirements_class_geoshortparamstag">7.1.4. Requirements Class GeoShortParamsTag</a></li>
-<li><a href="#_requirements_class_geodoubleparamstag">7.1.5. Requirements Class GeoDoubleParamsTag</a></li>
-<li><a href="#_requirements_class_geoasciiparamstag">7.1.6. Requirements Class GeoAsciiParamsTag</a></li>
-</ul>
-</li>
-<li><a href="#_geotiff_configuration_geokeys">7.2. GeoTIFF Configuration GeoKeys</a>
-<ul class="sectlevel3">
-<li><a href="#_requirements_class_gtrastertypegeokey">7.2.1. Requirements Class GTRasterTypeGeoKey</a></li>
-<li><a href="#_requirements_class_gtmodeltypegeokey">7.2.2. Requirements Class GTModelTypeGeoKey</a></li>
-</ul>
-</li>
-<li><a href="#_raster_to_model_coordinate_transformation_requirements">7.3. Raster to Model Coordinate Transformation Requirements</a>
-<ul class="sectlevel3">
-<li><a href="#_requirements_class_modeltiepointtag">7.3.1. Requirements Class ModelTiepointTag</a></li>
-<li><a href="#_requirements_class_modelpixelscaletag">7.3.2. Requirements Class ModelPixelScaleTag</a></li>
-<li><a href="#_requirements_class_modeltransformationtag">7.3.3. Requirements Class ModelTransformationTag</a></li>
-</ul>
-</li>
-<li><a href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register">7.4. Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</a>
-<ul class="sectlevel3">
-<li><a href="#_overview">7.4.1. Overview</a></li>
-<li><a href="#_requirements_class_projectedcrsgeokey">7.4.2. Requirements Class ProjectedCRSGeoKey</a></li>
-<li><a href="#_requirements_class_geodeticcrsgeokey">7.4.3. Requirements Class GeodeticCRSGeoKey</a></li>
-<li><a href="#_requirements_class_verticalgeokey">7.4.4. Requirements Class VerticalGeoKey</a></li>
-<li><a href="#_requirements_class_citation_geokeys">7.4.5. Requirements Class Citation GeoKeys</a></li>
-</ul>
-</li>
-<li><a href="#_requirements_for_definition_of_user_defined_model_crs">7.5. Requirements for definition of user-defined Model CRS</a>
-<ul class="sectlevel3">
-<li><a href="#_requirements_class_units_geokeys">7.5.1. Requirements Class Units GeoKeys</a></li>
-<li><a href="#_requirements_class_unit_size_geokeys">7.5.2. Requirements Class Unit Size GeoKeys</a></li>
-<li><a href="#_geodetic_datum">7.5.3. Geodetic Datum</a></li>
-<li><a href="#_requirements_class_vertical_datum">7.5.4. Requirements Class Vertical Datum</a></li>
-<li><a href="#_map_projection_geokeys">7.5.5. Map Projection GeoKeys</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_media_types_for_geotiff_data_encoding">8. Media Types for GeoTIFF data encoding</a></li>
-<li><a href="#_abstract_test_suite_normative">Annex A: Abstract Test Suite (Normative)</a>
-<ul class="sectlevel2">
-<li><a href="#_general_approach">A.1. General Approach</a></li>
-<li><a href="#_conformance_class_tiff">A.2. Conformance Class TIFF</a>
-<ul class="sectlevel3">
-<li><a href="#_tiff_core_test">A.2.1. TIFF Core Test</a></li>
-<li><a href="#_tiff_tags_test">A.2.2. TIFF Tags Test</a></li>
-<li><a href="#_geokey_directory_test">A.2.3. GeoKey Directory Test</a></li>
-<li><a href="#_short_parameters_test">A.2.4. Short Parameters Test</a></li>
-<li><a href="#_double_parameters_test">A.2.5. Double Parameters Test</a></li>
-<li><a href="#_ascii_parameters_test">A.2.6. ASCII Parameters Test</a></li>
-</ul>
-</li>
-<li><a href="#_conformance_class_raster2model_coordinatetransformation_geokey">A.3. Conformance Class Raster2Model_CoordinateTransformation_GeoKey</a>
-<ul class="sectlevel3">
-<li><a href="#_modelpixelscaletag_test">A.3.1. ModelPixelScaleTag Test</a></li>
-<li><a href="#_modeltiepointtag_test">A.3.2. ModelTiepointTag Test</a></li>
-<li><a href="#_modeltransformationtag_test">A.3.3. ModelTransformationTag Test</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_geotiff_file_structure_and_geotiff_crs_and_models_principles_informative">Annex B: GeoTIFF File Structure and GeoTIFF CRS and models principles (Informative)</a>
-<ul class="sectlevel2">
-<li><a href="#_the_geotiff_file_structure">B.1. The GeoTIFF File Structure</a>
-<ul class="sectlevel3">
-<li><a href="#_introduction">B.1.1. Introduction</a></li>
-<li><a href="#_geotiff_design_considerations">B.1.2. GeoTIFF Design Considerations</a></li>
-<li><a href="#_geotiff_software_requirements">B.1.3. GeoTIFF Software Requirements</a></li>
-<li><a href="#_geotiff_file_and_key_structure">B.1.4. GeoTIFF File and "Key" Structure</a></li>
-</ul>
-</li>
-<li><a href="#_coordinate_reference_systems_in_geotiff">B.2. Coordinate Reference Systems in GeoTIFF</a>
-<ul class="sectlevel3">
-<li><a href="#_device_space_and_geotiff">B.2.1. Device Space and GeoTIFF</a></li>
-<li><a href="#_raster_space">B.2.2. Raster Space</a></li>
-<li><a href="#_model_coordinate_reference_systems_model_space">B.2.3. Model Coordinate Reference Systems (Model space)</a></li>
-</ul>
-</li>
-<li><a href="#_defining_model_coordinate_reference_systems">B.3. Defining Model Coordinate Reference Systems</a>
-<ul class="sectlevel3">
-<li><a href="#_standard_model_coordinate_reference_systems">B.3.1. Standard Model Coordinate Reference Systems</a></li>
-<li><a href="#_user_defined_model_coordinate_reference_systems">B.3.2. User-defined Model Coordinate Reference Systems</a></li>
-</ul>
-</li>
-<li><a href="#_model_crs_reference_parameters">B.4. Model CRS Reference Parameters</a>
-<ul class="sectlevel3">
-<li><a href="#_epsg_coding_of_objects">B.4.1. EPSG coding of objects</a></li>
-</ul>
-</li>
-<li><a href="#_coordinate_transformations">B.5. Coordinate Transformations</a></li>
-<li><a href="#_geotiff_tags_for_coordinate_transformations">B.6. GeoTIFF Tags for Coordinate Transformations</a></li>
-<li><a href="#_cookbook_for_defining_transformations">B.7. Cookbook for Defining Transformations</a></li>
-<li><a href="#_geocoding_raster_data">B.8. Geocoding Raster Data</a></li>
-</ul>
-</li>
-<li><a href="#_geotiff_map_projection_method_codes_normative">Annex C: GeoTIFF Map Projection Method codes (Normative)</a>
-<ul class="sectlevel2">
-<li><a href="#_map_projection_methods">C.1. Map Projection methods</a></li>
-<li><a href="#_map_projection_parameters">C.2. Map Projection parameters</a></li>
-</ul>
-</li>
-<li><a href="#_recommendations_for_including_height_in_model_crs_definitions_informative">Annex D: Recommendations for including height in model CRS definitions (Informative)</a>
-<ul class="sectlevel2">
-<li><a href="#_introduction_2">D.1. Introduction</a></li>
-<li><a href="#_compound_crss">D.2. Compound CRSs</a></li>
-<li><a href="#_geographic_3d_crs_case_of_ellipsoïdal_height">D.3. Geographic 3D CRS (case of ellipsoïdal height)</a></li>
-</ul>
-</li>
-<li><a href="#_summary_of_geokey_ids_and_names">Annex E: Summary of GeoKey IDs and names</a></li>
-<li><a href="#_examples">Annex F: Examples</a>
-<ul class="sectlevel2">
-<li><a href="#_introduction_3">F.1. Introduction</a></li>
-<li><a href="#_common_examples">F.2. Common Examples</a>
-<ul class="sectlevel3">
-<li><a href="#_utm_projected_aerial_photo">F.2.1. <em>UTM Projected Aerial Photo</em></a></li>
-<li><a href="#_united_states_state_plane_zone">F.2.2. United States State Plane zone</a></li>
-<li><a href="#_lambert_conformal_conic_aeronautical_chart">F.2.3. Lambert Conformal Conic Aeronautical Chart</a></li>
-<li><a href="#_dma_adrg_raster_graphic_map">F.2.4. DMA ADRG Raster Graphic Map</a></li>
-</ul>
-</li>
-<li><a href="#_less_common_examples">F.3. Less Common Examples</a>
-<ul class="sectlevel3">
-<li><a href="#_unrectified_aerial_photo_known_tiepoints_in_degrees">F.3.1. Unrectified Aerial photo, known tiepoints, in degrees.</a></li>
-<li><a href="#_rotated_scanned_map">F.3.2. Rotated Scanned Map</a></li>
-<li><a href="#_digital_elevation_model">F.3.3. Digital Elevation Model</a></li>
-<li><a href="#_spherical_moon_example">F.3.4. Spherical Moon Example</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_deprecated_and_deleted_epsg_codes">Annex G: Deprecated and deleted EPSG codes</a></li>
-<li><a href="#_backward_compatibility">Annex H: Backward compatibility</a></li>
-<li><a href="#_revision_history">Annex I: Revision History</a></li>
-<li><a href="#Bibliography">Annex J: Bibliography</a></li>
-</ul>
-</div>
+<!-- toc disabled -->
 <div style="page-break-after: always;"></div>
 <div class="paragraph">
 <p><strong class="big">i.     Abstract</strong></p>
@@ -889,12 +697,12 @@ Geographic Tagged Image File Format (GeoTIFF) file format.</p>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Affiliation</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Ted Habermann</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The HDF Group</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Emmanuel Devys</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">IGN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Ted Habermann</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The HDF Group</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Charles Heazel</p></td>
@@ -8415,7 +8223,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-15 22:17:30 -0400
+Last updated 2019-03-16 22:17:55 -0400
 </div>
 </div>
 </body>
