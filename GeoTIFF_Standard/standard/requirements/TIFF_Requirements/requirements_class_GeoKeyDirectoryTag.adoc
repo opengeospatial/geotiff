@@ -45,7 +45,7 @@ _The third unsigned short integer in the GeoKeyDirectoryTag SHALL hold the Minor
 
 |Requirement {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevisionValue +
-_The MinorRevision for this standard SHALL be O or 1._
+_The MinorRevision for this standard SHALL be 0 or 1._
 
 0 = GeoTIFF 1.0 version. Accepted for existing files (GeoTIFF 1.0) that do not use values / codes that are suppressed in this version
 
