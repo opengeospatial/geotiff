@@ -9,7 +9,7 @@ A verticalCRS is a 1D gravity-related CRS. An ellipsoidal height is not a 1D CRS
 The value of the VerticalGeoKey may be:
 
 * either a verticalCRS (case of 1D gravity-related CRS)
-* or describe a geographic 3D CRS (case of ellipsoïdal height).
+* or describe a geographic 3D CRS (case of ellipsoidal height).
 
 Therefore this key is named VerticalGeoKey (and cannot be called VerticalCRSGeoKey).
 Note: In GeoTIFF v1.0 it was called VerticalCSTypeGeoKey.
@@ -23,7 +23,7 @@ Recommendation: For a 2D+1D compound CRS comprised of projected CRS + vertical C
 
 Recommendation: For a 2D+1D compound CRS comprised of geographic 2D CRS + vertical CRS,  GTModelTypeGeoKey value should be 2 and both a GeodeticCRSGeoKey and a VerticalGeoKey should be given. The GeodeticCRSGeoKey should describe a geographic 2D CRS, the VerticalGeoKey should describe the vertical CRS.
 
-=== Geographic 3D CRS (case of ellipsoïdal height)
+=== Geographic 3D CRS (case of ellipsoidal height)
 A future version of GeoTIFF may expand the values of the GTModelTypeGeoKey to explicitly differentiate between geographic 2D and geographic 3D CRSs. This document does not do that.
 In this document there are two possible means of describing a geographic 3D CRS:
 

@@ -47,9 +47,9 @@ _The third unsigned short integer in the GeoKeyDirectoryTag SHALL hold the Minor
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevisionValue +
 _The MinorRevision for this standard SHALL be O or 1._
 
-0 = GeoTIFF 1.0 version
+0 = GeoTIFF 1.0 version. Accepted for existing files (GeoTIFF 1.0) that do not use values / codes that are suppressed in this version
 
-1 = this version 1.1
+1 = this version 1.1. Recommended for production / writing a GeoTIFF file according to this standard (and developing software). Shall be used for files using VerticalGeoKey and EPSG codes not covered by GeoTIFF 1.0.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement {set:cellbgcolor:#CACCCE}

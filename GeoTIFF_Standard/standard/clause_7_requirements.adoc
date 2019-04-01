@@ -43,7 +43,7 @@ include::requirements/TIFF_Requirements/requirements_class_GeoKeyCode.adoc[]
 
 The "undefined" code means that this parameter is intentionally omitted or unknown.
 
-In some cases, additional GeoKeys are required when the "User-Defined" is used. Those requirements are included within a Requirements Class where appropriate.
+In some cases, additional GeoKeys are required when the "User-Defined" value is used. Those requirements are included within a Requirements Class where appropriate.
 
 ==== Requirements Class GeoShortParamsTag
 
@@ -88,7 +88,7 @@ This GeoKey defines the type of Model coordinate reference system used, to which
 * Model CRS is a Projected CRS;
 *	Model CRS is user-defined.
 
-If the Model coordinate reference system is from the GeoTIFF standard CRS register (i.e EPSG register), then only the registered CRS code need be specified. See <<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>.
+If the Model coordinate reference system is from the GeoTIFF standard CRS register (i.e. EPSG register), then only the registered CRS code need be specified. See <<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>.
 
 If the Model coordinate reference system is not from the GeoTIFF standard CRS register, then it requires the specification of some or all CRS elements. See <<Requirements for definition of user-defined Model CRS>>.
 
@@ -119,11 +119,11 @@ include::requirements/Raster2Model_CoordinateTransformation_Tags/requirements_cl
 
 include::requirements/Raster2Model_CoordinateTransformation_Tags/requirements_class_ModelTransformationTag.adoc[]
 
-=== Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)
+=== Requirements for definition (when Model CRS is from GeoTIFF CRS register)
 
 ==== Overview
 
-When the Model CRS is included in the GeoTIFF CRS register (i.e EPSG register), only its register code is required. For 2D projected CRSs ("map grids") the code is given through the ProjectedCRSGeoKey. For geodetic CRSs (geographic 2D and geocentric CRSs) the code is given through the GeodeticCRSGeoKey. If the Model CRS is a pseudo-3D compound CRS consisting of either a projected 2D CRS or a geographic 2D CRS together with a vertical CRS, the code of the vertical component is given through the VerticalGeoKey.
+When the Model CRS is included in the GeoTIFF CRS register (i.e. EPSG register), only its register code is required. For 2D projected CRSs ("map grids") the code is given through the ProjectedCRSGeoKey. For geodetic CRSs (geographic 2D and geocentric CRSs) the code is given through the GeodeticCRSGeoKey. If the Model CRS is a pseudo-3D compound CRS consisting of either a projected 2D CRS or a geographic 2D CRS together with a vertical CRS, the code of the vertical component is given through the VerticalGeoKey.
 
 NOTE: It is a practice in some Communities to indicate a geographic 3D CRS (with ellipsoidal height) by including the code of the geographic 3D CRS in a VerticalGeoKey. See Annex D.
 

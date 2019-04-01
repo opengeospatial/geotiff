@@ -1,7 +1,7 @@
 == Terms and Definitions
 For the purposes of this document, the following additional terms and definitions apply.
 
-NOTE: For GeoTIFF Format Specification 1.0, see <<annex-bibliography.adoc#, GeoTIFF Format Specification>>
+NOTE: For GeoTIFF Format Specification 1.0, see http://geotiff.maptools.org/spec/geotiffhome.html
 
 === band
 range of wavelengths of electromagnetic radiation that produce a single response by a sensing device
@@ -137,6 +137,8 @@ representation of phenomena as images produced electronically and/or optical tec
 Note:	In this document, it is assumed that the phenomena have been sensed or detected by one or more devices such as radar, cameras, photometers, and infra-red and multispectral scanners
 
  [Source: 19101-2:2018, 3.14]
+
+Note: In this document, imagery also includes the result of geographic analysis and processing, e.g. digital elevation models.
 
 === meridian
 

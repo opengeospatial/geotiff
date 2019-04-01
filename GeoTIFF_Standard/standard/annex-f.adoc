@@ -145,7 +145,7 @@ The DGIWG (Defense Geographic Information Working Group) has published a Defense
 ==== Spherical Moon Example
 
 ===== Introduction
-The GeoTIFF Standard can be used for images from extraterrestrial bodies as well as the Earth. This Annex illustrates a simple example for a spherical Moon. This example also shows how more custom Earth-base examples could also be defined, highlighting the flexibility of the GeoTiff standard.
+The GeoTIFF standard can be used for images from extraterrestrial bodies as well as the Earth. This Annex illustrates a simple example for a spherical Moon. This example also shows how more custom Earth-base examples could also be defined, highlighting the flexibility of the GeoTiff standard.
 
 ===== Example
 Note this example (using listgeo), is showing the header values as mapped strings instead of the original short Integer. e.g. GTModelTypeGeoKey = ModelTypeProjected (which is really mapped from value 1).

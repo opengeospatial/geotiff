@@ -10,7 +10,7 @@
 :source-highlighter: pygments
 :numbered:
 
-= OGC GeoTIFF Standard
+= OGC GeoTIFF standard
 
 <<<
 [cols = ">",frame = "none",grid = "none"]
