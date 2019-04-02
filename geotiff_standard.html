@@ -503,7 +503,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book">
 <div id="header">
-<h1>OGC GeoTIFF Standard</h1>
+<h1>OGC GeoTIFF standard</h1>
 </div>
 <div id="content">
 <div id="preamble">
@@ -705,7 +705,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_requirements_class_modeltransformationtag">7.3.3. Requirements Class ModelTransformationTag</a></li>
 </ul>
 </li>
-<li><a href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register">7.4. Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</a>
+<li><a href="#_requirements_for_definition_when_model_crs_is_from_geotiff_crs_register">7.4. Requirements for definition (when Model CRS is from GeoTIFF CRS register)</a>
 <ul class="sectlevel3">
 <li><a href="#_overview">7.4.1. Overview</a></li>
 <li><a href="#_requirements_class_projectedcrsgeokey">7.4.2. Requirements Class ProjectedCRSGeoKey</a></li>
@@ -792,7 +792,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_introduction_2">D.1. Introduction</a></li>
 <li><a href="#_compound_crss">D.2. Compound CRSs</a></li>
-<li><a href="#_geographic_3d_crs_case_of_ellipsoïdal_height">D.3. Geographic 3D CRS (case of ellipsoïdal height)</a></li>
+<li><a href="#_geographic_3d_crs_case_of_ellipsoidal_height">D.3. Geographic 3D CRS (case of ellipsoidal height)</a></li>
 </ul>
 </li>
 <li><a href="#_summary_of_geokey_ids_and_names">Annex E: Summary of GeoKey IDs and names</a></li>
@@ -844,7 +844,7 @@ Geographic Tagged Image File Format (GeoTIFF) file format.</p>
 <p><strong class="big">iii.   Preface</strong></p>
 </div>
 <div class="paragraph">
-<p>The GeoTIFF format was initially developed during the early 1990’s (N. Ritter &amp; Ruth, 1997) in order to leverage a mature platform independent file format (TIFF) by adding metadata required for describing and using geographic image data. TIFF met the requirements for an underlying format, as it was lossless and extensible. In September 1994, SPOT Image Corp proposed a GeoTIFF structure that was limited to Universal Transverse Mercator (N. Ritter &amp; Ruth, 1997). The proposed GeoTIFF specification was augmented and formalized by Niles and Ruth as Revision 1.0, specification version 1.8.2 in November 1995 (N. Ritter &amp; Ruth,1995), with minor adjustments published in 2000, available at <a href="http://geotiff.maptools.org/spec/geotiffhome.html" class="bare">http://geotiff.maptools.org/spec/geotiffhome.html</a>, which is the official GeoTIFF specification version 1.0.</p>
+<p>The GeoTIFF format was initially developed during the early 1990’s (N. Ritter &amp; Ruth, 1997) in order to leverage a mature platform independent file format (TIFF) by adding metadata required for describing and using geographic image data. TIFF met the requirements for an underlying format, as it was lossless and extensible. In September 1994, SPOT Image Corp proposed a GeoTIFF structure that was limited to Universal Transverse Mercator (N. Ritter &amp; Ruth, 1997). The proposed GeoTIFF specification was augmented and formalized by Ritter and Ruth as Revision 1.0, specification version 1.8.2 in November 1995 (N. Ritter &amp; Ruth, 1995), with minor adjustments published in 2000, available at <a href="http://geotiff.maptools.org/spec/geotiffhome.html" class="bare">http://geotiff.maptools.org/spec/geotiffhome.html</a>, which is the official GeoTIFF specification version 1.0.</p>
 </div>
 <div class="paragraph">
 <p>The GeoTIFF format is used throughout the geospatial and earth science communities to share geographic image data. That usage inevitably leads to identification of new requirements and needs for profiles, extensions, and improvements to the original GeoTIFF Specification. The OGC is well established as a forum for standardization in the GeoTIFF producer and user communities and, as such, it provides an inclusive standardization process for those communities. This document is the first step in the process of integration of the GeoTIFF specification into that standardization process, with the adjustment of a minor revision in order to allow the use of modern EPSG register, allowing backward compatibility with Revision 1.0. Moving forward within the OGC, the standard can be evolved using a formal process.</p>
@@ -854,7 +854,7 @@ Geographic Tagged Image File Format (GeoTIFF) file format.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>https://portal.opengeospatial.org/public_ogc/change_request.php</pre>
+<pre>http://www.opengeospatial.org/standards/cr</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -916,7 +916,7 @@ Geographic Tagged Image File Format (GeoTIFF) file format.</p>
 <h2 id="_scope"><a class="anchor" href="#_scope"></a>1. Scope</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This OGC<strong>®</strong> Standard defines the Geographic Tagged Image File Format (GeoTIFF) file format by specifying the content and structure of a group of industry-standard tag sets for the management of georeferenced or geocoded raster imagery using Aldus-Adobe&#8217;s public domain Tagged-Image File Format (TIFF). This specification provides the requirements to which every GeoTIFF file must adhere.
+<p>This OGC<strong>®</strong> Standard defines the Geographic Tagged Image File Format (GeoTIFF) file format by specifying the content and structure of a group of industry-standard tag sets for the management of georeferenced or geocoded raster imagery using Aldus-Adobe&#8217;s public domain Tagged Image File Format (TIFF). This specification provides the requirements to which every GeoTIFF file must adhere.
 GeoTIFF defines a set of TIFF tags provided to describe all "Cartographic" information associated with TIFF imagery that originates from satellite imaging systems, scanned aerial photography, scanned maps, digital elevation models, or as a result of geographic analyses. Its aim is to allow means for tying a raster image to a known model space or earth-based coordinate reference system, and for describing those coordinate reference systems.</p>
 </div>
 <div class="paragraph">
@@ -979,7 +979,7 @@ edition of the normative document referred to applies.</p>
 <p>Association Adobe Developers, <strong><em>TIFF Specification Revision 6.0</em></strong>, June 3, 1992</p>
 </li>
 <li>
-<p>ISO 19111:2019 Geographic information&#8201;&#8212;&#8201;Referencing by coordinates (equivalent to OGC Abstract Topic 2: Referencing by coordinates)</p>
+<p>OGC Abstract Topic 2: Referencing by coordinates (equivalent to ISO 19111:2019 Geographic information&#8201;&#8212;&#8201;Referencing by coordinates)</p>
 </li>
 </ul>
 </div>
@@ -998,7 +998,7 @@ edition of the normative document referred to applies.</p>
 <div class="title">Note</div>
 </td>
 <td class="content">
-For GeoTIFF Format Specification 1.0, see <a href="#">GeoTIFF Format Specification</a>
+For GeoTIFF Format Specification 1.0, see <a href="http://geotiff.maptools.org/spec/geotiffhome.html" class="bare">http://geotiff.maptools.org/spec/geotiffhome.html</a>
 </td>
 </tr>
 </table>
@@ -1302,6 +1302,9 @@ tying model space to the earth is not known".
 <div class="content">
 <pre>[Source: 19101-2:2018, 3.14]</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Note: In this document, imagery also includes the result of geographic analysis and processing, e.g. digital elevation models.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1616,7 +1619,7 @@ The normative provisions in this specification are denoted by the URI</p>
 <h2 id="_clauses_not_containing_normative_material"><a class="anchor" href="#_clauses_not_containing_normative_material"></a>6. Clauses not Containing Normative Material</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following section of this Standard is included for informative purposes only. It serves to assist in correct implementation of this standard but do not impose any additional requirements.</p>
+<p>The following section of this standard is included for informative purposes only. It serves to assist in correct implementation of this standard but do not impose any additional requirements.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1807,9 +1810,9 @@ The normative provisions in this specification are denoted by the URI</p>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevisionValue" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevisionValue</a><br>
-<em>The MinorRevision for this standard SHALL be O or 1.</em></p>
-<p class="tableblock">0 = GeoTIFF 1.0 version</p>
-<p class="tableblock">1 = this version 1.1</p></td>
+<em>The MinorRevision for this standard SHALL be 0 or 1.</em></p>
+<p class="tableblock">0 = GeoTIFF 1.0 version. Accepted for existing files (GeoTIFF 1.0) that do not use values / codes that are suppressed in this version</p>
+<p class="tableblock">1 = this version 1.1. Recommended for production / writing a GeoTIFF file according to this standard (and developing software). Shall be used for files keys and codes not covered by GeoTIFF 1.0 (e.g. VerticalGeoKey).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement </p></td>
@@ -1882,7 +1885,7 @@ The normative provisions in this specification are denoted by the URI</p>
 <p>The "undefined" code means that this parameter is intentionally omitted or unknown.</p>
 </div>
 <div class="paragraph">
-<p>In some cases, additional GeoKeys are required when the "User-Defined" is used. Those requirements are included within a Requirements Class where appropriate.</p>
+<p>In some cases, additional GeoKeys are required when the "User-Defined" value is used. Those requirements are included within a Requirements Class where appropriate.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1993,10 +1996,10 @@ The normative provisions in this specification are denoted by the URI</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Example of a GeoAscii tag containing only one string: "NAD27 / UTM zone 11N\|{NULL}" (where {NULL} is the ASCII character of code 0)</p>
+<p>Example of a GeoAscii tag containing only one string: "NAD27 / UTM zone 11N|{NULL}" (where {NULL} is the ASCII character of code 0)</p>
 </div>
 <div class="paragraph">
-<p>Example of a GeoAscii tag containing two strings: "NAD27 / UTM zone 11N\|NAD27\|{NULL}"</p>
+<p>Example of a GeoAscii tag containing two strings: "NAD27 / UTM zone 11N|NAD27|{NULL}"</p>
 </div>
 </div>
 </div>
@@ -2082,7 +2085,7 @@ The use of this geokey is <strong>highly recommended</strong> for accurate geore
 </ul>
 </div>
 <div class="paragraph">
-<p>If the Model coordinate reference system is from the GeoTIFF standard CRS register (i.e EPSG register), then only the registered CRS code need be specified. See <a href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register">Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</a>.</p>
+<p>If the Model coordinate reference system is from the GeoTIFF standard CRS register (i.e. EPSG register), then only the registered CRS code need be specified. See <a href="#Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)">[Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)]</a>.</p>
 </div>
 <div class="paragraph">
 <p>If the Model coordinate reference system is not from the GeoTIFF standard CRS register, then it requires the specification of some or all CRS elements. See <a href="#_requirements_for_definition_of_user_defined_model_crs">Requirements for definition of user-defined Model CRS</a>.</p>
@@ -2304,11 +2307,11 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 </div>
 </div>
 <div class="sect2">
-<h3 id="_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register"><a class="anchor" href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register"></a>7.4. Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</h3>
+<h3 id="_requirements_for_definition_when_model_crs_is_from_geotiff_crs_register"><a class="anchor" href="#_requirements_for_definition_when_model_crs_is_from_geotiff_crs_register"></a>7.4. Requirements for definition (when Model CRS is from GeoTIFF CRS register)</h3>
 <div class="sect3">
 <h4 id="_overview"><a class="anchor" href="#_overview"></a>7.4.1. Overview</h4>
 <div class="paragraph">
-<p>When the Model CRS is included in the GeoTIFF CRS register (i.e EPSG register), only its register code is required. For 2D projected CRSs ("map grids") the code is given through the ProjectedCRSGeoKey. For geodetic CRSs (geographic 2D and geocentric CRSs) the code is given through the GeodeticCRSGeoKey. If the Model CRS is a pseudo-3D compound CRS consisting of either a projected 2D CRS or a geographic 2D CRS together with a vertical CRS, the code of the vertical component is given through the VerticalGeoKey.</p>
+<p>When the Model CRS is included in the GeoTIFF CRS register (i.e. EPSG register), only its register code is required. For 2D projected CRSs ("map grids") the code is given through the ProjectedCRSGeoKey. For geodetic CRSs (geographic 2D and geocentric CRSs) the code is given through the GeodeticCRSGeoKey. If the Model CRS is a pseudo-3D compound CRS consisting of either a projected 2D CRS or a geographic 2D CRS together with a vertical CRS, the code of the vertical component is given through the VerticalGeoKey.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2521,7 +2524,7 @@ In GeoTIFF 1.0 this key was called VerticalCSTypeGeoKey. In GeoTIFF v1.0 vertica
 <h4 id="_requirements_class_citation_geokeys"><a class="anchor" href="#_requirements_class_citation_geokeys"></a>7.4.5. Requirements Class Citation GeoKeys</h4>
 <div class="paragraph">
 <p>The <em>GTCitationGeoKey</em> is provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file.
-The <em>GeodeticCitationGeoKey</em>, <em>ProjectedCitationGeoKey</em> and <em>VerticalCitationGeoKey</em> are used to describe Model CRS elements through ASCII free text. A citation may be included with a CRS identified through the GeoTIFF CRS register (<a href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register">Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</a>). A citation is mandatory for a user-defined CRSs and CRS objects (<a href="#_requirements_for_definition_of_user_defined_model_crs">Requirements for definition of user-defined Model CRS</a>). The <em>GeodeticCitationGeoKey</em>, <em>ProjectedCitationGeoKey</em> and <em>VerticalCitationGeoKey</em> are used with CRSs and CRS components.</p>
+The <em>GeodeticCitationGeoKey</em>, <em>ProjectedCitationGeoKey</em> and <em>VerticalCitationGeoKey</em> are used to describe Model CRS elements through ASCII free text. A citation may be included with a CRS identified through the GeoTIFF CRS register (<a href="#Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)">[Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)]</a>). A citation is mandatory for a user-defined CRSs and CRS objects (<a href="#_requirements_for_definition_of_user_defined_model_crs">Requirements for definition of user-defined Model CRS</a>). The <em>GeodeticCitationGeoKey</em>, <em>ProjectedCitationGeoKey</em> and <em>VerticalCitationGeoKey</em> are used with CRSs and CRS components.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3487,7 +3490,7 @@ NOTE: See Annex C</p></td>
 <p>A GeoTIFF file is a TIFF file. It is common to use the tiff MIME type,	image/tiff	according to [RFC3302] (see also <a href="http://www.iana.org/assignments/media-types/media-types.xhtml#image" class="bare">http://www.iana.org/assignments/media-types/media-types.xhtml#image</a>).</p>
 </div>
 <div class="paragraph">
-<p>OGC GMLCOV GeoTIFF extension (OGC 12-100r1) specifies image/tiff as MIME identifier (cf. Requirement #5 in OGC 12-100r1).</p>
+<p>OGC GMLCOV GeoTIFF extension (OGC 12-100r1) specifies image/tiff as the MIME identifier (cf. Requirement #5 in OGC 12-100r1).</p>
 </div>
 <div class="paragraph">
 <p>The recommendation for a specific MIME type such as image/tiff+geo, or image/tiff-geo is under consideration in this revision, and should be discussed within the OGC and the imagery communities.</p>
@@ -5286,7 +5289,7 @@ Through increasing use of satellite navigation and positioning systems the ellip
 <div class="sect3">
 <h4 id="_standard_model_coordinate_reference_systems"><a class="anchor" href="#_standard_model_coordinate_reference_systems"></a>B.3.1. Standard Model Coordinate Reference Systems</h4>
 <div class="paragraph">
-<p>In GeoTIFF, standard CRSs are identified through reference to an EPSG CRS code. This is sufficient to define the CRS component objects. Further information on EPSG codes is given in <a href="#_requirements_for_definition_of_model_crs_when_model_crs_is_from_geotiff_crs_register">Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)</a>.</p>
+<p>In GeoTIFF, standard CRSs are identified through reference to an EPSG CRS code. This is sufficient to define the CRS component objects. Further information on EPSG codes is given in <a href="#Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)">[Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)]</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -6321,7 +6324,7 @@ A verticalCRS is a 1D gravity-related CRS. An ellipsoidal height is not a 1D CRS
 <p>either a verticalCRS (case of 1D gravity-related CRS)</p>
 </li>
 <li>
-<p>or describe a geographic 3D CRS (case of ellipsoïdal height).</p>
+<p>or describe a geographic 3D CRS (case of ellipsoidal height).</p>
 </li>
 </ul>
 </div>
@@ -6346,7 +6349,7 @@ Note: In GeoTIFF v1.0 it was called VerticalCSTypeGeoKey.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_geographic_3d_crs_case_of_ellipsoïdal_height"><a class="anchor" href="#_geographic_3d_crs_case_of_ellipsoïdal_height"></a>D.3. Geographic 3D CRS (case of ellipsoïdal height)</h3>
+<h3 id="_geographic_3d_crs_case_of_ellipsoidal_height"><a class="anchor" href="#_geographic_3d_crs_case_of_ellipsoidal_height"></a>D.3. Geographic 3D CRS (case of ellipsoidal height)</h3>
 <div class="paragraph">
 <p>A future version of GeoTIFF may expand the values of the GTModelTypeGeoKey to explicitly differentiate between geographic 2D and geographic 3D CRSs. This document does not do that.
 In this document there are two possible means of describing a geographic 3D CRS:</p>
@@ -7101,7 +7104,7 @@ GeoKeyDirectoryTag:
 <div class="sect4">
 <h5 id="_introduction_4"><a class="anchor" href="#_introduction_4"></a>Introduction</h5>
 <div class="paragraph">
-<p>The GeoTIFF Standard can be used for images from extraterrestrial bodies as well as the Earth. This Annex illustrates a simple example for a spherical Moon. This example also shows how more custom Earth-base examples could also be defined, highlighting the flexibility of the GeoTiff standard.</p>
+<p>The GeoTIFF standard can be used for images from extraterrestrial bodies as well as the Earth. This Annex illustrates a simple example for a spherical Moon. This example also shows how more custom Earth-base examples could also be defined, highlighting the flexibility of the GeoTiff standard.</p>
 </div>
 </div>
 <div class="sect4">
@@ -8415,7 +8418,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-31 22:17:33 -0400
+Last updated 2019-04-01 22:17:40 -0400
 </div>
 </div>
 </body>
