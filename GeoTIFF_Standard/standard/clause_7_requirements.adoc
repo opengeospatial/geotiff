@@ -3,11 +3,9 @@ This document uses the terms defined in Sub-clause 5.3 of [OGC 06-121r8], which 
 
 === Underlying TIFF Requirements
 
-This Standardization Target addresses the core Requirements Classes applicable to all GeoTIFF files.
+This Standardization Target addresses the core TIFF Requirements Class applicable to all GeoTIFF instances (i.e. files).
 
-A GeoTIFF file is a TIFF 6.0 file and inherits the file structure as described in the corresponding portion of the TIFF spec. In addition, all GeoTIFF specific information is encoded in several reserved TIFF tags. The following requirements formalize compliance with TIFF and the GeoTIFF reserved tag structure.
-
-The tags documented in this standard are to be considered completely orthogonal to the raster-data descriptions of the TIFF spec, and impose no restrictions on how the standard TIFF tags are to be interpreted, which color spaces or compression types are to be used, etc.
+A GeoTIFF file is a TIFF 6.0 file and inherits the file structure as described in the corresponding portion of the TIFF specification. In addition, all GeoTIFF specific information is encoded in reserved TIFF tags. The following requirements formalize compliance with TIFF and the GeoTIFF reserved tag structure.
 
 ==== Requirements Class TIFF
 
@@ -73,7 +71,7 @@ This Standardization Target addresses encoding of Configuration values essential
 
 ==== Requirements Class GTRasterTypeGeoKey
 
-This establishes the Raster Space used; there are currently only two options, namely _RasterPixelIsPoint_ and _RasterPixelIsArea_. No user-defined raster spaces are currently supported. For variance in imaging display parameters, such as pixel aspect-ratios, use the standard TIFF 6.0 device-space tags.
+This requirements class establishes the Raster Space used. There are currently only two options: _RasterPixelIsPoint_ and _RasterPixelIsArea_. No user-defined raster spaces are currently supported. For variance in imaging display parameters, such as pixel aspect-ratios, use the standard TIFF 6.0 device-space tags.
 The use of this geokey is *highly recommended* for accurate georeferencing of raster.
 
 include::requirements/Configuration_Keys/requirements_class_GTRasterTypeGeoKey.adoc[]

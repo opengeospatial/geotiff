@@ -34,9 +34,9 @@ two-dimensional
 *3D*
 three-dimensional
 
+
 *Identifiers*
 The normative provisions in this specification are denoted by the URI
-
--http://www.opengis.net/spec/{standard}/{m.n}
+http://www.opengis.net/spec/geotiff/1.1
 
 All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
