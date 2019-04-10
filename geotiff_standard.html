@@ -828,8 +828,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong class="big">i.     Abstract</strong></p>
 </div>
 <div class="paragraph">
-<p>This profile specifies the requirements and encoding rules for using the Tagged Image File Format (TIFF) for the exchange of georeferenced imagery. It formalizes the existing community standard for the
-Geographic Tagged Image File Format (GeoTIFF) file format.</p>
+<p>This OGC Standard defines the Geographic Tagged Image File Format (GeoTIFF) by specifying requirements and encoding rules for using the Tagged Image File Format (TIFF) for the exchange of georeferenced or geocoded imagery. The OGC GeoTIFF 1.1 standard formalizes the existing community GeoTIFF specification version 1.0 and aligns it with the continuing addition of data to the EPSG Geodetic Parameter Dataset.</p>
 </div>
 <div class="paragraph">
 <p><strong class="big">ii.    Keywords</strong></p>
@@ -844,18 +843,15 @@ Geographic Tagged Image File Format (GeoTIFF) file format.</p>
 <p><strong class="big">iii.   Preface</strong></p>
 </div>
 <div class="paragraph">
-<p>The GeoTIFF format was initially developed during the early 1990’s (N. Ritter &amp; Ruth, 1997) in order to leverage a mature platform independent file format (TIFF) by adding metadata required for describing and using geographic image data. TIFF met the requirements for an underlying format, as it was lossless and extensible. In September 1994, SPOT Image Corp proposed a GeoTIFF structure that was limited to Universal Transverse Mercator (N. Ritter &amp; Ruth, 1997). The proposed GeoTIFF specification was augmented and formalized by Ritter and Ruth as Revision 1.0, specification version 1.8.2 in November 1995 (N. Ritter &amp; Ruth, 1995), with minor adjustments published in 2000, available at <a href="http://geotiff.maptools.org/spec/geotiffhome.html" class="bare">http://geotiff.maptools.org/spec/geotiffhome.html</a>, which is the official GeoTIFF specification version 1.0.</p>
+<p>The GeoTIFF format was initially developed during the early 1990’s (N. Ritter &amp; Ruth, 1997). The objective was to leverage a mature platform independent file format (TIFF) by adding metadata required for describing and using geographic image data. TIFF met the requirements for an underlying format, as it was - and still is (though JPEG compression was added) - lossless and extensible. In September 1994, SPOT Image Corp proposed a GeoTIFF structure that was limited to Universal Transverse Mercator (N. Ritter &amp; Ruth, 1997). The proposed GeoTIFF specification was further augmented and formalized by Ritter and Ruth as Revision 1.0, specification version 1.8.2 in November 1995 (N. Ritter &amp; Ruth, 1995), with minor adjustments published in 2000, available at <a href="http://geotiff.maptools.org/spec/geotiffhome.html" class="bare">http://geotiff.maptools.org/spec/geotiffhome.html</a>, which is the official GeoTIFF specification version 1.0.</p>
 </div>
 <div class="paragraph">
 <p>The GeoTIFF format is used throughout the geospatial and earth science communities to share geographic image data. That usage inevitably leads to identification of new requirements and needs for profiles, extensions, and improvements to the original GeoTIFF Specification. The OGC is well established as a forum for standardization in the GeoTIFF producer and user communities and, as such, it provides an inclusive standardization process for those communities. This document is the first step in the process of integration of the GeoTIFF specification into that standardization process, with the adjustment of a minor revision in order to allow the use of modern EPSG register, allowing backward compatibility with Revision 1.0. Moving forward within the OGC, the standard can be evolved using a formal process.</p>
 </div>
 <div class="paragraph">
-<p>Suggested additions, changes, and comments on this standard are welcome and encouraged. Such suggestions may be submitted by email message or by submitting an official OGC Change Request using the online CR application:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>http://www.opengeospatial.org/standards/cr</pre>
-</div>
+<p>Suggested additions, changes, and comments on this standard are welcome and encouraged. Such suggestions may be submitted by email message or by submitting an official OGC Change Request using the online OGC Change Request application:
+ <a href="http://www.opengeospatial.org/standards/cr" class="bare">http://www.opengeospatial.org/standards/cr</a>.
+ The  requests may also be sent to OGC - CIO StandardsTracker: <a href="http://ogc.standardstracker.org/" class="bare">http://ogc.standardstracker.org/</a></p>
 </div>
 <div class="paragraph">
 <p>Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.</p>
@@ -916,14 +912,14 @@ Geographic Tagged Image File Format (GeoTIFF) file format.</p>
 <h2 id="_scope"><a class="anchor" href="#_scope"></a>1. Scope</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This OGC<strong>®</strong> Standard defines the Geographic Tagged Image File Format (GeoTIFF) file format by specifying the content and structure of a group of industry-standard tag sets for the management of georeferenced or geocoded raster imagery using Aldus-Adobe&#8217;s public domain Tagged Image File Format (TIFF). This specification provides the requirements to which every GeoTIFF file must adhere.
-GeoTIFF defines a set of TIFF tags provided to describe all "Cartographic" information associated with TIFF imagery that originates from satellite imaging systems, scanned aerial photography, scanned maps, digital elevation models, or as a result of geographic analyses. Its aim is to allow means for tying a raster image to a known model space or earth-based coordinate reference system, and for describing those coordinate reference systems.</p>
+<p>This OGC<strong>®</strong> Standard defines the Geographic Tagged Image File Format (GeoTIFF)  by specifying the content and structure of a group of industry-standard tag sets for the management of georeferenced or geocoded raster imagery using Aldus-Adobe&#8217;s public domain Tagged Image File Format (TIFF). This OGC Standard specifies the requirements to which every GeoTIFF file shall adhere.
+GeoTIFF defines a set of TIFF tags provided to describe all "Cartographic" information associated with TIFF imagery that originates from satellite imaging systems, scanned aerial photography, scanned maps, digital elevation models, or as a result of geographic analyses. The goal is to provide a consistent mechanism for referencing a raster image to a known model space or earth-based coordinate reference system, and for describing those coordinate reference systems.</p>
 </div>
 <div class="paragraph">
-<p>The tags documented in this specification are to be considered completely orthogonal to the raster-data descriptions of the TIFF specification, and impose no restrictions on how the standard TIFF tags are to be interpreted, which color spaces or compression types are to be used, etc.</p>
+<p>The tags documented in this standard are to be considered completely orthogonal (i.e. independent) to the raster-data descriptions of the TIFF specification, and impose no restrictions on how the standard TIFF tags are to be interpreted, which color spaces or compression types are to be used, and so forth.</p>
 </div>
 <div class="paragraph">
-<p>This minor revision of GeoTIFF focuses on updating the current GeoTIFF community specification and aligning it with current OGC standardization practice, as well as enabling the use of coordinate reference systems that have been included in EPSG register since the GeoTIFF 1.0 specification dating from 1995. It should therefore be backward compatible with the 1.0 version, both for coordinate reference systems based on EPSG register codes, or user-defined coordinate reference systems. <a href="#">Backward compatibility</a> documents this backward compatibility and evolutions of this revision 1.1.</p>
+<p>This OGC Standard is a minor revision of GeoTIFF focused on updating the current GeoTIFF community specification and aligning it with current OGC standardization practice. This includes enabling the use of coordinate reference systems that have been included in EPSG register since the GeoTIFF 1.0 specification dating from 1995. As such, the OGC GeoTIFF Standard should be backward compatible with the 1.0 version, both for coordinate reference systems based on EPSG register codes, or user-defined coordinate reference systems. <a href="#">Backward compatibility</a> documents this backward compatibility and the evolutions of the 1.1 revision.</p>
 </div>
 </div>
 </div>
@@ -1605,10 +1601,8 @@ three-dimensional</p>
 </div>
 <div class="paragraph">
 <p><strong>Identifiers</strong>
-The normative provisions in this specification are denoted by the URI</p>
-</div>
-<div class="paragraph">
-<p>-http://www.opengis.net/spec/{standard}/{m.n}</p>
+The normative provisions in this specification are denoted by the URI
+<a href="http://www.opengis.net/spec/geotiff/1.1" class="bare">http://www.opengis.net/spec/geotiff/1.1</a></p>
 </div>
 <div class="paragraph">
 <p>All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.</p>
@@ -1657,13 +1651,10 @@ The normative provisions in this specification are denoted by the URI</p>
 <div class="sect2">
 <h3 id="_underlying_tiff_requirements"><a class="anchor" href="#_underlying_tiff_requirements"></a>7.1. Underlying TIFF Requirements</h3>
 <div class="paragraph">
-<p>This Standardization Target addresses the core Requirements Classes applicable to all GeoTIFF files.</p>
+<p>This Standardization Target addresses the core TIFF Requirements Class applicable to all GeoTIFF instances (i.e. files).</p>
 </div>
 <div class="paragraph">
-<p>A GeoTIFF file is a TIFF 6.0 file and inherits the file structure as described in the corresponding portion of the TIFF spec. In addition, all GeoTIFF specific information is encoded in several reserved TIFF tags. The following requirements formalize compliance with TIFF and the GeoTIFF reserved tag structure.</p>
-</div>
-<div class="paragraph">
-<p>The tags documented in this standard are to be considered completely orthogonal to the raster-data descriptions of the TIFF spec, and impose no restrictions on how the standard TIFF tags are to be interpreted, which color spaces or compression types are to be used, etc.</p>
+<p>A GeoTIFF file is a TIFF 6.0 file and inherits the file structure as described in the corresponding portion of the TIFF specification. In addition, all GeoTIFF specific information is encoded in reserved TIFF tags. The following requirements formalize compliance with TIFF and the GeoTIFF reserved tag structure.</p>
 </div>
 <div class="sect3">
 <h4 id="_requirements_class_tiff"><a class="anchor" href="#_requirements_class_tiff"></a>7.1.1. Requirements Class TIFF</h4>
@@ -2011,7 +2002,7 @@ The normative provisions in this specification are denoted by the URI</p>
 <div class="sect3">
 <h4 id="_requirements_class_gtrastertypegeokey"><a class="anchor" href="#_requirements_class_gtrastertypegeokey"></a>7.2.1. Requirements Class GTRasterTypeGeoKey</h4>
 <div class="paragraph">
-<p>This establishes the Raster Space used; there are currently only two options, namely <em>RasterPixelIsPoint</em> and <em>RasterPixelIsArea</em>. No user-defined raster spaces are currently supported. For variance in imaging display parameters, such as pixel aspect-ratios, use the standard TIFF 6.0 device-space tags.
+<p>This requirements class establishes the Raster Space used. There are currently only two options: <em>RasterPixelIsPoint</em> and <em>RasterPixelIsArea</em>. No user-defined raster spaces are currently supported. For variance in imaging display parameters, such as pixel aspect-ratios, use the standard TIFF 6.0 device-space tags.
 The use of this geokey is <strong>highly recommended</strong> for accurate georeferencing of raster.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 90%;">
@@ -8418,7 +8409,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-08 22:17:49 -0400
+Last updated 2019-04-09 22:17:26 -0400
 </div>
 </div>
 </body>
