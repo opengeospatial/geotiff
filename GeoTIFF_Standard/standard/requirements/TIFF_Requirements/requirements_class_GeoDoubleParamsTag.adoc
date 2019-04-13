@@ -1,15 +1,15 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: GeoDoubleParamsTag* {set:cellbgcolor:#CACCCE}
+2+|*Requirements Class 5.0: GeoDoubleParamsTag* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 5.1 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID +
 _The GeoDoubleParamsTag SHALL have ID = 34736_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 5.2 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count +
 _The GeoDoubleParamsTag MAY hold any number of key parameters with type = Double._
 {set:cellbgcolor:#FFFFFF}

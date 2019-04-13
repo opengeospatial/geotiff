@@ -1,34 +1,34 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: GeodeticCRSGeoKey* {set:cellbgcolor:#CACCCE}
+2+|*Requirements Class 13.0: GeodeticCRSGeoKey* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 13.1 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.ID +
 _The GeodeticCRSGeoKey SHALL have ID = 2048_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 13.2 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.type +
 _The GeodeticCRSGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 13.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.reserved +
 _GeodeticCRSGeoKey values in the range 1-1023 SHALL be reserved._
 
 NOTE: In GeoTIFF v1.0 the reserved ranges were 1001-3999 and 5000-32766.
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 13.4 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.EPSG +
 _GeodeticCRSGeoKey values in the range 1024-32766 SHALL be EPSG geographic 2D or geocentric CRS codes_
 
 NOTE: In GeoTIFF v1.0 the range was 4000-4999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-g.adoc#deprecated_geodetic_crs_codes,Table G.2 - Deprecated and deleted EPSG Geodetic CRS codes>>
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 13.5 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.user-defined +
 _If the GeodeticCRSGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, GeodeticDatumGeoKey and at least one of GeogAngularUnitsGeoKey or GeogLinearUnitsGeoKey SHALL be populated._
 
@@ -36,7 +36,7 @@ NOTE: if the user-defined CRS is geographic 2D, GeogAngularUnitsGeoKey should be
 
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 13.6 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.private +
 _GeodeticCRSGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}

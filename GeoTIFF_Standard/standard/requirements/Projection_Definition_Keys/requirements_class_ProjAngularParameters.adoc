@@ -1,10 +1,10 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: ProjAngularParameters* {set:cellbgcolor:#CACCCE}
+2+|*Requirements Class 28.0: ProjAngularParameters* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameters
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 28.1 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameters.ID +
 _The ProjStdParallel1GeoKey SHALL have ID = 3078_
 
@@ -25,12 +25,12 @@ _The ProjCenterLatGeoKey SHALL have ID = 3089_
 _The ProjStraightVertPoleLongGeoKey SHALL have ID = 3095_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 28.2 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameters.type +
 _The ProjAngularParameters SHALL have type = DOUBLE_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 28.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameters.units +
 _All parameters in this requirements class SHALL have units as specified by the GeogAngularUnitsGeoKey_
 {set:cellbgcolor:#FFFFFF}

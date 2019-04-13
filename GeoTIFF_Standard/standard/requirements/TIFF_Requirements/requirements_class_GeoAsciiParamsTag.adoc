@@ -1,20 +1,20 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: GeoAsciiParamsTag* {set:cellbgcolor:#CACCCE}
+2+|*Requirements Class 6.0: GeoAsciiParamsTag* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 6.1 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID +
 _The GeoAsciiParamsTag SHALL have ID = 34737_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 6.2 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count +
 _The GeoAsciiParamsTag SHALL contain the values of the key parameters of type = ASCII referenced by the GeoKeyDirectoryTag. If there is no key parameters of type = ASCII, it SHALL not be present_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 6.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.terminator +
 _The pipe character &#124; in the GeoAsciiParamsTag SHALL be used as the character to terminate a string written in as ASCII tag_
 
@@ -23,14 +23,14 @@ NOTE: If multiple strings are written in the same tag, this terminator character
 NOTE: This requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 6.4 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.NULLWrite +
 _NULL (ASCII code = 0) characters SHALL not be present in the string content written in the GeoAsciiParamsTag_
 
 NOTE: this requirement only applies for the content of the tag. The TIFF specification requires that the last byte of a TIFF tag of type ASCII is NULL.
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 6.5 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.type +
 _The GeoAsciiParamsTag SHALL have type = ASCII_
 {set:cellbgcolor:#FFFFFF}

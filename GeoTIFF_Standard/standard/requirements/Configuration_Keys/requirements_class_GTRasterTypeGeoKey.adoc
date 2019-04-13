@@ -1,20 +1,20 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: GTRasterTypeGeoKey* {set:cellbgcolor:#CACCCE}
+2+|*Requirements Class 7.0: GTRasterTypeGeoKey* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 7.1 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.ID +
 _The GTRasterTypeGeoKey SHALL have ID = 1025_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 7.2 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.type +
 _The GTRasterTypeGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 7.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.value +
 _The GTRasterTypeGeoKey value SHALL be:_
 
@@ -30,12 +30,12 @@ Recommendation: the use of 0 (undefined) or 32767 (user-defined) is not recommen
 
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 7.4 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.reserved +
 _GTRasterTypeGeoKey values in the range 3-32766 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 7.5 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.private +
 _GTRasterTypeGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}

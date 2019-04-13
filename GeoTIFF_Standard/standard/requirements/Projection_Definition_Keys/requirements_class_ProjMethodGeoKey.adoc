@@ -1,36 +1,36 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: ProjMethodGeoKey* {set:cellbgcolor:#CACCCE}
+2+|*Requirements Class 27.0: ProjMethodGeoKey* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 27.1 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.ID +
 _The ProjMethodGeoKey SHALL have ID = 3075_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 27.2 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.type +
 _The ProjMethodGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 27.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.transform +
 _ProjMethodGeoKey values in the range 1-27 SHALL be GeoTIFF map projection method codes_
 NOTE: See Annex C
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 27.4 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.reserved +
 _ProjMethodGeoKey values in the range 28-32766 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 27.5 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.user_defined +
 _If the ProjectionMethodGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and keys for each map projection parameter (coordinate operation parameter) appropriate to that method SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 27.6 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.private +
 _ProjMethodGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}

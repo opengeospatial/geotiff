@@ -1,20 +1,20 @@
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements Class: ModelTiepointTag* {set:cellbgcolor:#CACCCE}
+2+|*Requirements Class 9.0: ModelTiepointTag* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 9.1 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID +
 _The ModelTiepointTag SHALL have ID = 33922_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 9.2 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.type +
 _The ModelTiepointTag SHALL have type = DOUBLE_
 {set:cellbgcolor:#FFFFFF}
 
-|Requirement {set:cellbgcolor:#CACCCE}
+|Requirement 9.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.count +
 _The ModelTiepointTag SHALL have 6 values for each of the tiepoints_
 {set:cellbgcolor:#FFFFFF}
