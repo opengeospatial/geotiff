@@ -6,13 +6,13 @@
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryValueOffset
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/CitationGeoKeys 
 |===
 
 *Purpose:* Verify an ASCII parameter

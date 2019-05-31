@@ -6,24 +6,24 @@
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.KeyEntry.ID 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryKeyCount 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryValueOffset
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Criteria 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Location
-|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey 
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey
+|http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.KeyEntry.ID 
+|http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
+|http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.keyEntryValueOffset
+|http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoShortParams.Criteria 
+|http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoShortParams.Location
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GTRasterTypeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitsGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjMethodGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/VerticalGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/VerticalDatumGeoKey
 |===
 
 *Purpose:* Verify a Short parameter

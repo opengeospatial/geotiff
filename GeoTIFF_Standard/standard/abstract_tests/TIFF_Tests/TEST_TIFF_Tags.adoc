@@ -6,23 +6,23 @@
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/TIFF
-|http://www.opengis.net/spec/GeoTIFF/1.1/DataGeoTags
-|http://www.opengis.net/spec/GeoTIFF/1.1/ByteOrder
-|http://www.opengis.net/spec/GeoTIFF/1.1/TagSort
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.ID
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/TIFF
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/DataGeoTags
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ByteOrder
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/TagSort
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoDoubleParamsTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoDoubleParamsTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelTransformationTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelTransformationTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelTiepointTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelTiepointTag.type
 |===
 
 *Purpose:* Verify the TIFF header and prepare for processing the GeoTIFF tags.

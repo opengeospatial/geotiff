@@ -6,18 +6,18 @@
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyDirectoryVersion 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyDirectoryVersionValue 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyRevision 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyRevisionValue 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevision 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.minorRevisionValue 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.numberOfKeys 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntrySetCount
-|http://www.opengis.net/apec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry
-|http://www.opengis.net/apec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntryKeyID
-|http://www.opengis.net/apec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntryTIFFTagLocation
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeySort
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyDirectoryVersion 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyDirectoryVersionValue 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyRevision 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyRevisionValue 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.minorRevision 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.minorRevisionValue 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.numberOfKeys 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntrySetCount
+|http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry
+|http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryKeyID
+|http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryTIFFTagLocation
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeySort
 |===
 
 

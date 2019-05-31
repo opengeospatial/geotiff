@@ -7,8 +7,9 @@
 [width="100%"]
 |===
 |http://www.opengis.net/spec/GeoTIFF/1.1/TIFF
-|http://www.opengis.net/spec/GeoTIFF/1.1/ByteOrder
-|http://www.opengis.net/spec/GeoTIFF/1.1/DataTypes
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/TIFF
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ByteOrder
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/DataTypes
 |===
 
 *Purpose:* Verify that the GeoTIFF file conforms to the TIFF specification.
