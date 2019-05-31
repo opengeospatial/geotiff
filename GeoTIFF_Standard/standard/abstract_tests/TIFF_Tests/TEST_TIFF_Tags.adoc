@@ -1,6 +1,6 @@
 ==== TIFF Tags Test
 
-*Test id:* TIFF_Tests/TIFF.Tags
+*Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/TIFF.Tags
 
 *Requirements:* 
 
@@ -93,7 +93,7 @@ Process each IFD using the following pseudocode:
         }
     IF GeoKeyDirectory has been set THEN
         {
-        execute test TIFF_Tests/GeoKeyDirectory
+        execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/GeoKeyDirectory
         Validate that there is a GTModelType GeoKey in the GeoKey Directory
         } 
         ELSE Throw an error.
@@ -103,14 +103,14 @@ Process each IFD using the following pseudocode:
         Set TagLength to the value in Bytes 4-7
         Set TagValue to the value in Bytes 8-11
         Validate that this IFD contains a ModelTiepointTag
-        Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
+        Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
         }
     IF TiepointTag has been set THEN
         {
         Validate that Bytes 2-3 = 12 (Double)
         Set TagLength to the value in Bytes 4-7
         Set TagValue to the value in Bytes 8-11
-        Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
+        Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
         }     
     IF TransformTag has been set THEN
         {
@@ -118,7 +118,7 @@ Process each IFD using the following pseudocode:
         Set TagLength to the value in Bytes 4-7
         Set TagValue to the value in Bytes 8-1
         Validate that this IFD does not contain a ModelPixelScaleTag
-        Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
+        Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
         }
     Validate that this IFD contains either a ModelTransformationTag or a ModelTiepointTag.
     IFD_Offset = the last four bytes of the current IFD 

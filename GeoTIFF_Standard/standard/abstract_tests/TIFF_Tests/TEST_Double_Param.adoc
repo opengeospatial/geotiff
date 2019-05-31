@@ -1,6 +1,6 @@
 ==== Double Parameters Test
 
-*Test id:* TIFF_Test/DoubleParameters
+*Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/DoubleParameters
 
 *Requirements:* 
 

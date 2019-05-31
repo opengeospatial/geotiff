@@ -1,6 +1,6 @@
 ==== GeoKey Directory Test
 
-*Test id:* TIFF_Test/GeoKeyDirectory
+*Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/GeoKeyDirectory
 
 *Requirements:* 
 
@@ -54,10 +54,10 @@
      Verify that the GeoKey (first Short integer) is greater than the previous GeoKey.
      Process the second Short integer in the Key Entry Set
          {
-         IF value = 0 THEN Execute test TIFF_Test/Short_Param passing GeoKeyOffset as a parameter
-         IF value = 34735 THEN Execute test TIFF_Test/Short_Param passing GeoKeyOffset as a parameter
-         IF value = 34736 THEN Execute test TIFF_Test/Double_Param passing GeoKeyOffset as a parameter
-         IF value = 34737 THEN  Execute test TIFF_Test/ASCII_Param passing GeoKeyOffset as a parameter
+         IF value = 0 THEN Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Short_Param passing GeoKeyOffset as a parameter
+         IF value = 34735 THEN Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Short_Param passing GeoKeyOffset as a parameter
+         IF value = 34736 THEN Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Double_Param passing GeoKeyOffset as a parameter
+         IF value = 34737 THEN  Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/ASCII_Param passing GeoKeyOffset as a parameter
          }
      SET GeoKeyOffset = GeoKeyOffset + 8
      KeySetCount = KeySetCount - 1

@@ -1,6 +1,6 @@
 ==== ModelPixelScaleTag Test
 
-*Test id:* Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
+*Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
 
 *Requirements:*
 

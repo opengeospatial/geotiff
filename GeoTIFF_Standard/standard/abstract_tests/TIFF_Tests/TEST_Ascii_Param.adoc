@@ -1,6 +1,6 @@
 ==== ASCII Parameters Test
 
-*Test id:* TIFF_Test/AsciiParameters
+*Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/AsciiParameters
 
 *Requirements:* 
 

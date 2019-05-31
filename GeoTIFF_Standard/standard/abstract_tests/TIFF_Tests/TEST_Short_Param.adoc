@@ -1,6 +1,6 @@
 ==== Short Parameters Test
 
-*Test id:* TIFF_Test/ShortParameters
+*Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/ShortParameters
 
 *Requirements:* 
 
