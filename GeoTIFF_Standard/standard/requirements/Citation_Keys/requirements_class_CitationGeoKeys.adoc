@@ -1,11 +1,11 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 15.0: CitationGeoKeys* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/CitationGeoKeys
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 15.1 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/CitationGeoKeys.ID +
 _The GTCitationGeoKey SHALL have ID = 1026_
 
 _The GeodeticCitationGeoKey SHALL have ID = 2049_
@@ -16,7 +16,7 @@ _The VerticalCitationGeoKey SHALL have ID = 4097_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 15.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/CitationGeoKeys.type +
 _The CitationGeoKeys SHALL have type = ASCII_
 {set:cellbgcolor:#FFFFFF}
 |===

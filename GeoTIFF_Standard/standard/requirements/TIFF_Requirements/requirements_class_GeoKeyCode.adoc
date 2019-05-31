@@ -1,16 +1,16 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 3.0: GeoKeyCode {set:cellbgcolor:#CACCCE}*
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyCode
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyCode
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 3.1 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyCode.undefined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyCode.undefined +
 _GeoKeys with a value of 0 SHALL indicate intentionally omitted parameters_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 3.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyCode.userDefined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyCode.userDefined +
 _GeoKeys with a value of 32767 SHALL indicate user-defined parameters_
 {set:cellbgcolor:#FFFFFF}
 |===

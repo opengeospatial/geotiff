@@ -271,14 +271,14 @@ GeoTIFF attempts to allow Model CRSs that are not described in the standard CRS 
 In practice, user-defined Model CRS definition is limited to the following cases:
 
 i)	a user-defined projected CRS which uses a base geographic CRS and a map projection that are both individually available from the GeoTIFF CRS register but, in the register, not associated together.
-EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.EPSG, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.EPSG
+EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.EPSG, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.EPSG
 
 ii)	a user-defined projected CRS which uses a user-defined geographic CRS with a map projection that is available from the GeoTIFF CRS register.
-GeogCRS needs defining as in Requirement http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.userdefined, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.EPSG
+GeogCRS needs defining as in Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.userdefined, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.EPSG
 
-iii)	a user-defined geographic CRS available from the GeoTIFF CRS register and a map projection not in EPSG register. EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.EPSG, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.user_defined using the v1.0 provisions (use the names in annex C).
+iii)	a user-defined geographic CRS available from the GeoTIFF CRS register and a map projection not in EPSG register. EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.EPSG, projection needs defining through Requirement http://www.opengis.net/spec/req/GeoTIFF/1.1/ProjectionGeoKey.user_defined using the v1.0 provisions (use the names in annex C).
 
- iv) Neither base GeogCRS or map projection is in EPSG. GeogCRS needs defining, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.user_defined using the v1.0 provisions (the names in annex C).
+ iv) Neither base GeogCRS or map projection is in EPSG. GeogCRS needs defining, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.user_defined using the v1.0 provisions (the names in annex C).
 
 For the transformation from raster space to model space, some implicit convention is made about axis positive direction and axis order. It is assumed that:
 

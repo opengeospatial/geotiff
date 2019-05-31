@@ -1,40 +1,40 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 19.0: PrimeMeridianGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.1 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey.ID +
 _The PrimeMeridianGeoKey SHALL have ID = 2051_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey.type +
 _The PrimeMeridianGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.3{set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.reserved +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey.reserved +
 _PrimeMeridianGeoKey values in the range 1-1023 SHALL be reserved_
 
 NOTE: In GeoTIFF v1.0 the range was 101-7999 and 9000-32766
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.4 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.EPSG +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey.EPSG +
 _PrimeMeridianGeoKey values in the range 1024-32766 SHALL be EPSG Prime Meridian Codes_
 
 NOTE: In GeoTIFF v1.0 the range was 8000-8999
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.user-defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey.user-defined +
 _If the PrimeMeridianGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, and PrimeMeridianLongGeoKey SHALL be populated_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.6 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.private +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey.private +
 _PrimeMeridianGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===
