@@ -6,7 +6,6 @@
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/TIFF
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/TIFF
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ByteOrder
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/DataTypes
