@@ -1,11 +1,11 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 17.0: UnitSizeGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitSizeGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 17.1 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitSizeGeoKey.ID +
 _The GeogAngularUnitSizeGeoKey SHALL have ID = 2055_
 
 _The GeogLinearUnitSizeGeoKey SHALL have ID = 2053_
@@ -14,12 +14,12 @@ _The ProjLinearUnitSizeGeoKey SHALL have ID = 3077_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 17.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitSizeGeoKey.type +
 _The GeogAngularUnitSizeGeoKey, GeogLinearUnitSizeGeoKey and ProjLinearUnitSizeGeoKey SHALL each have type = DOUBLE_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 17.3 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.units +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitSizeGeoKey.units +
 _The units of the GeogAngularUnitSizeGeoKey value SHALL be radians._
 
 _The units of the GeogLinearUnitSizeGeoKey value SHALL be meters._

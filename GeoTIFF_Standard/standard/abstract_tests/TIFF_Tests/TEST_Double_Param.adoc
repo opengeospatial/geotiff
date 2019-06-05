@@ -1,26 +1,26 @@
 ==== Double Parameters Test
 
-*Test id:* TIFF_Test/DoubleParameters
+*Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/DoubleParameters
 
 *Requirements:* 
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameterGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryValueOffset
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoDoubleParamsTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoDoubleParamsTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianLongitudeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitSizeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidSemiMajorAxisGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidSemiMinorAxisGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidInvFlatteningGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjAngularParameterGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjLinearParameterGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjScalarParameterGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjAzimuthAngleGeoKey
 |===
 
 *Purpose:* Verify a Double parameter

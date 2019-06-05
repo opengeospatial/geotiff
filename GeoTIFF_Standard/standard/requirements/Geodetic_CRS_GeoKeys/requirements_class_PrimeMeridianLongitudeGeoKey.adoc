@@ -1,21 +1,21 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 20.0: PrimeMeridianLongitudeGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianLongitudeGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 20.1 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianLongitudeGeoKey.ID +
 _The PrimeMeridianLongitudeGeoKey SHALL have ID = 2061_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 20.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianLongitudeGeoKey.type +
 _The PrimeMeridianLongitudeGeoKey SHALL have type = DOUBLE_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 20.3{set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey.units +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianLongitudeGeoKey.units +
 _The unit for the PrimeMeridianLongitudeGeoKey value SHALL be GeogAngularUnits_
 {set:cellbgcolor:#FFFFFF}
 |===

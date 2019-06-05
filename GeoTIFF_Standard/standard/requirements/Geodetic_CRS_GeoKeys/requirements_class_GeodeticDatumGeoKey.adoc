@@ -1,40 +1,40 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 18.0: GeodeticDatumGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 18.1 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey.ID +
 _The GeodeticDatumGeoKey SHALL have ID = 2050_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 18.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey.type +
 _The GeodeticDatumGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 18.3 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.reserved +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey.reserved +
 _GeodeticDatumGeoKey values in the range 1-1023 SHALL be reserved._
 
 NOTE: In GeoTIFF v1.0 the reserved ranges were 1001-5999 and 7000-32766.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 18.4 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.EPSG +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey.EPSG +
 _GeodeticDatumGeoKey values in the range 1024-32766 SHALL be EPSG geodetic datum codes._
 
 NOTE: In GeoTIFF v1.0 the range was 6000-6999. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-g.adoc#deprecated_geodetic_datum_codes,Table G.4 - Deprecated and deleted EPSG geodetic datum codes>>
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 18.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.user-defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey.user-defined +
 _If the GeodeticDatumGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 18.6 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.private +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey.private +
 _GeodeticDatumGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===

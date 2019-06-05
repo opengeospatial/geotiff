@@ -1,38 +1,38 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 12.0: ProjectedCRSGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 12.1 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey.ID +
 _The ProjectedCRSGeoKey SHALL have ID = 3072_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 12.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey.type +
 _The ProjectedCRSGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 12.3 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.reserved +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey.reserved +
 _ProjectedCRSGeoKey values in the range 1-1023 SHALL be reserved._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 12.4 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.EPSG +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey.EPSG +
 _ProjectedCRSGeoKey values in the range 1024-32766 SHALL be EPSG Projected CRS Codes_
 
 NOTE: In GeoTIFF v1.0 the range was 20000-32760. Several values in this range have been deprecated or deleted from the EPSG Dataset and should no longer be used. See <<annex-g.adoc#deprecated_projected_crs_codes,Table G.1 - Deprecated and deleted EPSG Projected CRS codes>>
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 12.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.user-defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey.user-defined +
 _A ProjectedCRSGeoKey value of 32767 SHALL be a user-defined projected CRS.  If the ProjectedCRSGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, GeodeticCRSGeoKey  and ProjectionGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 12.6 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.private +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey.private +
 _ProjectedCRSGeoKey values in the range 32768-65535 SHALL be private_
 {set:cellbgcolor:#FFFFFF}
 |===

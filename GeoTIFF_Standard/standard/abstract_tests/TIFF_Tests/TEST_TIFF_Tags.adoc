@@ -1,28 +1,28 @@
 ==== TIFF Tags Test
 
-*Test id:* TIFF_Tests/TIFF.Tags
+*Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/TIFF.Tags
 
 *Requirements:* 
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/TIFF
-|http://www.opengis.net/spec/GeoTIFF/1.1/DataGeoTags
-|http://www.opengis.net/spec/GeoTIFF/1.1/ByteOrder
-|http://www.opengis.net/spec/GeoTIFF/1.1/TagSort
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.ID
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/TIFF
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/DataGeoTags
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ByteOrder
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/TagSort
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoDoubleParamsTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoDoubleParamsTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelTransformationTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelTransformationTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelTiepointTag.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelTiepointTag.type
 |===
 
 *Purpose:* Verify the TIFF header and prepare for processing the GeoTIFF tags.
@@ -93,7 +93,7 @@ Process each IFD using the following pseudocode:
         }
     IF GeoKeyDirectory has been set THEN
         {
-        execute test TIFF_Tests/GeoKeyDirectory
+        execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/GeoKeyDirectory
         Validate that there is a GTModelType GeoKey in the GeoKey Directory
         } 
         ELSE Throw an error.
@@ -103,14 +103,14 @@ Process each IFD using the following pseudocode:
         Set TagLength to the value in Bytes 4-7
         Set TagValue to the value in Bytes 8-11
         Validate that this IFD contains a ModelTiepointTag
-        Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
+        Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
         }
     IF TiepointTag has been set THEN
         {
         Validate that Bytes 2-3 = 12 (Double)
         Set TagLength to the value in Bytes 4-7
         Set TagValue to the value in Bytes 8-11
-        Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
+        Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
         }     
     IF TransformTag has been set THEN
         {
@@ -118,7 +118,7 @@ Process each IFD using the following pseudocode:
         Set TagLength to the value in Bytes 4-7
         Set TagValue to the value in Bytes 8-1
         Validate that this IFD does not contain a ModelPixelScaleTag
-        Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
+        Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
         }
     Validate that this IFD contains either a ModelTransformationTag or a ModelTiepointTag.
     IFD_Offset = the last four bytes of the current IFD 

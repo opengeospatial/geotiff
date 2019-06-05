@@ -1,16 +1,16 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 1.0: TIFF* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/Core
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/Core
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 1.1 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/TIFF +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/TIFF +
 _A GeoTIFF file SHALL be compliant with the TIFF 6.0 specification_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 1.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/DataGeoTags +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/DataGeoTags +
 _GeoTIFF files SHALL encode all GeoTIFF specific information using the following specified reserved TIFF tags_ +
  - 34735  GeoKeyDirectoryTag (mandatory) +
  - 34736  GeoDoubleParamsTag (optional) +
@@ -25,22 +25,22 @@ _The conditional tags shall follow the following rules:_ +
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 1.3 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/DataTypes +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/DataTypes +
 _GeoTIFF implementation software SHALL support all documented TIFF 6.0 tag data-types, and in particular ASCII, SHORT and the IEEE double-precision floating point "DOUBLE" types_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 1.4 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ByteOrder +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ByteOrder +
 _GeoTIFF implementation software SHALL honor the 'byte-order' indicator by performing byte swaps as necessary to provide an accurate in-memory representation of the values encoded in the GeoTIFF file_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 1.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/TagSort +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/TagSort +
 _The TIFF tags in a GeoTIFF file SHALL be written out to the file with the tag-IDs sorted in ascending order_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 1.6 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeySort +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeySort +
 _The GeoKey entries in a GeoTIFF file SHALL be written out to the file with the key-IDs sorted in ascending order_
 {set:cellbgcolor:#FFFFFF}
 |===

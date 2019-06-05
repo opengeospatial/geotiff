@@ -1,31 +1,31 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 10.0: ModelPixelScaleTag* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 10.1 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.ID +
 _The ModelPixelScaleTag SHALL have ID = 33550_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 10.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.type +
 _The ModelPixelScaleTag SHALL have type = DOUBLE_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 10.3 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.count +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.count +
 _The ModelPixelScaleTag SHALL have 3 values representing the scale factor in the X, Y, and Z directions_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 10.4 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardConvention +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.standardConvention +
 _A positive ScaleX in the ModelPixelScaleTag SHALL indicate that model space X coordinates increase as raster space I indices increase. This is the standard horizontal relationship between raster space and model space. A positive ScaleY in the ModelPixelScaleTag SHALL indicate that model space Y coordinates decrease as raster space J indices increase. This is the standard vertical relationship between raster space and model space._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 10.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.axisReversal +
 _Simple reversals of orientation from the standard relationship between raster and model space (e.g., horizontal or vertical flips) SHALL be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers shall honor this sign-reversal convention._
 {set:cellbgcolor:#FFFFFF}
 

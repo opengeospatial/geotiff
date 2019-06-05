@@ -1,12 +1,12 @@
 ==== ModelTransformationTag Test
 
-*Test id:* Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
+*Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
 
 *Requirements:* 
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.count
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelTransformationTag.count
 |===
 
 *Purpose:* Verify the contents of the ModelTransformationTag parameter

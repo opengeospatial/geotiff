@@ -1,13 +1,13 @@
 ==== ModelPixelScaleTag Test
 
-*Test id:* Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
+*Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/Raster2Model_CoordinateTransformation_GeoKey/ModelPixelScaleTag
 
 *Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.standardConvention
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.axisReversal
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.standardConvention
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.axisReversal
 |===
 
 *Purpose:* Verify the contents of the ModelPixelScaleTag parameter
