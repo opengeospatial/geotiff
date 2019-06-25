@@ -21,7 +21,7 @@ _The ModelPixelScaleTag SHALL have 3 values representing the scale factor in the
 
 |Requirement 10.4 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.standardConvention +
-_A positive ScaleX in the ModelPixelScaleTag SHALL indicate that model space X coordinates increase as raster space I indices increase. This is the standard horizontal relationship between raster space and model space. A positive ScaleY in the ModelPixelScaleTag SHALL indicate that model space Y coordinates decrease as raster space J indices increase. This is the standard vertical relationship between raster space and model space._
+_A positive ScaleX in the ModelPixelScaleTag SHALL indicate that model space X coordinates increase as raster space I indices increase. This is the standard horizontal relationship between raster space and model space. A positive ScaleY in the ModelPixelScaleTag SHALL indicate that model space Y coordinates decrease as raster space J indices increase. This is the standard vertical relationship between raster space and model space. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale (in other words a *Z-Scaling factor*)._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 10.5 {set:cellbgcolor:#CACCCE}

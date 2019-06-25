@@ -176,7 +176,7 @@ and so on; by extension this one-by-one grid cell is also referred to as a pixel
       | (1,1) (2,1)   showing the locations (x) and areas (*) of several pixels.
       v
       J
-The location of the pixel is referenced at the upper left of the pixel (pixelCorner convention). The ModelTiePoint tag usually georeferences  pixel (0, 0) and provides the coordinates of the upper left corner of this pixel.
+The location of the area pixel is referenced at the upper left of the pixel (pixelCorner convention). The <<Coordinate Transformations>> ModelTiePoint tag is usually providing the location of pixel (0, 0) with the coordinates of the upper left corner of this pixel.
 
 ====== "PixelIsPoint" Raster Space
 The PixelIsPoint raster grid space R uses the same coordinate axis names as used in PixelIsArea Raster space, with increasing I to the right, increasing J down. The first pixel-value however, is realized as a point value located at (0,0). An N by M pixel image consists of points which fill the mathematically defined bounds (0,0), (N-1,M-1).
@@ -189,7 +189,7 @@ The PixelIsPoint raster grid space R uses the same coordinate axis names as used
       |     (1,1)
       v
       J
-The location of the pixel is referenced at the point pixel (pixelCenter convention). The ModelTiePoint tag usually georeferences  pixel (0, 0) and provides the coordinates of this point pixel.
+The location of the pixel is referenced at the point pixel (pixelCenter convention). The <<Coordinate Transformations>> ModelTiePoint tag is usually providing the location of pixel (0, 0) with the coordinates of this point pixel.
 
 If a point-pixel image were to be displayed on a display device with pixel cells having the same size as the raster spacing, then the upper-left corner of the displayed image would be located in raster space at (-0.5, -0.5).
 
