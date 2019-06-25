@@ -169,25 +169,27 @@ The "PixelIsArea" raster grid space R, which is the default, uses coordinates I 
 
 and so on; by extension this one-by-one grid cell is also referred to as a pixel. An N by M pixel image covers an area with the mathematically defined bounds (0,0), (N,M).
 
-     (0,0)
-      +---+---+-> I
+  (0,0) (1,0)
+      x---x---x-> I
       | * | * |
-      +---+---+       Standard (PixelIsArea) TIFF Raster space R,
-      | (1,1) (2,1)   showing the areas (*) of several pixels.
+      x---x---x       Standard (PixelIsArea) TIFF Raster space R,
+      | (1,1) (2,1)   showing the locations (x) and areas (*) of several pixels.
       v
       J
+The location of the pixel is referenced at the upper left of the pixel (pixelCorner convention). The ModelTiePoint tag usually georeferences  pixel (0, 0) and provides the coordinates of the upper left corner of this pixel.
 
 ====== "PixelIsPoint" Raster Space
 The PixelIsPoint raster grid space R uses the same coordinate axis names as used in PixelIsArea Raster space, with increasing I to the right, increasing J down. The first pixel-value however, is realized as a point value located at (0,0). An N by M pixel image consists of points which fill the mathematically defined bounds (0,0), (N-1,M-1).
 
      (0,0)  (1,0)
-      *-------*------> I
+      x-------x------> I
       |       |
       |       |      PixelIsPoint TIFF Raster space R,
-      *-------*      showing the location (*) of several pixels.
+      x-------x      showing the location (x) of several pixels.
       |     (1,1)
       v
       J
+The location of the pixel is referenced at the point pixel (pixelCenter convention). The ModelTiePoint tag usually georeferences  pixel (0, 0) and provides the coordinates of this point pixel.
 
 If a point-pixel image were to be displayed on a display device with pixel cells having the same size as the raster spacing, then the upper-left corner of the displayed image would be located in raster space at (-0.5, -0.5).
 
