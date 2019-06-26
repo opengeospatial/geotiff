@@ -2254,7 +2254,7 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement 10.4 </p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.standardConvention" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/ModelPixelScaleTag.standardConvention</a><br>
-<em>A positive ScaleX in the ModelPixelScaleTag SHALL indicate that model space X coordinates increase as raster space I indices increase. This is the standard horizontal relationship between raster space and model space. A positive ScaleY in the ModelPixelScaleTag SHALL indicate that model space Y coordinates decrease as raster space J indices increase. This is the standard vertical relationship between raster space and model space.</em></p></td>
+<em>A positive ScaleX in the ModelPixelScaleTag SHALL indicate that model space X coordinates increase as raster space I indices increase. This is the standard horizontal relationship between raster space and model space. A positive ScaleY in the ModelPixelScaleTag SHALL indicate that model space Y coordinates decrease as raster space J indices increase. This is the standard vertical relationship between raster space and model space. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale (in other words a <strong>Z-Scaling factor</strong>).</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement 10.5 </p></td>
@@ -5110,13 +5110,14 @@ YPosition (287)</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>(0,0)
- +---+---+-&gt; I
- | * | * |
- +---+---+       Standard (PixelIsArea) TIFF Raster space R,
- | (1,1) (2,1)   showing the areas (*) of several pixels.
- v
- J</pre>
+<pre>  (0,0) (1,0)
+      x---x---x-&gt; I
+      | * | * |
+      x---x---x       Standard (PixelIsArea) TIFF Raster space R,
+      | (1,1) (2,1)   showing the locations (x) and areas (*) of several pixels.
+      v
+      J
+The location of the area pixel is referenced at the upper left of the pixel (pixelCorner convention). The &lt;&lt;Coordinate Transformations&gt;&gt; ModelTiePoint tag is usually providing the location of pixel (0, 0) with the coordinates of the upper left corner of this pixel.</pre>
 </div>
 </div>
 </div>
@@ -5127,14 +5128,15 @@ YPosition (287)</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>(0,0)  (1,0)
- *-------*------&gt; I
- |       |
- |       |      PixelIsPoint TIFF Raster space R,
- *-------*      showing the location (*) of several pixels.
- |     (1,1)
- v
- J</pre>
+<pre>     (0,0)  (1,0)
+      x-------x------&gt; I
+      |       |
+      |       |      PixelIsPoint TIFF Raster space R,
+      x-------x      showing the location (x) of several pixels.
+      |     (1,1)
+      v
+      J
+The location of the pixel is referenced at the point pixel (pixelCenter convention). The &lt;&lt;Coordinate Transformations&gt;&gt; ModelTiePoint tag is usually providing the location of pixel (0, 0) with the coordinates of this point pixel.</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8416,7 +8418,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-06-24 22:17:09 -0400
+Last updated 2019-06-25 22:17:08 -0400
 </div>
 </div>
 </body>
