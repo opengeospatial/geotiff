@@ -18,4 +18,5 @@ This annex provides the description of the changes:
 * clarification of clauses and descriptive statements on the geodetic sections, including Coordinate Reference Systems, projection, datums, thanks to a full revision from Roger Lott (IOGP) and chair of OGC CRS standards working group
 * Deprecation of EPSG codes that have been either deprecated or deleted from the EPSG Dataset
  (see <<annex-g.adoc#,Deprecated and deleted EPSG codes>>)
+* Deprecation of GeoTIFF v1.0 Ellipsoid Vertical CS Codes, see item b/ in <<annex-d.adoc#,Geographic 3D CRS (case of ellipsoidal height)>>
 * Suppression of Intergraph tag, which was already deprecated in 1.0, and which is no longer in use (this has been confirmed by "Hexagon Geospatial").

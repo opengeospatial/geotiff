@@ -35,6 +35,7 @@ NOTE: This option is documented only for compatibility with some past Community 
 
 Neither of these are long-term solutions. Until a major revision of this specification is available, recommended practice for producers/writers is to use (a). Readers should be prepared for both of these options.
 
+_Table D.1 - Deprecated codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights (corresponding to option b)_
 [cols="4,1",width="90%" options="header"]
 |====
 <| [underline]#*Ellipsoid Name*#
@@ -104,4 +105,3 @@ Neither of these are long-term solutions. Until a major revision of this specifi
 <| OSU91A_ellipsoid
 ^| 5033
 |====
-_Table D.1 - Deprecated codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights (corresponding to option b)_

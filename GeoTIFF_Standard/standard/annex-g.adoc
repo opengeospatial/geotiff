@@ -5,6 +5,7 @@ This section is for documenting backward compatibility of the use of CRS or proj
 
 Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects available at that time. Most of these remain valid, although there may have been minor changes to names and other non-essential detail. However since the publication of GeoTIFF v1.0 several of these object records have been either deprecated or deleted from the EPSG Dataset. Deprecated records remain in the EPSG Dataset but are no longer valid; they  usually have been superseded by a later record, with a cross reference included in the EPSG Dataset. Deleted records have been removed from the EPSG dataset and the code could be (and in some cases has been) reused for a totally different object. Particular care is needed in the treatment of GeoTIFF files that have used these deleted object records, _shown in italics_ in tables G.1 through G.6 below. These tables list the EPSG codes listed in GeoTIFF v1.0 that are no longer valid and which should no longer be used. The list was correct at 29th May 2018. For any later deprecation and replacement of records refer to the EPSG Dataset. Note that the names in the GeoTIFF v1.0 specification and given in these tables have prefixes and underscores not found in the EPSG Dataset.
 
+__Table G.1 - Deprecated and deleted EPSG Projected CRS codes  __
 [[deprecated_projected_crs_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
@@ -420,8 +421,9 @@ Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects avai
 ^| 32077
 <| Deprecated in EPSG, replaced by 32067 NAD27 / BLM 17N (ftUS).
 |===
-__Table G.1 - Deprecated and deleted EPSG Projected CRS codes  __
 
+
+_Table G.2 - Deprecated and deleted EPSG Geodetic CRS codes_
 [[deprecated_geodetic_crs_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
@@ -495,8 +497,9 @@ __Table G.1 - Deprecated and deleted EPSG Projected CRS codes  __
 ^| 4035
 <| Deprecated in EPSG, replaced by 4047 Unspecified datum based upon the GRS 1980 Authalic Sphere.
 |===
-_Table G.2 - Deprecated and deleted EPSG Geodetic CRS codes_
 
+
+_Table G.3 - Deprecated and deleted EPSG Unit of Measure codes_
 [[deprecated_units_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
@@ -534,8 +537,9 @@ _Table G.2 - Deprecated and deleted EPSG Geodetic CRS codes_
 ^| _9015_
 <| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 9030 nautical mile._
 |===
-_Table G.3 - Deprecated and deleted EPSG Unit of Measure codes_
 
+
+_Table G.4 - Deprecated and deleted EPSG Geodetic Datum codes_
 [[deprecated_geodetic_datum_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
@@ -591,8 +595,9 @@ _Table G.3 - Deprecated and deleted EPSG Unit of Measure codes_
 ^| 6902
 <| Deprecated in EPSG, replaced by 6901 ATF (Paris)
 |===
-_Table G.4 - Deprecated and deleted EPSG Geodetic Datum codes_
 
+
+_Table G.5 - Deprecated and deleted EPSG Ellipsoid codes_
 [[deprecated_ellipsoid_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
@@ -618,8 +623,9 @@ _Table G.4 - Deprecated and deleted EPSG Geodetic Datum codes_
 ^| 7035
 <| Deprecated in EPSG, replaced by 7047 GRS 1980 Authalic Sphere.
 |===
-_Table G.5 - Deprecated and deleted EPSG Ellipsoid codes_
 
+
+_Table G.6 - Deprecated and deleted EPSG Map projection codes_
 [[deprecated_map_projection_codes]]
 [cols="2,1,4",width="90%" options="header"]
 |===
@@ -663,4 +669,3 @@ _Table G.5 - Deprecated and deleted EPSG Ellipsoid codes_
 ^| _19912_
 <| _Deleted in EPSG, code not re-used as at 2018-05-29, replaced by 19956 Rectified Skew Orthomorphic Borneo Grid (chains), 19957 Rectified Skew Orthomorphic Borneo Grid (feet) and 19958 Rectified Skew Orthomorphic Borneo Grid (metres)._
 |===
-_Table G.1 - Deprecated and deleted EPSG Map projection codes_
