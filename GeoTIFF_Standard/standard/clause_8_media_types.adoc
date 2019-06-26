@@ -3,4 +3,4 @@ A GeoTIFF file is a TIFF file. It is common to use the tiff MIME type,	image/tif
 
 OGC GMLCOV GeoTIFF extension (OGC 12-100r1) specifies image/tiff as the MIME identifier (cf. Requirement #5 in OGC 12-100r1).
 
-The recommendation for a specific MIME type such as image/tiff+geo, or image/tiff-geo is under consideration in this revision, and should be discussed within the OGC and the imagery communities.
+The recommendation for the MIME type is to use the image/tiff application parameter, with the geotiff value, therefore as follows: image/tiff; application=geotiff
