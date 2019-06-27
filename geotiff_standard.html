@@ -3484,7 +3484,7 @@ NOTE: See Annex C</p></td>
 <p>OGC GMLCOV GeoTIFF extension (OGC 12-100r1) specifies image/tiff as the MIME identifier (cf. Requirement #5 in OGC 12-100r1).</p>
 </div>
 <div class="paragraph">
-<p>The recommendation for a specific MIME type such as image/tiff+geo, or image/tiff-geo is under consideration in this revision, and should be discussed within the OGC and the imagery communities.</p>
+<p>The recommendation for the MIME type is to use the image/tiff application parameter, with the geotiff value, therefore as follows: image/tiff; application=geotiff</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -5700,7 +5700,7 @@ Users must note that this GeoTIFF practice is not in line with ISO TC211 and OGC
 </div>
 <div class="paragraph">
 <p>The EPSG Dataset is maintained by the Geodesy Subcommittee of the International Association of Oil and Gas Producers (IOGP). It follows the ISO 19111 / OGC Abstract Specification Topic 2 data model for describing the definitions of coordinate reference systems (CRSs). CRSs and coordinate operations are composed of a number of objects and attributes. Some of these objects themselves are composed objects and attributes, in a nested structure.
-Each release of new or revised data is indicated by the EPSG Dataset version number. Since 1999 (from EPSG Dataset v5.0 and later) EPSG policy has been to never remove any invalid data but instead to leave it in the Dataset with its status set to deprecated. Deprecated data contains a significant error (significant defined as having impact on the result of applying a transformation or conversion) and is invalid. As such, since 1999 reference to the version of the EPSG Dataset to qualify codes of entities within the Dataset has been unnecessary. Using EPSG Dataset versions 5.0 and 9.3 as examples, crs:EPSG:5.0:4326 and crs:EPSG:9.3:4326 and crs:EPSG::4326 reference the same object.
+Each release of new or revised data is indicated by the EPSG Dataset version number. Since 1999 (from EPSG Dataset v5.0 and later) EPSG policy has been to never remove any invalid data but instead to leave it in the Dataset with its status set to deprecated. Deprecated data contains a significant error (significant defined as having impact on the result of applying a transformation or conversion) and is invalid. As such, since 1999 reference to the version of the EPSG Dataset to qualify codes of entities within the Dataset has been unnecessary. Using EPSG Dataset versions 5.0 and 9.3 as examples, urn:ogc:def:crs:EPSG:5.0:4326 and urn:ogc:def:crs:EPSG:9.3:4326 and urn:ogc:def:crs:EPSG::4326 reference the same object.
 The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/Termsofuse.aspx" class="bare">http://www.epsg.org/Termsofuse.aspx</a>.</p>
 </div>
 <div class="sect3">
@@ -5717,7 +5717,7 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 <p>With the introduction of GeoTIFF v1.0, EPSG Dataset v2.1 object codes were changed to integer values in the range 1024 through 32766. This overall code range was divided into non-overlapping sub-ranges, with one sub-range range for each object type. At that time, all EPSG object codes were unique. The GeoTIFF v1.0 specification was written at this time, and the EPSG code ranges for object types were written into the GeoTIFF v1.0 specification.</p>
 </li>
 <li>
-<p>However as the number of items in the EPSG Dataset grew, some of the object code sub-ranges became fully assigned. The unique code system broke down. Since 2006, all object types have been separately assigned codes within the range 1024 through 32766. Within each object type codes remain unique, but one code value may be used for several object types. For example, code 4326 is used for both a CRS and for a geographic extent (in EPSG called 'area'). Codes at and just above the lower end of the range 1024 through 32766 may be used by numerous object types: for example by the year 2018 code 1026 has been assigned to 10 different object types. EPSG codes therefore are only unique when the object type is disclosed. EPSG::4326 is ambiguous, crs:EPSG::4326 and area:EPSG::4326 are unambiguous.</p>
+<p>However as the number of items in the EPSG Dataset grew, some of the object code sub-ranges became fully assigned. The unique code system broke down. Since 2006, all object types have been separately assigned codes within the range 1024 through 32766. Within each object type codes remain unique, but one code value may be used for several object types. For example, code 4326 is used for both a CRS and for a geographic extent (in EPSG called 'area'). Codes at and just above the lower end of the range 1024 through 32766 may be used by numerous object types: for example by the year 2018 code 1026 has been assigned to 10 different object types. EPSG codes therefore are only unique when the object type is disclosed. urn:ogc:def:EPSG::4326 is ambiguous, urn:ogc:def:crs:EPSG::4326 and urn:ogc:def:area:EPSG::4326 are unambiguous.</p>
 </li>
 </ol>
 </div>
@@ -6368,6 +6368,9 @@ This option is documented only for compatibility with some past Community practi
 <div class="paragraph">
 <p>Neither of these are long-term solutions. Until a major revision of this specification is available, recommended practice for producers/writers is to use (a). Readers should be prepared for both of these options.</p>
 </div>
+<div class="paragraph">
+<p><em>Table D.1 - Deprecated codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights (corresponding to option b)</em></p>
+</div>
 <table class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 80%;">
@@ -6510,9 +6513,6 @@ This option is documented only for compatibility with some past Community practi
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>Table D.1 - Deprecated codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights (corresponding to option b)</em></p>
-</div>
 </div>
 </div>
 </div>
@@ -7171,6 +7171,9 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div class="paragraph">
 <p>Geotiff v1.0 sections 6.3.2, 6.3.3 and 6.3.4 listed codes  for EPSG objects available at that time. Most of these remain valid, although there may have been minor changes to names and other non-essential detail. However since the publication of GeoTIFF v1.0 several of these object records have been either deprecated or deleted from the EPSG Dataset. Deprecated records remain in the EPSG Dataset but are no longer valid; they  usually have been superseded by a later record, with a cross reference included in the EPSG Dataset. Deleted records have been removed from the EPSG dataset and the code could be (and in some cases has been) reused for a totally different object. Particular care is needed in the treatment of GeoTIFF files that have used these deleted object records, <em>shown in italics</em> in tables G.1 through G.6 below. These tables list the EPSG codes listed in GeoTIFF v1.0 that are no longer valid and which should no longer be used. The list was correct at 29th May 2018. For any later deprecation and replacement of records refer to the EPSG Dataset. Note that the names in the GeoTIFF v1.0 specification and given in these tables have prefixes and underscores not found in the EPSG Dataset.</p>
+</div>
+<div class="paragraph">
+<p><em>Table G.1 - Deprecated and deleted EPSG Projected CRS codes  </em></p>
 </div>
 <table id="deprecated_projected_crs_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -7869,7 +7872,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </tbody>
 </table>
 <div class="paragraph">
-<p><em>Table G.1 - Deprecated and deleted EPSG Projected CRS codes  </em></p>
+<p><em>Table G.2 - Deprecated and deleted EPSG Geodetic CRS codes</em></p>
 </div>
 <table id="deprecated_geodetic_crs_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -7998,7 +8001,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </tbody>
 </table>
 <div class="paragraph">
-<p><em>Table G.2 - Deprecated and deleted EPSG Geodetic CRS codes</em></p>
+<p><em>Table G.3 - Deprecated and deleted EPSG Unit of Measure codes</em></p>
 </div>
 <table id="deprecated_units_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -8067,7 +8070,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </tbody>
 </table>
 <div class="paragraph">
-<p><em>Table G.3 - Deprecated and deleted EPSG Unit of Measure codes</em></p>
+<p><em>Table G.4 - Deprecated and deleted EPSG Geodetic Datum codes</em></p>
 </div>
 <table id="deprecated_geodetic_datum_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -8166,7 +8169,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </tbody>
 </table>
 <div class="paragraph">
-<p><em>Table G.4 - Deprecated and deleted EPSG Geodetic Datum codes</em></p>
+<p><em>Table G.5 - Deprecated and deleted EPSG Ellipsoid codes</em></p>
 </div>
 <table id="deprecated_ellipsoid_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -8215,7 +8218,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </tbody>
 </table>
 <div class="paragraph">
-<p><em>Table G.5 - Deprecated and deleted EPSG Ellipsoid codes</em></p>
+<p><em>Table G.6 - Deprecated and deleted EPSG Map projection codes</em></p>
 </div>
 <table id="deprecated_map_projection_codes" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -8293,9 +8296,6 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>Table G.1 - Deprecated and deleted EPSG Map projection codes</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -8333,6 +8333,9 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 <li>
 <p>Deprecation of EPSG codes that have been either deprecated or deleted from the EPSG Dataset
 (see <a href="#">Deprecated and deleted EPSG codes</a>)</p>
+</li>
+<li>
+<p>Deprecation of GeoTIFF v1.0 Ellipsoid Vertical CS Codes, see item b/ in <a href="#">Geographic 3D CRS (case of ellipsoidal height)</a></p>
 </li>
 <li>
 <p>Suppression of Intergraph tag, which was already deprecated in 1.0, and which is no longer in use (this has been confirmed by "Hexagon Geospatial").</p>
@@ -8418,7 +8421,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-06-26 06:30:57 -0400
+Last updated 2019-06-26 22:17:09 -0400
 </div>
 </div>
 </body>
