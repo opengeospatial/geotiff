@@ -117,7 +117,7 @@ include::requirements/Raster2Model_CoordinateTransformation_Tags/requirements_cl
 
 include::requirements/Raster2Model_CoordinateTransformation_Tags/requirements_class_ModelTransformationTag.adoc[]
 
-=== Requirements for definition (when Model CRS is from GeoTIFF CRS register)
+=== Requirements for definition of Model CRS (when Model is from GeoTIFF CRS register)
 
 ==== Overview
 
