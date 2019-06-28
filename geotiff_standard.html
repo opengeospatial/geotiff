@@ -705,7 +705,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_requirements_class_modeltransformationtag">7.3.3. Requirements Class ModelTransformationTag</a></li>
 </ul>
 </li>
-<li><a href="#_requirements_for_definition_when_model_crs_is_from_geotiff_crs_register">7.4. Requirements for definition (when Model CRS is from GeoTIFF CRS register)</a>
+<li><a href="#_requirements_for_definition_of_model_crs_when_model_is_from_geotiff_crs_register">7.4. Requirements for definition of Model CRS (when Model is from GeoTIFF CRS register)</a>
 <ul class="sectlevel3">
 <li><a href="#_overview">7.4.1. Overview</a></li>
 <li><a href="#_requirements_class_projectedcrsgeokey">7.4.2. Requirements Class ProjectedCRSGeoKey</a></li>
@@ -2298,7 +2298,7 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 </div>
 </div>
 <div class="sect2">
-<h3 id="_requirements_for_definition_when_model_crs_is_from_geotiff_crs_register"><a class="anchor" href="#_requirements_for_definition_when_model_crs_is_from_geotiff_crs_register"></a>7.4. Requirements for definition (when Model CRS is from GeoTIFF CRS register)</h3>
+<h3 id="_requirements_for_definition_of_model_crs_when_model_is_from_geotiff_crs_register"><a class="anchor" href="#_requirements_for_definition_of_model_crs_when_model_is_from_geotiff_crs_register"></a>7.4. Requirements for definition of Model CRS (when Model is from GeoTIFF CRS register)</h3>
 <div class="sect3">
 <h4 id="_overview"><a class="anchor" href="#_overview"></a>7.4.1. Overview</h4>
 <div class="paragraph">
@@ -5722,7 +5722,10 @@ The terms of use of the EPSG Dataset are given at <a href="http://www.epsg.org/T
 </ol>
 </div>
 <div class="paragraph">
-<p>The GeoTIFF v1.0 specification refers to "obsolete EPSG/POSC codes". These refer to the numeric part of the alphanumeric coding in (i) above. These values had been used in some GeoTIFF v0.x files and for backward compatibility with those earlier files GeoTIFF v1.0 retained references to them. As all of these alphanumeric codes were changed to the integer coding in (ii) above, reference to these obsolete codes should now be unnecessary. In effect, for model CRS GeoKeys the obsolete code range may be treated as a reserved code range. Note: 'EPSG/POSC obsolete codes' refers specifically to the coding in generation (i) above, and should not be confused with codes from generations (ii) and (iii) which have been given the status of 'deprecated'.</p>
+<p>The GeoTIFF v1.0 specification refers to "obsolete EPSG/POSC codes". These refer to the numeric part of the alphanumeric coding in (i) above. These values had been used in some GeoTIFF v0.x files and for backward compatibility with those earlier files GeoTIFF v1.0 retained references to them. As all of these alphanumeric codes were changed to the integer coding in (ii) above, reference to these obsolete codes should now be unnecessary. In effect, for model CRS GeoKeys the obsolete code range may be treated as a reserved code range.</p>
+</div>
+<div class="paragraph">
+<p>Note: 'EPSG/POSC obsolete codes' refers specifically to the coding in generation (i) above, and should not be confused with codes from generations (ii) and (iii) which have been given the status of 'deprecated'.</p>
 </div>
 <div class="paragraph">
 <p>A reference to an EPSG coordinate reference system code is sufficient for a complete definition: it implies use of the CRS components (datum, ellipsoid, map projection, etc.) that are associated with that CRS in the EPSG Dataset definition. The EPSG codes for coordinate reference system components should only be referenced when describing a user-defined coordinate reference system.</p>
@@ -8421,7 +8424,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-06-26 22:17:09 -0400
+Last updated 2019-06-27 22:17:13 -0400
 </div>
 </div>
 </body>
