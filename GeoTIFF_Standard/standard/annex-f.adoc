@@ -6,7 +6,7 @@
 This annex provides examples of how GeoTIFF may be implemented at the Tag and GeoKey level, following the general "Cookbook" approach presented in <<Cookbook for Defining Transformations>>: common examples, less common ones, including a Lunar example.
 
 === Common Examples
-==== _UTM Projected Aerial Photo_
+==== UTM Projected Aerial Photo
 We have an aerial photo which has been orthorectified and resampled to a UTM grid, zone 60, using WGS 84 coordinate reference system; the coordinates of the upper-left corner of the image are given in easting/northing, as 350807.4m, 5316081.3m. The scanned map pixel scale is 100 meters/pixels (the actual dpi scanning ratio is irrelevant).
 
      ModelTiepointTag = (0, 0, 0, 350807.4, 5316081.3, 0.0)
