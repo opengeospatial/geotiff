@@ -103,7 +103,7 @@ Alternatively, the _ModelTransformationTag_ may be used to specify the transform
 
 Consult <<GeoTIFF Tags for Coordinate Transformations>> for a description of their semantics.
 
-NOTE: It should be noted that model space axis order in the following 3 tags _ModelTiepointTag_, _ModelPixelScaleTag_ and _ModelTransformationTag_ is fixed at (lon,lat,height) in case of geographic 2D and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is valid in this revision.
+NOTE: It should be noted that model space axis order in the following 3 tags _ModelTiepointTag_, _ModelPixelScaleTag_ and _ModelTransformationTag_ is fixed at (lon,lat,height) in case of geographic 3D and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is valid in this revision.
 
 ==== Requirements Class ModelTiepointTag
 
