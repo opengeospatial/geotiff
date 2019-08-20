@@ -21,8 +21,8 @@
 |Approval Date:   <yyyy-mm-dd>
 |Publication Date:   <2019-mm-dd>
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
-|Internal reference number of this OGC(R) document:    19-008
-|Version: 0.5
+|Internal reference number of this OGC(R) document:    19-008r4
+|Version: 1.1
 |Category: OGC(R) <Implementation>
 |Editors: Emmanuel Devys, Ted Habermann, Chuck Heazel, Roger Lott, Even Rouault
 |===
