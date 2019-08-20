@@ -237,7 +237,7 @@ NOTE: In GeoTIFF 1.0 this key was called GeogEllipsoidGeoKey.
 
 include::requirements/Geodetic_CRS_GeoKeys/requirements_class_EllipsoidGeoKey.adoc[]
 
-===== Ellipsoid parameter GeoKeys
+===== Requirements Class Ellipsoid parameter GeoKeys
 
 These keys are used to specify the size and shape of a user-defined ellipsoid or sphere used as the model of the earth. Only bi-axial ellipsoids and spheres are catered for. An ellipsoid is defined through two parameters,
 its semi-major axis _(a)_
