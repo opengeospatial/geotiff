@@ -27,7 +27,7 @@ NOTE: In GeoTIFF v1.0 the range was 10000-19999. Several values in this range ha
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 26.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.user_defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.userdefined +
 _If the ProjectionGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, ProjectionMethodGeoKey, and ProjLinearUnitsGeoKey SHALL be populated_
 {set:cellbgcolor:#FFFFFF}
 

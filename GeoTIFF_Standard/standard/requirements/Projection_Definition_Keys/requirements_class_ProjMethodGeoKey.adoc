@@ -26,7 +26,7 @@ _ProjMethodGeoKey values in the range 28-32766 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 27.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjMethodGeoKey.user_defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjMethodGeoKey.userdefined +
 _If the ProjectionMethodGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and keys for each map projection parameter (coordinate operation parameter) appropriate to that method SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 
