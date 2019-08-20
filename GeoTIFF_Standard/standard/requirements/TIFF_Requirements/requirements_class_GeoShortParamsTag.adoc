@@ -10,7 +10,7 @@ _In the case where a Parameter of type Short has more than one value, those valu
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 4.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoShortParamsTag.Location. +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoShortParamsTag.Location +
 _Parameter values stored in the GeoKeysDirectory SHALL appear after the last Key Entry_
 {set:cellbgcolor:#FFFFFF}
 |===
