@@ -60,7 +60,7 @@ _If the GTModelTypeGeoKey value is 3 (Model CRS is a geocentric CRS) then the Ge
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 8.10 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey.user-defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey.userdefined +
 _If the GTModelTypeGeoKey value is 32767 (user-defined) then the GTCitationGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 

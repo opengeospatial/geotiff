@@ -29,7 +29,7 @@ NOTE: In GeoTIFF v1.0 the range was 8000-8999
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey.user-defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey.userdefined +
 _If the PrimeMeridianGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, and PrimeMeridianLongGeoKey SHALL be populated_
 {set:cellbgcolor:#FFFFFF}
 

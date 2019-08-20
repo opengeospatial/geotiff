@@ -29,7 +29,7 @@ NOTE: In GeoTIFF v1.0 the range was given as 1-16383 but without reference to EP
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 25.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/VerticalDatumGeoKey.user-defined +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/VerticalDatumGeoKey.userdefined +
 _If the VerticalDatumGeoKey value is 32767 (User-Defined) then the VerticalCitationGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}
 
