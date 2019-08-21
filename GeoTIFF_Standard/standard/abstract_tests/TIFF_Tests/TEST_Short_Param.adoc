@@ -26,7 +26,7 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/VerticalDatumGeoKey
 |===
 
-*Purpose:* Verify a Short parameter
+*Purpose:* Verify Short parameters
 
 *Pre-conditions* The GeoKeyDirectory and GeoKeyOffset values have been set
 *Test Variables:*
