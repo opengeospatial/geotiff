@@ -14,9 +14,9 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.minorRevisionValue
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.numberOfKeys
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntrySetCount
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryKeyID
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryTIFFTagLocation
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntry
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryKeyID
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeySort
 |===
 

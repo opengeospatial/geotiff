@@ -63,7 +63,7 @@ _The GeoKeyDirectoryTag SHALL hold NumberOfKeys KeyEntry Sets in addition to the
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 2.12 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry +
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntry +
 _Each Key Entry in the Key Entry Set SHALL include 4 unsigned short integer values_
 {set:cellbgcolor:#FFFFFF}
 
