@@ -19,6 +19,11 @@
 
 *Test Process:*
 
-There is no authoritative conformance test for TIFF 6.0. The best that can be achieved is to use a TIFF reference implementation to successfully read a GeoTIFF file. The OGC recommends the use of tiffdump based on the open source LibTIFF library (https://gitlab.com/libtiff/libtiff) for dumping the content of TIFF tags (displaying error messages if any), or opensource TIFF file validator (such as the JHOVE tool, opensource developed in Java - cf. http://jhove.openpreservation.org/).
+There is no authoritative conformance test for TIFF 6.0.
+2 basic tests may be done on TIFF header (4 first bytes), called TIFF magic:
+• Bytes 0-1 (byte order within the file) = 0X4949 ("II" = little endian) or 0X4D4D ("MM" = big endian).
+• Bytes 2-3 = the short integer value 42 interpreted using the byte order specified in bytes 0-1.
 
-Once TIFF 6.0 confirmance has been validated, execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/TIFF.Tags.
+The best that can be achieved is to use a TIFF reference implementation to successfully read a GeoTIFF file. The OGC recommends the use of tiffdump based on the open source LibTIFF library (https://gitlab.com/libtiff/libtiff) for dumping the content of TIFF tags (displaying error messages if any), or opensource TIFF file validator (such as the JHOVE tool, opensource developed in Java - cf. http://jhove.openpreservation.org/).
+
+Once TIFF 6.0 conformance has been validated, execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/TIFF.Tags.
