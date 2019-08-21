@@ -2,28 +2,28 @@
 
 *Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/GeoKeyDirectory
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyDirectoryVersion 
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyDirectoryVersionValue 
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyRevision 
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyRevisionValue 
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.minorRevision 
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.minorRevisionValue 
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.numberOfKeys 
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyDirectoryVersion
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyDirectoryVersionValue
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyRevision
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyRevisionValue
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.minorRevision
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.minorRevisionValue
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.numberOfKeys
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntrySetCount
-|http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry
-|http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryKeyID
-|http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryTIFFTagLocation
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryKeyID
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryTIFFTagLocation
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeySort
 |===
 
 
 *Purpose:* Verify the GeoKey Directory
 
-*Pre-conditions* A GeoKey Directory has been located 
+*Pre-conditions* A GeoKey Directory has been located
 
 *Test Variables:*
 
@@ -32,7 +32,7 @@
 ^|**Variable** ^|**Scope** ^|**Description**
 |IFD_Offset |Local |Location within the TIFF file of an IFD
 |GeoKeyDirectory |Global |Location of the GeoTIFF GeoKey directory
-|ASCIIValues |Global |Location of the ASCII values for GeoTIFF ASCII GeoKeys 
+|ASCIIValues |Global |Location of the ASCII values for GeoTIFF ASCII GeoKeys
 |DoubleValues |Global |Location of the Double values for GeoTIFF Double GeoKeys
 |GeoKeyOffset |Parameter| Location of this GeoKey in the GeoKey directory
 |KeySetCount |Local |The number of entries in the GeoKey directory
@@ -49,7 +49,7 @@
 . Process each Key Entry Set using the following pseudocode:
 
   SET GeoKeyOffset = 8
-  WHILE KeySetCount is not 0 
+  WHILE KeySetCount is not 0
      {
      Verify that the GeoKey (first Short integer) is greater than the previous GeoKey.
      Process the second Short integer in the Key Entry Set
@@ -64,6 +64,3 @@
      }
 
 . Validate that the number of Key Sets processed equal the number specified in the header.
-
-
-
