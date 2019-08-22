@@ -64,17 +64,17 @@ Header={KeyDirectoryVersion, KeyRevision, MinorRevision, NumberOfKeys} where
 
 This header is immediately followed by a collection of <NumberOfKeys> KeyEntry sets, each of which is also 4-SHORTS long. Each KeyEntry is modeled on the "TIFFEntry" format of the TIFF directory header, and is of the form:
 
-* KeyEntry = { KeyID, TIFFTagLocation, Count, Value_Offset } where
+* KeyEntry = { KeyID, TIFFTagLocation, Count, ValueOffset } where
 
 * _KeyID_ gives the key-ID value of the Key (identical in function to TIFF tag ID, but completely independent of TIFF tag-space),
 
-* _TIFFTagLocation_ indicates which TIFF tag contains the value(s) of the Key: if TIFFTagLocation is 0, then the value is SHORT, and is contained in the "Value_Offset" entry. Otherwise, the type (format) of the value is implied by the TIFF-Type of the tag containing the value.
+* _TIFFTagLocation_ indicates which TIFF tag contains the value(s) of the Key: if TIFFTagLocation is 0, then the value is SHORT, and is contained in the "ValueOffset" entry. Otherwise, the type (format) of the value is implied by the TIFF-Type of the tag containing the value.
 
 * _Count_ indicates the number of values in this key.
 
-* _Value_Offset_ Value_Offset indicates the index-offset *into* the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then Value_Offset contains the actual (SHORT) value of the Key, and Count=1 is implied. *Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array.*
+* _ValueOffset_ indicates the index-offset *into* the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then ValueOffset contains the actual (SHORT) value of the Key, and Count=1 is implied. *Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array.*
 
-Following the KeyEntry definitions, the KeyDirectory tag may also contain additional values. For example, if a Key requires multiple SHORT values, they shall be placed at the end of this tag, and the KeyEntry will set TIFFTagLocation=GeoKeyDirectoryTag, with the Value_Offset pointing to the location of the value(s).
+Following the KeyEntry definitions, the KeyDirectory tag may also contain additional values. For example, if a Key requires multiple SHORT values, they shall be placed at the end of this tag, and the KeyEntry will set TIFFTagLocation=GeoKeyDirectoryTag, with the ValueOffset pointing to the location of the value(s).
 
 All key-values which are not of type SHORT are to be stored in one of the following two tags, based on their format:
 
