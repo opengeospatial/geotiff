@@ -1817,7 +1817,7 @@ The normative provisions in this specification are denoted by the URI
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement 2.12 </p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry</a><br>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntry" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntry</a><br>
 <em>Each Key Entry in the Key Entry Set SHALL include 4 unsigned short integer values</em></p></td>
 </tr>
 <tr>
@@ -3546,10 +3546,16 @@ NOTE: See Annex C</p></td>
 <p><strong>Test Process:</strong></p>
 </div>
 <div class="paragraph">
-<p>There is no authoritative conformance test for TIFF 6.0. The best that can be achieved is to use a TIFF reference implementation to successfully read a GeoTIFF file. The OGC recommends the use of tiffdump based on the open source LibTIFF library (<a href="https://gitlab.com/libtiff/libtiff" class="bare">https://gitlab.com/libtiff/libtiff</a>) for dumping the content of TIFF tags (displaying error messages if any), or opensource TIFF file validator (such as the JHOVE tool, opensource developed in Java - cf. <a href="http://jhove.openpreservation.org/" class="bare">http://jhove.openpreservation.org/</a>).</p>
+<p>There is no authoritative conformance test for TIFF 6.0.
+2 basic tests may be done on TIFF header (4 first bytes), called TIFF magic:
+• Bytes 0-1 (byte order within the file) = 0X4949 ("II" = little endian) or 0X4D4D ("MM" = big endian).
+• Bytes 2-3 = the short integer value 42 interpreted using the byte order specified in bytes 0-1.</p>
 </div>
 <div class="paragraph">
-<p>Once TIFF 6.0 confirmance has been validated, execute test <a href="http://www.opengis.net/spec/GeoTIFF/1.1/conf/TIFF.Tags" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/conf/TIFF.Tags</a>.</p>
+<p>The best that can be achieved is to use a TIFF reference implementation to successfully read a GeoTIFF file. The OGC recommends the use of tiffdump based on the open source LibTIFF library (<a href="https://gitlab.com/libtiff/libtiff" class="bare">https://gitlab.com/libtiff/libtiff</a>) for dumping the content of TIFF tags (displaying error messages if any), or opensource TIFF file validator (such as the JHOVE tool, opensource developed in Java - cf. <a href="http://jhove.openpreservation.org/" class="bare">http://jhove.openpreservation.org/</a>).</p>
+</div>
+<div class="paragraph">
+<p>Once TIFF 6.0 conformance has been validated, execute test <a href="http://www.opengis.net/spec/GeoTIFF/1.1/conf/TIFF.Tags" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/conf/TIFF.Tags</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3698,7 +3704,7 @@ NOTE: See Annex C</p></td>
 <p>Verify that Bytes 0-1 = 0X4949 ("II" = little endian) or 0X4D4D ("MM" = big endian).</p>
 </li>
 <li>
-<p>Verify that Bytes 2-3 = the short integer value 42 intepreted using the byte order specified in bytes 0-1.</p>
+<p>Verify that Bytes 2-3 = the short integer value 42 interpreted using the byte order specified in bytes 0-1.</p>
 </li>
 <li>
 <p>Bytes 4-7 are the offset to the first Image File Directory. Save this value as IFD_Offset.</p>
@@ -3819,13 +3825,13 @@ NOTE: See Annex C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntrySetCount" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntrySetCount</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry" class="bare">http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntry" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntry</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryKeyID" class="bare">http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryKeyID</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryKeyID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryKeyID</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryTIFFTagLocation" class="bare">http://www.opengis.net/apec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryTIFFTagLocation</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeySort" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeySort</a></p></td>
@@ -3950,22 +3956,22 @@ WHILE KeySetCount is not 0
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.KeyEntry.ID" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.KeyEntry.ID</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry.ID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry.ID</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.keyEntryKeyCount" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.keyEntryKeyCount</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryKeyCount" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryKeyCount</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.keyEntryValueOffset" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoKeyDirectoryTag.keyEntryValueOffset</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryValueOffset" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryValueOffset</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoShortParams.Criteria" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoShortParams.Criteria</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoShortParams.Criteria" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoShortParams.Criteria</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoShortParams.Location" class="bare">http://www.opengis.net/spec/GeoTIFF/0.0/req/GeoShortParams.Location</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoShortParams.Location" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoShortParams.Location</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey</a></p></td>
@@ -4006,7 +4012,7 @@ WHILE KeySetCount is not 0
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Purpose:</strong> Verify a Short parameter</p>
+<p><strong>Purpose:</strong> Verify Short parameters</p>
 </div>
 <div class="paragraph">
 <p><strong>Pre-conditions</strong> The GeoKeyDirectory and GeoKeyOffset values have been set
@@ -4238,7 +4244,7 @@ Validate the value
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Purpose:</strong> Verify a Double parameter</p>
+<p><strong>Purpose:</strong> Verify Double parameters</p>
 </div>
 <div class="paragraph">
 <p><strong>Pre-conditions</strong> The GeoKeyDirectory, DoubleValues and GeoKeyOffset values have been set.</p>
@@ -4464,7 +4470,7 @@ Validate the value
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry.ID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntry.ID</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryKeyID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.KeyEntryKeyID</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryTIFFTagLocation</a></p></td>
@@ -4487,7 +4493,7 @@ Validate the value
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Purpose:</strong> Verify an ASCII parameter</p>
+<p><strong>Purpose:</strong> Verify ASCII parameters</p>
 </div>
 <div class="paragraph">
 <p><strong>Pre-conditions</strong> The GeoKeyDirectory, ASCIIValues and GeoKeyOffset values have been set.</p>
@@ -8424,7 +8430,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-08-20 22:17:10 -0400
+Last updated 2019-08-21 22:17:09 -0400
 </div>
 </div>
 </body>
