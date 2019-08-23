@@ -1736,13 +1736,13 @@ The normative provisions in this specification are denoted by the URI
 <p>"KeyID" gives the key-ID value of the Key (identical in function to TIFF tag ID, but completely independent of TIFF tag-space).</p>
 </li>
 <li>
-<p>"TIFFTagLocation" indicates which TIFF tag contains the value(s) of the Key: if TIFFTagLocation is 0, then the value is SHORT, and is contained in the "Value_Offset" entry. Otherwise, the type (format) of the value is implied by the TIFF-Type of the tag containing the value.</p>
+<p>"TIFFTagLocation" indicates which TIFF tag contains the value(s) of the Key: if TIFFTagLocation is 0, then the value is SHORT, and is contained in the "ValueOffset" entry. Otherwise, the type (format) of the value is implied by the TIFF-Type of the tag containing the value.</p>
 </li>
 <li>
 <p>"Count" indicates the number of values in this key.</p>
 </li>
 <li>
-<p>"Value_Offset" Value_Offset indicates the index- offset <strong>into</strong> the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then Value_Offset contains the actual (SHORT) value of the Key, and Count=1 is implied. Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array.</p>
+<p>"ValueOffset" ValueOffset indicates the index- offset <strong>into</strong> the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then ValueOffset contains the actual (SHORT) value of the Key, and Count=1 is implied. Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array.</p>
 </li>
 </ul>
 </div>
@@ -4941,24 +4941,24 @@ International Association of Oil and Gas Producers, and mechanisms for adding us
 <div class="ulist">
 <ul>
 <li>
-<p>KeyEntry = { KeyID, TIFFTagLocation, Count, Value_Offset } where</p>
+<p>KeyEntry = { KeyID, TIFFTagLocation, Count, ValueOffset } where</p>
 </li>
 <li>
 <p><em>KeyID</em> gives the key-ID value of the Key (identical in function to TIFF tag ID, but completely independent of TIFF tag-space),</p>
 </li>
 <li>
-<p><em>TIFFTagLocation</em> indicates which TIFF tag contains the value(s) of the Key: if TIFFTagLocation is 0, then the value is SHORT, and is contained in the "Value_Offset" entry. Otherwise, the type (format) of the value is implied by the TIFF-Type of the tag containing the value.</p>
+<p><em>TIFFTagLocation</em> indicates which TIFF tag contains the value(s) of the Key: if TIFFTagLocation is 0, then the value is SHORT, and is contained in the "ValueOffset" entry. Otherwise, the type (format) of the value is implied by the TIFF-Type of the tag containing the value.</p>
 </li>
 <li>
 <p><em>Count</em> indicates the number of values in this key.</p>
 </li>
 <li>
-<p><em>Value_Offset</em> Value_Offset indicates the index-offset <strong>into</strong> the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then Value_Offset contains the actual (SHORT) value of the Key, and Count=1 is implied. <strong>Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array.</strong></p>
+<p><em>ValueOffset</em> indicates the index-offset <strong>into</strong> the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then ValueOffset contains the actual (SHORT) value of the Key, and Count=1 is implied. <strong>Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array.</strong></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Following the KeyEntry definitions, the KeyDirectory tag may also contain additional values. For example, if a Key requires multiple SHORT values, they shall be placed at the end of this tag, and the KeyEntry will set TIFFTagLocation=GeoKeyDirectoryTag, with the Value_Offset pointing to the location of the value(s).</p>
+<p>Following the KeyEntry definitions, the KeyDirectory tag may also contain additional values. For example, if a Key requires multiple SHORT values, they shall be placed at the end of this tag, and the KeyEntry will set TIFFTagLocation=GeoKeyDirectoryTag, with the ValueOffset pointing to the location of the value(s).</p>
 </div>
 <div class="paragraph">
 <p>All key-values which are not of type SHORT are to be stored in one of the following two tags, based on their format:</p>
@@ -8430,7 +8430,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-08-21 22:17:09 -0400
+Last updated 2019-08-22 22:17:13 -0400
 </div>
 </div>
 </body>
