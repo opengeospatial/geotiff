@@ -3,8 +3,9 @@
 == Summary of GeoKey IDs and names
 (Informative)
 
+__Table E.1 - Summary of GeoKey IDs and names __
 [cols="2,2,4,4,4",width="90%" options="header"]
-.Summary of GeoKey IDs and names
+[[Summary_of_GeoKey_IDs_and_names]]
 |====
 ^| **[underline]#Key ID#**
 ^| **[underline]#Type#**
