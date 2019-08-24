@@ -972,7 +972,7 @@ edition of the normative document referred to applies.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Association Adobe Developers, <strong><em>TIFF Specification Revision 6.0</em></strong>, June 3, 1992</p>
+<p>Association Adobe Developers, TIFF Specification Revision 6.0, June 3, 1992</p>
 </li>
 <li>
 <p>OGC Abstract Topic 2: Referencing by coordinates (equivalent to ISO 19111:2019 Geographic information&#8201;&#8212;&#8201;Referencing by coordinates)</p>
@@ -2076,7 +2076,7 @@ The use of this geokey is <strong>highly recommended</strong> for accurate geore
 </ul>
 </div>
 <div class="paragraph">
-<p>If the Model coordinate reference system is from the GeoTIFF standard CRS register (i.e. EPSG register), then only the registered CRS code need be specified. See <a href="#Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)">[Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)]</a>.</p>
+<p>If the Model coordinate reference system is from the GeoTIFF standard CRS register (i.e. EPSG register), then only the registered CRS code need be specified. See <a href="#_requirements_for_definition_of_model_crs_when_model_is_from_geotiff_crs_register">Requirements for definition of Model CRS (when Model is from GeoTIFF CRS register)</a>.</p>
 </div>
 <div class="paragraph">
 <p>If the Model coordinate reference system is not from the GeoTIFF standard CRS register, then it requires the specification of some or all CRS elements. See <a href="#_requirements_for_definition_of_user_defined_model_crs">Requirements for definition of user-defined Model CRS</a>.</p>
@@ -2160,7 +2160,7 @@ The use of this geokey is <strong>highly recommended</strong> for accurate geore
 <div class="title">Note</div>
 </td>
 <td class="content">
-The GTCitationGeoKey is also provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file (see <a href="#Citation GeoKeys">[Citation GeoKeys]</a>).
+The GTCitationGeoKey is also provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file (see <a href="#_requirements_class_citation_geokeys">Requirements Class Citation GeoKeys</a>).
 </td>
 </tr>
 </table>
@@ -2311,7 +2311,7 @@ It should be noted that model space axis order in the following 3 tags <em>Model
 <div class="title">Note</div>
 </td>
 <td class="content">
-It is a practice in some Communities to indicate a geographic 3D CRS (with ellipsoidal height) by including the code of the geographic 3D CRS in a VerticalGeoKey. See Annex D.
+It is a practice in some Communities to indicate a geographic 3D CRS (with ellipsoidal height) by including the code of the geographic 3D CRS in a VerticalGeoKey. See <a href="#section-d.3">Section D.3</a>.
 </td>
 </tr>
 </table>
@@ -5084,7 +5084,7 @@ YPosition (287)</pre>
 <div class="sect4">
 <h5 id="_raster_data"><a class="anchor" href="#_raster_data"></a><em>Raster Data</em></h5>
 <div class="paragraph">
-<p>Raster data consists of spatially coherent, digitally stored numerical data, collected from sensors, scanners, or in other ways numerically derived. The manner in which this storage is implemented in a TIFF file is described in the standard TIFF specification (see <a href="#">TIFF Specification Revision 6.0</a>).</p>
+<p>Raster data consists of spatially coherent, digitally stored numerical data, collected from sensors, scanners, or in other ways numerically derived. The manner in which this storage is implemented in a TIFF file is described in the standard TIFF specification (see <a href="#TIFF_Revision_6.0">TIFF Specification Revision 6.0</a></p>
 </div>
 <div class="paragraph">
 <p>Raster data values, as read in from a file, are organized by software into two-dimensional arrays, the indices of the arrays being used as coordinates. There may also be additional indices for multispectral data, but these indices do not refer to spatial coordinates but spectral, and so are not of concern here.</p>
@@ -5233,7 +5233,7 @@ convention, the meridian through Greenwich, England is the standard prime meridi
 <div class="paragraph">
 <p>Many uses of GeoTIFF will be limited to a two-dimensional, horizontal, description of location for which geographic 2D coordinate reference systems and projected 2D coordinate reference systems are adequate. If a three-dimensional description of location is required, GeoTIFF allows this either through a geocentric coordinate reference system, or through the use of a geographic 3D coordinate reference system (where the vertical component is height above the ellipsoid), or by defining a 1D vertical coordinate reference system and using this together with a geographic 2D or projected coordinate reference system in an implicit compound CRS structure.
 Vertical CRS are referenced to a vertical reference surface (vertical datum) at or close to the geoid, and associated with a 1D vertical coordinate system in which heights or depths are given.
-Through increasing use of satellite navigation and positioning systems the ellipsoid is increasingly being used as a vertical reference surface. Heights above the ellipsoid are expressed as part of a geographic 3D CRS, but are not referenced to a vertical CRS (see Annex D). The ellipsoid surface may be offset vertically from the reference surface for a vertical CRS approximating the geoid by up to +/- 100m, and generally the two surfaces will not be exactly parallel to each other.</p>
+Through increasing use of satellite navigation and positioning systems the ellipsoid is increasingly being used as a vertical reference surface. Heights above the ellipsoid are expressed as part of a geographic 3D CRS, but are not referenced to a vertical CRS (See <a href="#section-D.3">Section D.3</a>). The ellipsoid surface may be offset vertically from the reference surface for a vertical CRS approximating the geoid by up to +/- 100m, and generally the two surfaces will not be exactly parallel to each other.</p>
 </div>
 </div>
 </div>
@@ -6531,8 +6531,10 @@ This option is documented only for compatibility with some past Community practi
 <div class="paragraph">
 <p>(Informative)</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 1. Summary of GeoKey IDs and names</caption>
+<div class="paragraph">
+<p><em>Table E.1 - Summary of GeoKey IDs and names </em></p>
+</div>
+<table id="Summary_of_GeoKey_IDs_and_names" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 12.5%;">
 <col style="width: 12.5%;">
@@ -8322,7 +8324,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 <p>alignment of Terminology with the ISO TC211 and OGC Abstract Specification Topic 2 - referencing by coordinates. An example of this is the term 'Coordinate System' in GeoTIFF v1.0 (which was in fact a Coordinate Reference System), renamed 'Coordinate Reference System' in this document.</p>
 </li>
 <li>
-<p>as a consequence of these terminology changes, some GeoKey names have been changed and clarified (but the corresponding code values have been preserved). See Annex E</p>
+<p>as a consequence of these terminology changes, some GeoKey names have been changed and clarified (but the corresponding code values have been preserved). See <a href="#annex-e.adoc">Table-E.1,Summary of GeoKey IDs and names</a></p>
 </li>
 <li>
 <p>use of EPSG register codes instead of static codes: this allows a modernization of GeoTIFF and the use of any EPSG coordinate reference systems including those introduced since 1995. This is a significant added value of this revision.</p>
@@ -8341,10 +8343,10 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </li>
 <li>
 <p>Deprecation of EPSG codes that have been either deprecated or deleted from the EPSG Dataset
-(see <a href="#">Deprecated and deleted EPSG codes</a>)</p>
+(see <a href="#">Table_G.1,Deprecated and deleted EPSG codes</a>)</p>
 </li>
 <li>
-<p>Deprecation of GeoTIFF v1.0 Ellipsoid Vertical CS Codes, see item b/ in <a href="#">Geographic 3D CRS (case of ellipsoidal height)</a></p>
+<p>Deprecation of GeoTIFF v1.0 Ellipsoid Vertical CS Codes, see item b/ in <a href="#">section_D.3,Geographic 3D CRS (case of ellipsoidal height)</a></p>
 </li>
 <li>
 <p>Suppression of Intergraph tag, which was already deprecated in 1.0, and which is no longer in use (this has been confirmed by "Hexagon Geospatial").</p>
@@ -8430,7 +8432,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-08-22 22:17:13 -0400
+Last updated 2019-08-23 22:17:10 -0400
 </div>
 </div>
 </body>
