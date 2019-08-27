@@ -17,6 +17,7 @@ _The ProjMethodGeoKey SHALL have type = SHORT_
 |Requirement 27.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjMethodGeoKey.transform +
 _ProjMethodGeoKey values in the range 1-27 SHALL be GeoTIFF map projection method codes_
+
 NOTE: See Annex C
 {set:cellbgcolor:#FFFFFF}
 
