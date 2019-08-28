@@ -7,7 +7,7 @@ This annex provides the description of the changes:
 
 * alignment of Terminology with the ISO TC211 and OGC Abstract Specification Topic 2 - referencing by coordinates. An example of this is the term 'Coordinate System' in GeoTIFF v1.0 (which was in fact a Coordinate Reference System), renamed 'Coordinate Reference System' in this document.
 
-* as a consequence of these terminology changes, some GeoKey names have been changed and clarified (but the corresponding code values have been preserved). See <<annex-e.adoc,Table E.1 - Summary of GeoKey IDs and names>>
+* as a consequence of these terminology changes, some GeoKey names have been changed and clarified (but the corresponding code values have been preserved). See <<annex-e.adoc#Summary_of_GeoKey_IDs_and_names,Table E.1 - Summary of GeoKey IDs and names>>
 
 * use of EPSG register codes instead of static codes: this allows a modernization of GeoTIFF and the use of any EPSG coordinate reference systems including those introduced since 1995. This is a significant added value of this revision.
 

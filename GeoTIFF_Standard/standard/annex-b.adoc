@@ -150,7 +150,7 @@ In GeoTIFF, provision is made to identify earth-referenced coordinate systems (m
 
 ==== Raster Space
 ===== _Raster Data_
-Raster data consists of spatially coherent, digitally stored numerical data, collected from sensors, scanners, or in other ways numerically derived. The manner in which this storage is implemented in a TIFF file is described in the standard TIFF specification (see <<clause_3_references.adoc#TIFF_Revision_6.0,TIFF Specification Revision 6.0>>
+Raster data consists of spatially coherent, digitally stored numerical data, collected from sensors, scanners, or in other ways numerically derived. The manner in which this storage is implemented in a TIFF file is described in the standard TIFF specification (see <<clause_3_references.adoc#TIFF_Revision_6.0,TIFF Specification Revision 6.0>>).
 
 Raster data values, as read in from a file, are organized by software into two-dimensional arrays, the indices of the arrays being used as coordinates. There may also be additional indices for multispectral data, but these indices do not refer to spatial coordinates but spectral, and so are not of concern here.
 
@@ -236,7 +236,7 @@ Before digital computing capabilities were available, calculation on the surface
 ===== Vertical Coordinate Reference Systems
 Many uses of GeoTIFF will be limited to a two-dimensional, horizontal, description of location for which geographic 2D coordinate reference systems and projected 2D coordinate reference systems are adequate. If a three-dimensional description of location is required, GeoTIFF allows this either through a geocentric coordinate reference system, or through the use of a geographic 3D coordinate reference system (where the vertical component is height above the ellipsoid), or by defining a 1D vertical coordinate reference system and using this together with a geographic 2D or projected coordinate reference system in an implicit compound CRS structure.
 Vertical CRS are referenced to a vertical reference surface (vertical datum) at or close to the geoid, and associated with a 1D vertical coordinate system in which heights or depths are given.
-Through increasing use of satellite navigation and positioning systems the ellipsoid is increasingly being used as a vertical reference surface. Heights above the ellipsoid are expressed as part of a geographic 3D CRS, but are not referenced to a vertical CRS (See <<annex-d.adoc#section-D.3,Section D.3>>). The ellipsoid surface may be offset vertically from the reference surface for a vertical CRS approximating the geoid by up to +/- 100m, and generally the two surfaces will not be exactly parallel to each other.
+Through increasing use of satellite navigation and positioning systems the ellipsoid is increasingly being used as a vertical reference surface. Heights above the ellipsoid are expressed as part of a geographic 3D CRS, but are not referenced to a vertical CRS (See <<annex-d.adoc#Geographic 3D CRS (case of ellipsoidal height), Geographic 3D CRS>>). The ellipsoid surface may be offset vertically from the reference surface for a vertical CRS approximating the geoid by up to +/- 100m, and generally the two surfaces will not be exactly parallel to each other.
 
 === Defining Model Coordinate Reference Systems
 The following subtypes of Model coordinate reference system (CRS) are recognized in GeoTIFF:
