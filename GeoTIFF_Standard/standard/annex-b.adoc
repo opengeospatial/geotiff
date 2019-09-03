@@ -150,7 +150,7 @@ In GeoTIFF, provision is made to identify earth-referenced coordinate systems (m
 
 ==== Raster Space
 ===== _Raster Data_
-Raster data consists of spatially coherent, digitally stored numerical data, collected from sensors, scanners, or in other ways numerically derived. The manner in which this storage is implemented in a TIFF file is described in the standard TIFF specification (see <<clause_3_references.adoc#TIFF_Revision_6.0,TIFF Specification Revision 6.0>> ).
+Raster data consists of spatially coherent, digitally stored numerical data, collected from sensors, scanners, or in other ways numerically derived. The manner in which this storage is implemented in a TIFF file is described in the standard TIFF specification (see <<clause_3_references.adoc#TIFF_Revision_6.0,TIFF Specification Revision 6.0 >> ).
 
 Raster data values, as read in from a file, are organized by software into two-dimensional arrays, the indices of the arrays being used as coordinates. There may also be additional indices for multispectral data, but these indices do not refer to spatial coordinates but spectral, and so are not of concern here.
 
