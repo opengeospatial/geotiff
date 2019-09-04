@@ -30,11 +30,13 @@ In this document there are two possible means of describing a geographic 3D CRS:
 
 a) give GTModelTypeGeoKey value of 2 and identify a geographic 2D CRS through the GeodeticCRSGeoKey, giving the geographic 3D CRS description through the VerticalGeoKey. The geographic 2D CRS should be the horizontal component of the geographic 3D CRS. (This is the **recommended option**)
 
-b) give GTModelTypeGeoKey value of 2 and use the VerticalGeoKey to describe an ellipsoid from which the ellipsoid height is measured using the GeoTIFF v1.0 codes in Table D.1 below.
+b) give GTModelTypeGeoKey value of 1 and identify a projected CRS through the ProjectedCRSGeoKey, giving the geographic 3D CRS description through the VerticalGeoKey. The projected CRS should have as its base CRS the geographic 2D CRS which is the horizontal component of the geographic 3D CRS.
 
-NOTE: This option is documented only for compatibility with some past Community practices. In this document a 1D ellipsoidal height is an invalid concept and use of these codes is deprecated.
+NOTE: If the projected CRS would not respect this condition, then a transformation would have to be performed to produce the Lat, Lon that represent the horizontal coordinate values that are to be combined with the Z to get the 3D geographic coordinate”, thus introducing some error.
 
-Neither of these are long-term solutions. Until a major revision of this specification is available, recommended practice for producers/writers is to use (a). Readers should be prepared for both of these options.
+c) give GTModelTypeGeoKey value of 2 and use the VerticalGeoKey to describe an ellipsoid from which the ellipsoid height is measured using the GeoTIFF v1.0 codes in Table D.1 below.
+
+None of these are long-term solutions. Until a major revision of this specification is available, recommended practice for producers/writers is to use (a). Readers should be prepared for both of these options.
 
 _Table D.1 - Deprecated codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights (corresponding to option b)_
 [cols="4,1",width="90%" options="header"]

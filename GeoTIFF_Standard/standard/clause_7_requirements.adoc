@@ -144,7 +144,7 @@ include::requirements/Geodetic_CRS_GeoKeys/requirements_class_GeodeticCRSGeoKey.
 
 ==== Requirements Class VerticalGeoKey
 
-This key is provided to specify the vertical coordinate reference system from the GeoTIFF CRS register or to indicate that the CRS is a user-defined vertical coordinate reference system.
+This key is provided to specify the vertical coordinate reference system from the GeoTIFF CRS register or to indicate that the CRS is a user-defined vertical coordinate reference system. The value for VerticalGeoKey should follow the recommendations for including height in model CRS definitions as provided in Annex D.
 
 NOTE: In GeoTIFF 1.0 this key was called VerticalCSTypeGeoKey. In GeoTIFF v1.0 vertical coordinate reference systems were described in draft form, with the statement "Vertical coordinate systems are not yet implemented. These sections are provided for future development, and any vertical coordinate systems in the current revision must be defined using the VerticalCitationGeoKey".
 
