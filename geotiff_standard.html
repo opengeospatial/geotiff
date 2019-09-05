@@ -2450,7 +2450,7 @@ In GeoTIFF 1.0 this key was called GeographicTypeGeoKey. Geodetic CRS is a super
 <div class="sect3">
 <h4 id="_requirements_class_verticalgeokey"><a class="anchor" href="#_requirements_class_verticalgeokey"></a>7.4.4. Requirements Class VerticalGeoKey</h4>
 <div class="paragraph">
-<p>This key is provided to specify the vertical coordinate reference system from the GeoTIFF CRS register or to indicate that the CRS is a user-defined vertical coordinate reference system.</p>
+<p>This key is provided to specify the vertical coordinate reference system from the GeoTIFF CRS register or to indicate that the CRS is a user-defined vertical coordinate reference system. The value for VerticalGeoKey should follow the recommendations for including height in model CRS definitions as provided in Annex D.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -6360,7 +6360,7 @@ In this document there are two possible means of describing a geographic 3D CRS:
 <p>a) give GTModelTypeGeoKey value of 2 and identify a geographic 2D CRS through the GeodeticCRSGeoKey, giving the geographic 3D CRS description through the VerticalGeoKey. The geographic 2D CRS should be the horizontal component of the geographic 3D CRS. (This is the <strong>recommended option</strong>)</p>
 </div>
 <div class="paragraph">
-<p>b) give GTModelTypeGeoKey value of 2 and use the VerticalGeoKey to describe an ellipsoid from which the ellipsoid height is measured using the GeoTIFF v1.0 codes in Table D.1 below.</p>
+<p>b) give GTModelTypeGeoKey value of 1 and identify a projected CRS through the ProjectedCRSGeoKey, giving the geographic 3D CRS description through the VerticalGeoKey. The projected CRS should have as its base CRS the geographic 2D CRS which is the horizontal component of the geographic 3D CRS.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -6369,13 +6369,16 @@ In this document there are two possible means of describing a geographic 3D CRS:
 <div class="title">Note</div>
 </td>
 <td class="content">
-This option is documented only for compatibility with some past Community practices. In this document a 1D ellipsoidal height is an invalid concept and use of these codes is deprecated.
+If the projected CRS would not respect this condition, then a transformation would have to be performed to produce the Lat, Lon that represent the horizontal coordinate values that are to be combined with the Z to get the 3D geographic coordinate”, thus introducing some error.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Neither of these are long-term solutions. Until a major revision of this specification is available, recommended practice for producers/writers is to use (a). Readers should be prepared for both of these options.</p>
+<p>c) give GTModelTypeGeoKey value of 2 and use the VerticalGeoKey to describe an ellipsoid from which the ellipsoid height is measured using the GeoTIFF v1.0 codes in Table D.1 below.</p>
+</div>
+<div class="paragraph">
+<p>None of these are long-term solutions. Until a major revision of this specification is available, recommended practice for producers/writers is to use (a). Readers should be prepared for both of these options.</p>
 </div>
 <div class="paragraph">
 <p><em>Table D.1 - Deprecated codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights (corresponding to option b)</em></p>
@@ -8432,7 +8435,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-09-03 22:17:09 -0400
+Last updated 2019-09-04 22:17:10 -0400
 </div>
 </div>
 </body>
