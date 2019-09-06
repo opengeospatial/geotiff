@@ -1,6 +1,8 @@
 == Requirements
 This document uses the terms defined in Sub-clause 5.3 of [OGC 06-121r8], which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
 
+NOTE: Enumerated Geokey values 32768 or higher are reserved for private usage (for organizations), according to TIFF practice for TIFF tags. This appears later in this specification for the requirements on the range of Geokey values reserved for private usage.
+
 === Underlying TIFF Requirements
 
 This Standardization Target addresses the core TIFF Requirements Class applicable to all GeoTIFF instances (i.e. files).
