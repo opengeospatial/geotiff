@@ -32,7 +32,7 @@ a) give GTModelTypeGeoKey value of 2 and identify a geographic 2D CRS through th
 
 b) give GTModelTypeGeoKey value of 1 and identify a projected CRS through the ProjectedCRSGeoKey, giving the geographic 3D CRS description through the VerticalGeoKey. The projected CRS should have as its base CRS the geographic 2D CRS which is the horizontal component of the geographic 3D CRS.
 
-NOTE: If the projected CRS would not respect this condition, then a transformation would have to be performed to produce the Lat, Lon that represent the horizontal coordinate values that are to be combined with the Z to get the 3D geographic coordinate”, thus introducing some error.
+NOTE: If the geographic 2D CRS (in case a) or the projected CRS (in case b) would not respect this condition, then a transformation would have to be performed to produce the Lat, Lon that represent the horizontal coordinate values that are to be combined with the Z to get the 3D geographic coordinate, thus introducing some error.
 
 c) give GTModelTypeGeoKey value of 2 and use the VerticalGeoKey to describe an ellipsoid from which the ellipsoid height is measured using the GeoTIFF v1.0 codes in Table D.1 below.
 
