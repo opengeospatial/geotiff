@@ -1648,6 +1648,18 @@ The normative provisions in this specification are denoted by the URI
 <div class="paragraph">
 <p>This document uses the terms defined in Sub-clause 5.3 of [OGC 06-121r8], which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Enumerated Geokey values 32768 or higher are reserved for private usage (for organizations), according to TIFF practice for TIFF tags. This appears later in this specification for the requirements on the range of Geokey values reserved for private usage.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="_underlying_tiff_requirements"><a class="anchor" href="#_underlying_tiff_requirements"></a>7.1. Underlying TIFF Requirements</h3>
 <div class="paragraph">
@@ -6369,7 +6381,7 @@ In this document there are two possible means of describing a geographic 3D CRS:
 <div class="title">Note</div>
 </td>
 <td class="content">
-If the projected CRS would not respect this condition, then a transformation would have to be performed to produce the Lat, Lon that represent the horizontal coordinate values that are to be combined with the Z to get the 3D geographic coordinate”, thus introducing some error.
+If the geographic 2D CRS (in case a) or the projected CRS (in case b) would not respect this condition, then a transformation would have to be performed to produce the Lat, Lon that represent the horizontal coordinate values that are to be combined with the Z to get the 3D geographic coordinate, thus introducing some error.
 </td>
 </tr>
 </table>
@@ -8435,7 +8447,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-09-05 22:17:10 -0400
+Last updated 2019-09-06 22:17:08 -0400
 </div>
 </div>
 </body>
