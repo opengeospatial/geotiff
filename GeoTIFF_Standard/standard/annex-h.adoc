@@ -1,22 +1,27 @@
 [appendix]
 :appendix-caption: Annex
 == Backward compatibility
-This revision 1.1 of GeoTIFF is aimed at being backward compatible with the 1.0 version (dated 1995, including last revision dating December 2000, as available at http://geotiff.maptools.org/spec/geotiffhome.html), both for coordinate reference systems based on EPSG register codes, or user-defined coordinate reference systems.
+This revision 1.1 of GeoTIFF is aimed at being backward compatible with the 1.0 version (dated 1995, including last revision dating December 2000, as available at http://geotiff.maptools.org/spec/geotiffhome.html), both for coordinate reference systems based on EPSG register codes or user-defined coordinate reference systems.
 
-This annex provides the description of the changes:
+This annex provides the description of the changes.
 
-* alignment of Terminology with the ISO TC211 and OGC Abstract Specification Topic 2 - referencing by coordinates. An example of this is the term 'Coordinate System' in GeoTIFF v1.0 (which was in fact a Coordinate Reference System), renamed 'Coordinate Reference System' in this document.
+* Alignment of Terminology with the ISO TC211 and OGC Abstract Specification Topic 2 - referencing by coordinates. An example of this is the term 'Coordinate System' in GeoTIFF v1.0 (which was in fact a Coordinate Reference System), renamed 'Coordinate Reference System' in this document.
 
-* as a consequence of these terminology changes, some GeoKey names have been changed and clarified (but the corresponding code values have been preserved). See <<annex-e.adoc#Summary_of_GeoKey_IDs_and_names,Table E.1 - Summary of GeoKey IDs and names>>
+* As a consequence of these terminology changes, some GeoKey names have been changed and clarified (but the corresponding code values have been preserved). See <<annex-e.adoc#Summary_of_GeoKey_IDs_and_names,Table E.1 - Summary of GeoKey IDs and names>>
 
-* use of EPSG register codes instead of static codes: this allows a modernization of GeoTIFF and the use of any EPSG coordinate reference systems including those introduced since 1995. This is a significant added value of this revision.
+* u\Use of EPSG register codes instead of static codes: this allows a modernization of GeoTIFF and the use of any EPSG coordinate reference systems including those introduced since 1995. This is a significant added value of this revision.
 
-* clarification of the VerticalGeoKeys (previously named Vertical CS Keys). This is the 2nd significant provision of this revision, which now gives clear GeoTIFF identification of elevation data and their vertical reference.
+* Clarification of the VerticalGeoKeys (previously named Vertical CS Keys). This is the 2nd significant provision of this revision, which now gives clear GeoTIFF identification of elevation data and their vertical reference.
 
-* clarification of requirements (which were previously identified by "is" or "shall"), according to OGC rules
-* addition of Annex A (Abstract test suite)
-* clarification of clauses and descriptive statements on the geodetic sections, including Coordinate Reference Systems, projection, datums, thanks to a full revision from Roger Lott (IOGP) and chair of OGC CRS standards working group
+* Clarification of requirements (which were previously identified by "is" or "shall"), according to OGC rules.
+
+* Addition of Annex A (Abstract test suite).
+
+* Clarification of clauses and descriptive statements on the geodetic sections, including Coordinate Reference Systems, projection, datums, thanks to a full revision from Roger Lott (IOGP) and chair of OGC CRS standards working group.
+
 * Deprecation of EPSG codes that have been either deprecated or deleted from the EPSG Dataset
- (see <<annex-g.adoc#deprecated_projected_crs_codes,Table G.1 - Deprecated and deleted EPSG Projected CRS codes>>)
-* Deprecation of GeoTIFF v1.0 Ellipsoid Vertical CS Codes, see item b/ in <<annex-d.adoc#section-D-3,Geographic 3D CRS>>
+ (see <<annex-g.adoc#deprecated_projected_crs_codes,Table G.1 - Deprecated and deleted EPSG Projected CRS codes>>).
+
+* Deprecation of GeoTIFF v1.0 Ellipsoid Vertical CS Codes, see item b/ in <<annex-d.adoc#section-D-3,Geographic 3D CRS>>.
+
 * Suppression of Intergraph tag, which was already deprecated in 1.0, and which is no longer in use (this has been confirmed by "Hexagon Geospatial").

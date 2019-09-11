@@ -13,16 +13,17 @@ GeoTIFF uses a small set of reserved TIFF tags to store a broad range of georefe
 
 GeoTIFF uses a "MetaTag" (GeoKey) approach to encode dozens of information elements into just 6 tags, taking advantage of TIFF platform-independent data format representation to avoid cross-platform interchange difficulties. These keys are designed in a manner parallel to standard TIFF tags, and closely follow the TIFF discipline in their structure and layout. New keys may be defined as needs arise, within the current framework, and without requiring the allocation of new tags from Aldus/Adobe.
 
-GeoTIFF uses numerical codes to describe coordinate reference systems, datums, ellipsoids, etc. The codes are derived from the EPSG list compiled by the
-International Association of Oil and Gas Producers, and mechanisms for adding user-defined systems or their components have been established. The GeoTIFF information content is designed to be compatible with the data decomposition approach used by the National Spatial Data Infrastructure (NSDI) of the U.S. Federal Geographic Data Committee (FGDC).
+GeoTIFF uses numerical codes to describe coordinate reference systems, datums, ellipsoids, etc. The codes are derived from the EPSG list compiled by the International Association of Oil and Gas Producers, and mechanisms for adding user-defined systems or their components have been established. The GeoTIFF information content is designed to be compatible with the data decomposition approach used by the National Spatial Data Infrastructure (NSDI) of the U.S. Federal Geographic Data Committee (FGDC).
 
 While GeoTIFF provides a robust framework for specifying a broad class of existing coordinate reference systems, it is also fully extensible, permitting internal, private or proprietary information storage. However, since this standard arose from the need to avoid multiple proprietary encoding systems, use of private implementations is to be discouraged.
 
 ==== GeoTIFF Design Considerations
-Every effort has been made to adhere to the philosophy of TIFF data abstraction. The GeoTIFF tags conform to a hierarchical data structure of tags and keys, similar to the tags which have been implemented in the "basic" and "extended" TIFF tags already supported in TIFF Version 6 specification. The following are some points considered in the design of GeoTIFF:
+Every effort has been made to adhere to the philosophy of TIFF data abstraction. The GeoTIFF tags conform to a hierarchical data structure of tags and keys, similar to the tags which have been implemented in the "basic" and "extended" TIFF tags already supported in TIFF Version 6 specification. The following are some points considered in the design of GeoTIFF.
 
 * Private binary structures, while permitted under the TIFF spec, are in general difficult to maintain, and are intrinsically platform- dependent. Whenever possible, information should be sorted into their intrinsic data-types, and placed into appropriately named tags. Also, implementers of TIFF readers would be more willing to honor a new tag specification if it does not require parsing novel binary structures.
+
 * Any Tag value which is to be used as a "keyword" switch or modifier should be a SHORT type, rather than an ASCII string. This avoids common mistakes of mis-spelling a keyword, as well as facilitating an implementation in code using the "switch/case" features of most languages. In general, scanning ASCII strings for keywords (CaseINSensitiVE?) is a hazardous (not to mention slower and more complex) operation.
+
 * True "Extensibility" strongly suggests that the Tags defined have a sufficiently abstract definition so that the same tag and its values may be used and interpreted in different ways as more complex information spaces are developed. For example, the old SubFileType tag (255) had to be obsoleted and replaced with a NewSubFileType tag, because images began appearing which could not fit into the narrowly defined classes for that Tag. Conversely, the YCbCrSubsampling Tag has taken on new meaning and importance as the JPEG compression standard for TIFF becomes finalized.
 
 ==== GeoTIFF Software Requirements
@@ -43,7 +44,7 @@ image:images/image1.png[image,width=576,height=334]
 
 To avoid these problems, a GeoTIFF file stores projection parameters in a set of "Keys" which are virtually identical in function to a "Tag", but has one more level of abstraction above TIFF. Effectively, it is a sort of "Meta-Tag". A Key works with formatted tag-values of a TIFF file the way that a TIFF file deals with the raw bytes of a data file. Like a tag, a Key has an ID number ranging from 0 to 65535, but unlike TIFF tags, all key ID's are available for use in GeoTIFF parameter definitions.
 
-The Keys in GeoTIFF (also call "GeoKeys") are all referenced from the GeoKeyDirectoryTag, which defined as follows (Clause 7.1):
+The Keys in GeoTIFF (also call "GeoKeys") are all referenced from the GeoKeyDirectoryTag, which defined as follows (Clause 7.1).
 
  GeoKeyDirectoryTag:
      Tag = 34735 (87AF.H)
@@ -53,20 +54,23 @@ The Keys in GeoTIFF (also call "GeoKeys") are all referenced from the GeoKeyDire
 
 This tag may be used to store the GeoKey Directory, which defines and references the "GeoKeys", as described below.
 
-The tag is an array of unsigned SHORT values, which are primarily grouped into blocks of 4. The first 4 values are special, and contain GeoKey directory header information. The header values consist of the following information, in order:
+The tag is an array of unsigned SHORT values, which are primarily grouped into blocks of 4. The first 4 values are special, and contain GeoKey directory header information. The header values consist of the following information, in order.
 
 Header={KeyDirectoryVersion, KeyRevision, MinorRevision, NumberOfKeys} where
 
 * _KeyDirectoryVersion_ indicates the current version of Key implementation, and will only change if this Tag's Key structure is changed. (Similar to the TIFFVersion (42)). The current DirectoryVersion number is 1. This value will most likely never change, and may be used to ensure that this is a valid Key-implementation.
+
 * _KeyRevision_ indicates what revision of Key-Sets are used.
-* _MinorRevision_ indicates what set of Key-codes are used. The complete revision number is denoted <KeyRevision>.<MinorRevision>
+
+* _MinorRevision_ indicates what set of Key-codes are used. The complete revision number is denoted <KeyRevision>.<MinorRevision>.
+
 * _NumberOfKeys_ indicates how many Keys are defined by the rest of this Tag.
 
 This header is immediately followed by a collection of <NumberOfKeys> KeyEntry sets, each of which is also 4-SHORTS long. Each KeyEntry is modeled on the "TIFFEntry" format of the TIFF directory header, and is of the form:
 
 * KeyEntry = { KeyID, TIFFTagLocation, Count, ValueOffset } where
 
-* _KeyID_ gives the key-ID value of the Key (identical in function to TIFF tag ID, but completely independent of TIFF tag-space),
+* _KeyID_ gives the key-ID value of the Key (identical in function to TIFF tag ID, but completely independent of TIFF tag-space).
 
 * _TIFFTagLocation_ indicates which TIFF tag contains the value(s) of the Key: if TIFFTagLocation is 0, then the value is SHORT, and is contained in the "ValueOffset" entry. Otherwise, the type (format) of the value is implied by the TIFF-Type of the tag containing the value.
 
@@ -74,7 +78,7 @@ This header is immediately followed by a collection of <NumberOfKeys> KeyEntry s
 
 * _ValueOffset_ indicates the index-offset *into* the TagArray indicated by TIFFTagLocation, if it is nonzero. If TIFFTagLocation=0, then ValueOffset contains the actual (SHORT) value of the Key, and Count=1 is implied. *Note that the offset is not a byte-offset, but rather an index based on the natural data type of the specified tag array.*
 
-Following the KeyEntry definitions, the KeyDirectory tag may also contain additional values. For example, if a Key requires multiple SHORT values, they shall be placed at the end of this tag, and the KeyEntry will set TIFFTagLocation=GeoKeyDirectoryTag, with the ValueOffset pointing to the location of the value(s).
+Following the KeyEntry definitions, the KeyDirectory tag may also contain additional values. For example, if a Key requires multiple SHORT values, they shall be placed at the end of this tag and the KeyEntry will set TIFFTagLocation=GeoKeyDirectoryTag, with the ValueOffset pointing to the location of the value(s).
 
 All key-values which are not of type SHORT are to be stored in one of the following two tags, based on their format:
 
@@ -92,7 +96,7 @@ This tag is used to store all of the DOUBLE valued GeoKeys, referenced by the Ge
 
 This tag is used to store all of the ASCII valued GeoKeys, referenced by the GeoKeyDirectoryTag. Since keys use offsets into tags, any special comments may be placed at the beginning of this tag. For the most part, the only keys that are ASCII valued are "Citation" keys, giving documentation and references for obscure projections, datums, etc.
 
-Note on ASCII Keys:
+Note on ASCII Keys.
 
 Special handling is required for ASCII-valued keys. While it is true that TIFF 6.0 permits multiple NULL-delimited strings within a single ASCII tag, the secondary strings might not appear in the output of naive "tiffdump" programs. For this reason, the null delimiter of each ASCII Key value shall be converted to a "|" (pipe) character before being installed back into the ASCII holding tag, so that a dump of the tag will look like this.
 
@@ -119,13 +123,13 @@ To follow the TIFF philosophy, GeoTIFF-writers shall store the GeoKey entries in
 
 The first line indicates that this is a Version 1 GeoTIFF GeoKey directory, the keys are Rev. 1.2, and there are 6 Keys defined in this tag.
 
-The next line indicates that the first Key (ID=1024 = GTModelTypeGeoKey) has the value 2 (Geographic 2D), explicitly placed in the entry list (since TIFFTagLocation=0). The next line indicates that the Key 1026 (the GTCitationGeoKey) is listed in the GeoAsciiParamsTag (34737) array, starting at offset 0 (the first in array), and running for 12 bytes and so has the value "Custom File" (the "|" is converted to a null delimiter at the end). Going further down the list, the Key 2051 (GeogLinearUnitSizeGeoKey) is located in the GeoDoubleParamsTag (34736), at offset 0 and has the value 1.5; the value of key 2049 (GeogCitationGeoKey) is "My Geographic".
+The next line indicates that the first Key (ID=1024 = GTModelTypeGeoKey) has the value 2 (Geographic 2D), explicitly placed in the entry list (since TIFFTagLocation=0). The next line indicates that the Key 1026 (the GTCitationGeoKey) is listed in the GeoAsciiParamsTag (34737) array, starting at offset 0 (the first in array), and running for 12 bytes and so has the value "Custom File" (the "|" is converted to a null delimiter at the end). Going further down the list, the Key 2051 (GeogLinearUnitSizeGeoKey) is located in the GeoDoubleParamsTag (34736), at offset 0 and has the value 1.5; the value of key 2049 (GeogCitationGeoKey) is "My Geographic."
 
-The TIFF layer handles all the problems of data structure, platform independence, format types, etc, by specifying byte-offsets, byte-order format and count, while the Key describes its key values at the TIFF level by specifying Tag number, array-index, and count. Since all TIFF information occurs in TIFF arrays of some sort, we have a robust method for storing anything in a Key that would occur in a Tag.
+The TIFF layer handles all the problems of data structure, platform independence, format types, etc., by specifying byte-offsets, byte-order format and count, while the Key describes its key values at the TIFF level by specifying Tag number, array-index, and count. Since all TIFF information occurs in TIFF arrays of some sort, we have a robust method for storing anything in a Key that would occur in a Tag.
 
 With this Key-value approach, there are 65536 Keys which have all the flexibility of TIFF tag, with the added advantage that a TIFF dump will provide all the information that exists in the GeoTIFF implementation.
 
-This GeoKey mechanism is used extensively in Clause 7 where the parameters for defining Coordinate Reference Systems and, if necessary, their underlying component elements, are specified.
+This GeoKey mechanism is used extensively in Clause 7 where the parameters for defining Coordinate Reference Systems and, if necessary, their underlying component elements are specified.
 
 === Coordinate Reference Systems in GeoTIFF
 In the TIFF/GeoTIFF framework, there are essentially three different spaces in which coordinates may be defined. The spaces are:
@@ -154,11 +158,11 @@ Raster data consists of spatially coherent, digitally stored numerical data, col
 
 Raster data values, as read in from a file, are organized by software into two-dimensional arrays, the indices of the arrays being used as coordinates. There may also be additional indices for multispectral data, but these indices do not refer to spatial coordinates but spectral, and so are not of concern here.
 
-Many different types of raster data may be georeferenced, and there may be subtle ways in which the nature of the data itself influences how the coordinate system (Raster Space) is defined for raster data. For example, pixel data derived from imaging devices and sensors represent aggregate values collected over a small, finite, geographic area, and so it is natural to define coordinate systems in which the pixel value is thought of as filling an area. On the other hand, digital elevations models may consist of discrete "postings", which may best be considered as point measurements at the vertices of a grid, and not in the interior of a cell.
+Many different types of raster data may be georeferenced, and there may be subtle ways in which the nature of the data itself influences how the coordinate system (Raster Space) is defined for raster data. For example, pixel data derived from imaging devices and sensors represent aggregate values collected over a small, finite, geographic area, and so it is natural to define coordinate systems in which the pixel value is thought of as filling an area. On the other hand, digital elevations models may consist of discrete "postings," which may best be considered as point measurements at the vertices of a grid, and not in the interior of a cell.
 
 [#RasterSpace]
 ===== _Raster Space_
-The choice of origin for raster space is not entirely arbitrary, and depends upon the nature of the data collected. Raster space coordinates shall be referred to by their pixel types, i.e., as "PixelIsArea" or "PixelIsPoint".
+The choice of origin for raster space is not entirely arbitrary, and depends upon the nature of the data collected. Raster space coordinates shall be referred to by their pixel types, i.e., as "PixelIsArea" or "PixelIsPoint."
 
 Note: For simplicity, both raster spaces documented below use a fixed pixel size and spacing of 1. Information regarding the visual representation of this data, such as pixels with non-unit aspect ratios, scales, orientations, etc., are best communicated with the TIFF 6.0 standard tags.
 
@@ -201,11 +205,11 @@ To georeference an image in GeoTIFF, you must specify a Raster Space coordinate 
 ===== Ellipsoid
 The geoid - the earth stripped of all topography - forms a reference surface for the earth. However, because it is related to the earth’s gravity field, the geoid is a very complex surface; indeed, at a detailed level its description is not well known. The geoid is therefore not used in practical mapping.
 
-It has been found that an oblate ellipsoid (an ellipse rotated about its minor axis) is a good approximation to the shape of the geoid and therefore a good model of the earth. Many approximations exist: several hundred ellipsoids have been defined for scientific purposes and about 30 are in day-to-day use for Earth mapping. The size and shape of these bi-axial ellipsoids can be defined through two parameters. GeoTIFF requires one of these to be
+It has been found that an oblate ellipsoid (an ellipse rotated about its minor axis) is a good approximation to the shape of the geoid and therefore a good model of the earth. Many approximations exist: several hundred ellipsoids have been defined for scientific purposes and about 30 are in day-to-day use for Earth mapping. The size and shape of these bi-axial ellipsoids can be defined through two parameters. GeoTIFF requires one of these parameters to be:
 
-* the semi-major axis (a),
+* the semi-major axis (a), and
 
-* and the second to be either the inverse flattening (1/f) or the semi-minor axis (b).
+* the second to be either the inverse flattening (1/f) or the semi-minor axis (b).
 
 Other ellipsoid parameters needed for cartographic applications, for example the eccentricity, can easily be calculated from the two defining parameters. Note that GeoTIFF uses the modern geodesy convention for the symbol (b) for the semi-minor axis. No provision is made for mapping other planets in which a tri-dimensional (tri-axial) ellipsoid might be required, where (b) would represent the semi-median axis and (c) the semi-minor axis.
 
@@ -223,10 +227,11 @@ convention, the meridian through Greenwich, England is the standard prime meridi
 As well as there being several ellipsoids in use to model the earth, any one particular ellipsoid can have its location and orientation relative to the earth defined in different ways. If the relationship between the ellipsoid and the earth is changed, then the coordinates of a point will change. Conversely, for coordinates to uniquely describe a location, the relationship between the earth and the ellipsoid must be defined. This relationship is described by a geodetic datum or geodetic reference frame. An exact geodetic definition of geodetic datums and reference frames is beyond the scope of GeoTIFF.
 
 ===== Geodetic Coordinate Reference Systems
-A geodetic coordinate reference system is created by associating a coordinate system - a set of axes - with a geodetic datum. Subtypes of geodetic CRS supported by GeoTIFF are:
+A geodetic coordinate reference system is created by associating a coordinate system - a set of axes - with a geodetic datum. Subtypes of geodetic CRS supported by GeoTIFF are as follows.
 
-* geocentric, when the coordinate system is a 3-dimensional Cartesian coordinate system with its origin at or near the centre of the earth. The Z-axis is in or parallel to the earth's axis of rotation. The X-axis is in the plane of the equator and passes through its intersection with the prime meridian, and the Y-axis is in the plane of the equator forming a right-handed coordinate system with the X and Z axes.
-* geographic, when the coordinate system is ellipsoidal, i.e. latitude and longitude in the 2D case and in the 3D case additionally with ellipsoidal height. GeoTIFF v1.0 did not clearly define whether geographic CRSs are 2D or 3D.
+* Feocentric, when the coordinate system is a 3-dimensional Cartesian coordinate system with its origin at or near the centre of the earth. The Z-axis is in or parallel to the earth's axis of rotation. The X-axis is in the plane of the equator and passes through its intersection with the prime meridian, and the Y-axis is in the plane of the equator forming a right-handed coordinate system with the X and Z axes.
+
+* g\Geographic, when the coordinate system is ellipsoidal, i.e., latitude and longitude in the 2D case and in the 3D case additionally with ellipsoidal height. GeoTIFF v1.0 did not clearly define whether geographic CRSs are 2D or 3D.
 
 Geocentric coordinates are readily converted to and from geographic 3D coordinates. Geographic 2D coordinates cannot be converted to geocentric coordinates without some assumption regarding height.
 
@@ -235,18 +240,23 @@ Before digital computing capabilities were available, calculation on the surface
 
 ===== Vertical Coordinate Reference Systems
 Many uses of GeoTIFF will be limited to a two-dimensional, horizontal, description of location for which geographic 2D coordinate reference systems and projected 2D coordinate reference systems are adequate. If a three-dimensional description of location is required, GeoTIFF allows this either through a geocentric coordinate reference system, or through the use of a geographic 3D coordinate reference system (where the vertical component is height above the ellipsoid), or by defining a 1D vertical coordinate reference system and using this together with a geographic 2D or projected coordinate reference system in an implicit compound CRS structure.
+
 Vertical CRS are referenced to a vertical reference surface (vertical datum) at or close to the geoid, and associated with a 1D vertical coordinate system in which heights or depths are given.
-Through increasing use of satellite navigation and positioning systems the ellipsoid is increasingly being used as a vertical reference surface. Heights above the ellipsoid are expressed as part of a geographic 3D CRS, but are not referenced to a vertical CRS (See <<annex-d.adoc#section-D-3,Geographic 3D CRS>>). The ellipsoid surface may be offset vertically from the reference surface for a vertical CRS approximating the geoid by up to +/- 100m, and generally the two surfaces will not be exactly parallel to each other.
+
+Through increasing use of satellite navigation and positioning systems, the ellipsoid is increasingly being used as a vertical reference surface. Heights above the ellipsoid are expressed as part of a geographic 3D CRS, but are not referenced to a vertical CRS (See <<annex-d.adoc#section-D-3,Geographic 3D CRS>>). The ellipsoid surface may be offset vertically from the reference surface for a vertical CRS approximating the geoid by up to +/- 100m, and generally the two surfaces will not be exactly parallel to each other.
 
 === Defining Model Coordinate Reference Systems
 The following subtypes of Model coordinate reference system (CRS) are recognized in GeoTIFF:
 
-* Geographic 2D
-* Geocentric
-* Projected ('map grid (2D)')
-* Vertical
+* Geographic 2D;
 
-Projected ('map grid') and geographic 2D CRSs form two-dimensional horizontal coordinate reference systems (i.e. horizontal with respect to the earth's surface). Height is not part of these systems. To describe a position in three dimensions using these 2D systems it is necessary to consider height as a second one-dimensional vertical coordinate reference system in a 2D + 1D pseudo 3D compound CRS structure. Recommendations for describing compound CRSs are given in Annex D.
+* Geocentric;
+
+* Projected ('map grid (2D)'); and
+
+* Vertical.
+
+Projected ('map grid') and geographic 2D CRSs form two-dimensional horizontal coordinate reference systems (i.e., horizontal with respect to the earth's surface). Height is not part of these systems. To describe a position in three dimensions using these 2D systems it is necessary to consider height as a second one-dimensional vertical coordinate reference system in a 2D + 1D pseudo 3D compound CRS structure. Recommendations for describing compound CRSs are given in Annex D.
 
 True spatial 3D CRS subtypes are geocentric and geographic 3D. See Annex D for recommendations for describing geographic 3D CRSs.
 
@@ -266,26 +276,27 @@ NOTE: This document removes the reference to the specific EPSG codes listed in t
 ==== User-defined Model Coordinate Reference Systems
 GeoTIFF attempts to allow Model CRSs that are not described in the standard CRS register to be defined through user-defined keys. However the provisions made are limited in that:
 
-* no provision was made for fully describing coordinate system. Although axis units could be described, provision for describing axis order and positive direction was omitted.
+* no provision was made for fully describing coordinate system; although axis units could be described, provision for describing axis order and positive direction was omitted; and
 
 * there is ambiguity in the provision for describing user-defined map projections. Codes for some common map projection methods and map projection parameters were provided, but neither the method nor the parameter were defined. Inferences may be made from the listed map projection method names and map projection parameter names, but ambiguity remains so interoperability is not guaranteed.
 
-In practice, user-defined Model CRS definition is limited to the following cases:
+In practice, user-defined Model CRS definition is limited to the following cases.
 
-i)	a user-defined projected CRS which uses a base geographic CRS and a map projection that are both individually available from the GeoTIFF CRS register but, in the register, not associated together.
-EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.EPSG, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.EPSG
+i)	A user-defined projected CRS which uses a base geographic CRS and a map projection that are both individually available from the GeoTIFF CRS register but, in the register, not associated together. EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.EPSG, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.EPSG
 
-ii)	a user-defined projected CRS which uses a user-defined geographic CRS with a map projection that is available from the GeoTIFF CRS register.
+ii)	A user-defined projected CRS which uses a user-defined geographic CRS with a map projection that is available from the GeoTIFF CRS register.
 GeogCRS needs defining as in Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.userdefined, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.EPSG
 
-iii)	a user-defined geographic CRS available from the GeoTIFF CRS register and a map projection not in EPSG register. EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.EPSG, projection needs defining through Requirement http://www.opengis.net/spec/req/GeoTIFF/1.1/ProjectionGeoKey.userdefined using the v1.0 provisions (use the names in annex C).
+iii)	A user-defined geographic CRS available from the GeoTIFF CRS register and a map projection not in EPSG register. EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.EPSG, projection needs defining through Requirement http://www.opengis.net/spec/req/GeoTIFF/1.1/ProjectionGeoKey.userdefined using the v1.0 provisions (use the names in annex C).
 
  iv) Neither base GeogCRS or map projection is in EPSG. GeogCRS needs defining, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.userdefined using the v1.0 provisions (the names in annex C).
 
 For the transformation from raster space to model space, some implicit convention is made about axis positive direction and axis order. It is assumed that:
 
 *	projected CRS axes are easting, northing;
-*	geographic 2D CRS axes are longitude east, latitude north;
+
+*	geographic 2D CRS axes are longitude east, latitude north; and
+
 * vertical CRS axis is height up.
 
 NOTE: Users must note that this GeoTIFF practice is not in line with ISO TC211 and OGC rules for 2D CRS axis order.
@@ -293,94 +304,150 @@ NOTE: Users must note that this GeoTIFF practice is not in line with ISO TC211 a
 ===== User-defined geographic 2D CRS
 For a user-defined geographic 2D CRS the user is expected to provide:
 
-*	geocentric coordinate reference system name (through the _GeodeticCitationGeoKey_),
-*	geodetic datum through the _GeodeticDatumGeoKey_, either
+*	geocentric coordinate reference system name (through the _GeodeticCitationGeoKey_);
+
+*	geodetic datum through the _GeodeticDatumGeoKey_, either:
+
 **	the geodetic datum code (if available through standard EPSG code), or
+
 **	user-defined geodetic datum name and other defining information:
+
 ***	the geodetic datum name (through the _GeodeticCitationGeoKey_),
+
 ***	the ellipsoid (through the _EllipsoidGeoKey_, see <<User-defined ellipsoid>>), and
-***	the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>)
-*	axis unit through the _GeogAngularUnitsGeoKey_, either
+
+***	the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>);
+
+*	axis unit through the _GeogAngularUnitsGeoKey_, either:
+
 **	angle unit code (if available through standard EPSG code), or
-**	user-defined angle unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of radian (through the _GeogAngularUnitSizeGeoKey_).
-*	if the CRS uses a user-defined ellipsoid, the ellipsoid axis unit through the _GeogLinearUnitsGeoKey_, either
+
+**	user-defined angle unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of radian (through the _GeogAngularUnitSizeGeoKey_); and
+
+*	if the CRS uses a user-defined ellipsoid, the ellipsoid axis unit through the _GeogLinearUnitsGeoKey_, either:
+
 **	length unit code (if available through standard EPSG code), or
+
 **	user-defined length unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_).
 
 ===== User-defined geocentric CRS
 For a user-defined geocentric CRS the user is expected to provide:
 
-*	geocentric coordinate reference system name (through the _GeodeticCitationGeoKey_),
-*	geodetic datum through the _GeodeticDatumGeoKey_, either
+*	geocentric coordinate reference system name (through the _GeodeticCitationGeoKey_);
+
+*	geodetic datum through the _GeodeticDatumGeoKey_, either:
+
 **	the geodetic datum code (if available through standard EPSG code), or
+
 **	user-defined geodetic datum name and other defining information:
+
 ***	the geodetic datum name (through the _GeodeticCitationGeoKey_),
+
 ***	the ellipsoid (through the _EllipsoidGeoKey_, see <<User-defined ellipsoid>>), and
-***	the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>)
-*	axis unit through the _GeogLinearUnitsGeoKey_, either
+
+***	the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>);
+
+*	axis unit through the _GeogLinearUnitsGeoKey_, either:
+
 **	length unit code (if available through standard EPSG code), or
-**	user-defined length unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_).
-*	if the CRS uses a user-defined prime meridian, prime meridian Greenwich longitude unit through the _GeogAngularUnitsGeoKey_, either
+
+**	user-defined length unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_); and
+
+*	if the CRS uses a user-defined prime meridian, prime meridian Greenwich longitude unit through the _GeogAngularUnitsGeoKey_, either:
+
 **	angle unit code (if available through standard EPSG code), or
+
 **	user-defined angle unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of radian (through the _GeogAngularUnitSizeGeoKey_).
 
 ===== User-defined ellipsoid
 For any user-defined geocentric, geographic 3D or geographic 2D CRS an ellipsoid needs to be identified. The user is expected to provide:
 
-*	ellipsoid through the _EllipsoidGeoKey_, either
+*	ellipsoid through the _EllipsoidGeoKey_, either:
+
 **	the ellipsoid code (if available through standard EPSG code), or
+
 **	the user-defined ellipsoid name and other defining information:
+
 ***	the ellipsoid name (through the _GeodeticCitationGeoKey_),
-***	the ellipsoid semi-major axis (through the _EllipsoidSemiMajorAxisGeoKey_)
-***	either the ellipsoid semi-minor axis (through the _EllipsoidSemiMinorAxisGeoKey_) or the ellipsoid inverse flattening (through the _EllipsoidInvFlatteningGeoKey_).
-***	The units for the ellipsoid axis or axes:
-*	For geocentric the ellipsoid axis or axes values must given in the length unit defined through the _GeogLinearUnitsGeoKey_ already required (see <<User-defined geocentric CRS>>).
+
+***	the ellipsoid semi-major axis (through the _EllipsoidSemiMajorAxisGeoKey_),
+
+***	either the ellipsoid semi-minor axis (through the _EllipsoidSemiMinorAxisGeoKey_) or the ellipsoid inverse flattening (through the _EllipsoidInvFlatteningGeoKey_),
+
+***	The units for the ellipsoid axis or axes;
+
+*	For geocentric the ellipsoid axis or axes values must given in the length unit defined through the _GeogLinearUnitsGeoKey_ already required (see <<User-defined geocentric CRS>>); and
+
 *	For geographic 2D CRSs, then a _GeogLinearUnitsGeoKey_ is additionally required.
 
 ===== User-defined prime meridian
 For any user-defined geocentric, geographic 3D or geographic 2D CRS a prime meridian needs to be identified whenever it is not Greenwich. (If no prime meridian is identified, it should be assumed to be Greenwich). The user is expected to provide:
 
-*	Prime meridian through the _PrimeMeridianGeoKey_, either
+*	Prime meridian through the _PrimeMeridianGeoKey_, either:
+
 **	the prime meridian code (if available through standard EPSG code), or
+
 **	the user-defined prime meridian name and other defining information:
+
 ***	the prime meridian name (through the _GeodeticCitationGeoKey_),
+
 ***	the prime meridian longitude (through the _PrimeMeridianLongitudeGeoKey_),
-***	the units for the prime meridian longitude:
-*	For geographic CRSs the prime meridian longitude value must given in the angle unit defined through the _GeogAngularUnitsGeoKey_ already required (see <<User-defined geographic 2D CRS>>).
+
+***	the units for the prime meridian longitude;
+
+*	For geographic CRSs the prime meridian longitude value must given in the angle unit defined through the _GeogAngularUnitsGeoKey_ already required (see <<User-defined geographic 2D CRS>>); and
+
 *	For geocentric CRSs, then a _GeogAngularUnitsGeoKey_ is additionally required.
 
 ===== User-defined Projected Coordinate Reference Systems
 For a user-defined projected CRS the user is expected to provide:
 
-*	projected coordinate reference system name (through _ProjectedCitationGeoKey_),
-*	base geographic CRS (either standard EPSG code or user-defined, see <<User-defined geographic 2D CRS>>)
-*	map projection through the _ProjectionGeoKey_, either
+*	projected coordinate reference system name (through _ProjectedCitationGeoKey_);
+
+*	base geographic CRS (either standard EPSG code or user-defined, see <<User-defined geographic 2D CRS>>);
+
+*	map projection through the _ProjectionGeoKey_, either:
+
 **	map projection code (if available through standard EPSG code), or
-**	user-defined map projection (see below).
-*	axis unit through _ProjLinearUnitsGeoKey_, either
+
+**	user-defined map projection (see below); and
+
+*	axis unit through _ProjLinearUnitsGeoKey_, either:
+
 **	length unit code (if available through standard EPSG code), or
+
 **	user-defined length unit name (through the _ProjectedCitationGeoKey_) and scaling from SI base unit of meter (through the _ProjLinearUnitSizeGeoKey_).
 
 ===== User-defined map projection
 For a user-defined map projection the user is expected to provide:
 
-*	map projection name (through _ProjectedCitationGeoKey_),
-*	map projection method (through _ProjMethodGeoKey_),
-*	map projection parameter values (using a set of keys appropriate to the map projection method).
-**	For map projection parameters that are lengths the parameter value needs to be expressed in the units defined through the _ProjLinearUnitsGeoKey_.
-**	For map projection parameters that are angles the parameter value needs to be expressed in the units defined through the _GeogAngularUnitsGeoKey_, which is required in the base geographic CRS description, except for azimuths when the value needs to be expressed in the units defined through a _GeogAzimuthUnitsGeoKey_.
+*	map projection name (through _ProjectedCitationGeoKey_);
+
+*	map projection method (through _ProjMethodGeoKey_);
+
+*	map projection parameter values (using a set of keys appropriate to the map projection method):
+
+**	For map projection parameters that are lengths the parameter value needs to be expressed in the units defined through the _ProjLinearUnitsGeoKey_, and
+
+**	For map projection parameters that are angles the parameter value needs to be expressed in the units defined through the _GeogAngularUnitsGeoKey_, which is required in the base geographic CRS description, except for azimuths when the value needs to be expressed in the units defined through a _GeogAzimuthUnitsGeoKey_; and
+
 *	if the map projection method requires a parameter that is an azimuth, the azimuth unit through a _GeogAzimuthUnitsGeoKey_.
 
 ===== User-defined Vertical Coordinate Reference Systems
 For a user-defined vertical CRS the user is expected to provide:
 
-* vertical coordinate reference system name (through _VerticalCitationGeoKey_),
-*	user-defined vertical datum through _VerticalDatumGeoKey_, either
+* vertical coordinate reference system name (through _VerticalCitationGeoKey_);
+
+*	user-defined vertical datum through _VerticalDatumGeoKey_, either:
 
 **	the vertical datum code (if available through standard EPSG code), or
-**	the vertical datum name and other defining information (through the _VerticalCitationGeoKey_)
-*	vertical axis unit through _VerticalUnitsGeoKey_, either
+
+**	the vertical datum name and other defining information (through the _VerticalCitationGeoKey_); and
+
+*	vertical axis unit through _VerticalUnitsGeoKey_, either:
+
 **	linear unit code (if available through standard EPSG code), or
+
 **	linear unit name (through _VerticalCitationGeoKey_) and scaling from SI base unit of meter (through _GeogLinearUnitSizeGeoKey_).
 
 === Model CRS Reference Parameters
@@ -391,7 +458,7 @@ Each release of new or revised data is indicated by the EPSG Dataset version num
 The terms of use of the EPSG Dataset are given at http://www.epsg.org/Termsofuse.aspx.
 
 ==== EPSG coding of objects
-Within the EPSG Dataset each object has a code. There have been three generations of coding:
+Within the EPSG Dataset each object has a code. There have been three generations of coding.
 
 i)	In v1.x of the publicly-available EPSG Dataset (1994-1996, published by the Petrotechnical Open Software Corporation, POSC), codes were alphanumeric. The initial letter indicated the object type, and objects within each type were then assigned sequential numbers.
 
@@ -399,9 +466,9 @@ ii)	With the introduction of GeoTIFF v1.0, EPSG Dataset v2.1 object codes were c
 
 iii)	However as the number of items in the EPSG Dataset grew, some of the object code sub-ranges became fully assigned. The unique code system broke down. Since 2006, all object types have been separately assigned codes within the range 1024 through 32766. Within each object type codes remain unique, but one code value may be used for several object types. For example, code 4326 is used for both a CRS and for a geographic extent (in EPSG called 'area'). Codes at and just above the lower end of the range 1024 through 32766 may be used by numerous object types: for example by the year 2018 code 1026 has been assigned to 10 different object types. EPSG codes therefore are only unique when the object type is disclosed. urn:ogc:def:EPSG::4326 is ambiguous, urn:ogc:def:crs:EPSG::4326 and urn:ogc:def:area:EPSG::4326 are unambiguous.
 
-The GeoTIFF v1.0 specification refers to "obsolete EPSG/POSC codes". These refer to the numeric part of the alphanumeric coding in (i) above. These values had been used in some GeoTIFF v0.x files and for backward compatibility with those earlier files GeoTIFF v1.0 retained references to them. As all of these alphanumeric codes were changed to the integer coding in (ii) above, reference to these obsolete codes should now be unnecessary. In effect, for model CRS GeoKeys the obsolete code range may be treated as a reserved code range.
+The GeoTIFF v1.0 specification refers to "obsolete EPSG/POSC codes." These refer to the numeric part of the alphanumeric coding in (i) above. These values had been used in some GeoTIFF v0.x files and for backward compatibility with those earlier files GeoTIFF v1.0 retained references to them. As all of these alphanumeric codes were changed to the integer coding in (ii) above, reference to these obsolete codes should now be unnecessary. In effect, for model CRS GeoKeys the obsolete code range may be treated as a reserved code range.
 
-Note: 'EPSG/POSC obsolete codes' refers specifically to the coding in generation (i) above, and should not be confused with codes from generations (ii) and (iii) which have been given the status of 'deprecated'.
+Note: 'EPSG/POSC obsolete codes' refers specifically to the coding in generation (i) above, and should not be confused with codes from generations (ii) and (iii) which have been given the status of 'deprecated.'
 
 A reference to an EPSG coordinate reference system code is sufficient for a complete definition: it implies use of the CRS components (datum, ellipsoid, map projection, etc.) that are associated with that CRS in the EPSG Dataset definition. The EPSG codes for coordinate reference system components should only be referenced when describing a user-defined coordinate reference system.
 
@@ -434,11 +501,11 @@ where (I,J,K) is the point at location (I,J) in raster space with pixel-value K,
 
 A raster image may be georeferenced simply by specifying its location, size and orientation in the model coordinate space M. This may be done by specifying the location of three of the four bounding corner points. However, tiepoints are only to be considered exact at the points specified; thus defining such a set of bounding tiepoints does *not* imply that the model space locations of the interior of the image may be exactly computed by a linear interpolation of these tiepoints.
 
-However, since the relationship between the Raster space and the model space will often be an exact, affine transformation, this relationship can be defined using one set of tiepoints and the "ModelPixelScaleTag", described below, which gives the vertical and horizontal raster grid cell size, specified in model units.
+However, since the relationship between the Raster space and the model space will often be an exact, affine transformation, this relationship can be defined using one set of tiepoints and the "ModelPixelScaleTag," described below, which gives the vertical and horizontal raster grid cell size, specified in model units.
 
 If possible, the first tiepoint placed in this tag shall be the one establishing the location of the point (0,0) in raster space. However, if this is not possible (for example, if (0,0) maps to a part of model space in which the projection is ill-defined), then there is no particular order in which the tiepoints need be listed.
 
-For orthorectification or mosaicking applications a large number of tiepoints may be specified on a mesh over the raster image. However, the definition of associated grid interpolation methods is not in the scope of the current GeoTIFF spec.
+For orthorectification or mosaicking applications, a large number of tiepoints may be specified on a mesh over the raster image. However, the definition of associated grid interpolation methods is not in the scope of the current GeoTIFF spec.
 
 Remark: all GeoTIFF information is independent of the XPosition, YPosition, and Orientation tags of the standard TIFF 6.0 spec.
 
@@ -453,11 +520,11 @@ This tag may be used to specify the size of raster pixel spacing in the model sp
 
      ModelPixelScaleTag = (ScaleX, ScaleY, ScaleZ)
 
-where ScaleX and ScaleY give the horizontal spacing of raster pixels in the 2 directions. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale (in other words a *Z-Scaling factor*), and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).
+where ScaleX and ScaleY give the horizontal spacing of raster pixels in the 2 directions. The ScaleZ is primarily used to map the pixel value of a digital elevation model into the correct Z-scale (in other words a *Z-Scaling factor*) and so for most other purposes this value should be zero (since most model spaces are 2-D, with Z=0).
 
 A single tiepoint in the ModelTiepointTag, together with this tag, completely determine the relationship between raster and model space; thus they comprise the two tags which GeoTIFF files most often will use to place a raster image into a "standard position" in model space.
 
-Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, Resolution and Orientation tags of the standard TIFF 6.0 spec. However, simple reversals of orientation between raster and model space (e.g. horizontal or vertical flips) may be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers must honor this sign-reversal convention.
+Like the Tiepoint tag, this tag information is independent of the XPosition, YPosition, Resolution and Orientation tags of the standard TIFF 6.0 spec. However, simple reversals of orientation between raster and model space (e.g., horizontal or vertical flips) may be indicated by reversal of sign in the corresponding component of the ModelPixelScaleTag. GeoTIFF compliant readers must honor this sign-reversal convention.
 
 This ModelPixelScaleTag tag must not be used if the raster image requires rotation or shearing to place it into the standard model space. In such cases the transformation must be defined with the more general ModelTransformationTag, defined below.
 
@@ -522,7 +589,7 @@ Here is a 4-step guide to producing a set of GeoTIFF tags for defining coordinat
 
   Step 2: Establish/define the model space Type in which the image is to be georeferenced. If you are geocoding this data set, then the model space is defined to be the corresponding geographic, geocentric or projected coordinate reference system. Usually this will be a projected coordinate reference system.
 
-  Step 3: Identify the nature of the transformations needed to tie the raster data down to the model space coordinate reference system:
+  Step 3: Identify the nature of the transformations needed to tie the raster data down to the model space coordinate reference system.
 
       Case 1: The model-location of a raster point (x,y) is known, but not the scale or orientations: Use the ModelTiepointTag to define the (X,Y,Z) coordinates of the known raster point.
 

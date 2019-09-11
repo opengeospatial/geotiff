@@ -6,13 +6,13 @@ This OGC Standard defines the Geographic Tagged Image File Format (GeoTIFF) by s
 
 The following are keywords to be used by search engines and document catalogues.
 
-ogcdoc, OGC document,  geotiff, tiff
+ogcdoc, OGC document, geotiff, tiff
 
 [big]*iii.   Preface*
 
 The GeoTIFF format was initially developed during the early 1990’s (N. Ritter & Ruth, 1997). The objective was to leverage a mature platform independent file format (TIFF) by adding metadata required for describing and using geographic image data. TIFF met the requirements for an underlying format, as it was - and still is (though JPEG compression was added) - lossless and extensible. In September 1994, SPOT Image Corp proposed a GeoTIFF structure that was limited to Universal Transverse Mercator (N. Ritter & Ruth, 1997). The proposed GeoTIFF specification was further augmented and formalized by Ritter and Ruth as Revision 1.0, specification version 1.8.2 in November 1995 (N. Ritter & Ruth, 1995), with minor adjustments published in 2000, available at http://geotiff.maptools.org/spec/geotiffhome.html, which is the official GeoTIFF specification version 1.0.
 
-The GeoTIFF format is used throughout the geospatial and earth science communities to share geographic image data. That usage inevitably leads to identification of new requirements and needs for profiles, extensions, and improvements to the original GeoTIFF Specification. The OGC is well established as a forum for standardization in the GeoTIFF producer and user communities and, as such, it provides an inclusive standardization process for those communities. This document is the first step in the process of integration of the GeoTIFF specification into that standardization process, with the adjustment of a minor revision in order to allow the use of modern EPSG register, allowing backward compatibility with Revision 1.0. Moving forward within the OGC, the standard can be evolved using a formal process.
+The GeoTIFF format is used throughout the geospatial and earth science communities to share geographic image data. That usage inevitably leads to identification of new requirements and needs for profiles, extensions, and improvements to the original GeoTIFF Specification. The OGC is well established as a forum for standardization in the GeoTIFF producer and user communities and, as such, it provides an inclusive standardization process for those communities. This document is the first step in the process of integration of the GeoTIFF specification into that standardization process, with the adjustment of a minor revision in order to allow the use of modern EPSG register and still allowing backward compatibility with Revision 1.0. Moving forward within the OGC, the standard can be evolved using a formal process.
 
 Suggested additions, changes, and comments on this standard are welcome and encouraged. Such suggestions may be submitted by email message or by submitting an official OGC Change Request using the online OGC Change Request application:
  http://www.opengeospatial.org/standards/cr.
@@ -26,7 +26,14 @@ Recipients of this document are requested to submit, with their comments, notifi
 
 The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
 
+IGN
 The HDF Group
+Heazeltech LLC
+International Association of Oil & Gas Producers (IOGP)
+Spatialys
+U.S. National Aeronautics and Space Administration (NASA)
+U.S. National Geospatial-Intelligence Agency (NGA)
+U.S. Army Geospatial Center (AGC)
 
 [big]*v.     Submitters*
 
@@ -34,10 +41,13 @@ All questions regarding this submission should be directed to the editor or the 
 
 [cols=",",]
 |============================
-|Name |Affiliation
+|*Name* |*Affiliation*
 |Emmanuel Devys |IGN
 |Ted Habermann |The HDF Group
 |Charles Heazel |Heazeltech LLC
-|Roger Lott   |  International Association of Oil & Gas Producers (IOGP)
-|Even Rouault |Spatialys  |
+|Roger Lott   |  IOGP
+|Even Rouault |Spatialys
+|Stephen Olding | NASA
+|Sylvester Hagler | NGA
+|Amy Youmans | AGC |
 |============================

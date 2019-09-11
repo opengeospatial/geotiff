@@ -34,7 +34,6 @@ two-dimensional
 *3D*
 three-dimensional
 
-
 *Identifiers*
 The normative provisions in this specification are denoted by the URI
 http://www.opengis.net/spec/geotiff/1.1

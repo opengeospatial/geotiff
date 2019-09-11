@@ -1,6 +1,6 @@
 == Clauses not Containing Normative Material
 
-The following section of this standard is included for informative purposes only. It serves to assist in correct implementation of this standard but do not impose any additional requirements.
+The following sections of this standard are included for informative purposes only. These sections serve to assist in correct implementation of this standard but do not impose any additional requirements.
 
 * <<clause_8_media_types.adoc#, Media Types for GeoTIFF data encoding>>: This informative clause documents the MIME type usages for GeoTIFF files.
 

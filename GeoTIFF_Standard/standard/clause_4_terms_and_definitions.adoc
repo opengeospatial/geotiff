@@ -4,34 +4,34 @@ For the purposes of this document, the following additional terms and definition
 NOTE: For GeoTIFF Format Specification 1.0, see http://geotiff.maptools.org/spec/geotiffhome.html
 
 === band
-range of wavelengths of electromagnetic radiation that produce a single response by a sensing device
+Range of wavelengths of electromagnetic radiation that produce a single response by a sensing device.
 
  [Source: ISO 19101-2:2018, 3.1]
 
 Note: At the pixel level, a band is represented as one of the vector values of the pixel. At image level, band i of an image is the rectangular array of i^th^ sample values from the pixel vectors.
 
 === cell
-rectangular area in raster space, in which a single pixel value is filled
+Rectangular area in raster space, in which a single pixel value is filled.
 
  [Source: GeoTIFF Format Specification 1.0]
 
 === code
-representation of a label according to a specified scheme
+Representation of a label according to a specified scheme.
 
  [Source: ISO 19118:2011, 4.3]
 
 === coordinate
-one of a sequence of numbers designating the position of a point
+One of a sequence of numbers designating the position of a point.
 
  [Source: ISO 19111:2019, 3.1.5]
 
 Note: In a spatial coordinate reference system, the coordinate numbers are qualified by units.
 
 === coordinate reference system
-coordinate system that is related to an object by a datum
+Coordinate system that is related to an object by a datum.
 
  [Source: ISO 19111:2019, 3.1.9]
- 
+
 Note 1:	 Geodetic and vertical datums are referred to as reference frames.
 
 Note 2:	For geodetic and vertical reference frames, the object will be the Earth. In planetary applications, geodetic and vertical reference frames may be applied to other celestial bodies.
@@ -39,34 +39,34 @@ Note 2:	For geodetic and vertical reference frames, the object will be the Earth
 NOTE: This term is also called Model Coordinate Reference system in the context of this document, and was called Model Coordinate System in the 1995 GeoTIFF v1.0.
 
 === coordinate system
-set of mathematical rules for specifying how coordinates are to be assigned to points
+Set of mathematical rules for specifying how coordinates are to be assigned to points.
 
  [Source: ISO 19111:2019, 3.1.11]
 
 === correspondence model
-functional relationship between ground and image coordinates based on the correlation between a set of ground control points and their corresponding image coordinates
+Functional relationship between ground and image coordinates based on the correlation between a set of ground control points and their corresponding image coordinates.
 
  [Source: ISO/TS 19130:2010, 4.3]
 
 === datum
 __reference frame__
 
-parameter or set of parameters that realize the position of the origin, the scale, and the orientation of a coordinate system
+Parameter or set of parameters that realize the position of the origin, the scale, and the orientation of a coordinate system.
 
  [Source ISO 19111:2019, 3.1.15]
 
 === device space
-coordinate space referencing scanner, printers and display devices
+Coordinate space referencing scanner, printers and display devices.
 
  [Source: GeoTIFF Format Specification 1.0]
 
 === double
-8-byte IEEE double precision floating point
+8-byte IEEE double precision floating point.
 
 === ellipsoid
 __reference ellipsoid__
 
-<geodesy> geometric reference surface embedded in 3D Euclidean space formed by an ellipse that is rotated about a main axis
+<geodesy> Geometric reference surface embedded in 3D Euclidean space formed by an ellipse that is rotated about a main axis.
 
  [Source: ISO 19111:2019, 3.1.22]
 
@@ -75,21 +75,21 @@ Note: 	For the Earth the ellipsoid is bi-axial with rotation about the polar axi
 === flattening
 __f__
 
-ratio of the difference between the semi-major (a) and semi-minor axis (b) of an ellipsoid to the semi-major axis; f = (a - b)/a
+Ratio of the difference between the semi-major (a) and semi-minor axis (b) of an ellipsoid to the semi-major axis; f = (a - b)/a.
 
  [Source: ISO 19111:2019, 3.1.28]
- 
+
 Note:	Sometimes inverse flattening 1/f = a/(a - b) is given instead; 1/f is also known as reciprocal flattening.
 
 === geocoding
-translation of one form of location into another
+Translation of one form of location into another.
 
  [Source: ISO 19133:2005, 4.4]
 
 NOTE: In the 1995 GeoTIFF v1.0, "an image is geocoded if a precise algorithm for determining the earth-location of each point in the image is defined".
 
 === geographic coordinate reference system
-coordinate reference system that has a geodetic reference frame and an ellipsoidal coordinate system
+Coordinate reference system that has a geodetic reference frame and an ellipsoidal coordinate system.
 
  [Source: ISO 19111:2019, 3.1.35]
 
@@ -98,33 +98,31 @@ Note: This allows the assignment of a Latitude-Longitude vector to a location on
 NOTE: In the 1995 GeoTIFF v1.0, this term was "geographic coordinate system"
 
 === geokey
-in GeoTIFF, a GeoKey is equivalent in function to a TIFF tag, but uses a different storage mechanism
+In GeoTIFF, a GeoKey is equivalent in function to a TIFF tag, but uses a different storage mechanism.
 
  [Source: GeoTIFF Format Specification 1.0]
 
 === georectified
-corrected for positional displacement with respect to the surface of the Earth
+Corrected for positional displacement with respect to the surface of the Earth.
 
  [Source: ISO 19115-2:2019, 3.11]
 
 === georeferencing
-geopositioning an object using a Correspondence Model derived from a set of points for which both ground and image coordinates are known
+Geopositioning an object using a Correspondence Model derived from a set of points for which both ground and image coordinates are known.
 
  [Source: ISO 19130:2010, 4.37]
 
-NOTE: In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixels in
-some model space is defined, but the transformation
-tying model space to the earth is not known".
+NOTE: In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixels in some model space is defined, but the transformation tying model space to the earth is not known."
 
 === GeoTIFF
 
-standard for storing georeference and geocoding information in a TIFF 6.0 compliant raster file
+Standard for storing georeference and geocoding information in a TIFF 6.0 compliant raster file.
 
  [Source: GeoTIFF Format Specification 1.0]
 
 === grid
 
-network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in an algorithmic way
+Network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in an algorithmic way.
 
  [Source: ISO 19123:2005, 4.1.23]
 
@@ -132,17 +130,17 @@ Note: 	The curves partition a space into grid cells.
 
 === imagery
 
-representation of phenomena as images produced electronically and/or optical techniques
+Representation of phenomena as images produced electronically and/or optical techniques.
 
  [Source: ISO 19101-2:2018, 3.14]
 
-Note:	In this document, it is assumed that the phenomena have been sensed or detected by one or more devices such as radar, cameras, photometers, and infra-red and multispectral scanners
+Note:	In this document, it is assumed that the phenomena have been sensed or detected by one or more devices such as radar, cameras, photometers, and infra-red and multispectral scanners.
 
-Note: In this document, imagery also includes the result of geographic analysis and processing, e.g. digital elevation models.
+Note: In this document, imagery also includes the result of geographic analysis and processing, e.g., digital elevation models.
 
 === meridian
 
-intersection of an ellipsoid by a plane containing the shortest axis of the ellipsoid
+Intersection of an ellipsoid by a plane containing the shortest axis of the ellipsoid.
 
  [Source: ISO 19111:2019, 3.1.42]
 
@@ -150,23 +148,23 @@ Note: 	This term is generally used the describe the pole-to-pole arc rather than
 
 === metadata
 
-information about a resource
+Information about a resource.
 
  [Source: ISO 19115-1:2014, 4.10]
 
 === model space
 
-space in a coordinate reference system related to the earth or a part of the earth
+Space in a coordinate reference system related to the earth or a part of the earth.
 
 === mosaic
 
-an image composed of two or more separately collected (sensed) images
+An image composed of two or more separately collected (sensed) images.
 
 Note:	Additional metadata may be used to identify the cut-lines (boundaries and parameters for the images used to compose the mosaic).
 
 === orthoimage
 
-image in which by orthogonal projection to a reference surface, displacement of image points due to sensor orientation and terrain relief has been removed
+Image in which by orthogonal projection to a reference surface, displacement of image points due to sensor orientation and terrain relief has been removed.
 
  [Source: ISO 19101-2:2018, 3.25]
 
@@ -174,51 +172,51 @@ Note:	The amount of displacement depends on the resolution and the level of deta
 
 === orthorectified grid
 
-georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid
+Georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid.
 
 === parallel
 
-line of constant latitude, parallel to the equator
+Line of constant latitude, parallel to the equator.
 
  [Source: GeoTIFF Format Specification 1.0]
 
 === pixel
 
-smallest element of a digital image to which attributes are assigned.
+Smallest element of a digital image to which attributes are assigned.
 
  [Source: ISO 19101-2:2008, 3.28]
- 
-Note 1: This term originated as a contraction of “picture element”.
+
+Note 1: This term originated as a contraction of “picture element.”
 
 Note 2: Related to the concept of a grid cell.
 
 === prime meridian
-meridian from which the longitudes of other meridians are quantified
+Meridian from which the longitudes of other meridians are quantified.
 
  [Source: ISO 19111:2019, 3.1.50]
 
 === projected coordinate reference system
-coordinate reference system derived from a geographic coordinate reference system by applying a map projection
+Coordinate reference system derived from a geographic coordinate reference system by applying a map projection.
 
  [Source ISO 19111:2019, 3.1.51]
- 
+
 Note 1:  	May be two- or three-dimensional, the dimension being equal to that of the geographic coordinate reference system from which it is derived.
 
 Note 2: 	In the three-dimensional case the horizontal coordinates (geodetic latitude and geodetic longitude coordinates) are projected to northing and easting and the ellipsoidal height is unchanged.
 
-NOTE: In the 1995 GeoTIFF v1.0, this term was "projected coordinate system"
+NOTE: In the 1995 GeoTIFF v1.0, this term was "projected coordinate system."
 
 === projection
-projected coordinate reference system
+Projected coordinate reference system.
 
-coordinate conversion from an ellipsoidal coordinate system to a plane
+Coordinate conversion from an ellipsoidal coordinate system to a plane.
 
  [Source: ISO 19111:2019, 3.1.40]
 
 === raster
 __raster space__
 
-usually rectangular pattern of parallel scanning lines forming or corresponding to the display on a cathode ray tube
+Usually rectangular pattern of parallel scanning lines forming or corresponding to the display on a cathode ray tube.
 
  [Source: ISO 19123:2005, 4.1.30]
 
@@ -229,14 +227,14 @@ visually realized."
 
 === rational
 
-in TIFF format, a _rational_ value is a fractional value represented by the ratio of two unsigned 4-byte integers
+In TIFF format, a _rational_ value is a fractional value represented by the ratio of two unsigned 4-byte integers.
 
  [Source: GeoTIFF Format Specification 1.0]
 
 === rectified grid
 __georectified grid__
 
-grid for which there is an affine transformation between the grid coordinates and the coordinates of an external coordinate reference system
+Grid for which there is an affine transformation between the grid coordinates and the coordinates of an external coordinate reference system.
 
  [Source: ISO 19123:2005, 4.1.32]
 
@@ -244,23 +242,23 @@ Note:	If the coordinate reference system is related to the earth by a datum, the
 
 === referenceable grid
 
-grid associated with a transformation that can be used to convert grid coordinate values to values of coordinates referenced to an external coordinate reference system
+Grid associated with a transformation that can be used to convert grid coordinate values to values of coordinates referenced to an external coordinate reference system.
 
  [Source: ISO 19123:2005, 4.1.33]
 
  Note: If the coordinate reference system is related to the earth by a datum, the grid is a georeferenceable grid.
 
 === short
-2-byte IEEE signed integer
+2-byte IEEE signed integer.
 
 === tag
 
-in TIFF format, a tag is packet of numerical or ASCII values, which have a numerical "Tag" ID indicating their information content
+In TIFF format, a tag is packet of numerical or ASCII values, which have a numerical "Tag" ID indicating their information content.
 
  [Source: GeoTIFF Format Specification 1.0]
 
 === vertical coordinate reference system
 
-one-dimensional coordinate reference system based on a vertical reference frame
+One-dimensional coordinate reference system based on a vertical reference frame.
 
  [Source: ISO 19111:2019, 3.1.70]

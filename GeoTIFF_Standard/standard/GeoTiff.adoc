@@ -18,7 +18,7 @@
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
 |Submission Date: <2019-06-05>
-|Approval Date:   <2019-08-26>
+|Approval Date:   <2019-09-10>
 |Publication Date:   <2019-09-12>
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/IS/GeoTIFF/1.1
 |Internal reference number of this OGC(R) document:    19-008r4
@@ -51,8 +51,8 @@ Recipients of this document are invited to submit, with their comments, notifica
 [width = "50%", grid = "none"]
 |===
 |Document type:   	OGC® Standard
-|Document subtype:   	Not Applicable
-|Document stage:   	Draft
+|Document subtype:  
+|Document stage:   	Approved
 |Document language: 	English
 |===
 
