@@ -18,9 +18,9 @@
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
 |Submission Date: <2019-06-05>
-|Approval Date:   <yyyy-mm-dd>
-|Publication Date:   <2019-mm-dd>
-|External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
+|Approval Date:   <2019-08-26>
+|Publication Date:   <2019-09-12>
+|External identifier of this OGC(R) document: http://www.opengis.net/doc/IS/GeoTIFF/1.1
 |Internal reference number of this OGC(R) document:    19-008r4
 |Version: 1.1
 |Category: OGC(R) <Implementation>
@@ -44,7 +44,7 @@
 |*Warning*
 |===
 
-This document is not an OGC Standard. This document is distributed for review and comment. This document is subject to change without notice and may not be referred to as an OGC Standard.
+This document is an OGC Member approved international standard. This document is available on a royalty free, non-discriminatory basis.
 
 Recipients of this document are invited to submit, with their comments, notification of any relevant patent rights of which they are aware and to provide supporting documentation.
 
