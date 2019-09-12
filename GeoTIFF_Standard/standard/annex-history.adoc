@@ -9,5 +9,5 @@
 |2018-06-07 |0.2 |C. Heazel |all |AsciiDoc version
 |2019-01-07 |0.3 |E. Devys, R. Lott, E. Rouault  |update of all geographic requirements & content  |revised AsciiDoc version   
 |2019-06-05 |0.5 |C. Heazel |all |Applied changes recommended by OGC Naming Authority 
-|2019-09-10 |1.1 (this document) |E. Devys, R. Lott |Introduction of chapter 7, 7.4.4 + Annex D.3
+|2019-09-10 |1.1 (this document) |E. Devys, R. Lott |Introduction of chapter 7, 7.4.4 + Annex D.3 | update for publishing
 |===
