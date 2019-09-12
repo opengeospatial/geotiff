@@ -26,14 +26,14 @@ Recipients of this document are requested to submit, with their comments, notifi
 
 The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
 
-IGN
-The HDF Group
-Heazeltech LLC
-International Association of Oil & Gas Producers (IOGP)
-Spatialys
-U.S. National Aeronautics and Space Administration (NASA)
-U.S. National Geospatial-Intelligence Agency (NGA)
-U.S. Army Geospatial Center (AGC)
+* IGN
+* The HDF Group
+* Heazeltech LLC
+* International Association of Oil & Gas Producers (IOGP)
+* Spatialys
+* U.S. National Aeronautics and Space Administration (NASA) 
+* U.S. National Geospatial-Intelligence Agency (NGA)
+* U.S. Army Geospatial Center (AGC)
 
 [big]*v.     Submitters*
 
