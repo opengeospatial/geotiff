@@ -19,11 +19,11 @@
 |[big]*Open Geospatial Consortium*
 |Submission Date: 2019-06-05
 |Approval Date:   2019-09-10
-|Publication Date:   2019-09-13
+|Publication Date:   2019-09-14
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/IS/GeoTIFF/1.1
 |Internal reference number of this OGC(R) document:    19-008r4
 |Version: 1.1
-|Category: OGC(R) <Implementation>
+|Category: OGC(R) Implementation Standard
 |Editors: Emmanuel Devys, Ted Habermann, Chuck Heazel, Roger Lott, Even Rouault
 |===
 
