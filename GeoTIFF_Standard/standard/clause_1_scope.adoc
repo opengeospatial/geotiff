@@ -1,5 +1,5 @@
 == Scope
-This OGC**®** Standard defines the Geographic Tagged Image File Format (GeoTIFF)  by specifying the content and structure of a group of industry-standard tag sets for the management of georeferenced or geocoded raster imagery using Aldus-Adobe's public domain Tagged Image File Format (TIFF). This OGC Standard specifies the requirements to which every GeoTIFF file shall adhere.
+This OGC**®** Standard defines the Geographic Tagged Image File Format (GeoTIFF)  by specifying the content and structure of a group of industry-standard tag sets for the management of georeferenced or geocoded raster imagery using Aldus-Adobe's publicly available Tagged Image File Format (TIFF). This OGC Standard specifies the requirements to which every GeoTIFF file shall adhere.
 
 GeoTIFF defines a set of TIFF tags provided to describe all "Cartographic" information associated with TIFF imagery that originates from satellite imaging systems, scanned aerial photography, scanned maps, digital elevation models, or as a result of geographic analyses. The goal is to provide a consistent mechanism for referencing a raster image to a known model space or earth-based coordinate reference system and for describing those coordinate reference systems.
 
