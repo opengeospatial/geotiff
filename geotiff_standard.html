@@ -6345,10 +6345,10 @@ A verticalCRS is a 1D gravity-related CRS. An ellipsoidal height is not a 1D CRS
 <p>In this document there are three possible means of describing ellipsoidal height as one of the coordinates in a GeoTIFF v1.1 file. All are temporary solutions.</p>
 </div>
 <div class="paragraph">
-<p>a) Give GTModelTypeGeoKey value of 2 and identify a geographic 2D CRS through the GeodeticCRSGeoKey, giving the ellipsoidal height description by setting a geographic 3D CRS code in the VerticalGeoKey. The geographic 2D CRS should be the horizontal component of the geographic 3D CRS (this is the <strong>recommended option</strong>).</p>
+<p>a) Give GTModelTypeGeoKey value of 2 and identify a geographic 2D CRS through the GeodeticCRSGeoKey, giving the ellipsoidal height description by inserting a geographic 3D CRS code in the VerticalGeoKey. The geographic 2D CRS should be the horizontal component of the geographic 3D CRS (this is the <strong>recommended option</strong>).</p>
 </div>
 <div class="paragraph">
-<p>b) Give GTModelTypeGeoKey value of 1 and identify a projected CRS through the ProjectedCRSGeoKey, giving the ellipsoidal height description by setting a geographic 3D CRS code in the VerticalGeoKey. The projected CRS should have as its base CRS the geographic 2D CRS which is the horizontal component of the geographic 3D CRS.</p>
+<p>b) Give GTModelTypeGeoKey value of 1 and identify a projected CRS through the ProjectedCRSGeoKey, giving the ellipsoidal height description by inserting a geographic 3D CRS code in the VerticalGeoKey. The projected CRS should have as its base CRS the geographic 2D CRS which is the horizontal component of the geographic 3D CRS.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -6366,7 +6366,7 @@ If the geographic 2D CRS (in case a) or the projected CRS (in case b) would not 
 <p>c) give GTModelTypeGeoKey value of 2 and use the VerticalGeoKey to describe an ellipsoid from which the ellipsoid height is measured using the GeoTIFF v1.0 codes in Table D.1 below.</p>
 </div>
 <div class="paragraph">
-<p>None of these are long-term solutions. Until a major revision of this specification is available, recommended practice for producers/writers is to use (a). Readers should be prepared for both of these options.</p>
+<p>None of these are long-term solutions. Until a major revision of this specification is available, recommended practice for producers/writers is to use (a). Readers should be prepared for any of these options.</p>
 </div>
 <div class="paragraph">
 <p><em>Table D.1 - Deprecated codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights (corresponding to option c)</em></p>
@@ -8397,9 +8397,16 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">2019-09-10</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">1.1 (this document)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">1.1</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">E. Devys, R. Lott</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Introduction of chapter 7, 7.4.4 + Annex D.3</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">update for publishing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">2020-10-27</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">1.1 (this document)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">E. Devys, R. Lott</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Adjustment of TIFF as publicly available spec. in 1- Scope + clarification of Annex D.3</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">update for publishing</p></td>
 </tr>
 </tbody>
@@ -8430,7 +8437,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-27 22:17:23 -0400
+Last updated 2020-10-28 22:17:20 -0400
 </div>
 </div>
 <style>
