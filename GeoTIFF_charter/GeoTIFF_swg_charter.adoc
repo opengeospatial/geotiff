@@ -180,7 +180,9 @@ The following people support this proposal and are committed to the Charter and 
 Ted Habermann, the HDF Group
 Jeff Walter, NASA
 
-==	Annex A. Refining GeoTIFF
+[appendix]
+:appendix-caption: Annex
+==	Refining GeoTIFF
 
 Notes on suggested refinements to the  GeoTIFF 1.0 specification as part of a GeoTIFF standards refinement and publication process at NASA.
 
