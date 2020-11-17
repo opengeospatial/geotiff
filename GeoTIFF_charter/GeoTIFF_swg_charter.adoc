@@ -177,8 +177,9 @@ The following people support this proposal and are committed to the Charter and 
 
 === Conveners
 
-Emmanuel Devys, IGN - France
-Steve Olding, NASA
+Emmanuel Devys - IGN,
+Chuck Heazel - HeazelTech,
+Even Rouault - Spatialys
 
 [appendix]
 :appendix-caption: Annex
