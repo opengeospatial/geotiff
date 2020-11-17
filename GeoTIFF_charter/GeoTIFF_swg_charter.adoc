@@ -17,9 +17,9 @@
 |[big]*Open Geospatial Consortium*
 |Submission Date: 2020-11-17
 |Approval Date:   <yyyy-mm-dd>
-|Internal reference number of this OGC(R) document:    14-018r1
+|Internal reference number of this OGC(R) document:    14-018r2
 |Category: OGC(R) Standards Working Group Charter
-|Authors:   Ted Habermann, Scott Simmons
+|Authors:   Emmanuel Devys, Scott Simmons
 |===
 
 [cols = "^", frame = "none"]
@@ -129,7 +129,7 @@ The GeoTIFF Working Group will deliver a candidate standard to be considered by 
 
 === Additional SWG Tasks
 
-==== Task 1: Standardize Cloud-Optimized GeoTIFF
+==== Task 1: Standardize Cloud-Optimized GeoTIFF (COG)
 
 The COG community is willing to turn-over management of the COG specification to OGC. OGC shall develop a GeoTIFF extension that fully documents the COG specification in the manner of an OGC Standard.
 
@@ -141,7 +141,7 @@ The COG community is willing to turn-over management of the COG specification to
 
 == Anticipated Audience / Participants
 
-The HDF Group, NASA, NOAA, TBD after discussion during March 2014 TC.
+The NASA, NOAA, USGS, DGIWG, TBD after discussion
 
 == Domain Working Group Endorsement
 
@@ -171,14 +171,14 @@ The following people support this proposal and are committed to the Charter and 
 
 |===
 |Name |Organization
-|Ted Habermann |The HDF Group
-|Jeff Walter, Karen Moe |NASA
+|Emmanuel Devys |IGN, France
+|Steve Olding   |NASA
 |===
 
 === Conveners
 
-Ted Habermann, the HDF Group
-Jeff Walter, NASA
+Emmanuel Devys, IGN - France
+Steve Olding, NASA
 
 [appendix]
 :appendix-caption: Annex
