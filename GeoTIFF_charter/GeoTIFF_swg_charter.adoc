@@ -75,7 +75,7 @@ Please feel free to forward this announcement to any other appropriate lists. Th
 
 == Purpose of the Standards Working Group
 
-The GeoTIFF format has been used for sharing coverage data successfully for years across many platforms and software environments. It is an important de facto standard used primarily for geolocated images. The current GeoTIFF specification (Version 1.8.2) was developed during the 1990’s by a group of interested individuals and has served the community very well since then. The purpose of this SWG is to incorporate the GeoTIFF specification into the OGC standards suite by updating the specification to bring it into conformance with current OGC practices and to provide a forum for evolving the standard in the future, if need be. The resulting candidate standard will strive to maintain compatibility with existing geoTIFF community implementations and practices and future evolution would be done in close cooperation with the existing geoTIFF community.
+The GeoTIFF specification as an extension to the TIFF format has been used for sharing coverage data successfully for years across many platforms and software environments. It is an important de facto standard used primarily for geolocated images. The legacy GeoTIFF specification (Version 1.8.2) was developed during the 1990’s by a group of interested individuals and has served the community very well since then. The purpose of this SWG is to incorporate the GeoTIFF specification into the OGC standards suite by updating the specification to bring it into conformance with current OGC practices and to provide a forum for evolving the standard in the future, if need be. The resulting candidate standard will strive to maintain compatibility with existing geoTIFF community implementations and practices and future evolution would be done in close cooperation with the existing geoTIFF community.
 
 == Business Value Proposition
 
@@ -85,11 +85,11 @@ The GeoTIFF format is ubiquitous in the geospatial community and is currently us
 
 This SWG will focus on updating the current specification and aligning it with current practice. We expect this activity to take one year.
 
-The current geoTIFF specification is available at http://trac.osgeo.org/geotiff/. A preliminary discussion of potential refinements to the specification by Frank Warmerdam is available at http://trac.osgeo.org/geotiff/wiki/RefiningGeoTIFF and attached as Annex A.
+The legacy geoTIFF specification is available at http://trac.osgeo.org/geotiff/. A preliminary discussion of potential refinements to the specification is available at http://trac.osgeo.org/geotiff/wiki/RefiningGeoTIFF and attached as Annex A.
 
 === Statement of relationship of planned work to the current OGC Standards baseline
 
-The GeoTIFF format is currently included in extensions the OGC GML Coverages (GMLCOV) 1.0 Standard to the OGC Web Coverage Service (WCS) 2.0 Standard. Standardization of the format will solidify these existing standards.
+The GeoTIFF / TIFF format is currently included in extensions the OGC GML Coverages (GMLCOV) 1.0 Standard to the OGC Web Coverage Service (WCS) 2.0 Standard. Standardization of the format will solidify these existing standards.
 
 === What is Out of Scope?
 
@@ -97,7 +97,7 @@ The SWG will not work on any change requests or other issues beyond those submit
 
 === Specific Existing Work Used as Starting Point
 
-The current GeoTIFF Specification (Version 1.8.2) is available at http://trac.osgeo.org/geotiff/ . It will serve as the starting point for this SWG.
+The legacy GeoTIFF Specification (Version 1.8.2) is available at http://trac.osgeo.org/geotiff/ . It will serve as the starting point for this SWG.
 
 === Is This a Persistent SWG
 
@@ -141,7 +141,7 @@ The COG community is willing to turn-over management of the COG specification to
 
 == Anticipated Audience / Participants
 
-The NASA, NOAA, USGS, DGIWG, TBD after discussion
+The NASA, NOAA, USGS, DGIWG, IGN, TBD after discussion
 
 == Domain Working Group Endorsement
 
@@ -155,7 +155,7 @@ The GeoTIFF SWG is using and will continue to use GitHub for management of Stand
 
 === Similar or Applicable Standards Work (OGC and Elsewhere)
 
-The GeoTIFF Specification has been developed and maintained on the http://trac.osgeo.org website. This SWG will stay in touch with that group and with Frank Warmerdam as this work progresses. An outline of potential geoTIFF refinements is included as Annex A.
+The GeoTIFF Specification has been developed and maintained on the http://trac.osgeo.org website. This SWG will stay in touch with that group and as this work progresses. An outline of potential geoTIFF refinements is included as Annex A.
 
 === Details of first meeting
 
