@@ -173,6 +173,7 @@ The following people support this proposal and are committed to the Charter and 
 |Name |Organization
 |Emmanuel Devys |IGN, France
 |Steve Olding   |NASA
+|Pedro Gonçalves   | Terradue
 |===
 
 === Conveners
