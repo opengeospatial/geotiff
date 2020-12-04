@@ -54,18 +54,18 @@ To: OGC members & interested parties
 
 The OGC members listed below have proposed the OGC GeoTIFF SWG be re-chartered with an expanded scope as described below. The SWG proposal provided in this document meets the requirements of the OGC Technical Committee (TC) Policies and Procedures.
 
-The SWG name, statement of purpose, scope, list of deliverables, audience, and language specified in the proposal will constitute the SWG's official charter. Technical discussions may occur no sooner than the SWG's first meeting.
+The SWG name, statement of purpose, scope, list of deliverables, audience, and language specified in the proposal will constitute the SWG's official charter.
 
-This SWG will operate under the OGC IPR Policy. The eligibility requirements for becoming a participant in the SWG at the first meeting (see details below) are that:
+This SWG will operate under the OGC IPR Policy. The eligibility requirements for becoming a participant in the SWG are that:
 
 * You must be an employee of an OGC member organization or an individual
 member of OGC;
 
 * The OGC member must have signed the OGC Membership agreement;
 
-* You must notify the SWG chair of your intent to participate to the first meeting. Members may do so by logging onto the OGC Portal and navigating to the Observer page and clicking on the link for the SWG they wish to join and;
+* You must notify the SWG chair of your intent to participate. Members may do so by logging onto the OGC Portal and navigating to the Observer page and clicking on the link for the SWG they wish to join and;
 
-* You must attend meetings of the SWG. The first meeting of this SWG is at the time and date fixed below. Attendance may be by teleconference.
+* You must attend meetings of the SWG. Attendance may be by teleconference.
 
 Of course, participants also may join the SWG at any time. The OGC and the SWG welcomes all interested parties.
 
@@ -136,6 +136,12 @@ The OGC GeoTIFF 1.1 Standard was approved by the OGC Technical Committee in Sept
 
 The COG community is willing to turn-over management of the COG specification to OGC. OGC shall develop a GeoTIFF extension that fully documents the COG specification in the manner of an OGC Standard.
 
+==== Task 2: TBD
+
+==== Task 3: TBD
+
+==== Task 4: TBD
+
 == IPR Policy for this SWG
 
 [x] RAND-Royalty Free
@@ -158,11 +164,11 @@ The GeoTIFF SWG is using and will continue to use GitHub for management of Stand
 
 === Similar or Applicable Standards Work (OGC and Elsewhere)
 
-The GeoTIFF Specification has been developed and maintained on the http://trac.osgeo.org website. This SWG will stay in touch with that group and as this work progresses. An outline of potential geoTIFF refinements is included as Annex A.
+The GeoTIFF Specification has been developed and maintained on the http://trac.osgeo.org website. This SWG will stay in touch with that group and as this work progresses. 
 
 === Details of first meeting
 
-TBD
+Not Applicable
 
 === Projected on-going meeting schedule
 
@@ -188,6 +194,8 @@ Even Rouault - Spatialys
 [appendix]
 :appendix-caption: Annex
 ==	Refining GeoTIFF
+
+NOTE: Entries in this annex should be moved up to the Additional SWG Tasks section (thereby being in scope for this charter) or deleted.
 
 Notes on suggested refinements to the  GeoTIFF 1.0 specification as part of a GeoTIFF standards refinement and publication process at NASA.
 
