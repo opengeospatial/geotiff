@@ -15,7 +15,7 @@
 |===
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
-|Submission Date: 2020-12-04
+|Submission Date: 2020-12-07
 |Approval Date:   <yyyy-mm-dd>
 |Internal reference number of this OGC(R) document:    14-018r3
 |Category: OGC(R) Standards Working Group Charter
@@ -136,11 +136,21 @@ The OGC GeoTIFF 1.1 Standard was approved by the OGC Technical Committee in Sept
 
 The COG community is willing to turn-over management of the COG specification to OGC. OGC shall develop a GeoTIFF extension that fully documents the COG specification in the manner of an OGC Standard.
 
-==== Task 2: TBD
+==== Task 2: BigTiff support
 
-==== Task 3: TBD
+The TIFF file format uses 32 bit offsets. This limits TIFF files to four gigabytes. The BigTIFF format resembles TIFF but uses 64 bit offsets instead.     
 
-==== Task 4: TBD
+==== Task 3: GeoTIFF / LAS harmonization
+
+This task will examine the overlap between GeoTIFF and LAS. The deliverable will be recommendations on how to keep these two standards synchronized.
+
+==== Task 4: GeoTIFF 2.0
+
+This task will align the geodetic sections of GeoTIFF with AS Topic 2 and potentially other encodings of Geodetic parameters (such as WKT). Other emerging requirements may also be addressed under this task.
+
+==== Task 5: Data Cubes
+
+This task will explore potential support for data cubes. Standards resulting from this task may, but are not required to, be based on TIFF. 
 
 == IPR Policy for this SWG
 
@@ -195,7 +205,7 @@ Even Rouault - Spatialys
 :appendix-caption: Annex
 ==	Refining GeoTIFF
 
-NOTE: Entries in this annex should be moved up to the Additional SWG Tasks section (thereby being in scope for this charter) or deleted.
+NOTE: This annex will be deleted from the final draft of the Charter. It has been ratained in this draft to support refinement of section 4.2.
 
 Notes on suggested refinements to the  GeoTIFF 1.0 specification as part of a GeoTIFF standards refinement and publication process at NASA.
 
