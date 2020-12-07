@@ -15,7 +15,7 @@
 |===
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
-|Submission Date: 2020-11-17
+|Submission Date: 2020-12-07
 |Approval Date:   <yyyy-mm-dd>
 |Internal reference number of this OGC(R) document:    14-018r3
 |Category: OGC(R) Standards Working Group Charter
@@ -52,20 +52,20 @@ Any questions, please contact OGC staff.
 
 To: OGC members & interested parties
 
-A new OGC Standards Working Group (SWG) is being formed. The OGC members listed below have proposed the OGC GeoTIFF SWG.  The SWG proposal provided in this document meets the requirements of the OGC Technical Committee (TC) Policies and Procedures.
+The OGC members listed below have proposed the OGC GeoTIFF SWG be re-chartered with an expanded scope as described below. The SWG proposal provided in this document meets the requirements of the OGC Technical Committee (TC) Policies and Procedures.
 
-The SWG name, statement of purpose, scope, list of deliverables, audience, and language specified in the proposal will constitute the SWG's official charter. Technical discussions may occur no sooner than the SWG's first meeting.
+The SWG name, statement of purpose, scope, list of deliverables, audience, and language specified in the proposal will constitute the SWG's official charter.
 
-This SWG will operate under the OGC IPR Policy. The eligibility requirements for becoming a participant in the SWG at the first meeting (see details below) are that:
+This SWG will operate under the OGC IPR Policy. The eligibility requirements for becoming a participant in the SWG are that:
 
 * You must be an employee of an OGC member organization or an individual
 member of OGC;
 
 * The OGC member must have signed the OGC Membership agreement;
 
-* You must notify the SWG chair of your intent to participate to the first meeting. Members may do so by logging onto the OGC Portal and navigating to the Observer page and clicking on the link for the SWG they wish to join and;
+* You must notify the SWG chair of your intent to participate. Members may do so by logging onto the OGC Portal and navigating to the Observer page and clicking on the link for the SWG they wish to join and;
 
-* You must attend meetings of the SWG. The first meeting of this SWG is at the time and date fixed below. Attendance may be by teleconference.
+* You must attend meetings of the SWG. Attendance may be by teleconference.
 
 Of course, participants also may join the SWG at any time. The OGC and the SWG welcomes all interested parties.
 
@@ -75,7 +75,17 @@ Please feel free to forward this announcement to any other appropriate lists. Th
 
 == Purpose of the Standards Working Group
 
-The GeoTIFF specification as an extension to the TIFF format has been used for sharing coverage data successfully for years across many platforms and software environments. It is an important de facto standard used primarily for geolocated images. The legacy GeoTIFF specification (Version 1.8.2) was developed during the 1990’s by a group of interested individuals and has served the community very well since then. The purpose of this SWG is to incorporate the GeoTIFF specification into the OGC standards suite by updating the specification to bring it into conformance with current OGC practices and to provide a forum for evolving the standard in the future, if need be. The resulting candidate standard will strive to maintain compatibility with existing geoTIFF community implementations and practices and future evolution would be done in close cooperation with the existing geoTIFF community.
+The GeoTIFF specification as an extension to the TIFF format has been used for sharing coverage data successfully for years across many platforms and software environments. It is an important de facto standard used primarily for geolocated images. The legacy GeoTIFF specification (Version 1.8.2) was developed during the 1990’s by a group of interested individuals and has served the community very well since then. 
+
+The initial scope of this SWG was to incorporate the GeoTIFF specification into the OGC standards suite by updating the specification to bring it into conformance with current OGC practices. The resulting Standard was approved by the OGC Technical Committee in September 2019. 
+
+The original scope also specified that the SWG would:
+
+* "provide a forum for evolving the standard in the future"  
+* "maintain compatibility with existing geoTIFF community implementations and practices"  and that 
+* "future evolution would be done in close cooperation with the existing geoTIFF community."
+
+A number of additional work items have been identified for this SWG since completion of OGC GeoTIFF 1.1. This updated charter brings those work items into the scope of the GeoTIFF Standards Working Group.  
 
 == Business Value Proposition
 
@@ -83,9 +93,7 @@ The GeoTIFF format is ubiquitous in the geospatial community and is currently us
 
 == Scope of Work
 
-This SWG will focus on updating the current specification and aligning it with current practice. We expect this activity to take one year.
-
-The legacy geoTIFF specification is available at http://trac.osgeo.org/geotiff/. A preliminary discussion of potential refinements to the specification is available at http://trac.osgeo.org/geotiff/wiki/RefiningGeoTIFF and attached as Annex A.
+This updated charter brings additional work items into the scope of the GeoTIFF Standards Working Group. The starting point for those work items is the OGC GeoTIFF 1.1 Standard. This standard is available from https://www.ogc.org/standards/geotiff[https://www.ogc.org/standards/geotiff]. The additional work items are described in the <<additional-swg-tasks>> section.
 
 === Statement of relationship of planned work to the current OGC Standards baseline
 
@@ -93,11 +101,11 @@ The GeoTIFF / TIFF format is currently included in extensions the OGC GML Covera
 
 === What is Out of Scope?
 
-The SWG will not work on any change requests or other issues beyond those submitted during the 30 day public comment period.
+The SWG will not work on any tasks not explicitly listed in this charter or an ammended version thereof.
 
 === Specific Existing Work Used as Starting Point
 
-The legacy GeoTIFF Specification (Version 1.8.2) is available at http://trac.osgeo.org/geotiff/ . It will serve as the starting point for this SWG.
+The OGC GeoTIFF 1.1 Standard is available from https://www.ogc.org/standards/geotiff[https://www.ogc.org/standards/geotiff]. It will serve as the starting point for any additional work by this SWG.
 
 === Is This a Persistent SWG
 
@@ -107,13 +115,7 @@ The legacy GeoTIFF Specification (Version 1.8.2) is available at http://trac.osg
 
 === When can the SWG be Inactivated
 
-The GeoTIFF SWG can be inactivated after the following three milestones have been achieved.
-
-1.	The SWG has completed evaluation and incorporation into the candidate standard of all comments received during the public comment period.
-
-2.	Approval by the SWG membership of a recommendation to submit the document to the TC for consideration as an OGC Adopted Standard.
-
-3.	The candidate standard has been approved by the OGC Technical and Planning Committees as an Adopted OGC standard.
+The GeoTIFF SWG charter includes the charge to "provide a forum for evolving the standard in the future". Therefore, the SWG cannot be inactivated while GeoTIFF is an approved OGC standard.
 
 == Description of deliverables
 
@@ -125,13 +127,30 @@ This section also includes a preliminary schedule of activities. For example, an
 
 === Initial Deliverables
 
-The GeoTIFF Working Group will deliver a candidate standard to be considered by the TC. The final document will be available in HTML. The details of the schedule will be determined in a discussion during the March 2014 TC.
+The OGC GeoTIFF 1.1 Standard was approved by the OGC Technical Committee in September 2019. Since then, additional work items have been identified which build on that baseline. The deliveries and schedules for these work items are described by task in the <<additional-swg-tasks>> section.
 
+[[additional-swg-tasks]]
 === Additional SWG Tasks
 
 ==== Task 1: Standardize Cloud-Optimized GeoTIFF (COG)
 
 The COG community is willing to turn-over management of the COG specification to OGC. OGC shall develop a GeoTIFF extension that fully documents the COG specification in the manner of an OGC Standard.
+
+==== Task 2: BigTiff support
+
+The TIFF file format uses 32 bit offsets. This limits TIFF files to four gigabytes. The BigTIFF format resembles TIFF but uses 64 bit offsets instead.     
+
+==== Task 3: GeoTIFF / LAS harmonization
+
+This task will examine the overlap between GeoTIFF and LAS. The deliverable will be recommendations on how to keep these two standards synchronized.
+
+==== Task 4: GeoTIFF 2.0
+
+This task will align the geodetic sections of GeoTIFF with AS Topic 2 and potentially other encodings of Geodetic parameters (such as WKT). Other emerging requirements may also be addressed under this task.
+
+==== Task 5: Data Cubes
+
+This task will explore potential support for data cubes. Standards resulting from this task may, but are not required to, be based on TIFF. 
 
 == IPR Policy for this SWG
 
@@ -141,7 +160,7 @@ The COG community is willing to turn-over management of the COG specification to
 
 == Anticipated Audience / Participants
 
-The NASA, NOAA, USGS, DGIWG, IGN, TBD after discussion
+The NASA, NOAA, USGS, DGIWG, IGN, NGA, TBD after discussion
 
 == Domain Working Group Endorsement
 
@@ -155,11 +174,11 @@ The GeoTIFF SWG is using and will continue to use GitHub for management of Stand
 
 === Similar or Applicable Standards Work (OGC and Elsewhere)
 
-The GeoTIFF Specification has been developed and maintained on the http://trac.osgeo.org website. This SWG will stay in touch with that group and as this work progresses. An outline of potential geoTIFF refinements is included as Annex A.
+The GeoTIFF Specification has been developed and maintained on the http://trac.osgeo.org website. This SWG will stay in touch with that group and as this work progresses. 
 
 === Details of first meeting
 
-TBD
+Not Applicable
 
 === Projected on-going meeting schedule
 
@@ -173,6 +192,7 @@ The following people support this proposal and are committed to the Charter and 
 |Name |Organization
 |Emmanuel Devys |IGN, France
 |Steve Olding   |NASA
+|Chuck Heazel |Heazeltech
 |===
 
 === Conveners
@@ -184,6 +204,8 @@ Even Rouault - Spatialys
 [appendix]
 :appendix-caption: Annex
 ==	Refining GeoTIFF
+
+NOTE: This annex will be deleted from the final draft of the Charter. It has been ratained in this draft to support refinement of section 4.2.
 
 Notes on suggested refinements to the  GeoTIFF 1.0 specification as part of a GeoTIFF standards refinement and publication process at NASA.
 
