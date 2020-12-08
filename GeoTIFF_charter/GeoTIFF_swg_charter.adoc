@@ -15,7 +15,7 @@
 |===
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
-|Submission Date: 2020-12-07
+|Submission Date: 2020-12-08
 |Approval Date:   <yyyy-mm-dd>
 |Internal reference number of this OGC(R) document:    14-018r3
 |Category: OGC(R) Standards Working Group Charter
@@ -144,11 +144,15 @@ The TIFF file format uses 32 bit offsets. This limits TIFF files to four gigabyt
 
 This task will examine the overlap between GeoTIFF and LAS. The deliverable will be recommendations on how to keep these two standards synchronized.
 
-==== Task 4: GeoTIFF 2.0
+==== Task 4: GeoTIFF 1.2
+
+This task will address open issues which were out of scope for version 1.1 but not significant enough for a major revision.
+
+==== Task 5: GeoTIFF 2.0
 
 This task will align the geodetic sections of GeoTIFF with AS Topic 2 and potentially other encodings of Geodetic parameters (such as WKT). Other emerging requirements may also be addressed under this task.
 
-==== Task 5: Data Cubes
+==== Task 6: Data Cubes
 
 This task will explore potential support for data cubes. Standards resulting from this task may, but are not required to, be based on TIFF. 
 
