@@ -132,29 +132,29 @@ The OGC GeoTIFF 1.1 Standard was approved by the OGC Technical Committee in Sept
 [[additional-swg-tasks]]
 === Additional SWG Tasks
 
-==== Task 1: Standardize Cloud-Optimized GeoTIFF (COG)
+==== Task 1: GeoTIFF 1.2
 
-The COG community is willing to turn-over management of the COG specification to OGC. OGC shall develop a GeoTIFF extension that fully documents the COG specification in the manner of an OGC Standard.
+This task will address open issues which were out of scope for version 1.1 but not significant enough for a major revision.
 
 ==== Task 2: BigTiff support
 
 The TIFF file format uses 32 bit offsets. This limits TIFF files to four gigabytes. The BigTIFF format resembles TIFF but uses 64 bit offsets instead.     
 
-==== Task 3: GeoTIFF / LAS harmonization
+==== Task 3: Standardize Cloud-Optimized GeoTIFF (COG)
+
+The COG community is willing to turn-over management of the COG specification to OGC. OGC shall develop a GeoTIFF extension that fully documents the COG specification in the manner of an OGC Standard.
+
+==== Task 4: GeoTIFF / LAS harmonization
 
 This task will examine the overlap between GeoTIFF and LAS. The deliverable will be recommendations on how to keep these two standards synchronized.
 
-==== Task 4: GeoTIFF 1.2
-
-This task will address open issues which were out of scope for version 1.1 but not significant enough for a major revision.
-
-==== Task 5: GeoTIFF 2.0
-
-This task will align the geodetic sections of GeoTIFF with AS Topic 2 and potentially other encodings of Geodetic parameters (such as WKT). Other emerging requirements may also be addressed under this task.
-
-==== Task 6: Data Cubes
+==== Task 5: Data Cubes
 
 This task will explore potential support for data cubes. Standards resulting from this task may, but are not required to, be based on TIFF. 
+
+==== Task 6: GeoTIFF 2.0
+
+This task will align the geodetic sections of GeoTIFF with AS Topic 2 and potentially other encodings of Geodetic parameters (such as WKT). Other emerging requirements may also be addressed under this task.
 
 == IPR Policy for this SWG
 
@@ -197,6 +197,7 @@ The following people support this proposal and are committed to the Charter and 
 |Emmanuel Devys |IGN, France
 |Steve Olding   |NASA
 |Chuck Heazel |Heazeltech
+|Pedro Gonçalves |Terradue
 |===
 
 === Conveners
