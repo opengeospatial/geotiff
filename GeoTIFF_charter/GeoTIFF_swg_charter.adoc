@@ -197,7 +197,12 @@ The following people support this proposal and are committed to the Charter and 
 |Emmanuel Devys |IGN, France
 |Steve Olding   |NASA
 |Chuck Heazel |Heazeltech
+|Keith Ryden   |ESRI
+|Amy Youmans   |US Army Geospatial Center
 |Pedro Gonçalves |Terradue
+|Roger Lott |IOGP
+|Howard Butler |Hobu Inc.
+
 |===
 
 === Conveners
@@ -205,4 +210,4 @@ The following people support this proposal and are committed to the Charter and 
 Emmanuel Devys - IGN,
 Chuck Heazel - HeazelTech,
 Even Rouault - Spatialys
-
+Roger Lott - IOGP
