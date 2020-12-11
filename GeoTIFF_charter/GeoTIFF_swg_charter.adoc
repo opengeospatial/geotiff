@@ -209,5 +209,4 @@ The following people support this proposal and are committed to the Charter and 
 
 Emmanuel Devys - IGN,
 Chuck Heazel - HeazelTech,
-Even Rouault - Spatialys,
-Roger Lott - IOGP
+Even Rouault - Spatialys
