@@ -17,7 +17,7 @@
 |[big]*Open Geospatial Consortium*
 |Submission Date: 2020-12-17
 |Approval Date:   <yyyy-mm-dd>
-|Internal reference number of this OGC(R) document:   14-018r2
+|Internal reference number of this OGC(R) document:   14-018r4
 |Category: OGC(R) Standards Working Group Charter
 |Authors:   Emmanuel Devys, Scott Simmons, Chuck Heazel
 |===
