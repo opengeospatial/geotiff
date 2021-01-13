@@ -138,7 +138,7 @@ This task will address open issues which were out of scope for version 1.1 but n
 
 ==== Task 2: BigTiff support
 
-The TIFF file format uses 32 bit offsets. This limits TIFF files to four gigabytes. The BigTIFF format resembles TIFF but uses 64 bit offsets instead.     
+The TIFF file format uses 32 bit offsets. This limits TIFF files to four gigabytes. The BigTIFF format resembles TIFF but uses 64 bit offsets instead. GeoTIFF 1.1 will be extended to enable bigTIFF (in addition to TIFF).     
 
 ==== Task 3: Standardize Cloud-Optimized GeoTIFF (COG)
 
