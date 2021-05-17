@@ -94,6 +94,11 @@ __Table E.1 - Summary of GeoKey IDs and names __
 <| GeogPrimeMeridianLongGeoKey
 <|
 <| PrimeMeridianLongitudeGeoKey
+^| 2062
+^| Double (3 or 7 values)
+<| Reserved (GeogTOWGS84GeoKey used by GDAL)
+<|
+<| Reserved
 5+<| [underline]#Projected CRS Parameter Keys#
 ^| [underline]#_2060_#
 ^| Short
