@@ -311,3 +311,12 @@ include::requirements/Projection_Definition_Keys/requirements_class_ProjAzimuthA
 include::requirements/Projection_Definition_Keys/requirements_class_ProjLinearParameters.adoc[]
 
 include::requirements/Projection_Definition_Keys/requirements_class_ProjScalarParameters.adoc[]
+
+=== Requirements for dynamic CRS
+
+In a dynamic CRS, coordinates of a point on the surface of the Earth may change with time. To be unambiguous the coordinates must always be qualified with the epoch at which they are valid.
+
+The date at which coordinates are referenced to a dynamic coordinate reference system is expressed as a decimal year in the Gregorian calendar, and stored in the _CoordinateEpochGeoKey_.
+Example: 2017-03-25 in the Gregorian calendar is epoch 2017.23.
+
+include::requirements/Dynamic_CRS_GeoKey/requirements_class_CoordinateEpochGeoKey.adoc[]

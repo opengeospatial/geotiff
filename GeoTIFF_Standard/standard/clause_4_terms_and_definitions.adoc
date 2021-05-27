@@ -27,6 +27,11 @@ One of a sequence of numbers designating the position of a point.
 
 Note: In a spatial coordinate reference system, the coordinate numbers are qualified by units.
 
+=== coordinate epoch
+Epoch to which coordinates in a dynamic coordinate reference system are referenced
+
+ [Source: ISO 19111:2019, 3.1.7]
+
 === coordinate reference system
 Coordinate system that is related to an object by a datum.
 
@@ -62,6 +67,10 @@ Coordinate space referencing scanner, printers and display devices.
 
 === double
 8-byte IEEE double precision floating point.
+
+=== dynamic CRS
+CRS into which coordinates of a point on the surface of the Earth may change with time.
+ [Source: ISO 19111:2019, B.4.3]
 
 === ellipsoid
 __reference ellipsoid__
