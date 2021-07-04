@@ -57,6 +57,7 @@
          IF value = 0 THEN Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Short_Param passing GeoKeyOffset as a parameter
          IF value = 34735 THEN Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Short_Param passing GeoKeyOffset as a parameter
          IF value = 34736 THEN Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Double_Param passing GeoKeyOffset as a parameter
+         IF value = 34738 THEN Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/Long_Param passing GeoKeyOffset as a parameter
          IF value = 34737 THEN  Execute test http://www.opengis.net/spec/GeoTIFF/1.1/conf/ASCII_Param passing GeoKeyOffset as a parameter
          }
      SET GeoKeyOffset = GeoKeyOffset + 8

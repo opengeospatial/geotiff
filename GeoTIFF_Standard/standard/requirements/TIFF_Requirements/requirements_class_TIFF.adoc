@@ -14,6 +14,7 @@ _A GeoTIFF file SHALL be compliant with the TIFF 6.0 specification_
 _GeoTIFF files SHALL encode all GeoTIFF specific information using the following specified reserved TIFF tags_ +
  - 34735  GeoKeyDirectoryTag (mandatory) +
  - 34736  GeoDoubleParamsTag (optional) +
+ - 34738  GeoLongParamsTag (optional) +
  - 34737  GeoAsciiParamsTag (optional) +
  - 33550  ModelPixelScaleTag (optional) +
  - 33922  ModelTiepointTag (conditional) +

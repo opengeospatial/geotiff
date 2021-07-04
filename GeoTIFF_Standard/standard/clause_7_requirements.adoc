@@ -51,6 +51,12 @@ The following requirements govern the storage of parameter values when there are
 
 include::requirements/TIFF_Requirements/requirements_class_GeoShortParamsTag.adoc[]
 
+==== Requirements Class GeoLongParamsTag
+
+The following requirements govern the storage of parameter values when  when the values are of type Long.
+
+include::requirements/TIFF_Requirements/requirements_class_GeoLongParamsTag.adoc[]
+
 ==== Requirements Class GeoDoubleParamsTag
 
 The following requirements govern the storage of parameter values when the values are of type Double.
