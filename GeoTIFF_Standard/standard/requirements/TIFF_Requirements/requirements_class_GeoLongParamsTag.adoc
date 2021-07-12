@@ -1,0 +1,16 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class 5.0: GeoLongParamsTag* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoLongParamsTag
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement 5.1 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoLongParamsTag.ID +
+_The GeoLongParamsTag SHALL have ID = 34738_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement 5.2 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoLongParamsTag.count +
+_The GeoLongParamsTag MAY hold any number of key parameters with type = Long._
+{set:cellbgcolor:#FFFFFF}
+|===

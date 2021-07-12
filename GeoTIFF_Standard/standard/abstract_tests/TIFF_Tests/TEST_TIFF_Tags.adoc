@@ -73,6 +73,11 @@ Process each IFD using the following pseudocode:
             Validate that Bytes 2-3 = 12 (Double)
             Set DoubleValues to the value in Bytes 8-11
             }
+        IF value = 34738 THEN
+            {
+            Validate that Bytes 2-3 = 4 (Long or ULong)
+            Set LongValues to the value in Bytes 8-11
+            }
         IF value = 34737 THEN
             {
             Validate that Bytes 2-3 = 2 (ASCII)

@@ -80,7 +80,7 @@ This header is immediately followed by a collection of <NumberOfKeys> KeyEntry s
 
 Following the KeyEntry definitions, the KeyDirectory tag may also contain additional values. For example, if a Key requires multiple SHORT values, they shall be placed at the end of this tag and the KeyEntry will set TIFFTagLocation=GeoKeyDirectoryTag, with the ValueOffset pointing to the location of the value(s).
 
-All key-values which are not of type SHORT are to be stored in one of the following two tags, based on their format:
+All key-values which are not of type SHORT are to be stored in one of the following three tags, based on their format:
 
  GeoDoubleParamsTag:
      Tag = 34736 (87BO.H)
@@ -88,6 +88,13 @@ All key-values which are not of type SHORT are to be stored in one of the follow
      N = variable
 
 This tag is used to store all of the DOUBLE valued GeoKeys, referenced by the GeoKeyDirectoryTag. The meaning of any value of this double array is determined from the GeoKeyDirectoryTag reference pointing to it. FLOAT values should first be converted to DOUBLE and stored here.
+
+GeoLongParamsTag:
+    Tag = 34738 (87B2.H)
+    Type = LONG (int32 or uint32)
+    N = variable
+
+This tag is used to store all of the LONG oand ULONG valued GeoKeys, referenced by the GeoKeyDirectoryTag. The meaning of any value of this long array is determined from the GeoKeyDirectoryTag reference pointing to it. The interpretation fot he bytes as LONG or ULONG depen on the datatype indicated in the GeoKeyDirectoryTag.
 
  GeoAsciiParamsTag:
      Tag = 34737 (87B1.H)
