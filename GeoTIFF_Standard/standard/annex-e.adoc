@@ -241,4 +241,10 @@ __Table E.1 - Summary of GeoKey IDs and names __
 <| VerticalUnitsGeoKey
 <|
 <| (as GeoTIFF v1.0)
+5+<| [underline]#Dynamic CRS Parameter Keys (5120-6143)#
+^| 5120
+^| Double
+<| CoordinateEpochGeoKey
+<|
+<| (as GeoTIFF v1.2)
 |====

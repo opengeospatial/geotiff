@@ -21,6 +21,7 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjLinearParameterGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjScalarParameterGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjAzimuthAngleGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey
 |===
 
 *Purpose:* Verify Double parameters
@@ -98,6 +99,7 @@
 ^| 3093 <| ProjScalarParameters (Scale at Center)
 ^| 3094 <| ProjAzimuthAngleGeoKey
 ^| 3095 <| ProjAngularParameters (Straight Vertical Pole)
+^| 5120 <| CoordinateEpochGeoKey
 |===
 
 Double GeoKey Tests

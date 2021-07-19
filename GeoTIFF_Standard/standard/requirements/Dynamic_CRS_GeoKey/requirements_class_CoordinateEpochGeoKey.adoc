@@ -1,0 +1,16 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class 32.0: CoordinateEpochGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement 32.1 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey.ID +
+_The CoordinateEpochGeoKey SHALL have ID = 5120_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement 32.2 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey.type +
+_The CoordinateEpochGeoKey SHALL have type = DOUBLE_
+{set:cellbgcolor:#FFFFFF}
+|===
