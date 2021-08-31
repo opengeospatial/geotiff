@@ -105,6 +105,11 @@ __Table E.1 - Summary of GeoKey IDs and names __
 <| GeogAzimuthUnitsGeoKey
 <|
 <| (as GeoTIFF v1.0)
+^| 3059
+^| Short
+<| Reserved (ProjLinearUnitsInterpCorrectGeoKey used by GDAL)
+<|
+<| Reserved
 ^| 3072
 ^| Short
 <| ProjectedCSTypeGeoKey
