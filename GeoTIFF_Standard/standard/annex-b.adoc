@@ -169,7 +169,7 @@ Note: For simplicity, both raster spaces documented below use a fixed pixel size
 ====== "PixelIsArea" Raster Space
 The "PixelIsArea" raster grid space R, which is the default, uses coordinates I and J, with (0,0) denoting the upper-left corner of the image, and increasing I to the right, increasing J down. The first pixel-value fills the square grid cell with the bounds:
 
-     top-left = (0,0), bottom-right = (1,1)
+     upper-left = (0,0), bottom-right = (1,1)
 
 and so on; by extension this one-by-one grid cell is also referred to as a pixel. An N by M pixel image covers an area with the mathematically defined bounds (0,0), (N,M).
 
