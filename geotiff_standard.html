@@ -577,40 +577,42 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_cell">4.2. cell</a></li>
 <li><a href="#_code">4.3. code</a></li>
 <li><a href="#_coordinate">4.4. coordinate</a></li>
-<li><a href="#_coordinate_reference_system">4.5. coordinate reference system</a></li>
-<li><a href="#_coordinate_system">4.6. coordinate system</a></li>
-<li><a href="#_correspondence_model">4.7. correspondence model</a></li>
-<li><a href="#_datum">4.8. datum</a></li>
-<li><a href="#_device_space">4.9. device space</a></li>
-<li><a href="#_double">4.10. double</a></li>
-<li><a href="#_ellipsoid">4.11. ellipsoid</a></li>
-<li><a href="#_flattening">4.12. flattening</a></li>
-<li><a href="#_geocoding">4.13. geocoding</a></li>
-<li><a href="#_geographic_coordinate_reference_system">4.14. geographic coordinate reference system</a></li>
-<li><a href="#_geokey">4.15. geokey</a></li>
-<li><a href="#_georectified">4.16. georectified</a></li>
-<li><a href="#_georeferencing">4.17. georeferencing</a></li>
-<li><a href="#_geotiff">4.18. GeoTIFF</a></li>
-<li><a href="#_grid">4.19. grid</a></li>
-<li><a href="#_imagery">4.20. imagery</a></li>
-<li><a href="#_meridian">4.21. meridian</a></li>
-<li><a href="#_metadata">4.22. metadata</a></li>
-<li><a href="#_model_space">4.23. model space</a></li>
-<li><a href="#_mosaic">4.24. mosaic</a></li>
-<li><a href="#_orthoimage">4.25. orthoimage</a></li>
-<li><a href="#_orthorectified_grid">4.26. orthorectified grid</a></li>
-<li><a href="#_parallel">4.27. parallel</a></li>
-<li><a href="#_pixel">4.28. pixel</a></li>
-<li><a href="#_prime_meridian">4.29. prime meridian</a></li>
-<li><a href="#_projected_coordinate_reference_system">4.30. projected coordinate reference system</a></li>
-<li><a href="#_projection">4.31. projection</a></li>
-<li><a href="#_raster">4.32. raster</a></li>
-<li><a href="#_rational">4.33. rational</a></li>
-<li><a href="#_rectified_grid">4.34. rectified grid</a></li>
-<li><a href="#_referenceable_grid">4.35. referenceable grid</a></li>
-<li><a href="#_short">4.36. short</a></li>
-<li><a href="#_tag">4.37. tag</a></li>
-<li><a href="#_vertical_coordinate_reference_system">4.38. vertical coordinate reference system</a></li>
+<li><a href="#_coordinate_epoch">4.5. coordinate epoch</a></li>
+<li><a href="#_coordinate_reference_system">4.6. coordinate reference system</a></li>
+<li><a href="#_coordinate_system">4.7. coordinate system</a></li>
+<li><a href="#_correspondence_model">4.8. correspondence model</a></li>
+<li><a href="#_datum">4.9. datum</a></li>
+<li><a href="#_device_space">4.10. device space</a></li>
+<li><a href="#_double">4.11. double</a></li>
+<li><a href="#_dynamic_crs">4.12. dynamic CRS</a></li>
+<li><a href="#_ellipsoid">4.13. ellipsoid</a></li>
+<li><a href="#_flattening">4.14. flattening</a></li>
+<li><a href="#_geocoding">4.15. geocoding</a></li>
+<li><a href="#_geographic_coordinate_reference_system">4.16. geographic coordinate reference system</a></li>
+<li><a href="#_geokey">4.17. geokey</a></li>
+<li><a href="#_georectified">4.18. georectified</a></li>
+<li><a href="#_georeferencing">4.19. georeferencing</a></li>
+<li><a href="#_geotiff">4.20. GeoTIFF</a></li>
+<li><a href="#_grid">4.21. grid</a></li>
+<li><a href="#_imagery">4.22. imagery</a></li>
+<li><a href="#_meridian">4.23. meridian</a></li>
+<li><a href="#_metadata">4.24. metadata</a></li>
+<li><a href="#_model_space">4.25. model space</a></li>
+<li><a href="#_mosaic">4.26. mosaic</a></li>
+<li><a href="#_orthoimage">4.27. orthoimage</a></li>
+<li><a href="#_orthorectified_grid">4.28. orthorectified grid</a></li>
+<li><a href="#_parallel">4.29. parallel</a></li>
+<li><a href="#_pixel">4.30. pixel</a></li>
+<li><a href="#_prime_meridian">4.31. prime meridian</a></li>
+<li><a href="#_projected_coordinate_reference_system">4.32. projected coordinate reference system</a></li>
+<li><a href="#_projection">4.33. projection</a></li>
+<li><a href="#_raster">4.34. raster</a></li>
+<li><a href="#_rational">4.35. rational</a></li>
+<li><a href="#_rectified_grid">4.36. rectified grid</a></li>
+<li><a href="#_referenceable_grid">4.37. referenceable grid</a></li>
+<li><a href="#_short">4.38. short</a></li>
+<li><a href="#_tag">4.39. tag</a></li>
+<li><a href="#_vertical_coordinate_reference_system">4.40. vertical coordinate reference system</a></li>
 </ul>
 </li>
 <li><a href="#_abbreviations">5. Abbreviations</a></li>
@@ -658,6 +660,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_map_projection_geokeys">7.5.5. Map Projection GeoKeys</a></li>
 </ul>
 </li>
+<li><a href="#_requirements_for_dynamic_crs">7.6. Requirements for dynamic CRS</a></li>
 </ul>
 </li>
 <li><a href="#_media_types_for_geotiff_data_encoding">8. Media Types for GeoTIFF data encoding</a></li>
@@ -1020,7 +1023,18 @@ For GeoTIFF Format Specification 1.0, see <a href="http://geotiff.maptools.org/s
 </div>
 </div>
 <div class="sect2">
-<h3 id="_coordinate_reference_system"><a class="anchor" href="#_coordinate_reference_system"></a>4.5. coordinate reference system</h3>
+<h3 id="_coordinate_epoch"><a class="anchor" href="#_coordinate_epoch"></a>4.5. coordinate epoch</h3>
+<div class="paragraph">
+<p>Epoch to which coordinates in a dynamic coordinate reference system are referenced</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[Source: ISO 19111:2019, 3.1.7]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_coordinate_reference_system"><a class="anchor" href="#_coordinate_reference_system"></a>4.6. coordinate reference system</h3>
 <div class="paragraph">
 <p>Coordinate system that is related to an object by a datum.</p>
 </div>
@@ -1049,7 +1063,7 @@ This term is also called Model Coordinate Reference system in the context of thi
 </div>
 </div>
 <div class="sect2">
-<h3 id="_coordinate_system"><a class="anchor" href="#_coordinate_system"></a>4.6. coordinate system</h3>
+<h3 id="_coordinate_system"><a class="anchor" href="#_coordinate_system"></a>4.7. coordinate system</h3>
 <div class="paragraph">
 <p>Set of mathematical rules for specifying how coordinates are to be assigned to points.</p>
 </div>
@@ -1060,7 +1074,7 @@ This term is also called Model Coordinate Reference system in the context of thi
 </div>
 </div>
 <div class="sect2">
-<h3 id="_correspondence_model"><a class="anchor" href="#_correspondence_model"></a>4.7. correspondence model</h3>
+<h3 id="_correspondence_model"><a class="anchor" href="#_correspondence_model"></a>4.8. correspondence model</h3>
 <div class="paragraph">
 <p>Functional relationship between ground and image coordinates based on the correlation between a set of ground control points and their corresponding image coordinates.</p>
 </div>
@@ -1071,7 +1085,7 @@ This term is also called Model Coordinate Reference system in the context of thi
 </div>
 </div>
 <div class="sect2">
-<h3 id="_datum"><a class="anchor" href="#_datum"></a>4.8. datum</h3>
+<h3 id="_datum"><a class="anchor" href="#_datum"></a>4.9. datum</h3>
 <div class="paragraph">
 <p><em>reference frame</em></p>
 </div>
@@ -1085,7 +1099,7 @@ This term is also called Model Coordinate Reference system in the context of thi
 </div>
 </div>
 <div class="sect2">
-<h3 id="_device_space"><a class="anchor" href="#_device_space"></a>4.9. device space</h3>
+<h3 id="_device_space"><a class="anchor" href="#_device_space"></a>4.10. device space</h3>
 <div class="paragraph">
 <p>Coordinate space referencing scanner, printers and display devices.</p>
 </div>
@@ -1096,13 +1110,20 @@ This term is also called Model Coordinate Reference system in the context of thi
 </div>
 </div>
 <div class="sect2">
-<h3 id="_double"><a class="anchor" href="#_double"></a>4.10. double</h3>
+<h3 id="_double"><a class="anchor" href="#_double"></a>4.11. double</h3>
 <div class="paragraph">
 <p>8-byte IEEE double precision floating point.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ellipsoid"><a class="anchor" href="#_ellipsoid"></a>4.11. ellipsoid</h3>
+<h3 id="_dynamic_crs"><a class="anchor" href="#_dynamic_crs"></a>4.12. dynamic CRS</h3>
+<div class="paragraph">
+<p>CRS into which coordinates of a point on the surface of the Earth may change with time.
+ [Source: ISO 19111:2019, B.4.3]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ellipsoid"><a class="anchor" href="#_ellipsoid"></a>4.13. ellipsoid</h3>
 <div class="paragraph">
 <p><em>reference ellipsoid</em></p>
 </div>
@@ -1119,7 +1140,7 @@ This term is also called Model Coordinate Reference system in the context of thi
 </div>
 </div>
 <div class="sect2">
-<h3 id="_flattening"><a class="anchor" href="#_flattening"></a>4.12. flattening</h3>
+<h3 id="_flattening"><a class="anchor" href="#_flattening"></a>4.14. flattening</h3>
 <div class="paragraph">
 <p><em>f</em></p>
 </div>
@@ -1136,7 +1157,7 @@ This term is also called Model Coordinate Reference system in the context of thi
 </div>
 </div>
 <div class="sect2">
-<h3 id="_geocoding"><a class="anchor" href="#_geocoding"></a>4.13. geocoding</h3>
+<h3 id="_geocoding"><a class="anchor" href="#_geocoding"></a>4.15. geocoding</h3>
 <div class="paragraph">
 <p>Translation of one form of location into another.</p>
 </div>
@@ -1159,7 +1180,7 @@ In the 1995 GeoTIFF v1.0, "an image is geocoded if a precise algorithm for deter
 </div>
 </div>
 <div class="sect2">
-<h3 id="_geographic_coordinate_reference_system"><a class="anchor" href="#_geographic_coordinate_reference_system"></a>4.14. geographic coordinate reference system</h3>
+<h3 id="_geographic_coordinate_reference_system"><a class="anchor" href="#_geographic_coordinate_reference_system"></a>4.16. geographic coordinate reference system</h3>
 <div class="paragraph">
 <p>Coordinate reference system that has a geodetic reference frame and an ellipsoidal coordinate system.</p>
 </div>
@@ -1185,7 +1206,7 @@ In the 1995 GeoTIFF v1.0, this term was "geographic coordinate system"
 </div>
 </div>
 <div class="sect2">
-<h3 id="_geokey"><a class="anchor" href="#_geokey"></a>4.15. geokey</h3>
+<h3 id="_geokey"><a class="anchor" href="#_geokey"></a>4.17. geokey</h3>
 <div class="paragraph">
 <p>In GeoTIFF, a GeoKey is equivalent in function to a TIFF tag, but uses a different storage mechanism.</p>
 </div>
@@ -1196,7 +1217,7 @@ In the 1995 GeoTIFF v1.0, this term was "geographic coordinate system"
 </div>
 </div>
 <div class="sect2">
-<h3 id="_georectified"><a class="anchor" href="#_georectified"></a>4.16. georectified</h3>
+<h3 id="_georectified"><a class="anchor" href="#_georectified"></a>4.18. georectified</h3>
 <div class="paragraph">
 <p>Corrected for positional displacement with respect to the surface of the Earth.</p>
 </div>
@@ -1207,7 +1228,7 @@ In the 1995 GeoTIFF v1.0, this term was "geographic coordinate system"
 </div>
 </div>
 <div class="sect2">
-<h3 id="_georeferencing"><a class="anchor" href="#_georeferencing"></a>4.17. georeferencing</h3>
+<h3 id="_georeferencing"><a class="anchor" href="#_georeferencing"></a>4.19. georeferencing</h3>
 <div class="paragraph">
 <p>Geopositioning an object using a Correspondence Model derived from a set of points for which both ground and image coordinates are known.</p>
 </div>
@@ -1230,7 +1251,7 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_geotiff"><a class="anchor" href="#_geotiff"></a>4.18. GeoTIFF</h3>
+<h3 id="_geotiff"><a class="anchor" href="#_geotiff"></a>4.20. GeoTIFF</h3>
 <div class="paragraph">
 <p>Standard for storing georeference and geocoding information in a TIFF 6.0 compliant raster file.</p>
 </div>
@@ -1241,7 +1262,7 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_grid"><a class="anchor" href="#_grid"></a>4.19. grid</h3>
+<h3 id="_grid"><a class="anchor" href="#_grid"></a>4.21. grid</h3>
 <div class="paragraph">
 <p>Network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in an algorithmic way.</p>
 </div>
@@ -1255,7 +1276,7 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_imagery"><a class="anchor" href="#_imagery"></a>4.20. imagery</h3>
+<h3 id="_imagery"><a class="anchor" href="#_imagery"></a>4.22. imagery</h3>
 <div class="paragraph">
 <p>Representation of phenomena as images produced electronically and/or optical techniques.</p>
 </div>
@@ -1272,7 +1293,7 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_meridian"><a class="anchor" href="#_meridian"></a>4.21. meridian</h3>
+<h3 id="_meridian"><a class="anchor" href="#_meridian"></a>4.23. meridian</h3>
 <div class="paragraph">
 <p>Intersection of an ellipsoid by a plane containing the shortest axis of the ellipsoid.</p>
 </div>
@@ -1286,7 +1307,7 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_metadata"><a class="anchor" href="#_metadata"></a>4.22. metadata</h3>
+<h3 id="_metadata"><a class="anchor" href="#_metadata"></a>4.24. metadata</h3>
 <div class="paragraph">
 <p>Information about a resource.</p>
 </div>
@@ -1297,13 +1318,13 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_model_space"><a class="anchor" href="#_model_space"></a>4.23. model space</h3>
+<h3 id="_model_space"><a class="anchor" href="#_model_space"></a>4.25. model space</h3>
 <div class="paragraph">
 <p>Space in a coordinate reference system related to the earth or a part of the earth.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mosaic"><a class="anchor" href="#_mosaic"></a>4.24. mosaic</h3>
+<h3 id="_mosaic"><a class="anchor" href="#_mosaic"></a>4.26. mosaic</h3>
 <div class="paragraph">
 <p>An image composed of two or more separately collected (sensed) images.</p>
 </div>
@@ -1312,7 +1333,7 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_orthoimage"><a class="anchor" href="#_orthoimage"></a>4.25. orthoimage</h3>
+<h3 id="_orthoimage"><a class="anchor" href="#_orthoimage"></a>4.27. orthoimage</h3>
 <div class="paragraph">
 <p>Image in which by orthogonal projection to a reference surface, displacement of image points due to sensor orientation and terrain relief has been removed.</p>
 </div>
@@ -1326,13 +1347,13 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_orthorectified_grid"><a class="anchor" href="#_orthorectified_grid"></a>4.26. orthorectified grid</h3>
+<h3 id="_orthorectified_grid"><a class="anchor" href="#_orthorectified_grid"></a>4.28. orthorectified grid</h3>
 <div class="paragraph">
 <p>Georectified grid created using ground control points and elevation data where constant scale is maintained throughout the grid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_parallel"><a class="anchor" href="#_parallel"></a>4.27. parallel</h3>
+<h3 id="_parallel"><a class="anchor" href="#_parallel"></a>4.29. parallel</h3>
 <div class="paragraph">
 <p>Line of constant latitude, parallel to the equator.</p>
 </div>
@@ -1343,7 +1364,7 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_pixel"><a class="anchor" href="#_pixel"></a>4.28. pixel</h3>
+<h3 id="_pixel"><a class="anchor" href="#_pixel"></a>4.30. pixel</h3>
 <div class="paragraph">
 <p>Smallest element of a digital image to which attributes are assigned.</p>
 </div>
@@ -1360,7 +1381,7 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_prime_meridian"><a class="anchor" href="#_prime_meridian"></a>4.29. prime meridian</h3>
+<h3 id="_prime_meridian"><a class="anchor" href="#_prime_meridian"></a>4.31. prime meridian</h3>
 <div class="paragraph">
 <p>Meridian from which the longitudes of other meridians are quantified.</p>
 </div>
@@ -1371,7 +1392,7 @@ In the 1995 GeoTIFF v1.0, "An image is georeferenced if the location of its pixe
 </div>
 </div>
 <div class="sect2">
-<h3 id="_projected_coordinate_reference_system"><a class="anchor" href="#_projected_coordinate_reference_system"></a>4.30. projected coordinate reference system</h3>
+<h3 id="_projected_coordinate_reference_system"><a class="anchor" href="#_projected_coordinate_reference_system"></a>4.32. projected coordinate reference system</h3>
 <div class="paragraph">
 <p>Coordinate reference system derived from a geographic coordinate reference system by applying a map projection.</p>
 </div>
@@ -1400,7 +1421,7 @@ In the 1995 GeoTIFF v1.0, this term was "projected coordinate system."
 </div>
 </div>
 <div class="sect2">
-<h3 id="_projection"><a class="anchor" href="#_projection"></a>4.31. projection</h3>
+<h3 id="_projection"><a class="anchor" href="#_projection"></a>4.33. projection</h3>
 <div class="paragraph">
 <p>Projected coordinate reference system.</p>
 </div>
@@ -1414,7 +1435,7 @@ In the 1995 GeoTIFF v1.0, this term was "projected coordinate system."
 </div>
 </div>
 <div class="sect2">
-<h3 id="_raster"><a class="anchor" href="#_raster"></a>4.32. raster</h3>
+<h3 id="_raster"><a class="anchor" href="#_raster"></a>4.34. raster</h3>
 <div class="paragraph">
 <p><em>raster space</em></p>
 </div>
@@ -1446,7 +1467,7 @@ visually realized."
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rational"><a class="anchor" href="#_rational"></a>4.33. rational</h3>
+<h3 id="_rational"><a class="anchor" href="#_rational"></a>4.35. rational</h3>
 <div class="paragraph">
 <p>In TIFF format, a <em>rational</em> value is a fractional value represented by the ratio of two unsigned 4-byte integers.</p>
 </div>
@@ -1457,7 +1478,7 @@ visually realized."
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rectified_grid"><a class="anchor" href="#_rectified_grid"></a>4.34. rectified grid</h3>
+<h3 id="_rectified_grid"><a class="anchor" href="#_rectified_grid"></a>4.36. rectified grid</h3>
 <div class="paragraph">
 <p><em>georectified grid</em></p>
 </div>
@@ -1474,7 +1495,7 @@ visually realized."
 </div>
 </div>
 <div class="sect2">
-<h3 id="_referenceable_grid"><a class="anchor" href="#_referenceable_grid"></a>4.35. referenceable grid</h3>
+<h3 id="_referenceable_grid"><a class="anchor" href="#_referenceable_grid"></a>4.37. referenceable grid</h3>
 <div class="paragraph">
 <p>Grid associated with a transformation that can be used to convert grid coordinate values to values of coordinates referenced to an external coordinate reference system.</p>
 </div>
@@ -1490,13 +1511,13 @@ visually realized."
 </div>
 </div>
 <div class="sect2">
-<h3 id="_short"><a class="anchor" href="#_short"></a>4.36. short</h3>
+<h3 id="_short"><a class="anchor" href="#_short"></a>4.38. short</h3>
 <div class="paragraph">
 <p>2-byte IEEE signed integer.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tag"><a class="anchor" href="#_tag"></a>4.37. tag</h3>
+<h3 id="_tag"><a class="anchor" href="#_tag"></a>4.39. tag</h3>
 <div class="paragraph">
 <p>In TIFF format, a tag is packet of numerical or ASCII values, which have a numerical "Tag" ID indicating their information content.</p>
 </div>
@@ -1507,7 +1528,7 @@ visually realized."
 </div>
 </div>
 <div class="sect2">
-<h3 id="_vertical_coordinate_reference_system"><a class="anchor" href="#_vertical_coordinate_reference_system"></a>4.38. vertical coordinate reference system</h3>
+<h3 id="_vertical_coordinate_reference_system"><a class="anchor" href="#_vertical_coordinate_reference_system"></a>4.40. vertical coordinate reference system</h3>
 <div class="paragraph">
 <p>One-dimensional coordinate reference system based on a vertical reference frame.</p>
 </div>
@@ -3454,6 +3475,40 @@ GeoTIFF v1.0 did not make reference to the EPSG coordinate operation methods (a 
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_requirements_for_dynamic_crs"><a class="anchor" href="#_requirements_for_dynamic_crs"></a>7.6. Requirements for dynamic CRS</h3>
+<div class="paragraph">
+<p>In a dynamic CRS, coordinates of a point on the surface of the Earth may change with time. To be unambiguous the coordinates must always be qualified with the epoch at which they are valid.</p>
+</div>
+<div class="paragraph">
+<p>The date at which coordinates are referenced to a dynamic coordinate reference system is expressed as a decimal year in the Gregorian calendar, and stored in the <em>CoordinateEpochGeoKey</em>.
+Example: 2017-03-25 in the Gregorian calendar is epoch 2017.23.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #CACCCE;"><p class="tableblock"><strong>Requirements Class 32.0: CoordinateEpochGeoKey</strong> </p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey" class="bare">http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement 32.1 </p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey.ID" class="bare">http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey.ID</a><br>
+<em>The CoordinateEpochGeoKey SHALL have ID = 5120</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #CACCCE;"><p class="tableblock">Requirement 32.2 </p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey.type" class="bare">http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey.type</a><br>
+<em>The CoordinateEpochGeoKey SHALL have type = DOUBLE</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -4223,6 +4278,9 @@ Validate the value
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjAzimuthAngleGeoKey" class="bare">http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjAzimuthAngleGeoKey</a></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey" class="bare">http://www.opengis.net/spec/GeoTIFF/1.2/req/CoordinateEpochGeoKey</a></p></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
@@ -4431,6 +4489,10 @@ Validate the value
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">3095</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">ProjAngularParameters (Straight Vertical Pole)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">5120</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">CoordinateEpochGeoKey</p></td>
 </tr>
 </tbody>
 </table>
@@ -5089,7 +5151,7 @@ YPosition (287)</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>top-left = (0,0), bottom-right = (1,1)</pre>
+<pre>upper-left = (0,0), bottom-right = (1,1)</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6662,6 +6724,13 @@ If the geographic 2D CRS (in case a) or the projected CRS (in case b) would not 
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">PrimeMeridianLongitudeGeoKey</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">2062</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Double (3 or 7 values)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Reserved (GeogTOWGS84GeoKey used by GDAL)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Reserved</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" colspan="5" style="background-color: #FFFFFF;"><p class="tableblock"><span class="underline">Projected CRS Parameter Keys</span></p></td>
 </tr>
 <tr>
@@ -6869,6 +6938,16 @@ If the geographic 2D CRS (in case a) or the projected CRS (in case b) would not 
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">VerticalUnitsGeoKey</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">(as GeoTIFF v1.0)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5" style="background-color: #FFFFFF;"><p class="tableblock"><span class="underline">Dynamic CRS Parameter Keys</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">5120</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Double</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">CoordinateEpochGeoKey</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">(as GeoTIFF v1.2)</p></td>
 </tr>
 </tbody>
 </table>
@@ -8437,7 +8516,7 @@ as of writing, listgeo outputs older GeoKey names. The above output has been sli
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-08-12 22:17:26 -0400
+Last updated 2022-09-20 13:40:33 -0400
 </div>
 </div>
 <style>
