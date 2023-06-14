@@ -355,9 +355,14 @@ An exact geodetic definition of geodetic datums and reference frames is beyond t
 A geodetic coordinate reference system is created by associating a coordinate system - a set of axes - with a geodetic datum.
 Subtypes of geodetic CRS supported by GeoTIFF are as follows.
 
-* Feocentric, when the coordinate system is a 3-dimensional Cartesian coordinate system with its origin at or near the centre of the earth. The Z-axis is in or parallel to the earth's axis of rotation. The X-axis is in the plane of the equator and passes through its intersection with the prime meridian, and the Y-axis is in the plane of the equator forming a right-handed coordinate system with the X and Z axes.
+* Geocentric, when the coordinate system is a 3-dimensional Cartesian coordinate system with its origin at or near the centre of the earth.
+  The Z-axis is in or parallel to the earth's axis of rotation.
+  The X-axis is in the plane of the equator and passes through its intersection with the prime meridian, and
+  the Y-axis is in the plane of the equator forming a right-handed coordinate system with the X and Z axes.
 
-* g\Geographic, when the coordinate system is ellipsoidal, i.e., latitude and longitude in the 2D case and in the 3D case additionally with ellipsoidal height. GeoTIFF v1.0 did not clearly define whether geographic CRSs are 2D or 3D.
+* g\Geographic, when the coordinate system is ellipsoidal, i.e., latitude and longitude in the 2D case
+  and in the 3D case additionally with ellipsoidal height.
+  GeoTIFF v1.0 did not clearly define whether geographic CRSs are 2D or 3D.
 
 Geocentric coordinates are readily converted to and from geographic 3D coordinates.
 Geographic 2D coordinates cannot be converted to geocentric coordinates without some assumption regarding height.
@@ -419,7 +424,7 @@ or by
 ==== Standard Model Coordinate Reference Systems
 In GeoTIFF, standard CRSs are identified through reference to an EPSG CRS code.
 This is sufficient to define the CRS component objects.
-Further information on EPSG codes is given in <<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>.
+Further information on EPSG codes is given in <<Requirements for definition of Model CRS (when Model is from GeoTIFF CRS register)>>.
 
 NOTE: This document removes the reference to the specific EPSG codes listed in the 1995 GeoTIFF v1.0 specification and replaces it by *allowing reference to any code in the EPSG Dataset*, including codes for any objects introduced into the EPSG Dataset after publication of this document.
 
