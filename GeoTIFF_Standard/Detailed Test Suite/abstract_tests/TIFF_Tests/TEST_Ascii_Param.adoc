@@ -2,23 +2,23 @@
 
 *Test id:* TIFF_Test/AsciiParameters
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.type
 |===
 
 *Purpose:* Verify an ASCII parameter
 
-*Pre-conditions* The GeoKeyDirectory, ASCIIValues and GeoKeyOffset values have been set. 
+*Pre-conditions* The GeoKeyDirectory, ASCIIValues and GeoKeyOffset values have been set.
 
 *Test Variables:*
 
@@ -30,7 +30,7 @@
 |GeoKeyOffset |Parameter| Location of this Key Entry Set in the GeoKey directory
 |GeoKey |Local |Temporary value of the GeoKey
 |KeyLength |Local |Temporary value for the length of the value for the GeoKey
-|KeyValueOffset |Local |The location of the GeoKey value in the file 
+|KeyValueOffset |Local |The location of the GeoKey value in the file
 |===
 
 *Test Process:*
@@ -62,7 +62,7 @@
 [[ASCII_GeoKey_Tests]]
 [cols="2,4",width="100%", options="header"]
 |===
-^| GeoKey 
+^| GeoKey
 ^| Test
 ^| 1026 <| CitationGeoKeys/GTCitationGeoKey
 ^| 2049 <| CitationGeoKeys/GeodeticCitationGeoKey

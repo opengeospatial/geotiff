@@ -4,7 +4,10 @@
 
 == General Approach
 
-This GeoTIFF standard specifies an encoding of information for exchange between software components. As such, this Detailed Test Suite can only validate the conformance of a specific GeoTIFF document. In most cases, GeoTIFF conformance will be incorporated into the conformance testing of a software component. These components fall into two categories; GeoTIFF readers and GeoTIFF writers.
+This GeoTIFF standard specifies an encoding of information for exchange between software components.
+As such, this Detailed Test Suite can only validate the conformance of a specific GeoTIFF document.
+In most cases, GeoTIFF conformance will be incorporated into the conformance testing of a software component.
+These components fall into two categories; GeoTIFF readers and GeoTIFF writers.
 
 Conformance of GeoTIFF readers will validated by the successful processing of a representative sample of validated GeoTIFF files.
 

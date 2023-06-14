@@ -39,7 +39,8 @@ Coordinate system that is related to an object by a datum.
 
 Note 1:	 Geodetic and vertical datums are referred to as reference frames.
 
-Note 2:	For geodetic and vertical reference frames, the object will be the Earth. In planetary applications, geodetic and vertical reference frames may be applied to other celestial bodies.
+Note 2:	For geodetic and vertical reference frames, the object will be the Earth.
+In planetary applications, geodetic and vertical reference frames may be applied to other celestial bodies.
 
 NOTE: This term is also called Model Coordinate Reference system in the context of this document, and was called Model Coordinate System in the 1995 GeoTIFF v1.0.
 

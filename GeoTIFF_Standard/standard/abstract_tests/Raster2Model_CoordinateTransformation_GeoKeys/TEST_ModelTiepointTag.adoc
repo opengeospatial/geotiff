@@ -2,7 +2,7 @@
 
 *Test id:* http://www.opengis.net/spec/GeoTIFF/1.1/conf/Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
@@ -11,7 +11,7 @@
 
 *Purpose:* Verify the contents of the ModelTiepointTag parameter
 
-*Pre-conditions* The TagLength and TagValue values have been set. 
+*Pre-conditions* The TagLength and TagValue values have been set.
 
 *Test Variables:*
 
@@ -25,6 +25,6 @@
 *Test Process:*
 
     Verify that the TagLength is six (6)
-    
+
     Read six double values from the GeoTIFF file starting at TagValue.
-    
+

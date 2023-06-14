@@ -1,7 +1,9 @@
 [appendix]
 :appendix-caption: Annex
 == Backward compatibility
-This revision 1.1 of GeoTIFF is aimed at being backward compatible with the 1.0 version (dated 1995, including last revision dating December 2000, as available at http://geotiff.maptools.org/spec/geotiffhome.html), both for coordinate reference systems based on EPSG register codes or user-defined coordinate reference systems.
+This revision 1.1 of GeoTIFF is aimed at being backward compatible with the 1.0 version (dated 1995,
+including last revision dating December 2000, as available at http://geotiff.maptools.org/spec/geotiffhome.html),
+both for coordinate reference systems based on EPSG register codes or user-defined coordinate reference systems.
 
 This annex provides the description of the changes.
 

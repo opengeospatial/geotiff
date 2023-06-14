@@ -2,18 +2,18 @@
 
 *Test id:* Geodetic_CRS_GeoKey/EllipsoidSemiMajorAxisGeoKey
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey.units
 |===
 
 *Purpose:* Verify the contents of the EllipsoidSemiMajorAxisGeoKey parameter
 
-*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set.
 
 *Test Variables:*
 
@@ -21,11 +21,11 @@
 |===
 ^|**Variable** ^|**Scope** ^|**Description**
 |KeyLength |Parameter |The length of the value for this GeoKey
-|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file
 |===
 
 *Test Process:*
 
     Read a Double value from the GeoTIFF file starting at KeyValueOffset.
-    
+
     Verify that there is a GeogLinearUnitsGeoKey (GeoKey 2052) in the GeoTIFF file.

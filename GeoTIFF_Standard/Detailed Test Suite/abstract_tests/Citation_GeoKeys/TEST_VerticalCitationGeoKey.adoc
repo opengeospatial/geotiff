@@ -2,19 +2,19 @@
 
 *Test id:* Citation_GeoKey/VerticalCitationGeoKey
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/CitationGeoKeys.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.terminator 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.terminator
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.NULLWrite
 |===
 
 *Purpose:* Verify the contents of the VerticalCitationGeoKey parameter
 
-*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set.
 
 *Test Variables:*
 
@@ -22,14 +22,14 @@
 |===
 ^|**Variable** ^|**Scope** ^|**Description**
 |KeyLength |Parameter |The length of the value for this GeoKey
-|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file
 |===
 
 *Test Process:*
 
     Read the contents of the GeoTIFF file starting at KeyValueOffset up to and including the first NULL.
-    
+
     Verify that the contents read consists of ASCII characters.
-    
+
     Verify that the contents read is KeyLength characters long not including the NULL.
-    
+

@@ -2,39 +2,39 @@
 
 *Test id:* TIFF_Test/ShortParameters
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.KeyEntry.ID 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.KeyEntry.ID
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryTIFFTagLocation
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryKeyCount
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoKeyDirectoryTag.keyEntryValueOffset
-|http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Criteria 
+|http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Criteria
 |http://www.opengis.net/spec/GeoTIFF/0.0/GeoShortParams.Location
-|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTModelTypeGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticCRSGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeodeticDatumGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.type 
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/UnitsGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjectedCRSGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjMethodGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.type
 |===
 
@@ -50,7 +50,7 @@
 |GeoKeyOffset |Parameter| Location of this Key Entry Set in the GeoKey directory
 |GeoKey |Local |Temporary value of the GeoKey
 |KeyLength |Local |Temporary value for the length of the value for the GeoKey
-|KeyValueOffset |Local |The location of the GeoKey value in the file 
+|KeyValueOffset |Local |The location of the GeoKey value in the file
 |===
 
 *Test Process:*
@@ -69,9 +69,9 @@
         {
         SET KeyLength to the value
         }
-    IF KeyLength = 1 THEN 
+    IF KeyLength = 1 THEN
         SET KeyValueOffset = GeoKeyDirectory + GeoKeyOffset + 6
-    ELSE 
+    ELSE
         {
         Process the fourth Short integer in the Key Entry Set
             {
@@ -79,7 +79,7 @@
             }
         SET KeyValueOffset = GeoKeyDirectory + (KeyValueOffset * 2)
         }
-        
+
     Validate the parameter
         Locate the GeoKey value in the following table
         Execute the corresponding test passing KeyLength and KeyValueOffset as parameters

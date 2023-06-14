@@ -2,7 +2,7 @@
 
 *Test id:* TIFF_Tests/TIFF.Tags
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
@@ -17,9 +17,9 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoAsciiParamsTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTransformationTag.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelPixelScaleTag.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ModelTiepointTag.type
@@ -28,7 +28,7 @@
 
 *Purpose:* Verify the TIFF header and prepare for processing the GeoTIFF tags.
 
-*Pre-conditions:* None 
+*Pre-conditions:* None
 
 *Test Variables:*
 
@@ -37,7 +37,7 @@
 ^|**Variable** ^|**Scope** ^|**Description**
 |IFD_Offset |Local |Location within the TIFF file of an IFD
 |GeoKeyDirectory |Global |Location of the GeoTIFF GeoKey directory
-|ASCIIValues |Global |Location of the ASCII values for GeoTIFF ASCII GeoKeys 
+|ASCIIValues |Global |Location of the ASCII values for GeoTIFF ASCII GeoKeys
 |DoubleValues |Global |Location of the Double values for GeoTIFF Double GeoKeys
 |TransformTag |Local |Location of the Model Transform Tag
 |PixelScaleTag |Local |Location of the ModelPixelScale Tag
@@ -56,20 +56,20 @@ Validate and process the TIFF header
 
 Process each IFD using the following pseudocode:
 
-  WHILE IFD_Offset is not 0, process this IFD 
-     { 
-     Bytes 0-1 contain the number of IFD entries in this IFD. 
-     DO FOR each IFD entry (processed in sequence) 
-        { 
-        Bytes 0-1 contain the TIFF tag value. 
-        Verify that the new tag value is greater than the previous tag value. 
-        IF value = 34735 THEN 
+  WHILE IFD_Offset is not 0, process this IFD
+     {
+     Bytes 0-1 contain the number of IFD entries in this IFD.
+     DO FOR each IFD entry (processed in sequence)
+        {
+        Bytes 0-1 contain the TIFF tag value.
+        Verify that the new tag value is greater than the previous tag value.
+        IF value = 34735 THEN
             {
             Validate that Bytes 2-3 = 3 (Short Integer)
             Validate that Bytes 4-7 represent an Integer value greater than or equal to 4
             Set GeoKeyDirectory to the value in Bytes 8-11
             }
-        IF value = 34736 THEN 
+        IF value = 34736 THEN
             {
             Validate that Bytes 2-3 = 12 (Double)
             Set DoubleValues to the value in Bytes 8-11
@@ -82,11 +82,11 @@ Process each IFD using the following pseudocode:
         IF value = 33550 (ModelPixelScaleTag) THEN
             {
             Set PixelScaleTag to the location of this IFD entry in the GeoTIFF file
-            } 
+            }
         IF value = 33922 (ModelTiepointTag) THEN
             {
             Set TiepointTag to the location of this IFD entry in the GeoTIFF file
-            }     
+            }
         IF value = 34264 (ModelTransformationTag) THEN
             {
             Set TransformTag to the location of this IFD entry in the GeoTIFF file
@@ -96,7 +96,7 @@ Process each IFD using the following pseudocode:
         {
         execute test TIFF_Tests/GeoKeyDirectory
         Validate that there is a GTModelType GeoKey in the GeoKey Directory
-        } 
+        }
         ELSE Throw an error.
     IF PixelScaleTag has been set THEN
         {
@@ -112,7 +112,7 @@ Process each IFD using the following pseudocode:
         Set TagLength to the value in Bytes 4-7
         Set TagValue to the value in Bytes 8-11
         Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTiepointTag
-        }     
+        }
     IF TransformTag has been set THEN
         {
         Validate that Bytes 2-3 = 12 (Double)
@@ -122,6 +122,6 @@ Process each IFD using the following pseudocode:
         Execute test Raster2Model_CoordinateTransformation_GeoKey/ModelTransformationTag
         }
     Validate that this IFD contains either a ModelTransformationTag or a ModelTiepointTag.
-    IFD_Offset = the last four bytes of the current IFD 
+    IFD_Offset = the last four bytes of the current IFD
     }
 

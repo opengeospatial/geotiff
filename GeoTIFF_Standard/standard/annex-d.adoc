@@ -4,7 +4,10 @@
 
 === Introduction
 GeoTIFF 1.0 presently only handles Geographic 2D CRS or Projected CRS (2D) or geocentric (intrinsically 3D) as indicated by the GTModelTypeGeoKey.
-A verticalCRS is a 1D gravity-related CRS. An ellipsoidal height is not a 1D CRS: it can only be used as the height part of a geographic 3D CRS. In both cases, when the GeoTIFF file contains digital elevation models (Terrain or Surface model, or gridded bathymetric data), the vertical reference is provided by the compound CRSs mechanism (Horizontal 2D CRS + VerticalGeoKey) documented below.
+A verticalCRS is a 1D gravity-related CRS.
+An ellipsoidal height is not a 1D CRS: it can only be used as the height part of a geographic 3D CRS.
+In both cases, when the GeoTIFF file contains digital elevation models (Terrain or Surface model,
+or gridded bathymetric data), the vertical reference is provided by the compound CRSs mechanism (Horizontal 2D CRS + VerticalGeoKey) documented below.
 
 The value of the VerticalGeoKey may:
 
@@ -18,7 +21,8 @@ Note: In GeoTIFF v1.0 it was called VerticalCSTypeGeoKey.
 This specification supports the use of user-defined Vertical CRSs as part of a compound structure, but does not support the definition of user-defined geographic 3D CRSs.
 
 === Compound CRSs
-A future version of GeoTIFF may expand the values of the GTModelTypeGeoKey to explicitly describe the Model CRS being compound. This document does not make such an expansion.
+A future version of GeoTIFF may expand the values of the GTModelTypeGeoKey to explicitly describe the Model CRS being compound.
+This document does not make such an expansion.
 
 Recommendation: For a 2D+1D compound CRS comprised of projected CRS + vertical CRS,  GTModelTypeGeoKey value should be 1 and both a ProjectedCRSGeoKey and a VerticalGeoKey should be given. The ProjectedCRSGeoKey should describe a 2D projected CRS, the VerticalGeoKey should describe the vertical CRS.
 
@@ -27,9 +31,11 @@ Recommendation: For a 2D+1D compound CRS comprised of geographic 2D CRS + vertic
 [#section-D-3]
 === Temporary provisions for including ellipsoidal height as one of the coordinates in GeoTIFF
 
-A future version of GeoTIFF may expand the values of the GTModelTypeGeoKey to explicitly differentiate between geographic 2D and geographic 3D CRSs. This document does not make such an expansion.
+A future version of GeoTIFF may expand the values of the GTModelTypeGeoKey to explicitly differentiate between geographic 2D and geographic 3D CRSs.
+This document does not make such an expansion.
 
-In this document there are three possible means of describing ellipsoidal height as one of the coordinates in a GeoTIFF v1.1 file. All are temporary solutions.
+In this document there are three possible means of describing ellipsoidal height as one of the coordinates in a GeoTIFF v1.1 file.
+All are temporary solutions.
 
 a) Give GTModelTypeGeoKey value of 2 and identify a geographic 2D CRS through the GeodeticCRSGeoKey, giving the ellipsoidal height description by inserting a geographic 3D CRS code in the VerticalGeoKey. The geographic 2D CRS should be the horizontal component of the geographic 3D CRS (this is the **recommended option**).
 
@@ -39,7 +45,9 @@ NOTE: If the geographic 2D CRS (in case a) or the projected CRS (in case b) woul
 
 c) give GTModelTypeGeoKey value of 2 and use the VerticalGeoKey to describe an ellipsoid from which the ellipsoid height is measured using the GeoTIFF v1.0 codes in Table D.1 below.
 
-None of these are long-term solutions. Until a major revision of this specification is available, recommended practice for producers/writers is to use (a). Readers should be prepared for any of these options.
+None of these are long-term solutions.
+Until a major revision of this specification is available, recommended practice for producers/writers is to use (a).
+Readers should be prepared for any of these options.
 
 _Table D.1 - Deprecated codes from GeoTIFF v1.0 indicating Geographic 3D CRS ellipsoid heights (corresponding to option c)_
 [cols="4,1",width="90%" options="header"]

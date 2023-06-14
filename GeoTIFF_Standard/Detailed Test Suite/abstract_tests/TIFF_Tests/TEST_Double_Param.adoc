@@ -2,39 +2,39 @@
 
 *Test id:* TIFF_Test/DoubleParameters
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation 
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.KeyEntry.ID
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryTIFFTagLocation
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryKeyCount
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoKeyDirectoryTag.keyEntryValueOffset
-|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/GeoDoubleParamsTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/PrimeMeridianLongitudeGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMajorAxisGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidSemiMinorAxisGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjAngularParameterGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjLinearParameterGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameterGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameterGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjScalarParameterGeoKey.type
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjAzimuthAngleGeoKey.type
 |===
 
 *Purpose:* Verify a Double parameter
 
-*Pre-conditions* The GeoKeyDirectory, DoubleValues and GeoKeyOffset values have been set. 
+*Pre-conditions* The GeoKeyDirectory, DoubleValues and GeoKeyOffset values have been set.
 
 *Test Variables:*
 
@@ -46,7 +46,7 @@
 |GeoKeyOffset |Parameter| Location of this Key Entry Set in the GeoKey directory
 |GeoKey |Local |Temporary value of the GeoKey
 |KeyLength |Local |Temporary value for the length of the value for the GeoKey
-|KeyValueOffset |Local |The location of the GeoKey value in the file 
+|KeyValueOffset |Local |The location of the GeoKey value in the file
 |===
 
 *Test Process:*

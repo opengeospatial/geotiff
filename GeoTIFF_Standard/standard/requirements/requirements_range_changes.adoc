@@ -1,7 +1,7 @@
 [width="90%",cols="<,2*^"]
 
 |===
-3+|*Range Changes* 
+3+|*Range Changes*
 
 |Requirement|Original Range|Revised Range
 
