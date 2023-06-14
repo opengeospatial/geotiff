@@ -3,11 +3,16 @@
 == Examples
 
 === Introduction
-This annex provides examples of how GeoTIFF may be implemented at the Tag and GeoKey level, following the general "Cookbook" approach presented in <<Cookbook for Defining Transformations>>: common examples, less common ones, including a Lunar example.
+This annex provides examples of how GeoTIFF may be implemented at the Tag and GeoKey level,
+following the general "Cookbook" approach presented in <<Cookbook for Defining Transformations>>:
+common examples, less common ones, including a Lunar example.
 
 === Common Examples
 ==== UTM Projected Aerial Photo
-We have an aerial photo which has been orthorectified and resampled to a UTM grid, zone 60, using WGS 84 coordinate reference system; the coordinates of the upper-left corner of the image are given in easting/northing, as 350807.4m, 5316081.3m. The scanned map pixel scale is 100 meters/pixels (the actual dpi scanning ratio is irrelevant).
+We have an aerial photo which has been orthorectified and resampled to a UTM grid, zone 60,
+using WGS 84 coordinate reference system;
+the coordinates of the upper-left corner of the image are given in easting/northing, as 350807.4m, 5316081.3m.
+The scanned map pixel scale is 100 meters/pixels (the actual dpi scanning ratio is irrelevant).
 
      ModelTiepointTag = (0, 0, 0, 350807.4, 5316081.3, 0.0)
      ModelPixelScaleTag = (100.0, 100.0, 0.0)
@@ -35,7 +40,10 @@ For the rest of these examples we will only show the GeoKey-level
  representation can be determined from the documentation.
 
 ==== United States State Plane zone
-We have a USGS State Plane Map of Texas, Central Zone, using NAD83, correctly oriented. The map resolution is 1000 meters/pixel, at origin. There is a grid intersection line in the image at pixel location (50,100), and corresponds to the projected coordinate reference system easting/northing of (949465.0, 3070309.1).
+We have a USGS State Plane Map of Texas, Central Zone, using NAD83, correctly oriented.
+The map resolution is 1000 meters/pixel, at origin.
+There is a grid intersection line in the image at pixel location (50,100),
+and corresponds to the projected coordinate reference system easting/northing of (949465.0, 3070309.1).
 
      ModelTiepointTag = ( 50, 100, 0, 949465.0, 3070309.1, 0)
      ModelPixelScaleTag = (1000, 1000, 0)
@@ -44,10 +52,18 @@ We have a USGS State Plane Map of Texas, Central Zone, using NAD83, correctly or
           GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
           ProjectedCRSGeoKey = 32139 (Projected 2D CRS NAD83 / Texas Central)
 
-Notice that in this case, since the projected CRS is a standard code, we do not need to define the base Geographic CRS, geodetic datum, etc, since those are implied by the projected CRS code. Also, since this is NAD83, meters are used rather than US Survey feet (as in NAD27).
+Notice that in this case, since the projected CRS is a standard code, we do not need to define the base Geographic CRS,
+geodetic datum, etc, since those are implied by the projected CRS code.
+Also, since this is NAD83, meters are used rather than US Survey feet (as in NAD27).
 
 ==== Lambert Conformal Conic Aeronautical Chart
-We have a 500 x 500 scanned aeronautical chart of Seattle, WA, using Lambert Conformal Conic projection, correctly oriented. The central meridian is at 120 degrees west. The map resolution is 1000 meters/pixel, at origin, and uses NAD27 datum. The standard parallels of the projection are at 41°21'N and 48°40'N. The latitude of the origin is at 45 degrees North, and occurs in the image at the raster coordinates (80,100). The origin is given a false easting and northing of 200000m, 1500000m.
+We have a 500 x 500 scanned aeronautical chart of Seattle, WA, using Lambert Conformal Conic projection,
+correctly oriented.
+The central meridian is at 120 degrees west.
+The map resolution is 1000 meters/pixel, at origin, and uses NAD27 datum.
+The standard parallels of the projection are at 41°21'N and 48°40'N.
+The latitude of the origin is at 45 degrees North, and occurs in the image at the raster coordinates (80,100).
+The origin is given a false easting and northing of 200000m, 1500000m.
 
      ModelTiepointTag = ( 80, 100, 0, 200000, 1500000, 0)
      ModelPixelScaleTag = (1000, 1000, 0)
@@ -69,8 +85,12 @@ We have a 500 x 500 scanned aeronautical chart of Seattle, WA, using Lambert Con
 Notice that the Tiepoint takes the false easting and northing into account when tying the raster point (50,100) to the projection origin.
 
 ==== DMA ADRG Raster Graphic Map
-The U.S. Defense Mapping Agency (now NGA) produces ARC digitized raster graphics datasets by scanning maps and geometrically resampling them into an equirectangular projection, so that they may be directly indexed with WGS 84 geographic coordinates. The upper left corner is 120 degrees West, 32 degrees
-North. The scale for one map is 0.2 degrees per pixel horizontally, 0.1 degrees per pixel vertically. If stored in a GeoTIFF file it contains the following information:
+The U.S. Defense Mapping Agency (now NGA) produces ARC digitized raster graphics datasets
+by scanning maps and geometrically resampling them into an equirectangular projection,
+so that they may be directly indexed with WGS 84 geographic coordinates.
+The upper left corner is 120 degrees West, 32 degrees
+North. The scale for one map is 0.2 degrees per pixel horizontally, 0.1 degrees per pixel vertically.
+If stored in a GeoTIFF file it contains the following information:
 
      ModelTiepointTag=(0.0, 0.0, 0.0, -120.0, 32.0, 0.0)
      ModelPixelScale = (0.2, 0.1, 0.0)
@@ -82,7 +102,11 @@ North. The scale for one map is 0.2 degrees per pixel horizontally, 0.1 degrees 
 === Less Common Examples
 ==== Unrectified Aerial photo, known tiepoints, in degrees.
 
-We have an aerial photo, and know only the WGS 84 GPS location of several points in the scene: the upper left corner is 120 degrees West, 32 degrees North, the lower-left corner is at 120 degrees West, 30 degrees 20 minutes North, and the lower-right hand corner of the image is at 116 degrees 40 minutes West, 30 degrees 20 minutes North. The photo is not geometrically corrected, however, and the complete projection is therefore not known.
+We have an aerial photo, and know only the WGS 84 GPS location of several points in the scene:
+the upper left corner is 120 degrees West, 32 degrees North, the lower-left corner is at 120 degrees West,
+30 degrees 20 minutes North, and the lower-right hand corner of the image is at 116 degrees 40 minutes West,
+30 degrees 20 minutes North.
+The photo is not geometrically corrected, however, and the complete projection is therefore not known.
 
      ModelTiepointTag=( 0.0,    0.0, 0.0,       -120.0,     32.0, 0.0,
                         0.0, 1000.0, 0.0,       -120.0, 30.33333, 0.0,
@@ -95,7 +119,11 @@ We have an aerial photo, and know only the WGS 84 GPS location of several points
 Remark: Since we have not specified the ModelPixelScaleTag, clients reading this GeoTIFF file are not permitted to infer that there is a simple linear relationship between the raster data and the geographic model coordinate space. The only points that are known to be exact are the ones specified in the tiepoint tag.
 
 ==== Rotated Scanned Map
-We have a scanned standard British National Grid, covering the 100km grid zone NZ. Consulting documentation for BNG we find that the southwest corner of the NZ zone has an easting, northing of 400000m, 500000m. This scanned map has a resolution of 100 meter pixels, and was rotated 90 degrees to fit onto the scanner, so that the southwest corner is now the northwest corner. In this case we must use the ModelTransformation tag rather than the tiepoint/scale pair to map the raster data into model space:
+We have a scanned standard British National Grid, covering the 100km grid zone NZ.
+Consulting documentation for BNG we find that the southwest corner of the NZ zone has an easting, northing of 400000m, 500000m.
+This scanned map has a resolution of 100 meter pixels, and was rotated 90 degrees to fit onto the scanner,
+so that the southwest corner is now the northwest corner.
+In this case we must use the ModelTransformation tag rather than the tiepoint/scale pair to map the raster data into model space:
 
      ModelTransformationTag = ( 0, 100.0, 0, 400000.0,
                             100.0,     0, 0, 500000.0,
@@ -111,7 +139,13 @@ Remark: the matrix has 100.0 in the off-diagonals due to the 90 degree rotation;
 
 ==== Digital Elevation Model
 ===== Example 1 (DMA)
-This DMA (Defense Mapping Agency, now NGA) example stores digital elevation models using an equirectangular projection, so that it may be indexed with WGS 84 geographic coordinates. Since elevation postings are point-values, the pixels should not be considered as filling areas, but as point-values at grid vertices. To accommodate the base elevation of the Angeles Crest forest, the pixel value of 0 corresponds to an elevation of 1000 meters relative to WGS 84 reference ellipsoid. The upper left corner is at 120 degrees West, 32 degrees North, and has a pixel scale of 0.2 degrees/pixel longitude, 0.1 degrees/pixel latitude.
+This DMA (Defense Mapping Agency, now NGA) example stores digital elevation models using an equirectangular projection,
+so that it may be indexed with WGS 84 geographic coordinates.
+Since elevation postings are point-values, the pixels should not be considered as filling areas,
+but as point-values at grid vertices.
+To accommodate the base elevation of the Angeles Crest forest,
+the pixel value of 0 corresponds to an elevation of 1000 meters relative to WGS 84 reference ellipsoid.
+The upper left corner is at 120 degrees West, 32 degrees North, and has a pixel scale of 0.2 degrees/pixel longitude, 0.1 degrees/pixel latitude.
 
      ModelTiepointTag=(0.0, 0.0, 0.0, -120.0, 32.0, 1000.0)
      ModelPixelScale = (0.2, 0.1, 1.0)
@@ -130,7 +164,16 @@ Remarks:
 . The third value of the "PixelScale" is 1.0 to indicate that a single pixel-value unit corresponds to 1 meter, and the last tiepoint value indicates that base value zero indicates 1000m above the reference surface.
 
 ===== Example 2: DGED Level 6 example (DGIWG)
-The DGIWG (Defense Geographic Information Working Group) has published a Defense Gridded Elevation Data (DGED) product specification, including levels ranking between 0 (DTED0) to 9 (#12.5 cm). This example is at Level 6 Geographic and stores digital elevation models using an equirectangular projection, using WGS 84 geographic coordinates. Since elevation postings are point-values, the pixels should not be considered as filling areas, but as point-values at grid vertices. Elevation values are absolute values above geoid EGM 2008 (EPSG code 3855), as the Z coordinate of ModelTiepointTag is 0. The upper left corner is at 12.5 degrees East, 55.7 degrees North, and has a pixel scale of 1.25e-05 degrees/pixel longitude, 8.33e-06 degrees/pixel latitude.
+The DGIWG (Defense Geographic Information Working Group) has published a Defense Gridded Elevation Data (DGED) product specification,
+including levels ranking between 0 (DTED0) to 9 (#12.5 cm).
+This example is at Level 6 Geographic and stores digital elevation models using an equirectangular projection,
+using WGS 84 geographic coordinates.
+Since elevation postings are point-values, the pixels should not be considered as filling areas,
+but as point-values at grid vertices.
+Elevation values are absolute values above geoid EGM 2008 (EPSG code 3855),
+as the Z coordinate of ModelTiepointTag is 0.
+The upper left corner is at 12.5 degrees East, 55.7 degrees North,
+and has a pixel scale of 1.25e-05 degrees/pixel longitude, 8.33e-06 degrees/pixel latitude.
 
      ModelTiepointTag=(0.0, 0.0, 0.0, 12.5000063, 55.7000042, 0)
      ModelPixelScale = (1.25e-05, 8.3333333e-06, 1.0)
@@ -145,10 +188,14 @@ The DGIWG (Defense Geographic Information Working Group) has published a Defense
 ==== Spherical Moon Example
 
 ===== Introduction
-The GeoTIFF standard can be used for images from extraterrestrial bodies as well as the Earth. This Annex illustrates a simple example for a spherical Moon. This example also shows how more custom Earth-base examples could also be defined, highlighting the flexibility of the GeoTiff standard.
+The GeoTIFF standard can be used for images from extraterrestrial bodies as well as the Earth.
+This Annex illustrates a simple example for a spherical Moon.
+This example also shows how more custom Earth-base examples could also be defined, highlighting the flexibility of the GeoTiff standard.
 
 ===== Example
-Note this example (using listgeo), is showing the header values as mapped strings instead of the original short Integer. e.g. GTModelTypeGeoKey = ModelTypeProjected (which is really mapped from value 1).
+Note this example (using listgeo),
+is showing the header values as mapped strings instead of the original short Integer.
+e.g. GTModelTypeGeoKey = ModelTypeProjected (which is really mapped from value 1).
 
 $ listgeo Lunar_LRO_LOLA_Global_LDEM_118m_Mar2014.tif
 ```

@@ -2,20 +2,20 @@
 
 *Test id:* Configuration_GeoKey/GTRasterTypeGeoKey
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.value
 |http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.reserved
-|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.private 
+|http://www.opengis.net/spec/GeoTIFF/1.1/GTRasterTypeGeoKey.private
 |===
 
 *Purpose:* Verify the contents of the GTRasterTypeGeoKey parameter
 
-*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set.
 
 *Test Variables:*
 
@@ -23,22 +23,22 @@
 |===
 ^|**Variable** ^|**Scope** ^|**Description**
 |KeyLength |Parameter |The length of the value for this GeoKey
-|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file
 |===
 
 *Test Process:*
 
     Read a Short value from the GeoTIFF file starting at KeyValueOffset.
-    
+
     Verify that the value is not between 3 and 32766 (reserved).
-    
+
     Values of:
-        0 (unkonwn) 
-        1 (Pixel is Area) 
-        2 (Pixel is Point) 
-        32767 (user defined) 
+        0 (unkonwn)
+        1 (Pixel is Area)
+        2 (Pixel is Point)
+        32767 (user defined)
     are valid.
-    
+
     Values of 32768 through 65535 are valid (private).
 
-    
+

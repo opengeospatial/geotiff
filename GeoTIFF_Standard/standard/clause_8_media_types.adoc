@@ -1,6 +1,10 @@
 == Media Types for GeoTIFF data encoding
-A GeoTIFF file is a TIFF file. It is common to use the tiff MIME type,	image/tiff	according to [RFC3302] (see also http://www.iana.org/assignments/media-types/media-types.xhtml#image).
+A GeoTIFF file is a TIFF file.
+It is common to use the tiff MIME type,	image/tiff according to [RFC3302]
+(see also http://www.iana.org/assignments/media-types/media-types.xhtml#image).
 
-OGC GMLCOV GeoTIFF extension (OGC 12-100r1) specifies image/tiff as the MIME identifier (cf. Requirement #5 in OGC 12-100r1).
+OGC GMLCOV GeoTIFF extension (OGC 12-100r1) specifies image/tiff as the MIME identifier
+(cf. Requirement #5 in OGC 12-100r1).
 
-The recommendation for the MIME type is to use the image/tiff application parameter, with the geotiff value, therefore as follows: image/tiff; application=geotiff.
+The recommendation for the MIME type is to use the image/tiff application parameter, with the geotiff value,
+therefore as follows: image/tiff; application=geotiff.

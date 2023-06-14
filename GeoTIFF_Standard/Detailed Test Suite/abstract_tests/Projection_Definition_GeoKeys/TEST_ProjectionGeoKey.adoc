@@ -2,11 +2,11 @@
 
 *Test id:* Projection_Definition_GeoKey/ProjectionGeoKey
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.reserved
 |http://www.opengis.net/spec/GeoTIFF/1.1/ProjectionGeoKey.EPSG
@@ -16,7 +16,7 @@
 
 *Purpose:* Verify the contents of the ProjectionGeoKey parameter
 
-*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set.
 
 *Test Variables:*
 
@@ -24,19 +24,19 @@
 |===
 ^|**Variable** ^|**Scope** ^|**Description**
 |KeyLength |Parameter |The length of the value for this GeoKey
-|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file
 |===
 
 *Test Process:*
 
     Read a Short value from the GeoTIFF file starting at KeyValueOffset.
-    
-    Values between 1 and 1023 are only valid for GeoTIFF version 1.0 (obsolete EPSG/POSC codes) 
-    
+
+    Values between 1 and 1023 are only valid for GeoTIFF version 1.0 (obsolete EPSG/POSC codes)
+
     Values between 1024 and 32766 are valid (EPSG codes)
-    
+
     A value of 32767 is valid (User-defined)
 
     IF value = 32767 THEN verify that there is a ProjectedCitationGeoKey (GeoKey 3073), ProjectionMethodGeoKey (GeoKey 3075) and ProjLinearUnitsGeoKey (GeoKey 3076) in the GeoTIFF file.
- 
+
     Values of 32768 through 65535 are valid (private)

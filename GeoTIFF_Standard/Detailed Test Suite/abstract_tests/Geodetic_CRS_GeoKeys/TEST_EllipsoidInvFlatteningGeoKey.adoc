@@ -2,17 +2,17 @@
 
 *Test id:* Geodetic_CRS_GeoKey/EllipsoidInvFlatteningGeoKey
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/EllipsoidInvFlatteningGeoKey.type
 |===
 
 *Purpose:* Verify the contents of the EllipsoidInvFlatteningGeoKey parameter
 
-*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set.
 
 *Test Variables:*
 
@@ -20,10 +20,10 @@
 |===
 ^|**Variable** ^|**Scope** ^|**Description**
 |KeyLength |Parameter |The length of the value for this GeoKey
-|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file
 |===
 
 *Test Process:*
 
     Read a Double value from the GeoTIFF file starting at KeyValueOffset.
-    
+

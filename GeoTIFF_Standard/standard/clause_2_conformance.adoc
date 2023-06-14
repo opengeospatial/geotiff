@@ -7,8 +7,11 @@ These Requirements address five (5) standardization target types:
 * GeoTIFF Configuration GeoKeys;
 * Raster to Model Coordinate Transformation Requirements;
 * Requirements for definition of Model CRS when the Model CRS is from GeoTIFF CRS register; and
-* Requirements for definition of user-defined Model CRS.  
+* Requirements for definition of user-defined Model CRS.
 
-Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document.
+The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified
+in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
 
-In order to conform to this OGC® encoding standard, a software implementation shall comply with all of the conformance classes specified in Annex A (normative).
+In order to conform to this OGC® encoding standard, a software implementation shall comply
+with all of the conformance classes specified in Annex A (normative).

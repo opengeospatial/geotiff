@@ -2,7 +2,8 @@
 
 ## Introduction
 
-The key folder where the AsciiDoc specification is developed is GeoTIFF_Standard cf. https://github.com/opengeospatial/geotiff/tree/master/GeoTIFF_Standard/standard
+The key folder where the AsciiDoc specification is developed is GeoTIFF_Standard cf.
+https://github.com/opengeospatial/geotiff/tree/master/GeoTIFF_Standard/standard
 Other files of interest are:
 - geotiff_standard.html
 - geotiff_standard.pdf

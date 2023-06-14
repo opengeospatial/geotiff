@@ -3,7 +3,7 @@
 [[Requirements_Trace_Matrix]]
 [cols="<80,^20",width="100%", Options="header"]
 |===
-^|**Requirement** ^|**Test** 
+^|**Requirement** ^|**Test**
 ^| *requirements_class_TIFF* |
 | A GeoTIFF file SHALL be compliant with the TIFF 6.0 specification |TIFF_Tests/TIFF.Core & TIFF.Tags
 | GeoTIFF files SHALL encode all GeoTIFF specific information using the specified reserved TIFF tags |TIFF_Tests/TIFF.Tags
@@ -24,7 +24,7 @@
 | The fourth unsigned short integer in the GeoKeyDirectoryTag SHALL hold the NumberOfKeys defined in the rest of the GeoKeyDirectoryTag. |TIFF_Test/GeoKeyDirectory
 | The GeoKeyDirectoryTag SHALL hold NumberOfKeys KeyEntry Sets in addition to the header information |TIFF_Test/GeoKeyDirectory
 | Each Key Entry in the Key Entry Set SHALL include 4 unsigned short integer values |TIFF_Test/GeoKeyDirectory
-| The first unsigned short integer in the Key Entry SHALL hold the key identifier. |TIFF_Test/GeoKeyDirectory, TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters 
+| The first unsigned short integer in the Key Entry SHALL hold the key identifier. |TIFF_Test/GeoKeyDirectory, TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters
 | The second unsigned short integer in the Key Entry SHALL hold the TIFF Tag Location. The value of this entry shall be a valid GeoTIFF tag identifier or a zero (0) |TIFF_Test/GeoKeyDirectory, TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters
 | The Third unsigned short integer in the Key Entry SHALL indicate the number of values associated with this key. |TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters
 | The fourth unsigned short integer in the Key Entry SHALL hold either the key value (if TIFF Tag location = or the index into the tag indicated by the TIFF Tag Location value. |TIFF_Test/DoubleParameters, TIFF_Test/AsciiParameters, TIFF_Test/ShortParameters
@@ -42,7 +42,7 @@
 | The GeoAsciiParamsTag SHALL contain the values of the key parameters of type = ASCII referenced by the GeoKeyDirectoryTag. If there is no key parameters of type = ASCII, it SHALL not be present |TIFF_Test/TIFF.Tags
 | The pipe character &#124; in the GeoAsciiParamsTag SHALL be used as the character to terminate a string written in as ASCII tag |Citation_GeoKey/GTCitationGeoKey, Citation_GeoKey/GeodeticCitationGeoKey, Citation_GeoKey/ProjectedCitationGeoKey, Citation_GeoKey/VerticalCitationGeoKey
 | NULL (ASCII code = 0) characters SHALL not be present in the string content
-  written in the GeoAsciiParamsTag |Citation_GeoKey/GTCitationGeoKey, Citation_GeoKey/VerticalCitationGeoKey  Citation_GeoKey/GeodeticCitationGeoKey, Citation_GeoKey/ProjectedCitationGeoKey, 
+  written in the GeoAsciiParamsTag |Citation_GeoKey/GTCitationGeoKey, Citation_GeoKey/VerticalCitationGeoKey  Citation_GeoKey/GeodeticCitationGeoKey, Citation_GeoKey/ProjectedCitationGeoKey,
 | The GeoAsciiParamsTag SHALL have type = ASCII |TIFF_Test/TIFF.Tags
 ^| *requirements_class_GTRasterTypeGeoKey* |
 | The GTRasterTypeGeoKey SHALL have ID = 1025 |TIFF_Test/ShortParameters, Configuration_GeoKey/GTRasterTypeGeoKey
@@ -127,8 +127,8 @@
 | A VerticalUnitsGeoKey value of 32767 (user defined) SHALL not be used |Units_GeoKeys/UnitsGeoKey
 | GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey values in the range 32768-65535 SHALL be private. |Units_GeoKeys/UnitsGeoKey
 ^| *requirements_class_UnitSizeGeoKeys* |
-| The GeogAngularUnitSizeGeoKey SHALL have ID = 2055 |TIFF_Test/DoubleParameters, Units_GeoKeys/UnitSizeGeoKey 
-| The GeogLinearUnitSizeGeoKey SHALL have ID = 2053 |TIFF_Test/DoubleParameters, Units_GeoKeys/UnitSizeGeoKey 
+| The GeogAngularUnitSizeGeoKey SHALL have ID = 2055 |TIFF_Test/DoubleParameters, Units_GeoKeys/UnitSizeGeoKey
+| The GeogLinearUnitSizeGeoKey SHALL have ID = 2053 |TIFF_Test/DoubleParameters, Units_GeoKeys/UnitSizeGeoKey
 | The ProjLinearUnitSizeGeoKey SHALL have ID = 3077 |TIFF_Test/DoubleParameters, Units_GeoKeys/UnitSizeGeoKey
 | The GeogAngularUnitSizeGeoKey, GeogLinearUnitSizeGeoKey and ProjLinearUnitSizeGeoKey SHALL each have type = DOUBLE |TIFF_Test/DoubleParameters, Units_GeoKeys/UnitSizeGeoKey
 | The units of the GeogAngularUnitSizeGeoKey value SHALL be radians. |Units_GeoKeys/UnitSizeGeoKey
@@ -170,7 +170,7 @@
 | The EllipsoidSemiMinorAxisGeoKey SHALL have type = DOUBLE |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/EllipsoidSemiMinorAxisGeoKey
 | The units of the EllipsoidSemiMinorAxisGeoKey SHALL be defined by the value of GeogLinearUnitsGeoKey |Geodetic_CRS_GeoKey/EllipsoidSemiMinorAxisGeoKey
 ^| *requirements_class_EllipsoidInvFlatteningGeoKey* |
-| The EllipsoidInvFlatteningGeoKey SHALL have ID = 2059 |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/EllipsoidInvFlatteningGeoKey 
+| The EllipsoidInvFlatteningGeoKey SHALL have ID = 2059 |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/EllipsoidInvFlatteningGeoKey
 | The EllipsoidInvFlatteningGeoKey SHALL have type = DOUBLE |TIFF_Test/DoubleParameters, Geodetic_CRS_GeoKey/EllipsoidInvFlatteningGeoKey
 ^| *requirements_class_VerticalDatumGeoKey* |
 | The VerticalDatumGeoKey SHALL have ID = 4098 |TIFF_Test/ShortParameters, Vertical_GeoKeys/VerticalDatumGeoKey

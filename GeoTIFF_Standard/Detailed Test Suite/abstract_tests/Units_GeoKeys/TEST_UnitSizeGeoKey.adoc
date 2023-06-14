@@ -2,18 +2,18 @@
 
 *Test id:* Units_GeoKeys/UnitSizeGeoKey
 
-*Requirements:* 
+*Requirements:*
 
 [width="100%"]
 |===
-|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.ID 
+|http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/UnitSizeGeoKey.units
 |===
 
 *Purpose:* Verify the contents of the UnitSizeGeoKey parameters
 
-*Pre-conditions* The KeyLength and KeyValueOffset values have been set. 
+*Pre-conditions* The KeyLength and KeyValueOffset values have been set.
 
 *Test Variables:*
 
@@ -21,15 +21,15 @@
 |===
 ^|**Variable** ^|**Scope** ^|**Description**
 |KeyLength |Parameter |The length of the value for this GeoKey
-|KeyValueOffset |Parameter |The location of the GeoKey value in the file 
+|KeyValueOffset |Parameter |The location of the GeoKey value in the file
 |===
 
 *Test Process:*
 
     Read a Double value from the GeoTIFF file starting at KeyValueOffset.
-    
+
     IF the GeoKey = GeogAngularUnitSize (2055) then validate that the value is in radians.
-    
+
     IF the GeoKey = GeogLinearUnitSize (2053) then validate that the value is in meters.
-    
+
     IF the GeoKey = ProjLinearUnitSize (3077) then validate that the value is in meters.
