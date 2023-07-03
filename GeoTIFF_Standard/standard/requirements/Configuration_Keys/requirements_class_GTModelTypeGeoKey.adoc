@@ -31,6 +31,8 @@ _The GTModelTypeGeoKey value SHALL be:_
 
 * 3 to indicate that the Model CRS is a geocentric Cartesian 3D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
 
+* 4 to indicate that the Model CRS is a geocentric spherical 3D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
+
 * 5 to indicate that the Model CRS is a geocentric spherical 2D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
 
 * 32767 to indicate that the Model CRS type is user-defined.

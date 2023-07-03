@@ -105,6 +105,8 @@ This GeoKey defines the type of Model coordinate reference system used, to which
 
 * Model CRS is a Geocentric 2D (spherical) CRS;
 
+* Model CRS is a Geocentric 3D (spherical) CRS;
+
 * Model CRS is a Geocentric 3D (Cartesian) CRS;
 
 * Model CRS is a Projected CRS; and
