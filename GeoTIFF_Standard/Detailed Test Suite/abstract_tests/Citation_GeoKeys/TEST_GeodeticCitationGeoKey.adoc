@@ -39,3 +39,4 @@
 
     If the content contains key-value pairs, verify that all keys are one of the following:
     `GCS Name`, `Datum`, `Ellipsoid`, `Primem`, `AUnits`.
+    Multi-occurrences of those keys are allowed.
