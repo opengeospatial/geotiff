@@ -33,3 +33,9 @@
 
     Verify that the contents read is KeyLength characters long not including the NULL.
 
+    If the content ends with the pipe character (`|`, ASCII decimal code 124),
+    verify each entry separated by the `|` character is a key-value pair
+    with the key and the value separated by the `=` character (ASCII decimal code 61).
+
+    If the content contains key-value pairs, verify that all keys are one of the following:
+    `GCS Name`, `Datum`, `Ellipsoid`, `Primem`, `AUnits`.

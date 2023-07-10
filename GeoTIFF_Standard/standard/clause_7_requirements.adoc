@@ -199,6 +199,30 @@ The _GeodeticCitationGeoKey_, _ProjectedCitationGeoKey_ and _VerticalCitationGeo
 
 NOTE: In GeoTIFF 1.0 the GeodeticCitationGeoKey key was called GeogCitationGeoKey and the ProjectedCitationGeoKey key was called PCSCitationGeoKey.
 
+A _GeodeticCitationGeoKey_, _ProjectedCitationGeoKey_ and _VerticalCitationGeoKey_ may contain multiple names
+for providing the names of components such as datum, ellipsoid, prime meridian or unit of measurement.
+
+If a citation contains multiple names, then all names are encoded as key-value pairs
+separated by the pipe character (`|`, ASCII decimal code 124).
+For each pair, the key and the value are separated by the `=` character (ASCII decimal code 61).
+Each key can be one of the following:
+
+[[citation_object_names]]
+[width="90%",options="header"]
+|==================================================
+|Key name  |Description
+|GCS Name  |Name of the geodetic CRS
+|Datum     |Name of the datum
+|Ellipsoid |Name of the ellipsoid
+|Primem    |Name of the prime meridian
+|AUnits    |Name of the angular unit of measurement
+|==================================================
+
+Examples:
+
+* `GCS Name = WGS84|Datum = D_WGS_1984|Ellipsoid = WGS_1984|Primem = Greenwich|AUnits = Decimal_Degree|`
+* `GCS Name = Moon 2000|Datum = D_Moon_2000|Ellipsoid = Moon_2000_IAU_IAG|Primem = Reference_Meridian|AUnits = Decimal_Degree|`
+
 include::requirements/Citation_Keys/requirements_class_CitationGeoKeys.adoc[]
 
 === Requirements for definition of user-defined Model CRS
@@ -244,6 +268,9 @@ The *ProjLinearUnitsGeoKey* key is used to specify the linear units for:
 The *VerticalUnitsGeoKey* key is used to specify the linear unit for:
 
 * the axis of a user-defined vertical CRS.
+
+If a user-defined unit is used, then the unit name shall be specified by a citation GeoKey.
+See <<Requirements Class Citation GeoKeys>>.
 
 include::requirements/Units_Keys/requirements_class_UnitsGeoKeys.adoc[]
 
