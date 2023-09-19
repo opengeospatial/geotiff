@@ -400,9 +400,11 @@ The following subtypes of Model coordinate reference system (CRS) are recognized
 
 * Geocentric;
 
-* Projected ('map grid (2D)'); and
+* Projected ('map grid (2D)');
 
-* Vertical.
+* Vertical; and
+
+* Engineering 2D (spherical).
 
 Projected ('map grid') and geographic 2D CRSs form two-dimensional horizontal coordinate reference systems (i.e.,
 horizontal with respect to the earth's surface).
@@ -538,6 +540,35 @@ For a user-defined geocentric CRS the user is expected to provide:
 
 **  user-defined angle unit name (through the _GeodeticCitationGeoKey_) and
     scaling from SI base unit of radian (through the _GeogAngularUnitSizeGeoKey_).
+
+===== User-defined engineering CRS
+For a user-defined engineering CRS the user is expected to provide:
+
+*   engineering coordinate reference system name (through the _EngineeringCitationGeoKey_);
+
+*   engineering datum through the _EngineeringDatumGeoKey_, either:
+
+**  the engineering datum code (if available through standard EPSG code), or
+
+**  user-defined engineering datum name and other defining information:
+
+*** the engineering datum name (through the _EngineeringCitationGeoKey_);
+
+*   axis unit, either:
+
+**  linear unit through the _EngLinearUnitsGeoKey_, either:
+
+*** linear unit code (if available through standard EPSG code), or
+
+*** user-defined linear unit name (through the _EngineeringCitationGeoKey_) and
+    scaling from SI base unit of radian (through the _EngLinearUnitSizeGeoKey_);
+
+**  angular unit through the _EngAngularUnitsGeoKey_, either:
+
+*** angle unit code (if available through standard EPSG code), or
+
+*** user-defined angle unit name (through the _EngineeringCitationGeoKey_) and
+    scaling from SI base unit of radian (through the _EngAngularUnitSizeGeoKey_).
 
 ===== User-defined ellipsoid
 For any user-defined geocentric, geographic 3D or geographic 2D CRS an ellipsoid needs to be identified.

@@ -1,11 +1,11 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 16.0: UnitsGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitsGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitsGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 16.1 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitsGeoKey.ID +
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitsGeoKey.ID +
 _The GeogAngularUnitsGeoKey SHALL have ID = 2054_
 
 _The GeogAzimuthUnitsGeoKey SHALL have ID = 2060_
@@ -15,33 +15,39 @@ _The GeogLinearUnitsGeoKey SHALL have ID = 2052_
 _The ProjLinearUnitsGeoKey SHALL have ID = 3076_
 
 _The VerticalUnitsGeoKey SHALL have ID = 4099_
+
+_The EngLinearUnitsGeoKey SHALL have ID = 6147_
+
+_The EngAngularUnitsGeoKey SHALL have ID = 6149_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 16.2 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitsGeoKey.type +
-_The GeogAngularUnitsGeoKey, the GeogAzimuthUnitsGeoKey, the GeogLinearUnitsGeoKey, the ProjLinearUnitsGeoKey and the VerticalUnitsGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitsGeoKey.type +
+_The GeogAngularUnitsGeoKey, the GeogAzimuthUnitsGeoKey, the GeogLinearUnitsGeoKey, the ProjLinearUnitsGeoKey,
+the VerticalUnitsGeoKey, the EngLinearUnitsGeoKey and the EngAngularUnitsGeoKey
 SHALL each have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 16.3 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitsGeoKey.reserved +
-_GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitsGeoKey.reserved +
+_GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey, VerticalUnitsGeoKey,
+EngLinearUnitsGeoKey and EngAngularUnitsGeoKey
 values in the range 1-1023 SHALL be reserved._
 
 NOTE: In GeoTIFF v1.0 the range 0001-2000 was used for obsolete GeoTIFF codes.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 16.4 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitsGeoKey.angular +
-_GeogAngularUnitsGeoKey and GeogAzimuthUnitsGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitsGeoKey.angular +
+_GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey and EngAngularUnitsGeoKey
 values in the range 1024-32766 SHALL be EPSG Unit Of Measure (UOM) codes with type = angle._
 
 NOTE: In GeoTIFF v1.0 the range was 9100-9199
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 16.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitsGeoKey.linear +
-_GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitsGeoKey.linear +
+_GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey, VerticalUnitsGeoKey and EngLinearUnitsGeoKey
 values in the range 1024-32766 SHALL be EPSG Unit Of Measure (UOM) codes with type = length._
 
 NOTE: In GeoTIFF v1.0 the range was 9000-9099.
@@ -76,8 +82,21 @@ For vertical units, this document supports only EPSG linear units.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 16.10 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitsGeoKey.private +
-_GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey and VerticalUnitsGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitsGeoKey.userdefinedEngLinear +
+_An EngLinearUnitsGeoKey value of 32767 SHALL be a user-defined linear unit.
+If the value is 32767 (User-Defined) then the EngineeringCitationGeoKey and the EngLinearUnitSizeGeoKey SHALL be populated_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement 16.11 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitsGeoKey.userdefinedEngAngular +
+_An EngAngularUnitsGeoKey value of 32767 SHALL be a user-defined angular unit.
+If the value is 32767 (User-Defined) then the EngineeringCitationGeoKey and the EngAngularUnitSizeGeoKey SHALL be populated_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement 16.12 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitsGeoKey.private +
+_GeogAngularUnitsGeoKey, GeogAzimuthUnitsGeoKey, GeogLinearUnitsGeoKey, ProjLinearUnitsGeoKey, VerticalUnitsGeoKey
+EngLinearUnitsGeoKey and EngAngularUnitsGeoKey
 values in the range 32768-65535 SHALL be private._
 {set:cellbgcolor:#FFFFFF}
 |===

@@ -1,7 +1,7 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 8.0: GTModelTypeGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GTModelTypeGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 8.1 {set:cellbgcolor:#CACCCE}
@@ -20,7 +20,7 @@ _The GTModelTypeGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 8.4 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey.value +
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GTModelTypeGeoKey.value +
 _The GTModelTypeGeoKey value SHALL be:_
 
 * 0 to indicate that the Model CRS in undefined or unknown; or
@@ -30,6 +30,8 @@ _The GTModelTypeGeoKey value SHALL be:_
 * 2 to indicate that the Model CRS is a geographic 2D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
 
 * 3 to indicate that the Model CRS is a geocentric Cartesian 3D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
+
+* 105 to indicate that the Model CRS is a Engineering spherical 2D coordinate reference system, indicated by the value of the EngineeringCRSGeoKey; or
 
 * 32767 to indicate that the Model CRS type is user-defined.
 {set:cellbgcolor:#FFFFFF}
@@ -60,6 +62,11 @@ _If the GTModelTypeGeoKey value is 3 (Model CRS is a geocentric CRS) then the Ge
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 8.10 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GTModelTypeGeoKey.engCRS +
+_If the GTModelTypeGeoKey value is 105 (Model CRS is an engineering CRS) then the GeoTIFF file SHALL include a EngineeringCRSGeoKey._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement 8.11 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey.userdefined +
 _If the GTModelTypeGeoKey value is 32767 (user-defined) then the GTCitationGeoKey SHALL be populated._
 {set:cellbgcolor:#FFFFFF}

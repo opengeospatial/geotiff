@@ -13,7 +13,7 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoDoubleParamsTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoDoubleParamsTag.count
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianLongitudeGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitSizeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitSizeGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidSemiMajorAxisGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidSemiMinorAxisGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidInvFlatteningGeoKey
@@ -100,6 +100,8 @@
 ^| 3094 <| ProjAzimuthAngleGeoKey
 ^| 3095 <| ProjAngularParameters (Straight Vertical Pole)
 ^| 5120 <| CoordinateEpochGeoKey
+^| 6148 <| UnitSizeGeoKey (Engineering linear)
+^| 6150 <| UnitSizeGeoKey (Engineering angular)
 |===
 
 Double GeoKey Tests

@@ -12,18 +12,20 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryValueOffset
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoShortParams.Criteria
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoShortParams.Location
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GTModelTypeGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GTRasterTypeGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitsGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/UnitsGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjMethodGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/VerticalGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/VerticalDatumGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringCRSGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringDatumGeoKey
 |===
 
 *Purpose:* Verify Short parameters
@@ -95,4 +97,6 @@
 ^| 4096 <| VerticalGeoKey
 ^| 4098 <| VerticalDatumGeoKey
 ^| 4099 <| UnitsGeoKey (Vertical Units)
+^| 6147 <| UnitsGeoKey (Engineering linear Units)
+^| 6149 <| UnitsGeoKey (Engineering angular Units)
 |===

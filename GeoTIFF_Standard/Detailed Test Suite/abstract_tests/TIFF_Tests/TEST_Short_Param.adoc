@@ -36,6 +36,10 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/VerticalGeoKey.type
 |http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/VerticalDatumGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringCRSGeoKey.ID
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringCRSGeoKey.type
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringDatumGeoKey.ID
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringDatumGeoKey.type
 |===
 
 *Purpose:* Verify a Short parameter
@@ -105,5 +109,7 @@
 ^| 4096 <| Vertical_GeoKeys/VerticalGeoKey
 ^| 4098 <| Vertical_GeoKeys/VerticalDatumGeoKey
 ^| 4099 <| Units_GeoKeys/UnitsGeoKey (Vertical Units)
+^| 6147 <| Units_GeoKeys/UnitsGeoKey (Engineering linear Units)
+^| 6149 <| Units_GeoKeys/UnitsGeoKey (Engineering angular Units)
 |===
 

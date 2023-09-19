@@ -105,6 +105,8 @@
 ^| 3093 <| Projection_Definition_GeoKeys/ProjScalarParameters (Scale at Center)
 ^| 3094 <| Projection_Definition_GeoKeys/ProjAzimuthAngleGeoKey
 ^| 3095 <| Projection_Definition_GeoKeys/ProjAngularParameters (Straight Vertical Pole)
+^| 6148 <| Units_GeoKeys/UnitSizeGeoKey (Engineering linear)
+^| 6150 <| Units_GeoKeys/UnitSizeGeoKey (Engineering angular)
 |===
 
 Double GeoKey Tests
