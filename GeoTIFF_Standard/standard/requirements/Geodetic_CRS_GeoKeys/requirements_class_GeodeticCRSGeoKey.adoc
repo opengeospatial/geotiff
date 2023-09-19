@@ -1,7 +1,7 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 13.0: GeodeticCRSGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GeodeticCRSGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 13.1 {set:cellbgcolor:#CACCCE}
@@ -14,9 +14,16 @@ _The GeodeticCRSGeoKey SHALL have ID = 2048_
 _The GeodeticCRSGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
+|Requirement TBD {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EllipsoidGeoKey.authority
+_If the GeodeticCRSGeoKey value is 1 (authority code specified by URL)
+or 2 (full definition provided by WKT 2),
+then the GeodeticCRSTextDefGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
 |Requirement 13.3 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.reserved +
-_GeodeticCRSGeoKey values in the range 1-1023 SHALL be reserved._
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GeodeticCRSGeoKey.reserved +
+_GeodeticCRSGeoKey values in the range 3-1023 SHALL be reserved._
 
 NOTE: In GeoTIFF v1.0 the reserved ranges were 1001-3999 and 5000-32766.
 {set:cellbgcolor:#FFFFFF}

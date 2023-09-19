@@ -14,9 +14,16 @@ _The ProjectedCRSGeoKey SHALL have ID = 3072_
 _The ProjectedCRSGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
+|Requirement TBD {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/ProjectedCRSGeoKey.authority
+_If the ProjectedCRSGeoKey value is 1 (authority code specified by URL)
+or 2 (full definition provided by WKT 2),
+then the ProjectedCRSTextDefGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
 |Requirement 12.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey.reserved +
-_ProjectedCRSGeoKey values in the range 1-1023 SHALL be reserved._
+_ProjectedCRSGeoKey values in the range 3-1023 SHALL be reserved._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 12.4 {set:cellbgcolor:#CACCCE}

@@ -14,9 +14,16 @@ _The VerticalDatumGeoKey SHALL have ID = 4098_
 _The VerticalDatumGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
+|Requirement TBD {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/VerticalDatumGeoKey.authority
+_If the VerticalDatumGeoKey value is 1 (authority code specified by URL)
+or 2 (full definition provided by WKT 2),
+then the VerticalDatumTextDefGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
 |Requirement 25.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/VerticalDatumGeoKey.reserved +
-_VerticalDatumGeoKey values in the range 1-1023 SHALL be reserved_
+_VerticalDatumGeoKey values in the range 3-1023 SHALL be reserved_
 
 NOTE: In GeoTIFF v1.0 the reserved range was 16384-32766.
 {set:cellbgcolor:#FFFFFF}

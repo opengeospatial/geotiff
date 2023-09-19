@@ -190,8 +190,8 @@ include::requirements/Vertical_GeoKeys/requirements_class_VerticalGeoKey.adoc[]
 
 ==== Requirements Class Citation GeoKeys
 The _GTCitationGeoKey_ is provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file.
-The _GeodeticCitationGeoKey_,
-_ProjectedCitationGeoKey_ and _VerticalCitationGeoKey_ are used to describe Model CRS elements through ASCII free text.
+The _GeodeticCitationGeoKey_, _ProjectedCitationGeoKey_ and _VerticalCitationGeoKey_
+are used to describe Model CRS elements through ASCII free text.
 A citation may be included with a CRS identified through the GeoTIFF CRS register
 (<<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>).
 A citation is mandatory for a user-defined CRSs and CRS objects (<<Requirements for definition of user-defined Model CRS>>).
@@ -200,6 +200,21 @@ The _GeodeticCitationGeoKey_, _ProjectedCitationGeoKey_ and _VerticalCitationGeo
 NOTE: In GeoTIFF 1.0 the GeodeticCitationGeoKey key was called GeogCitationGeoKey and the ProjectedCitationGeoKey key was called PCSCitationGeoKey.
 
 include::requirements/Citation_Keys/requirements_class_CitationGeoKeys.adoc[]
+
+==== Requirements Class TextDef GeoKeys
+The _GeodeticCRSTextDefGeoKey_, _GeodeticDatumTextDefGeoKey_, _EllipsoidTextDefGeoKey_, _PrimeMeridianTextDefGeoKey_,
+_ProjectedCRSTextDefGeoKey_, _ProjectionTextDefGeoKey_, _VerticalTextDefGeoKey_ and _VerticalDatumTextDefGeoKey_
+can be used to provide full CRS element definitions through ASCII free text.
+The definitions can be of the following forms:
+
+* **Type 1:** URL of the form `http://www.opengis.net/def/crs/{authority}/{version}/{code}`.
+* **Type 2:** Well-Known Text (WKT) as defined by ISO 19162:2019.
+
+The type number is specified in the
+_GeodeticCRSGeoKey_, _GeodeticDatumGeoKey_, _EllipsoidGeoKey_, _PrimeMeridianGeoKey_,
+_ProjectedCRSGeoKey_, _ProjectionGeoKey_, _VerticalGeoKey_ or _VerticalDatumGeoKey_.
+
+include::requirements/Citation_Keys/requirements_class_TextDefGeoKeys.adoc[]
 
 === Requirements for definition of user-defined Model CRS
 
