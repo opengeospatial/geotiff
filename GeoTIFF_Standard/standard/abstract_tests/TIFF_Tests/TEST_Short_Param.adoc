@@ -12,7 +12,7 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryValueOffset
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoShortParams.Criteria
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoShortParams.Location
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GTModelTypeGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GTRasterTypeGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey

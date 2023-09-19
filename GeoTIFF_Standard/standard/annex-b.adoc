@@ -325,9 +325,11 @@ but if needed the size of a model sphere may be defined by specifying identical 
 ===== Prime Meridian
 The coordinate axes of the system referencing points on an ellipsoid are called latitude and longitude.
 More precisely, geodetic latitude and longitude are required in this GeoTIFF standard.
+Spherical latitude and longitude may also be used for geocentric CRS.
 A discussion of the several other types of latitude and longitude is beyond the scope of this document as they are not required for conventional georeferencing.
 
 Geodetic latitude is defined to be the angle subtended with the ellipsoid's equatorial plane by a perpendicular through the surface of the ellipsoid from a point.
+Spherical latitude is defined to be the angle subtended with the same plane but by a line from the point to the ellipsoid's center.
 Latitude is positive if north of the equator, negative if south.
 
 Geodetic longitude is defined to be the angle measured about the minor (polar) axis of the ellipsoid from a prime meridian to the meridian through a point,
@@ -398,7 +400,9 @@ The following subtypes of Model coordinate reference system (CRS) are recognized
 
 * Geographic 2D;
 
-* Geocentric;
+* Geocentric 2D (spherical);
+
+* Geocentric 3D (Cartesian);
 
 * Projected ('map grid (2D)'); and
 
@@ -508,8 +512,15 @@ For a user-defined geographic 2D CRS the user is expected to provide:
 **  user-defined length unit name (through the _GeodeticCitationGeoKey_) and
     scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_).
 
-===== User-defined geocentric CRS
-For a user-defined geocentric CRS the user is expected to provide:
+===== User-defined geocentric 2D (spherical) CRS
+For a user-defined geocentric CRS associated to a two-dimensional spherical coordinate system,
+the user is expected to provide the same GeoKeys than above geographic case.
+The geocentric case is distinguished from the geographic case by the
+_ModelType_ GeoKey value, which is 5 instead of 3.
+
+===== User-defined geocentric 3D (Cartesian) CRS
+For a user-defined geocentric CRS associated to a three-dimensional Cartesian coordinate system,
+the user is expected to provide:
 
 *   geocentric coordinate reference system name (through the _GeodeticCitationGeoKey_);
 

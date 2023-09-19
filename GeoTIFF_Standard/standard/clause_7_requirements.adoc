@@ -103,7 +103,9 @@ This GeoKey defines the type of Model coordinate reference system used, to which
 
 * Model CRS is a Geographic 2D CRS;
 
-* Model CRS is a Geocentric CRS;
+* Model CRS is a Geocentric 2D (spherical) CRS;
+
+* Model CRS is a Geocentric 3D (Cartesian) CRS;
 
 * Model CRS is a Projected CRS; and
 
@@ -223,6 +225,7 @@ or to indicate that the unit is user-defined.
 The *GeogAngularUnitsGeoKey* key is used to specify the angular unit for:
 
 * the axes in user-defined geographic 2D CRSs;
+* the axes in user-defined geocentric 2D (spherical) CRSs;
 * the horizontal axes in user-defined geographic 3D CRSs;
 * the longitude from the reference meridian in user-defined prime meridians; and
 * user-defined map projection parameters that are angles.
