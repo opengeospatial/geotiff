@@ -1,7 +1,7 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 19.0: PrimeMeridianGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/PrimeMeridianGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.1 {set:cellbgcolor:#CACCCE}
@@ -29,8 +29,8 @@ NOTE: In GeoTIFF v1.0 the range was 8000-8999
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey.userdefined +
-_If the PrimeMeridianGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, and PrimeMeridianLongGeoKey SHALL be populated_
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/PrimeMeridianGeoKey.userdefined +
+_If the PrimeMeridianGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey and PrimeMeridianLongGeoKey SHALL be populated_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.6 {set:cellbgcolor:#CACCCE}

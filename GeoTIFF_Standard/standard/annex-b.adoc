@@ -490,6 +490,8 @@ For a user-defined geographic 2D CRS the user is expected to provide:
 
 *** the geodetic datum name (through the _GeodeticCitationGeoKey_),
 
+*** if different than Earth, the celestial body name (through the _CelestialBodyGeoKey_),
+
 *** the ellipsoid (through the _EllipsoidGeoKey_, see <<User-defined ellipsoid>>), and
 
 *** the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>);
@@ -520,6 +522,8 @@ For a user-defined geocentric CRS the user is expected to provide:
 **  user-defined geodetic datum name and other defining information:
 
 *** the geodetic datum name (through the _GeodeticCitationGeoKey_),
+
+*** if different than Earth, the celestial body name (through the _CelestialBodyGeoKey_),
 
 *** the ellipsoid (through the _EllipsoidGeoKey_, see <<User-defined ellipsoid>>), and
 

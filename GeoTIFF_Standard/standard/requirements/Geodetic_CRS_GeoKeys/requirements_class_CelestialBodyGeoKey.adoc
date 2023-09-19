@@ -1,0 +1,16 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class TBD.0: CelestialBodyGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CelestialBodyGeoKey
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement TBD.1 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CelestialBodyGeoKey.ID +
+_The CelestialBodyGeoKey SHALL have ID = 2063_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement TBD.2 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CelestialBodyGeoKey.type +
+_The CelestialBodyGeoKey SHALL have type = ASCII_
+{set:cellbgcolor:#FFFFFF}
+|===

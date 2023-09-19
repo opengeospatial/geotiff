@@ -13,6 +13,7 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.count
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/CitationGeoKeys
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CelestialBodyGeoKey
 |===
 
 *Purpose:* Verify ASCII parameters
@@ -69,6 +70,7 @@
 ^| Requirements Class
 ^| 1026 <| CitationGeoKeys (GTCitationGeoKey)
 ^| 2049 <| CitationGeoKeys (GeodeticCitationGeoKey)
+^| 2063 <| CitationGeoKeys (CelestialBodyGeoKey)
 ^| 3073 <| CitationGeoKeys (ProjectedCitationGeoKey)
 ^| 4097 <| CitationGeoKeys (VerticalCitationGeoKey)
 |===

@@ -15,8 +15,8 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GTRasterTypeGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GeodeticDatumGeoKey
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/PrimeMeridianGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/UnitsGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidGeoKey
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectedCRSGeoKey
