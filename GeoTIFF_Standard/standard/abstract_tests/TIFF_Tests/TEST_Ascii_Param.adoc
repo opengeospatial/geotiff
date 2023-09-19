@@ -12,7 +12,7 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoKeyDirectoryTag.keyEntryValueOffset
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.count
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/CitationGeoKeys
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CitationGeoKeys
 |===
 
 *Purpose:* Verify ASCII parameters

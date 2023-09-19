@@ -1,7 +1,7 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 15.0: CitationGeoKeys* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/CitationGeoKeys
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CitationGeoKeys
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 15.1 {set:cellbgcolor:#CACCCE}
@@ -18,5 +18,24 @@ _The VerticalCitationGeoKey SHALL have ID = 4097_
 |Requirement 15.2 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/CitationGeoKeys.type +
 _The CitationGeoKeys SHALL have type = ASCII_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement 15.3 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CitationGeoKeys.name.pair +
+_The CitationGeoKeys MAY contain multiple names as key-value pairs,
+with each pair separated by the `|` character and, for any given pair,
+the key separated from the value by the `=` character._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement 15.4 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CitationGeoKeys.name.key +
+_If multi-names encoding is used, then the keys SHALL be one of the following:
+`GCS Name`, `Datum`, `Ellipsoid`, `Primem`, `AUnits`._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement 15.5 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/CitationGeoKeys.alias +
+_If multi-names encoding is used and the same key is used more than once,
+then all occurrences after the first one SHOULD be aliases._
 {set:cellbgcolor:#FFFFFF}
 |===
