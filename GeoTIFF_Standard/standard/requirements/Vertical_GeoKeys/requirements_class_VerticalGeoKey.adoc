@@ -14,9 +14,16 @@ _The VerticalGeoKey SHALL have ID = 4096_
 _The VerticalGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
+|Requirement TBD {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/VerticalGeoKey.authority
+_If the VerticalGeoKey value is 1 (authority code specified by URL)
+or 2 (full definition provided by WKT 2),
+then the VerticalTextDefGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
 |Requirement 14.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/VerticalGeoKey.reserved +
-_VerticalGeoKey values in the range 1-1023 SHALL be reserved_
+_VerticalGeoKey values in the range 3-1023 SHALL be reserved_
 
 NOTE: In GeoTIFF v1.0 the reserved ranges were 0001-4999 and 6000-32766.
 {set:cellbgcolor:#FFFFFF}

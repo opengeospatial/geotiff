@@ -1,7 +1,7 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 18.0: GeodeticDatumGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GeodeticDatumGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 18.1 {set:cellbgcolor:#CACCCE}
@@ -14,9 +14,16 @@ _The GeodeticDatumGeoKey SHALL have ID = 2050_
 _The GeodeticDatumGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
+|Requirement TBD {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GeodeticDatumGeoKey.authority
+_If the GeodeticDatumGeoKey value is 1 (authority code specified by URL)
+or 2 (full definition provided by WKT 2),
+then the GeodeticDatumTextDefGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
 |Requirement 18.3 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey.reserved +
-_GeodeticDatumGeoKey values in the range 1-1023 SHALL be reserved._
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GeodeticDatumGeoKey.reserved +
+_GeodeticDatumGeoKey values in the range 3-1023 SHALL be reserved._
 
 NOTE: In GeoTIFF v1.0 the reserved ranges were 1001-5999 and 7000-32766.
 {set:cellbgcolor:#FFFFFF}

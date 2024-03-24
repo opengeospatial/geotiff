@@ -99,6 +99,26 @@ __Table E.1 - Summary of GeoKey IDs and names __
 <| Reserved (GeogTOWGS84GeoKey used by GDAL)
 <|
 <| Reserved
+^| 2063
+^| Ascii
+<|
+<|
+<| GeodeticCRSTextDefGeoKey
+^| 2064
+^| Ascii
+<|
+<|
+<| GeodeticDatumTextDefGeoKey
+^| 2065
+^| Ascii
+<|
+<|
+<| EllipsoidTextDefGeoKey
+^| 2066
+^| Ascii
+<|
+<|
+<| PrimeMeridianTextDefGeoKey
 5+<| [underline]#Projected CRS Parameter Keys#
 ^| [underline]#_2060_#
 ^| Short
@@ -230,6 +250,16 @@ __Table E.1 - Summary of GeoKey IDs and names __
 <| ProjStraightVertPoleLongGeoKey
 <|
 <| (as GeoTIFF v1.0)
+^| 3097
+^| Ascii
+<|
+<|
+<| ProjectedCRSTextDefGeoKey
+^| 3098
+^| Ascii
+<|
+<|
+<| ProjectionTextDefGeoKey
 5+<| [underline]#Vertical CRS Parameter Keys (4096-5119)#
 ^| 4096
 ^| Short
@@ -251,6 +281,16 @@ __Table E.1 - Summary of GeoKey IDs and names __
 <| VerticalUnitsGeoKey
 <|
 <| (as GeoTIFF v1.0)
+^| 4100
+^| Ascii
+<|
+<|
+<| VerticalTextDefGeoKey
+^| 4101
+^| Ascii
+<|
+<|
+<| VerticalDatumTextDefGeoKey
 5+<| [underline]#Dynamic CRS Parameter Keys#
 ^| 5120
 ^| Double

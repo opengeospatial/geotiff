@@ -1,7 +1,7 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 19.0: PrimeMeridianGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/PrimeMeridianGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 19.1 {set:cellbgcolor:#CACCCE}
@@ -14,9 +14,16 @@ _The PrimeMeridianGeoKey SHALL have ID = 2051_
 _The PrimeMeridianGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
+|Requirement TBD {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/PrimeMeridianGeoKey.authority
+_If the PrimeMeridianGeoKey value is 1 (authority code specified by URL)
+or 2 (full definition provided by WKT 2),
+then the PrimeMeridianTextDefGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
 |Requirement 19.3{set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/PrimeMeridianGeoKey.reserved +
-_PrimeMeridianGeoKey values in the range 1-1023 SHALL be reserved_
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/PrimeMeridianGeoKey.reserved +
+_PrimeMeridianGeoKey values in the range 3-1023 SHALL be reserved_
 
 NOTE: In GeoTIFF v1.0 the range was 101-7999 and 9000-32766
 {set:cellbgcolor:#FFFFFF}

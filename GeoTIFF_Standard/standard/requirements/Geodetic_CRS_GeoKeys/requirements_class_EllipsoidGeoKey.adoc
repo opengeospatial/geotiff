@@ -1,7 +1,7 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 21.0: EllipsoidGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EllipsoidGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 21.1 {set:cellbgcolor:#CACCCE}
@@ -14,9 +14,16 @@ _The EllipsoidGeoKey SHALL have ID = 2056_
 _The EllipsoidGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
+|Requirement TBD {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EllipsoidGeoKey.authority
+_If the EllipsoidGeoKey value is 1 (authority code specified by URL)
+or 2 (full definition provided by WKT 2),
+then the EllipsoidTextDefGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
 |Requirement 21.3 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/EllipsoidGeoKey.reserved
-_EllipsoidGeoKey values in the range 1-1023 SHALL be reserved_
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EllipsoidGeoKey.reserved
+_EllipsoidGeoKey values in the range 3-1023 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 21.4 {set:cellbgcolor:#CACCCE}

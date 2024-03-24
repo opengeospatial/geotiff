@@ -14,9 +14,16 @@ _The ProjectionGeoKey SHALL have ID = 3074_
 _The ProjectionGeoKey SHALL have type = SHORT_
 {set:cellbgcolor:#FFFFFF}
 
+|Requirement TBD {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/ProjectionGeoKey.authority
+_If the ProjectionGeoKey value is 1 (authority code specified by URL)
+or 2 (full definition provided by WKT 2),
+then the ProjectionTextDefGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
 |Requirement 26.3 {set:cellbgcolor:#CACCCE}
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.reserved
-_ProjectionGeoKey values in the range 1-1023 SHALL be reserved_
+_ProjectionGeoKey values in the range 3-1023 SHALL be reserved_
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 26.4 {set:cellbgcolor:#CACCCE}

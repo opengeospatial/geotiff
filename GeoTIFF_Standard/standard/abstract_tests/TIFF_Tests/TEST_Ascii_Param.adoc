@@ -13,6 +13,7 @@
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.ID
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GeoAsciiParamsTag.count
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/CitationGeoKeys
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/TextDefGeoKeys
 |===
 
 *Purpose:* Verify ASCII parameters
@@ -69,6 +70,14 @@
 ^| Requirements Class
 ^| 1026 <| CitationGeoKeys (GTCitationGeoKey)
 ^| 2049 <| CitationGeoKeys (GeodeticCitationGeoKey)
+^| 2063 <| TextDefGeoKeys  (GeodeticCRSTextDefGeoKey)
+^| 2064 <| TextDefGeoKeys  (GeodeticDatumTextDefGeoKey)
+^| 2065 <| TextDefGeoKeys  (EllipsoidTextDefGeoKey)
+^| 2066 <| TextDefGeoKeys  (PrimeMeridianTextDefGeoKey)
 ^| 3073 <| CitationGeoKeys (ProjectedCitationGeoKey)
+^| 3097 <| TextDefGeoKeys  (ProjectedCRSTextDefGeoKey)
+^| 3098 <| TextDefGeoKeys  (ProjectionTextDefGeoKey)
 ^| 4097 <| CitationGeoKeys (VerticalCitationGeoKey)
+^| 4100 <| TextDefGeoKeys  (VerticalTextDefGeoKey)
+^| 4101 <| TextDefGeoKeys  (VerticalDatumTextDefGeoKey)
 |===
