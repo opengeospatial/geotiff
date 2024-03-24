@@ -257,4 +257,40 @@ __Table E.1 - Summary of GeoKey IDs and names __
 <|
 <|
 <| CoordinateEpochGeoKey
+5+<| [underline]#Engineering CRS Parameter Keys (6144-7168)#
+^| 6144
+^| Short
+<|
+<|
+<| EngineeringCRSGeoKey
+^| 6145
+^| Ascii
+<|
+<|
+<| EngineeringCitationGeoKey
+^| 6146
+^| Short
+<|
+<|
+<| EngineeringDatumGeoKey
+^| 6147
+^| Short
+<|
+<|
+<| EngLinearUnits
+^| 6148
+^| Double
+<|
+<|
+<| EngLinearUnitSize
+^| 6149
+^| Short
+<|
+<|
+<| EngAngularUnits
+^| 6150
+^| Double
+<|
+<|
+<| EngAngularUnitSize
 |====

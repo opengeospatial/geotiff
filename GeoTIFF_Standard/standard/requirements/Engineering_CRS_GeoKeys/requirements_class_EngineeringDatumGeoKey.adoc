@@ -1,0 +1,36 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class TBD.0: EngineeringDatumGeoKey* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringDatumGeoKey
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement TBD.1 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringDatumGeoKey.ID +
+_The EngineeringDatumGeoKey SHALL have ID = 6146_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement TBD.2 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringDatumGeoKey.type +
+_The EngineeringDatumGeoKey SHALL have type = SHORT_
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement TBD.3 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringDatumGeoKey.reserved +
+_EngineeringDatumGeoKey values in the range 1-1023 SHALL be reserved._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement TBD.4 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringDatumGeoKey.EPSG +
+_EngineeringDatumGeoKey values in the range 1024-32766 SHALL be EPSG geodetic datum codes._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement TBD.5 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringDatumGeoKey.userdefined +
+_If the EngineeringDatumGeoKey value is 32767 (User-Defined) then the EngineeringCitationGeoKey SHALL be populated._
+{set:cellbgcolor:#FFFFFF}
+
+|Requirement TBD.6 {set:cellbgcolor:#CACCCE}
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/EngineeringDatumGeoKey.private +
+_EngineeringDatumGeoKey values in the range 32768-65535 SHALL be private_
+{set:cellbgcolor:#FFFFFF}
+|===
