@@ -426,34 +426,52 @@ In GeoTIFF, standard CRSs are identified through reference to an EPSG CRS code.
 This is sufficient to define the CRS component objects.
 Further information on EPSG codes is given in <<Requirements for definition of Model CRS (when Model is from GeoTIFF CRS register)>>.
 
-NOTE: This document removes the reference to the specific EPSG codes listed in the 1995 GeoTIFF v1.0 specification and replaces it by *allowing reference to any code in the EPSG Dataset*, including codes for any objects introduced into the EPSG Dataset after publication of this document.
+NOTE: This document removes the reference to the specific EPSG codes listed in the 1995 GeoTIFF v1.0 specification
+and replaces it by *allowing reference to any code in the EPSG Dataset*,
+including codes for any objects introduced into the EPSG Dataset after publication of this document.
 
 ==== User-defined Model Coordinate Reference Systems
 GeoTIFF attempts to allow Model CRSs that are not described in the standard CRS register to be defined through user-defined keys.
 However the provisions made are limited in that:
 
-* no provision was made for fully describing coordinate system; although axis units could be described, provision for describing axis order and positive direction was omitted; and
+* no provision was made for fully describing coordinate system;
+  although axis units could be described, provision for describing axis order and positive direction was omitted;
+  and
 
-* there is ambiguity in the provision for describing user-defined map projections. Codes for some common map projection methods and map projection parameters were provided, but neither the method nor the parameter were defined. Inferences may be made from the listed map projection method names and map projection parameter names, but ambiguity remains so interoperability is not guaranteed.
+* there is ambiguity in the provision for describing user-defined map projections.
+  Codes for some common map projection methods and map projection parameters were provided,
+  but neither the method nor the parameter were defined.
+  Inferences may be made from the listed map projection method names and map projection parameter names,
+  but ambiguity remains so interoperability is not guaranteed.
 
 In practice, user-defined Model CRS definition is limited to the following cases.
 
-i)	A user-defined projected CRS which uses a base geographic CRS and a map projection that are both individually available from the GeoTIFF CRS register but, in the register, not associated together. EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.EPSG, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.EPSG
+i)   A user-defined projected CRS which uses a base geographic CRS and a map projection that are both
+     individually available from the GeoTIFF CRS register but, in the register, not associated together.
+     EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.EPSG,
+     EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.EPSG.
 
-ii)	A user-defined projected CRS which uses a user-defined geographic CRS with a map projection that is available from the GeoTIFF CRS register.
-GeogCRS needs defining as in Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.userdefined, EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.EPSG
+ii)  A user-defined projected CRS which uses a user-defined geographic CRS
+     with a map projection that is available from the GeoTIFF CRS register.
+     GeogCRS needs defining as in Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.userdefined,
+     EPSG projection code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.EPSG.
 
-iii)	A user-defined geographic CRS available from the GeoTIFF CRS register and a map projection not in EPSG register. EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.EPSG, projection needs defining through Requirement http://www.opengis.net/spec/req/GeoTIFF/1.1/ProjectionGeoKey.userdefined using the v1.0 provisions (use the names in annex C).
+iii) A user-defined geographic CRS available from the GeoTIFF CRS register and a map projection not in EPSG register.
+     EPSG geogCRS code needs citing through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticCRSGeoKey.EPSG,
+     projection needs defining through Requirement http://www.opengis.net/spec/req/GeoTIFF/1.1/ProjectionGeoKey.userdefined
+     using the v1.0 provisions (use the names in annex C).
 
- iv) Neither base GeogCRS or map projection is in EPSG. GeogCRS needs defining, projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.userdefined using the v1.0 provisions (the names in annex C).
+ iv) Neither base GeogCRS or map projection is in EPSG. GeogCRS needs defining,
+     projection needs defining through Requirement http://www.opengis.net/spec/GeoTIFF/1.1/req/ProjectionGeoKey.userdefined
+     using the v1.0 provisions (the names in annex C).
 
 For the transformation from raster space to model space,
 some implicit convention is made about axis positive direction and axis order.
 It is assumed that:
 
-*	projected CRS axes are easting, northing;
+* projected CRS axes are easting, northing;
 
-*	geographic 2D CRS axes are longitude east, latitude north; and
+* geographic 2D CRS axes are longitude east, latitude north; and
 
 * vertical CRS axis is height up.
 
@@ -462,82 +480,92 @@ NOTE: Users must note that this GeoTIFF practice is not in line with ISO TC211 a
 ===== User-defined geographic 2D CRS
 For a user-defined geographic 2D CRS the user is expected to provide:
 
-*	geocentric coordinate reference system name (through the _GeodeticCitationGeoKey_);
+*   geocentric coordinate reference system name (through the _GeodeticCitationGeoKey_);
 
-*	geodetic datum through the _GeodeticDatumGeoKey_, either:
+*   geodetic datum through the _GeodeticDatumGeoKey_, either:
 
-**	the geodetic datum code (if available through standard EPSG code), or
+**  the geodetic datum code (if available through standard EPSG code), or
 
-**	user-defined geodetic datum name and other defining information:
+**  user-defined geodetic datum name and other defining information:
 
-***	the geodetic datum name (through the _GeodeticCitationGeoKey_),
+*** the geodetic datum name (through the _GeodeticCitationGeoKey_),
 
-***	the ellipsoid (through the _EllipsoidGeoKey_, see <<User-defined ellipsoid>>), and
+*** if different than Earth, the celestial body name (through the _CelestialBodyGeoKey_),
 
-***	the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>);
+*** the ellipsoid (through the _EllipsoidGeoKey_, see <<User-defined ellipsoid>>), and
 
-*	axis unit through the _GeogAngularUnitsGeoKey_, either:
+*** the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>);
 
-**	angle unit code (if available through standard EPSG code), or
+*   axis unit through the _GeogAngularUnitsGeoKey_, either:
 
-**	user-defined angle unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of radian (through the _GeogAngularUnitSizeGeoKey_); and
+**  angle unit code (if available through standard EPSG code), or
 
-*	if the CRS uses a user-defined ellipsoid, the ellipsoid axis unit through the _GeogLinearUnitsGeoKey_, either:
+**  user-defined angle unit name (through the _GeodeticCitationGeoKey_) and
+    scaling from SI base unit of radian (through the _GeogAngularUnitSizeGeoKey_); and
 
-**	length unit code (if available through standard EPSG code), or
+*   if the CRS uses a user-defined ellipsoid, the ellipsoid axis unit through the _GeogLinearUnitsGeoKey_, either:
 
-**	user-defined length unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_).
+**  length unit code (if available through standard EPSG code), or
+
+**  user-defined length unit name (through the _GeodeticCitationGeoKey_) and
+    scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_).
 
 ===== User-defined geocentric CRS
 For a user-defined geocentric CRS the user is expected to provide:
 
-*	geocentric coordinate reference system name (through the _GeodeticCitationGeoKey_);
+*   geocentric coordinate reference system name (through the _GeodeticCitationGeoKey_);
 
-*	geodetic datum through the _GeodeticDatumGeoKey_, either:
+*   geodetic datum through the _GeodeticDatumGeoKey_, either:
 
-**	the geodetic datum code (if available through standard EPSG code), or
+**  the geodetic datum code (if available through standard EPSG code), or
 
-**	user-defined geodetic datum name and other defining information:
+**  user-defined geodetic datum name and other defining information:
 
-***	the geodetic datum name (through the _GeodeticCitationGeoKey_),
+*** the geodetic datum name (through the _GeodeticCitationGeoKey_),
 
-***	the ellipsoid (through the _EllipsoidGeoKey_, see <<User-defined ellipsoid>>), and
+*** if different than Earth, the celestial body name (through the _CelestialBodyGeoKey_),
 
-***	the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>);
+*** the ellipsoid (through the _EllipsoidGeoKey_, see <<User-defined ellipsoid>>), and
 
-*	axis unit through the _GeogLinearUnitsGeoKey_, either:
+*** the prime meridian (through the _PrimeMeridianGeoKey_, see <<User-defined prime meridian>>);
 
-**	length unit code (if available through standard EPSG code), or
+*   axis unit through the _GeogLinearUnitsGeoKey_, either:
 
-**	user-defined length unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_); and
+**  length unit code (if available through standard EPSG code), or
 
-*	if the CRS uses a user-defined prime meridian, prime meridian Greenwich longitude unit through the _GeogAngularUnitsGeoKey_, either:
+**  user-defined length unit name (through the _GeodeticCitationGeoKey_) and
+    scaling from SI base unit of meter (through the _GeogLinearUnitSizeGeoKey_); and
 
-**	angle unit code (if available through standard EPSG code), or
+*   if the CRS uses a user-defined prime meridian, prime meridian Greenwich longitude unit through the _GeogAngularUnitsGeoKey_, either:
 
-**	user-defined angle unit name (through the _GeodeticCitationGeoKey_) and scaling from SI base unit of radian (through the _GeogAngularUnitSizeGeoKey_).
+**  angle unit code (if available through standard EPSG code), or
+
+**  user-defined angle unit name (through the _GeodeticCitationGeoKey_) and
+    scaling from SI base unit of radian (through the _GeogAngularUnitSizeGeoKey_).
 
 ===== User-defined ellipsoid
 For any user-defined geocentric, geographic 3D or geographic 2D CRS an ellipsoid needs to be identified.
 The user is expected to provide:
 
-*	ellipsoid through the _EllipsoidGeoKey_, either:
+*   ellipsoid through the _EllipsoidGeoKey_, either:
 
-**	the ellipsoid code (if available through standard EPSG code), or
+**  the ellipsoid code (if available through standard EPSG code), or
 
-**	the user-defined ellipsoid name and other defining information:
+**  the user-defined ellipsoid name and other defining information:
 
-***	the ellipsoid name (through the _GeodeticCitationGeoKey_),
+*** the ellipsoid name (through the _GeodeticCitationGeoKey_),
 
-***	the ellipsoid semi-major axis (through the _EllipsoidSemiMajorAxisGeoKey_),
+*** the ellipsoid semi-major axis (through the _EllipsoidSemiMajorAxisGeoKey_),
 
-***	either the ellipsoid semi-minor axis (through the _EllipsoidSemiMinorAxisGeoKey_) or the ellipsoid inverse flattening (through the _EllipsoidInvFlatteningGeoKey_),
+*** either the ellipsoid semi-minor axis (through the _EllipsoidSemiMinorAxisGeoKey_) or
+    the ellipsoid inverse flattening (through the _EllipsoidInvFlatteningGeoKey_),
 
-***	The units for the ellipsoid axis or axes;
+*** The units for the ellipsoid axis or axes;
 
-*	For geocentric the ellipsoid axis or axes values must given in the length unit defined through the _GeogLinearUnitsGeoKey_ already required (see <<User-defined geocentric CRS>>); and
+*   For geocentric the ellipsoid axis or axes values must given in the length unit defined through
+    the _GeogLinearUnitsGeoKey_ already required (see <<User-defined geocentric CRS>>); and
 
-*	For geographic 2D CRSs, then a _GeogLinearUnitsGeoKey_ is additionally required.
+*   For geographic 2D CRSs, then a _GeogLinearUnitsGeoKey_ is additionally required.
 
 ===== User-defined prime meridian
 For any user-defined geocentric,
@@ -545,75 +573,84 @@ geographic 3D or geographic 2D CRS a prime meridian needs to be identified whene
 (If no prime meridian is identified, it should be assumed to be Greenwich).
 The user is expected to provide:
 
-*	Prime meridian through the _PrimeMeridianGeoKey_, either:
+*   prime meridian through the _PrimeMeridianGeoKey_, either:
 
-**	the prime meridian code (if available through standard EPSG code), or
+**  the prime meridian code (if available through standard EPSG code), or
 
-**	the user-defined prime meridian name and other defining information:
+**  the user-defined prime meridian name and other defining information:
 
-***	the prime meridian name (through the _GeodeticCitationGeoKey_),
+*** the prime meridian name (through the _GeodeticCitationGeoKey_),
 
-***	the prime meridian longitude (through the _PrimeMeridianLongitudeGeoKey_),
+*** the prime meridian longitude (through the _PrimeMeridianLongitudeGeoKey_),
 
-***	the units for the prime meridian longitude;
+*** the units for the prime meridian longitude;
 
-*	For geographic CRSs the prime meridian longitude value must given in the angle unit defined through the _GeogAngularUnitsGeoKey_ already required (see <<User-defined geographic 2D CRS>>); and
+*   For geographic CRSs the prime meridian longitude value must given in the angle unit defined
+    through the _GeogAngularUnitsGeoKey_ already required (see <<User-defined geographic 2D CRS>>); and
 
-*	For geocentric CRSs, then a _GeogAngularUnitsGeoKey_ is additionally required.
+*   For geocentric CRSs, then a _GeogAngularUnitsGeoKey_ is additionally required.
 
 ===== User-defined Projected Coordinate Reference Systems
 For a user-defined projected CRS the user is expected to provide:
 
-*	projected coordinate reference system name (through _ProjectedCitationGeoKey_);
+*   projected coordinate reference system name (through _ProjectedCitationGeoKey_);
 
-*	base geographic CRS (either standard EPSG code or user-defined, see <<User-defined geographic 2D CRS>>);
+*   base geographic CRS (either standard EPSG code or user-defined, see <<User-defined geographic 2D CRS>>);
 
-*	map projection through the _ProjectionGeoKey_, either:
+*   map projection through the _ProjectionGeoKey_, either:
 
-**	map projection code (if available through standard EPSG code), or
+**  map projection code (if available through standard EPSG code), or
 
-**	user-defined map projection (see below); and
+**  user-defined map projection (see below); and
 
-*	axis unit through _ProjLinearUnitsGeoKey_, either:
+*   axis unit through _ProjLinearUnitsGeoKey_, either:
 
-**	length unit code (if available through standard EPSG code), or
+**  length unit code (if available through standard EPSG code), or
 
-**	user-defined length unit name (through the _ProjectedCitationGeoKey_) and scaling from SI base unit of meter (through the _ProjLinearUnitSizeGeoKey_).
+**  user-defined length unit name (through the _ProjectedCitationGeoKey_) and
+    scaling from SI base unit of meter (through the _ProjLinearUnitSizeGeoKey_).
 
 ===== User-defined map projection
 For a user-defined map projection the user is expected to provide:
 
-*	map projection name (through _ProjectedCitationGeoKey_);
+*   map projection name (through _ProjectedCitationGeoKey_);
 
-*	map projection method (through _ProjMethodGeoKey_);
+*   map projection method (through _ProjMethodGeoKey_);
 
-*	map projection parameter values (using a set of keys appropriate to the map projection method):
+*   map projection parameter values (using a set of keys appropriate to the map projection method):
 
-**	For map projection parameters that are lengths the parameter value needs to be expressed in the units defined through the _ProjLinearUnitsGeoKey_, and
+**  For map projection parameters that are lengths the parameter value needs
+    to be expressed in the units defined through the _ProjLinearUnitsGeoKey_, and
 
-**	For map projection parameters that are angles the parameter value needs to be expressed in the units defined through the _GeogAngularUnitsGeoKey_, which is required in the base geographic CRS description, except for azimuths when the value needs to be expressed in the units defined through a _GeogAzimuthUnitsGeoKey_; and
+**  For map projection parameters that are angles the parameter value needs to be expressed in the units
+    defined through the _GeogAngularUnitsGeoKey_, which is required in the base geographic CRS description,
+    except for azimuths when the value needs to be expressed in the units defined through a _GeogAzimuthUnitsGeoKey_;
+    and
 
-*	if the map projection method requires a parameter that is an azimuth, the azimuth unit through a _GeogAzimuthUnitsGeoKey_.
+*   if the map projection method requires a parameter that is an azimuth,
+    the azimuth unit through a _GeogAzimuthUnitsGeoKey_.
 
 ===== User-defined Vertical Coordinate Reference Systems
 For a user-defined vertical CRS the user is expected to provide:
 
-* vertical coordinate reference system name (through _VerticalCitationGeoKey_);
+*   vertical coordinate reference system name (through _VerticalCitationGeoKey_);
 
-*	user-defined vertical datum through _VerticalDatumGeoKey_, either:
+*   user-defined vertical datum through _VerticalDatumGeoKey_, either:
 
-**	the vertical datum code (if available through standard EPSG code), or
+**  the vertical datum code (if available through standard EPSG code), or
 
-**	the vertical datum name and other defining information (through the _VerticalCitationGeoKey_); and
+**  the vertical datum name and other defining information (through the _VerticalCitationGeoKey_); and
 
-*	vertical axis unit through _VerticalUnitsGeoKey_, either:
+*   vertical axis unit through _VerticalUnitsGeoKey_, either:
 
-**	linear unit code (if available through standard EPSG code), or
+**  linear unit code (if available through standard EPSG code), or
 
-**	linear unit name (through _VerticalCitationGeoKey_) and scaling from SI base unit of meter (through _GeogLinearUnitSizeGeoKey_).
+**  linear unit name (through _VerticalCitationGeoKey_) and
+    scaling from SI base unit of meter (through _GeogLinearUnitSizeGeoKey_).
 
 === Model CRS Reference Parameters
-Most of the GeoTIFF standard definitions for model ('real world') coordinate reference systems and their component elements are based on the hierarchical system developed for the EPSG Geodetic Parameter Dataset ('EPSG Dataset').
+Most of the GeoTIFF standard definitions for model ('real world') coordinate reference systems and their component
+elements are based on the hierarchical system developed for the EPSG Geodetic Parameter Dataset ('EPSG Dataset').
 The complete set of EPSG definitions is available at http://www.epsg-registry.org.
 
 The EPSG Dataset is maintained by the Geodesy Subcommittee of the International Association of Oil and Gas Producers (IOGP).
@@ -623,8 +660,7 @@ Some of these objects themselves are composed objects and attributes, in a neste
 Each release of new or revised data is indicated by the EPSG Dataset version number.
 Since 1999 (from EPSG Dataset v5.0 and later) EPSG policy has been to never remove any invalid data but instead to leave it in the Dataset with its status set to deprecated.
 Deprecated data contains a significant error (significant defined as having impact on the result of applying a transformation or conversion) and is invalid.
-As such,
-since 1999 reference to the version of the EPSG Dataset to qualify codes of entities within the Dataset has been unnecessary.
+As such, since 1999 reference to the version of the EPSG Dataset to qualify codes of entities within the Dataset has been unnecessary.
 Using EPSG Dataset versions 5.0 and 9.3 as examples, urn:ogc:def:crs:EPSG:5.0:4326 and urn:ogc:def:crs:EPSG:9.3:4326 and urn:ogc:def:crs:EPSG::4326 reference the same object.
 The terms of use of the EPSG Dataset are given at http://www.epsg.org/Termsofuse.aspx.
 
@@ -632,11 +668,23 @@ The terms of use of the EPSG Dataset are given at http://www.epsg.org/Termsofuse
 Within the EPSG Dataset each object has a code.
 There have been three generations of coding.
 
-i)	In v1.x of the publicly-available EPSG Dataset (1994-1996, published by the Petrotechnical Open Software Corporation, POSC), codes were alphanumeric. The initial letter indicated the object type, and objects within each type were then assigned sequential numbers.
+i)   In v1.x of the publicly-available EPSG Dataset (1994-1996, published by the Petrotechnical Open Software Corporation, POSC), codes were alphanumeric.
+     The initial letter indicated the object type, and objects within each type were then assigned sequential numbers.
 
-ii)	With the introduction of GeoTIFF v1.0, EPSG Dataset v2.1 object codes were changed to integer values in the range 1024 through 32766. This overall code range was divided into non-overlapping sub-ranges, with one sub-range range for each object type. At that time, all EPSG object codes were unique. The GeoTIFF v1.0 specification was written at this time, and the EPSG code ranges for object types were written into the GeoTIFF v1.0 specification.
+ii)  With the introduction of GeoTIFF v1.0, EPSG Dataset v2.1 object codes were changed to integer values in the range 1024 through 32766.
+     This overall code range was divided into non-overlapping sub-ranges, with one sub-range range for each object type.
+     At that time, all EPSG object codes were unique. The GeoTIFF v1.0 specification was written at this time,
+     and the EPSG code ranges for object types were written into the GeoTIFF v1.0 specification.
 
-iii)	However as the number of items in the EPSG Dataset grew, some of the object code sub-ranges became fully assigned. The unique code system broke down. Since 2006, all object types have been separately assigned codes within the range 1024 through 32766. Within each object type codes remain unique, but one code value may be used for several object types. For example, code 4326 is used for both a CRS and for a geographic extent (in EPSG called 'area'). Codes at and just above the lower end of the range 1024 through 32766 may be used by numerous object types: for example by the year 2018 code 1026 has been assigned to 10 different object types. EPSG codes therefore are only unique when the object type is disclosed. urn:ogc:def:EPSG::4326 is ambiguous, urn:ogc:def:crs:EPSG::4326 and urn:ogc:def:area:EPSG::4326 are unambiguous.
+iii) However as the number of items in the EPSG Dataset grew, some of the object code sub-ranges became fully assigned.
+     The unique code system broke down.
+     Since 2006, all object types have been separately assigned codes within the range 1024 through 32766.
+     Within each object type codes remain unique, but one code value may be used for several object types.
+     For example, code 4326 is used for both a CRS and for a geographic extent (in EPSG called 'area').
+     Codes at and just above the lower end of the range 1024 through 32766 may be used by numerous object types:
+     for example by the year 2018 code 1026 has been assigned to 10 different object types.
+     EPSG codes therefore are only unique when the object type is disclosed.
+     urn:ogc:def:EPSG::4326 is ambiguous, urn:ogc:def:crs:EPSG::4326 and urn:ogc:def:area:EPSG::4326 are unambiguous.
 
 The GeoTIFF v1.0 specification refers to "obsolete EPSG/POSC codes." These refer to the numeric part of the alphanumeric coding in (i) above.
 These values had been used in some GeoTIFF v0.x files and for backward compatibility with those earlier files GeoTIFF v1.0 retained references to them.
@@ -644,7 +692,8 @@ As all of these alphanumeric codes were changed to the integer coding in (ii) ab
 reference to these obsolete codes should now be unnecessary.
 In effect, for model CRS GeoKeys the obsolete code range may be treated as a reserved code range.
 
-Note: 'EPSG/POSC obsolete codes' refers specifically to the coding in generation (i) above, and should not be confused with codes from generations (ii) and (iii) which have been given the status of 'deprecated.'
+Note: 'EPSG/POSC obsolete codes' refers specifically to the coding in generation (i) above,
+and should not be confused with codes from generations (ii) and (iii) which have been given the status of 'deprecated.'
 
 A reference to an EPSG coordinate reference system code is sufficient for a complete definition:
 it implies use of the CRS components (datum, ellipsoid, map projection,

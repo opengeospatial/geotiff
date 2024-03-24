@@ -23,15 +23,15 @@ _The GTModelTypeGeoKey SHALL have type = SHORT_
 |http://www.opengis.net/spec/GeoTIFF/1.1/req/GTModelTypeGeoKey.value +
 _The GTModelTypeGeoKey value SHALL be:_
 
-*	0 to indicate that the Model CRS in undefined or unknown; or
+* 0 to indicate that the Model CRS in undefined or unknown; or
 
-*	1 to indicate that the Model CRS is a 2D projected coordinate reference system, indicated by the value of the ProjectedCRSGeoKey; or
+* 1 to indicate that the Model CRS is a 2D projected coordinate reference system, indicated by the value of the ProjectedCRSGeoKey; or
 
-*	2 to indicate that the Model CRS is a geographic 2D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
+* 2 to indicate that the Model CRS is a geographic 2D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
 
-*	3 to indicate that the Model CRS is a geocentric Cartesian 3D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
+* 3 to indicate that the Model CRS is a geocentric Cartesian 3D coordinate reference system, indicated by the value of the GeodeticCRSGeoKey; or
 
-*	32767 to indicate that the Model CRS type is user-defined.
+* 32767 to indicate that the Model CRS type is user-defined.
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 8.5 {set:cellbgcolor:#CACCCE}

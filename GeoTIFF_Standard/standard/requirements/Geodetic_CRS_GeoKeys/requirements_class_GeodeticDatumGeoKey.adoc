@@ -1,7 +1,7 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class 18.0: GeodeticDatumGeoKey* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey
+2+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GeodeticDatumGeoKey
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 18.1 {set:cellbgcolor:#CACCCE}
@@ -29,8 +29,9 @@ NOTE: In GeoTIFF v1.0 the range was 6000-6999. Several values in this range have
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 18.5 {set:cellbgcolor:#CACCCE}
-|http://www.opengis.net/spec/GeoTIFF/1.1/req/GeodeticDatumGeoKey.userdefined +
-_If the GeodeticDatumGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey SHALL be populated._
+|http://www.opengis.net/spec/GeoTIFF/1.2/req/GeodeticDatumGeoKey.userdefined +
+_If the GeodeticDatumGeoKey value is 32767 (User-Defined) then the GeodeticCitationGeoKey, PrimeMeridianGeoKey and EllipsoidGeoKey SHALL be populated
+and the CelestialBodyGeoKey SHOULD be populated if different than Earth._
 {set:cellbgcolor:#FFFFFF}
 
 |Requirement 18.6 {set:cellbgcolor:#CACCCE}
