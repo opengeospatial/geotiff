@@ -99,15 +99,17 @@ include::requirements/Configuration_Keys/requirements_class_GTRasterTypeGeoKey.a
 
 This GeoKey defines the type of Model coordinate reference system used, to which the transformation from the raster space is made:
 
-*	Model CRS is unknown or unspecified;
+* Model CRS is unknown or unspecified;
 
-*	Model CRS is a Geographic 2D CRS;
+* Model CRS is a Geographic 2D CRS;
 
-*	Model CRS is a Geocentric CRS;
+* Model CRS is a Geocentric 2D (spherical) CRS;
+
+* Model CRS is a Geocentric 3D (Cartesian) CRS;
 
 * Model CRS is a Projected CRS; and
 
-*	Model CRS is user-defined.
+* Model CRS is user-defined.
 
 If the Model coordinate reference system is from the GeoTIFF standard CRS register (i.e., EPSG register),
 then only the registered CRS code need be specified.
@@ -117,13 +119,15 @@ If the Model coordinate reference system is not from the GeoTIFF standard CRS re
 then it requires the specification of some or all CRS elements.
 See <<Requirements for definition of user-defined Model CRS>>.
 
-The GeoTIFF v1.0 format has also been used to describe pseudo-3D compound CRSs consisting of a projected CRS and a vertical CRS or a geographic 2D CRS and a vertical CRS,
+The GeoTIFF v1.0 format has also been used to describe pseudo-3D compound CRSs
+consisting of a projected CRS and a vertical CRS or a geographic 2D CRS and a vertical CRS,
 as well as a geographic 3D CRS.
 In this document, this usage is permitted but not explicitly described through the GTModelTypeGeoKey.
 Recommendations are given in Annex D.
 
 include::requirements/Configuration_Keys/requirements_class_GTModelTypeGeoKey.adoc[]
-NOTE: The GTCitationGeoKey is also provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file (see <<Requirements Class Citation GeoKeys>>).
+NOTE: The GTCitationGeoKey is also provided to give an ASCII reference to published documentation
+on the overall configuration of the GeoTIFF file (see <<Requirements Class Citation GeoKeys>>).
 
 === Raster to Model Coordinate Transformation Requirements
 
@@ -190,7 +194,8 @@ include::requirements/Vertical_GeoKeys/requirements_class_VerticalGeoKey.adoc[]
 The _GTCitationGeoKey_ is provided to give an ASCII reference to published documentation on the overall configuration of the GeoTIFF file.
 The _GeodeticCitationGeoKey_,
 _ProjectedCitationGeoKey_ and _VerticalCitationGeoKey_ are used to describe Model CRS elements through ASCII free text.
-A citation may be included with a CRS identified through the GeoTIFF CRS register (<<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>).
+A citation may be included with a CRS identified through the GeoTIFF CRS register
+(<<Requirements for definition of Model CRS (when Model CRS is from GeoTIFF CRS register)>>).
 A citation is mandatory for a user-defined CRSs and CRS objects (<<Requirements for definition of user-defined Model CRS>>).
 The _GeodeticCitationGeoKey_, _ProjectedCitationGeoKey_ and _VerticalCitationGeoKey_ are used with CRSs and CRS components.
 
@@ -200,40 +205,48 @@ include::requirements/Citation_Keys/requirements_class_CitationGeoKeys.adoc[]
 
 === Requirements for definition of user-defined Model CRS
 
-The GeoKeys described in this section are needed only when Model CRSs are not available from the GeoTIFF CRS register and the CRS or one or more of its component objects is user-defined,
+The GeoKeys described in this section are needed only when Model CRSs are not available
+from the GeoTIFF CRS register and the CRS or one or more of its component objects is user-defined,
 that is if one or more of ProjectedCRSGeoKey, GeodeticCRSGeoKey, or VerticalGeoKey has a value of 32767.
 
 NOTE: Anyone not interested in constructing a user-defined model CRS can ignore this section.
 
-NOTE: It should be noted that the implicit axis order of user-defined CRS definitions is fixed at (lon,lat,height) in case of geographic and (east,north,height) in case of projected regardless of the model space CRS definition. This convention was implicit in GeoTIFF 1.0 and still is valid in this revision. As with GeoTIFF 1.0, it is not possible to express a user-defined CRS that deviates from this axis order convention. The intention is to address this limitation in a future revision.
+NOTE: It should be noted that the implicit axis order of user-defined CRS definitions is fixed at (lon,lat,height)
+in case of geographic and (east,north,height) in case of projected regardless of the model space CRS definition.
+This convention was implicit in GeoTIFF 1.0 and still is valid in this revision.
+As with GeoTIFF 1.0, it is not possible to express a user-defined CRS that deviates from this axis order convention.
+The intention is to address this limitation in a future revision.
 
 ==== Requirements Class Units GeoKeys
 
-These keys are used to specify Units of Measure (UoM) through the identification of a unit from the GeoTIFF CRS register or to indicate that the unit is user-defined.
+These keys are used to specify Units of Measure (UoM) through the identification of a unit from the GeoTIFF CRS register
+or to indicate that the unit is user-defined.
 
 The *GeogAngularUnitsGeoKey* key is used to specify the angular unit for:
 
-*	the axes in user-defined geographic 2D CRSs;
-*	the horizontal axes in user-defined geographic 3D CRSs;
-*	the longitude from the reference meridian in user-defined prime meridians; and
-*	user-defined map projection parameters that are angles.
+* the axes in user-defined geographic 2D CRSs;
+* the axes in user-defined geocentric 2D (spherical) CRSs;
+* the horizontal axes in user-defined geographic 3D CRSs;
+* the longitude from the reference meridian in user-defined prime meridians; and
+* user-defined map projection parameters that are angles.
 
-The *GeogAzimuthUnitsGeoKey* key is used to specify the angular unit for user-defined map projection parameters when these differ from the angular unit described through the GeogAngularUnitsGeoKey.
+The *GeogAzimuthUnitsGeoKey* key is used to specify the angular unit for user-defined map projection parameters
+when these differ from the angular unit described through the GeogAngularUnitsGeoKey.
 
 The *GeogLinearUnitsGeoKey* key is used to specify the linear unit for:
 
 * the axes in user-defined geocentric Cartesian CRSs;
-*	the height axis of a user-defined geographic 3D CRS; and
-*	for user-defined ellipsoid axes.
+* the height axis of a user-defined geographic 3D CRS; and
+* for user-defined ellipsoid axes.
 
 The *ProjLinearUnitsGeoKey* key is used to specify the linear units for:
 
-*	the axes of  a user-defined projected CRS; and
-*	map projection parameters that are lengths.
+* the axes of  a user-defined projected CRS; and
+* map projection parameters that are lengths.
 
 The *VerticalUnitsGeoKey* key is used to specify the linear unit for:
 
-*	the axis of a user-defined vertical CRS.
+* the axis of a user-defined vertical CRS.
 
 include::requirements/Units_Keys/requirements_class_UnitsGeoKeys.adoc[]
 
