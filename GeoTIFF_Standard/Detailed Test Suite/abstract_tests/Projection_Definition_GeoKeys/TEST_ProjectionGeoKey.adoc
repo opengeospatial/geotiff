@@ -37,6 +37,7 @@
 
     A value of 32767 is valid (User-defined)
 
-    IF value = 32767 THEN verify that there is a ProjectedCitationGeoKey (GeoKey 3073), ProjectionMethodGeoKey (GeoKey 3075) and ProjLinearUnitsGeoKey (GeoKey 3076) in the GeoTIFF file.
+    IF value = 32767 THEN verify that there is a ProjectedCitationGeoKey (GeoKey 3073), ProjMethodGeoKey (GeoKey 3075), ProjLinearUnitsGeoKey (GeoKey 3076)
+    and keys for each map projection parameter (coordinate operation parameter) appropriate to that method in the GeoTIFF file.
 
     Values of 32768 through 65535 are valid (private)

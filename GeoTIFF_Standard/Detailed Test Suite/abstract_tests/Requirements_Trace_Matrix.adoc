@@ -184,14 +184,13 @@
 | The ProjectionGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjectionGeoKey
 | ProjectionGeoKey values in the range 1-1023 SHALL be reserved |Projection_Definition_GeoKey/ProjectionGeoKey
 | ProjectionGeoKey values in the range 1024-32766 SHALL be valid EPSG map projection (coordinate operation) codes |Projection_Definition_GeoKey/ProjectionGeoKey
-| If the ProjectionGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, ProjectionMethodGeoKey, and ProjLinearUnitsGeoKey SHALL be populated |Projection_Definition_GeoKey/ProjectionGeoKey
+| If the ProjectionGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey, ProjMethodGeoKey, ProjLinearUnitsGeoKey and keys for each map projection parameter (coordinate operation parameter) appropriate to that method SHALL be populated |Projection_Definition_GeoKey/ProjectionGeoKey
 | ProjectionGeoKey values in the range 32768-65535 SHALL be private |Projection_Definition_GeoKey/ProjectionGeoKey
 ^| *requirements_class_ProjMethodGeoKey* |
 | The ProjMethodGeoKey SHALL have ID = 3075 |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjMethodGeoKey
 | The ProjMethodGeoKey SHALL have type = SHORT |TIFF_Test/ShortParameters, Projection_Definition_GeoKey/ProjMethodGeoKey
 | ProjMethodGeoKey values in the range 1-27 SHALL be GeoTIFF map projection method codes |Projection_Definition_GeoKey/ProjMethodGeoKey
 | ProjMethodGeoKey values in the range 28-32766 SHALL be reserved |Projection_Definition_GeoKey/ProjMethodGeoKey
-| If the ProjectionMethodGeoKey value is 32767 (User-Defined) then the ProjectedCitationGeoKey and keys for each map projection parameter (coordinate operation parameter) appropriate to that method SHALL be populated. |Projection_Definition_GeoKey/ProjMethodGeoKey
 | ProjMethodGeoKey values in the range 32768-65535 SHALL be private |Projection_Definition_GeoKey/ProjMethodGeoKey
 ^| *requirements_class_ProjAngularParameters* |
 | The ProjStdParallel1GeoKey SHALL have ID = 3078 |TIFF_Test/DoubleParameters, Projection_Definition_GeoKeys/ProjAngularParameters
